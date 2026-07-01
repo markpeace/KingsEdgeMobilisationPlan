@@ -1,15 +1,21 @@
 import fs from 'node:fs';
 
-const planPath = new URL('../src/data/kings-edge-plan.json', import.meta.url);
-const plan = JSON.parse(fs.readFileSync(planPath, 'utf8'));
+function readJson(relativePath) {
+  return JSON.parse(fs.readFileSync(new URL(relativePath, import.meta.url), 'utf8'));
+}
+
+const plan = readJson('../src/data/kings-edge-plan.json');
+const enablingProjects = readJson('../src/data/enabling-projects.json');
+const stepDependencies = readJson('../src/data/step-dependencies.json');
+const statusData = readJson('../src/data/status.json');
+
 const errors = [];
 const warnings = [];
-
 const requiredTimelinePeriods = new Set(plan.timelinePeriods.map((period) => period.id));
 const ids = new Set();
 const deliverableIds = new Set();
 const stepIds = new Set();
-const crossDependencyIds = new Set(plan.crossProgrammeDependencies.map((dependency) => dependency.id));
+const projectIds = new Set();
 
 function requireField(object, field, path) {
   if (!object[field]) errors.push(`${path} is missing required field: ${field}`);
@@ -24,66 +30,70 @@ function addId(id, path) {
   ids.add(id);
 }
 
+function validateSteps(steps, ownerPath) {
+  if (!Array.isArray(steps) || steps.length !== 4) warnings.push(`${ownerPath} should usually contain exactly four delivery steps.`);
+  steps?.forEach((step, stepIndex) => {
+    const stepPath = `${ownerPath}.steps[${stepIndex}]`;
+    addId(step.id, stepPath);
+    stepIds.add(step.id);
+    ['title', 'period', 'summary'].forEach((field) => requireField(step, field, stepPath));
+    if (step.period && !requiredTimelinePeriods.has(step.period)) errors.push(`${step.id} uses unknown timeline period: ${step.period}`);
+  });
+}
+
 plan.projects.forEach((project, projectIndex) => {
   const projectPath = `projects[${projectIndex}]`;
   addId(project.id, projectPath);
+  projectIds.add(project.id);
   requireField(project, 'title', projectPath);
   requireField(project, 'owner', projectPath);
-
-  if (!Array.isArray(project.deliverables) || project.deliverables.length !== 4) {
-    warnings.push(`${project.id} should usually contain exactly four deliverables.`);
-  }
+  if (!Array.isArray(project.deliverables) || project.deliverables.length !== 4) warnings.push(`${project.id} should usually contain exactly four deliverables.`);
 
   project.deliverables?.forEach((deliverable, deliverableIndex) => {
     const deliverablePath = `${project.id}.deliverables[${deliverableIndex}]`;
     addId(deliverable.id, deliverablePath);
     deliverableIds.add(deliverable.id);
     ['title', 'lead', 'summary', 'problemSolved', 'whatChanges'].forEach((field) => requireField(deliverable, field, deliverablePath));
-
-    if (!Array.isArray(deliverable.components) || deliverable.components.length !== 4) {
-      warnings.push(`${deliverable.id} should usually contain exactly four components.`);
-    }
-
-    if (!Array.isArray(deliverable.steps) || deliverable.steps.length !== 4) {
-      warnings.push(`${deliverable.id} should usually contain exactly four delivery steps.`);
-    }
-
-    deliverable.steps?.forEach((step, stepIndex) => {
-      const stepPath = `${deliverable.id}.steps[${stepIndex}]`;
-      addId(step.id, stepPath);
-      stepIds.add(step.id);
-      ['title', 'period', 'summary'].forEach((field) => requireField(step, field, stepPath));
-      if (step.period && !requiredTimelinePeriods.has(step.period)) {
-        errors.push(`${step.id} uses unknown timeline period: ${step.period}`);
-      }
-    });
+    if (!Array.isArray(deliverable.components) || deliverable.components.length !== 4) warnings.push(`${deliverable.id} should usually contain exactly four components.`);
+    validateSteps(deliverable.steps, deliverable.id);
   });
 });
 
-const validReferenceIds = new Set([...deliverableIds, ...stepIds, ...crossDependencyIds]);
+enablingProjects.forEach((project, projectIndex) => {
+  const projectPath = `enablingProjects[${projectIndex}]`;
+  addId(project.id, projectPath);
+  projectIds.add(project.id);
+  ['title', 'owner', 'summary', 'edgeRole'].forEach((field) => requireField(project, field, projectPath));
+  validateSteps(project.steps, project.id);
+});
+
+const validReferenceIds = new Set([...projectIds, ...deliverableIds, ...stepIds]);
 
 plan.projects.forEach((project) => {
   project.deliverables?.forEach((deliverable) => {
-    deliverable.dependencies?.forEach((dependency) => {
-      if (!validReferenceIds.has(dependency.targetId)) {
-        errors.push(`${deliverable.id} dependency target not found: ${dependency.targetId}`);
-      }
-    });
-
     deliverable.feedsInto?.forEach((targetId) => {
       if (!validReferenceIds.has(targetId)) errors.push(`${deliverable.id} feedsInto target not found: ${targetId}`);
     });
-
     deliverable.relatedDeliverables?.forEach((targetId) => {
       if (!validReferenceIds.has(targetId)) errors.push(`${deliverable.id} relatedDeliverables target not found: ${targetId}`);
     });
-
     deliverable.steps?.forEach((step) => {
       step.dependsOn?.forEach((targetId) => {
         if (!validReferenceIds.has(targetId)) errors.push(`${step.id} dependsOn target not found: ${targetId}`);
       });
     });
   });
+});
+
+Object.entries(stepDependencies).forEach(([stepId, targets]) => {
+  if (!stepIds.has(stepId)) errors.push(`step-dependencies key is not a known step id: ${stepId}`);
+  targets.forEach((targetId) => {
+    if (!stepIds.has(targetId)) errors.push(`${stepId} has unknown step dependency target: ${targetId}`);
+  });
+});
+
+Object.keys(statusData.items || {}).forEach((itemId) => {
+  if (!validReferenceIds.has(itemId)) warnings.push(`status.json contains status for unknown or currently unused id: ${itemId}`);
 });
 
 if (warnings.length) {
