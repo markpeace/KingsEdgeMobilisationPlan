@@ -2,48 +2,94 @@
 
 ## Principle
 
-The plan should live in JSON and the interface should render from that JSON.
+The plan lives in JSON and the interface renders from that JSON.
 
-The JSON is the single source of truth for:
+The data model now separates four concerns:
 
-- projects
-- deliverables
-- owners
-- summaries
-- components
-- delivery steps
-- timing
-- dependencies
-- related deliverables
-- cross-programme dependencies
+- the core King's Edge plan
+- related wider portfolio projects
+- step-to-step dependencies
+- status, confidence and decision flags
 
-## Proposed file structure
+This keeps content, dependency logic and mobilisation status easier to maintain.
 
-Suggested data files:
+## Current file structure
 
 ```text
-data/
+src/data/
   kings-edge-plan.json
-  timeline-periods.json
-  dependency-types.json
+  enabling-projects.json
+  step-dependencies.json
+  status.json
 ```
 
-For the first version, a single `data/kings-edge-plan.json` file is enough.
+## Core plan file
 
-## Top-level structure
+`kings-edge-plan.json` holds:
+
+- programme metadata
+- timeline periods
+- the four King's Edge projects
+- the sixteen Edge deliverables
+- components
+- delivery steps
+- tags and related deliverables
+
+## Related projects file
+
+`enabling-projects.json` holds the wider portfolio projects that carry Edge requirements.
+
+Current related projects:
+
+- Education Cultures and Innovation
+- Curriculum Framework and Review
+- Single Student App / Digital Portal
+
+These are not dependencies in themselves. They are projects with their own delivery steps.
+
+## Step dependency file
+
+`step-dependencies.json` holds the dependency layer.
+
+Dependencies are step-to-step relationships, for example:
 
 ```json
 {
-  "programme": {
-    "id": "2",
-    "title": "King's Edge",
-    "purpose": "Makes the King's graduate premium real, visible, navigable and evidenced for every student."
-  },
-  "timelinePeriods": [],
-  "projects": [],
-  "crossProgrammeDependencies": []
+  "2.2.2-step-2": ["2.1.2-step-4"],
+  "2.3.1-step-3": ["2.2.1-step-2", "single-app-step-2"]
 }
 ```
+
+This allows the Gantt to show what a selected step needs and what it enables.
+
+## Status file
+
+`status.json` holds mobilisation status separately from the plan text.
+
+Each item can have:
+
+```json
+{
+  "status": "scoping",
+  "confidence": "needs-validation",
+  "decisionNeeded": true,
+  "note": "Short explanation of what needs attention."
+}
+```
+
+Supported statuses:
+
+- `not-started`
+- `scoping`
+- `active`
+- `blocked`
+- `complete`
+
+Supported confidence levels:
+
+- `settled`
+- `needs-validation`
+- `placeholder`
 
 ## Project object
 
@@ -69,19 +115,24 @@ For the first version, a single `data/kings-edge-plan.json` file is enough.
   "whatChanges": "Programmes develop evidenced and meaningful accounts of the value graduates take into the world.",
   "components": [],
   "steps": [],
-  "dependencies": [],
   "feedsInto": [],
   "relatedDeliverables": [],
   "tags": []
 }
 ```
 
-## Component object
+## Related project object
 
 ```json
 {
-  "title": "Programme-level data deep dives",
-  "summary": "Use outcomes, destinations, further study, highly skilled employment, progression patterns, demographics and opportunity participation to understand graduate value at programme or department level."
+  "id": "single-student-app",
+  "title": "Single Student App / Digital Portal",
+  "owner": "TBC",
+  "summary": "Provides the digital environment through which the King's Edge offer becomes navigable, personal and usable for students.",
+  "edgeRole": "Carries the digital implementation for King's Canvas, opportunity navigation, evidence capture, digital badges, microcredentials and the future enhanced student record.",
+  "components": [],
+  "steps": [],
+  "servesDeliverables": ["2.2.1", "2.3.1", "2.4.3"]
 }
 ```
 
@@ -97,6 +148,8 @@ For the first version, a single `data/kings-edge-plan.json` file is enough.
 }
 ```
 
+The active dependency model uses `step-dependencies.json` as the main dependency source, while `dependsOn` remains available inside steps for simple local references.
+
 ## Timeline period object
 
 ```json
@@ -108,59 +161,22 @@ For the first version, a single `data/kings-edge-plan.json` file is enough.
 }
 ```
 
-## Dependency object
-
-```json
-{
-  "targetId": "2.1.2",
-  "type": "input",
-  "label": "Requires the experiential learning typology, North Star and principles from the Community of Practice."
-}
-```
-
-## Dependency types
-
-Suggested dependency types:
-
-| Type | Meaning |
-|---|---|
-| `input` | Needs an output from another deliverable before it can progress properly |
-| `handoff` | Produces requirements for another project, system or programme |
-| `alignment` | Needs to remain consistent with another strand, but can progress in parallel |
-| `enabler` | Provides infrastructure others will use |
-| `evidence-feed` | Provides data, insight or stories into another deliverable |
-
-## Cross-programme dependency object
-
-```json
-{
-  "id": "single-student-app",
-  "title": "Single Student App / Digital Portal",
-  "summary": "Provides the digital environment through which the King's Edge offer becomes navigable, personal and usable for students.",
-  "edgeNeedsServiced": [],
-  "relatedDeliverables": ["2.2.1", "2.3.1", "2.4.3"]
-}
-```
-
 ## Gantt rendering logic
 
-The Gantt should render rows from deliverables and bars from delivery steps.
+The Gantt renders:
 
-Each step has one `period`. Later versions may allow `startPeriod` and `endPeriod` if a step spans multiple periods.
-
-For version one:
-
-- one deliverable row
-- four period columns
-- each step appears in its period column
-- dependencies show as icons, hover panels or optional connecting lines
+- rows from Edge deliverables and related projects
+- columns from timeline periods
+- blocks from delivery steps
+- dependency highlights from `step-dependencies.json`
+- status and confidence from `status.json`
 
 ## URL slugs
 
-The deliverable `id` should drive routes.
+The deliverable `id` drives routes.
 
 Examples:
 
-- `/deliverables/2.1.1`
-- `/deliverables/2.2.1`
-- `/deliverables/2.4.3`
+- `#/deliverables/2.1.1`
+- `#/deliverables/2.2.1`
+- `#/deliverables/2.4.3`
