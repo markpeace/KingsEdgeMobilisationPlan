@@ -1,0 +1,506 @@
+{
+  "programme": {
+    "id": "2",
+    "title": "King's Edge",
+    "purpose": "Makes the King's graduate premium real, visible, navigable and evidenced for every student."
+  },
+  "timelinePeriods": [
+    { "id": "now-xmas-2026", "label": "Now to Christmas 2026", "shortLabel": "Now-Xmas 26", "order": 1 },
+    { "id": "jan-summer-2027", "label": "January to summer 2027", "shortLabel": "Jan-summer 27", "order": 2 },
+    { "id": "ay-2027-28-to-2028-29", "label": "2027/28 to 2028/29", "shortLabel": "2027/28-2028/29", "order": 3 },
+    { "id": "ay-2029-30", "label": "2029/30", "shortLabel": "2029/30", "order": 4 }
+  ],
+  "projects": [
+    {
+      "id": "2.1",
+      "title": "Curriculum-Embedded Graduate Premium",
+      "owner": "Aranee Manoharan",
+      "summary": "Makes the graduate premium visible and capable of growth within the academic curriculum.",
+      "deliverables": [
+        {
+          "id": "2.1.1",
+          "title": "Programme Graduate Premium Deep Dives",
+          "lead": "Dan Robson",
+          "summary": "Programme or department-level deep dives combining data and narrative work to articulate the distinctive value graduates take out into the world.",
+          "problemSolved": "The value of a programme is often implicit, under-evidenced or not described in language that connects with students, applicants, employers or the discipline itself.",
+          "whatChanges": "Programmes develop evidenced and meaningful accounts of what students develop, where graduates go, and how students can recognise and articulate that value.",
+          "components": [
+            { "title": "Data deep dives", "summary": "Use outcomes, destinations, further study, highly skilled employment, salary where useful, progression patterns, demographics and opportunity participation." },
+            { "title": "Narrative articulation", "summary": "Work with programme teams, students, alumni and potentially employers to describe the value graduates take into the world." },
+            { "title": "Programme profiles", "summary": "Create curriculum-facing accounts of skills, disciplinary identity, experiences, capabilities and future-facing value." },
+            { "title": "Link to evidence packs", "summary": "Feed programme-level articulation into 2.4 evidence packs and market-facing narratives." }
+          ],
+          "steps": [
+            { "id": "2.1.1-step-1", "title": "Define the deep dive model", "period": "now-xmas-2026", "summary": "Agree what a programme-level deep dive should include and how data and narrative work are combined.", "dependsOn": [] },
+            { "id": "2.1.1-step-2", "title": "Select early departments", "period": "now-xmas-2026", "summary": "Identify test areas with useful data, appetite and a clear link to evidence pack development.", "dependsOn": [] },
+            { "id": "2.1.1-step-3", "title": "Run data and narrative deep dives", "period": "jan-summer-2027", "summary": "Work with selected programmes to combine evidence with a structured conversation about value.", "dependsOn": ["2.1.1-step-1"] },
+            { "id": "2.1.1-step-4", "title": "Produce scalable templates", "period": "ay-2027-28-to-2028-29", "summary": "Turn early deep dives into a repeatable model for programme review, evidence packs, recruitment and student articulation.", "dependsOn": ["2.1.1-step-3"] }
+          ],
+          "dependencies": [
+            { "targetId": "2.4.1", "type": "evidence-feed", "label": "Feeds programme-level articulation into graduate premium evidence packs." }
+          ],
+          "feedsInto": ["2.4.1"],
+          "relatedDeliverables": ["2.4.1"],
+          "tags": ["data", "programme value", "evidence"]
+        },
+        {
+          "id": "2.1.2",
+          "title": "Experiential Learning North Star and Future Student Entitlement",
+          "lead": "TBC, Convener of the Experiential Learning Strategic Community of Practice",
+          "summary": "Defines King's position on experiential learning, including typology, design principles, operational support needs and a future entitlement ambition.",
+          "problemSolved": "King's has excellent experiential learning practice, but too much of it is buried, isolated, locally dependent and not consistently accessible or operationally supported.",
+          "whatChanges": "King's establishes a shared north star for experiential learning and a growth-readiness package that can guide curriculum and co-curricular opportunity growth.",
+          "components": [
+            { "title": "Experiential learning typology", "summary": "Define the range of experiential learning across curriculum and co-curriculum." },
+            { "title": "Learning design principles", "summary": "Define what makes experiential learning meaningful, reflective, supported and evidenceable." },
+            { "title": "Operational and assurance principles", "summary": "Set expectations around risk, partners, student support, access, reflection, assessment and feasibility." },
+            { "title": "Future entitlement ambition", "summary": "Set a future-facing aspiration for what students should be able to access through a King's education." }
+          ],
+          "steps": [
+            { "id": "2.1.2-step-1", "title": "Convene and scope the Community of Practice", "period": "now-xmas-2026", "summary": "Establish the group through Education Cultures and Innovation, with Edge requirements in its remit.", "dependsOn": ["education-cultures-innovation"] },
+            { "id": "2.1.2-step-2", "title": "Surface practice and build the typology", "period": "now-xmas-2026", "summary": "Identify strong but buried experiential practice and produce a working typology.", "dependsOn": ["2.1.2-step-1"] },
+            { "id": "2.1.2-step-3", "title": "Define principles", "period": "jan-summer-2027", "summary": "Set learning design, operational and assurance principles by April 2027.", "dependsOn": ["2.1.2-step-2"] },
+            { "id": "2.1.2-step-4", "title": "Publish the North Star package", "period": "jan-summer-2027", "summary": "Produce the typology, North Star, entitlement ambition and requirements needed to mobilise growth by April 2027.", "dependsOn": ["2.1.2-step-3"] }
+          ],
+          "dependencies": [
+            { "targetId": "education-cultures-innovation", "type": "input", "label": "Delivered through the Experiential Learning Strategic Community of Practice." }
+          ],
+          "feedsInto": ["2.1.4", "2.2.2", "2.2.4"],
+          "relatedDeliverables": ["2.1.4", "2.2.2", "2.2.4"],
+          "tags": ["experiential learning", "community of practice", "entitlement"]
+        },
+        {
+          "id": "2.1.3",
+          "title": "Standard Skills Classification and Future Skills Mapping Model",
+          "lead": "Vanessa Freeman",
+          "summary": "Uses the Standard Skills Classification as a granular vocabulary for mapping programmes, opportunities and student futures, with discipline and Edge-level overlays.",
+          "problemSolved": "Skills work across the sector often maps the curriculum rather than starting from student futures and the skills those futures require.",
+          "whatChanges": "King's adopts a detailed skills vocabulary that can map curricula, opportunities, experiences and destinations, while preserving discipline-level emphases and Edge attributes.",
+          "components": [
+            { "title": "Full skills vocabulary", "summary": "Use the Standard Skills Classification as the detailed skills language." },
+            { "title": "Future-facing mapping", "summary": "Map backwards from student futures and destination skills needs, not only outward from the curriculum." },
+            { "title": "Discipline-level emphases", "summary": "Allow programmes to surface skills especially characteristic of their discipline." },
+            { "title": "University-level Edge attributes", "summary": "Define a smaller set of King's Edge attributes as an overlay, not a replacement." }
+          ],
+          "steps": [
+            { "id": "2.1.3-step-1", "title": "Confirm the skills architecture", "period": "now-xmas-2026", "summary": "Confirm use of the Standard Skills Classification and the discipline and Edge overlays.", "dependsOn": [] },
+            { "id": "2.1.3-step-2", "title": "Design future-facing mapping", "period": "jan-summer-2027", "summary": "Develop the method for mapping student futures and destination needs back to skills.", "dependsOn": ["2.1.3-step-1"] },
+            { "id": "2.1.3-step-3", "title": "Pilot skills mapping", "period": "ay-2027-28-to-2028-29", "summary": "Test the model with selected programmes, destinations and opportunities.", "dependsOn": ["2.1.3-step-2"] },
+            { "id": "2.1.3-step-4", "title": "Embed into curriculum, digital and recognition work", "period": "ay-2029-30", "summary": "Ensure the model informs curriculum audit, app requirements, Canvas, opportunity navigation and recognition.", "dependsOn": ["2.1.3-step-3"] }
+          ],
+          "dependencies": [],
+          "feedsInto": ["2.1.4", "2.2.1", "2.3.1", "2.4.3"],
+          "relatedDeliverables": ["2.2.1", "2.3.1", "2.4.3"],
+          "tags": ["skills", "Standard Skills Classification", "mapping"]
+        },
+        {
+          "id": "2.1.4",
+          "title": "Curriculum-Embedded Opportunity Growth and Assurance",
+          "lead": "Jo Marchant",
+          "summary": "Uses the Curriculum Framework audit baseline to drive growth and assurance of curriculum-embedded skills development and experiential learning.",
+          "problemSolved": "King's does not yet have a consistent view of where curriculum-embedded skills and experiential learning are strong, hidden, unsupported, uneven or inaccessible.",
+          "whatChanges": "The audit baseline is used to prioritise growth and assurance of high-quality, supported, inclusive and evidenceable opportunity within the curriculum.",
+          "components": [
+            { "title": "Audit requirements", "summary": "Define Edge questions for skills, experiential learning, access, evidence, articulation and graduate premium contribution." },
+            { "title": "Curriculum baseline", "summary": "Identify strengths, hidden practice, gaps, unevenness and access issues." },
+            { "title": "Growth priorities", "summary": "Use the baseline to determine where provision should grow and where support is needed." },
+            { "title": "Assurance model", "summary": "Define expectations for learning design, access, support, reflection, evidence and quality assurance." }
+          ],
+          "steps": [
+            { "id": "2.1.4-step-1", "title": "Define Edge audit requirements", "period": "now-xmas-2026", "summary": "Specify the questions the Curriculum Framework audit must ask.", "dependsOn": ["curriculum-framework-review"] },
+            { "id": "2.1.4-step-2", "title": "Translate findings into growth priorities", "period": "jan-summer-2027", "summary": "Use the baseline to identify where growth would make the greatest difference.", "dependsOn": ["2.1.4-step-1"] },
+            { "id": "2.1.4-step-3", "title": "Establish assurance model", "period": "ay-2027-28-to-2028-29", "summary": "Define what good provision requires in learning design, access and operational support.", "dependsOn": ["2.1.2", "2.1.4-step-2"] },
+            { "id": "2.1.4-step-4", "title": "Embed through programme enhancement", "period": "ay-2029-30", "summary": "Use curriculum governance and programme enhancement to grow high-quality provision over time.", "dependsOn": ["2.1.4-step-3"] }
+          ],
+          "dependencies": [
+            { "targetId": "curriculum-framework-review", "type": "input", "label": "Needs the Curriculum Framework audit as the baseline." },
+            { "targetId": "2.1.2", "type": "input", "label": "Needs the experiential learning North Star and assurance principles." }
+          ],
+          "feedsInto": ["2.2.2", "2.4.1"],
+          "relatedDeliverables": ["2.1.2", "2.2.2", "2.4.1"],
+          "tags": ["curriculum", "growth", "assurance"]
+        }
+      ]
+    },
+    {
+      "id": "2.2",
+      "title": "Co-Curricular Opportunity and Purpose",
+      "owner": "Zak Evans",
+      "summary": "Builds a structured, purposeful and supported opportunity ecology alongside the curriculum.",
+      "deliverables": [
+        {
+          "id": "2.2.1",
+          "title": "King's Canvas: A Conversation about Purpose with Every Student",
+          "lead": "Vanessa Freeman",
+          "summary": "A scalable, AI-enriched tool and student journey model to help every student reflect on purpose, aspiration, skills and the experience they want to build.",
+          "problemSolved": "Students are often presented with opportunities as a menu, rather than supported to understand what they want from King's and how to shape their experience over time.",
+          "whatChanges": "King's creates tools, prompts and a student journey model for a recurring purpose conversation from pre-entry to graduation.",
+          "components": [
+            { "title": "King's Canvas tool design", "summary": "Design the AI-enriched tool for aspiration, purpose, planning and reflection." },
+            { "title": "Lifecycle integration", "summary": "Embed Canvas from pre-entry and offer-holder engagement through induction, transitions, final year and graduation." },
+            { "title": "Rhythm within and beyond the curriculum", "summary": "Define when students revisit purpose, plans and opportunities across curriculum, advising, Careers and wider student life." },
+            { "title": "Human-supported use model", "summary": "Connect Canvas to advisers, tutors, Careers, KCLSU, subject societies and student-facing staff." }
+          ],
+          "steps": [
+            { "id": "2.2.1-step-1", "title": "Define the purpose conversation and lifecycle model", "period": "now-xmas-2026", "summary": "Set out what Canvas covers and where it sits from pre-entry to graduation.", "dependsOn": [] },
+            { "id": "2.2.1-step-2", "title": "Design Canvas tools and prompts", "period": "jan-summer-2027", "summary": "Specify AI functionality, reflection prompts, planning tools, skills links and student outputs.", "dependsOn": ["2.2.1-step-1", "2.1.3"] },
+            { "id": "2.2.1-step-3", "title": "Pilot across lifecycle moments", "period": "ay-2027-28-to-2028-29", "summary": "Test Canvas in induction, year transition, module choice, Careers engagement or final-year planning.", "dependsOn": ["2.2.1-step-2"] },
+            { "id": "2.2.1-step-4", "title": "Embed as a recurring rhythm", "period": "ay-2029-30", "summary": "Build Canvas into curriculum, co-curriculum, advising, opportunity navigation, reflection and evidence capture.", "dependsOn": ["2.2.1-step-3", "single-student-app"] }
+          ],
+          "dependencies": [
+            { "targetId": "2.1.3", "type": "input", "label": "Needs the skills vocabulary and future skills mapping model." },
+            { "targetId": "single-student-app", "type": "handoff", "label": "Digital implementation should sit in the Single Student App / Digital Portal." }
+          ],
+          "feedsInto": ["2.3.1", "2.4.3", "2.2.4"],
+          "relatedDeliverables": ["2.1.3", "2.3.1", "2.4.3"],
+          "tags": ["Canvas", "purpose", "AI", "student journey"]
+        },
+        {
+          "id": "2.2.2",
+          "title": "Experiential Opportunity Operating Model and Partnership Infrastructure",
+          "lead": "Andrew Wright",
+          "summary": "Builds the partnership, operational and learning design support needed to deliver experiential opportunities within and beyond the curriculum.",
+          "problemSolved": "Strong ideas for experiential opportunity often fail to scale because partnership, operational and learning design support are unclear or inconsistent.",
+          "whatChanges": "King's translates the Community of Practice typology and North Star into practical delivery infrastructure for curricular and co-curricular experiential opportunity.",
+          "components": [
+            { "title": "CoP response", "summary": "Translate the experiential learning typology and North Star into delivery requirements." },
+            { "title": "Partnership infrastructure", "summary": "Strengthen routes to employers, alumni, civic, cultural, policy, community and sector partners." },
+            { "title": "Operational support", "summary": "Support placements, projects, live briefs, consultancy, challenges and related activity." },
+            { "title": "Learning design and assurance", "summary": "Provide templates, guidance and quality expectations aligned to the experiential framework." }
+          ],
+          "steps": [
+            { "id": "2.2.2-step-1", "title": "Map current support and partners", "period": "now-xmas-2026", "summary": "Identify partner networks, operational support, delivery routes and gaps.", "dependsOn": [] },
+            { "id": "2.2.2-step-2", "title": "Translate CoP outputs into delivery requirements", "period": "jan-summer-2027", "summary": "Use the CoP typology, North Star and principles to define required infrastructure by April 2027.", "dependsOn": ["2.1.2"] },
+            { "id": "2.2.2-step-3", "title": "Build reusable support", "period": "ay-2027-28-to-2028-29", "summary": "Develop templates, guidance, partner-brokering routes and support models.", "dependsOn": ["2.2.2-step-2"] },
+            { "id": "2.2.2-step-4", "title": "Embed across curricular and co-curricular growth", "period": "ay-2029-30", "summary": "Make the operating model part of how King's grows experiential opportunity across 2.1 and 2.2.", "dependsOn": ["2.2.2-step-3"] }
+          ],
+          "dependencies": [
+            { "targetId": "2.1.2", "type": "input", "label": "Needs the experiential learning typology, North Star and principles." }
+          ],
+          "feedsInto": ["2.1.4", "2.2.3", "2.2.4"],
+          "relatedDeliverables": ["2.1.2", "2.1.4", "2.2.4"],
+          "tags": ["partnership", "operating model", "experiential learning"]
+        },
+        {
+          "id": "2.2.3",
+          "title": "Near-Curriculum Placements and Project Pathways",
+          "lead": "Richard Wingate",
+          "summary": "Develops formal, recognised course-adjacent opportunities, including sandwich years, placements, interdisciplinary projects and vertical projects.",
+          "problemSolved": "Valuable course-adjacent opportunities need clearer regulatory, academic and operational routes if they are to be more widely available.",
+          "whatChanges": "King's builds formal near-curriculum pathways for recognised placements and projects beyond the student's home course but within a credit or recognition framework.",
+          "components": [
+            { "title": "Transdisciplinary sandwich years", "summary": "Build the regulatory and provisioning model for sandwich years that cross disciplines." },
+            { "title": "Broader sandwich year availability", "summary": "Strengthen infrastructure for more students and programmes to access sandwich year models." },
+            { "title": "Interdisciplinary project pathways", "summary": "Create routes for substantial interdisciplinary projects beyond the home programme." },
+            { "title": "Vertical project structures", "summary": "Enable structured projects across levels, cohorts or disciplines." }
+          ],
+          "steps": [
+            { "id": "2.2.3-step-1", "title": "Scope regulatory and academic models", "period": "now-xmas-2026", "summary": "Explore requirements for sandwich years, placements, interdisciplinary projects and vertical projects.", "dependsOn": [] },
+            { "id": "2.2.3-step-2", "title": "Design credit and recognition routes", "period": "jan-summer-2027", "summary": "Define how near-curriculum opportunities sit within a credit, recognition or structured academic framework.", "dependsOn": ["2.2.3-step-1"] },
+            { "id": "2.2.3-step-3", "title": "Pilot selected pathways", "period": "ay-2027-28-to-2028-29", "summary": "Test a small number of sandwich year, placement, interdisciplinary or vertical project models.", "dependsOn": ["2.2.3-step-2"] },
+            { "id": "2.2.3-step-4", "title": "Broaden availability", "period": "ay-2029-30", "summary": "Expand infrastructure so more students and programmes can access formal near-curriculum opportunities.", "dependsOn": ["2.2.3-step-3"] }
+          ],
+          "dependencies": [
+            { "targetId": "2.2.2", "type": "enabler", "label": "Needs operating and partnership support to scale formal pathways." }
+          ],
+          "feedsInto": ["2.4.3"],
+          "relatedDeliverables": ["2.2.2", "2.4.3"],
+          "tags": ["sandwich years", "placements", "projects", "credit"]
+        },
+        {
+          "id": "2.2.4",
+          "title": "Flexible Adjunct Experiential and Thematic Opportunities",
+          "lead": "TBC, Experiential Learning Community of Practice",
+          "summary": "Grows flexible experiential and skills-based opportunities, including thematic priorities such as enterprise, social innovation, civic engagement and global opportunity.",
+          "problemSolved": "Students need flexible opportunities that can respond to evolving purposes, skills needs and thematic interests without always requiring formal course redesign.",
+          "whatChanges": "King's pre-pilots flexible formats, aligns them to the experiential framework, and later moves to demand-led commissioning as Canvas insight matures.",
+          "components": [
+            { "title": "Flexible adjunct opportunities", "summary": "Short projects, live briefs, skills intensives, mentoring, employer-connected work and hybrid formats." },
+            { "title": "Thematic priorities", "summary": "Enterprise, social innovation, civic engagement, global opportunity, research experience, policy, sustainability or culture." },
+            { "title": "Demand-led growth", "summary": "Use Canvas insight, skills gaps and opportunity appraisal to decide where provision should grow." },
+            { "title": "Framework alignment", "summary": "Align flexible provision to the shared experiential learning typology and assurance expectations." }
+          ],
+          "steps": [
+            { "id": "2.2.4-step-1", "title": "Pre-pilot flexible formats", "period": "now-xmas-2026", "summary": "Design and test early formats before the full CoP framework is finalised.", "dependsOn": [] },
+            { "id": "2.2.4-step-2", "title": "Align formats to the CoP framework", "period": "jan-summer-2027", "summary": "Review pre-pilots against the CoP typology, North Star and design principles by April 2027.", "dependsOn": ["2.1.2"] },
+            { "id": "2.2.4-step-3", "title": "Launch thematic pilots", "period": "ay-2027-28-to-2028-29", "summary": "Pilot thematic opportunities with clear learning design and evidence expectations.", "dependsOn": ["2.2.4-step-2"] },
+            { "id": "2.2.4-step-4", "title": "Move to demand-led commissioning", "period": "ay-2029-30", "summary": "Grow, refresh or stop opportunities based on Canvas insight, reach, impact, value and access.", "dependsOn": ["2.2.1", "2.2.4-step-3"] }
+          ],
+          "dependencies": [
+            { "targetId": "2.1.2", "type": "alignment", "label": "Formats need to align to the experiential learning framework once produced." },
+            { "targetId": "2.2.1", "type": "input", "label": "Canvas insight supports later demand-led commissioning." }
+          ],
+          "feedsInto": ["2.3.1", "2.4.3"],
+          "relatedDeliverables": ["2.1.2", "2.2.1", "2.3.1"],
+          "tags": ["flexible opportunity", "themes", "enterprise", "commissioning"]
+        }
+      ]
+    },
+    {
+      "id": "2.3",
+      "title": "Extra-Curricular Student Life, Navigation and Belonging",
+      "owner": "Zak Evans",
+      "summary": "Makes the wider King's experience navigable, participatory and connected.",
+      "deliverables": [
+        {
+          "id": "2.3.1",
+          "title": "Digital Portal for Opportunity Navigation",
+          "lead": "Amin El-Achi",
+          "summary": "Builds out the existing Eventbrite-like platform into the digital route through which students find, understand and navigate additional opportunities.",
+          "problemSolved": "Students can struggle to see the full King's offer, understand relevance or find opportunities at the right moment.",
+          "whatChanges": "King's builds from an existing opportunity platform towards a richer digital portal that connects opportunities to Canvas, skills, evidence and recognition.",
+          "components": [
+            { "title": "Existing platform build-out", "summary": "Clarify what the Eventbrite-like platform already does and what Edge needs it to become." },
+            { "title": "Opportunity taxonomy and data", "summary": "Define how opportunities are described, categorised, updated and connected to skills and aspiration." },
+            { "title": "Navigation journey", "summary": "Enable search, filtering, recommendations and movement from Canvas into opportunities." },
+            { "title": "Digital integration", "summary": "Connect to evidence capture, recognition, microcredentials and the enhanced student record over time." }
+          ],
+          "steps": [
+            { "id": "2.3.1-step-1", "title": "Build from the existing platform", "period": "now-xmas-2026", "summary": "Clarify current platform capability and Edge requirements.", "dependsOn": ["single-student-app"] },
+            { "id": "2.3.1-step-2", "title": "Define taxonomy and data requirements", "period": "jan-summer-2027", "summary": "Specify opportunity data, categorisation and links to skills, aspiration, timing, format and accessibility.", "dependsOn": ["2.3.1-step-1"] },
+            { "id": "2.3.1-step-3", "title": "Develop the navigation journey", "period": "ay-2027-28-to-2028-29", "summary": "Extend the platform so students can search, filter and navigate opportunities.", "dependsOn": ["2.2.1", "2.3.1-step-2"] },
+            { "id": "2.3.1-step-4", "title": "Integrate with wider Edge infrastructure", "period": "ay-2029-30", "summary": "Connect opportunity navigation to Canvas, skills, evidence, microcredentials and the enhanced record.", "dependsOn": ["2.1.3", "2.4.3"] }
+          ],
+          "dependencies": [
+            { "targetId": "single-student-app", "type": "handoff", "label": "The portal is part of the wider Single Student App / Digital Portal work." },
+            { "targetId": "2.2.1", "type": "input", "label": "Needs Canvas logic for purpose and aspiration." },
+            { "targetId": "2.1.3", "type": "input", "label": "Needs the skills architecture for opportunity tagging and recommendation." }
+          ],
+          "feedsInto": ["2.4.3"],
+          "relatedDeliverables": ["2.2.1", "2.1.3", "2.4.3"],
+          "tags": ["digital", "portal", "opportunity navigation"]
+        },
+        {
+          "id": "2.3.2",
+          "title": "Belonging and Participation: Physical and Digital",
+          "lead": "Steph White",
+          "summary": "Builds participation, connection and belonging across campus life, digital spaces and less campus-present student groups.",
+          "problemSolved": "Students do not all experience King's as a connected community, particularly commuter, digital, working and less campus-present students.",
+          "whatChanges": "King's develops a joined-up model for physical and digital participation, making campus and community easier to enter and more worth engaging with.",
+          "components": [
+            { "title": "Destination campus", "summary": "Low-friction, visible and inclusive reasons for students to be on campus beyond timetabled teaching." },
+            { "title": "Digital belonging", "summary": "Routes for digital, hybrid and less campus-present students to feel part of King's." },
+            { "title": "Inclusive participation", "summary": "Design around commuter students, working students, carers, disabled students, international students and students under financial pressure." },
+            { "title": "Partnership delivery", "summary": "Work with KCLSU, faculties, services, sport, music, faith, culture and student communities." }
+          ],
+          "steps": [
+            { "id": "2.3.2-step-1", "title": "Define the participation and belonging model", "period": "now-xmas-2026", "summary": "Set the model for destination campus, digital belonging and commuter-sensitive design.", "dependsOn": [] },
+            { "id": "2.3.2-step-2", "title": "Pilot physical and digital formats", "period": "jan-summer-2027", "summary": "Test low-friction campus activity, digital community models and inclusive participation formats.", "dependsOn": ["2.3.2-step-1"] },
+            { "id": "2.3.2-step-3", "title": "Scale across campuses and groups", "period": "ay-2027-28-to-2028-29", "summary": "Expand models that work, with attention to students with different participation constraints.", "dependsOn": ["2.3.2-step-2"] },
+            { "id": "2.3.2-step-4", "title": "Embed into the annual student experience cycle", "period": "ay-2029-30", "summary": "Make participation and belonging a planned part of campus, digital and student life delivery.", "dependsOn": ["2.3.4"] }
+          ],
+          "dependencies": [],
+          "feedsInto": ["2.3.4"],
+          "relatedDeliverables": ["2.3.4", "2.3.3"],
+          "tags": ["belonging", "participation", "campus", "digital"]
+        },
+        {
+          "id": "2.3.3",
+          "title": "Subject Societies and Student-Led Discipline Communities",
+          "lead": "KCLSU Delegate",
+          "summary": "Strengthens subject societies as student-led conveners of disciplinary identity, belonging, opportunity, alumni connection and peer community.",
+          "problemSolved": "King's has strong subject societies, but they are not yet systematically supported as part of the graduate premium ecology.",
+          "whatChanges": "Subject societies become better supported as discipline-level conveners while preserving student-led independence.",
+          "components": [
+            { "title": "Discipline-level community", "summary": "Strengthen belonging and intellectual identity within disciplines." },
+            { "title": "Alumni and employer connection", "summary": "Create routes to speakers, employer contacts, mentoring and sector insight." },
+            { "title": "Department and Careers links", "summary": "Connect societies more consistently with departments, Careers, Alumni and opportunity growth." },
+            { "title": "Student leadership support", "summary": "Support society leaders as conveners, hosts, connectors and peer leaders." }
+          ],
+          "steps": [
+            { "id": "2.3.3-step-1", "title": "Map strengths and needs", "period": "now-xmas-2026", "summary": "Understand society activity, department links, alumni engagement, employer connection and support needs.", "dependsOn": [] },
+            { "id": "2.3.3-step-2", "title": "Define the support model", "period": "jan-summer-2027", "summary": "Create a light-touch model for funding, events, leadership, department links and Careers / Alumni connection.", "dependsOn": ["2.3.3-step-1"] },
+            { "id": "2.3.3-step-3", "title": "Pilot discipline community partnerships", "period": "ay-2027-28-to-2028-29", "summary": "Test discipline-level community and opportunity convening with selected societies and departments.", "dependsOn": ["2.3.3-step-2"] },
+            { "id": "2.3.3-step-4", "title": "Embed as part of the Edge ecology", "period": "ay-2029-30", "summary": "Make societies a recognised route into disciplinary belonging, peer connection, alumni insight and opportunity.", "dependsOn": ["2.3.3-step-3"] }
+          ],
+          "dependencies": [],
+          "feedsInto": ["2.4.3"],
+          "relatedDeliverables": ["2.2.4", "2.4.3"],
+          "tags": ["subject societies", "student leadership", "discipline communities"]
+        },
+        {
+          "id": "2.3.4",
+          "title": "Rhythms of the Academic Year and Student Experience",
+          "lead": "Steph White",
+          "summary": "Designs the key moments, rituals and transitions through which students engage, reconnect, reflect, celebrate and move forward.",
+          "problemSolved": "Student engagement often depends on timing, but opportunities, belonging interventions and reflective moments are not always aligned to the rhythm of the student year.",
+          "whatChanges": "King's creates a more intentional annual rhythm for welcome, reconnection, opportunity windows, reflection, celebration and transition.",
+          "components": [
+            { "title": "Welcome and early belonging", "summary": "Help students understand King's, connect with others and begin shaping their experience." },
+            { "title": "Transitions and reorientation", "summary": "Support students after assessment, between semesters and between years." },
+            { "title": "Opportunity windows and reflection", "summary": "Prompt students to explore opportunities, review plans and evidence development." },
+            { "title": "Celebration and alumni transition", "summary": "Recognise contribution, belonging, achievement and movement beyond King's." }
+          ],
+          "steps": [
+            { "id": "2.3.4-step-1", "title": "Map the student year", "period": "now-xmas-2026", "summary": "Identify moments when students need welcome, reconnection, purpose, opportunity, reflection and celebration.", "dependsOn": [] },
+            { "id": "2.3.4-step-2", "title": "Design the Edge annual rhythm", "period": "jan-summer-2027", "summary": "Build recurring moments, rituals, prompts and opportunity windows across the year.", "dependsOn": ["2.3.4-step-1"] },
+            { "id": "2.3.4-step-3", "title": "Launch the annual rhythm", "period": "ay-2027-28-to-2028-29", "summary": "Test through welcome, assessment recovery, transition points, opportunity windows and celebration moments.", "dependsOn": ["2.3.4-step-2"] },
+            { "id": "2.3.4-step-4", "title": "Refine annually", "period": "ay-2029-30", "summary": "Make the rhythm part of planning for student experience, communications, belonging and opportunity engagement.", "dependsOn": ["2.3.4-step-3"] }
+          ],
+          "dependencies": [],
+          "feedsInto": ["2.3.2", "2.2.1"],
+          "relatedDeliverables": ["2.2.1", "2.3.2"],
+          "tags": ["student year", "rhythm", "transitions", "belonging"]
+        }
+      ]
+    },
+    {
+      "id": "2.4",
+      "title": "Evidence and Articulation of the King's Graduate Premium",
+      "owner": "Rachel Kershaw",
+      "summary": "Makes the graduate premium evidenced, externally validated, recognised by students and activated with key audiences.",
+      "deliverables": [
+        {
+          "id": "2.4.1",
+          "title": "Graduate Premium Evidence Packs",
+          "lead": "Daniel Robson",
+          "summary": "Builds the evidence base for the graduate premium at institutional, departmental, discipline and market level.",
+          "problemSolved": "The value of a King's education is too easy to assert in general terms and too hard to evidence in specific, audience-relevant ways.",
+          "whatChanges": "King's develops evidence packs that combine outcomes, destinations, stories, employer insight and distinctive King's experiences.",
+          "components": [
+            { "title": "Data deep dive", "summary": "Graduate Outcomes, LEO, highly skilled employment, further study, salary, destination patterns and internal evidence." },
+            { "title": "Department story design", "summary": "Work with departments to articulate their distinctive graduate premium story." },
+            { "title": "Prototype evidence packs", "summary": "Build packs for selected departments or disciplines." },
+            { "title": "Narrative capture cycle", "summary": "Capture student stories, alumni cases, employer testimony and distinctive experience examples." }
+          ],
+          "steps": [
+            { "id": "2.4.1-step-1", "title": "Start data deep dive", "period": "now-xmas-2026", "summary": "Pull together outcomes and destination evidence.", "dependsOn": [] },
+            { "id": "2.4.1-step-2", "title": "Design department premium stories", "period": "now-xmas-2026", "summary": "Work with departments on what their distinctive graduate premium story is.", "dependsOn": ["2.1.1"] },
+            { "id": "2.4.1-step-3", "title": "Prototype evidence packs", "period": "jan-summer-2027", "summary": "Build first packs for selected departments, disciplines or markets.", "dependsOn": ["2.4.1-step-1", "2.4.1-step-2"] },
+            { "id": "2.4.1-step-4", "title": "Refresh and capture narratives", "period": "ay-2027-28-to-2028-29", "summary": "Establish regular narrative capture and evidence refresh cycles.", "dependsOn": ["2.4.1-step-3"] }
+          ],
+          "dependencies": [
+            { "targetId": "2.1.1", "type": "evidence-feed", "label": "Uses programme deep dives to strengthen evidence packs." }
+          ],
+          "feedsInto": ["2.4.4"],
+          "relatedDeliverables": ["2.1.1", "2.4.4"],
+          "tags": ["evidence packs", "data", "market"]
+        },
+        {
+          "id": "2.4.2",
+          "title": "Employer, Industry and Alumni Validation System",
+          "lead": "Andrew Wright",
+          "summary": "Creates a systematic approach to employer, industry and alumni validation of the graduate premium, skills priorities and opportunity agenda.",
+          "problemSolved": "Employer, industry and alumni insight exists, but is not yet consistently connected to a graduate premium validation model.",
+          "whatChanges": "King's builds an external validation system that tests the premium, refreshes skills priorities and informs opportunity growth.",
+          "components": [
+            { "title": "Existing activity map", "summary": "Map employer boards, alumni groups, faculty advisory panels, Careers activity and partnerships." },
+            { "title": "Validation framework", "summary": "Define how groups test graduate premium claims and skills priorities." },
+            { "title": "Structured validation cycles", "summary": "Run validation with selected panels, departments, disciplines or sectors." },
+            { "title": "Annual feedback loop", "summary": "Feed external insight into evidence packs, opportunity growth, curriculum conversations and market activation." }
+          ],
+          "steps": [
+            { "id": "2.4.2-step-1", "title": "Map existing activity", "period": "now-xmas-2026", "summary": "Identify existing panels, boards and partnership structures.", "dependsOn": [] },
+            { "id": "2.4.2-step-2", "title": "Agree validation framework", "period": "now-xmas-2026", "summary": "Create a common framework so existing activity can contribute to graduate premium validation.", "dependsOn": ["2.4.2-step-1"] },
+            { "id": "2.4.2-step-3", "title": "Run first validation cycle", "period": "jan-summer-2027", "summary": "Test the framework with selected groups, departments or sectors.", "dependsOn": ["2.4.2-step-2"] },
+            { "id": "2.4.2-step-4", "title": "Embed annual loop", "period": "ay-2027-28-to-2028-29", "summary": "Make validation a regular input to evidence, opportunity and curriculum work.", "dependsOn": ["2.4.2-step-3"] }
+          ],
+          "dependencies": [],
+          "feedsInto": ["2.4.1", "2.2.2", "2.2.4"],
+          "relatedDeliverables": ["2.4.1", "2.2.2", "2.2.4"],
+          "tags": ["validation", "employers", "alumni"]
+        },
+        {
+          "id": "2.4.3",
+          "title": "Student Evidence, Recognition and Articulation",
+          "lead": "Vanessa Freeman",
+          "summary": "Helps students surface, evidence, recognise and articulate learning gains beyond the formal degree classification.",
+          "problemSolved": "Students develop significant learning gains beyond the classification, but these are not consistently surfaced, recognised or translated into usable narratives.",
+          "whatChanges": "King's develops a recognition and articulation model covering learning gains, badges, microcredentials, wider learning, capstone options and a HEAR alternative.",
+          "components": [
+            { "title": "Learning gains framework", "summary": "Define what skills, experiences, leadership and wider formation should be surfaced." },
+            { "title": "Recognition architecture", "summary": "Set principles for badges, microcredentials, validated activities and wider learning recognition." },
+            { "title": "Enhanced record", "summary": "Develop a richer record of academic outcomes, skills, experiences and recognition." },
+            { "title": "Articulation support", "summary": "Help students turn evidence into credible narratives for different futures." }
+          ],
+          "steps": [
+            { "id": "2.4.3-step-1", "title": "Produce recognition options paper", "period": "jan-summer-2027", "summary": "Explore microcredentials, badges, wider learning recognition, capstone and HEAR alternative options.", "dependsOn": [] },
+            { "id": "2.4.3-step-2", "title": "Agree evidence and recognition framework", "period": "jan-summer-2027", "summary": "Define what counts, what can be recognised and what governance is needed.", "dependsOn": ["2.4.3-step-1"] },
+            { "id": "2.4.3-step-3", "title": "Pilot recognition models", "period": "ay-2027-28-to-2028-29", "summary": "Test badges, microcredentials, wider learning recognition and possible capstone models.", "dependsOn": ["2.4.3-step-2", "single-student-app"] },
+            { "id": "2.4.3-step-4", "title": "Mature HEAR alternative", "period": "ay-2029-30", "summary": "Develop the future enhanced student learning record proposition.", "dependsOn": ["2.4.3-step-3"] }
+          ],
+          "dependencies": [
+            { "targetId": "single-student-app", "type": "handoff", "label": "Needs technical support for badges, microcredentials, evidence capture and enhanced record functionality." },
+            { "targetId": "2.1.3", "type": "input", "label": "Uses the skills architecture for evidence and articulation." }
+          ],
+          "feedsInto": ["2.4.4", "2.3.1"],
+          "relatedDeliverables": ["2.1.3", "2.3.1", "2.4.4"],
+          "tags": ["recognition", "microcredentials", "HEAR", "articulation"]
+        },
+        {
+          "id": "2.4.4",
+          "title": "Graduate Premium Engagement and Market Activation",
+          "lead": "Tania Rhodes-Taylor delegate",
+          "summary": "Ensures the graduate premium is understood and valued internally by students and staff, and recognised externally by applicants, families, employers, alumni, partners and markets.",
+          "problemSolved": "The graduate premium only matters if students engage with it and external audiences recognise it as credible and distinctive.",
+          "whatChanges": "King's builds internal engagement and external recognition of the graduate premium through evidence-led materials, student engagement and market activation.",
+          "components": [
+            { "title": "Student engagement", "summary": "Build student understanding of King's Edge, integrated opportunities, skills, recognition and graduate value." },
+            { "title": "Staff and delivery adoption", "summary": "Create shared language for departments, advisers, Careers, KCLSU and student-facing staff." },
+            { "title": "Applicant and market activation", "summary": "Use evidence packs for recruitment, conversion, international positioning and audience-specific messaging." },
+            { "title": "Employer, alumni and sector penetration", "summary": "Build recognition through advocates, stories, partnerships and sector engagement." }
+          ],
+          "steps": [
+            { "id": "2.4.4-step-1", "title": "Start student engagement", "period": "now-xmas-2026", "summary": "Build student appetite around King's Edge, integrated opportunities, skills and recognition.", "dependsOn": [] },
+            { "id": "2.4.4-step-2", "title": "Develop internal activation model", "period": "jan-summer-2027", "summary": "Create shared language, prompts and materials for staff and students.", "dependsOn": ["2.4.4-step-1"] },
+            { "id": "2.4.4-step-3", "title": "Test market propositions", "period": "ay-2027-28-to-2028-29", "summary": "Use evidence packs to test applicant, family, employer, alumni and international propositions.", "dependsOn": ["2.4.1"] },
+            { "id": "2.4.4-step-4", "title": "Build sector and market penetration", "period": "ay-2029-30", "summary": "Use employer advocates, alumni voices, discipline stories, campaigns and partnerships.", "dependsOn": ["2.4.4-step-3", "2.4.2"] }
+          ],
+          "dependencies": [
+            { "targetId": "2.4.1", "type": "input", "label": "Market activation depends on evidence packs maturing." },
+            { "targetId": "2.4.2", "type": "input", "label": "Sector recognition should draw on employer, industry and alumni validation." }
+          ],
+          "feedsInto": [],
+          "relatedDeliverables": ["2.4.1", "2.4.2", "2.4.3"],
+          "tags": ["engagement", "market", "activation"]
+        }
+      ]
+    }
+  ],
+  "crossProgrammeDependencies": [
+    {
+      "id": "education-cultures-innovation",
+      "title": "Education Cultures and Innovation",
+      "summary": "Provides the shared practice infrastructure King's Edge needs in order to grow experiential learning with quality, confidence and coherence.",
+      "edgeNeedsServiced": [
+        "Experiential learning typology across curriculum and co-curriculum",
+        "Learning design principles for high-quality experiential provision",
+        "Operational and assurance principles for different models",
+        "Future entitlement ambition for students",
+        "Inputs into curriculum growth, co-curricular growth and opportunity commissioning"
+      ],
+      "whatChanges": "Experiential learning moves from a set of strong but uneven practices to a shared institutional model that can support growth, quality, assurance and access.",
+      "relatedDeliverables": ["2.1.2", "2.1.4", "2.2.2", "2.2.4"]
+    },
+    {
+      "id": "curriculum-framework-review",
+      "title": "Curriculum Framework and Review",
+      "summary": "Provides the main route through which King's Edge requirements are embedded in the academic curriculum.",
+      "edgeNeedsServiced": [
+        "Audit of curriculum-embedded skills development",
+        "Audit of curriculum-embedded experiential learning",
+        "Identification of programme-level graduate premium contribution",
+        "Baseline for curriculum opportunity growth and assurance",
+        "Evidence to support programme graduate premium profiles and evidence packs"
+      ],
+      "whatChanges": "Edge requirements become part of mainstream curriculum review, avoiding duplication and embedding skills, experiential learning and graduate value in the core academic framework.",
+      "relatedDeliverables": ["2.1.1", "2.1.3", "2.1.4", "2.4.1"]
+    },
+    {
+      "id": "single-student-app",
+      "title": "Single Student App / Digital Portal",
+      "summary": "Provides the digital environment through which the King's Edge offer becomes navigable, personal and usable for students.",
+      "edgeNeedsServiced": [
+        "King's Canvas functionality for purpose, aspiration and planning",
+        "Digital opportunity catalogue and navigation",
+        "Search, filtering and recommendation of opportunities",
+        "Links between opportunities, skills profiles and student aspirations",
+        "Technical support for microcredentials and digital badges",
+        "Future enhanced transcript / HEAR-alternative functionality",
+        "Evidence capture and articulation support"
+      ],
+      "whatChanges": "Students move from a fragmented opportunity landscape to a coherent digital route through which they can plan, find, access, evidence and articulate the value of their King's experience.",
+      "relatedDeliverables": ["2.2.1", "2.3.1", "2.4.3"]
+    }
+  ]
+}
