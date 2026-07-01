@@ -1,21 +1,21 @@
 :root {
   color-scheme: light;
-  font-family: "KingsBureauGrot", "Bureau Grot", Arial, Helvetica, sans-serif;
-  color: #050505;
+  color: #090909;
   background: #ffffff;
   --font-brand: "KingsBureauGrot", "Bureau Grot", Arial, Helvetica, sans-serif;
-  --ink: #050505;
-  --muted: #575757;
-  --faint: #f5f5f5;
+  --font-body: Arial, Helvetica, sans-serif;
+  --ink: #090909;
+  --muted: #555555;
+  --faint: #f7f7f7;
   --paper: #ffffff;
-  --border: #d8d8d8;
-  --border-strong: #050505;
+  --border: #d7d7d7;
+  --border-strong: #090909;
   --accent: #ed1c24;
   --accent-dark: #b51218;
-  --accent-soft: #fff0f0;
+  --accent-soft: #fff3f3;
   --gold: #d6a93a;
   --green: #2f7d62;
-  --shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+  --shadow: 0 10px 24px rgba(0, 0, 0, 0.06);
 }
 
 * {
@@ -27,7 +27,9 @@ body {
   min-width: 320px;
   background: var(--paper);
   color: var(--ink);
-  font-family: var(--font-brand);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.45;
 }
 
 a {
@@ -52,16 +54,16 @@ a {
 .brand {
   display: inline-flex;
   align-items: center;
-  min-width: min(420px, 54vw);
+  min-width: min(410px, 54vw);
   padding: 1rem 1.25rem 1rem clamp(1rem, 3vw, 2rem);
   color: #ffffff;
   background: var(--accent);
-  font-size: clamp(1.1rem, 1.9vw, 1.65rem);
-  font-weight: 800;
-  letter-spacing: -0.03em;
-  line-height: 1;
+  font-family: var(--font-brand);
+  font-size: clamp(1rem, 1.45vw, 1.35rem);
+  font-weight: 400;
+  letter-spacing: -0.015em;
+  line-height: 1.05;
   text-decoration: none;
-  text-transform: uppercase;
 }
 
 .site-header nav {
@@ -78,13 +80,14 @@ a {
 .back-link {
   border: 2px solid var(--ink);
   border-radius: 0;
-  padding: 0.5rem 0.75rem;
+  padding: 0.52rem 0.78rem;
   text-decoration: none;
   color: var(--ink);
   background: #ffffff;
-  font-size: 0.92rem;
-  font-weight: 800;
-  line-height: 1;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1.1;
   transition: background 150ms ease, color 150ms ease, border-color 150ms ease;
 }
 
@@ -97,7 +100,7 @@ a {
 }
 
 main {
-  width: min(1520px, calc(100% - 2rem));
+  width: min(1480px, calc(100% - 2rem));
   margin: 0 auto;
   padding: 2rem 0 4rem;
 }
@@ -118,9 +121,9 @@ main {
   position: relative;
   overflow: hidden;
   border-radius: 0;
-  padding: clamp(2rem, 6vw, 5.25rem) clamp(1.5rem, 5vw, 4rem) clamp(2rem, 5vw, 4rem);
+  padding: clamp(2rem, 5vw, 4.5rem) clamp(1.5rem, 5vw, 4rem) clamp(2rem, 4vw, 3.5rem);
   margin-bottom: 1.25rem;
-  border-left: clamp(1.6rem, 6vw, 5.5rem) solid var(--accent);
+  border-left: clamp(1.1rem, 3vw, 2rem) solid var(--accent);
 }
 
 .hero::after,
@@ -129,11 +132,12 @@ main {
   position: absolute;
   right: clamp(1rem, 3vw, 2rem);
   bottom: 1rem;
-  color: rgba(237, 28, 36, 0.09);
-  font-size: clamp(3.5rem, 12vw, 10rem);
-  font-weight: 900;
-  line-height: 0.75;
-  letter-spacing: -0.08em;
+  color: rgba(237, 28, 36, 0.055);
+  font-family: var(--font-brand);
+  font-size: clamp(3rem, 10vw, 8.5rem);
+  font-weight: 400;
+  line-height: 0.82;
+  letter-spacing: -0.03em;
   pointer-events: none;
 }
 
@@ -142,16 +146,17 @@ main {
 .section-heading h1 {
   position: relative;
   z-index: 1;
-  max-width: 980px;
-  font-size: clamp(3.1rem, 7.7vw, 7.8rem);
-  line-height: 0.88;
+  max-width: 1050px;
+  font-family: var(--font-brand);
+  font-size: clamp(3rem, 6.7vw, 6.4rem);
+  font-weight: 400;
+  line-height: 0.95;
   margin: 0 0 1rem;
-  letter-spacing: -0.075em;
-  text-transform: uppercase;
+  letter-spacing: -0.035em;
 }
 
 .section-heading h1 {
-  font-size: clamp(2.5rem, 5vw, 5.5rem);
+  font-size: clamp(2.45rem, 4.5vw, 4.8rem);
 }
 
 .hero p,
@@ -159,10 +164,10 @@ main {
 .section-heading p {
   position: relative;
   z-index: 1;
-  max-width: 820px;
+  max-width: 850px;
   color: var(--muted);
-  font-size: clamp(1rem, 1.35vw, 1.25rem);
-  line-height: 1.4;
+  font-size: clamp(1rem, 1.2vw, 1.18rem);
+  line-height: 1.45;
 }
 
 .eyebrow,
@@ -173,35 +178,36 @@ main {
   color: #ffffff;
   background: var(--accent);
   border-radius: 0;
-  padding: 0.28rem 0.55rem;
-  font-size: 0.75rem;
-  font-weight: 900;
+  padding: 0.32rem 0.6rem;
+  font-family: var(--font-body);
+  font-size: 0.73rem;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.09em;
+  letter-spacing: 0.055em;
 }
 
 .section-heading {
   position: relative;
   border-radius: 0;
-  padding: 1.25rem 1.25rem 1.25rem 1.5rem;
+  padding: 1.35rem 1.35rem 1.35rem 1.5rem;
   margin: 1rem 0;
-  border-left: 1rem solid var(--accent);
+  border-left: 0.75rem solid var(--accent);
 }
 
 .section-heading h1,
 .section-heading h2 {
   margin: 0.25rem 0;
-  text-transform: uppercase;
-  letter-spacing: -0.05em;
 }
 
 .section-heading h2,
 .sidebars-preview h2,
 .panel h2 {
-  font-size: clamp(1.55rem, 2.7vw, 2.7rem);
-  line-height: 0.95;
-  letter-spacing: -0.045em;
-  text-transform: uppercase;
+  font-family: var(--font-brand);
+  font-size: clamp(1.5rem, 2.5vw, 2.45rem);
+  font-weight: 400;
+  line-height: 1.02;
+  letter-spacing: -0.025em;
+  margin-bottom: 0.75rem;
 }
 
 .project-grid {
@@ -231,10 +237,11 @@ main {
 
 .project-column-header h2 {
   margin: 0.75rem 0 0.5rem;
-  font-size: clamp(1.2rem, 1.9vw, 1.75rem);
-  line-height: 0.95;
-  letter-spacing: -0.045em;
-  text-transform: uppercase;
+  font-family: var(--font-brand);
+  font-size: clamp(1.35rem, 1.8vw, 1.85rem);
+  font-weight: 400;
+  line-height: 1.02;
+  letter-spacing: -0.02em;
 }
 
 .project-column-header p,
@@ -247,15 +254,16 @@ main {
 .dependency-lens p,
 .compact-list {
   color: var(--muted);
+  line-height: 1.4;
 }
 
 .project-column-header p {
-  color: rgba(255, 255, 255, 0.82);
+  color: rgba(255, 255, 255, 0.84);
 }
 
 .owner,
 .lead {
-  font-weight: 900;
+  font-weight: 700;
   color: var(--ink) !important;
 }
 
@@ -280,7 +288,7 @@ main {
   border-bottom: 1px solid var(--border);
   border-radius: 0;
   padding: 1rem;
-  transition: background 150ms ease, color 150ms ease, border-color 150ms ease, transform 150ms ease;
+  transition: background 150ms ease, color 150ms ease, border-color 150ms ease;
 }
 
 .component-card,
@@ -295,7 +303,6 @@ main {
 
 .deliverable-card:hover,
 .index-row:hover {
-  transform: none;
   border-color: var(--accent);
   background: var(--accent-soft);
   box-shadow: none;
@@ -308,10 +315,11 @@ main {
 .dependency-card h3 {
   margin: 0.75rem 0 0.5rem;
   color: var(--ink);
-  font-size: 1.05rem;
-  line-height: 1;
-  letter-spacing: -0.035em;
-  text-transform: uppercase;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
 }
 
 .sidebars-preview {
@@ -327,7 +335,7 @@ main {
 }
 
 .dependency-grid.large {
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
 }
 
 .dependency-card {
@@ -359,7 +367,7 @@ main {
   background: #ffffff;
   color: var(--ink);
   font: inherit;
-  font-weight: 800;
+  font-weight: 700;
 }
 
 .secondary-button {
@@ -413,13 +421,12 @@ main {
   display: inline-flex;
   width: fit-content;
   border-radius: 0;
-  padding: 0.35rem 0.6rem;
+  padding: 0.36rem 0.62rem;
   background: #ffffff;
   border: 2px solid var(--ink);
   color: var(--ink);
-  font-size: 0.84rem;
-  font-weight: 900;
-  text-transform: uppercase;
+  font-size: 0.82rem;
+  font-weight: 700;
 }
 
 .detail-grid {
@@ -452,9 +459,10 @@ main {
 }
 
 .depends {
-  font-size: 0.9rem;
+  font-size: 0.92rem;
   color: var(--accent-dark) !important;
-  font-weight: 800;
+  font-weight: 700;
+  line-height: 1.35;
 }
 
 .dependency-list li {
@@ -483,7 +491,7 @@ main {
   margin: 1rem 0;
   padding: 1.25rem;
   border: 2px solid var(--ink);
-  border-left: 1rem solid var(--accent);
+  border-left: 0.75rem solid var(--accent);
   border-radius: 0;
   background: #ffffff;
   box-shadow: none;
@@ -501,8 +509,9 @@ main {
 
 .dependency-lens h2,
 .dependency-lens h3 {
-  text-transform: uppercase;
-  letter-spacing: -0.04em;
+  font-family: var(--font-body);
+  font-weight: 700;
+  letter-spacing: -0.01em;
 }
 
 .compact-list {
@@ -528,7 +537,7 @@ main {
   margin: 1rem 0;
   color: var(--muted);
   font-size: 0.92rem;
-  font-weight: 800;
+  font-weight: 700;
 }
 
 .timeline-key span {
@@ -579,8 +588,7 @@ main {
   z-index: 5;
   background: var(--ink);
   color: #ffffff;
-  font-weight: 900;
-  text-transform: uppercase;
+  font-weight: 700;
 }
 
 .timeline-header > div,
@@ -609,14 +617,13 @@ main {
 }
 
 .timeline-title strong {
-  line-height: 1;
-  text-transform: uppercase;
-  letter-spacing: -0.035em;
+  line-height: 1.15;
+  font-weight: 700;
 }
 
 .timeline-cell {
   min-height: 96px;
-  background-image: linear-gradient(to bottom, transparent calc(100% - 1px), rgba(237, 28, 36, 0.08) 1px);
+  background: #ffffff;
 }
 
 .timeline-block {
@@ -636,7 +643,8 @@ main {
   padding: 0.65rem;
   margin-bottom: 0.5rem;
   font-size: 0.88rem;
-  font-weight: 800;
+  font-weight: 700;
+  line-height: 1.25;
   transition: background 150ms ease, color 150ms ease, opacity 150ms ease, border-color 150ms ease;
 }
 
@@ -683,7 +691,7 @@ main {
   place-items: center;
   background: var(--accent);
   color: white;
-  font-weight: 900;
+  font-weight: 700;
 }
 
 .site-footer {
@@ -734,11 +742,11 @@ main {
   .hero h1,
   .detail-hero h1,
   .section-heading h1 {
-    font-size: 2.7rem;
+    font-size: 2.8rem;
   }
 
   .hero,
   .detail-hero {
-    border-left-width: 1.25rem;
+    border-left-width: 1rem;
   }
 }
