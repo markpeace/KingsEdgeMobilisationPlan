@@ -16,7 +16,7 @@ function useHashRoute() {
 }
 
 function Nav() {
-  return <header className="site-header"><a href="#/" className="brand">King's Edge Mobilisation Plan</a><nav><a href="#/">Overview</a><a href="#/deliverables">Deliverables</a><a href="#/timeline">Timeline</a><a href="#/enabling-projects">Related projects</a></nav></header>;
+  return <header className="site-header"><a href="#/" className="brand">King's Edge Mobilisation Plan</a><nav><a href="#/">Home</a><a href="#/projects">Projects</a><a href="#/deliverables">Deliverables</a><a href="#/timeline">Timeline</a><a href="#/enabling-projects">Related projects</a></nav></header>;
 }
 
 function StatusPills({ id, compact = false }) {
@@ -38,8 +38,12 @@ function SmartLink({ id, idMap }) {
   return <span className="chip">{resolveLabel(id, idMap)}</span>;
 }
 
-function Overview() {
-  return <main><section className="hero"><p className="eyebrow">Interactive delivery map</p><h1>{plan.programme.title}</h1><p>{plan.programme.purpose}</p></section><section className="section-heading"><h2>King's Edge projects and deliverables</h2><p>Browse the four Edge projects and click any deliverable to drill into its detailed plan.</p></section><div className="project-grid">{plan.projects.map((project) => <ProjectColumn key={project.id} project={project} />)}</div><section className="sidebars-preview"><h2>Related delivery projects</h2><p className="subtle">These are parallel projects in the wider portfolio that carry some of the core requirements for Edge.</p><div className="dependency-grid">{enablingProjects.map((project) => <EnablingCard key={project.id} project={project} compact />)}</div></section></main>;
+function Landing() {
+  return <main className="landing-main"><section className="hero landing-hero"><p className="eyebrow">Interactive delivery map</p><h1>{plan.programme.title}</h1><p>{plan.programme.purpose}</p><div className="landing-links"><a href="#/projects"><span>01</span><strong>Projects and deliverables</strong><em>Browse the four King's Edge projects and their sixteen deliverables.</em></a><a href="#/deliverables"><span>02</span><strong>Deliverables index</strong><em>Search and filter by project, status and confidence.</em></a><a href="#/timeline"><span>03</span><strong>Timeline</strong><em>View sequencing and step-to-step dependencies.</em></a><a href="#/enabling-projects"><span>04</span><strong>Related projects</strong><em>See the wider portfolio projects carrying Edge requirements.</em></a></div></section></main>;
+}
+
+function ProjectsPage() {
+  return <main><section className="section-heading"><p className="eyebrow">Projects</p><h1>King's Edge projects and deliverables</h1><p>Browse the four Edge projects and click any deliverable to drill into its detailed plan.</p></section><div className="project-grid">{plan.projects.map((project) => <ProjectColumn key={project.id} project={project} />)}</div><section className="sidebars-preview"><h2>Related delivery projects</h2><p className="subtle">These are parallel projects in the wider portfolio that carry some of the core requirements for Edge.</p><div className="dependency-grid">{enablingProjects.map((project) => <EnablingCard key={project.id} project={project} compact />)}</div></section></main>;
 }
 
 function ProjectColumn({ project }) {
@@ -112,10 +116,11 @@ function Site() {
   const detailDeliverable = detailMatch ? deliverables.find((deliverable) => deliverable.id === detailMatch[1]) : null;
   let page;
   if (detailMatch) page = <DeliverableDetail deliverable={detailDeliverable} idMap={idMap} dependencyIndex={dependencyIndex} />;
+  else if (path === '/projects') page = <ProjectsPage />;
   else if (path === '/deliverables') page = <DeliverablesIndex deliverables={deliverables} />;
   else if (path === '/timeline') page = <TimelineView timelineItems={timelineItems} idMap={idMap} dependencyIndex={dependencyIndex} />;
   else if (path === '/enabling-projects' || path === '/dependencies') page = <EnablingProjectsView idMap={idMap} />;
-  else page = <Overview />;
+  else page = <Landing />;
   return <><Nav />{page}<footer className="site-footer"><p>King's Edge Mobilisation Plan. Rendered from JSON data.</p></footer></>;
 }
 
