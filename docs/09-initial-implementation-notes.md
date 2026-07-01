@@ -7,7 +7,7 @@ The first implementation has been scaffolded as a lightweight Vite / React site.
 - Overview page with four project columns and sixteen deliverables
 - Deliverables index with search and project filter
 - Deliverable detail pages driven by JSON
-- Timeline / Gantt-style view with dependency markers
+- Timeline / Gantt-style view with dependency markers and dependency highlighting
 - Cross-programme dependencies page
 
 ## Implemented data source
@@ -33,7 +33,19 @@ The data includes:
 
 ## Current dependency treatment
 
-The timeline shows dependency markers on steps that depend on another item. Hovering over a step shows the relevant dependency detail in the browser tooltip.
+The timeline now includes a dependency lens.
+
+Users can click a timeline step to show:
+
+- the selected step
+- what it depends on
+- what it feeds into
+- highlighted dependency and dependent blocks in the Gantt
+
+The timeline also includes filters for:
+
+- project
+- major cross-programme dependency
 
 The deliverable detail pages show:
 
@@ -41,14 +53,28 @@ The deliverable detail pages show:
 - feeds into
 - step-level dependencies
 
-Later versions could add optional dependency lines or a network view, but the first version keeps this deliberately restrained to avoid visual clutter.
+Later versions could still add optional dependency lines or a network view, but the current version keeps the main Gantt readable.
+
+## Data validation
+
+A lightweight validation script has been added:
+
+```bash
+npm run validate:data
+```
+
+The production build now runs validation before building:
+
+```bash
+npm run build
+```
 
 ## Next improvements
 
 Possible next improvements:
 
-1. Add richer Gantt interactions, including click-to-highlight dependencies.
+1. Add status fields, such as not started, scoping, active, blocked or complete.
 2. Add a dependency matrix or network view.
-3. Add editable status fields, such as not started, in progress, blocked or complete.
-4. Add export or print styling for senior papers.
-5. Add a GitHub Pages workflow for automatic deployment.
+3. Add print / export styling for senior papers.
+4. Split React components into separate files as the interface grows.
+5. Add richer content editing guidance for non-technical users.
