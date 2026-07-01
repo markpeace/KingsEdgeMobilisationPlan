@@ -1,13 +1,17 @@
 # Source Notes
 
-This folder contains the first interactive site scaffold.
+This folder contains the current interactive site.
 
 ## Main files
 
-- `main.jsx` mounts the React app.
-- `App.jsx` contains the current routing and page components.
-- `styles.css` contains the current visual system.
-- `data/kings-edge-plan.json` is the single source of truth for the plan.
+- `site.jsx` is the active React entry point referenced by `index.html`.
+- `styles.css` contains the main visual system.
+- `status-utils.js` provides status and confidence helpers.
+- `plan-utils.js` provides plan lookup and dependency helpers.
+- `data/kings-edge-plan.json` holds the core King's Edge plan.
+- `data/enabling-projects.json` holds the related wider portfolio projects.
+- `data/step-dependencies.json` holds step-to-step dependency relationships.
+- `data/status.json` holds status, confidence and decision flags.
 
 ## Current routes
 
@@ -17,7 +21,9 @@ The app uses hash routing for static deployment:
 - `#/deliverables`
 - `#/deliverables/:id`
 - `#/timeline`
-- `#/dependencies`
+- `#/enabling-projects`
+
+The legacy `#/dependencies` route is still accepted and redirects conceptually to the related projects view.
 
 ## Data-driven rendering
 
