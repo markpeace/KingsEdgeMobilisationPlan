@@ -1,0 +1,29 @@
+{
+  "defaults": {
+    "status": "not-started",
+    "confidence": "needs-validation",
+    "decisionNeeded": false,
+    "note": "Initial placeholder status."
+  },
+  "items": {
+    "2.1.1": { "status": "scoping", "confidence": "needs-validation", "decisionNeeded": true, "note": "Deep dive method and early departments need agreement." },
+    "2.1.2": { "status": "scoping", "confidence": "settled", "decisionNeeded": true, "note": "CoP remit and convener need confirmation." },
+    "2.1.3": { "status": "scoping", "confidence": "settled", "decisionNeeded": false, "note": "Direction of travel is clear, technical architecture needs development." },
+    "2.1.4": { "status": "not-started", "confidence": "needs-validation", "decisionNeeded": true, "note": "Depends on the Curriculum Framework audit route and 2.1.2 outputs." },
+    "2.2.1": { "status": "scoping", "confidence": "settled", "decisionNeeded": true, "note": "Canvas lifecycle model and digital handoff need validation." },
+    "2.2.2": { "status": "not-started", "confidence": "needs-validation", "decisionNeeded": true, "note": "Needs CoP outputs before the operating model can be fully specified." },
+    "2.2.3": { "status": "not-started", "confidence": "placeholder", "decisionNeeded": true, "note": "Regulatory and academic model requires further scoping." },
+    "2.2.4": { "status": "scoping", "confidence": "needs-validation", "decisionNeeded": false, "note": "Early pre-pilots can move before full framework alignment." },
+    "2.3.1": { "status": "active", "confidence": "needs-validation", "decisionNeeded": false, "note": "Builds from an existing Eventbrite-like platform." },
+    "2.3.2": { "status": "scoping", "confidence": "needs-validation", "decisionNeeded": true, "note": "Physical and digital belonging model needs sharper definition." },
+    "2.3.3": { "status": "not-started", "confidence": "needs-validation", "decisionNeeded": true, "note": "KCLSU delegate and support model need confirmation." },
+    "2.3.4": { "status": "scoping", "confidence": "settled", "decisionNeeded": false, "note": "Concept is clear; needs mapping into annual rhythm." },
+    "2.4.1": { "status": "active", "confidence": "settled", "decisionNeeded": false, "note": "Can begin with data deep dive and story design." },
+    "2.4.2": { "status": "scoping", "confidence": "needs-validation", "decisionNeeded": true, "note": "Needs agreement on validation framework and use of existing panels." },
+    "2.4.3": { "status": "not-started", "confidence": "needs-validation", "decisionNeeded": true, "note": "Recognition model, microcredentials and HEAR alternative need options work." },
+    "2.4.4": { "status": "scoping", "confidence": "needs-validation", "decisionNeeded": false, "note": "Student engagement can begin before full market activation." },
+    "education-cultures-innovation": { "status": "scoping", "confidence": "settled", "decisionNeeded": true, "note": "CoP convener and remit need confirmation." },
+    "curriculum-framework-review": { "status": "active", "confidence": "needs-validation", "decisionNeeded": true, "note": "Edge audit requirements need to be captured early." },
+    "single-student-app": { "status": "active", "confidence": "needs-validation", "decisionNeeded": false, "note": "Edge requirements need to feed the existing digital work." }
+  }
+}
