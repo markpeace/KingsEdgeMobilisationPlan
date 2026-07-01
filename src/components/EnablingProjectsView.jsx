@@ -1,3 +1,5 @@
+import { enablingProjects } from '../plan-utils.js';
+
 export default function EnablingProjectsView() {
-  return null;
+  return <main>{enablingProjects.length}</main>;
 }
