@@ -36,6 +36,40 @@ function buildLookups(projects, dependencies) {
   return { deliverables, idMap };
 }
 
+function buildDependencyIndex(deliverables) {
+  const reverse = new Map();
+
+  const addReverse = (targetId, source) => {
+    if (!reverse.has(targetId)) reverse.set(targetId, []);
+    reverse.get(targetId).push(source);
+  };
+
+  deliverables.forEach((deliverable) => {
+    deliverable.dependencies?.forEach((dependency) => {
+      addReverse(dependency.targetId, {
+        sourceType: 'deliverable',
+        deliverable,
+        dependencyType: dependency.type,
+        label: dependency.label
+      });
+    });
+
+    deliverable.steps?.forEach((step) => {
+      step.dependsOn?.forEach((targetId) => {
+        addReverse(targetId, {
+          sourceType: 'step',
+          deliverable,
+          step,
+          dependencyType: 'step dependency',
+          label: step.summary
+        });
+      });
+    });
+  });
+
+  return reverse;
+}
+
 function resolveLabel(id, idMap) {
   const result = idMap.get(id);
   if (!result) return id;
@@ -282,22 +316,85 @@ function periodLabel(periodId) {
   return plan.timelinePeriods.find((period) => period.id === periodId)?.shortLabel || periodId;
 }
 
-function TimelineView({ deliverables, idMap }) {
+function TimelineView({ deliverables, idMap, dependencyIndex }) {
   const periods = [...plan.timelinePeriods].sort((a, b) => a.order - b.order);
+  const [projectFilter, setProjectFilter] = useState('all');
+  const [dependencyFilter, setDependencyFilter] = useState('all');
+  const [selectedStepId, setSelectedStepId] = useState(null);
+
+  const filteredDeliverables = useMemo(() => {
+    return deliverables.filter((deliverable) => {
+      const matchesProject = projectFilter === 'all' || deliverable.project.id === projectFilter;
+      const matchesDependency = dependencyFilter === 'all' || deliverable.dependencies?.some((dependency) => dependency.targetId === dependencyFilter) || deliverable.steps?.some((step) => step.dependsOn?.includes(dependencyFilter));
+      return matchesProject && matchesDependency;
+    });
+  }, [deliverables, projectFilter, dependencyFilter]);
+
+  const selectedEntry = selectedStepId ? idMap.get(selectedStepId) : null;
+  const selectedStep = selectedEntry?.type === 'step' ? selectedEntry.item : null;
+  const selectedDeliverable = selectedEntry?.type === 'step' ? selectedEntry.deliverable : null;
+  const selectedDependencies = selectedStep?.dependsOn || [];
+  const selectedDependents = selectedStepId ? dependencyIndex.get(selectedStepId) || [] : [];
+  const selectedDeliverableDependents = selectedDeliverable ? dependencyIndex.get(selectedDeliverable.id) || [] : [];
+  const highlightedDependents = new Set([
+    ...selectedDependents.map((entry) => entry.step?.id || entry.deliverable?.id).filter(Boolean),
+    ...selectedDeliverableDependents.map((entry) => entry.step?.id || entry.deliverable?.id).filter(Boolean)
+  ]);
+
+  const getBlockClass = (deliverable, step) => {
+    const classes = ['timeline-block'];
+    if (selectedStepId === step.id) classes.push('selected');
+    if (selectedDependencies.includes(step.id) || selectedDependencies.includes(deliverable.id)) classes.push('dependency-highlight');
+    if (highlightedDependents.has(step.id) || highlightedDependents.has(deliverable.id)) classes.push('dependent-highlight');
+    if (selectedStepId && selectedStepId !== step.id && !classes.includes('dependency-highlight') && !classes.includes('dependent-highlight')) classes.push('dimmed');
+    return classes.join(' ');
+  };
 
   return (
     <main>
       <section className="section-heading">
         <p className="eyebrow">Timeline</p>
         <h1>Gantt-style delivery view</h1>
-        <p>Delivery steps are mapped to broad time anchors. Dependency badges show where a step relies on another deliverable, project or external dependency.</p>
+        <p>Click a step to show what it depends on and what it enables. Use the filters to focus the timeline by project or major cross-programme dependency.</p>
       </section>
+
+      <div className="toolbar timeline-toolbar">
+        <select value={projectFilter} onChange={(event) => setProjectFilter(event.target.value)}>
+          <option value="all">All projects</option>
+          {plan.projects.map((project) => (
+            <option key={project.id} value={project.id}>{project.id} {project.title}</option>
+          ))}
+        </select>
+        <select value={dependencyFilter} onChange={(event) => setDependencyFilter(event.target.value)}>
+          <option value="all">All dependencies</option>
+          {plan.crossProgrammeDependencies.map((dependency) => (
+            <option key={dependency.id} value={dependency.id}>{dependency.title}</option>
+          ))}
+        </select>
+        {selectedStepId && <button type="button" className="secondary-button" onClick={() => setSelectedStepId(null)}>Clear selection</button>}
+      </div>
+
+      <DependencyLens
+        selectedStep={selectedStep}
+        selectedDeliverable={selectedDeliverable}
+        selectedDependencies={selectedDependencies}
+        selectedDependents={selectedDependents}
+        selectedDeliverableDependents={selectedDeliverableDependents}
+        idMap={idMap}
+      />
+
+      <div className="timeline-key">
+        <span><i className="key-box selected-key" /> Selected step</span>
+        <span><i className="key-box dependency-key" /> Depends on</span>
+        <span><i className="key-box dependent-key" /> Feeds into</span>
+      </div>
+
       <div className="timeline">
         <div className="timeline-header">
           <div>Deliverable</div>
           {periods.map((period) => <div key={period.id}>{period.shortLabel}</div>)}
         </div>
-        {deliverables.map((deliverable) => (
+        {filteredDeliverables.map((deliverable) => (
           <div className="timeline-row" key={deliverable.id}>
             <a className="timeline-title" href={`#/deliverables/${deliverable.id}`}>
               <span className="reference">{deliverable.id}</span>
@@ -309,10 +406,16 @@ function TimelineView({ deliverables, idMap }) {
               return (
                 <div className="timeline-cell" key={`${deliverable.id}-${period.id}`}>
                   {steps.map((step) => (
-                    <div className="timeline-block" key={step.id} title={dependencyTitle(step, idMap)}>
+                    <button
+                      type="button"
+                      className={getBlockClass(deliverable, step)}
+                      key={step.id}
+                      title={dependencyTitle(step, idMap)}
+                      onClick={() => setSelectedStepId(step.id)}
+                    >
                       <span>{step.title}</span>
                       {step.dependsOn?.length > 0 && <span className="dependency-dot">↳</span>}
-                    </div>
+                    </button>
                   ))}
                 </div>
               );
@@ -321,6 +424,56 @@ function TimelineView({ deliverables, idMap }) {
         ))}
       </div>
     </main>
+  );
+}
+
+function DependencyLens({ selectedStep, selectedDeliverable, selectedDependencies, selectedDependents, selectedDeliverableDependents, idMap }) {
+  if (!selectedStep || !selectedDeliverable) {
+    return (
+      <section className="dependency-lens empty">
+        <div>
+          <h2>Dependency lens</h2>
+          <p>Select a timeline step to see its dependency chain. The timeline will highlight prerequisites and onward dependencies.</p>
+        </div>
+      </section>
+    );
+  }
+
+  const onward = [...selectedDependents, ...selectedDeliverableDependents];
+
+  return (
+    <section className="dependency-lens">
+      <div>
+        <p className="eyebrow">Selected step</p>
+        <h2>{selectedDeliverable.id}: {selectedStep.title}</h2>
+        <p>{selectedStep.summary}</p>
+        <span className="period-pill">{periodLabel(selectedStep.period)}</span>
+      </div>
+      <div>
+        <h3>Depends on</h3>
+        {selectedDependencies.length ? (
+          <div className="link-list">
+            {selectedDependencies.map((id) => <SmartLink key={id} id={id} idMap={idMap} />)}
+          </div>
+        ) : <p>No step-level dependencies captured.</p>}
+      </div>
+      <div>
+        <h3>Feeds into</h3>
+        {onward.length ? (
+          <ul className="compact-list">
+            {onward.map((entry, index) => (
+              <li key={`${entry.sourceType}-${entry.step?.id || entry.deliverable?.id}-${index}`}>
+                {entry.step ? (
+                  <a href={`#/deliverables/${entry.deliverable.id}`}><strong>{entry.deliverable.id}</strong>: {entry.step.title}</a>
+                ) : (
+                  <a href={`#/deliverables/${entry.deliverable.id}`}><strong>{entry.deliverable.id}</strong>: {entry.deliverable.title}</a>
+                )}
+              </li>
+            ))}
+          </ul>
+        ) : <p>No onward dependencies captured yet.</p>}
+      </div>
+    </section>
   );
 }
 
@@ -375,6 +528,7 @@ export default function App() {
     () => buildLookups(plan.projects, plan.crossProgrammeDependencies),
     []
   );
+  const dependencyIndex = useMemo(() => buildDependencyIndex(deliverables), [deliverables]);
 
   const detailMatch = path.match(/^\/deliverables\/(.+)$/);
   const detailId = detailMatch?.[1];
@@ -386,7 +540,7 @@ export default function App() {
   } else if (path === '/deliverables') {
     page = <DeliverablesIndex deliverables={deliverables} />;
   } else if (path === '/timeline') {
-    page = <TimelineView deliverables={deliverables} idMap={idMap} />;
+    page = <TimelineView deliverables={deliverables} idMap={idMap} dependencyIndex={dependencyIndex} />;
   } else if (path === '/dependencies') {
     page = <DependenciesView idMap={idMap} />;
   } else {
