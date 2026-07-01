@@ -1,0 +1,62 @@
+[
+  {
+    "id": "education-cultures-innovation",
+    "title": "Education Cultures and Innovation",
+    "owner": "TBC",
+    "summary": "Provides the shared practice infrastructure King's Edge needs to grow experiential learning with quality, confidence and coherence.",
+    "edgeRole": "Hosts the Experiential Learning Strategic Community of Practice and generates the typology, North Star and design principles that Edge uses to grow and assure opportunity.",
+    "components": [
+      { "title": "Experiential Learning Strategic Community of Practice", "summary": "Convenes expertise and existing practice from across King's." },
+      { "title": "Typology and North Star", "summary": "Defines the shared language, model and ambition for experiential learning." },
+      { "title": "Design and assurance principles", "summary": "Sets expectations for quality, support, access, risk, reflection and evidence." },
+      { "title": "Practice mobilisation", "summary": "Helps teams apply the framework through curriculum and co-curricular growth." }
+    ],
+    "steps": [
+      { "id": "education-cultures-step-1", "title": "Convene the Experiential Learning Community of Practice", "period": "now-xmas-2026", "summary": "Establish the Community of Practice and confirm the Edge-facing remit.", "dependsOn": [] },
+      { "id": "education-cultures-step-2", "title": "Produce typology, North Star and principles", "period": "jan-summer-2027", "summary": "Publish the experiential learning typology, North Star, entitlement ambition and design principles by April 2027.", "dependsOn": ["education-cultures-step-1"] },
+      { "id": "education-cultures-step-3", "title": "Support application across growth work", "period": "ay-2027-28-to-2028-29", "summary": "Help curricular and co-curricular teams apply the framework to growth, assurance and commissioning.", "dependsOn": ["education-cultures-step-2"] },
+      { "id": "education-cultures-step-4", "title": "Refresh and sustain the practice model", "period": "ay-2029-30", "summary": "Keep the typology, principles and practice community current as delivery matures.", "dependsOn": ["education-cultures-step-3"] }
+    ],
+    "servesDeliverables": ["2.1.2", "2.1.4", "2.2.2", "2.2.4"]
+  },
+  {
+    "id": "curriculum-framework-review",
+    "title": "Curriculum Framework and Review",
+    "owner": "TBC",
+    "summary": "Provides the route through which King's Edge requirements are embedded in curriculum audit, review and enhancement.",
+    "edgeRole": "Carries the curriculum audit and review mechanism that surfaces skills, experiential learning, graduate premium contribution and growth priorities.",
+    "components": [
+      { "title": "Edge audit requirements", "summary": "Build skills, experiential learning, access, evidence and graduate premium questions into curriculum review." },
+      { "title": "Curriculum baseline", "summary": "Surface where provision is strong, hidden, uneven, unsupported or absent." },
+      { "title": "Programme enhancement", "summary": "Use the baseline to shape growth and assurance priorities." },
+      { "title": "Ongoing review integration", "summary": "Make Edge lenses part of normal curriculum governance and enhancement." }
+    ],
+    "steps": [
+      { "id": "curriculum-framework-step-1", "title": "Agree Edge requirements for curriculum review", "period": "now-xmas-2026", "summary": "Confirm what the curriculum review needs to capture for King's Edge.", "dependsOn": ["2.1.4-step-1"] },
+      { "id": "curriculum-framework-step-2", "title": "Run curriculum baseline activity", "period": "jan-summer-2027", "summary": "Use the review process to surface skills, experiential learning, access and graduate premium contribution.", "dependsOn": ["curriculum-framework-step-1", "2.1.2-step-4", "2.1.3-step-2"] },
+      { "id": "curriculum-framework-step-3", "title": "Translate baseline into enhancement priorities", "period": "ay-2027-28-to-2028-29", "summary": "Use findings to support programme enhancement, growth and assurance decisions.", "dependsOn": ["curriculum-framework-step-2"] },
+      { "id": "curriculum-framework-step-4", "title": "Embed Edge lenses into ongoing review", "period": "ay-2029-30", "summary": "Make skills, experiential learning and graduate premium contribution part of continuing curriculum review.", "dependsOn": ["curriculum-framework-step-3"] }
+    ],
+    "servesDeliverables": ["2.1.1", "2.1.3", "2.1.4", "2.4.1"]
+  },
+  {
+    "id": "single-student-app",
+    "title": "Single Student App / Digital Portal",
+    "owner": "TBC",
+    "summary": "Provides the digital environment through which the King's Edge offer becomes navigable, personal and usable for students.",
+    "edgeRole": "Carries the digital implementation for King's Canvas, opportunity navigation, evidence capture, digital badges, microcredentials and the future enhanced student record.",
+    "components": [
+      { "title": "King's Canvas implementation", "summary": "Support purpose, aspiration, planning and reflection at scale." },
+      { "title": "Opportunity navigation", "summary": "Build out the existing Eventbrite-like platform into an Edge opportunity portal." },
+      { "title": "Evidence and recognition infrastructure", "summary": "Support badges, microcredentials, evidence capture and articulation." },
+      { "title": "Enhanced student record", "summary": "Provide the technical route towards a richer student learning record." }
+    ],
+    "steps": [
+      { "id": "single-app-step-1", "title": "Confirm existing platform and Edge requirements", "period": "now-xmas-2026", "summary": "Clarify current digital capability and capture the Edge requirements for Canvas and opportunity navigation.", "dependsOn": [] },
+      { "id": "single-app-step-2", "title": "Prototype Canvas and opportunity navigation data model", "period": "jan-summer-2027", "summary": "Prototype how Canvas, opportunity data, skills profiles and navigation should connect.", "dependsOn": ["2.2.1-step-2", "2.3.1-step-2"] },
+      { "id": "single-app-step-3", "title": "Build integrated Canvas, portal and evidence functionality", "period": "ay-2027-28-to-2028-29", "summary": "Develop the core digital functionality for Canvas, opportunity navigation, evidence capture and recognition pilots.", "dependsOn": ["single-app-step-2", "2.4.3-step-2"] },
+      { "id": "single-app-step-4", "title": "Mature the portfolio and enhanced record layer", "period": "ay-2029-30", "summary": "Connect planning, opportunity, evidence, recognition and enhanced record functionality into a mature student-facing environment.", "dependsOn": ["single-app-step-3", "2.4.3-step-3"] }
+    ],
+    "servesDeliverables": ["2.2.1", "2.3.1", "2.4.3"]
+  }
+]
