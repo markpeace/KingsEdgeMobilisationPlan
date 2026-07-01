@@ -2,51 +2,48 @@
 
 ## Aim
 
-Build a lightweight interactive site that renders the King's Edge mobilisation plan from JSON.
+Build and maintain a lightweight interactive site that renders the King's Edge mobilisation plan from JSON.
 
-The first version should prioritise clarity, speed and ease of iteration. It should not over-engineer the interface.
+The first version prioritises clarity, speed and ease of iteration. The next phase is visual polish and content refinement.
 
-## Recommended stack
-
-Given the repository is currently empty, the recommended stack is:
+## Current stack
 
 - Vite
 - React
-- TypeScript optional, but recommended
-- CSS modules or simple global CSS
-- JSON data source committed in the repository
+- Simple CSS
+- JSON data sources committed in the repository
+- GitHub Pages deployment
 
-This should be straightforward to deploy using GitHub Pages, Netlify or Vercel.
+## Current build scope
 
-## First build scope
+The current build includes:
 
-The first build should include:
+1. Overview page with four King's Edge project columns and sixteen deliverables.
+2. Deliverables index with search, project, status and confidence filters.
+3. Deliverable detail pages.
+4. Timeline / Gantt view using four broad time anchors.
+5. Related projects shown as timeline rows.
+6. Step-level dependency highlighting.
+7. Status and confidence layer.
+8. Related projects view for Education Cultures, Curriculum Framework and Review, and Single Student App.
+9. JSON validation before build.
 
-1. Overview page with four project columns and sixteen deliverables.
-2. Deliverable detail pages.
-3. Timeline / Gantt view using the four broad time anchors.
-4. Dependency cards and dependency badges.
-5. Cross-programme dependency view for Education Cultures, Curriculum Framework and Review, and Single Student App.
-6. JSON data source for the plan.
-
-## Suggested file structure
+## Current file structure
 
 ```text
 src/
-  App.tsx
-  main.tsx
-  components/
-    ProjectColumn.tsx
-    DeliverableCard.tsx
-    DeliverableDetail.tsx
-    TimelineView.tsx
-    DependencyBadge.tsx
-    DependencyPanel.tsx
-    SidebarDependencyCard.tsx
+  site.jsx
+  plan-utils.js
+  status-utils.js
+  styles.css
   data/
     kings-edge-plan.json
-  styles/
-    global.css
+    enabling-projects.json
+    step-dependencies.json
+    status.json
+
+public/
+  status.css
 
 docs/
   01-north-star.md
@@ -56,51 +53,32 @@ docs/
   05-timeline-and-dependencies.md
   06-cross-programme-dependencies.md
   07-build-plan.md
+  13-status-confidence-layer.md
 ```
 
-If keeping data outside `src`, use `public/data/kings-edge-plan.json` instead.
+The active app entry is `src/site.jsx`, referenced directly from `index.html`.
 
-## Build order
+## Current build process
 
-### Step 1: Scaffold the site
+Install dependencies:
 
-Create the Vite app, routing and base layout.
+```bash
+npm install
+```
 
-### Step 2: Add the JSON plan
+Validate data:
 
-Create the initial `kings-edge-plan.json` with:
+```bash
+npm run validate:data
+```
 
-- programme metadata
-- four projects
-- sixteen deliverables
-- timeline periods
-- cross-programme dependencies
+Build:
 
-### Step 3: Build overview page
+```bash
+npm run build
+```
 
-Render four project columns. Each column shows project title, owner, summary and four deliverable cards.
-
-### Step 4: Build deliverable detail pages
-
-Each deliverable card links to a detail page showing full content.
-
-### Step 5: Build timeline / Gantt view
-
-Render deliverables as rows and time periods as columns. Show delivery steps in the relevant period. Include dependency badges.
-
-### Step 6: Build dependencies view
-
-Create dedicated cards for the three cross-programme dependencies, with links to affected deliverables.
-
-### Step 7: Polish
-
-Add:
-
-- search / filter if useful
-- responsive layout
-- visual hierarchy
-- simple tagging
-- print-friendly or export-friendly styling if needed
+The build command runs data validation before Vite builds the site.
 
 ## Design principles
 
@@ -108,9 +86,18 @@ Add:
 - Put depth on detail pages, not in the main grid.
 - Use clear hierarchy: project, deliverable, step.
 - Make ownership visible.
+- Treat related projects as projects, not as dependencies.
+- Use dependencies only for step-to-step relationships.
 - Make dependencies visible but not visually noisy.
-- Treat the timeline as a strategic sequencing tool, not a fully detailed project management Gantt.
+- Use the status layer to distinguish settled work from provisional work.
+- Treat the timeline as a strategic sequencing tool, not a detailed project management Gantt.
 
-## Immediate next development task
+## Next development task
 
-Create the first JSON data file and scaffold the React/Vite site.
+Move into visual formatting and senior-view polish:
+
+- improve homepage hierarchy
+- improve Gantt readability
+- refine card spacing and typography
+- make the related projects treatment clearer
+- improve print or meeting-readiness if needed
