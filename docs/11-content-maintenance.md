@@ -60,10 +60,30 @@ The `period` must match one of the timeline period ids.
 
 ## JSON validation
 
-Before committing changes to the data file, check that the JSON remains valid. A quick local test is:
+Before committing changes to the data file, check that the JSON remains valid and that references resolve.
+
+Run:
+
+```bash
+npm run validate:data
+```
+
+The validation script checks:
+
+- duplicate ids
+- required project fields
+- required deliverable fields
+- required step fields
+- timeline period ids
+- dependency references
+- feeds into references
+- related deliverable references
+- step-level dependency references
+
+The production build runs validation automatically:
 
 ```bash
 npm run build
 ```
 
-If the JSON is invalid, Vite will fail during build.
+If validation fails, the build will stop before deployment.
