@@ -1,10 +1,16 @@
-# Cross-Programme Dependencies
+# Related Portfolio Projects
 
-King's Edge should not try to build every mechanism it needs. Some of its core requirements are delivered through other Education and Student Success programmes.
+King's Edge should not try to build every mechanism it needs. Some of its core requirements are carried through other Education and Student Success projects.
 
-This document captures the three major dependency sidebars that should appear in the site.
+This document captures the three related projects currently represented in the site.
 
-## Sidebar 1: Education Cultures and Innovation
+Important distinction:
+
+- These are not dependencies in themselves.
+- They are related projects with their own delivery steps.
+- Dependencies are the step-to-step relationships between King's Edge and these related projects.
+
+## Related project 1: Education Cultures and Innovation
 
 ### How this fulfils core Edge needs
 
@@ -26,7 +32,7 @@ This matters because King's already has excellent experiential learning, but too
 
 Experiential learning moves from a set of strong but uneven practices to a shared institutional model that can support growth, quality, assurance and student access.
 
-## Sidebar 2: Curriculum Framework and Review
+## Related project 2: Curriculum Framework and Review
 
 ### How this fulfils core Edge needs
 
@@ -42,13 +48,13 @@ This matters because the curriculum is one of the principal places where student
 - Audit of curriculum-embedded experiential learning
 - Identification of programme-level graduate premium contribution
 - Baseline for curriculum opportunity growth and assurance
-- Evidence to support programme graduate premium profiles and 2.4 evidence packs
+- Evidence to support programme graduate premium profiles and evidence packs
 
 ### What changes
 
 Edge requirements become part of mainstream curriculum review, avoiding duplication and ensuring skills, experiential learning and graduate value are embedded in the core academic framework.
 
-## Sidebar 3: Single Student App / Digital Portal
+## Related project 3: Single Student App / Digital Portal
 
 ### How this fulfils core Edge needs
 
@@ -72,17 +78,25 @@ This includes building out the existing Eventbrite-like opportunity platform so 
 
 Students move from a fragmented opportunity landscape to a coherent digital route through which they can plan, find, access, evidence and articulate the value of their King's experience.
 
-## Suggested site treatment
+## Site treatment
 
-Each dependency should appear as:
+Each related project appears as:
 
-- a sidebar card on relevant deliverable pages
-- a dependency lane or filter in the Gantt
-- a dedicated dependency detail view
-- a tag in the deliverables index
+- a card on the overview page
+- a full card on the related projects page
+- a row in the timeline / Gantt view
+- a source of steps that can be linked to Edge delivery steps
 
-## Suggested dependency ids
+## Data source
 
-- `education-cultures-innovation`
-- `curriculum-framework-review`
-- `single-student-app`
+Related projects are held in:
+
+```text
+src/data/enabling-projects.json
+```
+
+Step-level dependency relationships are held in:
+
+```text
+src/data/step-dependencies.json
+```
