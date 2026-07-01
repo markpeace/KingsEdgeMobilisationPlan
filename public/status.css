@@ -1,0 +1,108 @@
+.status-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin: 0.65rem 0;
+}
+
+.status-pills.compact {
+  margin: 0.45rem 0;
+}
+
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  border: 1px solid rgba(24, 32, 51, 0.12);
+  border-radius: 999px;
+  padding: 0.25rem 0.55rem;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  background: #f1ede5;
+  color: #182033;
+}
+
+.status-active,
+.status-active-key {
+  background: #dff7ed !important;
+  border-color: #2f7d62 !important;
+  color: #174a39 !important;
+}
+
+.status-scoping,
+.status-scoping-key {
+  background: #efe5ff !important;
+  border-color: #6f2dbd !important;
+  color: #421876 !important;
+}
+
+.status-not-started {
+  background: #f1ede5 !important;
+  border-color: #ded7cd !important;
+  color: #4b5568 !important;
+}
+
+.status-blocked {
+  background: #ffe5e5 !important;
+  border-color: #b42318 !important;
+  color: #7a1b13 !important;
+}
+
+.status-complete {
+  background: #e5f3ff !important;
+  border-color: #1d5f8f !important;
+  color: #17486b !important;
+}
+
+.confidence-settled {
+  background: #e5f3ff !important;
+  border-color: #1d5f8f !important;
+  color: #17486b !important;
+}
+
+.confidence-needs-validation {
+  background: #fff1b8 !important;
+  border-color: #d6a93a !important;
+  color: #6f4d00 !important;
+}
+
+.confidence-placeholder {
+  background: #f6e8ee !important;
+  border-color: #8d4f63 !important;
+  color: #66384a !important;
+}
+
+.decision-needed {
+  background: #ffe5e5 !important;
+  border-color: #b42318 !important;
+  color: #7a1b13 !important;
+}
+
+.status-panel .status-pills {
+  margin-top: 0;
+}
+
+.toggle-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.75rem 1rem;
+  background: white;
+  color: var(--ink);
+  font: inherit;
+}
+
+.single-column {
+  grid-template-columns: 1fr !important;
+}
+
+.subtle {
+  color: var(--muted);
+}
+
+.enabling-row .timeline-title {
+  background: rgba(239, 229, 255, 0.55);
+}
