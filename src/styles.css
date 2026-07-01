@@ -171,7 +171,9 @@ main {
 .component-card p,
 .step-card p,
 .dependency-card p,
-.timeline-title span {
+.timeline-title span,
+.dependency-lens p,
+.compact-list {
   color: var(--muted);
 }
 
@@ -248,13 +250,24 @@ main {
 }
 
 .toolbar input,
-.toolbar select {
+.toolbar select,
+.secondary-button {
   border: 1px solid var(--border);
   border-radius: 999px;
   padding: 0.8rem 1rem;
   background: white;
   color: var(--ink);
   font: inherit;
+}
+
+.secondary-button {
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.secondary-button:hover {
+  border-color: var(--accent);
+  background: var(--accent-soft);
 }
 
 .toolbar input {
@@ -352,6 +365,84 @@ main {
   gap: 0.5rem;
 }
 
+.timeline-toolbar {
+  align-items: center;
+}
+
+.dependency-lens {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  gap: 1rem;
+  align-items: start;
+  margin: 1rem 0;
+  padding: 1.25rem;
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  background: rgba(255, 250, 243, 0.9);
+  box-shadow: var(--shadow);
+}
+
+.dependency-lens.empty {
+  grid-template-columns: 1fr;
+}
+
+.dependency-lens h2,
+.dependency-lens h3,
+.dependency-lens p {
+  margin-top: 0;
+}
+
+.compact-list {
+  display: grid;
+  gap: 0.45rem;
+  margin: 0;
+  padding-left: 1.1rem;
+}
+
+.compact-list a {
+  text-decoration: none;
+}
+
+.compact-list a:hover {
+  color: var(--accent);
+}
+
+.timeline-key {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+  margin: 1rem 0;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.timeline-key span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.key-box {
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 0.3rem;
+  border: 1px solid var(--border);
+}
+
+.selected-key {
+  background: #221334;
+}
+
+.dependency-key {
+  background: #fff1b8;
+}
+
+.dependent-key {
+  background: #dff7ed;
+}
+
 .timeline {
   overflow-x: auto;
   border: 1px solid var(--border);
@@ -403,14 +494,53 @@ main {
   position: relative;
   display: grid;
   grid-template-columns: 1fr auto;
+  width: 100%;
   gap: 0.45rem;
   align-items: start;
+  text-align: left;
+  font: inherit;
+  color: var(--ink);
+  cursor: pointer;
   border: 1px solid rgba(111, 45, 189, 0.22);
   background: var(--accent-soft);
   border-radius: 14px;
   padding: 0.65rem;
   margin-bottom: 0.5rem;
   font-size: 0.88rem;
+  transition: opacity 160ms ease, transform 160ms ease, border-color 160ms ease, background 160ms ease, box-shadow 160ms ease;
+}
+
+.timeline-block:hover,
+.timeline-block:focus-visible {
+  transform: translateY(-1px);
+  border-color: var(--accent);
+  outline: none;
+  box-shadow: 0 10px 24px rgba(111, 45, 189, 0.16);
+}
+
+.timeline-block.selected {
+  background: #221334;
+  color: white;
+  border-color: #221334;
+}
+
+.timeline-block.dependency-highlight {
+  background: #fff1b8;
+  border-color: #d6a93a;
+}
+
+.timeline-block.dependent-highlight {
+  background: #dff7ed;
+  border-color: #2f7d62;
+}
+
+.timeline-block.dimmed {
+  opacity: 0.38;
+}
+
+.timeline-block.selected .dependency-dot {
+  background: white;
+  color: #221334;
 }
 
 .dependency-dot {
@@ -437,7 +567,8 @@ main {
   }
 
   .component-grid,
-  .steps-list {
+  .steps-list,
+  .dependency-lens {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
@@ -453,7 +584,8 @@ main {
   .detail-grid,
   .component-grid,
   .steps-list,
-  .index-row {
+  .index-row,
+  .dependency-lens {
     grid-template-columns: 1fr;
   }
 
