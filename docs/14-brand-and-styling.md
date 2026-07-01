@@ -38,13 +38,43 @@ The intended brand typeface is:
 font-family: "KingsBureauGrot", "Bureau Grot", Arial, Helvetica, sans-serif;
 ```
 
-The site references this font family name, but the font file is not committed to the repository.
+The site now defines `KingsBureauGrot` through an `@font-face` declaration in:
 
-Do not commit or redistribute font files unless the licence explicitly permits that use. If an authorised King's-hosted webfont becomes available, add an approved `@font-face` declaration or hosted stylesheet reference.
+```text
+public/status.css
+```
 
-## Current limitation
+It references the webfont file placed in:
 
-Without an authorised webfont being served, the site will fall back to Arial / Helvetica. The styling is therefore designed to rely on the wider visual grammar as well as the typeface:
+```text
+public/KingsBureauGrot-ThreeSeven-Regular.woff2
+```
+
+Because `status.css` is loaded from the public root, the font reference is relative:
+
+```css
+@font-face {
+  font-family: "KingsBureauGrot";
+  src: url("./KingsBureauGrot-ThreeSeven-Regular.woff2") format("woff2");
+  font-weight: 400 900;
+  font-style: normal;
+  font-display: swap;
+}
+```
+
+## Licence note
+
+Only serve this font if the licence permits use on this GitHub Pages site. If a more official King's-hosted webfont route becomes available, replace the local file reference with that source.
+
+## Fallback behaviour
+
+If the webfont fails to load, the site falls back to:
+
+```css
+"Bureau Grot", Arial, Helvetica, sans-serif
+```
+
+The styling also relies on the wider visual grammar:
 
 - red rails
 - black and white contrast
