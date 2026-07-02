@@ -15,6 +15,25 @@ function useHashRoute() {
   return path;
 }
 
+function hasItems(items) {
+  return Array.isArray(items) && items.length > 0;
+}
+
+function hasResources(resources) {
+  if (!resources) return false;
+  return hasItems(resources.people) || hasItems(resources.cashCosts) || hasItems(resources.nonCashNeeds) || Boolean(resources.resourceSummary || resources.fundingStatus);
+}
+
+function textOf(item) {
+  if (typeof item === 'string') return item;
+  return item.title || item.label || item.item || item.role || 'Item';
+}
+
+function formatMoney(cost) {
+  if (typeof cost.amount !== 'number') return null;
+  return new Intl.NumberFormat('en-GB', { style: 'currency', currency: cost.currency || 'GBP', maximumFractionDigits: 0 }).format(cost.amount);
+}
+
 function Nav() {
   return <header className="site-header"><a href="#/" className="brand">King's Edge Mobilisation Plan</a><nav><a href="#/">Home</a><a href="#/projects">Projects</a><a href="#/deliverables">Deliverables</a><a href="#/timeline">Timeline</a></nav></header>;
 }
@@ -73,11 +92,34 @@ function DeliverablesIndex({ deliverables }) {
   return <main><section className="section-heading"><h1>Deliverables index</h1><p>Search or filter across all project deliverables.</p></section><div className="toolbar"><input type="search" placeholder="Search deliverables, owners or themes" value={query} onChange={(event) => setQuery(event.target.value)} /><select value={projectFilter} onChange={(event) => setProjectFilter(event.target.value)}><option value="all">All projects</option>{projects.map((project) => <option key={project.id} value={project.id}>{project.title}</option>)}</select><select value={statusFilter} onChange={(event) => setStatusFilter(event.target.value)}><option value="all">All statuses</option><option value="not-started">Not started</option><option value="scoping">Scoping</option><option value="active">Active</option><option value="blocked">Blocked</option><option value="complete">Complete</option></select><select value={confidenceFilter} onChange={(event) => setConfidenceFilter(event.target.value)}><option value="all">All confidence levels</option><option value="settled">Settled</option><option value="needs-validation">Needs validation</option><option value="placeholder">Placeholder</option></select></div><div className="index-list">{filtered.map((deliverable) => <a href={`#/deliverables/${deliverable.id}`} className="index-row" key={deliverable.id}><div><span className="reference">{deliverable.id}</span><h3>{deliverable.title}</h3><p>{deliverable.summary}</p><StatusPills id={deliverable.id} compact /></div><div className="index-meta"><span>{deliverable.project.title}</span><strong>{deliverable.lead}</strong></div></a>)}</div></main>;
 }
 
+function SuccessMeasuresPanel({ deliverable }) {
+  const measures = deliverable.successMeasures;
+  if (!measures || (!hasItems(measures.outputs) && !hasItems(measures.kpis))) return null;
+  return <section className="panel schema-panel"><h2>Outputs and KPIs</h2><div className="schema-grid">{hasItems(measures.outputs) && <div><h3>Outputs</h3><ul className="schema-list">{measures.outputs.map((output, index) => <li key={index}><strong>{textOf(output)}</strong>{typeof output !== 'string' && output.description && <p>{output.description}</p>}</li>)}</ul></div>}{hasItems(measures.kpis) && <div><h3>KPIs</h3><ul className="schema-list">{measures.kpis.map((kpi, index) => <li key={index}><strong>{textOf(kpi)}</strong>{typeof kpi !== 'string' && <p>{[kpi.type, kpi.measure, kpi.target ? `Target: ${kpi.target}` : null, kpi.period].filter(Boolean).join(' · ')}</p>}</li>)}</ul></div>}</div></section>;
+}
+
+function StepExtras({ step }) {
+  const outputs = step.outputs || [];
+  const decisions = step.decisions || [];
+  const risks = step.risks || [];
+  const resources = step.resources;
+  if (!hasItems(outputs) && !hasItems(decisions) && !hasItems(risks) && !hasResources(resources)) return null;
+  return <div className="step-extras">{hasItems(outputs) && <MiniList title="Outputs" items={outputs} />}{hasResources(resources) && <ResourcesBlock resources={resources} />}{hasItems(decisions) && <MiniList title="Decisions" items={decisions} />}{hasItems(risks) && <MiniList title="Risks" items={risks} />}</div>;
+}
+
+function MiniList({ title, items }) {
+  return <div className="mini-block"><h4>{title}</h4><ul>{items.map((item, index) => <li key={index}><strong>{textOf(item)}</strong>{typeof item !== 'string' && (item.description || item.notes || item.mitigation) && <p>{item.description || item.notes || item.mitigation}</p>}</li>)}</ul></div>;
+}
+
+function ResourcesBlock({ resources }) {
+  return <div className="mini-block"><h4>Resources</h4>{resources.resourceSummary && <p>{resources.resourceSummary}</p>}{resources.fundingStatus && <p><strong>Funding:</strong> {resources.fundingStatus}</p>}{hasItems(resources.people) && <ul>{resources.people.map((person, index) => <li key={`p-${index}`}><strong>{person.role || 'People capacity'}</strong><p>{[person.type, person.fte ? `${person.fte} FTE` : null, person.notes].filter(Boolean).join(' · ')}</p></li>)}</ul>}{hasItems(resources.cashCosts) && <ul>{resources.cashCosts.map((cost, index) => <li key={`c-${index}`}><strong>{cost.item || 'Cash cost'}{formatMoney(cost) ? ` · ${formatMoney(cost)}` : ''}</strong><p>{[cost.category, cost.recurrence, cost.confidence, cost.notes].filter(Boolean).join(' · ')}</p></li>)}</ul>}{hasItems(resources.nonCashNeeds) && <ul>{resources.nonCashNeeds.map((need, index) => <li key={`n-${index}`}><strong>{need.item || 'Non-cash need'}</strong><p>{[need.owner, need.notes].filter(Boolean).join(' · ')}</p></li>)}</ul>}</div>;
+}
+
 function DeliverableDetail({ deliverable, idMap, dependencyIndex }) {
   if (!deliverable) return <main><section className="section-heading"><h1>Deliverable not found</h1></section></main>;
   const stepDeps = [...new Set(deliverable.steps.flatMap((step) => getStepDependencies(step)))];
   const onward = deliverable.steps.flatMap((step) => dependencyIndex.get(step.id) || []);
-  return <main><a className="back-link" href="#/deliverables">Back to deliverables</a><section className="detail-hero"><h1>{deliverable.id} {deliverable.title}</h1><p>{deliverable.summary}</p><StatusPills id={deliverable.id} /><div className="detail-meta"><span>Project: {deliverable.project.title}</span><span>Project owner: {deliverable.project.owner}</span><span>Deliverable lead: {deliverable.lead}</span></div></section><div className="detail-grid"><section className="panel"><h2>Problem solved</h2><p>{deliverable.problemSolved}</p></section><section className="panel"><h2>What changes</h2><p>{deliverable.whatChanges}</p></section></div><StatusPanel id={deliverable.id} /><section className="panel"><h2>Components</h2><div className="component-grid">{deliverable.components.map((component) => <article className="component-card" key={component.title}><h3>{component.title}</h3><p>{component.summary}</p></article>)}</div></section><section className="panel"><h2>Delivery steps</h2><div className="steps-list">{deliverable.steps.map((step) => <article className="step-card" key={step.id}><span className="period-pill">{periodLabel(step.period)}</span><h3>{step.title}</h3><p>{step.summary}</p><StatusPills id={step.id} compact />{getStepDependencies(step).length > 0 && <p className="depends">Depends on: {getStepDependencies(step).map((id) => resolveLabel(id, idMap)).join('; ')}</p>}</article>)}</div></section><div className="detail-grid"><section className="panel"><h2>Step dependencies</h2>{stepDeps.length ? <div className="link-list">{stepDeps.map((id) => <SmartLink key={id} id={id} idMap={idMap} />)}</div> : <p>No step-level dependencies captured yet.</p>}</section><section className="panel"><h2>Feeds into</h2>{onward.length ? <ul className="compact-list">{onward.map((entry, index) => <li key={`${entry.parent.id}-${entry.step.id}-${index}`}><SmartLink id={entry.step.id} idMap={idMap} /></li>)}</ul> : <p>No onward step dependencies captured yet.</p>}</section></div></main>;
+  return <main><a className="back-link" href="#/deliverables">Back to deliverables</a><section className="detail-hero"><h1>{deliverable.id} {deliverable.title}</h1><p>{deliverable.summary}</p><StatusPills id={deliverable.id} /><div className="detail-meta"><span>Project: {deliverable.project.title}</span><span>Project owner: {deliverable.project.owner}</span><span>Deliverable lead: {deliverable.lead}</span></div></section><div className="detail-grid"><section className="panel"><h2>Problem solved</h2><p>{deliverable.problemSolved}</p></section><section className="panel"><h2>What changes</h2><p>{deliverable.whatChanges}</p></section></div><StatusPanel id={deliverable.id} /><SuccessMeasuresPanel deliverable={deliverable} /><section className="panel"><h2>Components</h2><div className="component-grid">{deliverable.components.map((component) => <article className="component-card" key={component.title}><h3>{component.title}</h3><p>{component.summary}</p></article>)}</div></section><section className="panel"><h2>Delivery steps</h2><div className="steps-list">{deliverable.steps.map((step) => <article className="step-card" key={step.id}><span className="period-pill">{periodLabel(step.period)}</span><h3>{step.title}</h3><p>{step.summary}</p><StatusPills id={step.id} compact />{getStepDependencies(step).length > 0 && <p className="depends">Depends on: {getStepDependencies(step).map((id) => resolveLabel(id, idMap)).join('; ')}</p>}<StepExtras step={step} /></article>)}</div></section><div className="detail-grid"><section className="panel"><h2>Step dependencies</h2>{stepDeps.length ? <div className="link-list">{stepDeps.map((id) => <SmartLink key={id} id={id} idMap={idMap} />)}</div> : <p>No step-level dependencies captured yet.</p>}</section><section className="panel"><h2>Feeds into</h2>{onward.length ? <ul className="compact-list">{onward.map((entry, index) => <li key={`${entry.parent.id}-${entry.step.id}-${index}`}><SmartLink id={entry.step.id} idMap={idMap} /></li>)}</ul> : <p>No onward step dependencies captured yet.</p>}</section></div></main>;
 }
 
 function TimelineView({ timelineItems, idMap, dependencyIndex }) {
