@@ -13,15 +13,71 @@ src/data/step-dependencies.json
 src/data/status.json
 ```
 
-## Editing King's Edge deliverables
+## Single project hierarchy
 
-Core Edge content sits in:
+All projects now use the same structure:
+
+```text
+project
+  deliverables
+    components
+    steps
+```
+
+The distinction between Edge projects and out of programme projects is held in `deliveryContext`:
+
+- `edge`
+- `out-of-programme`
+
+## Editing Edge projects
+
+Core Edge projects sit in:
 
 ```text
 src/data/kings-edge-plan.json
 ```
 
-Each deliverable sits inside its parent project and should include:
+Each project should include:
+
+- `id`
+- `title`
+- `owner`
+- `summary`
+- `deliveryContext`
+- `deliverables`
+
+The `deliveryContext` for core Edge projects defaults to `edge` if omitted, but it is better to add it explicitly when doing larger content work.
+
+## Editing out of programme projects
+
+Out of programme projects sit in:
+
+```text
+src/data/enabling-projects.json
+```
+
+Each project should use the same project shape and include:
+
+- `id`
+- `title`
+- `owner`
+- `deliveryContext`
+- `summary`
+- `edgeRole`
+- `deliverables`
+- `servesDeliverables`
+
+Use:
+
+```json
+"deliveryContext": "out-of-programme"
+```
+
+These projects are not dependencies in themselves. They are delivery projects that carry some Edge requirements.
+
+## Editing deliverables
+
+Each deliverable should include:
 
 - `id`
 - `title`
@@ -35,26 +91,7 @@ Each deliverable sits inside its parent project and should include:
 - `relatedDeliverables`
 - `tags`
 
-## Editing related projects
-
-Related wider portfolio projects sit in:
-
-```text
-src/data/enabling-projects.json
-```
-
-Each related project should include:
-
-- `id`
-- `title`
-- `owner`
-- `summary`
-- `edgeRole`
-- `components`
-- `steps`
-- `servesDeliverables`
-
-These are related projects, not dependencies in themselves.
+This same deliverable structure applies to Edge and out of programme projects.
 
 ## Editing step-level dependencies
 
@@ -137,8 +174,8 @@ The validation script checks:
 - duplicate ids
 - required project fields
 - required deliverable fields
-- required related project fields
 - required step fields
+- delivery context values
 - timeline period ids
 - feeds into references
 - related deliverable references
