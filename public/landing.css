@@ -376,3 +376,40 @@
     overflow: visible;
   }
 }
+
+@media (min-width: 761px) {
+  .project-column {
+    grid-template-rows: 236px 1fr;
+    flex: 0 0 clamp(310px, 20.5vw, 350px);
+    min-width: clamp(310px, 20.5vw, 350px);
+  }
+
+  .project-column-header {
+    min-height: 236px;
+  }
+
+  .deliverable-stack {
+    grid-template-rows: repeat(4, minmax(276px, 1fr));
+  }
+
+  .deliverable-card {
+    min-height: 276px;
+    grid-template-rows: auto auto minmax(4.9rem, 1fr) auto auto;
+  }
+
+  .deliverable-card h3 {
+    min-height: 2.7rem;
+  }
+}
+
+@media (min-width: 761px) and (max-width: 1180px) {
+  .project-column {
+    grid-template-rows: 232px 1fr;
+    flex-basis: 320px;
+    min-width: 320px;
+  }
+
+  .project-column-header {
+    min-height: 232px;
+  }
+}
