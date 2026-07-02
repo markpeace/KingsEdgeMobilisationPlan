@@ -6,6 +6,7 @@ import workPackageConfig from './data/work-packages.json';
 
 const projectDisplayOrder = new Map((workPackageConfig.projectDisplayOrder || []).map((id, index) => [id, index]));
 const projectDisplayIds = workPackageConfig.projectDisplayIds || {};
+const deliverableOverrides = workPackageConfig.deliverableOverrides || {};
 export const workPackages = workPackageConfig.packages || [];
 
 function mergeObject(base = {}, extra = {}) {
@@ -50,6 +51,7 @@ function enrichProject(project) {
     displayOrder: projectDisplayOrder.has(project.id) ? projectDisplayOrder.get(project.id) : 1000,
     deliverables: project.deliverables?.map((deliverable) => ({
       ...deliverable,
+      ...deliverableOverrides[deliverable.id],
       displayId: displayIdForDeliverable(deliverable.id),
       workPackageLinks: packageLinksForDeliverable(deliverable.id),
       steps: deliverable.steps?.map((step) => ({ ...step })) || []
