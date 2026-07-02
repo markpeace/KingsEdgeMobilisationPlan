@@ -8,6 +8,7 @@ const plan = readJson('../src/data/kings-edge-plan.json');
 const outOfProgrammeProjects = readJson('../src/data/enabling-projects.json');
 const stepDependencies = readJson('../src/data/step-dependencies.json');
 const statusData = readJson('../src/data/status.json');
+const workPackageConfig = readJson('../src/data/work-packages.json');
 
 const errors = [];
 const warnings = [];
@@ -132,6 +133,25 @@ Object.entries(stepDependencies).forEach(([stepId, targets]) => {
   if (!stepIds.has(stepId)) errors.push(`step-dependencies key is not a known step id: ${stepId}`);
   targets.forEach((targetId) => {
     if (!stepIds.has(targetId)) errors.push(`${stepId} has unknown step dependency target: ${targetId}`);
+  });
+});
+
+(workPackageConfig.projectDisplayOrder || []).forEach((projectId) => {
+  if (!projectIds.has(projectId)) errors.push(`work-packages projectDisplayOrder contains unknown project id: ${projectId}`);
+});
+
+Object.entries(workPackageConfig.projectDisplayIds || {}).forEach(([projectId, displayId]) => {
+  if (!projectIds.has(projectId)) errors.push(`work-packages projectDisplayIds contains unknown project id: ${projectId}`);
+  if (typeof displayId !== 'string') errors.push(`work-packages projectDisplayIds.${projectId} should be a string.`);
+});
+
+(workPackageConfig.packages || []).forEach((workPackage, index) => {
+  const path = `work-packages.packages[${index}]`;
+  requireField(workPackage, 'id', path);
+  requireField(workPackage, 'title', path);
+  validateArrayIfPresent(workPackage.deliverables, `${path}.deliverables`);
+  workPackage.deliverables?.forEach((deliverableId) => {
+    if (!deliverableIds.has(deliverableId)) errors.push(`${path} references unknown deliverable id: ${deliverableId}`);
   });
 });
 
