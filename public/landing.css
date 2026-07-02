@@ -180,10 +180,13 @@
 }
 
 .programme-divider {
-  flex: 0 0 76px;
+  position: relative;
+  flex: 0 0 88px;
   display: grid;
   place-items: center;
   min-height: 100%;
+  margin-left: -0.35rem;
+  margin-right: -0.35rem;
   border-left: 4px dotted var(--accent);
   border-right: 4px dotted var(--accent);
   color: var(--accent);
@@ -191,12 +194,38 @@
 }
 
 .programme-divider span {
-  writing-mode: vertical-rl;
-  transform: rotate(180deg);
-  font-size: 1.45rem;
-  line-height: 1.1;
+  position: absolute;
+  inset: 0;
+  display: block;
+  overflow: hidden;
+  color: transparent;
+  font-size: 0;
+}
+
+.programme-divider::before,
+.programme-divider::after,
+.programme-divider span::before {
+  content: "→";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--accent);
+  font-size: 2rem;
   font-weight: 800;
-  letter-spacing: 0.08em;
+  line-height: 1;
+}
+
+.programme-divider::before {
+  top: 20%;
+}
+
+.programme-divider span::before {
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.programme-divider::after {
+  bottom: 20%;
 }
 
 .related-project-column {
@@ -301,11 +330,27 @@
     border-right: 0;
     border-top: 4px dotted var(--accent);
     border-bottom: 4px dotted var(--accent);
+    margin: 0;
+  }
+
+  .programme-divider span,
+  .programme-divider::before,
+  .programme-divider::after,
+  .programme-divider span::before {
+    position: static;
+    transform: none;
   }
 
   .programme-divider span {
-    writing-mode: horizontal-tb;
-    transform: none;
+    color: var(--accent);
+    font-size: 1.45rem;
+    display: block;
+  }
+
+  .programme-divider::before,
+  .programme-divider::after,
+  .programme-divider span::before {
+    content: none;
   }
 
   .project-column,
