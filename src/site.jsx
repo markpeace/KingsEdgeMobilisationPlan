@@ -39,15 +39,24 @@ function SmartLink({ id, idMap }) {
 }
 
 function Landing() {
-  return <main className="landing-main"><section className="hero landing-hero"><p className="eyebrow">Interactive delivery map</p><h1>{plan.programme.title}</h1><p>{plan.programme.purpose}</p><div className="landing-links"><a href="#/projects"><span>01</span><strong>Projects and deliverables</strong><em>Browse the four King's Edge projects and their sixteen deliverables.</em></a><a href="#/deliverables"><span>02</span><strong>Deliverables index</strong><em>Search and filter by project, status and confidence.</em></a><a href="#/timeline"><span>03</span><strong>Timeline</strong><em>View sequencing and step-to-step dependencies.</em></a><a href="#/enabling-projects"><span>04</span><strong>Related projects</strong><em>See the wider portfolio projects carrying Edge requirements.</em></a></div></section></main>;
+  return <main className="landing-main"><section className="hero landing-hero"><p className="eyebrow">Interactive delivery map</p><h1>{plan.programme.title}</h1><p>{plan.programme.purpose}</p><div className="landing-links"><a href="#/projects"><span>01</span><strong>Projects view</strong><em>Browse the core projects and the related out of programme work.</em></a><a href="#/deliverables"><span>02</span><strong>Deliverables index</strong><em>Search and filter by project, status and confidence.</em></a><a href="#/timeline"><span>03</span><strong>Timeline</strong><em>View sequencing and step-to-step dependencies.</em></a><a href="#/enabling-projects"><span>04</span><strong>Related projects</strong><em>See the wider portfolio projects carrying Edge requirements.</em></a></div></section></main>;
 }
 
 function ProjectsPage() {
-  return <main><section className="section-heading"><p className="eyebrow">Projects</p><h1>King's Edge projects and deliverables</h1><p>Browse the four Edge projects and click any deliverable to drill into its detailed plan.</p></section><div className="project-grid">{plan.projects.map((project) => <ProjectColumn key={project.id} project={project} />)}</div><section className="sidebars-preview"><h2>Related delivery projects</h2><p className="subtle">These are parallel projects in the wider portfolio that carry some of the core requirements for Edge.</p><div className="dependency-grid">{enablingProjects.map((project) => <EnablingCard key={project.id} project={project} compact />)}</div></section></main>;
+  return <main><section className="section-heading projects-heading"><p className="eyebrow">Projects</p><h1>Projects View</h1><p>Click a project header for its project page, or scroll right to expose related out of programme projects.</p></section><div className="project-board"><div className="project-scroll">{plan.projects.map((project) => <ProjectColumn key={project.id} project={project} />)}<div className="programme-divider"><span>Out of programme</span></div>{enablingProjects.map((project) => <RelatedProjectColumn key={project.id} project={project} />)}</div></div></main>;
 }
 
 function ProjectColumn({ project }) {
-  return <section className="project-column"><div className="project-column-header"><span className="reference">{project.id}</span><h2>{project.title}</h2><p>{project.summary}</p><p className="owner">Owner: {project.owner}</p></div><div className="deliverable-stack">{project.deliverables.map((deliverable) => <a className="deliverable-card" href={`#/deliverables/${deliverable.id}`} key={deliverable.id}><span className="reference">{deliverable.id}</span><h3>{deliverable.title}</h3><p>{deliverable.summary}</p><StatusPills id={deliverable.id} compact /><p className="lead">Lead: {deliverable.lead}</p></a>)}</div></section>;
+  return <section className="project-column"><a className="project-column-header project-header-link" href={`#/projects/${project.id}`}><span className="reference">{project.id}</span><h2>{project.title}</h2><p>{project.summary}</p><p className="owner">Owner: {project.owner}</p></a><div className="deliverable-stack">{project.deliverables.map((deliverable) => <a className="deliverable-card" href={`#/deliverables/${deliverable.id}`} key={deliverable.id}><span className="reference">{deliverable.id}</span><h3>{deliverable.title}</h3><p>{deliverable.summary}</p><StatusPills id={deliverable.id} compact /><p className="lead">Lead: {deliverable.lead}</p></a>)}</div></section>;
+}
+
+function RelatedProjectColumn({ project }) {
+  return <section className="project-column related-project-column"><a className="project-column-header related-project-header" href="#/enabling-projects"><span className="reference">Related</span><h2>{project.title}</h2><p>{project.summary}</p><p className="owner">Owner: {project.owner}</p></a><div className="deliverable-stack">{project.steps.map((step) => <a className="deliverable-card related-step-card" href="#/enabling-projects" key={step.id}><span className="reference">{periodLabel(step.period)}</span><h3>{step.title}</h3><p>{step.summary}</p><StatusPills id={step.id} compact /></a>)}</div></section>;
+}
+
+function ProjectDetail({ project }) {
+  if (!project) return <main><section className="section-heading"><h1>Project not found</h1><p><a href="#/projects">Return to Projects View</a></p></section></main>;
+  return <main><a className="back-link" href="#/projects">Back to Projects View</a><section className="detail-hero project-detail-hero"><p className="eyebrow">{project.id} Project</p><h1>{project.title}</h1><p>{project.summary}</p><div className="detail-meta"><span>Project owner: {project.owner}</span><span>{project.deliverables.length} deliverables</span></div></section><section className="panel"><h2>Deliverables</h2><div className="component-grid project-detail-deliverables">{project.deliverables.map((deliverable) => <a className="component-card project-detail-card" href={`#/deliverables/${deliverable.id}`} key={deliverable.id}><span className="reference">{deliverable.id}</span><h3>{deliverable.title}</h3><p>{deliverable.summary}</p><StatusPills id={deliverable.id} compact /><p className="lead">Lead: {deliverable.lead}</p></a>)}</div></section></main>;
 }
 
 function DeliverablesIndex({ deliverables }) {
@@ -113,9 +122,12 @@ function Site() {
   const { deliverables, timelineItems, idMap } = useMemo(() => buildLookups(plan.projects, enablingProjects), []);
   const dependencyIndex = useMemo(() => buildDependencyIndex(timelineItems), [timelineItems]);
   const detailMatch = path.match(/^\/deliverables\/(.+)$/);
+  const projectMatch = path.match(/^\/projects\/(.+)$/);
   const detailDeliverable = detailMatch ? deliverables.find((deliverable) => deliverable.id === detailMatch[1]) : null;
+  const detailProject = projectMatch ? plan.projects.find((project) => project.id === projectMatch[1]) : null;
   let page;
   if (detailMatch) page = <DeliverableDetail deliverable={detailDeliverable} idMap={idMap} dependencyIndex={dependencyIndex} />;
+  else if (projectMatch) page = <ProjectDetail project={detailProject} />;
   else if (path === '/projects') page = <ProjectsPage />;
   else if (path === '/deliverables') page = <DeliverablesIndex deliverables={deliverables} />;
   else if (path === '/timeline') page = <TimelineView timelineItems={timelineItems} idMap={idMap} dependencyIndex={dependencyIndex} />;
