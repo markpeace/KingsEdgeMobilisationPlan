@@ -1,11 +1,29 @@
 import plan from './data/kings-edge-plan.json';
 import outOfProgrammeProjects from './data/enabling-projects.json';
 import stepDependencyOverrides from './data/step-dependencies.json';
+import schemaExampleContent from './data/schema-example-content.json';
 
-export const projects = [
+function mergeObject(base = {}, extra = {}) {
+  return { ...base, ...extra };
+}
+
+function applySchemaExampleContent(projectList) {
+  const deliverableExtras = schemaExampleContent.deliverables || {};
+  const stepExtras = schemaExampleContent.steps || {};
+
+  return projectList.map((project) => ({
+    ...project,
+    deliverables: project.deliverables?.map((deliverable) => ({
+      ...mergeObject(deliverable, deliverableExtras[deliverable.id]),
+      steps: deliverable.steps?.map((step) => mergeObject(step, stepExtras[step.id])) || []
+    })) || []
+  }));
+}
+
+export const projects = applySchemaExampleContent([
   ...plan.projects.map((project) => ({ ...project, deliveryContext: project.deliveryContext || 'edge' })),
   ...outOfProgrammeProjects.map((project) => ({ ...project, deliveryContext: project.deliveryContext || 'out-of-programme' }))
-];
+]);
 
 export const edgeProjects = projects.filter((project) => project.deliveryContext === 'edge');
 export const outOfProgramme = projects.filter((project) => project.deliveryContext === 'out-of-programme');
