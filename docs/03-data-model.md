@@ -9,8 +9,13 @@ All projects use the same shape:
 ```text
 project
   deliverables
+    successMeasures
     components
     steps
+      outputs
+      resources
+      decisions
+      risks
 ```
 
 The distinction between core King's Edge projects and projects delivered out of programme is now a metadata flag, not a different data structure.
@@ -79,6 +84,10 @@ The UI uses this flag to render Edge projects first, then the out of programme p
   "summary": "Programme or department-level deep dives combining data and narrative work to articulate the distinctive value graduates take out into the world.",
   "problemSolved": "The value of a programme is often implicit, under-evidenced or not described in language that connects with students, applicants, employers or the discipline itself.",
   "whatChanges": "Programmes develop evidenced and meaningful accounts of the value graduates take into the world.",
+  "successMeasures": {
+    "outputs": [],
+    "kpis": []
+  },
   "components": [],
   "steps": [],
   "feedsInto": [],
@@ -87,7 +96,47 @@ The UI uses this flag to render Edge projects first, then the out of programme p
 }
 ```
 
+`successMeasures` is optional. It is where deliverable-level outputs and KPIs should sit.
+
 This same deliverable shape is now used for Edge projects and out of programme projects.
+
+## Success measure object
+
+Deliverable-level outputs can be simple strings or objects:
+
+```json
+{
+  "title": "Published Canvas service blueprint",
+  "type": "brief",
+  "description": "Sets out the student journey, data requirements and touchpoints for Canvas.",
+  "owner": "TBC",
+  "due": "jan-summer-2027",
+  "status": "not-started"
+}
+```
+
+KPIs can use this shape:
+
+```json
+{
+  "label": "Student engagement with purpose conversation",
+  "type": "reach",
+  "target": "TBC",
+  "measure": "Proportion of participating students completing a Canvas reflection cycle",
+  "period": "pilot"
+}
+```
+
+Useful KPI types include:
+
+- `reach`
+- `access`
+- `quality`
+- `impact`
+- `value`
+- `adoption`
+- `assurance`
+- `evidence`
 
 ## Delivery step object
 
@@ -97,11 +146,92 @@ This same deliverable shape is now used for Edge projects and out of programme p
   "title": "Define the deep dive model",
   "period": "now-xmas-2026",
   "summary": "Agree what a programme-level deep dive should include and how it should connect data with narrative articulation.",
-  "dependsOn": []
+  "dependsOn": [],
+  "outputs": [],
+  "resources": {
+    "people": [],
+    "cashCosts": [],
+    "nonCashNeeds": [],
+    "fundingStatus": "TBC",
+    "resourceSummary": ""
+  },
+  "decisions": [],
+  "risks": []
 }
 ```
 
-The active dependency model uses `step-dependencies.json` as the main dependency source, while `dependsOn` remains available inside steps for simple local references.
+`outputs`, `resources`, `decisions` and `risks` are optional. They are hidden in the interface when empty.
+
+## Step output object
+
+Step-level outputs can be simple strings or objects:
+
+```json
+{
+  "title": "Canvas service blueprint",
+  "type": "brief",
+  "description": "Sets out the proposed student journey and implementation requirements.",
+  "owner": "TBC",
+  "due": "jan-summer-2027",
+  "status": "not-started"
+}
+```
+
+## Step resource object
+
+```json
+{
+  "people": [
+    {
+      "role": "Project manager",
+      "type": "existing / new / seconded / TBC",
+      "fte": 0.4,
+      "notes": "Needed to coordinate early mobilisation."
+    }
+  ],
+  "cashCosts": [
+    {
+      "item": "Student co-design and testing",
+      "category": "research",
+      "amount": 15000,
+      "currency": "GBP",
+      "period": "jan-summer-2027",
+      "recurrence": "one-off",
+      "confidence": "estimate",
+      "notes": "Workshops, incentives and synthesis."
+    }
+  ],
+  "nonCashNeeds": [
+    {
+      "item": "Digital product roadmap input",
+      "owner": "Single Student App",
+      "notes": "Needed to align requirements with the app build."
+    }
+  ],
+  "fundingStatus": "TBC",
+  "resourceSummary": "Requires project, digital and student research capacity."
+}
+```
+
+## Step decision object
+
+```json
+{
+  "title": "Confirm whether Canvas is built inside the Single Student App roadmap",
+  "owner": "TBC",
+  "neededBy": "jan-summer-2027",
+  "notes": "Needed before detailed tool design is finalised."
+}
+```
+
+## Step risk object
+
+```json
+{
+  "title": "Tool design runs ahead of digital capacity",
+  "mitigation": "Tie requirements into Single Student App planning early."
+}
+```
 
 ## Step dependency file
 
