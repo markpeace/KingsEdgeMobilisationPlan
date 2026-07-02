@@ -91,7 +91,8 @@ allProjects.forEach((project, projectIndex) => {
   requireField(project, 'summary', projectPath);
   requireField(project, 'deliveryContext', projectPath);
   if (!['edge', 'out-of-programme'].includes(project.deliveryContext)) errors.push(`${project.id} uses unknown deliveryContext: ${project.deliveryContext}`);
-  if (!Array.isArray(project.deliverables) || project.deliverables.length !== 4) warnings.push(`${project.id} should usually contain exactly four deliverables.`);
+  if (!Array.isArray(project.deliverables)) errors.push(`${project.id} should contain a deliverables array.`);
+  if (project.deliveryContext === 'edge' && project.deliverables?.length !== 4) warnings.push(`${project.id} should usually contain exactly four deliverables.`);
   project.deliverables?.forEach((deliverable, deliverableIndex) => {
     const deliverablePath = `${project.id}.deliverables[${deliverableIndex}]`;
     addId(deliverable.id, deliverablePath);
