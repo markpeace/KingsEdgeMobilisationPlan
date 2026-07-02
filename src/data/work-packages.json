@@ -1,0 +1,19 @@
+{
+  "note": "Display and packaging overlay. Underlying ids remain stable so existing links, dependency references and status entries do not break.",
+  "projectDisplayOrder": ["2.4", "2.1", "2.2", "2.3"],
+  "projectDisplayIds": {
+    "2.4": "2.1",
+    "2.1": "2.2",
+    "2.2": "2.3",
+    "2.3": "2.4"
+  },
+  "packages": [
+    {
+      "id": "graduate-premium-evidence-spine",
+      "title": "Graduate Premium Evidence Spine",
+      "type": "horizontal",
+      "summary": "Connects programme-level graduate premium deep dives with the evidence packs that make that value visible, reusable and market-facing.",
+      "deliverables": ["2.4.1", "2.1.1"]
+    }
+  ]
+}
