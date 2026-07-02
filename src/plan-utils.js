@@ -17,12 +17,23 @@ const edgeDisplayIds = {
   '2.3': '2.4'
 };
 
+const edgeDisplayTitles = {
+  '2.4': "Articulating and Evidencing The King's Graduate Premium",
+  '2.1': 'Curriculum Embedded Graduate Advantage',
+  '2.2': 'Co-Curricular Opportunity to Go Further',
+  '2.3': 'Extra Curricular Provision for Belonging and Participation'
+};
+
 function mergeObject(base = {}, extra = {}) {
   return { ...base, ...extra };
 }
 
 function displayIdForProject(projectId) {
   return edgeDisplayIds[projectId] || projectId;
+}
+
+function displayTitleForProject(project) {
+  return edgeDisplayTitles[project.id] || project.title;
 }
 
 function displayIdForDeliverable(deliverableId) {
@@ -54,6 +65,8 @@ function applySchemaExampleContent(projectList) {
 function enrichProject(project) {
   return {
     ...project,
+    title: displayTitleForProject(project),
+    sourceTitle: project.title,
     displayId: displayIdForProject(project.id),
     displayOrder: edgeDisplayOrder.has(project.id) ? edgeDisplayOrder.get(project.id) : 1000,
     deliverables: project.deliverables?.map((deliverable) => ({
