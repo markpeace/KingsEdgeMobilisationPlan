@@ -39,7 +39,7 @@ function displayId(item) {
 }
 
 function Nav() {
-  return <header className="site-header"><a href="#/" className="brand">King's Edge Mobilisation Plan</a><nav><a href="#/">Home</a><a href="#/projects">Projects</a><a href="#/deliverables">Deliverables</a><a href="#/timeline">Timeline</a></nav></header>;
+  return <header className="site-header"><a href="#/" className="brand">King's Edge Mobilisation Plan</a><nav><a href="#/">Home</a><a href="#/projects">Projects</a><a href="#/deliverables">Deliverables</a><a href="#/measures">Measures</a><a href="#/timeline">Timeline</a></nav></header>;
 }
 
 function StatusPills({ id, compact = false }) {
@@ -62,7 +62,7 @@ function SmartLink({ id, idMap }) {
 }
 
 function Landing() {
-  return <main className="landing-main"><section className="hero landing-hero"><p className="eyebrow">Interactive delivery map</p><h1>{plan.programme.title}</h1><p>{plan.programme.purpose}</p><div className="landing-links"><a href="#/projects"><span>01</span><strong>Projects view</strong><em>Browse the core projects and the related out of programme work.</em></a><a href="#/deliverables"><span>02</span><strong>Deliverables index</strong><em>Search and filter by project, status and confidence.</em></a><a href="#/timeline"><span>03</span><strong>Timeline</strong><em>View sequencing and step-to-step dependencies.</em></a></div></section></main>;
+  return <main className="landing-main"><section className="hero landing-hero"><p className="eyebrow">Interactive delivery map</p><h1>{plan.programme.title}</h1><p>{plan.programme.purpose}</p><div className="landing-links"><a href="#/projects"><span>01</span><strong>Projects view</strong><em>Browse the core projects and the related out of programme work.</em></a><a href="#/deliverables"><span>02</span><strong>Deliverables index</strong><em>Search and filter by project, status and confidence.</em></a><a href="#/measures"><span>03</span><strong>Measures</strong><em>Track KPIs and success measures across deliverables.</em></a><a href="#/timeline"><span>04</span><strong>Timeline</strong><em>View sequencing and step-to-step dependencies.</em></a></div></section></main>;
 }
 
 function ProjectsPage() {
@@ -103,6 +103,20 @@ function DeliverablesIndex({ deliverables }) {
     return matchesProject && matchesStatus && matchesConfidence && text.includes(query.toLowerCase());
   });
   return <main><section className="section-heading"><h1>Deliverables index</h1><p>Search or filter across all project deliverables.</p></section><div className="toolbar"><input type="search" placeholder="Search deliverables, owners or themes" value={query} onChange={(event) => setQuery(event.target.value)} /><select value={projectFilter} onChange={(event) => setProjectFilter(event.target.value)}><option value="all">All projects</option>{projects.map((project) => <option key={project.id} value={project.id}>{displayId(project)} {project.title}</option>)}</select><select value={statusFilter} onChange={(event) => setStatusFilter(event.target.value)}><option value="all">All statuses</option><option value="not-started">Not started</option><option value="scoping">Scoping</option><option value="active">Active</option><option value="blocked">Blocked</option><option value="complete">Complete</option></select><select value={confidenceFilter} onChange={(event) => setConfidenceFilter(event.target.value)}><option value="all">All confidence levels</option><option value="settled">Settled</option><option value="needs-validation">Needs validation</option><option value="placeholder">Placeholder</option></select></div><div className="index-list">{filtered.map((deliverable) => <a href={`#/deliverables/${deliverable.id}`} className="index-row" key={deliverable.id}><div><span className="reference">{displayId(deliverable)}</span><h3>{deliverable.title}</h3><p>{deliverable.summary}</p><StatusPills id={deliverable.id} compact /></div><div className="index-meta"><span>{displayId(deliverable.project)} {deliverable.project.title}</span><strong>{deliverable.lead}</strong></div></a>)}</div></main>;
+}
+
+function MeasuresView({ deliverables }) {
+  const [projectFilter, setProjectFilter] = useState('all');
+  const [typeFilter, setTypeFilter] = useState('all');
+  const measures = deliverables.flatMap((deliverable) => (deliverable.successMeasures?.kpis || []).map((kpi, index) => ({ id: `${deliverable.id}-kpi-${index}`, deliverable, kpi })));
+  const types = [...new Set(measures.map((entry) => entry.kpi.type).filter(Boolean))].sort();
+  const filtered = measures.filter((entry) => {
+    const matchesProject = projectFilter === 'all' || entry.deliverable.project.id === projectFilter;
+    const matchesType = typeFilter === 'all' || entry.kpi.type === typeFilter;
+    return matchesProject && matchesType;
+  });
+  const projectsWithMeasures = new Set(measures.map((entry) => entry.deliverable.project.id)).size;
+  return <main><section className="section-heading"><h1>Measures</h1><p>Track KPIs and success measures across deliverables. This view will become more useful as each deliverable is populated.</p></section><div className="measure-summary"><article className="measure-card"><span>{measures.length}</span><strong>KPIs captured</strong></article><article className="measure-card"><span>{projectsWithMeasures}</span><strong>Projects represented</strong></article><article className="measure-card"><span>{types.length}</span><strong>Measure types</strong></article></div><div className="toolbar"><select value={projectFilter} onChange={(event) => setProjectFilter(event.target.value)}><option value="all">All projects</option>{projects.map((project) => <option key={project.id} value={project.id}>{displayId(project)} {project.title}</option>)}</select><select value={typeFilter} onChange={(event) => setTypeFilter(event.target.value)}><option value="all">All KPI types</option>{types.map((type) => <option key={type} value={type}>{type}</option>)}</select></div>{filtered.length === 0 ? <section className="panel"><h2>No KPIs captured yet</h2><p>Add KPIs under a deliverable's <code>successMeasures.kpis</code> field and they will appear here automatically.</p></section> : <div className="index-list measure-list">{filtered.map(({ id, deliverable, kpi }) => <a href={`#/deliverables/${deliverable.id}`} className="index-row measure-row" key={id}><div><span className="reference">{displayId(deliverable)}</span><h3>{kpi.label || kpi.title || 'KPI'}</h3><p>{[kpi.measure, kpi.target ? `Target: ${kpi.target}` : null, kpi.baseline ? `Baseline: ${kpi.baseline}` : null, kpi.dataSource ? `Source: ${kpi.dataSource}` : null, kpi.reviewFrequency ? `Review: ${kpi.reviewFrequency}` : null].filter(Boolean).join(' · ')}</p><StatusPills id={deliverable.id} compact /></div><div className="index-meta"><span>{displayId(deliverable.project)} {deliverable.project.title}</span><strong>{kpi.type || 'measure'}</strong><span>{kpi.period || 'Period TBC'}</span></div></a>)}</div>}</main>;
 }
 
 function SuccessMeasuresPanel({ deliverable }) {
@@ -174,6 +188,7 @@ function Site() {
   else if (projectMatch) page = <ProjectDetail project={detailProject} />;
   else if (path === '/projects' || path === '/enabling-projects' || path === '/dependencies') page = <ProjectsPage />;
   else if (path === '/deliverables') page = <DeliverablesIndex deliverables={deliverables} />;
+  else if (path === '/measures') page = <MeasuresView deliverables={deliverables} />;
   else if (path === '/timeline') page = <TimelineView timelineItems={timelineItems} idMap={idMap} dependencyIndex={dependencyIndex} />;
   else page = <Landing />;
   return <><Nav />{page}<footer className="site-footer"><p>King's Edge Mobilisation Plan. Rendered from JSON data.</p></footer></>;
