@@ -2,16 +2,18 @@
 
 ## Principle
 
-The plan lives in JSON and the interface renders from that JSON.
+The site now works from a single project hierarchy in the application layer.
 
-The data model now separates four concerns:
+All projects use the same shape:
 
-- the core King's Edge plan
-- related wider portfolio projects
-- step-to-step dependencies
-- status, confidence and decision flags
+```text
+project
+  deliverables
+    components
+    steps
+```
 
-This keeps content, dependency logic and mobilisation status easier to maintain.
+The distinction between core King's Edge projects and projects delivered out of programme is now a metadata flag, not a different data structure.
 
 ## Current file structure
 
@@ -23,29 +25,83 @@ src/data/
   status.json
 ```
 
-## Core plan file
+## Project sources
 
-`kings-edge-plan.json` holds:
+`kings-edge-plan.json` still holds programme metadata, timeline periods and the four core Edge projects.
 
-- programme metadata
-- timeline periods
-- the four King's Edge projects
-- the sixteen Edge deliverables
-- components
-- delivery steps
-- tags and related deliverables
+`enabling-projects.json` holds the out of programme projects that carry Edge requirements.
 
-## Related projects file
+The app normalises these together through `src/plan-utils.js` into one `projects` array.
 
-`enabling-projects.json` holds the wider portfolio projects that carry Edge requirements.
+## Delivery context
 
-Current related projects:
+Each project has a `deliveryContext` value:
 
-- Education Cultures and Innovation
-- Curriculum Framework and Review
-- Single Student App / Digital Portal
+```json
+{
+  "deliveryContext": "edge"
+}
+```
 
-These are not dependencies in themselves. They are projects with their own delivery steps.
+or:
+
+```json
+{
+  "deliveryContext": "out-of-programme"
+}
+```
+
+The UI uses this flag to render Edge projects first, then the out of programme projects after the dotted divider.
+
+## Project object
+
+```json
+{
+  "id": "single-student-app",
+  "title": "Single Student App / Digital Portal",
+  "owner": "TBC",
+  "deliveryContext": "out-of-programme",
+  "summary": "Provides the digital environment through which the King's Edge offer becomes navigable, personal and usable for students.",
+  "edgeRole": "Carries the digital implementation for King's Canvas, opportunity navigation, evidence capture, digital badges, microcredentials and the future enhanced student record.",
+  "deliverables": []
+}
+```
+
+`edgeRole` is optional and mainly useful for out of programme projects.
+
+## Deliverable object
+
+```json
+{
+  "id": "2.1.1",
+  "title": "Programme Graduate Premium Deep Dives",
+  "lead": "Dan Robson",
+  "summary": "Programme or department-level deep dives combining data and narrative work to articulate the distinctive value graduates take out into the world.",
+  "problemSolved": "The value of a programme is often implicit, under-evidenced or not described in language that connects with students, applicants, employers or the discipline itself.",
+  "whatChanges": "Programmes develop evidenced and meaningful accounts of the value graduates take into the world.",
+  "components": [],
+  "steps": [],
+  "feedsInto": [],
+  "relatedDeliverables": [],
+  "tags": []
+}
+```
+
+This same deliverable shape is now used for Edge projects and out of programme projects.
+
+## Delivery step object
+
+```json
+{
+  "id": "2.1.1-step-1",
+  "title": "Define the deep dive model",
+  "period": "now-xmas-2026",
+  "summary": "Agree what a programme-level deep dive should include and how it should connect data with narrative articulation.",
+  "dependsOn": []
+}
+```
+
+The active dependency model uses `step-dependencies.json` as the main dependency source, while `dependsOn` remains available inside steps for simple local references.
 
 ## Step dependency file
 
@@ -91,65 +147,6 @@ Supported confidence levels:
 - `needs-validation`
 - `placeholder`
 
-## Project object
-
-```json
-{
-  "id": "2.1",
-  "title": "Curriculum-Embedded Graduate Premium",
-  "owner": "Aranee Manoharan",
-  "summary": "Makes the graduate premium visible and capable of growth within the academic curriculum.",
-  "deliverables": []
-}
-```
-
-## Deliverable object
-
-```json
-{
-  "id": "2.1.1",
-  "title": "Programme Graduate Premium Deep Dives",
-  "lead": "Dan Robson",
-  "summary": "Programme or department-level deep dives combining data and narrative work to articulate the distinctive value graduates take out into the world.",
-  "problemSolved": "The value of a programme is often implicit, under-evidenced or not described in language that connects with students, applicants, employers or the discipline itself.",
-  "whatChanges": "Programmes develop evidenced and meaningful accounts of the value graduates take into the world.",
-  "components": [],
-  "steps": [],
-  "feedsInto": [],
-  "relatedDeliverables": [],
-  "tags": []
-}
-```
-
-## Related project object
-
-```json
-{
-  "id": "single-student-app",
-  "title": "Single Student App / Digital Portal",
-  "owner": "TBC",
-  "summary": "Provides the digital environment through which the King's Edge offer becomes navigable, personal and usable for students.",
-  "edgeRole": "Carries the digital implementation for King's Canvas, opportunity navigation, evidence capture, digital badges, microcredentials and the future enhanced student record.",
-  "components": [],
-  "steps": [],
-  "servesDeliverables": ["2.2.1", "2.3.1", "2.4.3"]
-}
-```
-
-## Delivery step object
-
-```json
-{
-  "id": "2.1.1-step-1",
-  "title": "Define the deep dive model",
-  "period": "now-xmas-2026",
-  "summary": "Agree what a programme-level deep dive should include and how it should connect data with narrative articulation.",
-  "dependsOn": []
-}
-```
-
-The active dependency model uses `step-dependencies.json` as the main dependency source, while `dependsOn` remains available inside steps for simple local references.
-
 ## Timeline period object
 
 ```json
@@ -165,18 +162,21 @@ The active dependency model uses `step-dependencies.json` as the main dependency
 
 The Gantt renders:
 
-- rows from Edge deliverables and related projects
+- rows from deliverables across all projects
 - columns from timeline periods
 - blocks from delivery steps
 - dependency highlights from `step-dependencies.json`
 - status and confidence from `status.json`
 
+Out of programme deliverables can be shown or hidden in the timeline using the existing toggle.
+
 ## URL slugs
 
-The deliverable `id` drives routes.
+Project and deliverable ids drive routes.
 
 Examples:
 
+- `#/projects/2.1`
+- `#/projects/single-student-app`
 - `#/deliverables/2.1.1`
-- `#/deliverables/2.2.1`
-- `#/deliverables/2.4.3`
+- `#/deliverables/single-student-app.2`
