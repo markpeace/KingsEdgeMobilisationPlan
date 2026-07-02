@@ -110,24 +110,39 @@
 
 .project-column {
   display: grid;
-  grid-template-rows: 244px 1fr;
-  flex: 0 0 clamp(340px, 23vw, 390px);
-  min-width: clamp(340px, 23vw, 390px);
+  grid-template-rows: 296px 1fr;
+  flex: 0 0 clamp(310px, 20.5vw, 350px);
+  min-width: clamp(310px, 20.5vw, 350px);
 }
 
 .project-column-header {
-  display: grid;
-  grid-template-rows: auto auto minmax(3.8rem, 1fr) auto;
-  min-height: 244px;
+  display: flex;
+  flex-direction: column;
+  min-height: 296px;
 }
 
 .project-column-header h2 {
+  display: -webkit-box;
+  min-height: calc(1.05em * 4);
+  margin-bottom: 0.8rem !important;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
   font-size: clamp(1.2rem, 1.5vw, 1.62rem) !important;
   line-height: 1.05 !important;
 }
 
-.project-column-header p {
+.project-column-header p:not(.owner) {
+  display: -webkit-box;
+  min-height: calc(1.4em * 4);
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
   font-size: 0.96rem;
+}
+
+.project-column-header .owner {
+  margin-top: auto;
 }
 
 .project-header-link {
@@ -148,18 +163,22 @@
 
 .deliverable-stack {
   display: grid;
-  grid-template-rows: repeat(4, minmax(286px, 1fr));
+  grid-template-rows: repeat(4, minmax(304px, 1fr));
 }
 
 .deliverable-card {
   display: grid;
-  grid-template-rows: auto auto minmax(5.25rem, 1fr) auto auto;
-  min-height: 286px;
+  grid-template-rows: auto auto minmax(calc(1.4em * 4), 1fr) auto auto;
+  min-height: 304px;
   align-content: start;
 }
 
 .deliverable-card h3 {
-  min-height: 3rem;
+  display: -webkit-box;
+  min-height: calc(1.15em * 4);
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
 }
 
 .deliverable-card p {
@@ -168,9 +187,10 @@
 
 .deliverable-card > p:not(.lead) {
   display: -webkit-box;
-  -webkit-line-clamp: 5;
-  -webkit-box-orient: vertical;
+  min-height: calc(1.4em * 4);
   overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
 }
 
 .deliverable-card .lead,
@@ -294,13 +314,13 @@
   }
 
   .project-column {
-    grid-template-rows: 238px 1fr;
-    flex-basis: 340px;
-    min-width: 340px;
+    grid-template-rows: 286px 1fr;
+    flex-basis: 320px;
+    min-width: 320px;
   }
 
   .project-column-header {
-    min-height: 238px;
+    min-height: 286px;
   }
 }
 
@@ -367,49 +387,13 @@
     flex-basis: auto;
   }
 
-  .deliverable-card h3 {
-    min-height: unset;
-  }
-
+  .project-column-header h2,
+  .project-column-header p:not(.owner),
+  .deliverable-card h3,
   .deliverable-card > p:not(.lead) {
     display: block;
+    min-height: unset;
     overflow: visible;
-  }
-}
-
-@media (min-width: 761px) {
-  .project-column {
-    grid-template-rows: 236px 1fr;
-    flex: 0 0 clamp(310px, 20.5vw, 350px);
-    min-width: clamp(310px, 20.5vw, 350px);
-  }
-
-  .project-column-header {
-    min-height: 236px;
-  }
-
-  .deliverable-stack {
-    grid-template-rows: repeat(4, minmax(276px, 1fr));
-  }
-
-  .deliverable-card {
-    min-height: 276px;
-    grid-template-rows: auto auto minmax(4.9rem, 1fr) auto auto;
-  }
-
-  .deliverable-card h3 {
-    min-height: 2.7rem;
-  }
-}
-
-@media (min-width: 761px) and (max-width: 1180px) {
-  .project-column {
-    grid-template-rows: 232px 1fr;
-    flex-basis: 320px;
-    min-width: 320px;
-  }
-
-  .project-column-header {
-    min-height: 232px;
+    -webkit-line-clamp: unset;
   }
 }
