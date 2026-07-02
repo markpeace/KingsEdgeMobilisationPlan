@@ -5,7 +5,7 @@ function readJson(relativePath) {
 }
 
 const plan = readJson('../src/data/kings-edge-plan.json');
-const enablingProjects = readJson('../src/data/enabling-projects.json');
+const outOfProgrammeProjects = readJson('../src/data/enabling-projects.json');
 const stepDependencies = readJson('../src/data/step-dependencies.json');
 const statusData = readJson('../src/data/status.json');
 
@@ -16,6 +16,11 @@ const ids = new Set();
 const deliverableIds = new Set();
 const stepIds = new Set();
 const projectIds = new Set();
+
+const allProjects = [
+  ...plan.projects.map((project) => ({ ...project, deliveryContext: project.deliveryContext || 'edge' })),
+  ...outOfProgrammeProjects.map((project) => ({ ...project, deliveryContext: project.deliveryContext || 'out-of-programme' }))
+];
 
 function requireField(object, field, path) {
   if (!object[field]) errors.push(`${path} is missing required field: ${field}`);
@@ -41,12 +46,15 @@ function validateSteps(steps, ownerPath) {
   });
 }
 
-plan.projects.forEach((project, projectIndex) => {
+allProjects.forEach((project, projectIndex) => {
   const projectPath = `projects[${projectIndex}]`;
   addId(project.id, projectPath);
   projectIds.add(project.id);
   requireField(project, 'title', projectPath);
   requireField(project, 'owner', projectPath);
+  requireField(project, 'summary', projectPath);
+  requireField(project, 'deliveryContext', projectPath);
+  if (!['edge', 'out-of-programme'].includes(project.deliveryContext)) errors.push(`${project.id} uses unknown deliveryContext: ${project.deliveryContext}`);
   if (!Array.isArray(project.deliverables) || project.deliverables.length !== 4) warnings.push(`${project.id} should usually contain exactly four deliverables.`);
 
   project.deliverables?.forEach((deliverable, deliverableIndex) => {
@@ -59,17 +67,9 @@ plan.projects.forEach((project, projectIndex) => {
   });
 });
 
-enablingProjects.forEach((project, projectIndex) => {
-  const projectPath = `enablingProjects[${projectIndex}]`;
-  addId(project.id, projectPath);
-  projectIds.add(project.id);
-  ['title', 'owner', 'summary', 'edgeRole'].forEach((field) => requireField(project, field, projectPath));
-  validateSteps(project.steps, project.id);
-});
-
 const validReferenceIds = new Set([...projectIds, ...deliverableIds, ...stepIds]);
 
-plan.projects.forEach((project) => {
+allProjects.forEach((project) => {
   project.deliverables?.forEach((deliverable) => {
     deliverable.feedsInto?.forEach((targetId) => {
       if (!validReferenceIds.has(targetId)) errors.push(`${deliverable.id} feedsInto target not found: ${targetId}`);
@@ -82,6 +82,9 @@ plan.projects.forEach((project) => {
         if (!validReferenceIds.has(targetId)) errors.push(`${step.id} dependsOn target not found: ${targetId}`);
       });
     });
+  });
+  project.servesDeliverables?.forEach((targetId) => {
+    if (!validReferenceIds.has(targetId)) errors.push(`${project.id} servesDeliverables target not found: ${targetId}`);
   });
 });
 
