@@ -35,6 +35,41 @@ function addId(id, path) {
   ids.add(id);
 }
 
+function validateArrayIfPresent(value, path) {
+  if (value !== undefined && !Array.isArray(value)) errors.push(`${path} should be an array.`);
+}
+
+function validateResources(resources, path) {
+  if (resources === undefined) return;
+  if (!resources || typeof resources !== 'object' || Array.isArray(resources)) {
+    errors.push(`${path}.resources should be an object.`);
+    return;
+  }
+
+  validateArrayIfPresent(resources.people, `${path}.resources.people`);
+  validateArrayIfPresent(resources.cashCosts, `${path}.resources.cashCosts`);
+  validateArrayIfPresent(resources.nonCashNeeds, `${path}.resources.nonCashNeeds`);
+
+  resources.people?.forEach((person, index) => {
+    if (person.fte !== undefined && typeof person.fte !== 'number') errors.push(`${path}.resources.people[${index}].fte should be a number.`);
+  });
+
+  resources.cashCosts?.forEach((cost, index) => {
+    if (cost.amount !== undefined && typeof cost.amount !== 'number') errors.push(`${path}.resources.cashCosts[${index}].amount should be a number.`);
+    if (cost.period && !requiredTimelinePeriods.has(cost.period)) errors.push(`${path}.resources.cashCosts[${index}] uses unknown period: ${cost.period}`);
+  });
+}
+
+function validateSuccessMeasures(successMeasures, path) {
+  if (successMeasures === undefined) return;
+  if (!successMeasures || typeof successMeasures !== 'object' || Array.isArray(successMeasures)) {
+    errors.push(`${path}.successMeasures should be an object.`);
+    return;
+  }
+  validateArrayIfPresent(successMeasures.outputs, `${path}.successMeasures.outputs`);
+  validateArrayIfPresent(successMeasures.kpis, `${path}.successMeasures.kpis`);
+}
+
 function validateSteps(steps, ownerPath) {
   if (!Array.isArray(steps) || steps.length !== 4) warnings.push(`${ownerPath} should usually contain exactly four delivery steps.`);
   steps?.forEach((step, stepIndex) => {
@@ -43,6 +78,10 @@ function validateSteps(steps, ownerPath) {
     stepIds.add(step.id);
     ['title', 'period', 'summary'].forEach((field) => requireField(step, field, stepPath));
     if (step.period && !requiredTimelinePeriods.has(step.period)) errors.push(`${step.id} uses unknown timeline period: ${step.period}`);
+    validateArrayIfPresent(step.outputs, `${stepPath}.outputs`);
+    validateArrayIfPresent(step.decisions, `${stepPath}.decisions`);
+    validateArrayIfPresent(step.risks, `${stepPath}.risks`);
+    validateResources(step.resources, stepPath);
   });
 }
 
@@ -63,6 +102,7 @@ allProjects.forEach((project, projectIndex) => {
     deliverableIds.add(deliverable.id);
     ['title', 'lead', 'summary', 'problemSolved', 'whatChanges'].forEach((field) => requireField(deliverable, field, deliverablePath));
     if (!Array.isArray(deliverable.components) || deliverable.components.length !== 4) warnings.push(`${deliverable.id} should usually contain exactly four components.`);
+    validateSuccessMeasures(deliverable.successMeasures, deliverablePath);
     validateSteps(deliverable.steps, deliverable.id);
   });
 });
