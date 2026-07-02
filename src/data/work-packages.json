@@ -7,6 +7,14 @@
     "2.2": "2.3",
     "2.3": "2.4"
   },
+  "deliverableOverrides": {
+    "2.4.1": {
+      "lead": "Daniel Robson"
+    },
+    "2.1.1": {
+      "lead": "Daniel Robson"
+    }
+  },
   "packages": [
     {
       "id": "graduate-premium-evidence-spine",
