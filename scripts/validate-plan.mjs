@@ -145,6 +145,11 @@ Object.entries(workPackageConfig.projectDisplayIds || {}).forEach(([projectId, d
   if (typeof displayId !== 'string') errors.push(`work-packages projectDisplayIds.${projectId} should be a string.`);
 });
 
+Object.entries(workPackageConfig.deliverableOverrides || {}).forEach(([deliverableId, override]) => {
+  if (!deliverableIds.has(deliverableId)) errors.push(`work-packages deliverableOverrides contains unknown deliverable id: ${deliverableId}`);
+  if (!override || typeof override !== 'object' || Array.isArray(override)) errors.push(`work-packages deliverableOverrides.${deliverableId} should be an object.`);
+});
+
 (workPackageConfig.packages || []).forEach((workPackage, index) => {
   const path = `work-packages.packages[${index}]`;
   requireField(workPackage, 'id', path);
