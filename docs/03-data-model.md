@@ -80,7 +80,7 @@ The UI uses this flag to render Edge projects first, then the out of programme p
 {
   "id": "2.1.1",
   "title": "Programme Graduate Premium Deep Dives",
-  "lead": "Dan Robson",
+  "lead": "Daniel Robson",
   "summary": "Programme or department-level deep dives combining data and narrative work to articulate the distinctive value graduates take out into the world.",
   "problemSolved": "The value of a programme is often implicit, under-evidenced or not described in language that connects with students, applicants, employers or the discipline itself.",
   "whatChanges": "Programmes develop evidenced and meaningful accounts of the value graduates take into the world.",
@@ -121,63 +121,37 @@ KPIs can use this shape:
 {
   "label": "Student engagement with purpose conversation",
   "type": "reach",
+  "baseline": "TBC",
   "target": "TBC",
   "measure": "Proportion of participating students completing a Canvas reflection cycle",
+  "dataSource": "TBC",
+  "owner": "TBC",
+  "reviewFrequency": "Termly",
   "period": "pilot"
 }
 ```
 
-Useful KPI types include:
-
-- `reach`
-- `access`
-- `quality`
-- `impact`
-- `value`
-- `adoption`
-- `assurance`
-- `evidence`
-
-## Delivery step object
+## Step object
 
 ```json
 {
-  "id": "2.1.1-step-1",
-  "title": "Define the deep dive model",
-  "period": "now-xmas-2026",
-  "summary": "Agree what a programme-level deep dive should include and how it should connect data with narrative articulation.",
-  "dependsOn": [],
+  "id": "2.2.1-step-2",
+  "title": "Design Canvas tools and prompts",
+  "period": "jan-summer-2027",
+  "summary": "Specify AI functionality, reflection prompts, planning tools, skills links and student outputs.",
+  "dependsOn": ["2.2.1-step-1", "2.1.3-step-1"],
   "outputs": [],
-  "resources": {
-    "people": [],
-    "cashCosts": [],
-    "nonCashNeeds": [],
-    "fundingStatus": "TBC",
-    "resourceSummary": ""
-  },
+  "resources": {},
   "decisions": [],
   "risks": []
 }
 ```
 
-`outputs`, `resources`, `decisions` and `risks` are optional. They are hidden in the interface when empty.
+Step-level `outputs`, `resources`, `decisions` and `risks` are optional. Empty sections are hidden in the UI.
 
-## Step output object
+## Resource object
 
-Step-level outputs can be simple strings or objects:
-
-```json
-{
-  "title": "Canvas service blueprint",
-  "type": "brief",
-  "description": "Sets out the proposed student journey and implementation requirements.",
-  "owner": "TBC",
-  "due": "jan-summer-2027",
-  "status": "not-started"
-}
-```
-
-## Step resource object
+Resources sit at step level.
 
 ```json
 {
@@ -186,7 +160,7 @@ Step-level outputs can be simple strings or objects:
       "role": "Project manager",
       "type": "existing / new / seconded / TBC",
       "fte": 0.4,
-      "notes": "Needed to coordinate early mobilisation."
+      "notes": "Needed to coordinate mobilisation."
     }
   ],
   "cashCosts": [
@@ -201,112 +175,17 @@ Step-level outputs can be simple strings or objects:
       "notes": "Workshops, incentives and synthesis."
     }
   ],
-  "nonCashNeeds": [
-    {
-      "item": "Digital product roadmap input",
-      "owner": "Single Student App",
-      "notes": "Needed to align requirements with the app build."
-    }
-  ],
+  "nonCashNeeds": [],
   "fundingStatus": "TBC",
   "resourceSummary": "Requires project, digital and student research capacity."
 }
 ```
 
-## Step decision object
+## Dependencies
 
-```json
-{
-  "title": "Confirm whether Canvas is built inside the Single Student App roadmap",
-  "owner": "TBC",
-  "neededBy": "jan-summer-2027",
-  "notes": "Needed before detailed tool design is finalised."
-}
-```
+There are two dependency levels:
 
-## Step risk object
+1. deliverable-level references inside each deliverable, mainly for narrative relationship
+2. step-level dependencies in `step-dependencies.json`, used by the timeline lens
 
-```json
-{
-  "title": "Tool design runs ahead of digital capacity",
-  "mitigation": "Tie requirements into Single Student App planning early."
-}
-```
-
-## Step dependency file
-
-`step-dependencies.json` holds the dependency layer.
-
-Dependencies are step-to-step relationships, for example:
-
-```json
-{
-  "2.2.2-step-2": ["2.1.2-step-4"],
-  "2.3.1-step-3": ["2.2.1-step-2", "single-app-step-2"]
-}
-```
-
-This allows the Gantt to show what a selected step needs and what it enables.
-
-## Status file
-
-`status.json` holds mobilisation status separately from the plan text.
-
-Each item can have:
-
-```json
-{
-  "status": "scoping",
-  "confidence": "needs-validation",
-  "decisionNeeded": true,
-  "note": "Short explanation of what needs attention."
-}
-```
-
-Supported statuses:
-
-- `not-started`
-- `scoping`
-- `active`
-- `blocked`
-- `complete`
-
-Supported confidence levels:
-
-- `settled`
-- `needs-validation`
-- `placeholder`
-
-## Timeline period object
-
-```json
-{
-  "id": "now-xmas-2026",
-  "label": "Now to Christmas 2026",
-  "shortLabel": "Now-Xmas 26",
-  "order": 1
-}
-```
-
-## Gantt rendering logic
-
-The Gantt renders:
-
-- rows from deliverables across all projects
-- columns from timeline periods
-- blocks from delivery steps
-- dependency highlights from `step-dependencies.json`
-- status and confidence from `status.json`
-
-Out of programme deliverables can be shown or hidden in the timeline using the existing toggle.
-
-## URL slugs
-
-Project and deliverable ids drive routes.
-
-Examples:
-
-- `#/projects/2.1`
-- `#/projects/single-student-app`
-- `#/deliverables/2.1.1`
-- `#/deliverables/single-student-app.2`
+Step-level dependencies should be preferred when the relationship is operational.
