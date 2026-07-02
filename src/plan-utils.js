@@ -45,10 +45,6 @@ function displayIdForDeliverable(deliverableId) {
   return [displayProjectId, ...parts.slice(2)].join('.');
 }
 
-function normaliseLead(lead) {
-  return lead === 'Dan Robson' ? 'Daniel Robson' : lead;
-}
-
 function applySchemaExampleContent(projectList) {
   const deliverableExtras = schemaExampleContent.deliverables || {};
   const stepExtras = schemaExampleContent.steps || {};
@@ -71,7 +67,6 @@ function enrichProject(project) {
     displayOrder: edgeDisplayOrder.has(project.id) ? edgeDisplayOrder.get(project.id) : 1000,
     deliverables: project.deliverables?.map((deliverable) => ({
       ...deliverable,
-      lead: normaliseLead(deliverable.lead),
       displayId: displayIdForDeliverable(deliverable.id)
     })) || []
   };
