@@ -1,0 +1,66 @@
+.brand {
+  display: inline-flex !important;
+  align-items: stretch !important;
+  gap: 0 !important;
+  width: auto !important;
+  max-width: none !important;
+  padding: 0 !important;
+  background: transparent !important;
+  color: transparent !important;
+  font-size: 0 !important;
+  line-height: 1 !important;
+  text-decoration: none !important;
+  white-space: nowrap !important;
+}
+
+.brand::before,
+.brand::after {
+  display: inline-flex;
+  align-items: center;
+  min-height: 70px;
+  font-family: var(--font-brand);
+  font-size: clamp(1rem, 1.3vw, 1.24rem);
+  font-weight: 400;
+  letter-spacing: -0.015em;
+  line-height: 1;
+}
+
+.brand::before {
+  content: "KING'S EDGE";
+  padding: 0.95rem clamp(1.35rem, 2.5vw, 2.2rem) 0.95rem clamp(1rem, 2.4vw, 1.8rem);
+  background: var(--accent);
+  color: #ffffff;
+}
+
+.brand::after {
+  content: "MOBILISATION PLAN";
+  padding: 0.95rem clamp(1rem, 2vw, 1.7rem);
+  background: #ffffff;
+  color: var(--ink);
+}
+
+.brand:hover::after {
+  color: var(--accent);
+}
+
+@media (max-width: 760px) {
+  .brand {
+    width: 100% !important;
+    justify-content: center !important;
+    flex-wrap: wrap;
+  }
+
+  .brand::before,
+  .brand::after {
+    min-height: 52px;
+    justify-content: center;
+  }
+
+  .brand::before {
+    flex: 1 1 auto;
+  }
+
+  .brand::after {
+    flex: 1 1 auto;
+  }
+}
