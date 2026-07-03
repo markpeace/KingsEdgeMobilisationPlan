@@ -1,5 +1,5 @@
 .site-header {
-  min-height: 68px !important;
+  min-height: 78px !important;
 }
 
 .site-header nav {
@@ -29,31 +29,50 @@
 .brand::after {
   display: inline-flex;
   align-items: center;
-  min-height: 68px;
+  min-height: 78px;
   font-family: var(--font-brand);
   font-weight: 400;
-  letter-spacing: -0.018em;
-  line-height: 1;
+  letter-spacing: -0.026em;
+  line-height: 0.88;
 }
 
 .brand::before {
   content: "KING'S EDGE";
-  padding: 0.9rem clamp(1.05rem, 2vw, 1.6rem) 0.9rem clamp(1rem, 2.1vw, 1.55rem);
+  padding: 0.6rem clamp(1.05rem, 2vw, 1.6rem) 0.52rem clamp(1rem, 2.1vw, 1.55rem);
   background: var(--accent);
   color: #ffffff;
-  font-size: clamp(1.18rem, 1.55vw, 1.5rem);
+  font-size: clamp(1.8rem, 2.35vw, 2.28rem);
 }
 
 .brand::after {
   content: "MOBILISATION PLAN";
-  padding: 0.9rem clamp(0.95rem, 1.35vw, 1.25rem);
+  padding: 0.6rem clamp(0.95rem, 1.45vw, 1.35rem) 0.52rem;
   background: #ffffff;
   color: var(--ink);
-  font-size: clamp(1.1rem, 1.38vw, 1.32rem);
+  font-size: clamp(1.45rem, 1.95vw, 1.88rem);
 }
 
 .brand:hover::after {
   color: var(--accent);
+}
+
+@media (max-width: 980px) {
+  .site-header {
+    min-height: 70px !important;
+  }
+
+  .brand::before,
+  .brand::after {
+    min-height: 70px;
+  }
+
+  .brand::before {
+    font-size: clamp(1.35rem, 3vw, 1.75rem);
+  }
+
+  .brand::after {
+    font-size: clamp(1.15rem, 2.5vw, 1.5rem);
+  }
 }
 
 @media (max-width: 760px) {
@@ -69,17 +88,17 @@
 
   .brand::before,
   .brand::after {
-    min-height: 50px;
+    min-height: 52px;
     justify-content: center;
   }
 
   .brand::before {
     flex: 1 1 auto;
-    font-size: clamp(1.05rem, 5vw, 1.35rem);
+    font-size: clamp(1.35rem, 8vw, 1.75rem);
   }
 
   .brand::after {
     flex: 1 1 auto;
-    font-size: clamp(1rem, 4.8vw, 1.25rem);
+    font-size: clamp(1.15rem, 6.5vw, 1.45rem);
   }
 }
