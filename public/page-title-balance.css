@@ -1,0 +1,24 @@
+.section-heading {
+  margin: clamp(0.9rem, 1.5vw, 1.35rem) 0 clamp(0.85rem, 1.4vw, 1.15rem) !important;
+}
+
+.section-heading h1 {
+  max-width: 980px !important;
+  font-size: clamp(2.6rem, 3.75vw, 4.15rem) !important;
+  line-height: 0.96 !important;
+  letter-spacing: -0.033em !important;
+  margin: 0 0 0.55rem !important;
+}
+
+.section-heading p {
+  max-width: 920px !important;
+  margin: 0 !important;
+  font-size: clamp(0.98rem, 1.05vw, 1.08rem) !important;
+  line-height: 1.42 !important;
+}
+
+@media (max-width: 760px) {
+  .section-heading h1 {
+    font-size: clamp(2.3rem, 12vw, 3.2rem) !important;
+  }
+}
