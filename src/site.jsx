@@ -165,11 +165,16 @@ function TimelineView({ timelineItems, idMap, dependencyIndex }) {
   const periods = [...timelinePeriods].sort((a, b) => a.order - b.order);
   const [projectFilter, setProjectFilter] = useState('all');
   const [selectedStepId, setSelectedStepId] = useState(null);
+  const [modalStepId, setModalStepId] = useState(null);
   const selectedEntry = selectedStepId ? idMap.get(selectedStepId) : null;
   const selectedStep = selectedEntry?.type === 'step' ? selectedEntry.item : null;
-  const selectedParent = selectedEntry?.type === 'step' ? selectedEntry.parent : null;
   const selectedDeps = selectedStep ? getStepDependencies(selectedStep) : [];
   const selectedOnward = selectedStepId ? dependencyIndex.get(selectedStepId) || [] : [];
+  const modalEntry = modalStepId ? idMap.get(modalStepId) : null;
+  const modalStep = modalEntry?.type === 'step' ? modalEntry.item : null;
+  const modalParent = modalEntry?.type === 'step' ? modalEntry.parent : null;
+  const modalDeps = modalStep ? getStepDependencies(modalStep) : [];
+  const modalOnward = modalStepId ? dependencyIndex.get(modalStepId) || [] : [];
   const onwardIds = new Set(selectedOnward.map((entry) => entry.step.id));
   const rows = timelineItems.filter((item) => projectFilter === 'all' || item.project?.id === projectFilter);
   const gridTemplate = { gridTemplateColumns: `300px repeat(${periods.length}, minmax(132px, 1fr))` };
@@ -179,11 +184,21 @@ function TimelineView({ timelineItems, idMap, dependencyIndex }) {
     const span = getStepPeriodSpan(step.period);
     return { gridColumn: `${span.startIndex} / span ${span.span}` };
   };
-  return <main className="timeline-page"><section className="section-heading"><h1>Timeline</h1><p>Six-month planning windows through to 2030. Click a step to show what it depends on and what it enables.</p></section><div className="timeline-controls"><select value={projectFilter} onChange={(event) => setProjectFilter(event.target.value)}><option value="all">All projects</option>{projects.filter((project) => project.deliverables?.length).map((project) => <option key={project.id} value={project.id}>{displayId(project)} {project.title}</option>)}</select>{selectedStepId && <button type="button" className="secondary-button" onClick={() => setSelectedStepId(null)}>Clear selection</button>}</div>{selectedStep && <DependencyLens step={selectedStep} parent={selectedParent} deps={selectedDeps} onward={selectedOnward} idMap={idMap} />}<div className="timeline-key"><span><i className="key-box selected-key" /> Selected</span><span><i className="key-box dependency-key" /> Depends on</span><span><i className="key-box dependent-key" /> Feeds into</span></div><div className="timeline timeline-refresh"><div className="timeline-header timeline-grid" style={gridTemplate}><div>Project / deliverable</div>{periods.map((period) => <div key={period.id}>{period.shortLabel}</div>)}</div>{rows.map((item) => <div className={`timeline-row timeline-grid ${item.project.deliveryContext === 'out-of-programme' ? 'enabling-row' : ''}`} style={gridTemplate} key={item.id}><a className="timeline-title" href={`#/deliverables/${item.id}`}><span className="reference">{displayId(item)}</span><strong>{item.title}</strong><span>{item.ownerLabel}</span><StatusPills id={item.id} compact /></a><div className="timeline-lane" style={laneTemplate}>{item.steps.map((step) => <button type="button" className={blockClass(step)} style={stepStyle(step)} key={step.id} title={periodLabel(step.period)} onClick={() => setSelectedStepId(step.id)}><span>{step.title}</span>{getStepDependencies(step).length > 0 && <span className="dependency-dot">↳</span>}</button>)}</div></div>)}</div></main>;
+  return <main className="timeline-page"><section className="section-heading"><h1>Timeline</h1><p>Click a step to highlight dependencies. Double-click a step to open the detail panel.</p></section><div className="timeline-controls"><select value={projectFilter} onChange={(event) => setProjectFilter(event.target.value)}><option value="all">All projects</option>{projects.filter((project) => project.deliverables?.length).map((project) => <option key={project.id} value={project.id}>{displayId(project)} {project.title}</option>)}</select>{selectedStepId && <button type="button" className="secondary-button" onClick={() => setSelectedStepId(null)}>Clear selection</button>}</div><div className="timeline-key"><span><i className="key-box selected-key" /> Selected</span><span><i className="key-box dependency-key" /> Depends on</span><span><i className="key-box dependent-key" /> Feeds into</span></div><div className="timeline timeline-refresh"><div className="timeline-header timeline-grid" style={gridTemplate}><div>Project / deliverable</div>{periods.map((period) => <div key={period.id}>{period.shortLabel}</div>)}</div>{rows.map((item) => <div className={`timeline-row timeline-grid ${item.project.deliveryContext === 'out-of-programme' ? 'enabling-row' : ''}`} style={gridTemplate} key={item.id}><a className="timeline-title" href={`#/deliverables/${item.id}`}><span className="reference">{displayId(item)}</span><strong>{item.title}</strong><span>{item.ownerLabel}</span><StatusPills id={item.id} compact /></a><div className="timeline-lane" style={laneTemplate}>{item.steps.map((step) => <button type="button" className={blockClass(step)} style={stepStyle(step)} key={step.id} title={`${periodLabel(step.period)}. Double-click for details.`} onClick={() => setSelectedStepId(step.id)} onDoubleClick={() => { setSelectedStepId(step.id); setModalStepId(step.id); }}><span>{step.title}</span>{getStepDependencies(step).length > 0 && <span className="dependency-dot">↳</span>}</button>)}</div></div>)}</div><TimelineStepModal step={modalStep} parent={modalParent} deps={modalDeps} onward={modalOnward} idMap={idMap} onClose={() => setModalStepId(null)} /></main>;
 }
 
-function DependencyLens({ step, parent, deps, onward, idMap }) {
-  return <section className="dependency-lens"><div><h2>{displayId(parent)}: {step.title}</h2><p>{step.summary}</p><span className="period-pill">{periodLabel(step.period)}</span><StatusPills id={step.id} /></div><div><h3>Depends on</h3>{deps.length ? <div className="link-list">{deps.map((id) => <SmartLink key={id} id={id} idMap={idMap} />)}</div> : <p>No step-level dependencies captured.</p>}</div><div><h3>Feeds into</h3>{onward.length ? <ul className="compact-list">{onward.map((entry, index) => <li key={`${entry.parent.id}-${entry.step.id}-${index}`}><SmartLink id={entry.step.id} idMap={idMap} /></li>)}</ul> : <p>No onward dependencies captured yet.</p>}</div></section>;
+function TimelineStepModal({ step, parent, deps, onward, idMap, onClose }) {
+  useEffect(() => {
+    if (!step) return undefined;
+    const onKeyDown = (event) => {
+      if (event.key === 'Escape') onClose();
+    };
+    window.addEventListener('keydown', onKeyDown);
+    return () => window.removeEventListener('keydown', onKeyDown);
+  }, [step, onClose]);
+
+  if (!step || !parent) return null;
+  return <div className="timeline-modal-backdrop" role="presentation" onClick={onClose}><section className="timeline-modal" role="dialog" aria-modal="true" aria-labelledby="timeline-modal-title" onClick={(event) => event.stopPropagation()}><button type="button" className="timeline-modal-close" onClick={onClose}>Close</button><div className="timeline-modal-main"><h2 id="timeline-modal-title">{displayId(parent)}: {step.title}</h2><p>{step.summary}</p><span className="period-pill">{periodLabel(step.period)}</span><StatusPills id={step.id} /></div><div className="timeline-modal-grid"><div><h3>Depends on</h3>{deps.length ? <div className="link-list">{deps.map((id) => <SmartLink key={id} id={id} idMap={idMap} />)}</div> : <p>No step-level dependencies captured.</p>}</div><div><h3>Feeds into</h3>{onward.length ? <ul className="compact-list">{onward.map((entry, index) => <li key={`${entry.parent.id}-${entry.step.id}-${index}`}><SmartLink id={entry.step.id} idMap={idMap} /></li>)}</ul> : <p>No onward dependencies captured yet.</p>}</div></div></section></div>;
 }
 
 function Site() {
