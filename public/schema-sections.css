@@ -173,7 +173,8 @@
 }
 
 .project-deliverable-header .lead {
-  margin: 0.35rem 0 0;
+  margin: auto 0 0;
+  padding-top: 0.75rem;
   color: #ffffff !important;
 }
 
@@ -262,5 +263,10 @@
     display: block;
     overflow: visible;
     -webkit-line-clamp: unset;
+  }
+
+  .project-deliverable-header .lead {
+    margin-top: 0.75rem;
+    padding-top: 0;
   }
 }
