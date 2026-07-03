@@ -239,9 +239,9 @@
 .timeline-modal {
   position: relative !important;
   width: min(980px, 100%) !important;
-  max-height: min(760px, calc(100vh - 3rem)) !important;
+  max-height: min(720px, calc(100vh - 3rem)) !important;
   overflow: auto !important;
-  padding: clamp(1.1rem, 2vw, 1.5rem) !important;
+  padding: clamp(1rem, 2vw, 1.35rem) !important;
   border: 3px solid var(--ink) !important;
   border-left: 0.8rem solid var(--accent) !important;
   background: #ffffff !important;
@@ -271,50 +271,86 @@
 }
 
 .timeline-modal-main {
-  padding-right: 5rem;
+  display: grid;
+  gap: 0.65rem;
+  padding-right: 5.5rem;
 }
 
 .timeline-modal-main h2 {
-  margin: 0 0 0.55rem;
+  margin: 0;
   max-width: 760px;
   font-family: var(--font-brand);
-  font-size: clamp(2rem, 4vw, 3.8rem);
+  font-size: clamp(2rem, 3.35vw, 3.15rem);
   font-weight: 400;
-  line-height: 0.98;
+  line-height: 1;
   letter-spacing: -0.03em;
 }
 
 .timeline-modal-main p {
+  margin: 0;
   max-width: 760px;
   color: var(--muted);
   font-size: 1rem;
+  line-height: 1.35;
+}
+
+.timeline-modal-main .period-pill {
+  margin-top: 0.1rem;
 }
 
 .timeline-modal-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1rem;
-  margin-top: 1.15rem;
-  padding-top: 1rem;
+  gap: 1.1rem;
+  align-items: start;
+  margin-top: 0.95rem;
+  padding-top: 0.95rem;
   border-top: 2px solid var(--ink);
 }
 
 .timeline-modal-grid h3 {
-  margin: 0 0 0.6rem;
+  margin: 0 0 0.55rem;
   font-size: 1rem;
   font-weight: 800;
+  line-height: 1.15;
 }
 
-.timeline-modal-grid p,
-.timeline-modal-grid .compact-list {
+.timeline-modal-grid p {
+  margin: 0;
   color: var(--muted);
   font-size: 0.92rem;
   line-height: 1.35;
 }
 
+.timeline-modal-grid .link-list {
+  display: grid;
+  justify-items: start;
+  gap: 0.5rem;
+}
+
+.timeline-modal-grid .compact-list {
+  display: grid;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  color: var(--muted);
+  font-size: 0.92rem;
+  line-height: 1.35;
+}
+
+.timeline-modal-grid .compact-list li {
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
 .timeline-modal-grid .chip {
+  display: inline-flex;
+  width: fit-content;
   padding: 0.45rem 0.6rem;
   font-size: 0.82rem;
+  line-height: 1.15;
 }
 
 @media (max-width: 1180px) {
@@ -342,6 +378,10 @@
   .timeline-modal-main {
     padding-right: 0;
     padding-top: 2.8rem;
+  }
+
+  .timeline-modal-main h2 {
+    font-size: clamp(1.75rem, 10vw, 2.6rem);
   }
 
   .timeline-modal-grid {
