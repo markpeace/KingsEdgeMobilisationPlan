@@ -34,6 +34,7 @@
   font-weight: 400;
   letter-spacing: -0.032em;
   line-height: 0.82;
+  font-size: clamp(2.45rem, 3.15vw, 3.05rem);
 }
 
 .brand::before {
@@ -41,7 +42,6 @@
   padding: 0.48rem clamp(1.05rem, 2vw, 1.6rem) 0.34rem clamp(1rem, 2.1vw, 1.55rem);
   background: var(--accent);
   color: #ffffff;
-  font-size: clamp(2.45rem, 3.15vw, 3.05rem);
 }
 
 .brand::after {
@@ -49,7 +49,6 @@
   padding: 0.48rem clamp(1rem, 1.5vw, 1.4rem) 0.34rem;
   background: #ffffff;
   color: var(--ink);
-  font-size: clamp(1.95rem, 2.6vw, 2.52rem);
 }
 
 .brand:hover::after {
@@ -64,14 +63,7 @@
   .brand::before,
   .brand::after {
     min-height: 80px;
-  }
-
-  .brand::before {
     font-size: clamp(1.85rem, 3.2vw, 2.4rem);
-  }
-
-  .brand::after {
-    font-size: clamp(1.5rem, 2.7vw, 1.95rem);
   }
 }
 
@@ -90,15 +82,11 @@
   .brand::after {
     min-height: 54px;
     justify-content: center;
+    font-size: clamp(1.5rem, 8vw, 2rem);
   }
 
-  .brand::before {
-    flex: 1 1 auto;
-    font-size: clamp(1.5rem, 9vw, 2rem);
-  }
-
+  .brand::before,
   .brand::after {
     flex: 1 1 auto;
-    font-size: clamp(1.25rem, 7vw, 1.65rem);
   }
 }
