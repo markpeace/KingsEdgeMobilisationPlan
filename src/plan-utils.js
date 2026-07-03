@@ -109,14 +109,19 @@ function enrichProject(project) {
   };
 }
 
+function compareProjects(a, b) {
+  if (a.deliveryContext !== b.deliveryContext) {
+    return a.deliveryContext === 'edge' ? -1 : 1;
+  }
+  return a.displayOrder - b.displayOrder || String(a.displayId || a.id).localeCompare(String(b.displayId || b.id));
+}
+
 export const projects = applySchemaExampleContent([
   ...plan.projects.map((project) => ({ ...project, deliveryContext: project.deliveryContext || 'edge' })),
   ...outOfProgrammeProjects.map((project) => ({ ...project, deliveryContext: project.deliveryContext || 'out-of-programme' }))
-]).map(enrichProject);
+]).map(enrichProject).sort(compareProjects);
 
-export const edgeProjects = projects
-  .filter((project) => project.deliveryContext === 'edge')
-  .sort((a, b) => a.displayOrder - b.displayOrder || a.id.localeCompare(b.id));
+export const edgeProjects = projects.filter((project) => project.deliveryContext === 'edge');
 
 export const outOfProgramme = projects.filter((project) => project.deliveryContext === 'out-of-programme');
 
