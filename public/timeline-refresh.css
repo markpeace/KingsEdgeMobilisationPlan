@@ -222,6 +222,97 @@
   color: var(--accent);
 }
 
+.timeline-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  display: grid;
+  place-items: center;
+  padding: clamp(1rem, 3vw, 2rem);
+  background: rgba(9, 9, 9, 0.52);
+}
+
+.timeline-modal {
+  position: relative;
+  width: min(980px, 100%);
+  max-height: min(760px, calc(100vh - 3rem));
+  overflow: auto;
+  padding: clamp(1.1rem, 2vw, 1.5rem);
+  border: 3px solid var(--ink);
+  border-left: 0.8rem solid var(--accent);
+  background: #ffffff;
+  box-shadow: 0 18px 60px rgba(0, 0, 0, 0.28);
+}
+
+.timeline-modal-close {
+  position: absolute;
+  top: 0.85rem;
+  right: 0.85rem;
+  border: 2px solid var(--ink);
+  border-radius: 0;
+  padding: 0.5rem 0.7rem;
+  background: #ffffff;
+  color: var(--ink);
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.timeline-modal-close:hover,
+.timeline-modal-close:focus-visible {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: #ffffff;
+  outline: none;
+}
+
+.timeline-modal-main {
+  padding-right: 5rem;
+}
+
+.timeline-modal-main h2 {
+  margin: 0 0 0.55rem;
+  max-width: 760px;
+  font-family: var(--font-brand);
+  font-size: clamp(2rem, 4vw, 3.8rem);
+  font-weight: 400;
+  line-height: 0.98;
+  letter-spacing: -0.03em;
+}
+
+.timeline-modal-main p {
+  max-width: 760px;
+  color: var(--muted);
+  font-size: 1rem;
+}
+
+.timeline-modal-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1.15rem;
+  padding-top: 1rem;
+  border-top: 2px solid var(--ink);
+}
+
+.timeline-modal-grid h3 {
+  margin: 0 0 0.6rem;
+  font-size: 1rem;
+  font-weight: 800;
+}
+
+.timeline-modal-grid p,
+.timeline-modal-grid .compact-list {
+  color: var(--muted);
+  font-size: 0.92rem;
+  line-height: 1.35;
+}
+
+.timeline-modal-grid .chip {
+  padding: 0.45rem 0.6rem;
+  font-size: 0.82rem;
+}
+
 @media (max-width: 1180px) {
   .dependency-lens {
     grid-template-columns: 1fr !important;
@@ -242,5 +333,14 @@
   .timeline-controls select {
     width: 100%;
     max-width: none;
+  }
+
+  .timeline-modal-main {
+    padding-right: 0;
+    padding-top: 2.8rem;
+  }
+
+  .timeline-modal-grid {
+    grid-template-columns: 1fr;
   }
 }
