@@ -34,7 +34,7 @@
 }
 
 .project-column-header .owner {
-  margin-top: 1.15rem !important;
+  margin-top: auto !important;
   margin-bottom: 0 !important;
 }
 
@@ -73,7 +73,9 @@
 }
 
 .deliverable-card .lead {
-  margin-top: 0.4rem;
+  margin-top: auto !important;
+  margin-bottom: 0 !important;
+  padding-top: 0.75rem;
 }
 
 .programme-divider {
@@ -108,5 +110,11 @@
     display: block !important;
     overflow: visible !important;
     -webkit-line-clamp: unset;
+  }
+
+  .project-column-header .owner,
+  .deliverable-card .lead {
+    margin-top: 0.75rem !important;
+    padding-top: 0 !important;
   }
 }
