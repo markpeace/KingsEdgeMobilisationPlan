@@ -1,11 +1,32 @@
+.landing-main {
+  min-height: calc(100vh - 130px);
+}
+
 .landing-hero {
-  min-height: min(620px, calc(100vh - 170px));
+  min-height: min(640px, calc(100vh - 150px));
   padding-top: clamp(2.4rem, 5vw, 4.8rem) !important;
   padding-bottom: clamp(2.2rem, 4vw, 3.8rem) !important;
 }
 
 .landing-hero .eyebrow {
-  margin-bottom: 0.7rem;
+  display: inline-flex !important;
+  align-items: center;
+  gap: 0.55rem;
+  margin: 0 0 0.9rem;
+  padding: 0 !important;
+  background: transparent !important;
+  color: var(--accent-dark) !important;
+  border: 0 !important;
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.landing-hero .eyebrow::before {
+  content: "";
+  width: 2.4rem;
+  height: 0.22rem;
+  background: var(--accent);
 }
 
 .landing-hero h1 {
@@ -50,7 +71,46 @@
 }
 
 .landing-links a {
+  position: relative;
   min-height: 142px;
+  padding: 1rem 1rem 1.1rem;
+}
+
+.landing-links a::after {
+  content: "Open →";
+  align-self: end;
+  margin-top: 0.4rem;
+  color: var(--accent-dark);
+  font-size: 0.86rem;
+  font-weight: 800;
+}
+
+.landing-links a:hover::after {
+  color: #ffffff;
+}
+
+.landing-links a:focus-visible {
+  outline: 4px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.landing-links a:first-child {
+  background: var(--ink);
+  color: #ffffff;
+}
+
+.landing-links a:first-child em,
+.landing-links a:first-child span,
+.landing-links a:first-child::after {
+  color: rgba(255, 255, 255, 0.86);
+}
+
+.landing-links a:first-child:hover {
+  background: var(--accent);
+}
+
+.landing-links strong {
+  max-width: 16rem;
 }
 
 @media (max-width: 760px) {
@@ -60,5 +120,9 @@
 
   .landing-hero h1::after {
     font-size: clamp(1.1rem, 5.2vw, 1.45rem);
+  }
+
+  .landing-links a:first-child {
+    order: -1;
   }
 }
