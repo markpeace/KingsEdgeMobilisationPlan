@@ -1,37 +1,87 @@
+.timeline-toolbar {
+  display: flex !important;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0 !important;
+  margin: 0.75rem 0 1rem !important;
+  border: 0 !important;
+  background: transparent !important;
+}
+
+.timeline-toolbar select {
+  min-width: min(420px, 100%);
+  max-width: 520px;
+  padding: 0.72rem 0.9rem !important;
+}
+
+.timeline-toolbar .toggle-label {
+  display: none !important;
+}
+
+.timeline-key {
+  margin: 0.6rem 0 0.9rem !important;
+  padding: 0 !important;
+  font-size: 0.86rem !important;
+}
+
+.dependency-lens {
+  margin: 0.75rem 0 0.65rem !important;
+  padding: 0.9rem 1rem !important;
+  border-left-width: 0.45rem !important;
+}
+
+.dependency-lens.empty {
+  min-height: unset !important;
+}
+
+.dependency-lens.empty h2 {
+  margin-bottom: 0.2rem !important;
+  font-family: var(--font-body) !important;
+  font-size: 1.05rem !important;
+  letter-spacing: 0 !important;
+}
+
+.dependency-lens.empty p {
+  margin-bottom: 0 !important;
+  font-size: 0.95rem !important;
+}
+
 .timeline-refresh {
   overflow-x: auto;
   border: 2px solid var(--ink);
   background: #ffffff;
+  scrollbar-color: var(--accent) #f1f1f1;
 }
 
 .timeline-refresh .timeline-grid {
   display: grid;
-  min-width: 1500px;
+  min-width: 1680px;
 }
 
 .timeline-refresh .timeline-header {
-  position: sticky;
-  top: 70px;
-  z-index: 6;
-  min-width: 1500px;
+  position: static !important;
+  top: auto !important;
+  z-index: 1;
+  min-width: 1680px;
   background: var(--ink);
   color: #ffffff;
   font-weight: 700;
 }
 
 .timeline-refresh .timeline-header > div {
-  min-height: 62px;
+  min-height: 58px;
   display: flex;
   align-items: center;
-  padding: 0.7rem;
+  padding: 0.65rem;
   border-right: 1px solid rgba(255, 255, 255, 0.22);
   border-bottom: 0;
-  font-size: 0.82rem;
+  font-size: 0.8rem;
   line-height: 1.15;
 }
 
 .timeline-refresh .timeline-row {
-  min-width: 1500px;
+  min-width: 1680px;
   border-bottom: 1px solid var(--border);
 }
 
@@ -42,17 +92,25 @@
 .timeline-refresh .timeline-title {
   grid-column: 1;
   display: grid;
-  align-content: start;
+  align-content: center;
   gap: 0.35rem;
-  min-height: 118px;
-  padding: 0.75rem;
+  min-height: 144px;
+  padding: 0.8rem;
   border-right: 3px solid var(--ink);
   border-bottom: 0;
   background: #ffffff;
   text-decoration: none;
 }
 
+.timeline-refresh .timeline-title:hover {
+  background: var(--accent-soft);
+}
+
 .timeline-refresh .timeline-title strong {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
   font-size: 0.92rem;
   line-height: 1.15;
 }
@@ -65,30 +123,31 @@
 .timeline-refresh .timeline-lane {
   grid-column: 2 / -1;
   display: grid;
-  gap: 0.45rem;
-  align-items: center;
-  min-height: 118px;
-  padding: 0.75rem;
-  background-image: linear-gradient(to right, rgba(9, 9, 9, 0.12) 1px, transparent 1px);
-  background-size: calc((100% + 1px) / 9) 100%;
+  grid-auto-rows: minmax(48px, auto);
+  gap: 0.48rem;
+  align-content: center;
+  min-height: 144px;
+  padding: 0.8rem;
+  background-image: linear-gradient(to right, rgba(9, 9, 9, 0.11) 1px, transparent 1px);
+  background-size: calc(100% / 9) 100%;
 }
 
 .timeline-refresh .timeline-block {
-  min-height: 54px;
+  min-height: 48px;
   margin: 0;
-  align-self: center;
+  align-self: stretch;
   display: grid;
   grid-template-columns: 1fr auto;
   align-items: center;
   gap: 0.45rem;
-  padding: 0.62rem 0.7rem;
-  border: 2px solid var(--ink);
+  padding: 0.58rem 0.65rem;
+  border: 2px solid var(--border);
   background: #ffffff;
   color: var(--ink);
   font: inherit;
-  font-size: 0.83rem;
+  font-size: 0.8rem;
   font-weight: 700;
-  line-height: 1.2;
+  line-height: 1.18;
   text-align: left;
   cursor: pointer;
 }
@@ -123,14 +182,14 @@
 }
 
 .timeline-refresh .dependency-dot {
-  width: 1.35rem;
-  height: 1.35rem;
+  width: 1.25rem;
+  height: 1.25rem;
   border-radius: 50%;
   display: inline-grid;
   place-items: center;
   background: var(--accent);
   color: #ffffff;
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   font-weight: 700;
 }
 
@@ -144,6 +203,15 @@
   .timeline-refresh .timeline-grid,
   .timeline-refresh .timeline-header,
   .timeline-refresh .timeline-row {
-    min-width: 1300px;
+    min-width: 1450px;
+  }
+
+  .timeline-toolbar {
+    display: grid !important;
+  }
+
+  .timeline-toolbar select {
+    width: 100%;
+    max-width: none;
   }
 }
