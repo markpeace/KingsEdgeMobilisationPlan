@@ -1,0 +1,64 @@
+.landing-hero {
+  min-height: min(620px, calc(100vh - 170px));
+  padding-top: clamp(2.4rem, 5vw, 4.8rem) !important;
+  padding-bottom: clamp(2.2rem, 4vw, 3.8rem) !important;
+}
+
+.landing-hero .eyebrow {
+  margin-bottom: 0.7rem;
+}
+
+.landing-hero h1 {
+  max-width: 780px;
+  margin-bottom: 0.75rem !important;
+  font-size: clamp(4.2rem, 7.2vw, 7.4rem) !important;
+  line-height: 0.9 !important;
+}
+
+.landing-hero h1::after {
+  content: "A King's education is a journey of purpose as well as a course of study.";
+  display: block;
+  max-width: 920px;
+  margin-top: clamp(0.9rem, 1.8vw, 1.35rem);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: clamp(1.25rem, 1.9vw, 1.85rem);
+  font-weight: 800;
+  line-height: 1.14;
+  letter-spacing: -0.028em;
+}
+
+.landing-hero > p:not(.eyebrow) {
+  max-width: 900px;
+  margin: 0;
+  color: var(--muted);
+  font-size: clamp(1rem, 1.16vw, 1.14rem);
+  line-height: 1.42;
+}
+
+.landing-hero > p:not(.eyebrow)::after {
+  content: "This map turns that north star into delivery: the projects, dependencies, measures and decisions needed to make King's Edge visible, navigable and evidenced for every student.";
+  display: block;
+  max-width: 920px;
+  margin-top: 0.7rem;
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.landing-hero .landing-links {
+  margin-top: clamp(2rem, 3.2vw, 2.7rem);
+}
+
+.landing-links a {
+  min-height: 142px;
+}
+
+@media (max-width: 760px) {
+  .landing-hero h1 {
+    font-size: clamp(3rem, 18vw, 4.4rem) !important;
+  }
+
+  .landing-hero h1::after {
+    font-size: clamp(1.1rem, 5.2vw, 1.45rem);
+  }
+}
