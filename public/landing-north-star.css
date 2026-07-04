@@ -13,9 +13,9 @@
 }
 
 .landing-hero h1 {
-  max-width: 780px;
+  max-width: 720px;
   margin-bottom: 0.75rem !important;
-  font-size: clamp(4.2rem, 7.2vw, 7.4rem) !important;
+  font-size: clamp(3.65rem, 6.25vw, 6.35rem) !important;
   line-height: 0.9 !important;
   text-transform: uppercase;
 }
@@ -44,7 +44,7 @@
 }
 
 .landing-hero > p:not(.eyebrow)::before {
-  content: "In a context where the value of higher education can no longer be left implicit, King's needs to assert clearly what a King's education adds. With the graduate premium increasingly contested, and AI reshaping knowledge, skills and work, King's Edge gives shape to that value: purpose, experience, evidence of skills, and a distinctive contribution to the world.";
+  content: "The value of higher education can no longer be left implicit. As the graduate premium becomes more contested, and as AI reshapes knowledge, skills and work, King's needs to be clearer about what a King's education adds: purpose, experience, evidence of skills, and a distinctive contribution to the world.";
   display: block;
   max-width: 940px;
   color: var(--muted);
@@ -54,7 +54,7 @@
 }
 
 .landing-hero > p:not(.eyebrow)::after {
-  content: "This mobilisation plan turns the proposition into delivery: the projects, dependencies, measures and decisions needed to make King's Edge visible, navigable and evidenced for every student.";
+  content: "This mobilisation plan turns that proposition into delivery: the projects, dependencies, measures and decisions needed to make King's Edge visible, navigable and evidenced for every student.";
   display: block;
   max-width: 940px;
   margin-top: 0.75rem;
@@ -113,7 +113,7 @@
 
 @media (max-width: 760px) {
   .landing-hero h1 {
-    font-size: clamp(3rem, 18vw, 4.4rem) !important;
+    font-size: clamp(2.8rem, 16vw, 4rem) !important;
   }
 
   .landing-hero h1::after {
