@@ -9,21 +9,7 @@
 }
 
 .landing-hero .eyebrow {
-  display: inline-flex !important;
-  align-items: center;
-  width: fit-content;
-  margin: 0 0 0.9rem;
-  padding: 0.38rem 0.62rem !important;
-  background: var(--accent) !important;
-  color: #ffffff !important;
-  border: 0 !important;
-  font-size: 0.82rem;
-  font-weight: 800;
-  letter-spacing: 0.08em;
-}
-
-.landing-hero .eyebrow::before {
-  content: none;
+  display: none !important;
 }
 
 .landing-hero h1 {
@@ -31,6 +17,7 @@
   margin-bottom: 0.75rem !important;
   font-size: clamp(4.2rem, 7.2vw, 7.4rem) !important;
   line-height: 0.9 !important;
+  text-transform: uppercase;
 }
 
 .landing-hero h1::after {
@@ -41,26 +28,40 @@
   color: var(--ink);
   font-family: var(--font-body);
   font-size: clamp(1.25rem, 1.9vw, 1.85rem);
-  font-weight: 800;
+  font-style: italic;
+  font-weight: 700;
   line-height: 1.14;
   letter-spacing: -0.028em;
+  text-transform: none;
 }
 
 .landing-hero > p:not(.eyebrow) {
-  max-width: 900px;
+  max-width: 940px;
   margin: 0;
+  color: transparent;
+  font-size: 0;
+  line-height: 0;
+}
+
+.landing-hero > p:not(.eyebrow)::before {
+  content: "In a context where the value of higher education can no longer be left implicit, King's needs to assert clearly what a King's education adds. With the graduate premium increasingly contested, and AI reshaping knowledge, skills and work, King's Edge gives shape to that value: purpose, experience, evidence of skills, and a distinctive contribution to the world.";
+  display: block;
+  max-width: 940px;
   color: var(--muted);
   font-size: clamp(1rem, 1.16vw, 1.14rem);
-  line-height: 1.42;
+  font-weight: 400;
+  line-height: 1.44;
 }
 
 .landing-hero > p:not(.eyebrow)::after {
-  content: "This map turns that north star into delivery: the projects, dependencies, measures and decisions needed to make King's Edge visible, navigable and evidenced for every student.";
+  content: "This mobilisation plan turns the proposition into delivery: the projects, dependencies, measures and decisions needed to make King's Edge visible, navigable and evidenced for every student.";
   display: block;
-  max-width: 920px;
-  margin-top: 0.7rem;
+  max-width: 940px;
+  margin-top: 0.75rem;
   color: var(--ink);
+  font-size: clamp(1rem, 1.16vw, 1.14rem);
   font-weight: 700;
+  line-height: 1.44;
 }
 
 .landing-hero .landing-links {
