@@ -3,23 +3,41 @@
 .detail-hero:not(.project-detail-hero) {
   margin-top: 0.15rem;
   margin-bottom: 1.15rem;
-  padding: clamp(2.2rem, 4vw, 3.65rem) clamp(1.6rem, 4.2vw, 4rem) clamp(1.8rem, 3vw, 2.9rem) !important;
+  padding: clamp(1.95rem, 3.5vw, 3.15rem) clamp(1.6rem, 4.2vw, 4rem) clamp(1.75rem, 3vw, 2.65rem) !important;
   border-left-width: clamp(1rem, 2.1vw, 1.55rem) !important;
 }
 
 .detail-hero:not(.project-detail-hero)::after {
-  right: clamp(1rem, 3vw, 2.5rem);
-  bottom: 0.65rem;
-  font-size: clamp(3rem, 9vw, 7.8rem);
-  color: rgba(237, 28, 36, 0.04);
+  display: none !important;
+  content: none !important;
 }
 
 .detail-hero:not(.project-detail-hero) h1 {
-  max-width: 1260px;
+  display: grid;
+  gap: clamp(0.7rem, 1vw, 0.9rem);
+  align-items: start;
+  max-width: 1120px;
   margin-bottom: 0.85rem;
-  font-size: clamp(3.4rem, 5.2vw, 5.85rem) !important;
-  line-height: 0.91;
+  font-size: clamp(2.75rem, 4.15vw, 4.85rem) !important;
+  line-height: 0.93;
   letter-spacing: -0.04em;
+}
+
+.detail-hero:not(.project-detail-hero) h1 .hero-reference {
+  display: inline-flex;
+  width: fit-content;
+  padding: 0.32rem 0.62rem 0.26rem;
+  background: var(--accent);
+  color: #ffffff;
+  font-family: var(--font-body);
+  font-size: clamp(0.92rem, 1.05vw, 1.12rem);
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  line-height: 1;
+}
+
+.detail-hero:not(.project-detail-hero) h1 .hero-title-text {
+  display: block;
 }
 
 .detail-hero:not(.project-detail-hero) > p {
@@ -225,7 +243,7 @@ main > .detail-grid:last-child .chip {
 
 @media (max-width: 760px) {
   .detail-hero:not(.project-detail-hero) h1 {
-    font-size: clamp(2.7rem, 14vw, 4rem) !important;
+    font-size: clamp(2.35rem, 12vw, 3.45rem) !important;
   }
 
   .detail-hero:not(.project-detail-hero) + .detail-grid,
