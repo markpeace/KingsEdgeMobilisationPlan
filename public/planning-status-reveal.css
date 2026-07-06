@@ -1,0 +1,176 @@
+.planning-status {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.24rem 0.48rem 0.2rem;
+  border: 2px solid var(--ink);
+  background: #ffffff;
+  color: var(--ink);
+  font-size: 0.72rem;
+  font-weight: 850;
+  line-height: 1;
+  letter-spacing: 0.075em;
+  text-transform: uppercase;
+}
+
+.planning-status-pre-draft {
+  border-style: dashed;
+  background: #fff9ed;
+}
+
+.planning-status-draft,
+.planning-status-validated-draft,
+.planning-status-decision-ready,
+.planning-status-mobilising,
+.planning-status-in-delivery {
+  background: var(--ink);
+  color: #ffffff;
+}
+
+.deliverable-card .planning-status,
+.project-deliverable-header .planning-status,
+.index-row .planning-status,
+.timeline-title .planning-status {
+  margin: 0.1rem 0 0.35rem;
+}
+
+.detail-meta .planning-status {
+  margin: -0.08rem 0;
+}
+
+.staff-summary-panel,
+.detailed-plan-control,
+.pre-draft-note {
+  margin: 1.15rem 0;
+}
+
+.staff-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.85rem;
+}
+
+.detailed-plan-control {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 0.8rem 1rem;
+  align-items: end;
+}
+
+.detailed-plan-control h2,
+.detailed-plan-control p {
+  grid-column: 1;
+}
+
+.detail-toggle-button {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  align-self: center;
+  padding: 0.75rem 1rem;
+  border: 2px solid var(--ink);
+  background: var(--accent);
+  color: #ffffff;
+  font: inherit;
+  font-weight: 850;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.detail-toggle-button:hover,
+.detail-toggle-button:focus-visible {
+  background: var(--ink);
+}
+
+.detailed-plan-reveal {
+  margin-top: 1rem;
+}
+
+.pre-draft-note {
+  border-style: dashed !important;
+  background: #fff9ed !important;
+}
+
+.pre-draft-note h2 {
+  font-size: clamp(1.65rem, 2.4vw, 2.45rem) !important;
+}
+
+.indicative-label {
+  display: inline-flex;
+  width: fit-content;
+  margin: 0 0 0.45rem;
+  padding: 0.2rem 0.42rem;
+  border: 1.5px dashed var(--ink);
+  background: #fff9ed;
+  color: var(--ink);
+  font-size: 0.68rem;
+  font-weight: 850;
+  letter-spacing: 0.08em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.indicative-step-card,
+.timeline-row-predraft .timeline-title,
+.timeline-block-indicative {
+  border-style: dashed !important;
+}
+
+.timeline-block-indicative {
+  background: #fff9ed !important;
+}
+
+.timeline-block-indicative .indicative-label {
+  margin: 0.35rem 0 0;
+  font-size: 0.58rem;
+}
+
+.timeline-key .indicative-key {
+  border-style: dashed;
+  background: #fff9ed;
+}
+
+.toolbar-check {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.6rem 0.75rem;
+  border: 2px solid var(--ink);
+  background: #ffffff;
+  font-weight: 800;
+}
+
+.emerging-measure-row {
+  border-style: dashed !important;
+  background: #fff9ed;
+}
+
+.resources-panel {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.resources-panel > h3 {
+  margin: 0;
+  font-size: clamp(1.55rem, 2.2vw, 2.25rem);
+}
+
+.resource-block-investment,
+.investment-ask-block {
+  border-left: 0.5rem solid var(--accent);
+}
+
+@media (max-width: 900px) {
+  .staff-summary-grid,
+  .detailed-plan-control {
+    grid-template-columns: 1fr;
+  }
+
+  .detailed-plan-control h2,
+  .detailed-plan-control p,
+  .detail-toggle-button {
+    grid-column: auto;
+    grid-row: auto;
+  }
+}
