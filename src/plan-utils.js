@@ -82,6 +82,166 @@ function displayIdForDeliverable(deliverableId) {
   return [displayProjectId, ...parts.slice(2)].join('.');
 }
 
+function textOf(item, fallback = 'Item') {
+  if (typeof item === 'string') return item;
+  return item?.title || item?.label || item?.item || item?.role || fallback;
+}
+
+function asArray(value) {
+  return Array.isArray(value) ? value : [];
+}
+
+function normaliseCaseForChange(deliverable) {
+  const existing = deliverable.caseForChange || {};
+  return {
+    problem: existing.problem || deliverable.problemSolved || '',
+    opportunity: existing.opportunity || deliverable.opportunity || '',
+    whyNow: existing.whyNow || deliverable.whyNow || '',
+    intendedChange: existing.intendedChange || deliverable.whatChanges || ''
+  };
+}
+
+function normaliseOwnership(deliverable, project) {
+  const existing = deliverable.ownership || {};
+  return {
+    accountableOwner: existing.accountableOwner || project.owner || 'TBC',
+    deliveryLead: existing.deliveryLead || deliverable.lead || 'TBC',
+    benefitOwner: existing.benefitOwner || existing.accountableOwner || project.owner || 'TBC',
+    contributors: asArray(existing.contributors),
+    decisionForum: existing.decisionForum || 'TBC'
+  };
+}
+
+function normaliseOutput(deliverable, output, index) {
+  return {
+    id: output.id || `${deliverable.id}-O${index + 1}`,
+    title: textOf(output, 'Output'),
+    type: output.type || output.outputType || 'output',
+    description: output.description || output.summary || '',
+    owner: output.owner || deliverable.lead || 'TBC',
+    duePeriod: output.duePeriod || output.due || output.period || 'TBC',
+    acceptanceCriteria: asArray(output.acceptanceCriteria),
+    supportsBenefits: asArray(output.supportsBenefits),
+    status: output.status || 'draft'
+  };
+}
+
+function normaliseMeasure(deliverable, measure, index) {
+  return {
+    id: measure.id || `${deliverable.id}-M${index + 1}`,
+    title: measure.title || measure.label || 'Measure',
+    measureType: measure.measureType || measure.type || 'measure',
+    questionAnswered: measure.questionAnswered || '',
+    measure: measure.measure || measure.description || '',
+    baseline: measure.baseline || '',
+    target: measure.target || '',
+    dataSource: measure.dataSource || '',
+    cadence: measure.cadence || measure.reviewFrequency || measure.period || 'TBC',
+    owner: measure.owner || deliverable.lead || 'TBC',
+    confidence: measure.confidence || 'developing',
+    supportsBenefits: asArray(measure.supportsBenefits || measure.benefitIds)
+  };
+}
+
+function normaliseBenefit(deliverable, benefit, index) {
+  return {
+    id: benefit.id || `${deliverable.id}-B${index + 1}`,
+    title: textOf(benefit, 'Benefit'),
+    beneficiary: benefit.beneficiary || benefit.audience || 'Students / programmes / institution',
+    benefitType: benefit.benefitType || benefit.type || 'value',
+    statement: benefit.statement || benefit.description || '',
+    currentState: benefit.currentState || '',
+    desiredChange: benefit.desiredChange || '',
+    owner: benefit.owner || deliverable.ownership?.benefitOwner || deliverable.lead || 'TBC',
+    realisationPeriod: benefit.realisationPeriod || benefit.period || 'TBC',
+    realisedThrough: asArray(benefit.realisedThrough || benefit.outputs),
+    measures: asArray(benefit.measures)
+  };
+}
+
+function normaliseSteps(deliverable) {
+  return asArray(deliverable.steps).map((step) => ({
+    stepType: step.stepType || 'task',
+    outputsProduced: asArray(step.outputsProduced || step.outputIds || asArray(step.outputs).map((output, index) => output.id || `${step.id}-O${index + 1}`)),
+    resources: step.resources || {},
+    outputs: asArray(step.outputs),
+    decisions: asArray(step.decisions),
+    risks: asArray(step.risks),
+    issues: asArray(step.issues),
+    assumptions: asArray(step.assumptions),
+    ...step
+  }));
+}
+
+function normaliseDependencies(deliverable) {
+  return asArray(deliverable.dependencies).map((dependency, index) => ({
+    id: dependency.id || `${deliverable.id}-DEP${index + 1}`,
+    dependsOn: dependency.dependsOn || dependency.targetId || dependency.id,
+    targetId: dependency.targetId || dependency.dependsOn || dependency.id,
+    dependencyType: dependency.dependencyType || dependency.type || 'dependency',
+    criticality: dependency.criticality || 'medium',
+    description: dependency.description || dependency.label || '',
+    owner: dependency.owner || 'TBC',
+    status: dependency.status || 'open'
+  }));
+}
+
+function fallbackBenefits(deliverable, measures) {
+  if (!deliverable.whatChanges) return [];
+  return [
+    {
+      id: `${deliverable.id}-B1`,
+      title: 'Intended change realised',
+      beneficiary: 'Students / programmes / institution',
+      benefitType: 'strategic value',
+      statement: deliverable.whatChanges,
+      currentState: deliverable.problemSolved || '',
+      desiredChange: deliverable.whatChanges,
+      owner: deliverable.lead || 'TBC',
+      realisationPeriod: 'TBC',
+      realisedThrough: [],
+      measures: measures.map((measure) => measure.id)
+    }
+  ];
+}
+
+function fallbackDefinitionOfDone(outputs, measures) {
+  const criteria = [];
+  if (outputs.length) criteria.push('Core outputs are delivered and accepted against agreed criteria.');
+  if (measures.length) criteria.push('Measures are agreed, owned and baselined where possible.');
+  criteria.push('Dependencies, assumptions and risks are reviewed with the accountable owner.');
+  criteria.push('Benefit owner and route to adoption or business-as-usual are confirmed.');
+  return criteria;
+}
+
+function normaliseDeliverableSchema(deliverable, project) {
+  const caseForChange = normaliseCaseForChange(deliverable);
+  const ownership = normaliseOwnership(deliverable, project);
+  const outputs = asArray(deliverable.outputs || deliverable.successMeasures?.outputs).map((output, index) => normaliseOutput(deliverable, output, index));
+  const measures = asArray(deliverable.measures || deliverable.successMeasures?.measures || deliverable.successMeasures?.kpis).map((measure, index) => normaliseMeasure(deliverable, measure, index));
+  const rawBenefits = asArray(deliverable.benefits || deliverable.successMeasures?.benefits);
+  const benefits = rawBenefits.length ? rawBenefits.map((benefit, index) => normaliseBenefit({ ...deliverable, ownership }, benefit, index)) : fallbackBenefits(deliverable, measures);
+  const steps = normaliseSteps(deliverable);
+
+  return {
+    ...deliverable,
+    caseForChange,
+    ownership,
+    planningMaturity: deliverable.planningMaturity || 'concept',
+    benefits,
+    outputs,
+    measures,
+    deliverySteps: steps,
+    steps,
+    dependencies: normaliseDependencies(deliverable),
+    assumptions: asArray(deliverable.assumptions),
+    issues: asArray(deliverable.issues),
+    risks: asArray(deliverable.risks),
+    decisions: asArray(deliverable.decisions),
+    definitionOfDone: asArray(deliverable.definitionOfDone).length ? deliverable.definitionOfDone : fallbackDefinitionOfDone(outputs, measures)
+  };
+}
+
 function applySchemaExampleContent(projectList) {
   const deliverableExtras = schemaExampleContent.deliverables || {};
   const stepExtras = schemaExampleContent.steps || {};
@@ -103,7 +263,7 @@ function enrichProject(project) {
     displayId: displayIdForProject(project.id),
     displayOrder: edgeDisplayOrder.has(project.id) ? edgeDisplayOrder.get(project.id) : 1000,
     deliverables: project.deliverables?.map((deliverable) => ({
-      ...deliverable,
+      ...normaliseDeliverableSchema(deliverable, project),
       displayId: displayIdForDeliverable(deliverable.id)
     })) || []
   };
