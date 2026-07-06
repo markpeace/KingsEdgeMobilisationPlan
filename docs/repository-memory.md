@@ -49,6 +49,14 @@ Plan content should live in JSON, not be hard-coded into React or CSS.
 
 The frontend should render the source data. It should not add display workarounds to hide source-data problems.
 
+### Summary and detail summary have different jobs
+
+Use `summary` for the short card-facing essence. It should usually be one clear sentence.
+
+Use `detailSummary` for fuller explanation on project and deliverable detail pages. Do not force all descriptive content into `summary`.
+
+Cards and index rows should use `summary`. Detail pages should render `summary` first, then `detailSummary` underneath where it exists and is distinct.
+
 ### Deliverables are the main planning object
 
 Projects give the strategic map. Deliverables are the main unit of planning scrutiny. Steps provide sequencing.
@@ -154,7 +162,8 @@ First pass: project naming and description.
 For each of the four projects, sharpen:
 
 - project title;
-- one-line summary;
+- card-facing `summary`;
+- richer `detailSummary`, where useful;
 - institutional transformation claim;
 - whether the four deliverables underneath still feel like the right grouping.
 
@@ -163,6 +172,8 @@ Second pass: deliverables from pre-draft to draft.
 For each deliverable, test:
 
 - whether the title is doing the right work;
+- whether the summary captures the essence clearly;
+- whether a fuller detail summary is needed;
 - whether the problem is sharp enough;
 - whether the intended change is genuinely transformational;
 - whether benefits, outputs and measures are distinct;
