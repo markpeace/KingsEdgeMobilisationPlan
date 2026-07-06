@@ -1,0 +1,130 @@
+name: Canonical project ID migration
+
+on:
+  push:
+    paths:
+      - '.github/workflows/canonical-migration.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  migrate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Migrate source JSON and utilities
+        run: |
+          node <<'NODE'
+          const fs = require('fs');
+          const path = require('path');
+
+          const projectMap = {
+            '2.4': '2.1',
+            '2.1': '2.2',
+            '2.2': '2.3',
+            '2.3': '2.4'
+          };
+
+          const canonicalTitles = {
+            '2.1': "Articulating and Evidencing The King's Graduate Premium",
+            '2.2': 'Curriculum Embedded Graduate Advantage',
+            '2.3': 'Co-Curricular Opportunity to Go Further',
+            '2.4': 'Extra Curricular Provision for Belonging and Participation'
+          };
+
+          function remapIdString(value) {
+            if (typeof value !== 'string') return value;
+            return value.replace(/\b(2\.[1-4])((?:\.\d+)?(?:-step-\d+)?)\b/g, (match, prefix, suffix) => `${projectMap[prefix] || prefix}${suffix || ''}`);
+          }
+
+          function remapAny(value) {
+            if (Array.isArray(value)) return value.map(remapAny);
+            if (value && typeof value === 'object') {
+              const output = {};
+              for (const [key, child] of Object.entries(value)) {
+                output[remapIdString(key)] = remapAny(child);
+              }
+              return output;
+            }
+            return remapIdString(value);
+          }
+
+          function sortProjects(projects) {
+            return [...projects].sort((a, b) => String(a.id).localeCompare(String(b.id), undefined, { numeric: true }));
+          }
+
+          function markDeliverablesPreDraft(projects) {
+            for (const project of projects) {
+              project.title = canonicalTitles[project.id] || project.title;
+              project.deliverables = project.deliverables || [];
+              for (const deliverable of project.deliverables) {
+                if (!deliverable.planningStatus) deliverable.planningStatus = 'pre-draft';
+              }
+            }
+          }
+
+          function readJson(filePath) {
+            return JSON.parse(fs.readFileSync(filePath, 'utf8'));
+          }
+
+          function writeJson(filePath, data) {
+            fs.writeFileSync(filePath, `${JSON.stringify(data, null, 2)}\n`);
+          }
+
+          const planPath = 'src/data/kings-edge-plan.json';
+          const plan = remapAny(readJson(planPath));
+          plan.projects = sortProjects(plan.projects || []);
+          markDeliverablesPreDraft(plan.projects);
+          writeJson(planPath, plan);
+
+          for (const filePath of ['src/data/schema-example-content.json', 'src/data/step-dependencies.json', 'src/data/status.json']) {
+            if (fs.existsSync(filePath)) writeJson(filePath, remapAny(readJson(filePath)));
+          }
+
+          const planUtilsPath = 'src/plan-utils.js';
+          let planUtils = fs.readFileSync(planUtilsPath, 'utf8');
+
+          planUtils = planUtils.replace(/const edgeDisplayOrder = new Map\([\s\S]*?\n\]\);\n\n/, '');
+          planUtils = planUtils.replace(/const edgeDisplayIds = \{[\s\S]*?\n\};\n\n/, '');
+          planUtils = planUtils.replace(/const edgeDisplayTitles = \{[\s\S]*?\n\};\n\n/, '');
+          planUtils = planUtils.replace(/function displayIdForProject\(projectId\) \{[\s\S]*?\n\}\n\n/, '');
+          planUtils = planUtils.replace(/function displayTitleForProject\(project\) \{[\s\S]*?\n\}\n\n/, '');
+          planUtils = planUtils.replace(/function displayIdForDeliverable\(deliverableId\) \{[\s\S]*?\n\}\n\n/, '');
+
+          planUtils = planUtils.replace(/function enrichProject\(project\) \{[\s\S]*?\n\}\n\nfunction compareProjects/, `function enrichProject(project, index = 0) {
+  return {
+    ...project,
+    displayId: project.id,
+    displayOrder: project.order ?? index,
+    deliverables: project.deliverables?.map((deliverable) => ({
+      ...normaliseDeliverableSchema(deliverable, project),
+      displayId: deliverable.id
+    })) || []
+  };
+}
+
+function compareProjects`);
+
+          planUtils = planUtils.replace(/return a\.displayOrder - b\.displayOrder \|\| String\(a\.displayId \|\| a\.id\)\.localeCompare\(String\(b\.displayId \|\| b\.id\)\);/, "return a.displayOrder - b.displayOrder || String(a.id).localeCompare(String(b.id), undefined, { numeric: true });");
+
+          fs.writeFileSync(planUtilsPath, planUtils);
+
+          const auditPath = 'docs/schema-source-of-truth-audit.md';
+          if (fs.existsSync(auditPath)) {
+            const audit = fs.readFileSync(auditPath, 'utf8');
+            const note = '\n## Migration status\n\nCanonical project ID and order migration has been applied to source JSON. Historical display remapping should no longer be used in `src/plan-utils.js`. Keep this file as a record of why the migration was made.\n';
+            if (!audit.includes('## Migration status')) fs.writeFileSync(auditPath, `${audit}${note}`);
+          }
+
+          fs.unlinkSync('.github/workflows/canonical-migration.yml');
+          NODE
+      - name: Commit migration
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src/data/kings-edge-plan.json src/data/schema-example-content.json src/data/step-dependencies.json src/data/status.json src/plan-utils.js docs/schema-source-of-truth-audit.md .github/workflows/canonical-migration.yml
+          git commit -m "Migrate canonical project IDs to source data" || exit 0
+          git push
