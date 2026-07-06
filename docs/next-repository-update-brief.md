@@ -2,22 +2,20 @@
 
 Background planning document. Do not render this file in the app.
 
-The next implementation task is source-of-truth cleanup before the full content redraft.
-
 ## Current position
 
-The app now renders a `planningStatus` tag and a “Reveal detailed plan” pattern. The documentation now makes clear that `planningStatus` is the only canonical planning-stage workflow.
+The source-of-truth cleanup has been completed.
 
-However, a new-chat hydration test exposed two remaining problems:
+`src/data/kings-edge-plan.json` now carries the canonical project order and IDs directly:
 
-1. The repo still contains multiple status/tag-like concepts that can confuse agents.
-2. The desired project order and numbering are still partly achieved through programmatic display remapping rather than source JSON.
+1. `2.1` Articulating and Evidencing The King's Graduate Premium
+2. `2.2` Curriculum Embedded Graduate Advantage
+3. `2.3` Co-Curricular Opportunity to Go Further
+4. `2.4` Extra Curricular Provision for Belonging and Participation
 
-Read `docs/schema-source-of-truth-audit.md` before implementing the next change.
+`src/plan-utils.js` no longer performs hidden project display-ID, display-title or display-order remapping. The app should render the JSON source of truth.
 
-## Canonical planning-stage workflow
-
-Use `planningStatus` only.
+`planningStatus` is the only canonical planning-stage workflow.
 
 Allowed values:
 
@@ -28,6 +26,8 @@ Allowed values:
 - `mobilising`
 - `in-delivery`
 
+All current deliverables are `pre-draft` unless explicitly moved to a later `planningStatus`.
+
 Do not use these as planning-stage workflows:
 
 - `tags`
@@ -35,88 +35,37 @@ Do not use these as planning-stage workflows:
 - `visibility`
 - `src/data/status.json`
 
-All current deliverables default to `pre-draft` unless explicitly moved to a later `planningStatus`.
+## Next task
 
-## Canonical project order
+The next task is project manager mode content work, not source migration and not developer-mode UI work.
 
-The desired source order and numbering is:
+Use JSON as the primary editing surface, especially `src/data/kings-edge-plan.json`.
 
-1. `2.1` Articulating and Evidencing The King's Graduate Premium
-2. `2.2` Curriculum Embedded Graduate Advantage
-3. `2.3` Co-Curricular Opportunity to Go Further
-4. `2.4` Extra Curricular Provision for Belonging and Participation
+## Recommended working rhythm
 
-The source JSON should carry this order directly. The frontend should not have to remap IDs, titles or order to make the plan look correct.
+### First pass: project naming and description
 
-## Current cleanup needed
+Work through the four projects in order and sharpen:
 
-### 1. Migrate source JSON
+- project title;
+- one-line summary;
+- institutional transformation claim;
+- whether the four deliverables underneath still feel like the right grouping.
 
-Update `src/data/kings-edge-plan.json` so that project IDs, project titles and project order match the canonical order.
+The project titles need to name a mobilisable programme of work, not only describe a strategic domain.
 
-Recommended ID map:
+### Second pass: deliverables from pre-draft to draft
 
-- old `2.4` -> new `2.1`
-- old `2.1` -> new `2.2`
-- old `2.2` -> new `2.3`
-- old `2.3` -> new `2.4`
+For each deliverable, test:
 
-Apply this to:
+- is the title doing the right work?
+- is the problem sharp enough?
+- is the intended change genuinely transformational?
+- are benefits, outputs and measures distinct?
+- are dependencies and ownership plausible?
+- what would need to be true for this to become `draft`?
 
-- project IDs;
-- deliverable IDs;
-- step IDs;
-- dependency `targetId` values;
-- step `dependsOn` arrays;
-- `feedsInto`;
-- `relatedDeliverables`;
-- cross-programme dependency references.
-
-### 2. Migrate related data files
-
-Update related data files using the same ID map:
-
-- `src/data/schema-example-content.json`
-- `src/data/step-dependencies.json`
-- `src/data/status.json`, if retained
-
-Important: `src/data/status.json` is not the planning-stage workflow. It is hidden delivery-control metadata.
-
-### 3. Remove display-remapping workarounds
-
-After source JSON is migrated, simplify `src/plan-utils.js`.
-
-Remove or neutralise:
-
-- `edgeDisplayOrder`
-- `edgeDisplayIds`
-- `edgeDisplayTitles`
-- `displayIdForProject`
-- `displayTitleForProject`
-- `displayIdForDeliverable`
-- sorting based on display order rather than source order
-
-The app should render source IDs and source order directly.
-
-### 4. Check rendering
-
-After migration, check:
-
-- project board order;
-- project detail pages;
-- deliverables index codes and project context line;
-- deliverable detail hero context line;
-- measures view links;
-- timeline rows and dependency links;
-- step dependency modal links;
-- schema example content rendering;
-- status pills remain hidden unless explicitly reintroduced.
-
-## Content redraft comes after cleanup
-
-Only after this source-of-truth cleanup should the deliverable-by-deliverable content redraft begin.
-
-For each deliverable, move from `pre-draft` to `draft` only after scrutiny of:
+A deliverable only moves from `pre-draft` to `draft` once these have been scrutinised:
 
 - case for change;
 - ownership;
@@ -130,24 +79,42 @@ For each deliverable, move from `pre-draft` to `draft` only after scrutiny of:
 - investment ask, if any;
 - risks, issues, assumptions and decisions.
 
+## Source-of-truth guardrails
+
+Do not add hidden remapping back into `src/plan-utils.js`.
+
+Do not use `src/data/schema-example-content.json` as a hidden overlay. It has been retired.
+
+Do not use `src/data/status.json` as the planning-stage workflow.
+
+Do not introduce another tagging workflow.
+
+If a project title, order, ID or grouping is wrong, fix the JSON source of truth.
+
 ## Risks to manage
 
-### Risk: broken links after ID migration
+### Risk: project titles do two jobs badly
 
-Mitigation: migrate all IDs and references together, including steps, dependencies, feeds, related deliverables, schema examples and status entries.
+Mitigation: distinguish strategic domain, mobilisable programme of work and public-facing title. Choose titles that can hold the work and make sense to senior leaders.
 
-### Risk: reintroducing display workarounds
+### Risk: deliverables move to draft too early
 
-Mitigation: fix source JSON first. Simplify `src/plan-utils.js` after migration.
+Mitigation: keep everything `pre-draft` until the deliverable has been scrutinised against the schema.
 
-### Risk: confusing planning status with other metadata
+### Risk: benefits become disguised outputs
 
-Mitigation: use `planningStatus` only for the pre-draft to delivery workflow. Treat tags, maturity, visibility and status metadata as secondary.
+Mitigation: write benefits as realised value through use. Keep outputs as tangible products.
 
-### Risk: false security through reveal controls
+### Risk: measures become activity counts
 
-Mitigation: do not put genuinely restricted material into broad client-side JSON.
+Mitigation: write measures as evidence questions or indicators that show whether benefits are happening.
+
+### Risk: resource asks are blurred
+
+Mitigation: separate existing capacity, new investment and enabling conditions.
 
 ## Next practical move
 
-Perform the canonical project ID/order migration across JSON data, then remove the display-remapping code from `src/plan-utils.js`.
+Start project manager mode with Project `2.1`, then move through `2.2`, `2.3` and `2.4`.
+
+For each project, produce a proposed refined title, summary and transformation claim before editing JSON.
