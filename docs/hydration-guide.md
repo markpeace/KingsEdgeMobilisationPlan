@@ -12,8 +12,9 @@ Before editing anything, read these files in this order:
 2. `docs/working-modes.md`
 3. `docs/deliverable-schema.md`
 4. `docs/repository-memory.md`
-5. `src/plan-utils.js`
-6. Relevant JSON files under `src/data/`
+5. `docs/next-repository-update-brief.md`
+6. `src/plan-utils.js`
+7. Relevant JSON files under `src/data/`
 
 If the task is about app rendering or UI, also inspect:
 
@@ -32,11 +33,13 @@ Developer mode means the app rendering, layout, styling or interaction design is
 
 Some work crosses both modes. Schema changes that also need rendering changes should be handled explicitly as schema-plus-rendering work.
 
+The next likely work is schema-plus-rendering: planning status, visibility, resourcing categories, reveal detailed plan and maturity-aware Measures and Timeline views.
+
 ## Project manager mode hydration prompt
 
 Use the following prompt to start a new project manager mode chat:
 
-You are working in project manager mode on the King's Edge Mobilisation Plan repository. Hydrate yourself before editing. Read `docs/working-modes.md`, `docs/deliverable-schema.md`, `docs/repository-memory.md`, `src/plan-utils.js` and the relevant JSON files under `src/data/`.
+You are working in project manager mode on the King's Edge Mobilisation Plan repository. Hydrate yourself before editing. Read `docs/working-modes.md`, `docs/deliverable-schema.md`, `docs/repository-memory.md`, `docs/next-repository-update-brief.md`, `src/plan-utils.js` and the relevant JSON files under `src/data/`.
 
 In this mode, treat JSON as the primary editing surface. Work mainly in `src/data/kings-edge-plan.json`, `src/data/enabling-projects.json`, `src/data/schema-example-content.json`, `src/data/step-dependencies.json` and `src/data/status.json`. Do not make React, CSS, layout or rendering changes unless I explicitly switch to developer mode or ask for schema-plus-rendering work.
 
@@ -46,19 +49,23 @@ Preserve the schema logic: problem or need, benefit to realise, outputs to produ
 
 Keep benefits, outputs and measures distinct. Outputs are things we produce. Benefits are value realised through use. Measures are evidence questions or indicators that show whether the benefit is happening.
 
+Treat all current deliverables as pre-draft unless the JSON says otherwise. Move a deliverable to draft only after it has been scrutinised against the schema. Distinguish planning status from planning maturity. Distinguish existing capacity, new investment and enabling conditions when discussing resources. Do not place genuinely restricted material in broad client-side JSON.
+
 Before making major JSON changes, explain the proposed shape and any risks to plan integrity. After changes, summarise which files changed and whether there are rendering consequences.
 
 ## Developer mode hydration prompt
 
 Use the following prompt to start a new developer mode chat:
 
-You are working in developer mode on the King's Edge Mobilisation Plan repository. Hydrate yourself before editing. Read `docs/working-modes.md`, `docs/deliverable-schema.md`, `docs/repository-memory.md`, `src/plan-utils.js`, `src/site.jsx`, relevant CSS files in `public/` and `src/styles.css`.
+You are working in developer mode on the King's Edge Mobilisation Plan repository. Hydrate yourself before editing. Read `docs/working-modes.md`, `docs/deliverable-schema.md`, `docs/repository-memory.md`, `docs/next-repository-update-brief.md`, `src/plan-utils.js`, `src/site.jsx`, relevant CSS files in `public/` and `src/styles.css`.
 
 In this mode, treat the website rendering as the primary editing surface. Work mainly in React, CSS, HTML and configuration. You may inspect JSON to understand the data model, but do not change the plan data unless I explicitly ask for a schema or content update.
 
 Preserve the separation between data and rendering. Do not hard-code plan content into React or CSS when it belongs in JSON. If a UI improvement requires a schema change, pause and explain the implication for the plan before editing JSON.
 
-Keep the site aligned with the King's Edge design language: bold, clear, senior-facing, structured and navigable. After making changes, summarise what changed, which files were edited and whether the change affects data, rendering or both.
+Keep the site aligned with the King's Edge design language: bold, clear, senior-facing, structured and navigable. Make planning status visible without turning it into red/amber/green performance status. Treat “Reveal detailed plan” as progressive disclosure, not security. Ensure Measures and Timeline views do not present pre-draft assumptions as approved KPIs or live delivery plans.
+
+After making changes, summarise what changed, which files were edited and whether the change affects data, rendering or both.
 
 ## Repo map
 
@@ -86,6 +93,7 @@ Background documentation:
 - `docs/working-modes.md`: explains project manager mode and developer mode.
 - `docs/deliverable-schema.md`: describes the current deliverable schema.
 - `docs/repository-memory.md`: background decisions and working assumptions. Do not render in the app.
+- `docs/next-repository-update-brief.md`: compiled brief for the next schema, rendering and prompt updates.
 - `docs/hydration-guide.md`: this file.
 
 ## Checks before editing
@@ -98,6 +106,9 @@ Ask these questions before changing files:
 - Am I editing the right source of truth?
 - Will this affect routing, dependencies, display IDs or timeline sequencing?
 - Do I need to preserve backwards compatibility?
+- Does this imply false maturity for pre-draft content?
+- Am I using reveal as progressive disclosure rather than security?
+- Should this decision be recorded in `docs/repository-memory.md`?
 
 ## Hydration checklist for agents
 
@@ -108,6 +119,7 @@ Before making a substantive change, be able to state:
 - whether the change affects data, rendering or both;
 - whether schema normalisation in `src/plan-utils.js` is involved;
 - whether the change has implications for the app UI;
+- whether the change affects planning status, visibility, resourcing or investment ask;
 - whether any decisions should be added to `docs/repository-memory.md`.
 
 ## When to update repository memory
@@ -122,6 +134,8 @@ Examples:
 - decision to render or not render a data field;
 - decision to preserve or change IDs;
 - major shift in visual or data architecture;
+- planning status, visibility or security-handling rules;
+- resource and investment classification rules;
 - known caveat future agents must not miss.
 
 Do not update repository memory for every small copy edit, CSS tweak or data correction. It is for durable context, not a changelog.
