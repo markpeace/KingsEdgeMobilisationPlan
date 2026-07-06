@@ -1,6 +1,6 @@
 # Repository memory and decision log
 
-Background repository memory only. Do not render this document in the app. Do not treat it as programme content. This file exists to help future conversations understand decisions already made about the repository, the schema and the working process.
+Background repository memory only. Do not render this document in the app. Do not treat it as programme content. This file exists to help future conversations understand durable decisions already made about the repository, the schema and the working process.
 
 ## How to use this file
 
@@ -13,6 +13,25 @@ Use it to understand the durable decisions. Decisions marked provisional can be 
 - Settled: proceed on this basis unless the user explicitly reopens it.
 - Provisional: use for now, but revisit when the prototype matures.
 - Open: known issue or future decision.
+
+## Current state
+
+The source-of-truth migration has been applied.
+
+`src/data/kings-edge-plan.json` now carries the canonical project order and IDs directly:
+
+1. `2.1` Articulating and Evidencing The King's Graduate Premium
+2. `2.2` Curriculum Embedded Graduate Advantage
+3. `2.3` Co-Curricular Opportunity to Go Further
+4. `2.4` Extra Curricular Provision for Belonging and Participation
+
+`src/plan-utils.js` should not contain hidden project renumbering, title substitution or display-order remapping. It should only do legitimate utility work: schema normalisation, timeline period mapping, lookup construction and dependency indexing.
+
+`src/data/schema-example-content.json` is retired as an overlay. It should not silently add richer content or override deliverables.
+
+`src/data/step-dependencies.json` is currently empty. Step dependencies should normally live in the source plan data unless there is a clear reason for an explicit override.
+
+`src/data/status.json` has no item-specific entries. Planning stage is tracked through `planningStatus` in the core plan data, not through status metadata.
 
 ## Settled decisions
 
@@ -87,7 +106,7 @@ If tags create confusion during hydration, ignore them or remove them from displ
 
 ### `src/data/status.json` is not the planning workflow
 
-`src/data/status.json` contains hidden delivery-control metadata such as status, confidence and decision-needed. It is currently not the planning-stage source of truth.
+`src/data/status.json` is hidden delivery-control metadata. It is not the planning-stage source of truth.
 
 Status pills are visually hidden. Do not reintroduce them unless explicitly asked.
 
@@ -117,44 +136,38 @@ Pre-draft measures should be hidden by default or clearly labelled as emerging. 
 
 `visibility` may use `staff-visible`, `internal-planning` and `restricted`, but these are handling labels, not security.
 
-## Current source-of-truth issue
-
-Status: Open cleanup item
-
-The visible project order and numbering have moved, but the source JSON has not yet been fully migrated.
-
-Desired canonical project order:
-
-1. `2.1` Articulating and Evidencing The King's Graduate Premium
-2. `2.2` Curriculum Embedded Graduate Advantage
-3. `2.3` Co-Curricular Opportunity to Go Further
-4. `2.4` Extra Curricular Provision for Belonging and Participation
-
-Current issue:
-
-- `src/data/kings-edge-plan.json` still stores the older project order and older IDs.
-- `src/plan-utils.js` contains display-remapping workarounds: `edgeDisplayOrder`, `edgeDisplayIds`, `edgeDisplayTitles`, and related display-ID functions.
-- `src/data/schema-example-content.json`, `src/data/step-dependencies.json`, and `src/data/status.json` also still use old IDs.
-
-Desired cleanup:
-
-1. Migrate the source JSON IDs, order and references.
-2. Migrate schema example content, step dependency overrides and status entries.
-3. Remove display-remapping workarounds from `src/plan-utils.js`.
-4. Let the app render source order and source IDs directly.
-
-See `docs/schema-source-of-truth-audit.md` before attempting this migration.
-
 ## Current working assumptions
 
-- The next content task is deliverable-by-deliverable scrutiny to move items from `pre-draft` to `draft`.
-- Before that, the project ID/order source-of-truth migration should be completed.
+- The next content task is project-by-project naming and description scrutiny.
+- After project naming, the next major task is deliverable-by-deliverable scrutiny to move items from `pre-draft` to `draft`.
 - The plan should remain senior-leadership ready: clear, concise, defensible and not over-bureaucratic.
 - Benefits should be written as realised value, not disguised outputs.
 - Measures should test whether benefits are happening, not merely count activity.
 - Uncertainty should be visible through planning status, maturity, assumptions, decisions and TBC fields.
 - Resource asks should distinguish existing capacity, new investment and enabling conditions.
 - Future PM input may later formalise RACI, controls, budgets and benefits realisation.
+
+## Recommended project manager rhythm
+
+First pass: project naming and description.
+
+For each of the four projects, sharpen:
+
+- project title;
+- one-line summary;
+- institutional transformation claim;
+- whether the four deliverables underneath still feel like the right grouping.
+
+Second pass: deliverables from pre-draft to draft.
+
+For each deliverable, test:
+
+- whether the title is doing the right work;
+- whether the problem is sharp enough;
+- whether the intended change is genuinely transformational;
+- whether benefits, outputs and measures are distinct;
+- whether dependencies and ownership are plausible;
+- what needs to be true for the deliverable to become `draft`.
 
 ## Known cautions for future agents
 
@@ -163,11 +176,11 @@ See `docs/schema-source-of-truth-audit.md` before attempting this migration.
 - Do not hard-code plan text into React or CSS.
 - Do not edit JSON in developer mode unless explicitly asked.
 - Do not edit React or CSS in project manager mode unless explicitly asked.
-- Do not rename IDs without checking routing, dependencies, display IDs and timeline references.
+- Do not rename IDs without checking routing, dependencies, step references, feeds and related deliverables.
 - Do not assume every TBC is a weakness. Some TBCs are honest planning maturity markers.
 - Do not treat reveal controls, filters or CSS as security.
 - Do not put genuinely restricted content into broad client-side JSON.
 - Do not present pre-draft measures as approved KPIs.
 - Do not present pre-draft timeline items as firm delivery commitments.
 - Do not add another tagging workflow.
-- Do not add more display-remapping workarounds for project order or numbering.
+- Do not add display-remapping workarounds for project order or numbering.
