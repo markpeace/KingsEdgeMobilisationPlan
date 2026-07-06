@@ -13,34 +13,10 @@
     <link rel="stylesheet" href="./page-title-balance.css" />
     <link rel="stylesheet" href="./landing-north-star.css" />
     <link rel="stylesheet" href="./deliverable-detail-polish.css" />
+    <link rel="stylesheet" href="./schema-pm-polish.css" />
   </head>
   <body>
     <div id="root"></div>
-    <script>
-      (() => {
-        const wrapDeliverableHeroReference = () => {
-          const title = document.querySelector('main .detail-hero:not(.project-detail-hero) h1');
-          if (!title || title.querySelector('.hero-reference')) return;
-          const match = title.textContent.trim().match(/^(\d+(?:\.\d+)+)\s+(.+)$/);
-          if (!match) return;
-          title.textContent = '';
-          const reference = document.createElement('span');
-          reference.className = 'hero-reference';
-          reference.textContent = match[1];
-          const text = document.createElement('span');
-          text.className = 'hero-title-text';
-          text.textContent = match[2];
-          title.append(reference, text);
-        };
-
-        window.addEventListener('DOMContentLoaded', () => {
-          const root = document.getElementById('root');
-          if (root) new MutationObserver(wrapDeliverableHeroReference).observe(root, { childList: true, subtree: true });
-          wrapDeliverableHeroReference();
-        });
-        window.addEventListener('hashchange', () => setTimeout(wrapDeliverableHeroReference, 0));
-      })();
-    </script>
     <script type="module" src="/src/site.jsx"></script>
   </body>
 </html>
