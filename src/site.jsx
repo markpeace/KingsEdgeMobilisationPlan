@@ -1,20 +1,14 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { createRoot } from 'react-dom/client';
-import {
-  plan,
-  projects,
-  edgeProjects,
-  outOfProgramme,
-  timelinePeriods,
-  buildLookups,
-  buildDependencyIndex,
-  getStepDependencies,
-  getStepPeriodSpan,
-  resolveLabel,
-  periodLabel
-} from './plan-utils.js';
+import { plan, projects, edgeProjects, outOfProgramme, timelinePeriods, buildLookups, buildDependencyIndex, getStepDependencies, getStepPeriodSpan, resolveLabel, periodLabel } from './plan-utils.js';
 import { getStatus, labelStatus, labelConfidence, statusClass, confidenceClass } from './status-utils.js';
 import './styles.css';
+
+const hasItems = (items) => Array.isArray(items) && items.length > 0;
+const asText = (item) => typeof item === 'string' ? item : item?.title || item?.label || item?.item || item?.role || 'Item';
+const desc = (item) => typeof item === 'string' ? '' : item?.description || item?.summary || item?.notes || item?.mitigation || item?.validationNeeded || item?.statement || '';
+const meta = (items) => items.filter(Boolean).join(' · ');
+const displayId = (item) => item?.displayId || item?.id;
 
 function useHashRoute() {
   const getPath = () => window.location.hash.replace(/^#/, '') || '/';
@@ -27,27 +21,12 @@ function useHashRoute() {
   return path;
 }
 
-function hasItems(items) {
-  return Array.isArray(items) && items.length > 0;
-}
-
-function hasResources(resources) {
-  if (!resources) return false;
-  return hasItems(resources.people) || hasItems(resources.cashCosts) || hasItems(resources.nonCashNeeds) || Boolean(resources.resourceSummary || resources.fundingStatus);
-}
-
-function textOf(item) {
-  if (typeof item === 'string') return item;
-  return item.title || item.label || item.item || item.role || 'Item';
+function hasResources(resources = {}) {
+  return ['people', 'cashCosts', 'dataAndSystems', 'governance', 'engagementNeeds', 'nonCashNeeds'].some((key) => hasItems(resources[key])) || Boolean(resources.resourceSummary || resources.fundingStatus);
 }
 
 function formatMoney(cost) {
-  if (typeof cost.amount !== 'number') return null;
-  return new Intl.NumberFormat('en-GB', { style: 'currency', currency: cost.currency || 'GBP', maximumFractionDigits: 0 }).format(cost.amount);
-}
-
-function displayId(item) {
-  return item?.displayId || item?.id;
+  return typeof cost.amount === 'number' ? new Intl.NumberFormat('en-GB', { style: 'currency', currency: cost.currency || 'GBP', maximumFractionDigits: 0 }).format(cost.amount) : null;
 }
 
 function Nav() {
@@ -57,11 +36,6 @@ function Nav() {
 function StatusPills({ id, compact = false }) {
   const status = getStatus(id);
   return <div className={`status-pills ${compact ? 'compact' : ''}`} title={status.note}><span className={`status-pill ${statusClass(status.status)}`}>{labelStatus(status.status)}</span><span className={`status-pill ${confidenceClass(status.confidence)}`}>{labelConfidence(status.confidence)}</span>{status.decisionNeeded && <span className="status-pill decision-needed">Decision needed</span>}</div>;
-}
-
-function StatusPanel({ id }) {
-  const status = getStatus(id);
-  return <section className="panel status-panel"><h2>Status</h2><StatusPills id={id} /><p>{status.note}</p></section>;
 }
 
 function SmartLink({ id, idMap }) {
@@ -74,11 +48,11 @@ function SmartLink({ id, idMap }) {
 }
 
 function Landing() {
-  return <main className="landing-main"><section className="hero landing-hero"><p className="eyebrow">Interactive delivery map</p><h1>{plan.programme.title}</h1><p>{plan.programme.purpose}</p><div className="landing-links"><a href="#/projects"><span>01</span><strong>Projects view</strong><em>Browse the core projects and the related out of programme work.</em></a><a href="#/deliverables"><span>02</span><strong>Deliverables index</strong><em>Search and filter by project, status and confidence.</em></a><a href="#/measures"><span>03</span><strong>Measures</strong><em>Track KPIs and success measures across deliverables.</em></a><a href="#/timeline"><span>04</span><strong>Timeline</strong><em>View sequencing and step-to-step dependencies.</em></a></div></section></main>;
+  return <main className="landing-main"><section className="hero landing-hero"><p className="eyebrow">Interactive delivery map</p><h1>{plan.programme.title}</h1><p>{plan.programme.purpose}</p><div className="landing-links"><a href="#/projects"><span>01</span><strong>Projects view</strong><em>Browse the core projects and the related out of programme work.</em></a><a href="#/deliverables"><span>02</span><strong>Deliverables index</strong><em>Search and filter by project, status and confidence.</em></a><a href="#/measures"><span>03</span><strong>Measures</strong><em>Track benefit measures across deliverables.</em></a><a href="#/timeline"><span>04</span><strong>Timeline</strong><em>View sequencing and step-to-step dependencies.</em></a></div></section></main>;
 }
 
 function ProjectsPage() {
-  return <main><section className="section-heading projects-heading"><h1>Projects View</h1><p>Projects are shown in the revised order. Click any project header for its project page. Scroll right to expose projects delivered out of programme.</p></section><div className="project-board"><div className="project-scroll">{edgeProjects.map((project) => <ProjectColumn key={project.id} project={project} />)}<div className="programme-divider" aria-label="Scroll right for out of programme projects"><span>→ → →</span></div>{outOfProgramme.map((project) => <ProjectColumn key={project.id} project={project} />)}</div></div></main>;
+  return <main><section className="section-heading projects-heading"><h1>Projects View</h1><p>Projects are shown in the revised order. Click any project header for its project page. Scroll right to expose projects delivered out of programme.</p></section><div className="project-board"><div className="project-scroll">{edgeProjects.map((project) => <ProjectColumn key={project.id} project={project} />)}<div className="programme-divider"><span>→ → →</span></div>{outOfProgramme.map((project) => <ProjectColumn key={project.id} project={project} />)}</div></div></main>;
 }
 
 function ProjectColumn({ project }) {
@@ -86,79 +60,89 @@ function ProjectColumn({ project }) {
   return <section className={`project-column ${isOut ? 'related-project-column' : ''}`}><a className={`project-column-header project-header-link ${isOut ? 'related-project-header' : ''}`} href={`#/projects/${project.id}`}><span className="reference">{isOut ? 'Out' : displayId(project)}</span><h2>{project.title}</h2><p>{project.summary}</p><p className="owner">Owner: {project.owner}</p></a><div className="deliverable-stack">{project.deliverables.map((deliverable) => <a className="deliverable-card" href={`#/deliverables/${deliverable.id}`} key={deliverable.id}><span className="reference">{displayId(deliverable)}</span><h3>{deliverable.title}</h3><p>{deliverable.summary}</p><StatusPills id={deliverable.id} compact /><p className="lead">Lead: {deliverable.lead}</p></a>)}</div></section>;
 }
 
-function ProjectDeliverableColumn({ deliverable }) {
-  return <section className="project-deliverable-column"><a className="project-deliverable-header" href={`#/deliverables/${deliverable.id}`}><span className="reference">{displayId(deliverable)}</span><h3>{deliverable.title}</h3><p>{deliverable.summary}</p><StatusPills id={deliverable.id} compact /><p className="lead">Lead: {deliverable.lead}</p></a><div className="project-step-stack">{deliverable.steps.map((step) => <ProjectStepCard key={step.id} step={step} deliverable={deliverable} />)}</div></section>;
-}
-
-function ProjectStepCard({ step, deliverable }) {
-  const dependencyCount = getStepDependencies(step).length;
-  return <a className="project-step-card" href={`#/deliverables/${deliverable.id}`}><span className="period-pill">{periodLabel(step.period)}</span><h4>{step.title}</h4><p>{step.summary}</p><StatusPills id={step.id} compact />{dependencyCount > 0 && <p className="depends">{dependencyCount} dependency{dependencyCount === 1 ? '' : 'ies'}</p>}</a>;
-}
-
 function ProjectDetail({ project }) {
   if (!project) return <main><section className="section-heading"><h1>Project not found</h1><p><a href="#/projects">Return to Projects View</a></p></section></main>;
   const isOut = project.deliveryContext === 'out-of-programme';
-  return <main><a className="back-link" href="#/projects">Back to Projects View</a><section className={`detail-hero project-detail-hero ${isOut ? 'related-project-detail-hero' : ''}`}><h1>{displayId(project)} {project.title}</h1><p>{project.summary}</p>{project.edgeRole && <p>{project.edgeRole}</p>}<div className="detail-meta"><span>Project owner: {project.owner}</span><span>{project.deliverables.length} deliverables</span><span>{isOut ? 'Out of programme' : 'Edge programme'}</span></div></section><section className="panel project-deliverable-panel"><h2>Deliverables</h2><p className="subtle">Each column shows a deliverable and the delivery steps underneath it. Click the deliverable header or any step to open the full deliverable plan.</p><div className="project-deliverable-board"><div className="project-deliverable-columns">{project.deliverables.map((deliverable) => <ProjectDeliverableColumn key={deliverable.id} deliverable={deliverable} />)}</div></div></section>{project.servesDeliverables && <section className="panel"><h2>Serves Edge deliverables</h2><div className="link-list">{project.servesDeliverables.map((id) => <a className="chip" href={`#/deliverables/${id}`} key={id}>{id}</a>)}</div></section>}</main>;
+  return <main><a className="back-link" href="#/projects">Back to Projects View</a><section className={`detail-hero project-detail-hero ${isOut ? 'related-project-detail-hero' : ''}`}><h1>{displayId(project)} {project.title}</h1><p>{project.summary}</p>{project.edgeRole && <p>{project.edgeRole}</p>}<div className="detail-meta"><span>Project owner: {project.owner}</span><span>{project.deliverables.length} deliverables</span><span>{isOut ? 'Out of programme' : 'Edge programme'}</span></div></section><section className="panel project-deliverable-panel"><h2>Deliverables</h2><p className="subtle">Each column shows a deliverable and the delivery steps underneath it. Click the deliverable header or any step to open the full deliverable plan.</p><div className="project-deliverable-board"><div className="project-deliverable-columns">{project.deliverables.map((deliverable) => <ProjectDeliverableColumn key={deliverable.id} deliverable={deliverable} />)}</div></div></section></main>;
+}
+
+function ProjectDeliverableColumn({ deliverable }) {
+  return <section className="project-deliverable-column"><a className="project-deliverable-header" href={`#/deliverables/${deliverable.id}`}><span className="reference">{displayId(deliverable)}</span><h3>{deliverable.title}</h3><p>{deliverable.summary}</p><p className="lead">Lead: {deliverable.lead}</p></a><div className="project-step-stack">{deliverable.steps.map((step) => <a className="project-step-card" href={`#/deliverables/${deliverable.id}`} key={step.id}><span className="period-pill">{periodLabel(step.period)}</span><h4>{step.title}</h4><p>{step.summary}</p>{getStepDependencies(step).length > 0 && <p className="depends">{getStepDependencies(step).length} dependencies</p>}</a>)}</div></section>;
 }
 
 function DeliverablesIndex({ deliverables }) {
   const [query, setQuery] = useState('');
   const [projectFilter, setProjectFilter] = useState('all');
-  const [statusFilter, setStatusFilter] = useState('all');
-  const [confidenceFilter, setConfidenceFilter] = useState('all');
-  const filtered = deliverables.filter((deliverable) => {
-    const status = getStatus(deliverable.id);
-    const matchesProject = projectFilter === 'all' || deliverable.project.id === projectFilter;
-    const matchesStatus = statusFilter === 'all' || status.status === statusFilter;
-    const matchesConfidence = confidenceFilter === 'all' || status.confidence === confidenceFilter;
-    const text = [deliverable.id, displayId(deliverable), deliverable.title, deliverable.lead, deliverable.summary, ...(deliverable.tags || [])].join(' ').toLowerCase();
-    return matchesProject && matchesStatus && matchesConfidence && text.includes(query.toLowerCase());
-  });
-  return <main><section className="section-heading"><h1>Deliverables index</h1><p>Search or filter across all project deliverables.</p></section><div className="toolbar"><input type="search" placeholder="Search deliverables, owners or themes" value={query} onChange={(event) => setQuery(event.target.value)} /><select value={projectFilter} onChange={(event) => setProjectFilter(event.target.value)}><option value="all">All projects</option>{projects.map((project) => <option key={project.id} value={project.id}>{displayId(project)} {project.title}</option>)}</select><select value={statusFilter} onChange={(event) => setStatusFilter(event.target.value)}><option value="all">All statuses</option><option value="not-started">Not started</option><option value="scoping">Scoping</option><option value="active">Active</option><option value="blocked">Blocked</option><option value="complete">Complete</option></select><select value={confidenceFilter} onChange={(event) => setConfidenceFilter(event.target.value)}><option value="all">All confidence levels</option><option value="settled">Settled</option><option value="needs-validation">Needs validation</option><option value="placeholder">Placeholder</option></select></div><div className="index-list">{filtered.map((deliverable) => <a href={`#/deliverables/${deliverable.id}`} className="index-row" key={deliverable.id}><div><span className="reference">{displayId(deliverable)}</span><h3>{deliverable.title}</h3><p>{deliverable.summary}</p><StatusPills id={deliverable.id} compact /></div><div className="index-meta"><span>{displayId(deliverable.project)} {deliverable.project.title}</span><strong>{deliverable.lead}</strong></div></a>)}</div></main>;
+  const filtered = deliverables.filter((deliverable) => (projectFilter === 'all' || deliverable.project.id === projectFilter) && [deliverable.id, displayId(deliverable), deliverable.title, deliverable.lead, deliverable.summary, ...(deliverable.tags || [])].join(' ').toLowerCase().includes(query.toLowerCase()));
+  return <main><section className="section-heading"><h1>Deliverables index</h1><p>Search or filter across all project deliverables.</p></section><div className="toolbar"><input type="search" placeholder="Search deliverables, owners or themes" value={query} onChange={(event) => setQuery(event.target.value)} /><select value={projectFilter} onChange={(event) => setProjectFilter(event.target.value)}><option value="all">All projects</option>{projects.map((project) => <option key={project.id} value={project.id}>{displayId(project)} {project.title}</option>)}</select></div><div className="index-list">{filtered.map((deliverable) => <a href={`#/deliverables/${deliverable.id}`} className="index-row" key={deliverable.id}><div><span className="reference">{displayId(deliverable)}</span><h3>{deliverable.title}</h3><p>{deliverable.summary}</p></div><div className="index-meta"><span>{displayId(deliverable.project)} {deliverable.project.title}</span><strong>{deliverable.lead}</strong></div></a>)}</div></main>;
 }
 
 function MeasuresView({ deliverables }) {
   const [projectFilter, setProjectFilter] = useState('all');
   const [typeFilter, setTypeFilter] = useState('all');
-  const measures = deliverables.flatMap((deliverable) => (deliverable.successMeasures?.kpis || []).map((kpi, index) => ({ id: `${deliverable.id}-kpi-${index}`, deliverable, kpi })));
-  const types = [...new Set(measures.map((entry) => entry.kpi.type).filter(Boolean))].sort();
-  const filtered = measures.filter((entry) => {
-    const matchesProject = projectFilter === 'all' || entry.deliverable.project.id === projectFilter;
-    const matchesType = typeFilter === 'all' || entry.kpi.type === typeFilter;
-    return matchesProject && matchesType;
-  });
+  const measures = deliverables.flatMap((deliverable) => (deliverable.measures || []).map((measure, index) => ({ id: measure.id || `${deliverable.id}-measure-${index}`, deliverable, measure })));
+  const types = [...new Set(measures.map((entry) => entry.measure.measureType).filter(Boolean))].sort();
+  const filtered = measures.filter((entry) => (projectFilter === 'all' || entry.deliverable.project.id === projectFilter) && (typeFilter === 'all' || entry.measure.measureType === typeFilter));
   const projectsWithMeasures = new Set(measures.map((entry) => entry.deliverable.project.id)).size;
-  return <main><section className="section-heading"><h1>Measures</h1><p>Track KPIs and success measures across deliverables. This view will become more useful as each deliverable is populated.</p></section><div className="measure-summary"><article className="measure-card"><span>{measures.length}</span><strong>KPIs captured</strong></article><article className="measure-card"><span>{projectsWithMeasures}</span><strong>Projects represented</strong></article><article className="measure-card"><span>{types.length}</span><strong>Measure types</strong></article></div><div className="toolbar"><select value={projectFilter} onChange={(event) => setProjectFilter(event.target.value)}><option value="all">All projects</option>{projects.map((project) => <option key={project.id} value={project.id}>{displayId(project)} {project.title}</option>)}</select><select value={typeFilter} onChange={(event) => setTypeFilter(event.target.value)}><option value="all">All KPI types</option>{types.map((type) => <option key={type} value={type}>{type}</option>)}</select></div>{filtered.length === 0 ? <section className="panel"><h2>No KPIs captured yet</h2><p>Add KPIs under a deliverable's <code>successMeasures.kpis</code> field and they will appear here automatically.</p></section> : <div className="index-list measure-list">{filtered.map(({ id, deliverable, kpi }) => <a href={`#/deliverables/${deliverable.id}`} className="index-row measure-row" key={id}><div><span className="reference">{displayId(deliverable)}</span><h3>{kpi.label || kpi.title || 'KPI'}</h3><p>{[kpi.measure, kpi.target ? `Target: ${kpi.target}` : null, kpi.baseline ? `Baseline: ${kpi.baseline}` : null, kpi.dataSource ? `Source: ${kpi.dataSource}` : null, kpi.reviewFrequency ? `Review: ${kpi.reviewFrequency}` : null].filter(Boolean).join(' · ')}</p><StatusPills id={deliverable.id} compact /></div><div className="index-meta"><span>{displayId(deliverable.project)} {deliverable.project.title}</span><strong>{kpi.type || 'measure'}</strong><span>{kpi.period || 'Period TBC'}</span></div></a>)}</div>}</main>;
+  return <main><section className="section-heading"><h1>Measures</h1><p>Track benefit measures, evidence questions and adoption indicators across deliverables.</p></section><div className="measure-summary"><article className="measure-card"><span>{measures.length}</span><strong>Measures captured</strong></article><article className="measure-card"><span>{projectsWithMeasures}</span><strong>Projects represented</strong></article><article className="measure-card"><span>{types.length}</span><strong>Measure types</strong></article></div><div className="toolbar"><select value={projectFilter} onChange={(event) => setProjectFilter(event.target.value)}><option value="all">All projects</option>{projects.map((project) => <option key={project.id} value={project.id}>{displayId(project)} {project.title}</option>)}</select><select value={typeFilter} onChange={(event) => setTypeFilter(event.target.value)}><option value="all">All measure types</option>{types.map((type) => <option key={type} value={type}>{type}</option>)}</select></div>{filtered.length === 0 ? <section className="panel"><h2>No measures captured yet</h2><p>Add measures under a deliverable's <code>measures</code> field and they will appear here automatically.</p></section> : <div className="index-list measure-list">{filtered.map(({ id, deliverable, measure }) => <a href={`#/deliverables/${deliverable.id}`} className="index-row measure-row" key={id}><div><span className="reference">{displayId(deliverable)}</span><h3>{measure.title}</h3><p>{[measure.questionAnswered, measure.measure, measure.target ? `Target: ${measure.target}` : null, measure.baseline ? `Baseline: ${measure.baseline}` : null, measure.dataSource ? `Source: ${measure.dataSource}` : null].filter(Boolean).join(' · ')}</p></div><div className="index-meta"><span>{displayId(deliverable.project)} {deliverable.project.title}</span><strong>{measure.measureType || 'measure'}</strong><span>{measure.confidence || 'Confidence TBC'}</span></div></a>)}</div>}</main>;
 }
 
-function SuccessMeasuresPanel({ deliverable }) {
-  const measures = deliverable.successMeasures;
-  if (!measures || (!hasItems(measures.outputs) && !hasItems(measures.kpis))) return null;
-  return <section className="panel schema-panel"><h2>Outputs and KPIs</h2><div className="schema-grid">{hasItems(measures.outputs) && <div><h3>Outputs</h3><ul className="schema-list">{measures.outputs.map((output, index) => <li key={index}><strong>{textOf(output)}</strong>{typeof output !== 'string' && output.description && <p>{output.description}</p>}</li>)}</ul></div>}{hasItems(measures.kpis) && <div><h3>KPIs</h3><ul className="schema-list">{measures.kpis.map((kpi, index) => <li key={index}><strong>{textOf(kpi)}</strong>{typeof kpi !== 'string' && <p>{[kpi.type, kpi.measure, kpi.target ? `Target: ${kpi.target}` : null, kpi.period].filter(Boolean).join(' · ')}</p>}</li>)}</ul></div>}</div></section>;
+function FieldCard({ title, children }) {
+  return <article className="schema-card"><h3>{title}</h3>{children}</article>;
 }
 
-function StepExtras({ step }) {
-  const outputs = step.outputs || [];
-  const decisions = step.decisions || [];
-  const risks = step.risks || [];
-  const resources = step.resources;
-  if (!hasItems(outputs) && !hasItems(decisions) && !hasItems(risks) && !hasResources(resources)) return null;
-  return <div className="step-extras">{hasItems(outputs) && <MiniList title="Outputs" items={outputs} />}{hasResources(resources) && <ResourcesBlock resources={resources} />}{hasItems(decisions) && <MiniList title="Decisions" items={decisions} />}{hasItems(risks) && <MiniList title="Risks" items={risks} />}</div>;
+function CaseForChangePanel({ deliverable }) {
+  const c = deliverable.caseForChange || {};
+  const entries = [['Problem / need', c.problem], ['Opportunity', c.opportunity], ['Why now', c.whyNow], ['Intended change', c.intendedChange]].filter(([, value]) => value);
+  if (!entries.length) return null;
+  return <section className="panel case-panel"><h2>Case for change</h2><div className="case-grid">{entries.map(([title, value]) => <FieldCard title={title} key={title}><p>{value}</p></FieldCard>)}</div></section>;
+}
+
+function OwnershipPanel({ deliverable }) {
+  const o = deliverable.ownership || {};
+  return <section className="panel ownership-panel"><h2>Ownership and maturity</h2><div className="ownership-grid"><FieldCard title="Accountable owner"><p>{o.accountableOwner}</p></FieldCard><FieldCard title="Delivery lead"><p>{o.deliveryLead}</p></FieldCard><FieldCard title="Benefit owner"><p>{o.benefitOwner}</p></FieldCard><FieldCard title="Decision forum"><p>{o.decisionForum}</p></FieldCard><FieldCard title="Planning maturity"><p>{deliverable.planningMaturity || 'TBC'}</p></FieldCard>{hasItems(o.contributors) && <FieldCard title="Contributors"><ul>{o.contributors.map((item, index) => <li key={index}>{item}</li>)}</ul></FieldCard>}</div></section>;
+}
+
+function DeliveryModelPanel({ deliverable }) {
+  const { benefits = [], outputs = [], measures = [] } = deliverable;
+  if (!benefits.length && !outputs.length && !measures.length) return null;
+  return <section className="panel delivery-model-panel"><h2>Benefits, outputs and measures</h2><p className="subtle">This separates the value to realise, the things to produce and the evidence that will tell us whether the benefit is happening.</p><div className="delivery-model-grid">{benefits.length > 0 && <div className="delivery-model-column"><h3>Benefits to realise</h3>{benefits.map((benefit) => <article className="schema-card benefit-card" key={benefit.id}><span className="reference">{benefit.id}</span><h4>{benefit.title}</h4><p>{benefit.statement}</p>{benefit.desiredChange && <p><strong>Desired change:</strong> {benefit.desiredChange}</p>}<p className="schema-meta">{meta([benefit.beneficiary, benefit.benefitType, benefit.realisationPeriod])}</p></article>)}</div>}{outputs.length > 0 && <div className="delivery-model-column"><h3>Outputs to produce</h3>{outputs.map((output) => <article className="schema-card output-card" key={output.id}><span className="reference">{output.id}</span><h4>{output.title}</h4><p>{output.description}</p><p className="schema-meta">{meta([output.type, output.owner, output.duePeriod])}</p>{hasItems(output.acceptanceCriteria) && <ul className="schema-mini-list">{output.acceptanceCriteria.map((item, index) => <li key={index}>{item}</li>)}</ul>}</article>)}</div>}{measures.length > 0 && <div className="delivery-model-column"><h3>Measures and evidence</h3>{measures.map((measure) => <article className="schema-card measure-card-small" key={measure.id}><span className="reference">{measure.id}</span><h4>{measure.title}</h4>{measure.questionAnswered && <p><strong>Question:</strong> {measure.questionAnswered}</p>}<p>{measure.measure}</p><p className="schema-meta">{meta([measure.measureType, measure.owner, measure.cadence, measure.confidence])}</p>{measure.target && <p><strong>Target:</strong> {measure.target}</p>}{measure.baseline && <p><strong>Baseline:</strong> {measure.baseline}</p>}</article>)}</div>}</div></section>;
+}
+
+function DefinitionPanel({ deliverable }) {
+  return hasItems(deliverable.definitionOfDone) ? <section className="panel definition-panel"><h2>Definition of done</h2><ul className="definition-list">{deliverable.definitionOfDone.map((item, index) => <li key={index}>{asText(item)}</li>)}</ul></section> : null;
+}
+
+function RaidPanel({ deliverable }) {
+  const sections = [['Risks', deliverable.risks], ['Issues', deliverable.issues], ['Assumptions', deliverable.assumptions], ['Decisions', deliverable.decisions]].filter(([, items]) => hasItems(items));
+  return sections.length ? <section className="panel raid-panel"><h2>Risks, issues, assumptions and decisions</h2><div className="raid-grid">{sections.map(([title, items]) => <div className="raid-column" key={title}><h3>{title}</h3>{items.map((item, index) => <article className="schema-card" key={index}><h4>{asText(item)}</h4>{desc(item) && <p>{desc(item)}</p>}<p className="schema-meta">{meta([item.likelihood && `Likelihood: ${item.likelihood}`, item.impact && `Impact: ${item.impact}`, item.owner, item.decisionMaker, item.decisionNeededBy || item.neededBy, item.confidence])}</p></article>)}</div>)}</div></section> : null;
 }
 
 function MiniList({ title, items }) {
-  return <div className="mini-block"><h4>{title}</h4><ul>{items.map((item, index) => <li key={index}><strong>{textOf(item)}</strong>{typeof item !== 'string' && (item.description || item.notes || item.mitigation) && <p>{item.description || item.notes || item.mitigation}</p>}</li>)}</ul></div>;
+  return <div className="mini-block"><h4>{title}</h4><ul>{items.map((item, index) => <li key={index}><strong>{asText(item)}</strong>{desc(item) && <p>{desc(item)}</p>}</li>)}</ul></div>;
 }
 
 function ResourcesBlock({ resources }) {
-  return <div className="mini-block"><h4>Resources</h4>{resources.resourceSummary && <p>{resources.resourceSummary}</p>}{resources.fundingStatus && <p><strong>Funding:</strong> {resources.fundingStatus}</p>}{hasItems(resources.people) && <ul>{resources.people.map((person, index) => <li key={`p-${index}`}><strong>{person.role || 'People capacity'}</strong><p>{[person.type, person.fte ? `${person.fte} FTE` : null, person.notes].filter(Boolean).join(' · ')}</p></li>)}</ul>}{hasItems(resources.cashCosts) && <ul>{resources.cashCosts.map((cost, index) => <li key={`c-${index}`}><strong>{cost.item || 'Cash cost'}{formatMoney(cost) ? ` · ${formatMoney(cost)}` : ''}</strong><p>{[cost.category, cost.recurrence, cost.confidence, cost.notes].filter(Boolean).join(' · ')}</p></li>)}</ul>}{hasItems(resources.nonCashNeeds) && <ul>{resources.nonCashNeeds.map((need, index) => <li key={`n-${index}`}><strong>{need.item || 'Non-cash need'}</strong><p>{[need.owner, need.notes].filter(Boolean).join(' · ')}</p></li>)}</ul>}</div>;
+  const list = [...(resources.people || []), ...(resources.cashCosts || []), ...(resources.dataAndSystems || []), ...(resources.governance || []), ...(resources.engagementNeeds || []), ...(resources.nonCashNeeds || [])];
+  return <div className="mini-block"><h4>Resources</h4>{resources.resourceSummary && <p>{resources.resourceSummary}</p>}{resources.fundingStatus && <p><strong>Funding:</strong> {resources.fundingStatus}</p>}{hasItems(list) && <ul>{list.map((item, index) => <li key={index}><strong>{item.role || item.item || 'Resource'}{formatMoney(item) ? ` · ${formatMoney(item)}` : ''}</strong><p>{meta([item.type, item.fte ? `${item.fte} FTE` : null, item.owner, item.category, item.recurrence, item.confidence, item.notes])}</p></li>)}</ul>}</div>;
+}
+
+function StepExtras({ step }) {
+  const extras = [];
+  if (hasItems(step.outputs)) extras.push(<MiniList title="Outputs" items={step.outputs} key="outputs" />);
+  if (hasResources(step.resources)) extras.push(<ResourcesBlock resources={step.resources} key="resources" />);
+  if (hasItems(step.decisions)) extras.push(<MiniList title="Decisions" items={step.decisions} key="decisions" />);
+  if (hasItems(step.issues)) extras.push(<MiniList title="Issues" items={step.issues} key="issues" />);
+  if (hasItems(step.assumptions)) extras.push(<MiniList title="Assumptions" items={step.assumptions} key="assumptions" />);
+  if (hasItems(step.risks)) extras.push(<MiniList title="Risks" items={step.risks} key="risks" />);
+  return extras.length ? <div className="step-extras">{extras}</div> : null;
 }
 
 function DeliverableDetail({ deliverable, idMap, dependencyIndex }) {
   if (!deliverable) return <main><section className="section-heading"><h1>Deliverable not found</h1></section></main>;
   const stepDeps = [...new Set(deliverable.steps.flatMap((step) => getStepDependencies(step)))];
   const onward = deliverable.steps.flatMap((step) => dependencyIndex.get(step.id) || []);
-  return <main><a className="back-link" href="#/deliverables">Back to deliverables</a><section className="detail-hero"><h1>{displayId(deliverable)} {deliverable.title}</h1><p>{deliverable.summary}</p><StatusPills id={deliverable.id} /><div className="detail-meta"><span>Project: {displayId(deliverable.project)} {deliverable.project.title}</span><span>Project owner: {deliverable.project.owner}</span><span>Deliverable lead: {deliverable.lead}</span></div></section><div className="detail-grid"><section className="panel"><h2>Problem solved</h2><p>{deliverable.problemSolved}</p></section><section className="panel"><h2>What changes</h2><p>{deliverable.whatChanges}</p></section></div><StatusPanel id={deliverable.id} /><SuccessMeasuresPanel deliverable={deliverable} /><section className="panel"><h2>Components</h2><div className="component-grid">{deliverable.components.map((component) => <article className="component-card" key={component.title}><h3>{component.title}</h3><p>{component.summary}</p></article>)}</div></section><section className="panel"><h2>Delivery steps</h2><div className="steps-list">{deliverable.steps.map((step) => <article className="step-card" key={step.id}><span className="period-pill">{periodLabel(step.period)}</span><h3>{step.title}</h3><p>{step.summary}</p><StatusPills id={step.id} compact />{getStepDependencies(step).length > 0 && <p className="depends">Depends on: {getStepDependencies(step).map((id) => resolveLabel(id, idMap)).join('; ')}</p>}<StepExtras step={step} /></article>)}</div></section><div className="detail-grid"><section className="panel"><h2>Step dependencies</h2>{stepDeps.length ? <div className="link-list">{stepDeps.map((id) => <SmartLink key={id} id={id} idMap={idMap} />)}</div> : <p>No step-level dependencies captured yet.</p>}</section><section className="panel"><h2>Feeds into</h2>{onward.length ? <ul className="compact-list">{onward.map((entry, index) => <li key={`${entry.parent.id}-${entry.step.id}-${index}`}><SmartLink id={entry.step.id} idMap={idMap} /></li>)}</ul> : <p>No onward step dependencies captured yet.</p>}</section></div></main>;
+  return <main><a className="back-link" href="#/deliverables">Back to deliverables</a><section className="detail-hero"><h1><span className="hero-reference">{displayId(deliverable)}</span><span className="hero-title-text">{deliverable.title}</span></h1><p>{deliverable.summary}</p><div className="detail-meta"><span>Project: {displayId(deliverable.project)} {deliverable.project.title}</span><span>Accountable owner: {deliverable.ownership?.accountableOwner || deliverable.project.owner}</span><span>Delivery lead: {deliverable.ownership?.deliveryLead || deliverable.lead}</span><span>Maturity: {deliverable.planningMaturity || 'TBC'}</span></div></section><CaseForChangePanel deliverable={deliverable} /><OwnershipPanel deliverable={deliverable} /><DeliveryModelPanel deliverable={deliverable} /><DefinitionPanel deliverable={deliverable} /><section className="panel"><h2>Components</h2><div className="component-grid">{(deliverable.components || []).map((component) => <article className="component-card" key={component.title}><h3>{component.title}</h3><p>{component.summary}</p></article>)}</div></section><section className="panel"><h2>Delivery steps</h2><div className="steps-list">{deliverable.steps.map((step) => <article className="step-card" key={step.id}><span className="period-pill">{periodLabel(step.period)}</span><h3>{step.title}</h3><p>{step.summary}</p>{getStepDependencies(step).length > 0 && <p className="depends">Depends on: {getStepDependencies(step).map((id) => resolveLabel(id, idMap)).join('; ')}</p>}<StepExtras step={step} /></article>)}</div></section><RaidPanel deliverable={deliverable} /><div className="detail-grid"><section className="panel"><h2>Step dependencies</h2>{stepDeps.length ? <div className="link-list">{stepDeps.map((id) => <SmartLink key={id} id={id} idMap={idMap} />)}</div> : <p>No step-level dependencies captured yet.</p>}</section><section className="panel"><h2>Feeds into</h2>{onward.length ? <ul className="compact-list">{onward.map((entry, index) => <li key={`${entry.parent.id}-${entry.step.id}-${index}`}><SmartLink id={entry.step.id} idMap={idMap} /></li>)}</ul> : <p>No onward step dependencies captured yet.</p>}</section></div></main>;
 }
 
 function TimelineView({ timelineItems, idMap, dependencyIndex }) {
@@ -180,25 +164,19 @@ function TimelineView({ timelineItems, idMap, dependencyIndex }) {
   const gridTemplate = { gridTemplateColumns: `300px repeat(${periods.length}, minmax(132px, 1fr))` };
   const laneTemplate = { gridTemplateColumns: `repeat(${periods.length}, minmax(132px, 1fr))` };
   const blockClass = (step) => ['timeline-block', statusClass(getStatus(step.id).status), selectedStepId === step.id ? 'selected' : '', selectedDeps.includes(step.id) ? 'dependency-highlight' : '', onwardIds.has(step.id) ? 'dependent-highlight' : '', selectedStepId && selectedStepId !== step.id && !selectedDeps.includes(step.id) && !onwardIds.has(step.id) ? 'dimmed' : ''].join(' ');
-  const stepStyle = (step) => {
-    const span = getStepPeriodSpan(step.period);
-    return { gridColumn: `${span.startIndex} / span ${span.span}` };
-  };
-  return <main className="timeline-page"><section className="section-heading"><h1>Timeline</h1><p>Click a step to highlight dependencies. Double-click a step to open the detail panel.</p></section><div className="timeline-controls"><select value={projectFilter} onChange={(event) => setProjectFilter(event.target.value)}><option value="all">All projects</option>{projects.filter((project) => project.deliverables?.length).map((project) => <option key={project.id} value={project.id}>{displayId(project)} {project.title}</option>)}</select>{selectedStepId && <button type="button" className="secondary-button" onClick={() => setSelectedStepId(null)}>Clear selection</button>}</div><div className="timeline-key"><span><i className="key-box selected-key" /> Selected</span><span><i className="key-box dependency-key" /> Depends on</span><span><i className="key-box dependent-key" /> Feeds into</span></div><div className="timeline timeline-refresh"><div className="timeline-header timeline-grid" style={gridTemplate}><div>Project / deliverable</div>{periods.map((period) => <div key={period.id}>{period.shortLabel}</div>)}</div>{rows.map((item) => <div className={`timeline-row timeline-grid ${item.project.deliveryContext === 'out-of-programme' ? 'enabling-row' : ''}`} style={gridTemplate} key={item.id}><a className="timeline-title" href={`#/deliverables/${item.id}`}><span className="reference">{displayId(item)}</span><strong>{item.title}</strong><span>{item.ownerLabel}</span><StatusPills id={item.id} compact /></a><div className="timeline-lane" style={laneTemplate}>{item.steps.map((step) => <button type="button" className={blockClass(step)} style={stepStyle(step)} key={step.id} title={`${periodLabel(step.period)}. Double-click for details.`} onClick={() => setSelectedStepId(step.id)} onDoubleClick={() => { setSelectedStepId(step.id); setModalStepId(step.id); }}><span>{step.title}</span>{getStepDependencies(step).length > 0 && <span className="dependency-dot">↳</span>}</button>)}</div></div>)}</div><TimelineStepModal step={modalStep} parent={modalParent} deps={modalDeps} onward={modalOnward} idMap={idMap} onClose={() => setModalStepId(null)} /></main>;
+  const stepStyle = (step) => ({ gridColumn: `${getStepPeriodSpan(step.period).startIndex} / span ${getStepPeriodSpan(step.period).span}` });
+  return <main className="timeline-page"><section className="section-heading"><h1>Timeline</h1><p>Click a step to highlight dependencies. Double-click a step to open the detail panel.</p></section><div className="timeline-controls"><select value={projectFilter} onChange={(event) => setProjectFilter(event.target.value)}><option value="all">All projects</option>{projects.filter((project) => project.deliverables?.length).map((project) => <option key={project.id} value={project.id}>{displayId(project)} {project.title}</option>)}</select>{selectedStepId && <button type="button" className="secondary-button" onClick={() => setSelectedStepId(null)}>Clear selection</button>}</div><div className="timeline-key"><span><i className="key-box selected-key" /> Selected</span><span><i className="key-box dependency-key" /> Depends on</span><span><i className="key-box dependent-key" /> Feeds into</span></div><div className="timeline timeline-refresh"><div className="timeline-header timeline-grid" style={gridTemplate}><div>Project / deliverable</div>{periods.map((period) => <div key={period.id}>{period.shortLabel}</div>)}</div>{rows.map((item) => <div className={`timeline-row timeline-grid ${item.project.deliveryContext === 'out-of-programme' ? 'enabling-row' : ''}`} style={gridTemplate} key={item.id}><a className="timeline-title" href={`#/deliverables/${item.id}`}><span className="reference">{displayId(item)}</span><strong>{item.title}</strong><span>{item.ownerLabel}</span></a><div className="timeline-lane" style={laneTemplate}>{item.steps.map((step) => <button type="button" className={blockClass(step)} style={stepStyle(step)} key={step.id} title={`${periodLabel(step.period)}. Double-click for details.`} onClick={() => setSelectedStepId(step.id)} onDoubleClick={() => { setSelectedStepId(step.id); setModalStepId(step.id); }}><span>{step.title}</span>{getStepDependencies(step).length > 0 && <span className="dependency-dot">↳</span>}</button>)}</div></div>)}</div><TimelineStepModal step={modalStep} parent={modalParent} deps={modalDeps} onward={modalOnward} idMap={idMap} onClose={() => setModalStepId(null)} /></main>;
 }
 
 function TimelineStepModal({ step, parent, deps, onward, idMap, onClose }) {
   useEffect(() => {
     if (!step) return undefined;
-    const onKeyDown = (event) => {
-      if (event.key === 'Escape') onClose();
-    };
+    const onKeyDown = (event) => event.key === 'Escape' && onClose();
     window.addEventListener('keydown', onKeyDown);
     return () => window.removeEventListener('keydown', onKeyDown);
   }, [step, onClose]);
-
   if (!step || !parent) return null;
-  return <div className="timeline-modal-backdrop" role="presentation" onClick={onClose}><section className="timeline-modal" role="dialog" aria-modal="true" aria-labelledby="timeline-modal-title" onClick={(event) => event.stopPropagation()}><button type="button" className="timeline-modal-close" onClick={onClose}>Close</button><div className="timeline-modal-main"><h2 id="timeline-modal-title">{displayId(parent)}: {step.title}</h2><p>{step.summary}</p><span className="period-pill">{periodLabel(step.period)}</span><StatusPills id={step.id} /></div><div className="timeline-modal-grid"><div><h3>Depends on</h3>{deps.length ? <div className="link-list">{deps.map((id) => <SmartLink key={id} id={id} idMap={idMap} />)}</div> : <p>No step-level dependencies captured.</p>}</div><div><h3>Feeds into</h3>{onward.length ? <ul className="compact-list">{onward.map((entry, index) => <li key={`${entry.parent.id}-${entry.step.id}-${index}`}><SmartLink id={entry.step.id} idMap={idMap} /></li>)}</ul> : <p>No onward dependencies captured yet.</p>}</div></div></section></div>;
+  return <div className="timeline-modal-backdrop" role="presentation" onClick={onClose}><section className="timeline-modal" role="dialog" aria-modal="true" aria-labelledby="timeline-modal-title" onClick={(event) => event.stopPropagation()}><button type="button" className="timeline-modal-close" onClick={onClose}>Close</button><div className="timeline-modal-main"><h2 id="timeline-modal-title">{displayId(parent)}: {step.title}</h2><p>{step.summary}</p><span className="period-pill">{periodLabel(step.period)}</span></div><div className="timeline-modal-grid"><div><h3>Depends on</h3>{deps.length ? <div className="link-list">{deps.map((id) => <SmartLink key={id} id={id} idMap={idMap} />)}</div> : <p>No step-level dependencies captured.</p>}</div><div><h3>Feeds into</h3>{onward.length ? <ul className="compact-list">{onward.map((entry, index) => <li key={`${entry.parent.id}-${entry.step.id}-${index}`}><SmartLink id={entry.step.id} idMap={idMap} /></li>)}</ul> : <p>No onward dependencies captured yet.</p>}</div></div></section></div>;
 }
 
 function Site() {
