@@ -49,16 +49,16 @@ Project manager mode should treat `planningStatus` as the only source for the pr
 
 ## Canonical project order and source of truth
 
-The desired source order and numbering is:
+The source JSON now carries the canonical project order and numbering directly:
 
 1. `2.1` Articulating and Evidencing The King's Graduate Premium
 2. `2.2` Curriculum Embedded Graduate Advantage
 3. `2.3` Co-Curricular Opportunity to Go Further
 4. `2.4` Extra Curricular Provision for Belonging and Participation
 
-The source JSON should carry this order directly. The frontend should render the source data, not compensate for old ordering through display remapping.
+The frontend should render the source data, not compensate for old ordering through display remapping.
 
-Known caveat: the current repository still contains historical display remapping in `src/plan-utils.js` and older numbering in `src/data/kings-edge-plan.json`. See `docs/schema-source-of-truth-audit.md`. The next cleanup should migrate the source JSON and then remove the display remapping.
+`src/plan-utils.js` should not contain hidden project ID, title or order remapping. If project order, title or numbering is wrong, fix `src/data/kings-edge-plan.json`.
 
 ## Core deliverable fields
 
@@ -82,7 +82,7 @@ Each deliverable should be able to carry these fields:
 - `risks`, `issues`, `assumptions`, `decisions`: lightweight RAID-style planning.
 - `tags`: optional thematic keywords only.
 
-IDs should not be changed casually. If IDs are migrated, update dependencies, steps, feeds, related deliverables, status entries and schema example content at the same time.
+IDs should not be changed casually. If IDs are migrated, update dependencies, steps, feeds and related deliverables at the same time.
 
 ## Case for change
 
@@ -225,14 +225,17 @@ These fields are usually detailed planning material. For pre-draft deliverables,
 
 ## Normalisation in the app
 
-The normalisation logic lives in `src/plan-utils.js`. It exists to keep old and new data rendering while the prototype evolves.
+The normalisation logic lives in `src/plan-utils.js`. It keeps old and new data rendering while the prototype evolves.
 
-Current desired direction:
+Acceptable normalisation:
 
-- preserve backwards compatibility while redrafting;
-- avoid adding new display remapping;
-- migrate source JSON when numbering or ordering changes;
-- remove historical display-remapping code once the source JSON is canonical.
+- backwards compatibility for older field names;
+- timeline period mapping;
+- lookup construction;
+- dependency indexing;
+- resource-shape normalisation.
+
+Do not use normalisation for hidden project renumbering, title substitution or order remapping.
 
 Project manager mode should prefer adding richer fields directly to the JSON rather than relying on fallbacks.
 
