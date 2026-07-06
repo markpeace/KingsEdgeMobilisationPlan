@@ -25,16 +25,14 @@ Do not use `tags`, `planningMaturity`, `visibility`, or `src/data/status.json` a
 
 ### Canonical project order
 
-The desired project order is:
+The current source JSON carries this project order directly:
 
 1. `2.1` Articulating and Evidencing The King's Graduate Premium
 2. `2.2` Curriculum Embedded Graduate Advantage
 3. `2.3` Co-Curricular Opportunity to Go Further
 4. `2.4` Extra Curricular Provision for Belonging and Participation
 
-The source JSON should carry this order directly. Do not add new display-remapping workarounds. If project order or numbering is wrong, fix the JSON source of truth and then simplify rendering utilities.
-
-Known caveat: the current repo still contains historical display-remapping in `src/plan-utils.js` and older numbering in `src/data/kings-edge-plan.json`. Read `docs/schema-source-of-truth-audit.md` before migrating IDs.
+Do not add display-remapping workarounds. If project order, title or numbering is wrong, fix the JSON source of truth.
 
 ## Mode 1: Project manager mode
 
@@ -44,7 +42,6 @@ Primary files:
 
 - `src/data/kings-edge-plan.json`
 - `src/data/enabling-projects.json`
-- `src/data/schema-example-content.json`
 - `src/data/step-dependencies.json`
 - `src/data/status.json`
 
@@ -78,13 +75,15 @@ Use this prompt at the start of a project manager mode conversation:
 
 > You are working in project manager mode on the King's Edge Mobilisation Plan repository. Hydrate yourself before editing. Read `docs/hydration-guide.md`, `docs/deliverable-schema.md`, `docs/repository-memory.md`, `docs/schema-source-of-truth-audit.md`, `docs/next-repository-update-brief.md`, `src/plan-utils.js` and the relevant JSON files under `src/data/`.
 >
-> In this mode, the primary editing surface is JSON data. Work mainly in `src/data/kings-edge-plan.json`, `src/data/enabling-projects.json`, `src/data/schema-example-content.json`, `src/data/step-dependencies.json` and `src/data/status.json`. Do not edit React, CSS or site rendering unless explicitly asked for developer-mode or schema-plus-rendering work.
+> In this mode, the primary editing surface is JSON data. Work mainly in `src/data/kings-edge-plan.json`, `src/data/enabling-projects.json`, `src/data/step-dependencies.json` and `src/data/status.json`. Do not edit React, CSS or site rendering unless explicitly asked for developer-mode or schema-plus-rendering work.
 >
 > The only canonical planning-stage workflow is `planningStatus`: `pre-draft`, `draft`, `validated-draft`, `decision-ready`, `mobilising`, `in-delivery`. Do not use generic `tags`, `planningMaturity`, `visibility`, or `src/data/status.json` for that workflow. Treat all current deliverables as `pre-draft` unless the JSON explicitly says otherwise.
 >
 > Preserve the schema logic: problem or need, benefit to realise, outputs to produce, measures and evidence, delivery steps, resources, dependencies, risks, assumptions and decisions, definition of done. Keep benefits, outputs and measures distinct.
 >
-> Be aware that the source JSON still needs canonical project ID/order migration. Do not add more display-remapping workarounds. If project order or numbering is wrong, fix the JSON source of truth and then simplify `src/plan-utils.js`.
+> The canonical project order and IDs are already in `src/data/kings-edge-plan.json`. Do not add display-remapping workarounds. If project order, title or numbering is wrong, fix the JSON source of truth.
+>
+> Recommended rhythm: first sharpen project titles, summaries and transformation claims; then work through deliverables in order to move them from `pre-draft` to `draft`.
 >
 > Before making a large JSON change, briefly explain the proposed shape and any risks to plan integrity. After making changes, summarise what changed, which files were edited and whether any schema or rendering consequences may follow.
 
@@ -97,7 +96,7 @@ Do:
 - Use `planningStatus` for the planning-stage workflow.
 - Treat current deliverables as `pre-draft` unless explicitly changed.
 - Preserve IDs unless there is an agreed ID migration.
-- If migrating IDs, update dependencies, steps, feeds, related deliverables, schema examples and status entries together.
+- If migrating IDs, update dependencies, steps, feeds and related deliverables together.
 - Keep benefits, outputs and measures distinct.
 - Separate existing capacity, new investment and enabling conditions.
 - Make uncertainty explicit.
@@ -163,13 +162,13 @@ Do not:
 
 ## When modes overlap
 
-Some changes require both modes. For example, canonical project ID migration affects JSON data, dependency references, schema example content, status entries and rendering utilities.
+Some changes require both modes. For example, a schema change may affect JSON data, dependency references and rendering utilities.
 
 In those cases, work in stages:
 
 1. Update the JSON source of truth.
 2. Update related JSON references.
-3. Remove obsolete display-remapping utilities.
+3. Update or simplify normalisation utilities.
 4. Check the app still renders correctly.
 
 ## Quick mode test
