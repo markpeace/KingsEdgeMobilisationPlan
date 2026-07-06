@@ -1,6 +1,6 @@
 # Deliverable schema reference
 
-This document describes the working deliverable schema for the King's Edge Mobilisation Plan.
+This document describes the working project and deliverable schema for the King's Edge Mobilisation Plan.
 
 The key principle is that each deliverable should be understandable as a project-management object: why it exists, who owns it, what value it creates, what it produces, how it is evidenced, what it needs and what would count as done.
 
@@ -59,6 +59,22 @@ The source JSON now carries the canonical project order and numbering directly:
 The frontend should render the source data, not compensate for old ordering through display remapping.
 
 `src/plan-utils.js` should not contain hidden project ID, title or order remapping. If project order, title or numbering is wrong, fix `src/data/kings-edge-plan.json`.
+
+## Project fields
+
+Each project should be able to carry these fields:
+
+- `id`: stable project identifier, such as `2.1`.
+- `title`: public project title.
+- `owner`: accountable project owner.
+- `summary`: short card-facing essence.
+- `detailSummary`: optional fuller explanation for the project detail page.
+- `transformationClaim`: the institutional change this project is trying to make possible.
+- `deliverables`: the deliverables grouped under the project.
+
+`transformationClaim` should not simply restate the summary. It should express the shift the project enables, for example what becomes more visible, more systematic, more scalable, more equitable, more evidenceable or more actionable because the project exists.
+
+The project detail page should render the transformation claim as a prominent leadership-facing statement when it is authored.
 
 ## Summary fields
 
@@ -243,6 +259,7 @@ Acceptable normalisation:
 
 - backwards compatibility for older field names;
 - `description` or `longSummary` into `detailSummary`;
+- defaulting project `transformationClaim` to blank when unauthored;
 - timeline period mapping;
 - lookup construction;
 - dependency indexing;
@@ -258,9 +275,11 @@ Cards and index rows should use `summary` only.
 
 Project and deliverable detail pages should render `summary` first, then render `detailSummary` underneath when it exists and is distinct from `summary`.
 
+Project detail pages should also render `transformationClaim` as a distinct panel when it exists.
+
 Deliverable pages should show a staff-safe summary first, then allow users to reveal detailed planning.
 
-Default visible view:
+Default visible deliverable view:
 
 - deliverable code;
 - project code and title;
@@ -292,6 +311,14 @@ Revealed detailed plan:
 For pre-draft deliverables, the revealed detail should carry clear context: detailed planning fields are working assumptions and will be refined through deliverable-level scrutiny.
 
 ## Editing principles
+
+When editing project JSON:
+
+- keep valid JSON;
+- preserve IDs unless explicitly migrating them;
+- use `summary` for concise card-facing essence;
+- use `detailSummary` for fuller detail-page explanation;
+- use `transformationClaim` for the institutional shift the project enables.
 
 When editing deliverable JSON:
 
