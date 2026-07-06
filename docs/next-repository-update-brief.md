@@ -1,19 +1,29 @@
-# Next repository update brief
+# Next implementation brief
 
-Background planning document. Do not render this file in the app. This file compiles the repository changes now needed after the latest schema, resourcing, planning-status and visibility discussions.
+Background planning document. Do not render this file in the app. This file explains the next schema-plus-rendering implementation needed after the latest planning-status, visibility and resourcing discussions.
 
-The purpose is to leave the repository in a state where a future chat can pick up the next implementation phase without reconstructing the conversation.
+The purpose is to let a future chat continue from the current state without reconstructing the conversation.
 
-## Executive summary
+## Current position
 
-The next repository update should align four things:
+The documentation layer has now been aligned. The repository contains:
+
+- `docs/hydration-guide.md`
+- `docs/working-modes.md`
+- `docs/deliverable-schema.md`
+- `docs/repository-memory.md`
+- `docs/next-repository-update-brief.md`
+
+The next change is implementation, not another documentation pass.
+
+The implementation should align four things:
 
 1. Project definition and workflow: all current deliverables start as pre-draft and move through scrutiny to draft.
-2. Schema: add explicit fields for planning status, visibility, resource type and investment ask.
+2. Schema normalisation: add explicit support for planning status, visibility, resource type and investment ask.
 3. App rendering: show a staff-safe summary by default, with detailed project-management content behind a clear reveal pattern.
-4. Prompts and docs: keep project manager mode and developer mode aligned with these rules.
+4. Cross-cutting views: ensure Measures and Timeline do not present pre-draft assumptions as approved KPIs or firm delivery commitments.
 
-The core principle is transparency without overclaiming. The app can show staff that real mobilisation planning is underway, while making clear what is pre-draft, what is draft, what is decision-ready and what is live.
+The core principle is transparency without overclaiming. The app should show that real mobilisation planning is underway, while making clear what is pre-draft, what is draft, what is decision-ready and what is live.
 
 ## 1. Project definition changes
 
@@ -67,11 +77,11 @@ Recommended values:
 
 Do not use freeform tags for this. This is a controlled planning-status field, not a thematic tag.
 
-The app may still describe this visually as a planning-stage tag.
+The app may describe this visually as a planning-stage tag.
 
 Default for all existing deliverables: `pre-draft`.
 
-### 2.2 Retain planning maturity as a secondary internal nuance
+### 2.2 Retain planning maturity as secondary internal nuance
 
 Keep `planningMaturity` for internal planning nuance if useful, but distinguish it from `planningStatus`.
 
@@ -144,7 +154,7 @@ Recommended fields:
 - `minimumViableOption`;
 - `fullMobilisationOption`.
 
-This will let the plan distinguish between a prioritisation ask and a cash investment ask.
+This lets the plan distinguish between a prioritisation ask and a cash investment ask.
 
 ## 3. App rendering changes required
 
@@ -187,7 +197,7 @@ Detailed revealed sections:
 - decisions;
 - detailed delivery steps.
 
-### 3.3 Add pre-draft contextual warning
+### 3.3 Add pre-draft contextual note
 
 When a deliverable is pre-draft, the detailed plan reveal should show a clear contextual note:
 
@@ -246,63 +256,22 @@ Recommended card treatment:
 
 Avoid red/amber/green at this stage. The purpose is maturity, not performance status.
 
-## 4. Documentation and prompt changes required
+## 4. Documentation status
 
-### 4.1 Update `docs/deliverable-schema.md`
+The documentation has already been updated to reflect these decisions.
 
-Add sections for:
+Files already aligned:
 
-- planning status;
-- visibility and display handling;
-- resource distinction;
-- investment ask;
-- relationship between planning status and measures/timeline rendering.
-
-### 4.2 Update `docs/working-modes.md`
-
-Project manager mode should explicitly check:
-
-- whether content is pre-draft, draft or decision-ready;
-- whether resource needs are existing capacity, new investment or enabling conditions;
-- whether sensitive material is being put into app-shipped JSON;
-- whether fields should be staff-visible, internal planning or restricted.
-
-Developer mode should explicitly check:
-
-- whether rendering implies false maturity;
-- whether reveal is being mistaken for security;
-- whether measures or timeline views need maturity-based display rules.
-
-### 4.3 Update `docs/hydration-guide.md`
-
-Add a hydration reminder that future agents must read this update brief and repository memory before making schema or rendering changes.
-
-### 4.4 Update `docs/repository-memory.md`
-
-Record the durable decisions:
-
-- all current deliverables are pre-draft until scrutinised;
-- planning status is different from planning maturity;
-- reveal is progressive disclosure, not security;
-- resource schema must separate existing capacity, new investment and enabling conditions;
-- measures and timeline should respect planning maturity/status;
-- restricted content should not be shipped in a broad client-side app build.
-
-## 5. Recommended implementation order
-
-### Phase 1: Documentation alignment
-
-Update docs first so future chats understand the intended change before implementation.
-
-Files:
-
-- `docs/next-repository-update-brief.md`
 - `docs/deliverable-schema.md`
 - `docs/working-modes.md`
 - `docs/hydration-guide.md`
 - `docs/repository-memory.md`
 
-### Phase 2: Schema normalisation
+Future agents should update repository memory only when a durable decision changes, not for ordinary implementation details.
+
+## 5. Recommended implementation order
+
+### Phase 1: Schema normalisation
 
 Update `src/plan-utils.js` to normalise:
 
@@ -313,7 +282,7 @@ Update `src/plan-utils.js` to normalise:
 
 Preserve backwards compatibility with existing `people`, `cashCosts`, `nonCashNeeds`, `fundingStatus` and `resourceSummary` fields.
 
-### Phase 3: Data migration
+### Phase 2: Data migration
 
 Set all existing deliverables to `planningStatus: pre-draft` or let normalisation default them to pre-draft.
 
@@ -323,7 +292,7 @@ Migrate existing resource examples from:
 - `cashCosts` to `newInvestment`;
 - `nonCashNeeds`, governance and data needs to `enablingConditions`.
 
-### Phase 4: App rendering
+### Phase 3: App rendering
 
 Update deliverable pages, cards, Measures view and Timeline view.
 
@@ -332,11 +301,11 @@ Rendering priorities:
 - visible planning-status tag;
 - default staff-safe summary;
 - reveal detailed plan;
-- pre-draft detail notice;
+- pre-draft detail note;
 - measures and timeline display rules;
 - resourcing split between existing capacity, new investment and enabling conditions.
 
-### Phase 5: Content redraft workflow
+### Phase 4: Content redraft workflow
 
 Begin deliverable-by-deliverable scrutiny.
 
