@@ -97,6 +97,7 @@ function enrichProject(project, displayOrder) {
     displayId: project.id,
     displayOrder,
     detailSummary: detailSummaryOf(project),
+    transformationClaim: project.transformationClaim || '',
     deliverables: asArray(project.deliverables).map((deliverable) => normaliseDeliverable(deliverable, project))
   };
 }
