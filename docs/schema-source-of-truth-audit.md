@@ -2,13 +2,32 @@
 
 Background repository memory only. Do not render this file in the app.
 
-This audit records the places where the repository currently contains historical schema workarounds or multiple status/tagging concepts. It exists because future project-manager-mode chats were getting confused about which tagging workflow and project order are canonical.
+This audit records the tagging and project-order source-of-truth decisions that were clarified during the repository cleanup.
 
-## Executive finding
+## Migration status
 
-Two things need tightening.
+Applied.
 
-First, the canonical planning-stage workflow is `planningStatus`:
+`src/data/kings-edge-plan.json` now carries the canonical project order and project IDs directly:
+
+1. `2.1` Articulating and Evidencing The King's Graduate Premium
+2. `2.2` Curriculum Embedded Graduate Advantage
+3. `2.3` Co-Curricular Opportunity to Go Further
+4. `2.4` Extra Curricular Provision for Belonging and Participation
+
+`src/plan-utils.js` no longer performs project display-ID, display-title or display-order remapping. It now renders source IDs and source order.
+
+`src/data/schema-example-content.json` has been retired as an overlay so it cannot silently override source data.
+
+`src/data/step-dependencies.json` has been cleared because the previous override set referred to the old ID model. Step dependencies should now live in the source plan data unless there is a clear reason to add an explicit override.
+
+`src/data/status.json` has been cleared of item-specific entries because those entries referred to the old ID model and were not the planning-stage workflow.
+
+## Canonical planning-stage workflow
+
+Use `planningStatus`.
+
+Allowed values:
 
 - `pre-draft`
 - `draft`
@@ -17,152 +36,35 @@ First, the canonical planning-stage workflow is `planningStatus`:
 - `mobilising`
 - `in-delivery`
 
-This is the only workflow that should be described as the planning-stage tag. Generic `tags`, `planningMaturity`, and `src/data/status.json` are not the planning-stage workflow.
+This is the only workflow that should be described as the planning-stage tag.
 
-Second, the visible project order is currently still partly achieved through programmatic display remapping in `src/plan-utils.js`. That is not the desired end state. The desired end state is that `src/data/kings-edge-plan.json` carries the canonical project IDs, project titles and project order directly, and the frontend simply renders that source data.
+Do not use these fields as planning-stage workflow:
 
-## Canonical project order
+- `tags`
+- `planningMaturity`
+- `visibility`
+- `src/data/status.json`
 
-The source JSON should ultimately carry this order and numbering directly:
+## Source-of-truth principle
 
-1. `2.1` Articulating and Evidencing The King's Graduate Premium
-2. `2.2` Curriculum Embedded Graduate Advantage
-3. `2.3` Co-Curricular Opportunity to Go Further
-4. `2.4` Extra Curricular Provision for Belonging and Participation
+The JSON source should carry the plan as agreed.
 
-Current issue: `src/data/kings-edge-plan.json` still stores the older order and older project IDs:
+The frontend should render that source data. It should not use hidden remapping to make old source data look correct.
 
-1. `2.1` Curriculum-Embedded Graduate Premium
-2. `2.2` Co-Curricular Opportunity and Purpose
-3. `2.3` Extra-Curricular Student Life, Navigation and Belonging
-4. `2.4` Evidence and Articulation of the King's Graduate Premium
+Acceptable utility work in `src/plan-utils.js` includes:
 
-The app currently masks this through `src/plan-utils.js`. That should be removed after data migration.
+- schema normalisation;
+- timeline period mapping;
+- lookup construction;
+- dependency indexing;
+- backwards compatibility for older fields where it does not change IDs, titles or project order.
 
-## Current workaround locations
+Unacceptable utility work includes:
 
-### `src/plan-utils.js`
-
-Current display workarounds:
-
-- `edgeDisplayOrder`
-- `edgeDisplayIds`
-- `edgeDisplayTitles`
-- `displayIdForProject`
-- `displayTitleForProject`
-- `displayIdForDeliverable`
-- `compareProjects` using display order
-
-These exist to show the revised project order and numbering without changing source JSON. They should be treated as temporary compatibility code. The desired end state is to remove these display-remapping rules once source JSON has been migrated.
-
-### `src/data/kings-edge-plan.json`
-
-Current source-of-truth issue:
-
-- project order is still the old order;
-- project IDs are still the old IDs;
-- deliverable IDs, step IDs, dependencies, `feedsInto`, `relatedDeliverables`, and cross-programme references still use the old numbering.
-
-This file should be the main target of the canonical project renumbering migration.
-
-### `src/data/schema-example-content.json`
-
-Current source-of-truth issue:
-
-- richer schema example content is keyed to old `2.2.1` for King's Canvas;
-- output IDs, benefit IDs, measure IDs and step extras also use old `2.2.1` IDs.
-
-If King's Canvas becomes `2.3.1` in canonical JSON, this example content must be migrated or merged into the main plan data under the new ID.
-
-### `src/data/step-dependencies.json`
-
-Current source-of-truth issue:
-
-- step dependency overrides may refer to old step IDs.
-
-This file needs an ID migration at the same time as `kings-edge-plan.json`.
-
-### `src/data/status.json`
-
-Current source-of-truth issue:
-
-- status entries use older IDs;
-- values such as `scoping`, `active`, `not-started` are delivery-control/status values, not the planning-stage workflow;
-- status pills are currently hidden in the app, so this file should not be treated as the canonical planning-stage tag source.
-
-Do not use `src/data/status.json` to decide whether a deliverable is `pre-draft`, `draft`, `validated-draft`, `decision-ready`, `mobilising`, or `in-delivery`.
-
-### Documentation
-
-Current documentation risk:
-
-- `tags`, `planningStatus`, `planningMaturity`, `visibility`, and `status.json` all exist as concepts;
-- future agents can mistake this for multiple competing tagging schemas.
-
-Documentation should be explicit: the only planning-stage workflow is `planningStatus`. Generic `tags` are thematic and optional. `planningMaturity` is internal nuance. `status.json` is hidden delivery-control metadata.
-
-## Required cleanup sequence
-
-### 1. Clarify documentation
-
-Make all docs say clearly:
-
-- use `planningStatus` for planning-stage tags;
-- do not use `tags` for planning stage;
-- do not use `planningMaturity` for planning stage;
-- do not use `src/data/status.json` for planning stage;
-- current deliverables default to `pre-draft` unless explicitly stated otherwise.
-
-### 2. Migrate canonical project IDs and order in JSON
-
-Migrate `src/data/kings-edge-plan.json` so it directly carries the desired numbering and order.
-
-Recommended ID map:
-
-- old `2.4` -> new `2.1`
-- old `2.1` -> new `2.2`
-- old `2.2` -> new `2.3`
-- old `2.3` -> new `2.4`
-
-Apply the same mapping to:
-
-- project IDs;
-- deliverable IDs;
-- step IDs;
-- dependency target IDs;
-- step `dependsOn` arrays;
-- `feedsInto`;
-- `relatedDeliverables`;
-- cross-programme dependency references;
-- schema example content;
-- step dependency overrides;
-- status entries, if retained.
-
-### 3. Remove display remapping from app utilities
-
-After the source JSON has been migrated, simplify `src/plan-utils.js` so it renders the source data rather than remapping it.
-
-Remove or neutralise:
-
-- `edgeDisplayOrder`
-- `edgeDisplayIds`
-- `edgeDisplayTitles`
-- custom display ID substitution
-- custom display-title substitution
-
-Project sorting should follow source JSON order, or an explicit `order` field in the source JSON if one is added.
-
-### 4. Re-check app rendering
-
-After migration, test:
-
-- project board order;
-- deliverables index order and codes;
-- deliverable detail project context line;
-- timeline rows and dependency links;
-- measure view links;
-- schema example content rendering;
-- status pills remain hidden unless explicitly reintroduced.
+- hidden project renumbering;
+- hidden project reordering;
+- hidden title substitution;
+- applying richer content overlays from another data file without making that clear in the source of truth.
 
 ## Guardrail for future agents
 
@@ -170,4 +72,4 @@ Do not add another tagging workflow.
 
 Use `planningStatus` for the workflow from pre-draft to delivery. Treat other labels as secondary metadata only.
 
-Do not add display remapping to hide source data problems. If the plan order or numbering is wrong, fix the JSON source of truth.
+Do not add display remapping to hide source data problems. If the plan order, numbering or title is wrong, fix the JSON source of truth.
