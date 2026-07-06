@@ -100,15 +100,15 @@ Rationale: A deliverable is not necessarily complete when an output exists. It m
 
 Implication: Definition of done should describe when the whole deliverable is delivered, accepted, embedded or ready for handover. Output acceptance criteria remain separate.
 
-### 9. The schema is robust enough for the next redraft
+### 9. The schema foundation is robust enough for the next phase
 
 Status: Settled for the current prototype
 
-Decision: The current schema is robust enough to support the next substantive content redraft.
+Decision: The current schema foundation is robust enough to support the next substantive content redraft, but one implementation pass is needed first to add planning status, visibility and clearer resource categories to the normalised app model.
 
-Rationale: It now carries the core project-management logic: case for change, ownership, maturity, benefits, outputs, measures, definition of done, steps, resources, dependencies, risks, assumptions and decisions.
+Rationale: The schema now carries the core project-management logic: case for change, ownership, maturity, benefits, outputs, measures, definition of done, steps, resources, dependencies, risks, assumptions and decisions. The latest discussions added three refinements that need implementation before the content redraft starts in earnest: pre-draft planning status, visibility/progressive-disclosure handling and clearer resourcing distinctions.
 
-Implication: We should not add a heavy PMO framework yet. Instead, test the schema through the next redraft and only add complexity where it clearly helps.
+Implication: Do not add a heavy PMO framework yet. Complete the planned schema-plus-rendering update, then test the schema through deliverable-by-deliverable redrafting.
 
 ### 10. The schema remains a prototype, not a full PMO control framework
 
