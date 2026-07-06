@@ -170,13 +170,75 @@ Rationale: These are rendering and presentation decisions, not the core plan sch
 
 Implication: Project manager mode should not change these unless the user explicitly switches into developer mode.
 
+### 16. All current deliverables are pre-draft until scrutinised
+
+Status: Settled
+
+Decision: Existing deliverables should be treated as pre-draft unless explicitly moved to a later planning status.
+
+Rationale: The current plan content was created as an initial mobilisation map. The next phase is deliverable-by-deliverable scrutiny to move content into draft.
+
+Implication: Future schema and rendering should default to `planningStatus: pre-draft`. Staff-facing views should not imply that pre-draft benefits, measures, resources or timelines are approved plans.
+
+### 17. Planning status is different from planning maturity
+
+Status: Settled
+
+Decision: Use planning status for the visible staff-facing stage, and planning maturity for internal nuance.
+
+Rationale: Planning status answers how settled the plan is. Planning maturity answers what kind of planning work is happening. Combining them would make the app less clear.
+
+Implication: Recommended planning-status values are `pre-draft`, `draft`, `validated-draft`, `decision-ready`, `mobilising` and `in-delivery`. Planning maturity can retain values such as concept, scoping, shaping and validated.
+
+### 18. Reveal detailed plan is progressive disclosure, not security
+
+Status: Settled
+
+Decision: The deliverable page should use a “Reveal detailed plan” pattern, but this must not be treated as a security mechanism.
+
+Rationale: If data is included in the client-side bundle, it is not genuinely protected by a reveal button, CSS or front-end filtering.
+
+Implication: Revealed detail can contextualise pre-draft planning, but genuinely restricted material should not be shipped in a broad staff-facing app unless real access control or separate builds exist.
+
+### 19. Resourcing must distinguish existing capacity, new investment and enabling conditions
+
+Status: Settled
+
+Decision: Resource modelling should separate existing capacity to align, new cash investment and enabling conditions.
+
+Rationale: Senior leaders need to distinguish between prioritising existing capacity and approving genuine new spend, especially where a strategic investment fund bid may be needed.
+
+Implication: Future schema should support `existingCapacity`, `newInvestment`, `enablingConditions`, `fundingSummary` and `investmentAsk`. Existing fields such as people, cashCosts and nonCashNeeds should be backwards-compatible but mapped into the clearer structure.
+
+### 20. Measures and Timeline views must respect planning status
+
+Status: Settled
+
+Decision: Measures and Timeline views should not present pre-draft assumptions as approved KPIs or live delivery plans.
+
+Rationale: Cross-cutting views can unintentionally make early planning look more settled than it is.
+
+Implication: Pre-draft measures should be hidden from the main Measures view or clearly labelled as emerging. Pre-draft timeline items should be visually indicative. Draft, decision-ready and in-delivery items can be shown with increasing confidence.
+
+### 21. Visibility classification is handling guidance, not access control
+
+Status: Settled
+
+Decision: The schema may use visibility values such as staff-visible, internal-planning and restricted, but these describe handling and rendering intent, not true security.
+
+Rationale: The app currently has no authentication or secure server-side filtering. Visibility is useful for presentation discipline, but cannot protect sensitive content by itself.
+
+Implication: Restricted material should either be omitted from broad app data, held separately, or rendered only in a properly controlled build.
+
 ## Current working assumptions
 
-- The next major task is likely a content redraft using the richer deliverable schema.
+- The next major task is a schema-plus-rendering update for planning status, visibility, resource categories and reveal detailed plan.
+- The next content task is a deliverable-by-deliverable redraft to move items from pre-draft to draft.
 - The plan should remain senior-leadership ready: clear, concise, defensible and not over-bureaucratic.
 - Benefits should be written as realised value, not disguised outputs.
 - Measures should test whether benefits are happening, not merely count activity.
-- Uncertainty should be visible through maturity, assumptions, decisions and TBC fields.
+- Uncertainty should be visible through planning status, maturity, assumptions, decisions and TBC fields.
+- Resource asks should distinguish existing capacity, new investment and enabling conditions.
 - The app is a prototype and should remain flexible.
 - Future PM input may later formalise RACI, controls, budgets and benefits realisation.
 
@@ -189,3 +251,7 @@ Implication: Project manager mode should not change these unless the user explic
 - Do not edit React or CSS in project manager mode unless explicitly asked.
 - Do not rename IDs without checking routing, dependencies, display IDs and timeline references.
 - Do not assume every TBC is a weakness. Some TBCs are honest planning maturity markers.
+- Do not treat reveal controls, filters or CSS as security.
+- Do not put genuinely restricted content into broad client-side JSON.
+- Do not present pre-draft measures as approved KPIs.
+- Do not present pre-draft timeline items as firm delivery commitments.
