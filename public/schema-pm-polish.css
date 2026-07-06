@@ -1,0 +1,166 @@
+.case-panel,
+.ownership-panel,
+.delivery-model-panel,
+.definition-panel,
+.raid-panel {
+  margin: 1.15rem 0;
+}
+
+.case-panel h2,
+.ownership-panel h2,
+.delivery-model-panel h2,
+.definition-panel h2,
+.raid-panel h2 {
+  font-size: clamp(2.1rem, 3vw, 3.15rem);
+}
+
+.case-grid,
+.ownership-grid,
+.delivery-model-grid,
+.raid-grid {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.case-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.ownership-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.delivery-model-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: start;
+}
+
+.raid-grid {
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.delivery-model-column,
+.raid-column {
+  display: grid;
+  gap: 0.7rem;
+}
+
+.delivery-model-column > h3,
+.raid-column > h3 {
+  margin: 0 0 0.05rem;
+  padding: 0.36rem 0.58rem;
+  width: fit-content;
+  background: var(--ink);
+  color: #ffffff;
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.schema-card {
+  padding: 1rem;
+  border: 2px solid var(--border-strong);
+  background: #ffffff;
+}
+
+.schema-card h3,
+.schema-card h4 {
+  margin: 0 0 0.55rem;
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 800;
+  line-height: 1.16;
+  letter-spacing: -0.012em;
+}
+
+.schema-card p {
+  margin: 0 0 0.65rem;
+  color: var(--muted);
+  font-size: 0.96rem;
+  line-height: 1.38;
+}
+
+.schema-card p:last-child,
+.schema-card ul:last-child {
+  margin-bottom: 0;
+}
+
+.schema-card .reference {
+  margin-bottom: 0.7rem;
+}
+
+.schema-meta {
+  color: var(--accent-dark) !important;
+  font-size: 0.85rem !important;
+  font-weight: 800;
+}
+
+.schema-mini-list,
+.definition-list {
+  margin: 0.75rem 0 0;
+  padding-left: 1.1rem;
+}
+
+.schema-mini-list li,
+.definition-list li {
+  margin-bottom: 0.45rem;
+  line-height: 1.35;
+}
+
+.definition-list {
+  display: grid;
+  gap: 0.5rem;
+  padding-left: 0;
+  list-style: none;
+  counter-reset: done;
+}
+
+.definition-list li {
+  counter-increment: done;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.7rem;
+  align-items: start;
+  margin: 0;
+  padding: 0.8rem;
+  border: 2px solid var(--border-strong);
+}
+
+.definition-list li::before {
+  content: counter(done, decimal-leading-zero);
+  display: inline-flex;
+  padding: 0.2rem 0.42rem;
+  background: var(--accent);
+  color: #ffffff;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.benefit-card {
+  border-left: 0.5rem solid var(--accent);
+}
+
+.output-card {
+  border-left: 0.5rem solid var(--ink);
+}
+
+.measure-card-small {
+  border-left: 0.5rem solid var(--border);
+}
+
+@media (max-width: 1180px) {
+  .delivery-model-grid,
+  .ownership-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 760px) {
+  .case-grid,
+  .raid-grid {
+    grid-template-columns: 1fr;
+  }
+}
