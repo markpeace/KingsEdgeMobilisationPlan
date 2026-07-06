@@ -4,6 +4,8 @@ This document describes the working deliverable schema for the King's Edge Mobil
 
 The key principle is that each deliverable should be understandable as a project-management object: why it exists, who owns it, what value it creates, what it produces, how it is evidenced, what it needs and what would count as done.
 
+Current planning assumption: all existing deliverables should be treated as pre-draft until each one has been scrutinised against this schema.
+
 ## Core deliverable fields
 
 Each deliverable should be able to carry the following fields.
@@ -13,11 +15,95 @@ Each deliverable should be able to carry the following fields.
 - `id`: stable machine-readable identifier, such as `2.2.1`.
 - `title`: public title.
 - `summary`: short explanation used on cards and detail pages.
-- `tags`: optional themes used for filtering and search.
+- `tags`: optional thematic tags. Do not use tags for planning status.
 
 IDs should not be changed casually. They are used for routing, display references, dependencies and timeline relationships.
 
-### Case for change
+## Planning status and maturity
+
+Planning status and planning maturity are related but different.
+
+### Planning status
+
+Recommended field: `planningStatus`
+
+Purpose: the staff-facing planning-stage tag. It answers how settled the plan is and how confidently it should be presented.
+
+Recommended values:
+
+- `pre-draft`
+- `draft`
+- `validated-draft`
+- `decision-ready`
+- `mobilising`
+- `in-delivery`
+
+Default for existing deliverables: `pre-draft`.
+
+Meanings:
+
+- `pre-draft`: included in the mobilisation map, but not yet scrutinised against the full schema.
+- `draft`: reviewed against the schema and coherent as a planning object, but not approved.
+- `validated-draft`: checked with relevant owners, contributors or stakeholders.
+- `decision-ready`: mature enough for a decision about priority, investment, ownership, sequencing or mobilisation.
+- `mobilising`: relevant decision made and delivery is being organised.
+- `in-delivery`: work is actively underway.
+
+A deliverable should only move from pre-draft to draft after case for change, ownership, benefits, outputs, measures, definition of done, steps, dependencies, resources, risks, assumptions and decisions have been scrutinised.
+
+### Planning maturity
+
+Field: `planningMaturity`
+
+Purpose: internal planning nuance. It describes the kind of planning work underway, not the public settledness of the plan.
+
+Suggested values:
+
+- `concept`
+- `scoping`
+- `shaping`
+- `validated`
+- `mobilising`
+- `in delivery`
+- `embedded`
+
+Use maturity honestly. A well-labelled immature deliverable is better than a falsely settled one.
+
+Examples:
+
+- `planningStatus: pre-draft`, `planningMaturity: concept`
+- `planningStatus: draft`, `planningMaturity: shaping`
+- `planningStatus: decision-ready`, `planningMaturity: validated`
+
+## Visibility and display handling
+
+Visibility is presentation guidance, not true access control.
+
+Recommended deliverable-level field: `visibility`
+
+Recommended values:
+
+- `staff-visible`
+- `internal-planning`
+- `restricted`
+
+Recommended use:
+
+- `staff-visible`: safe for broad staff-facing summary views.
+- `internal-planning`: suitable for internal planning audiences, but should be contextualised as draft or pre-draft where appropriate.
+- `restricted`: should not be included in a broad client-side app bundle unless access is genuinely controlled or a separate restricted build is used.
+
+Important rule: a reveal button is not security. If sensitive material is present in the front-end data bundle, it should be treated as visible to anyone with access to that build.
+
+Optional section-level field: `visibility`
+
+This may be added to benefits, outputs, measures, resources, risks, issues, assumptions and decisions where needed. Default behaviour should usually be:
+
+- summary and case for change: staff-visible;
+- benefits, outputs, measures and steps: internal-planning until draft or validated;
+- investment ask, sensitive risks or unresolved issues: restricted if not suitable for broad staff audiences.
+
+## Case for change
 
 Field: `caseForChange`
 
@@ -37,7 +123,7 @@ Backwards compatibility:
 
 Good case-for-change writing should be direct, specific and senior-leadership ready. Avoid vague claims such as “improves student experience” unless the mechanism is clear.
 
-### Ownership
+## Ownership
 
 Field: `ownership`
 
@@ -52,23 +138,6 @@ Subfields:
 - `decisionForum`: forum where decisions or escalations should go.
 
 The older `lead` field is still used and is normalised into `ownership.deliveryLead` when needed.
-
-### Planning maturity
-
-Field: `planningMaturity`
-
-Purpose: makes it clear how firm or speculative the deliverable is.
-
-Suggested values:
-
-- `concept`
-- `scoped`
-- `validated`
-- `mobilising`
-- `in delivery`
-- `embedded`
-
-Use maturity honestly. A well-labelled immature deliverable is better than a falsely settled one.
 
 ## Benefits, outputs and measures
 
@@ -93,6 +162,7 @@ Useful subfields:
 - `realisationPeriod`: when the benefit is expected to land.
 - `realisedThrough`: output IDs that enable the benefit.
 - `measures`: measure IDs that evidence the benefit.
+- `visibility`: optional handling classification.
 
 A benefit should usually answer: “what value exists because this deliverable has been used, adopted or embedded?”
 
@@ -112,6 +182,7 @@ Useful subfields:
 - `duePeriod`: expected delivery period.
 - `supportsBenefits`: benefit IDs supported by this output.
 - `acceptanceCriteria`: criteria for accepting the output as complete.
+- `visibility`: optional handling classification.
 
 Outputs should have acceptance criteria wherever possible. A document existing is rarely enough. The output should be accepted, usable and connected to adoption or benefit realisation.
 
@@ -135,8 +206,11 @@ Useful subfields:
 - `owner`: person or role responsible for the measure.
 - `confidence`: maturity or confidence in the measure.
 - `supportsBenefits`: benefit IDs supported by this measure.
+- `visibility`: optional handling classification.
 
 Good measures do not only prove that activity happened. They should help show whether the intended benefit is happening.
+
+Measures view should respect planning status. Pre-draft measures should be treated as emerging measures, not approved KPIs.
 
 ## Definition of done
 
@@ -177,16 +251,120 @@ Useful subfields:
 - `risks`: step-level risks.
 - `issues`: step-level issues.
 - `assumptions`: step-level assumptions.
+- `visibility`: optional handling classification.
 
 Steps should be sequenced enough to support the timeline. They do not need to become a full task plan.
+
+Timeline view should respect planning status. Pre-draft steps should be visually framed as indicative, not live delivery commitments.
 
 ## Resources
 
 Field: `resources`
 
-Resources may appear at step level and can be extended at deliverable level later.
+Resources need to distinguish existing capacity from genuine new cash investment.
 
-Supported resource categories:
+Recommended resource structure:
+
+- `existingCapacity`
+- `newInvestment`
+- `enablingConditions`
+- `fundingSummary`
+- `investmentAsk`
+
+### Existing capacity
+
+Field: `existingCapacity`
+
+Purpose: capacity, expertise, governance time, data access, digital input or staff effort that already exists but must be aligned, prioritised or redirected.
+
+Useful subfields:
+
+- `role` or `team`;
+- `contribution`;
+- `estimatedEffort` or `fte`;
+- `periodNeeded`;
+- `sourceTeam`;
+- `owner`;
+- `confidence`;
+- `opportunityCost`;
+- `riskIfUnavailable`.
+
+This is not “free” resource. It has opportunity cost, but it is not a new cash ask.
+
+### New investment
+
+Field: `newInvestment`
+
+Purpose: genuine additional cash needed to mobilise the work.
+
+Useful subfields:
+
+- `item`;
+- `category`;
+- `amount`;
+- `currency`;
+- `period`;
+- `recurrence`;
+- `fundingRoute`;
+- `confidence`;
+- `rationale`;
+- `whatItUnlocks`;
+- `consequenceIfUnfunded`.
+
+Use this for strategic investment fund asks, fixed-term posts, consultancy, digital build, student incentives, external evaluation, tooling, events or paid research support.
+
+### Enabling conditions
+
+Field: `enablingConditions`
+
+Purpose: non-cash conditions needed for delivery.
+
+Examples:
+
+- data access;
+- governance route;
+- digital roadmap prioritisation;
+- faculty participation;
+- employer or alumni access;
+- policy approval;
+- system integration;
+- communications support.
+
+Useful subfields:
+
+- `condition`;
+- `owner`;
+- `dependencyType`;
+- `criticality`;
+- `periodNeeded`;
+- `riskIfMissing`.
+
+### Investment ask
+
+Field: `investmentAsk`
+
+Purpose: senior-facing summary of whether new funding is needed and what it unlocks.
+
+Useful subfields:
+
+- `required`: true or false;
+- `fundingRoute`;
+- `priority`;
+- `decisionNeededBy`;
+- `totalEstimatedCash`;
+- `currency`;
+- `confidence`;
+- `rationale`;
+- `whatItUnlocks`;
+- `consequenceIfUnfunded`;
+- `minimumViableOption`;
+- `fullMobilisationOption`.
+
+The schema should make it clear whether the ask is a prioritisation of existing resource, a new cash investment, an enabling-condition dependency, or some combination.
+
+### Backwards compatibility for resources
+
+The app currently also supports older resource fields:
 
 - `people`
 - `cashCosts`
@@ -197,7 +375,11 @@ Supported resource categories:
 - `fundingStatus`
 - `resourceSummary`
 
-The aim is to make resource assumptions visible. Use TBC where needed, but avoid hiding real dependency on people, data, money, governance or stakeholder attention.
+Future normalisation should preserve these while mapping them into the clearer resource categories where possible:
+
+- `people` -> `existingCapacity`
+- `cashCosts` -> `newInvestment`
+- `dataAndSystems`, `governance`, `engagementNeeds`, `nonCashNeeds` -> `enablingConditions`
 
 ## Dependencies
 
@@ -225,25 +407,25 @@ The schema supports lightweight RAID-style planning.
 
 Risks are things that may happen and would affect delivery or benefit realisation.
 
-Useful fields: `title`, `likelihood`, `impact`, `mitigation`, `owner`.
+Useful fields: `title`, `likelihood`, `impact`, `mitigation`, `owner`, `visibility`.
 
 ### Issues
 
 Issues are current problems that need action.
 
-Useful fields: `title`, `status`, `actionRequired`, `owner`.
+Useful fields: `title`, `status`, `actionRequired`, `owner`, `visibility`.
 
 ### Assumptions
 
 Assumptions are things being treated as true for planning purposes but not yet fully validated.
 
-Useful fields: `title`, `statement`, `confidence`, `validationNeeded`.
+Useful fields: `title`, `statement`, `confidence`, `validationNeeded`, `visibility`.
 
 ### Decisions
 
 Decisions capture choices that need to be made.
 
-Useful fields: `title`, `decisionNeededBy`, `decisionMaker`, `options`, `recommendation`.
+Useful fields: `title`, `decisionNeededBy`, `decisionMaker`, `options`, `recommendation`, `visibility`.
 
 ## Normalisation in the app
 
@@ -258,7 +440,47 @@ Important behaviours:
 - missing benefits can be inferred from `whatChanges` as a fallback;
 - missing definitions of done can be given a lightweight fallback.
 
+Future normalisation should add:
+
+- default `planningStatus: pre-draft`;
+- default staff-safe visibility for summary fields;
+- internal-planning visibility for detailed project-management fields;
+- resource mapping from older fields into existing capacity, new investment and enabling conditions.
+
 Project manager mode should understand this normalisation, but should prefer adding richer fields directly to the JSON rather than relying on fallbacks.
+
+## Rendering implications
+
+Deliverable pages should show a staff-safe summary first, then allow users to reveal detailed planning.
+
+Recommended default view:
+
+- title;
+- summary;
+- planning status tag;
+- project;
+- accountable owner or delivery lead where known;
+- case for change;
+- intended change;
+- current planning focus;
+- next scrutiny step or next decision.
+
+Recommended revealed detail:
+
+- benefits;
+- outputs and acceptance criteria;
+- measures and evidence questions;
+- definition of done;
+- resources;
+- investment ask;
+- dependencies;
+- risks;
+- issues;
+- assumptions;
+- decisions;
+- detailed delivery steps.
+
+For pre-draft deliverables, the revealed detail should carry clear context: detailed planning fields are working assumptions and will be refined through deliverable-level scrutiny.
 
 ## Editing principles
 
@@ -273,4 +495,6 @@ When editing deliverable JSON:
 - avoid decorative language that does not help delivery;
 - use acceptance criteria to clarify what done means;
 - use measures to test benefits, not just activity;
+- separate existing capacity, new investment and enabling conditions;
+- do not put genuinely restricted material into broad client-side app data;
 - ensure any schema change is reflected in rendering if needed.
