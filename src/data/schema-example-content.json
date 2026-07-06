@@ -1,69 +1,243 @@
 {
-  "note": "Temporary example content used to test rendering of outputs, resources, decisions, risks and KPIs. Move into the main plan data once the format is agreed.",
+  "note": "Temporary example content used to test the richer deliverable schema: case for change, ownership, benefits, outputs, measures, definition of done, resources, decisions, assumptions and risks. Move into the main plan data once the format is agreed.",
   "deliverables": {
     "2.2.1": {
-      "successMeasures": {
-        "outputs": [
-          {
-            "title": "King's Canvas service blueprint",
-            "type": "brief",
-            "description": "A clear account of the student journey, moments of use, human support model, data requirements and digital touchpoints for Canvas.",
-            "owner": "Vanessa Freeman",
-            "due": "jan-summer-2027",
-            "status": "mock"
-          },
-          {
-            "title": "Pilot-ready purpose conversation prompt set",
-            "type": "template",
-            "description": "A structured prompt set that can be tested with students across key lifecycle moments.",
-            "owner": "Vanessa Freeman",
-            "due": "jan-summer-2027",
-            "status": "mock"
-          },
-          {
-            "title": "Digital requirements brief for the Single Student App roadmap",
-            "type": "brief",
-            "description": "A concise product-facing brief that translates the Canvas concept into technical and data requirements.",
-            "owner": "TBC, Single Student App",
-            "due": "jan-summer-2027",
-            "status": "mock"
-          }
-        ],
-        "kpis": [
-          {
-            "label": "Student engagement with purpose conversation",
-            "type": "reach",
-            "target": "TBC after pilot design",
-            "measure": "Proportion of participating students completing at least one Canvas reflection cycle.",
-            "period": "pilot"
-          },
-          {
-            "label": "Usefulness to students",
-            "type": "quality",
-            "target": "TBC after baseline testing",
-            "measure": "Student-reported usefulness of Canvas prompts, planning outputs and opportunity recommendations.",
-            "period": "pilot"
-          },
-          {
-            "label": "Integration into digital roadmap",
-            "type": "adoption",
-            "target": "Requirements accepted into Single Student App planning",
-            "measure": "Evidence that Canvas requirements are included in the product roadmap and technical planning.",
-            "period": "jan-summer-2027"
-          }
-        ]
-      }
+      "caseForChange": {
+        "problem": "Students are often presented with opportunities as a menu, rather than supported to understand what they want from King's and how to shape their experience over time.",
+        "opportunity": "King's Canvas can create a recurring purpose conversation that helps students connect aspiration, skills, experience and opportunity across their journey.",
+        "whyNow": "AI, student expectations and a more contested graduate premium make it more important that students can explain what they are building through their King's education.",
+        "intendedChange": "King's creates tools, prompts and a student journey model for a recurring purpose conversation from pre-entry to graduation."
+      },
+      "ownership": {
+        "accountableOwner": "Zak Evans",
+        "deliveryLead": "Vanessa Freeman",
+        "benefitOwner": "TBC, Student Futures / Education",
+        "contributors": ["Student Futures", "Careers", "Single Student App", "Students and Education Directorate"],
+        "decisionForum": "King's Edge mobilisation governance"
+      },
+      "planningMaturity": "scoped",
+      "benefits": [
+        {
+          "id": "2.2.1-B1",
+          "title": "Students can shape and articulate a purposeful King's journey",
+          "beneficiary": "Students",
+          "benefitType": "student agency",
+          "statement": "Students have a clearer way to connect purpose, skills, experience and opportunity across their time at King's.",
+          "currentState": "Purpose, opportunity planning and skills articulation are supported unevenly across the student journey.",
+          "desiredChange": "Students repeatedly revisit purpose and opportunity choices through a supported, visible and evidenceable journey model.",
+          "owner": "TBC, Student Futures / Education",
+          "realisationPeriod": "Pilot from 2027/28; wider adoption by 2029/30",
+          "realisedThrough": ["2.2.1-O1", "2.2.1-O2", "2.2.1-O4"],
+          "measures": ["2.2.1-M1", "2.2.1-M2"]
+        },
+        {
+          "id": "2.2.1-B2",
+          "title": "King's has a clearer service model for purpose and opportunity navigation",
+          "beneficiary": "Programmes, advisers, Careers, KCLSU and student-facing teams",
+          "benefitType": "operating model",
+          "statement": "Colleagues have a shared model for when and how students are prompted, supported and signposted.",
+          "currentState": "Support is distributed across many teams and moments, but not yet configured as a coherent journey.",
+          "desiredChange": "Canvas gives teams a common rhythm, language and support model for student purpose conversations.",
+          "owner": "TBC, Student Futures / Education",
+          "realisationPeriod": "2027/28 to 2029/30",
+          "realisedThrough": ["2.2.1-O1", "2.2.1-O3", "2.2.1-O5"],
+          "measures": ["2.2.1-M3", "2.2.1-M4"]
+        }
+      ],
+      "outputs": [
+        {
+          "id": "2.2.1-O1",
+          "title": "King's Canvas service blueprint",
+          "type": "blueprint",
+          "description": "A clear account of the student journey, moments of use, human support model, data requirements and digital touchpoints for Canvas.",
+          "owner": "Vanessa Freeman",
+          "duePeriod": "jan-summer-2027",
+          "supportsBenefits": ["2.2.1-B1", "2.2.1-B2"],
+          "acceptanceCriteria": [
+            "Defines lifecycle moments from pre-entry to graduation",
+            "Identifies human support roles as well as digital touchpoints",
+            "Sets out data, privacy and AI assumptions for validation"
+          ]
+        },
+        {
+          "id": "2.2.1-O2",
+          "title": "Pilot-ready purpose conversation prompt set",
+          "type": "template",
+          "description": "A structured prompt set that can be tested with students across key lifecycle moments.",
+          "owner": "Vanessa Freeman",
+          "duePeriod": "jan-summer-2027",
+          "supportsBenefits": ["2.2.1-B1"],
+          "acceptanceCriteria": [
+            "Includes prompts for purpose, skills, experience and opportunity planning",
+            "Tested with students for language, usefulness and trust",
+            "Can be used by human supporters as well as a digital tool"
+          ]
+        },
+        {
+          "id": "2.2.1-O3",
+          "title": "Digital requirements brief for the Single Student App roadmap",
+          "type": "brief",
+          "description": "A concise product-facing brief that translates the Canvas concept into technical and data requirements.",
+          "owner": "TBC, Single Student App",
+          "duePeriod": "jan-summer-2027",
+          "supportsBenefits": ["2.2.1-B2"],
+          "acceptanceCriteria": [
+            "Requirements are expressed in product and data language",
+            "Integration points with the Single Student App are identified",
+            "Build route, ownership and sequencing assumptions are recorded"
+          ]
+        },
+        {
+          "id": "2.2.1-O4",
+          "title": "Canvas pilot evaluation report",
+          "type": "evaluation",
+          "description": "Captures reach, usefulness, operational burden, data issues and student-facing value from pilot use.",
+          "owner": "Vanessa Freeman",
+          "duePeriod": "ay-2027-28-to-2028-29",
+          "supportsBenefits": ["2.2.1-B1", "2.2.1-B2"],
+          "acceptanceCriteria": [
+            "Includes student and staff evidence",
+            "Tests usefulness rather than only usage",
+            "Identifies what must change before wider adoption"
+          ]
+        },
+        {
+          "id": "2.2.1-O5",
+          "title": "Embedded Canvas operating model",
+          "type": "framework",
+          "description": "Sets out how Canvas is sustained across curriculum, co-curriculum, advising, Careers and opportunity navigation.",
+          "owner": "TBC",
+          "duePeriod": "ay-2029-30",
+          "supportsBenefits": ["2.2.1-B2"],
+          "acceptanceCriteria": [
+            "Long-term owner identified",
+            "Support roles, maintenance rhythm and governance route agreed",
+            "Resource and benefits case prepared for wider adoption"
+          ]
+        }
+      ],
+      "measures": [
+        {
+          "id": "2.2.1-M1",
+          "title": "Student engagement with purpose conversation",
+          "measureType": "reach",
+          "questionAnswered": "Are students actually engaging with the purpose conversation at meaningful points in their journey?",
+          "baseline": "No universal Canvas model in place",
+          "target": "TBC after pilot design",
+          "measure": "Proportion of participating students completing at least one Canvas reflection cycle.",
+          "dataSource": "Canvas pilot records / app analytics",
+          "cadence": "Pilot review",
+          "owner": "Vanessa Freeman",
+          "confidence": "developing",
+          "supportsBenefits": ["2.2.1-B1"]
+        },
+        {
+          "id": "2.2.1-M2",
+          "title": "Usefulness to students",
+          "measureType": "quality",
+          "questionAnswered": "Do students find Canvas useful for making sense of purpose, skills, opportunities and next steps?",
+          "baseline": "TBC through early discovery",
+          "target": "TBC after baseline testing",
+          "measure": "Student-reported usefulness of Canvas prompts, planning outputs and opportunity recommendations.",
+          "dataSource": "Student testing and pilot evaluation",
+          "cadence": "Pilot review",
+          "owner": "Vanessa Freeman",
+          "confidence": "developing",
+          "supportsBenefits": ["2.2.1-B1"]
+        },
+        {
+          "id": "2.2.1-M3",
+          "title": "Integration into digital roadmap",
+          "measureType": "adoption",
+          "questionAnswered": "Has Canvas moved from concept into the digital and service roadmap?",
+          "baseline": "Concept not yet in roadmap",
+          "target": "Requirements accepted into Single Student App planning",
+          "measure": "Evidence that Canvas requirements are included in product roadmap and technical planning.",
+          "dataSource": "Product roadmap and governance records",
+          "cadence": "Termly during mobilisation",
+          "owner": "Single Student App sponsor / Zak Evans",
+          "confidence": "developing",
+          "supportsBenefits": ["2.2.1-B2"]
+        },
+        {
+          "id": "2.2.1-M4",
+          "title": "Support model readiness",
+          "measureType": "operational readiness",
+          "questionAnswered": "Is there a named human support model around Canvas, rather than just a digital tool?",
+          "baseline": "Support model not yet defined",
+          "target": "Named support roles and handoff points agreed before scale",
+          "measure": "Evidence of agreed roles, referral routes and operating rhythm.",
+          "dataSource": "Operating model and governance sign-off",
+          "cadence": "Before scale decision",
+          "owner": "TBC, Student Futures / Education",
+          "confidence": "developing",
+          "supportsBenefits": ["2.2.1-B2"]
+        }
+      ],
+      "definitionOfDone": [
+        "Canvas service blueprint, prompt set and digital requirements are accepted by the accountable owner.",
+        "Pilot evidence has tested student usefulness, operating burden and integration with the wider student journey.",
+        "Benefit owner, long-term product/service owner and decision forum are confirmed before wider adoption.",
+        "Measures are baselined or explicitly marked as requiring pilot discovery.",
+        "Dependencies with the Single Student App and student journey governance are resolved or actively managed."
+      ],
+      "assumptions": [
+        {
+          "title": "Canvas should be part of a wider student journey model, not a standalone optional tool",
+          "confidence": "medium",
+          "validationNeeded": "Test through service blueprinting and student co-design."
+        },
+        {
+          "title": "AI adds value only when it supports reflection, planning and navigation in a trusted way",
+          "confidence": "medium",
+          "validationNeeded": "Test student trust, privacy expectations and usefulness during discovery."
+        }
+      ],
+      "decisions": [
+        {
+          "title": "Confirm whether Canvas is framed as a universal entitlement or targeted pilot first",
+          "decisionNeededBy": "now-xmas-2026",
+          "decisionMaker": "Zak Evans / Vanessa Freeman",
+          "recommendation": "Start with pilot lifecycle moments, but design the model so it can become a universal entitlement."
+        },
+        {
+          "title": "Confirm digital build route",
+          "decisionNeededBy": "jan-summer-2027",
+          "decisionMaker": "Single Student App sponsor / Zak Evans",
+          "recommendation": "Align Canvas requirements with the Single Student App wherever possible."
+        }
+      ],
+      "risks": [
+        {
+          "title": "Canvas becomes another optional tool rather than part of the student journey",
+          "likelihood": "medium",
+          "impact": "high",
+          "mitigation": "Design the lifecycle rhythm and human support model before specifying functionality.",
+          "owner": "Vanessa Freeman / Zak Evans"
+        },
+        {
+          "title": "AI enrichment is over-specified before the student value proposition is clear",
+          "likelihood": "medium",
+          "impact": "medium",
+          "mitigation": "Start from the purpose conversation and student journey, then decide where AI genuinely adds value.",
+          "owner": "Vanessa Freeman"
+        }
+      ]
     }
   },
   "steps": {
     "2.2.1-step-1": {
+      "stepType": "scoping task",
+      "outputsProduced": ["2.2.1-O1"],
       "outputs": [
         {
+          "id": "2.2.1-S1-O1",
           "title": "Purpose conversation definition",
           "type": "brief",
           "description": "Defines what the conversation should cover and how it supports aspiration, skills, reflection and opportunity planning."
         },
         {
+          "id": "2.2.1-S1-O2",
           "title": "Lifecycle rhythm map",
           "type": "map",
           "description": "Shows where Canvas should appear from pre-entry to graduation and how often students revisit it."
@@ -104,18 +278,23 @@
       ]
     },
     "2.2.1-step-2": {
+      "stepType": "design task",
+      "outputsProduced": ["2.2.1-O1", "2.2.1-O2", "2.2.1-O3"],
       "outputs": [
         {
+          "id": "2.2.1-S2-O1",
           "title": "Canvas service blueprint",
           "type": "brief",
           "description": "Specifies the student experience, prompts, digital functions, data model and support roles."
         },
         {
+          "id": "2.2.1-S2-O2",
           "title": "Student co-design synthesis",
           "type": "report",
           "description": "Summarises student feedback on language, usefulness, trust, privacy and likely moments of use."
         },
         {
+          "id": "2.2.1-S2-O3",
           "title": "Digital requirements brief",
           "type": "brief",
           "description": "Translates Canvas into product requirements for the Single Student App team."
@@ -174,13 +353,17 @@
       ]
     },
     "2.2.1-step-3": {
+      "stepType": "pilot",
+      "outputsProduced": ["2.2.1-O4"],
       "outputs": [
         {
+          "id": "2.2.1-S3-O1",
           "title": "Canvas pilot evaluation report",
           "type": "report",
           "description": "Captures reach, usefulness, operational burden, data issues and student-facing value from pilot use."
         },
         {
+          "id": "2.2.1-S3-O2",
           "title": "Revised Canvas implementation model",
           "type": "framework",
           "description": "Adjusts the service model, prompts and support requirements based on pilot findings."
@@ -218,13 +401,17 @@
       ]
     },
     "2.2.1-step-4": {
+      "stepType": "scale decision",
+      "outputsProduced": ["2.2.1-O5"],
       "outputs": [
         {
+          "id": "2.2.1-S4-O1",
           "title": "Embedded Canvas operating model",
           "type": "framework",
           "description": "Sets out how Canvas is sustained across curriculum, co-curriculum, advising, Careers and opportunity navigation."
         },
         {
+          "id": "2.2.1-S4-O2",
           "title": "Scale plan and benefits case",
           "type": "brief",
           "description": "Summarises the resource, governance and value case for wider institutional adoption."
