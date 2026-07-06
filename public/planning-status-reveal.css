@@ -1,4 +1,5 @@
-.deliverable-context-line {
+.deliverable-context-line,
+.project-context-line {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -7,6 +8,7 @@
 }
 
 .deliverable-context-line .reference,
+.project-context-line .reference,
 .planning-status {
   min-height: 1.78rem;
   display: inline-flex;
@@ -52,12 +54,99 @@
   line-height: 1.15;
 }
 
+.project-detail-hero {
+  margin-top: 0.15rem;
+  margin-bottom: 1.15rem;
+  padding: clamp(1.95rem, 3.5vw, 3.15rem) clamp(1.6rem, 4.2vw, 4rem) clamp(1.75rem, 3vw, 2.65rem) !important;
+  border-left-width: clamp(1rem, 2.1vw, 1.55rem) !important;
+}
+
+.project-detail-hero::after {
+  display: none !important;
+  content: none !important;
+}
+
+.project-detail-hero h1 {
+  display: block;
+  max-width: 1120px;
+  margin-bottom: 0.85rem;
+  font-size: clamp(2.75rem, 4.15vw, 4.85rem) !important;
+  line-height: 0.93;
+  letter-spacing: -0.04em;
+}
+
+.project-detail-hero .hero-reference,
+.project-context-line .hero-reference {
+  padding: 0.32rem 0.62rem 0.26rem;
+  background: var(--accent);
+  color: #ffffff;
+  font-family: var(--font-body);
+  font-size: clamp(0.92rem, 1.05vw, 1.12rem);
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  line-height: 1;
+}
+
+.project-detail-hero .hero-title-text {
+  display: block;
+}
+
+.project-detail-hero > p {
+  max-width: 930px;
+  margin: 0;
+  color: var(--muted);
+  font-size: clamp(1.08rem, 1.22vw, 1.24rem);
+  line-height: 1.4;
+}
+
+.project-detail-hero .detail-meta {
+  gap: 0.55rem;
+  max-width: 1120px;
+  margin-top: 1.25rem;
+}
+
+.project-detail-hero .detail-meta span {
+  background: #ffffff;
+  border-color: var(--ink);
+  font-size: 0.86rem;
+  line-height: 1.15;
+}
+
 .detail-summary {
   max-width: 72rem;
   margin-top: 0.6rem !important;
   color: var(--muted) !important;
   font-size: clamp(1rem, 1.25vw, 1.18rem) !important;
   line-height: 1.45 !important;
+}
+
+.transformation-claim-panel {
+  display: grid;
+  gap: 0.65rem;
+  margin: 1.15rem 0;
+  padding: clamp(1.25rem, 2.4vw, 2rem) clamp(1.35rem, 3vw, 2.4rem) !important;
+  border-left: clamp(0.75rem, 1.4vw, 1.1rem) solid var(--accent) !important;
+  background: #ffffff;
+}
+
+.transformation-claim-panel .eyebrow {
+  margin: 0;
+  color: var(--accent-dark);
+  font-size: 0.78rem;
+  font-weight: 850;
+  letter-spacing: 0.08em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.transformation-claim-panel p:last-child {
+  max-width: 86rem;
+  margin: 0;
+  color: var(--ink);
+  font-size: clamp(1.15rem, 1.55vw, 1.55rem);
+  font-weight: 750;
+  line-height: 1.28;
+  letter-spacing: -0.018em;
 }
 
 .index-row.deliverable-index-row {
@@ -246,5 +335,11 @@
   .detail-toggle-button {
     grid-column: auto;
     grid-row: auto;
+  }
+}
+
+@media (max-width: 760px) {
+  .project-detail-hero h1 {
+    font-size: clamp(2.35rem, 12vw, 3.45rem) !important;
   }
 }
