@@ -35,6 +35,14 @@ Do not use these as planning-stage workflows:
 - `visibility`
 - `src/data/status.json`
 
+## Summary convention
+
+Use `summary` for the short card-facing essence.
+
+Use `detailSummary` for the fuller explanation shown on project and deliverable detail pages.
+
+The first sentence should capture the proposition clearly, but the detail page can carry a richer description underneath it. Do not force all descriptive content into `summary`.
+
 ## Next task
 
 The next task is project manager mode content work, not source migration and not developer-mode UI work.
@@ -48,7 +56,8 @@ Use JSON as the primary editing surface, especially `src/data/kings-edge-plan.js
 Work through the four projects in order and sharpen:
 
 - project title;
-- one-line summary;
+- card-facing `summary`;
+- fuller `detailSummary`, where useful;
 - institutional transformation claim;
 - whether the four deliverables underneath still feel like the right grouping.
 
@@ -59,6 +68,8 @@ The project titles need to name a mobilisable programme of work, not only descri
 For each deliverable, test:
 
 - is the title doing the right work?
+- does the `summary` capture the essence clearly?
+- is a fuller `detailSummary` needed?
 - is the problem sharp enough?
 - is the intended change genuinely transformational?
 - are benefits, outputs and measures distinct?
@@ -97,6 +108,10 @@ If a project title, order, ID or grouping is wrong, fix the JSON source of truth
 
 Mitigation: distinguish strategic domain, mobilisable programme of work and public-facing title. Choose titles that can hold the work and make sense to senior leaders.
 
+### Risk: summaries become too heavy
+
+Mitigation: keep `summary` concise for cards and use `detailSummary` for detail-page context.
+
 ### Risk: deliverables move to draft too early
 
 Mitigation: keep everything `pre-draft` until the deliverable has been scrutinised against the schema.
@@ -117,4 +132,4 @@ Mitigation: separate existing capacity, new investment and enabling conditions.
 
 Start project manager mode with Project `2.1`, then move through `2.2`, `2.3` and `2.4`.
 
-For each project, produce a proposed refined title, summary and transformation claim before editing JSON.
+For each project, produce a proposed refined title, summary, detail summary and transformation claim before editing JSON.
