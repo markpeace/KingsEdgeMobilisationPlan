@@ -3,20 +3,22 @@
   width: fit-content;
   align-items: center;
   gap: 0.35rem;
-  padding: 0.24rem 0.48rem 0.2rem;
-  border: 2px solid var(--ink);
+  padding: 0.22rem 0.5rem 0.18rem;
+  border: 1.5px solid var(--border-strong);
   background: #ffffff;
   color: var(--ink);
-  font-size: 0.72rem;
+  font-size: 0.68rem;
   font-weight: 850;
   line-height: 1;
   letter-spacing: 0.075em;
   text-transform: uppercase;
+  white-space: nowrap;
 }
 
 .planning-status-pre-draft {
-  border-style: dashed;
-  background: #fff9ed;
+  border-color: var(--border);
+  background: var(--faint);
+  color: var(--muted);
 }
 
 .planning-status-draft,
@@ -32,11 +34,27 @@
 .project-deliverable-header .planning-status,
 .index-row .planning-status,
 .timeline-title .planning-status {
-  margin: 0.1rem 0 0.35rem;
+  margin: 0.38rem 0 0.55rem;
+}
+
+.deliverable-card .reference + .planning-status,
+.project-deliverable-header .reference + .planning-status,
+.index-row .reference + .planning-status,
+.timeline-title .reference + .planning-status {
+  margin-left: 0;
+}
+
+.index-row .reference + .planning-status,
+.detail-meta .planning-status {
+  margin-top: 0;
+  margin-bottom: 0;
+  vertical-align: middle;
 }
 
 .detail-meta .planning-status {
-  margin: -0.08rem 0;
+  border-color: var(--border-strong);
+  background: #ffffff;
+  color: var(--ink);
 }
 
 .staff-summary-panel,
