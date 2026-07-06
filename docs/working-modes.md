@@ -2,6 +2,8 @@
 
 This repository supports two distinct modes of work. Keeping these modes separate is important because the project has two different kinds of integrity: the integrity of the mobilisation plan as structured data, and the integrity of the website that renders that data.
 
+For new conversations, start with `docs/hydration-guide.md`. For durable background context and decisions already made, read `docs/repository-memory.md`. These documents are for agent and collaborator continuity only. They should not be rendered in the app or treated as programme content.
+
 ## Mode 1: Project manager mode
 
 Project manager mode is for working on the plan itself. In this mode, the primary editing surface is the JSON data. The agent should improve the structure, clarity and project-management quality of the mobilisation plan without drifting into visual design or site implementation unless explicitly asked.
