@@ -52,6 +52,14 @@
   line-height: 1.15;
 }
 
+.detail-summary {
+  max-width: 72rem;
+  margin-top: 0.6rem !important;
+  color: var(--muted) !important;
+  font-size: clamp(1rem, 1.25vw, 1.18rem) !important;
+  line-height: 1.45 !important;
+}
+
 .index-row.deliverable-index-row {
   grid-template-columns: 1fr !important;
 }
