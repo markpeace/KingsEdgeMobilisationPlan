@@ -91,6 +91,10 @@ function asArray(value) {
   return Array.isArray(value) ? value : [];
 }
 
+function normaliseVisibility(value, fallback = 'internal-planning') {
+  return value || fallback;
+}
+
 function normaliseCaseForChange(deliverable) {
   const existing = deliverable.caseForChange || {};
   return {
@@ -122,7 +126,8 @@ function normaliseOutput(deliverable, output, index) {
     duePeriod: output.duePeriod || output.due || output.period || 'TBC',
     acceptanceCriteria: asArray(output.acceptanceCriteria),
     supportsBenefits: asArray(output.supportsBenefits),
-    status: output.status || 'draft'
+    status: output.status || 'draft',
+    visibility: normaliseVisibility(output.visibility)
   };
 }
 
@@ -139,7 +144,8 @@ function normaliseMeasure(deliverable, measure, index) {
     cadence: measure.cadence || measure.reviewFrequency || measure.period || 'TBC',
     owner: measure.owner || deliverable.lead || 'TBC',
     confidence: measure.confidence || 'developing',
-    supportsBenefits: asArray(measure.supportsBenefits || measure.benefitIds)
+    supportsBenefits: asArray(measure.supportsBenefits || measure.benefitIds),
+    visibility: normaliseVisibility(measure.visibility)
   };
 }
 
@@ -155,7 +161,60 @@ function normaliseBenefit(deliverable, benefit, index) {
     owner: benefit.owner || deliverable.ownership?.benefitOwner || deliverable.lead || 'TBC',
     realisationPeriod: benefit.realisationPeriod || benefit.period || 'TBC',
     realisedThrough: asArray(benefit.realisedThrough || benefit.outputs),
-    measures: asArray(benefit.measures)
+    measures: asArray(benefit.measures),
+    visibility: normaliseVisibility(benefit.visibility)
+  };
+}
+
+function normaliseResources(resources = {}) {
+  const existingCapacity = asArray(resources.existingCapacity).length ? resources.existingCapacity : asArray(resources.people).map((item) => ({
+    role: item.role,
+    contribution: item.notes || item.contribution || '',
+    type: item.type,
+    fte: item.fte,
+    owner: item.owner,
+    confidence: item.confidence,
+    visibility: normaliseVisibility(item.visibility)
+  }));
+
+  const newInvestment = asArray(resources.newInvestment).length ? resources.newInvestment : asArray(resources.cashCosts).map((item) => ({
+    item: item.item,
+    category: item.category,
+    amount: item.amount,
+    currency: item.currency || 'GBP',
+    period: item.period,
+    recurrence: item.recurrence,
+    fundingRoute: item.fundingRoute || 'TBC',
+    confidence: item.confidence,
+    rationale: item.notes || item.rationale || '',
+    visibility: normaliseVisibility(item.visibility, 'restricted')
+  }));
+
+  const enablingConditions = asArray(resources.enablingConditions).length ? resources.enablingConditions : [
+    ...asArray(resources.dataAndSystems),
+    ...asArray(resources.governance),
+    ...asArray(resources.engagementNeeds),
+    ...asArray(resources.nonCashNeeds)
+  ].map((item) => ({
+    condition: item.condition || item.item || textOf(item, 'Enabling condition'),
+    owner: item.owner,
+    dependencyType: item.dependencyType || item.type || 'enabling condition',
+    criticality: item.criticality || 'medium',
+    riskIfMissing: item.riskIfMissing || item.notes || '',
+    visibility: normaliseVisibility(item.visibility)
+  }));
+
+  return {
+    ...resources,
+    existingCapacity,
+    newInvestment,
+    enablingConditions,
+    fundingSummary: resources.fundingSummary || resources.resourceSummary || '',
+    investmentAsk: resources.investmentAsk || {
+      required: newInvestment.length > 0,
+      fundingRoute: newInvestment.length > 0 ? 'TBC' : 'None identified at this stage',
+      confidence: newInvestment.length > 0 ? 'developing' : 'not required at this stage'
+    }
   };
 }
 
@@ -163,12 +222,13 @@ function normaliseSteps(deliverable) {
   return asArray(deliverable.steps).map((step) => ({
     stepType: step.stepType || 'task',
     outputsProduced: asArray(step.outputsProduced || step.outputIds || asArray(step.outputs).map((output, index) => output.id || `${step.id}-O${index + 1}`)),
-    resources: step.resources || {},
-    outputs: asArray(step.outputs),
-    decisions: asArray(step.decisions),
-    risks: asArray(step.risks),
-    issues: asArray(step.issues),
-    assumptions: asArray(step.assumptions),
+    resources: normaliseResources(step.resources || {}),
+    outputs: asArray(step.outputs).map((output, index) => ({ ...output, id: output.id || `${step.id}-O${index + 1}`, visibility: normaliseVisibility(output.visibility) })),
+    decisions: asArray(step.decisions).map((item) => ({ ...item, visibility: normaliseVisibility(item.visibility) })),
+    risks: asArray(step.risks).map((item) => ({ ...item, visibility: normaliseVisibility(item.visibility) })),
+    issues: asArray(step.issues).map((item) => ({ ...item, visibility: normaliseVisibility(item.visibility) })),
+    assumptions: asArray(step.assumptions).map((item) => ({ ...item, visibility: normaliseVisibility(item.visibility) })),
+    visibility: normaliseVisibility(step.visibility),
     ...step
   }));
 }
@@ -182,7 +242,8 @@ function normaliseDependencies(deliverable) {
     criticality: dependency.criticality || 'medium',
     description: dependency.description || dependency.label || '',
     owner: dependency.owner || 'TBC',
-    status: dependency.status || 'open'
+    status: dependency.status || 'open',
+    visibility: normaliseVisibility(dependency.visibility)
   }));
 }
 
@@ -200,7 +261,8 @@ function fallbackBenefits(deliverable, measures) {
       owner: deliverable.lead || 'TBC',
       realisationPeriod: 'TBC',
       realisedThrough: [],
-      measures: measures.map((measure) => measure.id)
+      measures: measures.map((measure) => measure.id),
+      visibility: 'internal-planning'
     }
   ];
 }
@@ -225,6 +287,8 @@ function normaliseDeliverableSchema(deliverable, project) {
 
   return {
     ...deliverable,
+    planningStatus: deliverable.planningStatus || 'pre-draft',
+    visibility: normaliseVisibility(deliverable.visibility, 'staff-visible'),
     caseForChange,
     ownership,
     planningMaturity: deliverable.planningMaturity || 'concept',
@@ -233,11 +297,12 @@ function normaliseDeliverableSchema(deliverable, project) {
     measures,
     deliverySteps: steps,
     steps,
+    resources: normaliseResources(deliverable.resources || {}),
     dependencies: normaliseDependencies(deliverable),
-    assumptions: asArray(deliverable.assumptions),
-    issues: asArray(deliverable.issues),
-    risks: asArray(deliverable.risks),
-    decisions: asArray(deliverable.decisions),
+    assumptions: asArray(deliverable.assumptions).map((item) => ({ ...item, visibility: normaliseVisibility(item.visibility) })),
+    issues: asArray(deliverable.issues).map((item) => ({ ...item, visibility: normaliseVisibility(item.visibility) })),
+    risks: asArray(deliverable.risks).map((item) => ({ ...item, visibility: normaliseVisibility(item.visibility) })),
+    decisions: asArray(deliverable.decisions).map((item) => ({ ...item, visibility: normaliseVisibility(item.visibility) })),
     definitionOfDone: asArray(deliverable.definitionOfDone).length ? deliverable.definitionOfDone : fallbackDefinitionOfDone(outputs, measures)
   };
 }
