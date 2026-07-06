@@ -60,13 +60,25 @@ The frontend should render the source data, not compensate for old ordering thro
 
 `src/plan-utils.js` should not contain hidden project ID, title or order remapping. If project order, title or numbering is wrong, fix `src/data/kings-edge-plan.json`.
 
+## Summary fields
+
+Projects and deliverables should separate card-level summary from detail-page explanation.
+
+- `summary`: short card-facing essence. It should usually be one clear sentence and should work on project cards, deliverable cards and index rows.
+- `detailSummary`: optional fuller explanation for project and deliverable detail pages. Use this when the reader needs a richer explanation after the headline summary.
+
+Do not force all descriptive content into `summary`. The first line should capture the proposition, but the detail page can carry a more developed description through `detailSummary`.
+
+Backwards compatibility: `description` or `longSummary` may be normalised into `detailSummary`, but new content should use `detailSummary`.
+
 ## Core deliverable fields
 
 Each deliverable should be able to carry these fields:
 
 - `id`: stable machine-readable identifier, such as `2.3.1`.
 - `title`: public title.
-- `summary`: short explanation used on cards and detail pages.
+- `summary`: short card-facing essence.
+- `detailSummary`: optional fuller explanation for detail pages.
 - `planningStatus`: the canonical planning-stage workflow field.
 - `planningMaturity`: optional internal planning nuance.
 - `visibility`: handling and rendering guidance.
@@ -230,6 +242,7 @@ The normalisation logic lives in `src/plan-utils.js`. It keeps old and new data 
 Acceptable normalisation:
 
 - backwards compatibility for older field names;
+- `description` or `longSummary` into `detailSummary`;
 - timeline period mapping;
 - lookup construction;
 - dependency indexing;
@@ -241,6 +254,10 @@ Project manager mode should prefer adding richer fields directly to the JSON rat
 
 ## Rendering implications
 
+Cards and index rows should use `summary` only.
+
+Project and deliverable detail pages should render `summary` first, then render `detailSummary` underneath when it exists and is distinct from `summary`.
+
 Deliverable pages should show a staff-safe summary first, then allow users to reveal detailed planning.
 
 Default visible view:
@@ -250,6 +267,7 @@ Default visible view:
 - planning status;
 - title;
 - summary;
+- detail summary, where authored;
 - accountable owner;
 - delivery lead;
 - case for change;
@@ -279,6 +297,8 @@ When editing deliverable JSON:
 
 - keep valid JSON;
 - preserve IDs unless explicitly migrating them;
+- use `summary` for concise card-facing essence;
+- use `detailSummary` for fuller detail-page explanation;
 - do not mix benefits, outputs and measures;
 - use `planningStatus` for the planning-stage workflow;
 - do not create another tagging workflow;
