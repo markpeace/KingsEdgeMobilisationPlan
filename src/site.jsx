@@ -60,6 +60,11 @@ function DetailSummary({ item }) {
   return <p className="detail-summary">{item.detailSummary}</p>;
 }
 
+function ProjectTransformationClaim({ project }) {
+  if (!project?.transformationClaim) return null;
+  return <section className="panel transformation-claim-panel"><p className="eyebrow">Transformation claim</p><p>{project.transformationClaim}</p></section>;
+}
+
 function Nav() {
   return <header className="site-header"><a href="#/" className="brand">King's Edge Mobilisation Plan</a><nav><a href="#/">Home</a><a href="#/projects">Projects</a><a href="#/deliverables">Deliverables</a><a href="#/measures">Measures</a><a href="#/timeline">Timeline</a></nav></header>;
 }
@@ -102,7 +107,7 @@ function ProjectColumn({ project }) {
 function ProjectDetail({ project }) {
   if (!project) return <main><section className="section-heading"><h1>Project not found</h1><p><a href="#/projects">Return to Projects View</a></p></section></main>;
   const isOut = project.deliveryContext === 'out-of-programme';
-  return <main><a className="back-link" href="#/projects">Back to Projects View</a><section className={`detail-hero project-detail-hero ${isOut ? 'related-project-detail-hero' : ''}`}><h1>{displayId(project)} {project.title}</h1><p>{project.summary}</p><DetailSummary item={project} />{project.edgeRole && <p>{project.edgeRole}</p>}<div className="detail-meta"><span>Project owner: {project.owner}</span><span>{project.deliverables.length} deliverables</span><span>{isOut ? 'Out of programme' : 'Edge programme'}</span></div></section><section className="panel project-deliverable-panel"><h2>Deliverables</h2><p className="subtle">Each column shows a deliverable and its indicative delivery steps. Detailed planning is available inside each deliverable.</p><div className="project-deliverable-board"><div className="project-deliverable-columns">{project.deliverables.map((deliverable) => <ProjectDeliverableColumn key={deliverable.id} deliverable={deliverable} />)}</div></div></section></main>;
+  return <main><a className="back-link" href="#/projects">Back to Projects View</a><section className={`detail-hero project-detail-hero ${isOut ? 'related-project-detail-hero' : ''}`}><div className="project-context-line hero-context-line"><span className="reference hero-reference">{displayId(project)}</span><span className="project-context">{isOut ? 'Out of programme' : 'Edge programme'}</span></div><h1><span className="hero-title-text">{project.title}</span></h1><p>{project.summary}</p><DetailSummary item={project} />{project.edgeRole && <p>{project.edgeRole}</p>}<div className="detail-meta"><span>Project owner: {project.owner}</span><span>{project.deliverables.length} deliverables</span></div></section><ProjectTransformationClaim project={project} /><section className="panel project-deliverable-panel"><h2>Deliverables</h2><p className="subtle">Each column shows a deliverable and its indicative delivery steps. Detailed planning is available inside each deliverable.</p><div className="project-deliverable-board"><div className="project-deliverable-columns">{project.deliverables.map((deliverable) => <ProjectDeliverableColumn key={deliverable.id} deliverable={deliverable} />)}</div></div></section></main>;
 }
 
 function ProjectDeliverableColumn({ deliverable }) {
