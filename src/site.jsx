@@ -1,6 +1,18 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { createRoot } from 'react-dom/client';
-import { plan, projects, edgeProjects, outOfProgramme, timelinePeriods, buildLookups, buildDependencyIndex, getStepDependencies, getStepPeriodSpan, resolveLabel, periodLabel } from './plan-utils.js';
+import {
+  plan,
+  projects,
+  edgeProjects,
+  outOfProgramme,
+  timelinePeriods,
+  buildLookups,
+  buildDependencyIndex,
+  getStepDependencies,
+  getStepPeriodSpan,
+  resolveLabel,
+  periodLabel
+} from './plan-utils.js';
 import { getStatus, labelStatus, labelConfidence, statusClass, confidenceClass } from './status-utils.js';
 import './styles.css';
 
@@ -20,15 +32,18 @@ const planningStatusLabel = (status) => ({
 }[status] || status || 'Pre-draft');
 const planningStatusClass = (item) => `planning-status planning-status-${planningStatus(item)}`;
 const isPreDraft = (item) => planningStatus(item) === 'pre-draft';
+const hasDistinctDetail = (item) => Boolean(item?.detailSummary && item.detailSummary !== item.summary);
 
 function useHashRoute() {
   const getPath = () => window.location.hash.replace(/^#/, '') || '/';
   const [path, setPath] = useState(getPath);
+
   useEffect(() => {
     const onHashChange = () => setPath(getPath());
     window.addEventListener('hashchange', onHashChange);
     return () => window.removeEventListener('hashchange', onHashChange);
   }, []);
+
   return path;
 }
 
@@ -38,6 +53,11 @@ function hasResources(resources = {}) {
 
 function formatMoney(cost = {}) {
   return typeof cost.amount === 'number' ? new Intl.NumberFormat('en-GB', { style: 'currency', currency: cost.currency || 'GBP', maximumFractionDigits: 0 }).format(cost.amount) : null;
+}
+
+function DetailSummary({ item }) {
+  if (!hasDistinctDetail(item)) return null;
+  return <p className="detail-summary">{item.detailSummary}</p>;
 }
 
 function Nav() {
@@ -71,7 +91,7 @@ function Landing() {
 }
 
 function ProjectsPage() {
-  return <main><section className="section-heading projects-heading"><h1>Projects View</h1><p>Projects are shown in the revised order. Planning status is shown at deliverable level. Current deliverables default to pre-draft until they have been scrutinised.</p></section><div className="project-board"><div className="project-scroll">{edgeProjects.map((project) => <ProjectColumn key={project.id} project={project} />)}<div className="programme-divider"><span>→ → →</span></div>{outOfProgramme.map((project) => <ProjectColumn key={project.id} project={project} />)}</div></div></main>;
+  return <main><section className="section-heading projects-heading"><h1>Projects View</h1><p>Projects are shown in source order. Planning status is shown at deliverable level. Current deliverables default to pre-draft until they have been scrutinised.</p></section><div className="project-board"><div className="project-scroll">{edgeProjects.map((project) => <ProjectColumn key={project.id} project={project} />)}<div className="programme-divider"><span>→ → →</span></div>{outOfProgramme.map((project) => <ProjectColumn key={project.id} project={project} />)}</div></div></main>;
 }
 
 function ProjectColumn({ project }) {
@@ -82,7 +102,7 @@ function ProjectColumn({ project }) {
 function ProjectDetail({ project }) {
   if (!project) return <main><section className="section-heading"><h1>Project not found</h1><p><a href="#/projects">Return to Projects View</a></p></section></main>;
   const isOut = project.deliveryContext === 'out-of-programme';
-  return <main><a className="back-link" href="#/projects">Back to Projects View</a><section className={`detail-hero project-detail-hero ${isOut ? 'related-project-detail-hero' : ''}`}><h1>{displayId(project)} {project.title}</h1><p>{project.summary}</p>{project.edgeRole && <p>{project.edgeRole}</p>}<div className="detail-meta"><span>Project owner: {project.owner}</span><span>{project.deliverables.length} deliverables</span><span>{isOut ? 'Out of programme' : 'Edge programme'}</span></div></section><section className="panel project-deliverable-panel"><h2>Deliverables</h2><p className="subtle">Each column shows a deliverable and its indicative delivery steps. Detailed planning is available inside each deliverable.</p><div className="project-deliverable-board"><div className="project-deliverable-columns">{project.deliverables.map((deliverable) => <ProjectDeliverableColumn key={deliverable.id} deliverable={deliverable} />)}</div></div></section></main>;
+  return <main><a className="back-link" href="#/projects">Back to Projects View</a><section className={`detail-hero project-detail-hero ${isOut ? 'related-project-detail-hero' : ''}`}><h1>{displayId(project)} {project.title}</h1><p>{project.summary}</p><DetailSummary item={project} />{project.edgeRole && <p>{project.edgeRole}</p>}<div className="detail-meta"><span>Project owner: {project.owner}</span><span>{project.deliverables.length} deliverables</span><span>{isOut ? 'Out of programme' : 'Edge programme'}</span></div></section><section className="panel project-deliverable-panel"><h2>Deliverables</h2><p className="subtle">Each column shows a deliverable and its indicative delivery steps. Detailed planning is available inside each deliverable.</p><div className="project-deliverable-board"><div className="project-deliverable-columns">{project.deliverables.map((deliverable) => <ProjectDeliverableColumn key={deliverable.id} deliverable={deliverable} />)}</div></div></section></main>;
 }
 
 function ProjectDeliverableColumn({ deliverable }) {
@@ -96,7 +116,7 @@ function DeliverablesIndex({ deliverables }) {
   const filtered = deliverables.filter((deliverable) => {
     const matchesProject = projectFilter === 'all' || deliverable.project.id === projectFilter;
     const matchesStatus = statusFilter === 'all' || planningStatus(deliverable) === statusFilter;
-    const text = [deliverable.id, displayId(deliverable), displayId(deliverable.project), deliverable.project.title, deliverable.title, deliverable.lead, deliverable.summary, planningStatusLabel(planningStatus(deliverable)), ...(deliverable.tags || [])].join(' ').toLowerCase();
+    const text = [deliverable.id, displayId(deliverable), displayId(deliverable.project), deliverable.project.title, deliverable.title, deliverable.lead, deliverable.summary, deliverable.detailSummary, planningStatusLabel(planningStatus(deliverable)), ...(deliverable.tags || [])].join(' ').toLowerCase();
     return matchesProject && matchesStatus && text.includes(query.toLowerCase());
   });
   return <main><section className="section-heading"><h1>Deliverables index</h1><p>Search or filter across all deliverables. Current items default to pre-draft until they have been scrutinised.</p></section><div className="toolbar"><input type="search" placeholder="Search deliverables, owners or themes" value={query} onChange={(event) => setQuery(event.target.value)} /><select value={projectFilter} onChange={(event) => setProjectFilter(event.target.value)}><option value="all">All projects</option>{projects.map((project) => <option key={project.id} value={project.id}>{displayId(project)} {project.title}</option>)}</select><select value={statusFilter} onChange={(event) => setStatusFilter(event.target.value)}><option value="all">All planning statuses</option><option value="pre-draft">Pre-draft</option><option value="draft">Draft</option><option value="validated-draft">Validated draft</option><option value="decision-ready">Decision-ready</option><option value="mobilising">Mobilising</option><option value="in-delivery">In delivery</option></select></div><div className="index-list">{filtered.map((deliverable) => <a href={`#/deliverables/${deliverable.id}`} className="index-row deliverable-index-row" key={deliverable.id}><div className="index-row-main"><DeliverableContextLine deliverable={deliverable} showProject /><h3>{deliverable.title}</h3><p>{deliverable.summary}</p><div className="index-owner-line"><span>Accountable owner: {deliverable.ownership?.accountableOwner || deliverable.project.owner}</span><span>Delivery lead: {deliverable.ownership?.deliveryLead || deliverable.lead}</span></div></div></a>)}</div></main>;
@@ -180,7 +200,7 @@ function DeliverableDetail({ deliverable, idMap, dependencyIndex }) {
   if (!deliverable) return <main><section className="section-heading"><h1>Deliverable not found</h1></section></main>;
   const stepDeps = [...new Set(deliverable.steps.flatMap((step) => getStepDependencies(step)))];
   const onward = deliverable.steps.flatMap((step) => dependencyIndex.get(step.id) || []);
-  return <main><a className="back-link" href="#/deliverables">Back to deliverables</a><section className="detail-hero"><div className="deliverable-context-line hero-context-line"><span className="reference hero-reference">{displayId(deliverable)}</span><span className="project-context">Project {displayId(deliverable.project)} {deliverable.project.title}</span><PlanningStatusTag item={deliverable} /></div><h1><span className="hero-title-text">{deliverable.title}</span></h1><p>{deliverable.summary}</p><div className="detail-meta"><span>Accountable owner: {deliverable.ownership?.accountableOwner || deliverable.project.owner}</span><span>Delivery lead: {deliverable.ownership?.deliveryLead || deliverable.lead}</span></div></section><StaffSummaryPanel deliverable={deliverable} /><CaseForChangePanel deliverable={deliverable} /><section className="panel detailed-plan-control"><h2>Detailed plan</h2><p>{showDetailedPlan ? 'Detailed planning fields are shown below.' : 'Detailed project-management fields are hidden by default so pre-draft material is not presented as settled.'}</p><button type="button" className="detail-toggle-button" onClick={() => setShowDetailedPlan((value) => !value)}>{showDetailedPlan ? 'Hide detailed plan' : 'Reveal detailed plan'}</button></section>{showDetailedPlan && <div className="detailed-plan-reveal">{isPreDraft(deliverable) && <section className="panel pre-draft-note"><h2>Pre-draft planning detail</h2><p>This deliverable is currently pre-draft. Detailed planning fields are working assumptions and will be refined through deliverable-level scrutiny.</p></section>}<OwnershipPanel deliverable={deliverable} /><DeliveryModelPanel deliverable={deliverable} /><DefinitionPanel deliverable={deliverable} />{hasResources(deliverable.resources) && <section className="panel"><ResourcesBlock resources={deliverable.resources} /></section>}<section className="panel"><h2>Components</h2><div className="component-grid">{(deliverable.components || []).map((component) => <article className="component-card" key={component.title}><h3>{component.title}</h3><p>{component.summary}</p></article>)}</div></section><section className="panel"><h2>Delivery steps</h2><div className="steps-list">{deliverable.steps.map((step) => <article className={`step-card ${isPreDraft(deliverable) ? 'indicative-step-card' : ''}`} key={step.id}><span className="period-pill">{periodLabel(step.period)}</span>{isPreDraft(deliverable) && <span className="indicative-label">Indicative</span>}<h3>{step.title}</h3><p>{step.summary}</p>{getStepDependencies(step).length > 0 && <p className="depends">Depends on: {getStepDependencies(step).map((id) => resolveLabel(id, idMap)).join('; ')}</p>}<StepExtras step={step} /></article>)}</div></section><RaidPanel deliverable={deliverable} /><div className="detail-grid"><section className="panel"><h2>Step dependencies</h2>{stepDeps.length ? <div className="link-list">{stepDeps.map((id) => <SmartLink key={id} id={id} idMap={idMap} />)}</div> : <p>No step-level dependencies captured yet.</p>}</section><section className="panel"><h2>Feeds into</h2>{onward.length ? <ul className="compact-list">{onward.map((entry, index) => <li key={`${entry.parent.id}-${entry.step.id}-${index}`}><SmartLink id={entry.step.id} idMap={idMap} /></li>)}</ul> : <p>No onward step dependencies captured yet.</p>}</section></div></div>}</main>;
+  return <main><a className="back-link" href="#/deliverables">Back to deliverables</a><section className="detail-hero"><div className="deliverable-context-line hero-context-line"><span className="reference hero-reference">{displayId(deliverable)}</span><span className="project-context">Project {displayId(deliverable.project)} {deliverable.project.title}</span><PlanningStatusTag item={deliverable} /></div><h1><span className="hero-title-text">{deliverable.title}</span></h1><p>{deliverable.summary}</p><DetailSummary item={deliverable} /><div className="detail-meta"><span>Accountable owner: {deliverable.ownership?.accountableOwner || deliverable.project.owner}</span><span>Delivery lead: {deliverable.ownership?.deliveryLead || deliverable.lead}</span></div></section><StaffSummaryPanel deliverable={deliverable} /><CaseForChangePanel deliverable={deliverable} /><section className="panel detailed-plan-control"><h2>Detailed plan</h2><p>{showDetailedPlan ? 'Detailed planning fields are shown below.' : 'Detailed project-management fields are hidden by default so pre-draft material is not presented as settled.'}</p><button type="button" className="detail-toggle-button" onClick={() => setShowDetailedPlan((value) => !value)}>{showDetailedPlan ? 'Hide detailed plan' : 'Reveal detailed plan'}</button></section>{showDetailedPlan && <div className="detailed-plan-reveal">{isPreDraft(deliverable) && <section className="panel pre-draft-note"><h2>Pre-draft planning detail</h2><p>This deliverable is currently pre-draft. Detailed planning fields are working assumptions and will be refined through deliverable-level scrutiny.</p></section>}<OwnershipPanel deliverable={deliverable} /><DeliveryModelPanel deliverable={deliverable} /><DefinitionPanel deliverable={deliverable} />{hasResources(deliverable.resources) && <section className="panel"><ResourcesBlock resources={deliverable.resources} /></section>}<section className="panel"><h2>Components</h2><div className="component-grid">{(deliverable.components || []).map((component) => <article className="component-card" key={component.title}><h3>{component.title}</h3><p>{component.summary}</p></article>)}</div></section><section className="panel"><h2>Delivery steps</h2><div className="steps-list">{deliverable.steps.map((step) => <article className={`step-card ${isPreDraft(deliverable) ? 'indicative-step-card' : ''}`} key={step.id}><span className="period-pill">{periodLabel(step.period)}</span>{isPreDraft(deliverable) && <span className="indicative-label">Indicative</span>}<h3>{step.title}</h3><p>{step.summary}</p>{getStepDependencies(step).length > 0 && <p className="depends">Depends on: {getStepDependencies(step).map((id) => resolveLabel(id, idMap)).join('; ')}</p>}<StepExtras step={step} /></article>)}</div></section><RaidPanel deliverable={deliverable} /><div className="detail-grid"><section className="panel"><h2>Step dependencies</h2>{stepDeps.length ? <div className="link-list">{stepDeps.map((id) => <SmartLink key={id} id={id} idMap={idMap} />)}</div> : <p>No step-level dependencies captured yet.</p>}</section><section className="panel"><h2>Feeds into</h2>{onward.length ? <ul className="compact-list">{onward.map((entry, index) => <li key={`${entry.parent.id}-${entry.step.id}-${index}`}><SmartLink id={entry.step.id} idMap={idMap} /></li>)}</ul> : <p>No onward step dependencies captured yet.</p>}</section></div></div>}</main>;
 }
 
 function TimelineView({ timelineItems, idMap, dependencyIndex }) {
