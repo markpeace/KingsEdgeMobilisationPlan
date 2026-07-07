@@ -366,10 +366,10 @@
       "deliverables": [
         {
           "id": "2.2.1",
-          "title": "King's Canvas: A Conversation about Purpose with Every Student",
+          "title": "A Conversation about Purpose with Every Student",
           "lead": "Vanessa Freeman",
           "planningStatus": "pre-draft",
-          "summary": "A scalable, AI-enriched tool and student journey model to help every student reflect on purpose, aspiration, skills and the experience they want to build.",
+          "summary": "A scalable student journey model to help every student reflect on purpose, aspiration, skills and the experience they want to build, enriched through digital tools and AI.",
           "problemSolved": "Students are often presented with opportunities as a menu, rather than supported to understand what they want from King's and how to shape their experience over time.",
           "whatChanges": "King's creates tools, prompts and a student journey model for a recurring purpose conversation from pre-entry to graduation.",
           "components": [
