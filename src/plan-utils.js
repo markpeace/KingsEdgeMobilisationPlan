@@ -1,6 +1,7 @@
 import plan from './data/kings-edge-plan.json';
 import outOfProgrammeProjects from './data/enabling-projects.json';
 import stepDependencyOverrides from './data/step-dependencies.json';
+import graduateFutures211 from './data/deliverable-overrides/2.1.1.json';
 
 export const timelinePeriods = [
   { id: 'now-sep-2026', label: 'Now to September 2026', shortLabel: 'Now-Sep 26', order: 1 },
@@ -22,11 +23,17 @@ const broadPeriodSpans = {
   'ay-2029-30': { start: 'oct-2029-mar-2030', end: 'apr-sep-2030', label: 'Oct 2029-Sep 2030' }
 };
 
+const deliverableOverrides = new Map([[graduateFutures211.id, graduateFutures211]]);
+
 const asArray = (value) => Array.isArray(value) ? value : [];
-const textOf = (item, fallback = 'Item') => typeof item === 'string' ? item : item?.title || item?.label || item?.item || item?.role || item?.condition || fallback;
+const textOf = (item, fallback = 'Item') => typeof item === 'string' ? '' : item?.title || item?.label || item?.item || item?.role || item?.condition || fallback;
 const withVisibility = (item, fallback = 'internal-planning') => ({ ...item, visibility: item?.visibility || fallback });
 const summaryOf = (item) => item.summary || item.shortDescription || '';
 const detailSummaryOf = (item) => item.detailSummary || item.longDescription || item.description || item.longSummary || '';
+
+function deliverableWithOverride(deliverable) {
+  return deliverableOverrides.get(deliverable.id) || deliverable;
+}
 
 function normaliseResources(resources = {}) {
   const existingCapacity = asArray(resources.existingCapacity).length ? resources.existingCapacity : asArray(resources.people).map((item) => ({ role: item.role, contribution: item.notes || item.contribution || '', ...item }));
@@ -101,7 +108,7 @@ function enrichProject(project, displayOrder) {
     summary: summaryOf(project),
     detailSummary: detailSummaryOf(project),
     transformationClaim: project.transformationClaim || '',
-    deliverables: asArray(project.deliverables).map((deliverable) => normaliseDeliverable(deliverable, project))
+    deliverables: asArray(project.deliverables).map((deliverable) => normaliseDeliverable(deliverableWithOverride(deliverable), project))
   };
 }
 

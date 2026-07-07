@@ -5,6 +5,7 @@ function readJson(relativePath) {
 }
 
 const plan = readJson('../src/data/kings-edge-plan.json');
+const graduateFutures211 = readJson('../src/data/deliverable-overrides/2.1.1.json');
 const outOfProgrammeProjects = readJson('../src/data/enabling-projects.json');
 const stepDependencies = readJson('../src/data/step-dependencies.json');
 const statusData = readJson('../src/data/status.json');
@@ -16,9 +17,18 @@ const ids = new Set();
 const deliverableIds = new Set();
 const stepIds = new Set();
 const projectIds = new Set();
+const deliverableOverrides = new Map([[graduateFutures211.id, graduateFutures211]]);
+
+function applyDeliverableOverrides(project) {
+  if (!Array.isArray(project.deliverables)) return project;
+  return {
+    ...project,
+    deliverables: project.deliverables.map((deliverable) => deliverableOverrides.get(deliverable.id) || deliverable)
+  };
+}
 
 const allProjects = [
-  ...plan.projects.map((project) => ({ ...project, deliveryContext: project.deliveryContext || 'edge' })),
+  ...plan.projects.map((project) => applyDeliverableOverrides({ ...project, deliveryContext: project.deliveryContext || 'edge' })),
   ...outOfProgrammeProjects.map((project) => ({ ...project, deliveryContext: project.deliveryContext || 'out-of-programme' }))
 ];
 
@@ -48,6 +58,9 @@ function validateResources(resources, path) {
   validateArrayIfPresent(resources.people, `${path}.resources.people`);
   validateArrayIfPresent(resources.cashCosts, `${path}.resources.cashCosts`);
   validateArrayIfPresent(resources.nonCashNeeds, `${path}.resources.nonCashNeeds`);
+  validateArrayIfPresent(resources.existingCapacity, `${path}.resources.existingCapacity`);
+  validateArrayIfPresent(resources.newInvestment, `${path}.resources.newInvestment`);
+  validateArrayIfPresent(resources.enablingConditions, `${path}.resources.enablingConditions`);
   resources.people?.forEach((person, index) => {
     if (person.fte !== undefined && typeof person.fte !== 'number') errors.push(`${path}.resources.people[${index}].fte should be a number.`);
   });
@@ -68,8 +81,12 @@ function validateSuccessMeasures(successMeasures, path) {
 }
 
 function validateSteps(steps, ownerPath) {
-  if (!Array.isArray(steps) || steps.length !== 4) warnings.push(`${ownerPath} should usually contain exactly four delivery steps.`);
-  steps?.forEach((step, stepIndex) => {
+  if (steps === undefined) return;
+  if (!Array.isArray(steps)) {
+    errors.push(`${ownerPath}.steps should be an array.`);
+    return;
+  }
+  steps.forEach((step, stepIndex) => {
     const stepPath = `${ownerPath}.steps[${stepIndex}]`;
     addId(step.id, stepPath);
     stepIds.add(step.id);
@@ -78,6 +95,8 @@ function validateSteps(steps, ownerPath) {
     validateArrayIfPresent(step.outputs, `${stepPath}.outputs`);
     validateArrayIfPresent(step.decisions, `${stepPath}.decisions`);
     validateArrayIfPresent(step.risks, `${stepPath}.risks`);
+    validateArrayIfPresent(step.issues, `${stepPath}.issues`);
+    validateArrayIfPresent(step.assumptions, `${stepPath}.assumptions`);
     validateResources(step.resources, stepPath);
   });
 }
@@ -92,14 +111,25 @@ allProjects.forEach((project, projectIndex) => {
   requireField(project, 'deliveryContext', projectPath);
   if (!['edge', 'out-of-programme'].includes(project.deliveryContext)) errors.push(`${project.id} uses unknown deliveryContext: ${project.deliveryContext}`);
   if (!Array.isArray(project.deliverables)) errors.push(`${project.id} should contain a deliverables array.`);
-  if (project.deliveryContext === 'edge' && project.deliverables?.length !== 4) warnings.push(`${project.id} should usually contain exactly four deliverables.`);
   project.deliverables?.forEach((deliverable, deliverableIndex) => {
     const deliverablePath = `${project.id}.deliverables[${deliverableIndex}]`;
     addId(deliverable.id, deliverablePath);
     deliverableIds.add(deliverable.id);
     ['title', 'lead', 'summary', 'problemSolved', 'whatChanges'].forEach((field) => requireField(deliverable, field, deliverablePath));
-    if (!Array.isArray(deliverable.components) || deliverable.components.length !== 4) warnings.push(`${deliverable.id} should usually contain exactly four components.`);
+    validateArrayIfPresent(deliverable.components, `${deliverablePath}.components`);
+    validateArrayIfPresent(deliverable.benefits, `${deliverablePath}.benefits`);
+    validateArrayIfPresent(deliverable.outputs, `${deliverablePath}.outputs`);
+    validateArrayIfPresent(deliverable.measures, `${deliverablePath}.measures`);
+    validateArrayIfPresent(deliverable.definitionOfDone, `${deliverablePath}.definitionOfDone`);
+    validateArrayIfPresent(deliverable.dependencies, `${deliverablePath}.dependencies`);
+    validateArrayIfPresent(deliverable.feedsInto, `${deliverablePath}.feedsInto`);
+    validateArrayIfPresent(deliverable.relatedDeliverables, `${deliverablePath}.relatedDeliverables`);
+    validateArrayIfPresent(deliverable.assumptions, `${deliverablePath}.assumptions`);
+    validateArrayIfPresent(deliverable.issues, `${deliverablePath}.issues`);
+    validateArrayIfPresent(deliverable.risks, `${deliverablePath}.risks`);
+    validateArrayIfPresent(deliverable.decisions, `${deliverablePath}.decisions`);
     validateSuccessMeasures(deliverable.successMeasures, deliverablePath);
+    validateResources(deliverable.resources, deliverablePath);
     validateSteps(deliverable.steps, deliverable.id);
   });
 });
