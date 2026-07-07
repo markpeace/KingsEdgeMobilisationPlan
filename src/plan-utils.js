@@ -25,7 +25,8 @@ const broadPeriodSpans = {
 const asArray = (value) => Array.isArray(value) ? value : [];
 const textOf = (item, fallback = 'Item') => typeof item === 'string' ? item : item?.title || item?.label || item?.item || item?.role || item?.condition || fallback;
 const withVisibility = (item, fallback = 'internal-planning') => ({ ...item, visibility: item?.visibility || fallback });
-const detailSummaryOf = (item) => item.detailSummary || item.description || item.longSummary || '';
+const summaryOf = (item) => item.summary || item.shortDescription || '';
+const detailSummaryOf = (item) => item.detailSummary || item.longDescription || item.description || item.longSummary || '';
 
 function normaliseResources(resources = {}) {
   const existingCapacity = asArray(resources.existingCapacity).length ? resources.existingCapacity : asArray(resources.people).map((item) => ({ role: item.role, contribution: item.notes || item.contribution || '', ...item }));
@@ -70,6 +71,7 @@ function normaliseDeliverable(deliverable, project) {
   return {
     ...deliverable,
     displayId: deliverable.id,
+    summary: summaryOf(deliverable),
     detailSummary: detailSummaryOf(deliverable),
     planningStatus: deliverable.planningStatus || 'pre-draft',
     planningMaturity: deliverable.planningMaturity || 'concept',
@@ -96,6 +98,7 @@ function enrichProject(project, displayOrder) {
     ...project,
     displayId: project.id,
     displayOrder,
+    summary: summaryOf(project),
     detailSummary: detailSummaryOf(project),
     transformationClaim: project.transformationClaim || '',
     deliverables: asArray(project.deliverables).map((deliverable) => normaliseDeliverable(deliverable, project))
