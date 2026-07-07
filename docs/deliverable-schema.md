@@ -76,16 +76,23 @@ Each project should be able to carry these fields:
 
 The project detail page should render the transformation claim as a prominent leadership-facing statement when it is authored.
 
-## Summary fields
+## Short and long description fields
 
-Projects and deliverables should separate card-level summary from detail-page explanation.
+Projects and deliverables should separate card-level description from detail-page explanation.
 
-- `summary`: short card-facing essence. It should usually be one clear sentence and should work on project cards, deliverable cards and index rows.
-- `detailSummary`: optional fuller explanation for project and deliverable detail pages. Use this when the reader needs a richer explanation after the headline summary.
+Canonical fields:
+
+- `summary`: the short description. It should usually be one clear sentence and should work on project cards, deliverable cards and index rows.
+- `detailSummary`: the long description. Use this on project and deliverable detail pages when the reader needs a fuller explanation after the headline summary.
+
+Accepted aliases:
+
+- `shortDescription` is normalised into `summary` when `summary` is not present.
+- `longDescription`, `description` or `longSummary` are normalised into `detailSummary` when `detailSummary` is not present.
+
+New content should usually use `summary` and `detailSummary`, because those are the fields the frontend renders directly. `shortDescription` and `longDescription` are supported so the schema is readable to people who think in short/long description terms.
 
 Do not force all descriptive content into `summary`. The first line should capture the proposition, but the detail page can carry a more developed description through `detailSummary`.
-
-Backwards compatibility: `description` or `longSummary` may be normalised into `detailSummary`, but new content should use `detailSummary`.
 
 ## Core deliverable fields
 
@@ -93,8 +100,10 @@ Each deliverable should be able to carry these fields:
 
 - `id`: stable machine-readable identifier, such as `2.3.1`.
 - `title`: public title.
-- `summary`: short card-facing essence.
-- `detailSummary`: optional fuller explanation for detail pages.
+- `summary`: short description and card-facing essence.
+- `detailSummary`: long description for detail pages.
+- `shortDescription`: accepted alias for `summary`.
+- `longDescription`: accepted alias for `detailSummary`.
 - `planningStatus`: the canonical planning-stage workflow field.
 - `planningMaturity`: optional internal planning nuance.
 - `visibility`: handling and rendering guidance.
@@ -258,7 +267,8 @@ The normalisation logic lives in `src/plan-utils.js`. It keeps old and new data 
 Acceptable normalisation:
 
 - backwards compatibility for older field names;
-- `description` or `longSummary` into `detailSummary`;
+- `shortDescription` into `summary`;
+- `longDescription`, `description` or `longSummary` into `detailSummary`;
 - defaulting project `transformationClaim` to blank when unauthored;
 - timeline period mapping;
 - lookup construction;
@@ -271,7 +281,7 @@ Project manager mode should prefer adding richer fields directly to the JSON rat
 
 ## Rendering implications
 
-Cards and index rows should use `summary` only.
+Cards and index rows should use the short description, rendered from `summary`.
 
 Project and deliverable detail pages should render `summary` first, then render `detailSummary` underneath when it exists and is distinct from `summary`.
 
@@ -285,12 +295,12 @@ Default visible deliverable view:
 - project code and title;
 - planning status;
 - title;
-- summary;
-- detail summary, where authored;
+- short description / `summary`;
+- long description / `detailSummary`, where authored;
 - accountable owner;
 - delivery lead;
 - case for change;
-- current planning focus;
+- less-obtrusive planning summary;
 - next scrutiny step.
 
 Revealed detailed plan:
@@ -324,8 +334,8 @@ When editing deliverable JSON:
 
 - keep valid JSON;
 - preserve IDs unless explicitly migrating them;
-- use `summary` for concise card-facing essence;
-- use `detailSummary` for fuller detail-page explanation;
+- use `summary` for concise short description and card-facing essence;
+- use `detailSummary` for fuller long description and detail-page explanation;
 - do not mix benefits, outputs and measures;
 - use `planningStatus` for the planning-stage workflow;
 - do not create another tagging workflow;
