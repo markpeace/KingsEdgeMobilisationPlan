@@ -40,3 +40,47 @@
   line-height: 1.36 !important;
   letter-spacing: -0.006em !important;
 }
+
+.staff-summary-panel {
+  margin: 0.9rem 0 1rem !important;
+  padding: clamp(0.9rem, 1.5vw, 1.25rem) !important;
+  border-color: var(--border) !important;
+  background: #ffffff !important;
+}
+
+.staff-summary-panel h2 {
+  margin: 0 0 0.75rem !important;
+  color: var(--muted) !important;
+  font-family: var(--font-body) !important;
+  font-size: clamp(0.86rem, 0.95vw, 1rem) !important;
+  font-weight: 850 !important;
+  line-height: 1 !important;
+  letter-spacing: 0.065em !important;
+  text-transform: uppercase !important;
+}
+
+.staff-summary-grid {
+  gap: 0.65rem !important;
+}
+
+.staff-summary-panel .schema-card {
+  padding: 0.85rem 0.9rem !important;
+  border-color: var(--border) !important;
+  background: #fbfbfb !important;
+}
+
+.staff-summary-panel .schema-card h3 {
+  margin-bottom: 0.4rem !important;
+  font-size: 0.9rem !important;
+  line-height: 1.12 !important;
+}
+
+.staff-summary-panel .schema-card p {
+  color: var(--muted) !important;
+  font-size: 0.9rem !important;
+  line-height: 1.32 !important;
+}
+
+.staff-summary-panel .schema-card p + p {
+  margin-top: 0.35rem !important;
+}
