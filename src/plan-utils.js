@@ -2,6 +2,9 @@ import plan from './data/kings-edge-plan.json';
 import outOfProgrammeProjects from './data/enabling-projects.json';
 import stepDependencyOverrides from './data/step-dependencies.json';
 import graduateFutures211 from './data/deliverable-overrides/2.1.1.json';
+import graduateFutures211Overview from './data/deliverable-overrides/2.1.1-overview-patch.json';
+import graduateFutures211OutputsMeasures from './data/deliverable-overrides/2.1.1-outputs-measures-patch.json';
+import graduateFutures211Steps from './data/deliverable-overrides/2.1.1-steps-patch.json';
 
 export const timelinePeriods = [
   { id: 'now-sep-2026', label: 'Now to September 2026', shortLabel: 'Now-Sep 26', order: 1 },
@@ -23,10 +26,44 @@ const broadPeriodSpans = {
   'ay-2029-30': { start: 'oct-2029-mar-2030', end: 'apr-sep-2030', label: 'Oct 2029-Sep 2030' }
 };
 
-const deliverableOverrides = new Map([[graduateFutures211.id, graduateFutures211]]);
+function mergeDeliverableOverride(...overrides) {
+  return overrides.reduce((merged, override) => {
+    const resources = override.resources
+      ? {
+          ...(merged.resources || {}),
+          ...override.resources,
+          investmentAsk: {
+            ...(merged.resources?.investmentAsk || {}),
+            ...(override.resources?.investmentAsk || {})
+          }
+        }
+      : merged.resources;
+    return {
+      ...merged,
+      ...override,
+      caseForChange: {
+        ...(merged.caseForChange || {}),
+        ...(override.caseForChange || {})
+      },
+      ownership: {
+        ...(merged.ownership || {}),
+        ...(override.ownership || {})
+      },
+      resources
+    };
+  }, {});
+}
+
+const graduateFutures211Merged = mergeDeliverableOverride(
+  graduateFutures211,
+  graduateFutures211Overview,
+  graduateFutures211OutputsMeasures,
+  graduateFutures211Steps
+);
+const deliverableOverrides = new Map([[graduateFutures211Merged.id, graduateFutures211Merged]]);
 
 const asArray = (value) => Array.isArray(value) ? value : [];
-const textOf = (item, fallback = 'Item') => typeof item === 'string' ? '' : item?.title || item?.label || item?.item || item?.role || item?.condition || fallback;
+const textOf = (item, fallback = 'Item') => typeof item === 'string' ? item : item?.title || item?.label || item?.item || item?.role || item?.condition || fallback;
 const withVisibility = (item, fallback = 'internal-planning') => ({ ...item, visibility: item?.visibility || fallback });
 const summaryOf = (item) => item.summary || item.shortDescription || '';
 const detailSummaryOf = (item) => item.detailSummary || item.longDescription || item.description || item.longSummary || '';

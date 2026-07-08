@@ -6,6 +6,9 @@ function readJson(relativePath) {
 
 const plan = readJson('../src/data/kings-edge-plan.json');
 const graduateFutures211 = readJson('../src/data/deliverable-overrides/2.1.1.json');
+const graduateFutures211Overview = readJson('../src/data/deliverable-overrides/2.1.1-overview-patch.json');
+const graduateFutures211OutputsMeasures = readJson('../src/data/deliverable-overrides/2.1.1-outputs-measures-patch.json');
+const graduateFutures211Steps = readJson('../src/data/deliverable-overrides/2.1.1-steps-patch.json');
 const outOfProgrammeProjects = readJson('../src/data/enabling-projects.json');
 const stepDependencies = readJson('../src/data/step-dependencies.json');
 const statusData = readJson('../src/data/status.json');
@@ -17,7 +20,42 @@ const ids = new Set();
 const deliverableIds = new Set();
 const stepIds = new Set();
 const projectIds = new Set();
-const deliverableOverrides = new Map([[graduateFutures211.id, graduateFutures211]]);
+
+function mergeDeliverableOverride(...overrides) {
+  return overrides.reduce((merged, override) => {
+    const resources = override.resources
+      ? {
+          ...(merged.resources || {}),
+          ...override.resources,
+          investmentAsk: {
+            ...(merged.resources?.investmentAsk || {}),
+            ...(override.resources?.investmentAsk || {})
+          }
+        }
+      : merged.resources;
+    return {
+      ...merged,
+      ...override,
+      caseForChange: {
+        ...(merged.caseForChange || {}),
+        ...(override.caseForChange || {})
+      },
+      ownership: {
+        ...(merged.ownership || {}),
+        ...(override.ownership || {})
+      },
+      resources
+    };
+  }, {});
+}
+
+const graduateFutures211Merged = mergeDeliverableOverride(
+  graduateFutures211,
+  graduateFutures211Overview,
+  graduateFutures211OutputsMeasures,
+  graduateFutures211Steps
+);
+const deliverableOverrides = new Map([[graduateFutures211Merged.id, graduateFutures211Merged]]);
 
 function applyDeliverableOverrides(project) {
   if (!Array.isArray(project.deliverables)) return project;
