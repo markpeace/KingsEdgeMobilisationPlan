@@ -362,3 +362,36 @@ main .route-through-panel > .steps-list .step-card,
     flex-basis: min(86vw, 360px);
   }
 }
+
+.route-through-panel .step-card::before {
+  display: none !important;
+  content: none !important;
+}
+
+.route-through-panel .step-card-header {
+  display: block;
+  gap: 0;
+  margin: calc(-1rem - 2px) calc(-1rem - 2px) 0.9rem;
+  border-bottom: 2px solid var(--accent-dark);
+  background: var(--accent);
+  color: #ffffff;
+  padding: 0.8rem 1rem;
+}
+
+.route-through-panel .step-card-header-meta span,
+.route-through-panel .step-card-header-meta strong {
+  font-size: 0.78rem;
+}
+
+.route-through-panel .step-card-header-title {
+  display: none !important;
+}
+
+.route-through-panel .step-card > h3 {
+  order: 2;
+  display: block !important;
+  margin: 0 0 0.95rem !important;
+  color: var(--ink);
+  font-size: clamp(1.12rem, 1.15vw, 1.45rem) !important;
+  line-height: 1.08;
+}
