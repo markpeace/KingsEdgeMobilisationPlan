@@ -275,11 +275,46 @@ function ensureCrossDependencyMessage(container) {
     const heading = container.querySelector('h2, h3');
     (heading || container).insertAdjacentElement(heading ? 'afterend' : 'afterbegin', message);
   }
-  setTextIfChanged(message, 'No cross-deliverable dependencies captured yet. Internal step sequencing is shown in Delivery timeline.');
-  message.hidden = visibleDependencyLinks(container).length > 0;
+  const hasVisibleLinks = visibleDependencyLinks(container).length > 0;
+  setTextIfChanged(message, 'No cross-deliverable dependencies or handoffs captured yet. Step-level sequencing is shown in the Delivery timeline.');
+  message.hidden = hasVisibleLinks;
+  container.querySelectorAll(':scope > .subtle').forEach((label) => {
+    label.hidden = !hasVisibleLinks;
+    if (label.textContent.trim() === 'Depends on') setTextIfChanged(label, 'Cross-deliverable depends on');
+    if (label.textContent.trim() === 'Feeds into') setTextIfChanged(label, 'Cross-deliverable feeds into');
+  });
+}
+
+function refineCrossCuttingPanel() {
+  const panel = document.querySelector('.decision-dependency-panel');
+  if (!panel) return;
+
+  setTextIfChanged(panel.querySelector(':scope > h2'), 'Cross-cutting decisions and dependencies');
+
+  let scopeNote = panel.querySelector(':scope > .cross-cutting-scope-note');
+  if (!scopeNote) {
+    scopeNote = document.createElement('p');
+    scopeNote.className = 'subtle cross-cutting-scope-note';
+    panel.querySelector('h2')?.insertAdjacentElement('afterend', scopeNote);
+  }
+  setTextIfChanged(
+    scopeNote,
+    'Only whole-deliverable decisions, cross-deliverable dependencies and escalation points are shown here. Step-level sequencing, handoffs and operational choices sit in the Delivery timeline.'
+  );
+
+  const decisionColumn = panel.querySelector('.decision-dependency-grid > div:first-child');
+  const dependencyColumn = panel.querySelector('.decision-dependency-grid > div:nth-child(2)');
+  setTextIfChanged(decisionColumn?.querySelector('h3'), 'Whole-deliverable decisions');
+  setTextIfChanged(dependencyColumn?.querySelector('h3'), 'Cross-deliverable dependencies');
+  decisionColumn?.querySelectorAll(':scope > p').forEach((paragraph) => {
+    if (paragraph.textContent.trim() === 'No decisions captured yet.') {
+      setTextIfChanged(paragraph, 'No whole-deliverable decisions or escalation points captured yet.');
+    }
+  });
 }
 
 function refineCrossDeliverableDependencies() {
+  refineCrossCuttingPanel();
   const dependencyContainers = [
     ...document.querySelectorAll('.decision-dependency-panel .decision-dependency-grid > div:nth-child(2)'),
     ...document.querySelectorAll('.dependency-detail-grid .panel')
