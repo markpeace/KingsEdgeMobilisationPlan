@@ -99,6 +99,8 @@ Each deliverable should include:
 
 `successMeasures` is optional, but should be used when the deliverable has clear outputs or KPIs.
 
+Deliverable-level `decisions` should be used sparingly. They are for whole-deliverable choices, institutional approvals, resourcing decisions, escalation points or decisions that materially affect the whole route. Do not use them for choices that belong to a single step.
+
 Example:
 
 ```json
@@ -143,6 +145,10 @@ The step can also include optional detail:
 - `resources`
 - `decisions`
 - `risks`
+
+Use step-level `decisions`, `dependsOn`, `resources`, `risks`, `issues` and `assumptions` for anything that changes how a specific piece of work happens. This is the operational detail that appears in, or behind, the Delivery timeline.
+
+Keep deliverable-level decisions and dependency sections thin. They should only contain whole-deliverable decisions, cross-deliverable dependencies, institutional blockers, escalation points or handoffs beyond this deliverable. Do not repeat ordinary step sequencing there.
 
 The current timeline period schema uses visible six-month buckets from `jul-dec-2026` to `jul-dec-2030`. Each bucket has hidden thirds for sequencing. Use `a`, `b`, `c`, `ab`, `bc` or `abc` after a colon when the step only uses part of a bucket.
 
