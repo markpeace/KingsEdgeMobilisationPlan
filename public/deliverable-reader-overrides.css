@@ -1,0 +1,54 @@
+/* Overrides for the restructured deliverable detail page. */
+
+.route-through-panel > .steps-list {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: calc((100% - 2.55rem) / 4);
+  grid-template-columns: none !important;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-bottom: 0.75rem;
+  scroll-snap-type: x proximity;
+  scrollbar-color: var(--accent) #f1f1f1;
+}
+
+.route-through-panel > .steps-list .step-card {
+  min-width: 0;
+  scroll-snap-align: start;
+}
+
+.decision-dependency-panel .compact-list,
+.dependency-detail-grid .compact-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  align-items: flex-start;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.decision-dependency-panel .compact-list li,
+.dependency-detail-grid .compact-list li {
+  display: inline-flex;
+  margin: 0;
+}
+
+.decision-dependency-panel .chip,
+.dependency-detail-grid .chip {
+  max-width: 100%;
+  white-space: normal;
+  line-height: 1.15;
+}
+
+@media (max-width: 1180px) {
+  .route-through-panel > .steps-list {
+    grid-auto-columns: calc((100% - 0.85rem) / 2);
+  }
+}
+
+@media (max-width: 760px) {
+  .route-through-panel > .steps-list {
+    grid-auto-columns: min(86vw, 360px);
+  }
+}
