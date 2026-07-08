@@ -111,6 +111,48 @@ main .route-through-panel > .steps-list .step-card,
   line-height: 1.15;
 }
 
+.timeline-refresh .timeline-grid,
+.timeline-refresh .timeline-header,
+.timeline-refresh .timeline-row {
+  min-width: 2160px !important;
+}
+
+.timeline-refresh .timeline-header.timeline-grid,
+.timeline-refresh .timeline-row.timeline-grid {
+  grid-template-columns: 280px repeat(36, minmax(42px, 1fr)) !important;
+}
+
+.timeline-refresh .timeline-lane {
+  grid-template-columns: repeat(36, minmax(42px, 1fr)) !important;
+  background-size: calc(100% / 12) 100% !important;
+}
+
+.timeline-refresh .timeline-header > div:not(:first-child) {
+  justify-content: center;
+  padding: 0.45rem 0.25rem;
+  font-size: 0.68rem;
+  text-align: center;
+}
+
+.timeline-refresh .timeline-header > div:nth-child(3n + 2) {
+  justify-content: flex-start;
+  padding-left: 0.45rem;
+  border-left: 3px solid rgba(255, 255, 255, 0.52);
+  font-weight: 850;
+}
+
+.timeline-refresh .timeline-header > div:nth-child(3n + 3),
+.timeline-refresh .timeline-header > div:nth-child(3n + 4) {
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 0.74rem;
+  text-transform: uppercase;
+}
+
+.timeline-refresh .timeline-block {
+  padding-inline: 0.42rem;
+  font-size: 0.72rem;
+}
+
 @media (max-width: 1180px) {
   .route-through-panel > .steps-list .step-card,
   main .route-through-panel > .steps-list .step-card,
