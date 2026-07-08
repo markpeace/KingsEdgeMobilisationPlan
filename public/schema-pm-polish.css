@@ -37,6 +37,7 @@
 
 .raid-grid {
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  align-items: start;
 }
 
 .delivery-model-column,
@@ -45,11 +46,16 @@
   gap: 0.7rem;
 }
 
+.raid-column {
+  align-content: start;
+}
+
 .delivery-model-column > h3,
 .raid-column > h3 {
   margin: 0 0 0.05rem;
   padding: 0.36rem 0.58rem;
   width: fit-content;
+  align-self: start;
   background: var(--ink);
   color: #ffffff;
   font-size: 0.82rem;
