@@ -1,20 +1,75 @@
 {
   "outputs": [
-    {"id": "2.1.1-O1", "title": "Graduate futures data specification", "type": "data-governance-product", "description": "Controlled specification for sources, fields, owners, caveats, suppression rules, update cycles, segmentation and responsible use.", "owner": "Careers and Employability Service", "duePeriod": "now-xmas-2026", "targetDate": "September 2026", "acceptanceCriteria": ["Phase one sources, fields and owners are documented.", "Caveats, suppression rules and update cycles are recorded.", "Specification is complete enough for Power BI V1 build and validation."]},
-    {"id": "2.1.1-O2", "title": "Destination taxonomy and comparator framework", "type": "analytical-framework", "description": "Framework for destination categories and meaningful comparator sets by subject, sector, Russell Group or other relevant peer group.", "owner": "Careers and Employability Service", "duePeriod": "now-xmas-2026", "targetDate": "September 2026", "acceptanceCriteria": ["Destination categories are defined and tested against real examples.", "Marginal and pathway-adjacent destinations are handled explicitly.", "Comparator principles avoid crude internal ranking."]},
-    {"id": "2.1.1-O3", "title": "Power BI V1 dashboard", "type": "data-product", "description": "First dashboard iteration presenting programme, department and faculty-level graduate futures data.", "owner": "Careers and Employability Service", "duePeriod": "now-xmas-2026", "targetDate": "September 2026", "acceptanceCriteria": ["Power BI V1 is built using the agreed phase one specification.", "The dashboard can be tested with real programme or subject examples.", "The dashboard includes caveats and responsible interpretation guidance."]},
-    {"id": "2.1.1-O4", "title": "Power BI V1 validation and UAT findings", "type": "user-testing-report", "description": "Record of validation with selected faculty, programme and professional services users to inform V2.", "owner": "Daniel Robson", "duePeriod": "now-xmas-2026", "targetDate": "September 2026", "acceptanceCriteria": ["Selected users have tested the dashboard and pack presentation.", "Feedback covers clarity, usability, interpretability and actionability.", "Findings are translated into a prioritised V2 improvement list."]},
-    {"id": "2.1.1-O5", "title": "V2 self-service programme packs", "type": "self-service-pack", "description": "Packs that programme teams can access, understand and use informatively without a facilitated workshop first.", "owner": "Daniel Robson", "duePeriod": "now-xmas-2026", "targetDate": "Christmas 2026", "acceptanceCriteria": ["V2 packs reflect validation findings.", "The packs separate data, interpretation prompts and caveats.", "The packs can be used at programme, department or faculty level where data allows."]},
-    {"id": "2.1.1-O6", "title": "V2 dissemination and showcase plan", "type": "engagement-plan", "description": "Plan for disseminating V2 packs and showcasing them in agreed institutional spaces.", "owner": "Mark Peace", "duePeriod": "now-xmas-2026", "targetDate": "Christmas 2026", "acceptanceCriteria": ["Priority showcase spaces are agreed.", "Programmes and faculties know where to access the packs.", "Dissemination reinforces developmental use rather than ranking."]},
-    {"id": "2.1.1-O7", "title": "Faculty roundtable findings", "type": "engagement-output", "description": "Structured record of high-level faculty roundtables exploring initial observations, strengths, risks and questions.", "owner": "Vice Deans Education or delegates", "duePeriod": "now-xmas-2026", "targetDate": "Christmas 2026", "acceptanceCriteria": ["Roundtables are held with agreed faculty audiences.", "Findings are captured consistently.", "Sensitive findings have a handling route."]},
-    {"id": "2.1.1-O8", "title": "Education Committee executive report", "type": "governance-report", "description": "Executive report summarising initial findings from the graduate futures data deep dive.", "owner": "Mark Peace", "duePeriod": "now-xmas-2026", "targetDate": "Christmas 2026", "acceptanceCriteria": ["The report distinguishes evidence, interpretation, caveats and action.", "The report summarises faculty observations without over-claiming.", "The report is submitted through the agreed route."]},
-    {"id": "2.1.1-O9", "title": "Programme workshop structure and materials", "type": "toolkit", "description": "Workshop format, facilitator notes, interpretation guidance, action-plan template, Graduate Premium Profile template, Story Pack template and structured return form.", "owner": "Daniel Robson", "duePeriod": "now-xmas-2026", "targetDate": "Christmas 2026", "acceptanceCriteria": ["Materials guide teams from data interpretation to action and articulation.", "Materials include caveats for comparators and marginal destinations.", "Materials are ready to test with wayfinder programmes."]},
-    {"id": "2.1.1-O10", "title": "Wayfinder workshop validation findings", "type": "user-testing-report", "description": "Validation findings from early programmes testing whether the packs, workshop structure and templates are usable and appropriately framed.", "owner": "Daniel Robson", "duePeriod": "now-xmas-2026", "targetDate": "Christmas 2026", "acceptanceCriteria": ["Wayfinder programmes complete a meaningful test.", "Feedback identifies changes before priority rollout.", "Findings distinguish data, pack, workshop and template issues."]},
-    {"id": "2.1.1-O11", "title": "Refined workshop model and priority rollout plan", "type": "rollout-plan", "description": "Refined model and plan for priority rollout, including priority criteria, facilitator requirements, schedule and support model.", "owner": "Vice Deans Education or delegates", "duePeriod": "jan-summer-2027", "targetDate": "Spring 2027", "acceptanceCriteria": ["Wayfinder learning is reflected in the refined model.", "Priority segment criteria are agreed and carefully framed.", "Faculties understand their role in the priority wave."]},
-    {"id": "2.1.1-O12", "title": "Priority segment workshop outputs", "type": "programme-output-set", "description": "Profiles, action plans, story material and structured returns from agreed priority programmes, departments, clusters or student-outcome segments.", "owner": "Heads of Department", "duePeriod": "jan-summer-2027", "targetDate": "September 2027", "acceptanceCriteria": ["Priority workshops are completed by September 2027.", "Outputs include actions, owners, support needs and follow-up routes.", "Priority learning is available for wider rollout."]},
-    {"id": "2.1.1-O13", "title": "Data refresh and BAU ownership model", "type": "operating-model", "description": "Model for refreshing the data, maintaining Power BI, updating packs and connecting refreshed intelligence to planning cycles.", "owner": "Careers and Employability Service", "duePeriod": "ay-2027-28-to-2028-29", "targetDate": "September 2028", "acceptanceCriteria": ["Refresh cadence and owners are confirmed.", "Power BI maintenance and pack update routes are agreed.", "Refreshed data has a route into planning."]},
-    {"id": "2.1.1-O14", "title": "Remaining institutional workshop rollout outputs", "type": "programme-output-set", "description": "Workshop outputs from the remaining agreed coverage population beyond wayfinder and priority segments.", "owner": "Heads of Department", "duePeriod": "ay-2027-28-to-2028-29", "targetDate": "September 2028", "acceptanceCriteria": ["The model reaches the rest of the agreed coverage population.", "Programmes or clusters produce agreed outputs where appropriate.", "Faculty returns are complete enough for synthesis."]},
-    {"id": "2.1.1-O15", "title": "Institutional graduate futures typology and synthesis", "type": "synthesis", "description": "Synthesis of destination patterns, strategy types, strengths, support needs, priority segment learning and infrastructure needs.", "owner": "Mark Peace", "duePeriod": "ay-2027-28-to-2028-29", "targetDate": "September 2028", "acceptanceCriteria": ["Faculty returns are synthesised into patterns and support needs.", "Findings feed related King's Edge deliverables.", "The synthesis distinguishes evidence, interpretation and recommended action."]}
+    {
+      "id": "2.1.1-O1",
+      "title": "Graduate futures intelligence operating model",
+      "type": "operating-model",
+      "description": "The whole-deliverable operating model that brings together the data specification, caveat handling, Power BI V1/V2 route and pack production model for programme-level graduate futures intelligence.",
+      "owner": "Careers and Employability Service",
+      "duePeriod": "now-xmas-2026",
+      "targetDate": "Christmas 2026",
+      "acceptanceCriteria": [
+        "Data specification, caveats, taxonomy and comparator principles are coherent across the product route.",
+        "Power BI V1 and V2 development have a clear ownership and maintenance model.",
+        "The pack model can be used across programme, department or faculty contexts where data allows."
+      ]
+    },
+    {
+      "id": "2.1.1-O2",
+      "title": "Programme workshop and sense-making model",
+      "type": "delivery-model",
+      "description": "The whole-deliverable model for turning insight packs into structured programme conversations, including workshop structure, facilitator guidance, wayfinder validation and priority rollout principles.",
+      "owner": "Daniel Robson",
+      "duePeriod": "now-xmas-2026 to jan-summer-2027",
+      "targetDate": "Spring 2027",
+      "acceptanceCriteria": [
+        "Workshop materials guide users from data interpretation to action and articulation.",
+        "Wayfinder testing has validated the framing, usability and outputs of the approach.",
+        "Priority rollout principles and facilitator requirements are agreed."
+      ]
+    },
+    {
+      "id": "2.1.1-O3",
+      "title": "Programme output set",
+      "type": "programme-output-set",
+      "description": "The repeatable output set that programmes, departments or clusters produce through the process: Graduate Premium Profiles, Graduate Futures Action Plans, Story Pack material and structured returns.",
+      "owner": "Heads of Department",
+      "duePeriod": "jan-summer-2027 to ay-2027-28-to-2028-29",
+      "targetDate": "September 2028",
+      "acceptanceCriteria": [
+        "Priority segments produce agreed profiles, action plans, story material and structured returns by September 2027.",
+        "The remaining agreed coverage population produces equivalent outputs where appropriate during the wider rollout.",
+        "Outputs distinguish evidence, interpretation, action and student-facing story material."
+      ]
+    },
+    {
+      "id": "2.1.1-O4",
+      "title": "Data refresh and BAU ownership model",
+      "type": "operating-model",
+      "description": "A sustainable model for refreshing the data, maintaining Power BI, updating packs and connecting refreshed intelligence to planning cycles.",
+      "owner": "Careers and Employability Service",
+      "duePeriod": "ay-2027-28-to-2028-29",
+      "targetDate": "September 2028",
+      "acceptanceCriteria": [
+        "Refresh cadence and owners are confirmed.",
+        "Power BI maintenance and pack update routes are agreed.",
+        "Refreshed data has a route into programme, faculty and institutional planning."
+      ]
+    },
+    {
+      "id": "2.1.1-O5",
+      "title": "Institutional graduate futures synthesis and feed-through",
+      "type": "synthesis",
+      "description": "Institutional synthesis of destination patterns, strategy types, strengths, support needs, priority segment learning and infrastructure needs, with a route into related King's Edge work.",
+      "owner": "Mark Peace",
+      "duePeriod": "ay-2027-28-to-2028-29",
+      "targetDate": "September 2028",
+      "acceptanceCriteria": [
+        "Faculty returns are synthesised into patterns and support needs.",
+        "Findings feed related King's Edge deliverables and curriculum enhancement activity.",
+        "The synthesis distinguishes evidence, interpretation and recommended institutional action."
+      ]
+    }
   ],
   "measures": [
     {"id": "2.1.1-M1", "title": "Data specification readiness", "measureType": "readiness", "questionAnswered": "Has the data specification been completed in time for Power BI V1?", "measure": "Completion of specification, inventory, caveat register, taxonomy and comparator framework.", "owner": "Careers and Employability Service", "cadence": "September 2026 milestone review", "confidence": "developing", "baseline": "Not yet established.", "target": "Data specification and analytical framework complete by September 2026."},
@@ -27,5 +82,58 @@
     {"id": "2.1.1-M8", "title": "Action orientation", "measureType": "benefit-realisation", "questionAnswered": "Does the process lead to realistic actions with owners and support needs?", "measure": "Quality and completeness of Graduate Futures Action Plans.", "owner": "Heads of Department", "cadence": "Annual internal review", "confidence": "developing", "baseline": "Not yet established.", "target": "Completed action plans for programmes included in each rollout wave."},
     {"id": "2.1.1-M9", "title": "Data refresh and BAU integration", "measureType": "operating-model", "questionAnswered": "Has the product moved into a BAU refresh and maintenance model?", "measure": "Confirmed refresh cadence, owner, Power BI maintenance route and pack update process.", "owner": "Careers and Employability Service", "cadence": "Annual operating review", "confidence": "developing", "baseline": "Not yet established.", "target": "BAU ownership model confirmed before full rollout completes."},
     {"id": "2.1.1-M10", "title": "Remaining rollout and synthesis", "measureType": "strategic-learning", "questionAnswered": "Has the workshop model reached remaining coverage and produced synthesis?", "measure": "Completion of final rollout wave and synthesis into patterns, strengths and support needs.", "owner": "Mark Peace", "cadence": "Annual synthesis", "confidence": "developing", "baseline": "Not yet established.", "target": "Remaining rollout and fuller synthesis completed during 2027/28."}
+  ],
+  "resources": {
+    "fundingSummary": "Whole-route resourcing depends on protected data product capacity, delivery coordination, faculty facilitator time and a sustainable BAU ownership model. Step-level resources describe where each type of capacity is needed in the delivery route.",
+    "existingCapacity": [
+      {"role": "Careers and Employability Service", "contribution": "Own or co-own the graduate futures data product, interpretation principles, caveat guidance and BAU refresh route.", "type": "existing capacity to align"},
+      {"role": "Daniel Robson", "contribution": "Lead the pack, workshop and rollout product route across the deliverable.", "type": "existing delivery capacity"},
+      {"role": "Vice Deans Education or delegates", "contribution": "Provide the faculty decision and delivery route for validation, priority rollout and wider coverage.", "type": "existing governance capacity"},
+      {"role": "Heads of Department", "contribution": "Own benefit realisation and follow up agreed programme actions through normal department and faculty routes.", "type": "existing academic leadership capacity"},
+      {"role": "Mark Peace", "contribution": "Maintain institutional graduate futures coherence and lead the synthesis into related King's Edge work.", "type": "existing leadership capacity"}
+    ],
+    "newInvestment": [
+      {"item": "Protected analytical and Power BI build capacity", "category": "data product development", "rationale": "Needed to produce, validate and maintain a credible Power BI and pack model rather than relying on ad hoc manual production.", "periodNeeded": "jul-dec-2026 to jan-jun-2027", "confidence": "medium", "fundingRoute": "TBC"},
+      {"item": "Coordination and synthesis support", "category": "project support", "rationale": "Could support pack preparation, workshop logistics, return tracking, evidence handling and institutional synthesis across rollout waves.", "periodNeeded": "jul-dec-2026 to jul-dec-2028", "confidence": "developing", "fundingRoute": "TBC"}
+    ],
+    "enablingConditions": [
+      {"condition": "Sustained access to graduate outcomes, LEO, TEF, benchmarking, enrolment supplement and relevant internal datasets.", "owner": "Careers and Employability Service", "riskIfMissing": "The model cannot provide a credible programme-level graduate futures view."},
+      {"condition": "Power BI prioritisation or equivalent scalable data visualisation route.", "owner": "Careers and Employability Service", "riskIfMissing": "The insight pack may remain static or manually produced, limiting institutional use."},
+      {"condition": "Faculty agreement to own local facilitation rather than expecting central delivery for every programme.", "owner": "Vice Deans Education or delegates", "riskIfMissing": "The central team becomes the bottleneck and coverage is not achievable."},
+      {"condition": "Heads of Department accept benefit ownership for programme actions.", "owner": "Vice Deans Education or delegates", "riskIfMissing": "Action plans are produced but not owned or followed up."},
+      {"condition": "Programme confirmation is accepted as sufficient approval for Story Pack use.", "owner": "Programme teams", "riskIfMissing": "Story Pack activation becomes too slow or over-governed."}
+    ],
+    "investmentAsk": {
+      "required": true,
+      "fundingRoute": "TBC",
+      "priority": "High for Power BI V1/V2 delivery, validation and rollout coordination",
+      "decisionNeededBy": "Summer 2026",
+      "confidence": "developing",
+      "rationale": "The deliverable is likely to need protected analytical, Power BI and coordination capacity. Step-level plans identify where the capacity is used; the deliverable-level ask is the overall resourcing decision."
+    }
+  },
+  "risks": [
+    {"id": "2.1.1-R1", "title": "The work becomes too centrally resource-intensive", "description": "Central teams cannot facilitate programme conversations for every programme or manually sustain all pack production.", "likelihood": "high", "impact": "high", "mitigation": "Use the faculty-owned train-the-trainer model, with central support focused on data, method, templates, training and synthesis.", "owner": "Vice Deans Education or delegates"},
+    {"id": "2.1.1-R2", "title": "Data is over-interpreted or used punitively", "description": "Small numbers, suppression, volatility, coding issues or comparator misuse could lead to unfair or unhelpful interpretations.", "likelihood": "medium", "impact": "high", "mitigation": "Use caveat guidance, facilitator training, destination taxonomy and responsible interpretation principles throughout the product and workshop route.", "owner": "Careers and Employability Service"},
+    {"id": "2.1.1-R3", "title": "Faculty rollout is inconsistent", "description": "Cascaded delivery may vary in quality, tone and completion across faculties.", "likelihood": "medium", "impact": "high", "mitigation": "Use a common toolkit, Vice Dean decision route, facilitator training, structured returns and progress tracking.", "owner": "Vice Deans Education or delegates"},
+    {"id": "2.1.1-R4", "title": "Action plans are not followed up", "description": "Programme action plans may be created but not owned or monitored after the workshop.", "likelihood": "medium", "impact": "high", "mitigation": "Confirm Heads of Department as benefit owners and route follow-up through internal department and faculty planning processes.", "owner": "Heads of Department"},
+    {"id": "2.1.1-R5", "title": "Data product does not move into a sustainable BAU model", "description": "Power BI, data refresh and pack maintenance could remain dependent on project goodwill after rollout.", "likelihood": "medium", "impact": "high", "mitigation": "Confirm refresh cadence, product ownership and maintenance route before full rollout completes.", "owner": "Careers and Employability Service"}
+  ],
+  "issues": [
+    {"id": "2.1.1-I1", "title": "Protected data product and coordination resource needs confirmation", "description": "The deliverable requires a whole-route decision about protected analytical, Power BI and coordination capacity.", "owner": "Careers and Employability Service", "neededBy": "Summer 2026"},
+    {"id": "2.1.1-I2", "title": "Faculty-owned delivery route needs to be locked", "description": "The train-the-trainer model depends on Vice Deans Education or delegates confirming local facilitation expectations and benefit ownership routes.", "owner": "Vice Deans Education or delegates", "neededBy": "Before priority rollout planning"},
+    {"id": "2.1.1-I3", "title": "BAU refresh and synthesis route needs confirmation", "description": "The data product, annual refresh and institutional synthesis need a confirmed ownership and reporting route before the project becomes business as usual.", "owner": "Careers and Employability Service and Mark Peace", "neededBy": "Before full rollout completes"}
+  ],
+  "assumptions": [
+    {"id": "2.1.1-A1", "title": "Faculty-led delivery is necessary for scale", "summary": "The central team cannot deliver programme workshops for every programme, so faculties must facilitate through a train-the-trainer model."},
+    {"id": "2.1.1-A2", "title": "Heads of Department can own benefit realisation", "summary": "Programme actions will only create value if Heads of Department own follow-up through normal department and faculty planning routes."},
+    {"id": "2.1.1-A3", "title": "Programme confirmation is enough for Story Pack use", "summary": "Programme teams can confirm that Story Pack language is accurate, fair and evidence-informed before local use."},
+    {"id": "2.1.1-A4", "title": "The data product can become a maintained service", "summary": "The deliverable assumes that Power BI maintenance, data refresh and pack updates can move from project delivery into a sustainable BAU route."}
+  ],
+  "decisions": [
+    {"id": "2.1.1-D1", "title": "Confirm protected resource for data product and coordination", "description": "Decide whether additional analyst, Power BI or coordination capacity is required, including whether a sandwich year placement or equivalent support should be pursued.", "decisionMaker": "Vice Deans Education or delegates, with Careers and Employability Service", "decisionNeededBy": "Summer 2026", "status": "needed"},
+    {"id": "2.1.1-D2", "title": "Confirm faculty-owned delivery and benefit ownership route", "description": "Agree that the train-the-trainer model is the route to scale, and confirm how Heads of Department own action follow-up after programme conversations.", "decisionMaker": "Vice Deans Education or delegates", "decisionNeededBy": "Before priority rollout planning", "status": "needed"},
+    {"id": "2.1.1-D3", "title": "Confirm BAU data refresh and product ownership model", "description": "Agree how Power BI, data refresh, pack updates and access routes will be owned after the initial delivery phase.", "decisionMaker": "Careers and Employability Service with Vice Deans Education or delegates", "decisionNeededBy": "Before full rollout completes", "status": "needed"},
+    {"id": "2.1.1-D4", "title": "Confirm institutional synthesis and feed-through route", "description": "Agree where the institutional typology and synthesis will be reviewed and how findings feed related King's Edge deliverables.", "decisionMaker": "Mark Peace and Vice Deans Education or delegates", "decisionNeededBy": "Before September 2027 synthesis", "status": "needed"}
   ]
 }
