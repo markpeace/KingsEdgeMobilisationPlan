@@ -30,16 +30,71 @@
 }
 
 .deliverable-main-flow {
+  display: grid;
+  gap: 1rem;
   max-width: none;
 }
 
-.detailed-plan-control {
-  margin-top: 1rem;
+.deliverable-main-flow > *,
+.detailed-plan-reveal > * {
+  min-width: 0;
 }
 
 .detailed-plan-reveal {
-  display: grid;
-  gap: 0.85rem;
+  display: contents;
+}
+
+.deliverable-main-flow > .planning-notice {
+  order: 1;
+}
+
+.deliverable-main-flow > .case-panel {
+  order: 2;
+}
+
+.detailed-plan-reveal > #value-evidence {
+  order: 3;
+}
+
+.deliverable-main-flow > .route-through-panel {
+  order: 4;
+}
+
+.deliverable-main-flow > .decision-dependency-panel {
+  order: 5;
+}
+
+.deliverable-main-flow > .detailed-plan-control {
+  order: 6;
+  margin-top: 1rem;
+}
+
+.detailed-plan-reveal > .pre-draft-note {
+  order: 7;
+}
+
+.detailed-plan-reveal > #governance {
+  order: 8;
+}
+
+.detailed-plan-reveal > #definition-of-done {
+  order: 9;
+}
+
+.detailed-plan-reveal > #resources {
+  order: 10;
+}
+
+.detailed-plan-reveal > #components {
+  order: 11;
+}
+
+.detailed-plan-reveal > #risks-decisions {
+  order: 12;
+}
+
+.detailed-plan-reveal > #dependencies {
+  order: 13;
 }
 
 .route-through-panel > .steps-list,
