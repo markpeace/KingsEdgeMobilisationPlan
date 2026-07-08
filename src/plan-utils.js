@@ -34,6 +34,7 @@ export const timelinePeriods = halfYearBuckets.flatMap((bucket) => thirdSegments
   thirdOrder: thirdIndex + 1
 })));
 
+const canonicalPlan = { ...plan, timelinePeriods: halfYearBuckets };
 const timelinePeriodIndex = new Map(timelinePeriods.map((period, index) => [period.id, index + 1]));
 const timelineBucketMap = new Map(halfYearBuckets.map((bucket) => [bucket.id, bucket]));
 
@@ -73,12 +74,37 @@ function parsePeriod(period) {
   return { bucket, segment };
 }
 
+function resolveTimelinePoint(point, edge = 'start') {
+  if (timelinePeriodIndex.has(point)) return point;
+  const { bucket, segment } = parsePeriod(point);
+  if (timelinePeriodIndex.has(bucket)) return bucket;
+  const [startThird, endThird] = segmentSpans[String(segment || 'abc').toLowerCase()] || segmentSpans.abc;
+  const third = edge === 'end' ? endThird : startThird;
+  return `${bucket}-${third}`;
+}
+
+function labelForTimelinePoint(point) {
+  if (timelinePeriodIndex.has(point)) {
+    const periodEntry = timelinePeriods.find((entry) => entry.id === point);
+    return periodEntry?.bucketLabel || periodEntry?.label || point;
+  }
+  const { bucket } = parsePeriod(point);
+  return timelineBucketMap.get(bucket)?.label || timelinePeriods.find((entry) => entry.id === bucket)?.bucketLabel || bucket;
+}
+
 function resolveTimelineSpan(period) {
   if (broadPeriodSpans[period]) return broadPeriodSpans[period];
+  if (period && typeof period === 'object' && period.start && period.end) {
+    const start = resolveTimelinePoint(period.start, 'start');
+    const end = resolveTimelinePoint(period.end, 'end');
+    const startLabel = labelForTimelinePoint(period.start);
+    const endLabel = labelForTimelinePoint(period.end);
+    return { start, end, label: startLabel === endLabel ? startLabel : `${startLabel} to ${endLabel}` };
+  }
   const { bucket, segment } = parsePeriod(period);
   if (timelinePeriodIndex.has(bucket)) {
     const periodEntry = timelinePeriods.find((entry) => entry.id === bucket);
-    return { start: bucket, end: bucket, label: periodEntry?.label || bucket };
+    return { start: bucket, end: bucket, label: periodEntry?.bucketLabel || periodEntry?.label || bucket };
   }
   if (!timelineBucketMap.has(bucket)) return { start: bucket, end: bucket, label: bucket };
   const [startThird, endThird] = segmentSpans[String(segment || 'abc').toLowerCase()] || segmentSpans.abc;
@@ -216,13 +242,13 @@ function enrichProject(project, displayOrder) {
 }
 
 export const projects = [
-  ...plan.projects.map((project, index) => enrichProject({ ...project, deliveryContext: project.deliveryContext || 'edge' }, index)),
+  ...canonicalPlan.projects.map((project, index) => enrichProject({ ...project, deliveryContext: project.deliveryContext || 'edge' }, index)),
   ...outOfProgrammeProjects.map((project, index) => enrichProject({ ...project, deliveryContext: project.deliveryContext || 'out-of-programme' }, 1000 + index))
 ].sort((a, b) => a.displayOrder - b.displayOrder || String(a.id).localeCompare(String(b.id), undefined, { numeric: true }));
 
 export const edgeProjects = projects.filter((project) => project.deliveryContext === 'edge');
 export const outOfProgramme = projects.filter((project) => project.deliveryContext === 'out-of-programme');
-export { plan, outOfProgrammeProjects as enablingProjects };
+export { canonicalPlan as plan, outOfProgrammeProjects as enablingProjects };
 
 export function getStepDependencies(step) {
   return stepDependencyOverrides[step.id] || step.dependsOn || [];
