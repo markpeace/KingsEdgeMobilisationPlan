@@ -1,6 +1,5 @@
 let refreshScheduled = false;
 let accordionsInitialised = false;
-let promotedValueToggleWired = false;
 
 function setTextIfChanged(node, text) {
   if (node && node.textContent !== text) node.textContent = text;
@@ -17,15 +16,6 @@ function setAccordionState(sectionId, shouldOpen) {
   if (!button) return;
   const isOpen = button.getAttribute('aria-expanded') === 'true';
   if (isOpen !== shouldOpen) button.click();
-}
-
-function escapeHtml(value) {
-  return String(value || '')
-    .replaceAll('&', '&amp;')
-    .replaceAll('<', '&lt;')
-    .replaceAll('>', '&gt;')
-    .replaceAll('"', '&quot;')
-    .replaceAll("'", '&#039;');
 }
 
 function syncPlanningStagePosition() {
@@ -86,87 +76,21 @@ function syncWhyThisMattersPosition() {
   mainFlow.insertBefore(casePanel, routePanel);
 }
 
-function copyValueEvidenceBody() {
-  const sourceBody = document.querySelector('#value-evidence .detail-accordion-body');
-  const promotedBody = document.querySelector('#value-evidence-promoted .detail-accordion-body');
-  if (sourceBody && promotedBody && promotedBody.innerHTML !== sourceBody.innerHTML) {
-    promotedBody.innerHTML = sourceBody.innerHTML;
-  }
-  return Boolean(sourceBody && promotedBody && promotedBody.innerHTML.trim());
-}
-
-function hydratePromotedValueBody() {
-  if (copyValueEvidenceBody()) return;
-  setAccordionState('value-evidence', true);
-  window.setTimeout(copyValueEvidenceBody, 0);
-  window.setTimeout(copyValueEvidenceBody, 80);
-}
-
-function setPromotedAccordionOpen(panel, open) {
-  panel.classList.toggle('value-evidence-promoted-open', open);
-  const button = panel.querySelector('.detail-accordion-header');
-  const label = button?.querySelector('strong');
-  button?.setAttribute('aria-expanded', String(open));
-  setTextIfChanged(label, open ? 'Hide' : 'Show');
-  if (open) hydratePromotedValueBody();
-}
-
-function createPromotedValueEvidencePanel(source) {
-  const title = source.querySelector('.detail-accordion-header span')?.textContent?.trim() || 'Value, products and evidence';
-  const summary = source.querySelector('.detail-accordion-header em')?.textContent?.trim() || 'Benefits to realise, outputs to produce and measures to test whether the benefit is happening.';
-  const promoted = document.createElement('section');
-  promoted.id = 'value-evidence-promoted';
-  promoted.className = 'panel detail-accordion value-evidence-promoted';
-  promoted.innerHTML = `
-    <button type="button" class="detail-accordion-header" aria-expanded="false" aria-controls="value-evidence-promoted-body">
-      <span>${escapeHtml(title)}</span>
-      <em>${escapeHtml(summary)}</em>
-      <strong>Show</strong>
-    </button>
-    <div class="detail-accordion-body" id="value-evidence-promoted-body"></div>
-  `;
-  return promoted;
-}
-
-function wirePromotedValueToggle() {
-  if (promotedValueToggleWired) return;
-  promotedValueToggleWired = true;
-  document.addEventListener('click', (event) => {
-    const button = event.target.closest?.('#value-evidence-promoted .detail-accordion-header');
-    if (!button) return;
-    const panel = document.getElementById('value-evidence-promoted');
-    if (!panel) return;
-    event.preventDefault();
-    event.stopPropagation();
-    setPromotedAccordionOpen(panel, !panel.classList.contains('value-evidence-promoted-open'));
-  }, true);
-}
-
-function promoteValueEvidencePanel() {
+function moveValueEvidencePanel() {
   const mainFlow = document.querySelector('.deliverable-main-flow');
   const casePanel = mainFlow?.querySelector('.case-panel');
+  const valuePanel = document.getElementById('value-evidence');
   const routePanel = mainFlow?.querySelector('.route-through-panel');
-  const source = document.getElementById('value-evidence');
-  if (!mainFlow || !casePanel || !routePanel || !source) return;
-
-  source.classList.add('value-evidence-source-hidden');
-  setAccordionState('value-evidence', true);
-
-  let promoted = document.getElementById('value-evidence-promoted');
-  const wasOpen = promoted?.classList.contains('value-evidence-promoted-open') || false;
-  if (!promoted) promoted = createPromotedValueEvidencePanel(source);
-  copyValueEvidenceBody();
-  setPromotedAccordionOpen(promoted, wasOpen);
-
-  if (casePanel.nextElementSibling !== promoted || promoted.nextElementSibling !== routePanel) {
-    mainFlow.insertBefore(promoted, routePanel);
-  }
+  if (!mainFlow || !casePanel || !valuePanel || !routePanel) return;
+  valuePanel.classList.remove('value-evidence-source-hidden');
+  if (casePanel.nextElementSibling === valuePanel && valuePanel.nextElementSibling === routePanel) return;
+  mainFlow.insertBefore(valuePanel, routePanel);
 }
 
 function initialiseAccordionDisclosure() {
   const key = window.location.hash;
   if (accordionsInitialised === key) return;
-  const accordions = [...document.querySelectorAll('.detail-accordion[id]:not(#value-evidence):not(#value-evidence-promoted)')];
+  const accordions = [...document.querySelectorAll('.detail-accordion[id]')];
   if (!accordions.length) return;
   accordions.forEach((section) => setAccordionState(section.id, false));
   accordionsInitialised = key;
@@ -303,13 +227,12 @@ function refineCrossDeliverableDependencies() {
 
 function refreshDeliverablePage() {
   refreshScheduled = false;
-  wirePromotedValueToggle();
   syncPlanningStagePosition();
   removeOverviewPanel();
   enableStepDetailsMode();
   removeReaderNavigation();
   syncWhyThisMattersPosition();
-  promoteValueEvidencePanel();
+  moveValueEvidencePanel();
   refineDeliveryTimeline();
   refinePlanningDetailCopy();
   refineCrossDeliverableDependencies();
@@ -329,7 +252,6 @@ window.addEventListener('hashchange', () => {
   accordionsInitialised = false;
   delete document.body.dataset.stepDetailsEnabledKey;
   document.querySelector('.planning-notice-clone')?.remove();
-  document.getElementById('value-evidence-promoted')?.remove();
   scheduleRefreshDeliverablePage();
 });
 
