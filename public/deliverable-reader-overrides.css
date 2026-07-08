@@ -19,8 +19,27 @@
 
 .planning-notice-inline-hidden,
 .at-a-glance-panel,
+.deliverable-page-index,
 [class~="internal-dependency-hidden"] {
   display: none !important;
+}
+
+.deliverable-layout,
+.deliverable-layout-single-column {
+  display: block !important;
+}
+
+.deliverable-main-flow {
+  max-width: none;
+}
+
+.detailed-plan-control {
+  margin-top: 1rem;
+}
+
+.detailed-plan-reveal {
+  display: grid;
+  gap: 0.85rem;
 }
 
 .route-through-panel > .steps-list,
