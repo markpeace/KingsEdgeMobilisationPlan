@@ -123,36 +123,42 @@ main .route-through-panel > .steps-list .step-card,
 
 .route-through-panel .step-card-header {
   order: 1;
+  display: grid;
+  gap: 0.45rem;
+  margin: calc(-1rem - 2px) calc(-1rem - 2px) 0.95rem;
+  border-bottom: 2px solid var(--accent-dark);
+  background: var(--accent);
+  color: #ffffff;
+  padding: 0.85rem 1rem 0.95rem;
+}
+
+.route-through-panel .step-card-header-meta {
   display: flex;
   flex-wrap: wrap;
   gap: 0.25rem 0.55rem;
   align-items: center;
-  margin: -0.05rem -0.05rem 0.9rem;
-  border: 2px solid var(--accent-dark);
-  background: var(--accent);
-  color: #ffffff;
-  padding: 0.55rem 0.65rem;
-  line-height: 1.05;
+  color: inherit;
+  line-height: 1;
   text-transform: uppercase;
 }
 
-.route-through-panel .step-card-header span,
-.route-through-panel .step-card-header strong {
+.route-through-panel .step-card-header-meta span,
+.route-through-panel .step-card-header-meta strong {
   color: inherit;
-  font-size: 0.78rem;
+  font-size: 0.72rem;
   font-weight: 950;
-  letter-spacing: 0.055em;
+  letter-spacing: 0.06em;
 }
 
-.route-through-panel .step-card-header span::after {
+.route-through-panel .step-card-header-meta span::after {
   content: "-";
   margin-left: 0.55rem;
 }
 
-.route-through-panel .step-card > h3 {
-  order: 2;
-  margin: 0 0 0.95rem;
-  font-size: clamp(1.12rem, 1.15vw, 1.45rem);
+.route-through-panel .step-card-header-title {
+  margin: 0;
+  color: inherit;
+  font-size: clamp(1.1rem, 1.08vw, 1.42rem);
   line-height: 1.08;
 }
 
