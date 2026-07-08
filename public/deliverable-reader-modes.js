@@ -52,6 +52,17 @@ function removeOverviewPanel() {
   document.querySelector('.at-a-glance-panel')?.remove();
 }
 
+function enableStepDetailsMode() {
+  const routePanel = document.querySelector('.route-through-panel');
+  const buttons = [...document.querySelectorAll('.reader-mode-control button')];
+  if (!routePanel || buttons.length < 2) return;
+  if (routePanel.querySelector('.step-extras')) return;
+  const key = window.location.hash;
+  if (document.body.dataset.stepDetailsEnabledKey === key) return;
+  document.body.dataset.stepDetailsEnabledKey = key;
+  buttons[1].click();
+}
+
 function removeReaderNavigation() {
   document.querySelector('.deliverable-page-index')?.remove();
   document.querySelector('.deliverable-layout')?.classList.add('deliverable-layout-single-column');
@@ -74,6 +85,52 @@ function initialiseAccordionDisclosure() {
   accordionsInitialised = key;
 }
 
+function stepDetailLabel(card) {
+  const sections = [...card.querySelectorAll('.step-extras .mini-block > h4, .step-extras .resources-panel > h3')]
+    .map((heading) => heading.textContent?.trim())
+    .filter(Boolean);
+  return sections.length ? `Step detail: ${sections.join(', ')}` : 'Step detail';
+}
+
+function refineStepDetailDisclosure() {
+  document.querySelectorAll('.route-through-panel .step-card').forEach((card) => {
+    const extras = card.querySelector('.step-extras');
+    if (!extras) return;
+
+    if (!extras.id) {
+      extras.id = `${card.getAttribute('data-step-id') || card.querySelector('h3')?.textContent?.trim()?.toLowerCase().replace(/[^a-z0-9]+/g, '-') || 'step'}-details`;
+    }
+
+    let button = card.querySelector(':scope > .step-detail-toggle');
+    if (!button) {
+      button = document.createElement('button');
+      button.type = 'button';
+      button.className = 'step-detail-toggle';
+      button.setAttribute('aria-controls', extras.id);
+      extras.insertAdjacentElement('beforebegin', button);
+      button.addEventListener('click', () => {
+        const open = !card.classList.contains('step-card-detail-open');
+        card.classList.toggle('step-card-detail-open', open);
+        button.setAttribute('aria-expanded', String(open));
+        setTextIfChanged(button, open ? 'Hide step detail' : 'Show step detail');
+      });
+    }
+
+    const open = card.classList.contains('step-card-detail-open');
+    button.setAttribute('aria-expanded', String(open));
+    button.setAttribute('title', stepDetailLabel(card));
+    setTextIfChanged(button, open ? 'Hide step detail' : 'Show step detail');
+  });
+}
+
+function refinePlanningDetailCopy() {
+  const copy = document.querySelector('.detailed-plan-control p');
+  setTextIfChanged(
+    copy,
+    'Use the concertina sections below for cross-cutting planning detail. Step-specific outputs, decisions, resources, risks, issues and assumptions are available inside the Delivery timeline cards above.'
+  );
+}
+
 function refineDeliveryTimeline() {
   const panel = document.querySelector('.route-through-panel');
   if (!panel) return;
@@ -81,7 +138,7 @@ function refineDeliveryTimeline() {
   setTextIfChanged(panel.querySelector('h2'), 'Delivery timeline');
   setTextIfChanged(
     panel.querySelector(':scope > .subtle'),
-    'The main delivery route for this deliverable. Scroll across to see the full sequence; expand Project management detail below for step-level outputs, resources, risks and decisions.'
+    'The main delivery route for this deliverable. Scroll across to see the sequence; use Show step detail on a card to reveal its outputs, decisions, resources, risks, issues and assumptions.'
   );
 
   panel.querySelectorAll('.step-card').forEach((card) => {
@@ -100,10 +157,12 @@ function refineDeliveryTimeline() {
     const html = [
       period ? `<span>${period}</span>` : '',
       hasDependency ? '<span>Internal sequencing</span>' : '<span>No internal prerequisite</span>',
-      hasDetail ? '<span>Step detail shown</span>' : '<span>PM detail hidden</span>'
+      hasDetail ? '<span>Step detail available</span>' : '<span>No step detail yet</span>'
     ].filter(Boolean).join('');
     setHtmlIfChanged(signals, html);
   });
+
+  refineStepDetailDisclosure();
 }
 
 function linkPointsToCurrentDeliverable(link) {
@@ -159,9 +218,11 @@ function refreshDeliverablePage() {
   refreshScheduled = false;
   syncPlanningStagePosition();
   removeOverviewPanel();
+  enableStepDetailsMode();
   removeReaderNavigation();
   syncWhyThisMattersPosition();
   refineDeliveryTimeline();
+  refinePlanningDetailCopy();
   refineCrossDeliverableDependencies();
   initialiseAccordionDisclosure();
 }
@@ -177,6 +238,7 @@ deliverablePageObserver.observe(document.documentElement, { childList: true, sub
 
 window.addEventListener('hashchange', () => {
   accordionsInitialised = false;
+  delete document.body.dataset.stepDetailsEnabledKey;
   document.querySelector('.planning-notice-clone')?.remove();
   scheduleRefreshDeliverablePage();
 });
