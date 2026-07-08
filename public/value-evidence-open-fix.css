@@ -1,0 +1,11 @@
+.value-evidence-promoted > .detail-accordion-body {
+  display: block !important;
+}
+
+.value-evidence-promoted > .detail-accordion-header {
+  cursor: default;
+}
+
+.value-evidence-promoted > .detail-accordion-header strong {
+  display: none !important;
+}
