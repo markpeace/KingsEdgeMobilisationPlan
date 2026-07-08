@@ -76,6 +76,16 @@ function syncWhyThisMattersPosition() {
   mainFlow.insertBefore(casePanel, routePanel);
 }
 
+function moveValueEvidencePanel() {
+  const mainFlow = document.querySelector('.deliverable-main-flow');
+  const casePanel = mainFlow?.querySelector('.case-panel');
+  const valuePanel = document.getElementById('value-evidence');
+  const routePanel = mainFlow?.querySelector('.route-through-panel');
+  if (!mainFlow || !casePanel || !valuePanel || !routePanel) return;
+  if (casePanel.nextElementSibling === valuePanel && valuePanel.nextElementSibling === routePanel) return;
+  mainFlow.insertBefore(valuePanel, routePanel);
+}
+
 function initialiseAccordionDisclosure() {
   const key = window.location.hash;
   if (accordionsInitialised === key) return;
@@ -221,6 +231,7 @@ function refreshDeliverablePage() {
   enableStepDetailsMode();
   removeReaderNavigation();
   syncWhyThisMattersPosition();
+  moveValueEvidencePanel();
   refineDeliveryTimeline();
   refinePlanningDetailCopy();
   refineCrossDeliverableDependencies();
