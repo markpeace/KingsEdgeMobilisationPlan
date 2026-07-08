@@ -60,7 +60,9 @@ function syncPlanningStagePosition() {
     clone = source.cloneNode(true);
     clone.classList.add('planning-notice-clone');
     clone.classList.remove('planning-notice-inline-hidden');
-    hero.insertAdjacentElement('afterend', clone);
+    hero.insertAdjacentElement('beforebegin', clone);
+  } else if (clone.nextElementSibling !== hero) {
+    hero.insertAdjacentElement('beforebegin', clone);
   }
 
   const sourceHtml = source.innerHTML;
@@ -97,10 +99,59 @@ function refineDeliveryTimeline() {
 
     const html = [
       period ? `<span>${period}</span>` : '',
-      hasDependency ? '<span>Dependency captured</span>' : '<span>No incoming dependency</span>',
+      hasDependency ? '<span>Internal sequencing</span>' : '<span>No internal prerequisite</span>',
       hasDetail ? '<span>Step detail shown</span>' : '<span>PM detail hidden</span>'
     ].filter(Boolean).join('');
     setHtmlIfChanged(signals, html);
+  });
+}
+
+function linkPointsToCurrentDeliverable(link) {
+  if (!link?.href || !window.location.hash) return false;
+  try {
+    return new URL(link.href, window.location.href).hash === window.location.hash;
+  } catch {
+    return false;
+  }
+}
+
+function hideInternalDependencyLinks(container) {
+  container.querySelectorAll('.link-list .chip').forEach((chip) => {
+    const isInternal = chip.matches('a') && linkPointsToCurrentDeliverable(chip);
+    chip.classList.toggle('internal-dependency-hidden', isInternal);
+  });
+
+  container.querySelectorAll('.compact-list li').forEach((item) => {
+    const link = item.querySelector('a.chip');
+    item.classList.toggle('internal-dependency-hidden', linkPointsToCurrentDeliverable(link));
+  });
+}
+
+function visibleDependencyLinks(container) {
+  return [...container.querySelectorAll('.chip')].filter((chip) => !chip.classList.contains('internal-dependency-hidden') && !chip.closest('.internal-dependency-hidden'));
+}
+
+function ensureCrossDependencyMessage(container) {
+  let message = container.querySelector(':scope > .cross-dependency-empty');
+  if (!message) {
+    message = document.createElement('p');
+    message.className = 'cross-dependency-empty';
+    const heading = container.querySelector('h2, h3');
+    (heading || container).insertAdjacentElement(heading ? 'afterend' : 'afterbegin', message);
+  }
+  setTextIfChanged(message, 'No cross-deliverable dependencies captured yet. Internal step sequencing is shown in Delivery timeline.');
+  message.hidden = visibleDependencyLinks(container).length > 0;
+}
+
+function refineCrossDeliverableDependencies() {
+  const dependencyContainers = [
+    ...document.querySelectorAll('.decision-dependency-panel .decision-dependency-grid > div:nth-child(2)'),
+    ...document.querySelectorAll('.dependency-detail-grid .panel')
+  ];
+
+  dependencyContainers.forEach((container) => {
+    hideInternalDependencyLinks(container);
+    ensureCrossDependencyMessage(container);
   });
 }
 
@@ -108,6 +159,7 @@ function refreshReaderModes() {
   refreshScheduled = false;
   syncPlanningStagePosition();
   refineDeliveryTimeline();
+  refineCrossDeliverableDependencies();
 
   const buttons = [...document.querySelectorAll('.reader-mode-control button')];
   const accordions = document.querySelectorAll('.detail-accordion[id]');
@@ -127,6 +179,7 @@ function refreshReaderModes() {
           document.body.dataset.readerModeAppliedKey = `${window.location.hash}:${latestIndex}`;
           applyReaderMode(latestIndex);
           refineDeliveryTimeline();
+          refineCrossDeliverableDependencies();
         }, 100);
       });
     }
@@ -139,6 +192,7 @@ function refreshReaderModes() {
     window.setTimeout(() => {
       applyReaderMode(activeIndex);
       refineDeliveryTimeline();
+      refineCrossDeliverableDependencies();
     }, 60);
   }
 }
