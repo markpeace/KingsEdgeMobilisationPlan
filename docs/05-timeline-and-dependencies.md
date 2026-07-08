@@ -15,16 +15,61 @@ The timeline should answer three questions:
 2. What comes later?
 3. Which delivery steps need other delivery steps to land first?
 
-## Time anchors
+## Time buckets
 
-The first version uses four time anchors:
+The current timeline uses visible six-month buckets, starting at July to December 2026 and running to July to December 2030.
 
-| Period id | Label | Short label |
+Each visible bucket is split internally into three equal sequencing thirds. The UI shows the bucket label across the three internal timeline columns; it does not show `a`, `b` or `c` to the reader.
+
+| Bucket id | Label | Short label |
 |---|---|---|
-| `now-xmas-2026` | Now to Christmas 2026 | Now-Xmas 26 |
-| `jan-summer-2027` | January to summer 2027 | Jan-summer 27 |
-| `ay-2027-28-to-2028-29` | 2027/28 to 2028/29 | 2027/28-2028/29 |
-| `ay-2029-30` | 2029/30 | 2029/30 |
+| `jul-dec-2026` | July to December 2026 | Jul-Dec 26 |
+| `jan-jun-2027` | January to June 2027 | Jan-Jun 27 |
+| `jul-dec-2027` | July to December 2027 | Jul-Dec 27 |
+| `jan-jun-2028` | January to June 2028 | Jan-Jun 28 |
+| `jul-dec-2028` | July to December 2028 | Jul-Dec 28 |
+| `jan-jun-2029` | January to June 2029 | Jan-Jun 29 |
+| `jul-dec-2029` | July to December 2029 | Jul-Dec 29 |
+| `jan-jun-2030` | January to June 2030 | Jan-Jun 30 |
+| `jul-dec-2030` | July to December 2030 | Jul-Dec 30 |
+
+## Step period schema
+
+A delivery step can use a whole bucket:
+
+```json
+{ "period": "jul-dec-2026" }
+```
+
+It can also use one or more thirds inside a bucket:
+
+```json
+{ "period": "jul-dec-2026:a" }
+{ "period": "jul-dec-2026:ab" }
+{ "period": "jul-dec-2026:abc" }
+```
+
+Allowed third selectors are:
+
+| Selector | Meaning |
+|---|---|
+| `a` | first third of the bucket |
+| `b` | middle third of the bucket |
+| `c` | final third of the bucket |
+| `ab` | first two thirds of the bucket |
+| `bc` | final two thirds of the bucket |
+| `abc` | the whole bucket |
+
+For work that spans more than one bucket, use an object with explicit start and end points:
+
+```json
+{
+  "period": {
+    "start": "jan-jun-2027:b",
+    "end": "jul-dec-2027:ab"
+  }
+}
+```
 
 ## Related projects
 
@@ -41,8 +86,9 @@ These related projects are also rows in the Gantt, so their steps can be linked 
 The Gantt should render:
 
 - deliverables and related projects as rows
-- time anchors as columns
-- delivery steps as blocks within the relevant period
+- six-month buckets as visible columns
+- hidden thirds inside each bucket for sequencing
+- delivery steps as blocks within the relevant period span
 - step-level dependency markers
 - a dependency lens that shows what the selected step depends on and what it enables
 
@@ -67,7 +113,7 @@ Example:
 
 ## Recommended behaviour
 
-The first implementation should keep the Gantt readable:
+The implementation should keep the Gantt readable:
 
 - click a step to select it
 - highlight prerequisite steps
