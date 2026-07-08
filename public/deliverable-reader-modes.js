@@ -1,5 +1,5 @@
 const readerModeLabels = [
-  ['Headline view', 'Delivery logic, delivery timeline, decisions and key dependencies.'],
+  ['Headline view', 'Why this matters, delivery timeline, decisions and key dependencies.'],
   ['Institutional view', 'Headline view plus governance, value, evidence and handoffs.'],
   ['Project management view', 'Institutional view plus resources, components, risks and delivery detail.']
 ];
@@ -18,15 +18,6 @@ function setTextIfChanged(node, text) {
 
 function setHtmlIfChanged(node, html) {
   if (node && node.innerHTML !== html) node.innerHTML = html;
-}
-
-function escapeHtml(value) {
-  return String(value || '')
-    .replaceAll('&', '&amp;')
-    .replaceAll('<', '&lt;')
-    .replaceAll('>', '&gt;')
-    .replaceAll('"', '&quot;')
-    .replaceAll("'", '&#039;');
 }
 
 function setAccordionState(sectionId, shouldOpen) {
@@ -80,106 +71,17 @@ function syncPlanningStagePosition() {
   if (clone.className !== cloneClassName) clone.className = cloneClassName;
 }
 
+function removeOverviewPanel() {
+  document.querySelector('.at-a-glance-panel')?.remove();
+  document.querySelector('.deliverable-page-index a[href="#overview"]')?.remove();
+}
+
 function syncWhyThisMattersPosition() {
   const mainFlow = document.querySelector('.deliverable-main-flow');
   const casePanel = mainFlow?.querySelector('.case-panel');
-  const firstAnchor = mainFlow?.querySelector('.planning-notice + .at-a-glance-panel, .at-a-glance-panel');
-  if (!mainFlow || !casePanel || !firstAnchor || casePanel.nextElementSibling === firstAnchor) return;
-  mainFlow.insertBefore(casePanel, firstAnchor);
-}
-
-function caseCardText(title) {
-  const cards = [...document.querySelectorAll('.case-panel .schema-card')];
-  const card = cards.find((item) => item.querySelector('h3')?.textContent?.trim() === title);
-  return card?.querySelector('p')?.textContent?.trim() || '';
-}
-
-function heroSummaryText() {
-  return document.querySelector('.detail-hero:not(.project-detail-hero) > p')?.textContent?.trim() || '';
-}
-
-function listItemsHtml(items, ordered = false) {
-  if (!items.length) return '';
-  const tag = ordered ? 'ol' : 'ul';
-  return `<${tag}>${items.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</${tag}>`;
-}
-
-function refineDeliveryLogicPanel() {
-  const panel = document.querySelector('.at-a-glance-panel');
-  if (!panel) return;
-
-  panel.classList.add('delivery-logic-panel');
-  setTextIfChanged(panel.querySelector('h2'), 'Delivery logic');
-  const indexLink = document.querySelector('.deliverable-page-index a[href="#overview"]');
-  setTextIfChanged(indexLink, 'Delivery logic');
-
-  const changeText = caseCardText('Intended change') || caseCardText('Opportunity') || heroSummaryText();
-  const stepCards = [...document.querySelectorAll('.route-through-panel .step-card')];
-  const firstStep = stepCards[0];
-  const lastStep = stepCards[stepCards.length - 1];
-  const firstPeriod = firstStep?.querySelector('.period-pill')?.textContent?.trim();
-  const lastPeriod = lastStep?.querySelector('.period-pill')?.textContent?.trim();
-  const firstTitle = firstStep?.querySelector('h3')?.textContent?.trim();
-  const lastTitle = lastStep?.querySelector('h3')?.textContent?.trim();
-  const routeText = stepCards.length
-    ? `${stepCards.length} sequenced delivery steps${firstPeriod && lastPeriod ? `, from ${firstPeriod} to ${lastPeriod}` : ''}.`
-    : 'No delivery steps captured yet.';
-  const routeDetail = firstTitle && lastTitle && firstTitle !== lastTitle ? `${firstTitle} → ${lastTitle}` : '';
-  const criticalPath = stepCards.slice(0, 5).map((card) => card.querySelector('h3')?.textContent?.trim()).filter(Boolean);
-  const dependencyLinks = [...document.querySelectorAll('.decision-dependency-panel .decision-dependency-grid > div:nth-child(2) .chip')]
-    .filter((chip) => !chip.classList.contains('internal-dependency-hidden') && !chip.closest('.internal-dependency-hidden'))
-    .map((chip) => chip.textContent?.trim())
-    .filter(Boolean);
-  const decisionCount = document.querySelectorAll('.decision-dependency-panel .decision-card-stack article').length;
-
-  const handoffText = dependencyLinks.length
-    ? 'Cross-deliverable links captured.'
-    : 'No cross-deliverable handoffs captured yet.';
-  const decisionText = decisionCount
-    ? `${decisionCount} deliverable-level decision${decisionCount === 1 ? '' : 's'} captured.`
-    : 'No deliverable-level decisions captured yet.';
-
-  const html = `
-    <p class="subtle delivery-logic-intro">A quick read of the change this deliverable is trying to make, how the work moves, and where it connects.</p>
-    <div class="delivery-logic-grid">
-      <article class="delivery-logic-card delivery-logic-card-wide">
-        <span>Change to unlock</span>
-        <p>${escapeHtml(changeText || 'No intended change captured yet.')}</p>
-      </article>
-      <article class="delivery-logic-card">
-        <span>How it moves</span>
-        <strong>${escapeHtml(routeText)}</strong>
-        ${routeDetail ? `<p>${escapeHtml(routeDetail)}</p>` : ''}
-      </article>
-      <article class="delivery-logic-card">
-        <span>Critical path</span>
-        ${criticalPath.length ? listItemsHtml(criticalPath, true) : '<p>No delivery path captured yet.</p>'}
-      </article>
-      <article class="delivery-logic-card">
-        <span>Decisions and handoffs</span>
-        <strong>${escapeHtml(decisionText)}</strong>
-        <p>${escapeHtml(handoffText)}</p>
-        ${dependencyLinks.length ? listItemsHtml(dependencyLinks.slice(0, 4), false) : ''}
-      </article>
-    </div>
-  `;
-
-  const grid = panel.querySelector('.at-a-glance-grid');
-  if (grid) {
-    const container = document.createElement('div');
-    container.innerHTML = html;
-    grid.replaceWith(...container.childNodes);
-  } else {
-    const currentIntro = panel.querySelector('.delivery-logic-intro');
-    const currentGrid = panel.querySelector('.delivery-logic-grid');
-    const currentHtml = `${currentIntro?.outerHTML || ''}${currentGrid?.outerHTML || ''}`;
-    if (currentHtml !== html.replace(/\n\s+/g, '')) {
-      [...panel.children].forEach((child) => {
-        if (child.tagName !== 'H2') child.remove();
-      });
-      panel.insertAdjacentHTML('beforeend', html);
-    }
-  }
+  const routePanel = mainFlow?.querySelector('.route-through-panel');
+  if (!mainFlow || !casePanel || !routePanel || casePanel.nextElementSibling === routePanel) return;
+  mainFlow.insertBefore(casePanel, routePanel);
 }
 
 function refineDeliveryTimeline() {
@@ -269,10 +171,10 @@ function refineCrossDeliverableDependencies() {
 function refreshReaderModes() {
   refreshScheduled = false;
   syncPlanningStagePosition();
+  removeOverviewPanel();
   syncWhyThisMattersPosition();
   refineDeliveryTimeline();
   refineCrossDeliverableDependencies();
-  refineDeliveryLogicPanel();
 
   const buttons = [...document.querySelectorAll('.reader-mode-control button')];
   const accordions = document.querySelectorAll('.detail-accordion[id]');
@@ -291,10 +193,10 @@ function refreshReaderModes() {
           const latestIndex = activeReaderModeIndex(latestButtons);
           document.body.dataset.readerModeAppliedKey = `${window.location.hash}:${latestIndex}`;
           applyReaderMode(latestIndex);
+          removeOverviewPanel();
           syncWhyThisMattersPosition();
           refineDeliveryTimeline();
           refineCrossDeliverableDependencies();
-          refineDeliveryLogicPanel();
         }, 100);
       });
     }
@@ -306,10 +208,10 @@ function refreshReaderModes() {
     document.body.dataset.readerModeAppliedKey = applyKey;
     window.setTimeout(() => {
       applyReaderMode(activeIndex);
+      removeOverviewPanel();
       syncWhyThisMattersPosition();
       refineDeliveryTimeline();
       refineCrossDeliverableDependencies();
-      refineDeliveryLogicPanel();
     }, 60);
   }
 }
