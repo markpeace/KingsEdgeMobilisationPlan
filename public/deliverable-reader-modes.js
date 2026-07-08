@@ -246,6 +246,5 @@ window.addEventListener('hashchange', () => {
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', scheduleRefreshDeliverablePage);
 } else {
-  scheduleRefreshDeliverPage?.();
   scheduleRefreshDeliverablePage();
 }
