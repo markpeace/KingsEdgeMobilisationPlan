@@ -6,25 +6,89 @@ import graduateFutures211Overview from './data/deliverable-overrides/2.1.1-overv
 import graduateFutures211OutputsMeasures from './data/deliverable-overrides/2.1.1-outputs-measures-patch.json';
 import graduateFutures211Steps from './data/deliverable-overrides/2.1.1-steps-patch.json';
 
-export const timelinePeriods = [
-  { id: 'now-sep-2026', label: 'Now to September 2026', shortLabel: 'Now-Sep 26', order: 1 },
-  { id: 'oct-2026-mar-2027', label: 'October 2026 to March 2027', shortLabel: 'Oct 26-Mar 27', order: 2 },
-  { id: 'apr-sep-2027', label: 'April to September 2027', shortLabel: 'Apr-Sep 27', order: 3 },
-  { id: 'oct-2027-mar-2028', label: 'October 2027 to March 2028', shortLabel: 'Oct 27-Mar 28', order: 4 },
-  { id: 'apr-sep-2028', label: 'April to September 2028', shortLabel: 'Apr-Sep 28', order: 5 },
-  { id: 'oct-2028-mar-2029', label: 'October 2028 to March 2029', shortLabel: 'Oct 28-Mar 29', order: 6 },
-  { id: 'apr-sep-2029', label: 'April to September 2029', shortLabel: 'Apr-Sep 29', order: 7 },
-  { id: 'oct-2029-mar-2030', label: 'October 2029 to March 2030', shortLabel: 'Oct 29-Mar 30', order: 8 },
-  { id: 'apr-sep-2030', label: 'April to September 2030', shortLabel: 'Apr-Sep 30', order: 9 }
+const thirdSegments = [
+  { id: 'a', label: 'a', longLabel: 'first third' },
+  { id: 'b', label: 'b', longLabel: 'middle third' },
+  { id: 'c', label: 'c', longLabel: 'final third' }
 ];
 
+const halfYearBuckets = [2025, 2026, 2027, 2028, 2029, 2030].flatMap((year, index) => [
+  { id: `jan-jun-${year}`, label: `January to June ${year}`, shortLabel: `Jan-Jun ${String(year).slice(2)}`, order: index * 2 + 1 },
+  { id: `jul-dec-${year}`, label: `July to December ${year}`, shortLabel: `Jul-Dec ${String(year).slice(2)}`, order: index * 2 + 2 }
+]);
+
+export const timelineBuckets = halfYearBuckets;
+
+export const timelinePeriods = halfYearBuckets.flatMap((bucket) => thirdSegments.map((third, thirdIndex) => ({
+  id: `${bucket.id}-${third.id}`,
+  bucketId: bucket.id,
+  bucketLabel: bucket.label,
+  label: `${bucket.label}, ${third.longLabel}`,
+  shortLabel: thirdIndex === 0 ? bucket.shortLabel : third.label,
+  order: ((bucket.order - 1) * thirdSegments.length) + thirdIndex + 1,
+  bucketOrder: bucket.order,
+  third: third.id,
+  thirdOrder: thirdIndex + 1
+})));
+
 const timelinePeriodIndex = new Map(timelinePeriods.map((period, index) => [period.id, index + 1]));
+const timelineBucketMap = new Map(halfYearBuckets.map((bucket) => [bucket.id, bucket]));
+
 const broadPeriodSpans = {
-  'now-xmas-2026': { start: 'now-sep-2026', end: 'now-sep-2026', label: 'Now-Sep 2026' },
-  'jan-summer-2027': { start: 'oct-2026-mar-2027', end: 'apr-sep-2027', label: 'Oct 2026-Sep 2027' },
-  'ay-2027-28-to-2028-29': { start: 'oct-2027-mar-2028', end: 'apr-sep-2029', label: 'Oct 2027-Sep 2029' },
-  'ay-2029-30': { start: 'oct-2029-mar-2030', end: 'apr-sep-2030', label: 'Oct 2029-Sep 2030' }
+  'now-xmas-2026': { start: 'jan-jun-2026-a', end: 'jul-dec-2026-c', label: 'January to December 2026' },
+  'jan-summer-2027': { start: 'jan-jun-2027-a', end: 'jul-dec-2027-b', label: 'January to September 2027' },
+  'ay-2027-28-to-2028-29': { start: 'jul-dec-2027-b', end: 'jul-dec-2029-b', label: 'September 2027 to September 2029' },
+  'ay-2029-30': { start: 'jul-dec-2029-b', end: 'jul-dec-2030-b', label: 'September 2029 to September 2030' },
+  'now-sep-2026': { start: 'jan-jun-2026-a', end: 'jul-dec-2026-b', label: 'January to September 2026' },
+  'oct-2026-mar-2027': { start: 'jul-dec-2026-b', end: 'jan-jun-2027-b', label: 'October 2026 to March 2027' },
+  'apr-sep-2027': { start: 'jan-jun-2027-b', end: 'jul-dec-2027-b', label: 'April to September 2027' },
+  'oct-2027-mar-2028': { start: 'jul-dec-2027-b', end: 'jan-jun-2028-b', label: 'October 2027 to March 2028' },
+  'apr-sep-2028': { start: 'jan-jun-2028-b', end: 'jul-dec-2028-b', label: 'April to September 2028' },
+  'oct-2028-mar-2029': { start: 'jul-dec-2028-b', end: 'jan-jun-2029-b', label: 'October 2028 to March 2029' },
+  'apr-sep-2029': { start: 'jan-jun-2029-b', end: 'jul-dec-2029-b', label: 'April to September 2029' },
+  'oct-2029-mar-2030': { start: 'jul-dec-2029-b', end: 'jan-jun-2030-b', label: 'October 2029 to March 2030' },
+  'apr-sep-2030': { start: 'jan-jun-2030-b', end: 'jul-dec-2030-b', label: 'April to September 2030' }
 };
+
+const segmentSpans = {
+  a: ['a', 'a'],
+  b: ['b', 'b'],
+  c: ['c', 'c'],
+  ab: ['a', 'b'],
+  bc: ['b', 'c'],
+  abc: ['a', 'c']
+};
+
+function parsePeriod(period) {
+  if (period && typeof period === 'object') {
+    return {
+      bucket: period.bucket || period.period || period.id,
+      segment: period.segment || period.third || period.part || 'abc'
+    };
+  }
+  const [bucket, segment = 'abc'] = String(period || '').split(':');
+  return { bucket, segment };
+}
+
+function resolveTimelineSpan(period) {
+  if (broadPeriodSpans[period]) return broadPeriodSpans[period];
+  const { bucket, segment } = parsePeriod(period);
+  if (timelinePeriodIndex.has(bucket)) {
+    const periodEntry = timelinePeriods.find((entry) => entry.id === bucket);
+    return { start: bucket, end: bucket, label: periodEntry?.label || bucket };
+  }
+  if (!timelineBucketMap.has(bucket)) return { start: bucket, end: bucket, label: bucket };
+  const [startThird, endThird] = segmentSpans[String(segment || 'abc').toLowerCase()] || segmentSpans.abc;
+  const bucketEntry = timelineBucketMap.get(bucket);
+  const segmentLabel = String(segment || 'abc').toLowerCase() === 'abc' ? '' : ` · ${String(segment).toLowerCase()}`;
+  return {
+    start: `${bucket}-${startThird}`,
+    end: `${bucket}-${endThird}`,
+    label: `${bucketEntry.label}${segmentLabel}`,
+    bucket,
+    segment: String(segment || 'abc').toLowerCase()
+  };
+}
 
 function mergeDeliverableOverride(...overrides) {
   return overrides.reduce((merged, override) => {
@@ -193,7 +257,7 @@ export function buildDependencyIndex(timelineItems) {
 }
 
 export function getStepPeriodSpan(periodId) {
-  const span = broadPeriodSpans[periodId] || { start: periodId, end: periodId, label: periodId };
+  const span = resolveTimelineSpan(periodId);
   const startIndex = timelinePeriodIndex.get(span.start) || 1;
   const endIndex = timelinePeriodIndex.get(span.end) || startIndex;
   return { ...span, startIndex, endIndex, span: Math.max(1, endIndex - startIndex + 1) };
@@ -209,7 +273,7 @@ export function resolveLabel(id, idMap) {
 }
 
 export function periodLabel(periodId) {
-  return broadPeriodSpans[periodId]?.label || plan.timelinePeriods.find((period) => period.id === periodId)?.shortLabel || periodId;
+  return resolveTimelineSpan(periodId).label || periodId;
 }
 
 export function unique(items) {
