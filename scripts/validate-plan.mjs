@@ -15,8 +15,20 @@ const statusData = readJson('../src/data/status.json');
 
 const errors = [];
 const warnings = [];
-const timelineBucketIds = new Set(['jul-dec-2026', ...[2027, 2028, 2029, 2030].flatMap((year) => [`jan-jun-${year}`, `jul-dec-${year}`])]);
-const timelineThirdIds = new Set([...timelineBucketIds].flatMap((bucket) => ['a', 'b', 'c'].map((third) => `${bucket}-${third}`)));
+const timelineBucketIdList = ['jul-dec-2026', ...[2027, 2028, 2029, 2030].flatMap((year) => [`jan-jun-${year}`, `jul-dec-${year}`])];
+const timelineBucketIds = new Set(timelineBucketIdList);
+const timelineThirdIdList = timelineBucketIdList.flatMap((bucket) => ['a', 'b', 'c'].map((third) => `${bucket}-${third}`));
+const timelineThirdIds = new Set(timelineThirdIdList);
+const timelinePointOrder = new Map(timelineThirdIdList.map((id, index) => [id, index + 1]));
+const validThirdSegments = new Set(['a', 'b', 'c', 'ab', 'bc', 'abc']);
+const segmentSpans = {
+  a: ['a', 'a'],
+  b: ['b', 'b'],
+  c: ['c', 'c'],
+  ab: ['a', 'b'],
+  bc: ['b', 'c'],
+  abc: ['a', 'c']
+};
 const legacyTimelineIds = new Set([
   'now-xmas-2026',
   'jan-summer-2027',
@@ -32,36 +44,64 @@ const legacyTimelineIds = new Set([
   'oct-2029-mar-2030',
   'apr-sep-2030'
 ]);
-const requiredTimelinePeriods = new Set([
-  ...plan.timelinePeriods.map((period) => period.id),
-  ...timelineBucketIds,
-  ...timelineThirdIds,
-  ...legacyTimelineIds
-]);
-const validThirdSegments = new Set(['a', 'b', 'c', 'ab', 'bc', 'abc']);
 const ids = new Set();
 const deliverableIds = new Set();
 const stepIds = new Set();
 const projectIds = new Set();
 
-function timelinePeriodKey(period) {
-  if (period && typeof period === 'object') return period.bucket || period.period || period.id;
-  return String(period || '').split(':')[0];
+function periodForMessage(period) {
+  return typeof period === 'string' ? period : JSON.stringify(period);
 }
 
-function timelinePeriodSegment(period) {
-  if (period && typeof period === 'object') return period.segment || period.third || period.part || 'abc';
-  return String(period || '').split(':')[1] || 'abc';
-}
-
-function validateTimelinePeriod(period, path) {
-  if (!period) return;
-  const bucket = timelinePeriodKey(period);
-  const segment = timelinePeriodSegment(period).toLowerCase();
-  if (!requiredTimelinePeriods.has(bucket)) errors.push(`${path} uses unknown timeline period: ${period}`);
-  if (String(period).includes(':') || (period && typeof period === 'object')) {
-    if (!validThirdSegments.has(segment)) errors.push(`${path} uses unknown timeline segment: ${segment}`);
+function parseTimelinePoint(point) {
+  if (point && typeof point === 'object') {
+    return {
+      bucket: point.bucket || point.period || point.id,
+      segment: point.segment || point.third || point.part || 'abc'
+    };
   }
+  const text = String(point || '');
+  if (timelineThirdIds.has(text)) {
+    const third = text.slice(-1);
+    return { bucket: text.slice(0, -2), segment: third, internalPoint: text };
+  }
+  const [bucket, segment = 'abc'] = text.split(':');
+  return { bucket, segment };
+}
+
+function resolveTimelinePointIndex(point, edge = 'start') {
+  const parsed = parseTimelinePoint(point);
+  if (parsed.internalPoint) return timelinePointOrder.get(parsed.internalPoint);
+  const segment = String(parsed.segment || 'abc').toLowerCase();
+  const [startThird, endThird] = segmentSpans[segment] || segmentSpans.abc;
+  const third = edge === 'end' ? endThird : startThird;
+  return timelinePointOrder.get(`${parsed.bucket}-${third}`);
+}
+
+function validateTimelinePoint(point, path) {
+  const parsed = parseTimelinePoint(point);
+  const segment = String(parsed.segment || 'abc').toLowerCase();
+  if (!timelineBucketIds.has(parsed.bucket)) errors.push(`${path} uses unknown timeline bucket: ${periodForMessage(point)}`);
+  if (!validThirdSegments.has(segment)) errors.push(`${path} uses unknown timeline segment: ${segment}`);
+}
+
+function validateTimelinePeriod(period, path, { allowLegacy = false } = {}) {
+  if (!period) return;
+  if (typeof period === 'string' && legacyTimelineIds.has(period)) {
+    const message = `${path} uses legacy timeline period: ${period}`;
+    if (allowLegacy) warnings.push(message);
+    else errors.push(message);
+    return;
+  }
+  if (period && typeof period === 'object' && period.start && period.end) {
+    validateTimelinePoint(period.start, `${path}.start`);
+    validateTimelinePoint(period.end, `${path}.end`);
+    const startIndex = resolveTimelinePointIndex(period.start, 'start');
+    const endIndex = resolveTimelinePointIndex(period.end, 'end');
+    if (startIndex && endIndex && endIndex < startIndex) errors.push(`${path} has an end before its start: ${periodForMessage(period)}`);
+    return;
+  }
+  validateTimelinePoint(period, path);
 }
 
 function mergeDeliverableOverride(...overrides) {
@@ -130,7 +170,7 @@ function validateArrayIfPresent(value, path) {
   if (value !== undefined && !Array.isArray(value)) errors.push(`${path} should be an array.`);
 }
 
-function validateResources(resources, path) {
+function validateResources(resources, path, options = {}) {
   if (resources === undefined) return;
   if (!resources || typeof resources !== 'object' || Array.isArray(resources)) {
     errors.push(`${path}.resources should be an object.`);
@@ -147,7 +187,7 @@ function validateResources(resources, path) {
   });
   resources.cashCosts?.forEach((cost, index) => {
     if (cost.amount !== undefined && typeof cost.amount !== 'number') errors.push(`${path}.resources.cashCosts[${index}].amount should be a number.`);
-    validateTimelinePeriod(cost.period, `${path}.resources.cashCosts[${index}]`);
+    validateTimelinePeriod(cost.period, `${path}.resources.cashCosts[${index}]`, options);
   });
 }
 
@@ -161,7 +201,7 @@ function validateSuccessMeasures(successMeasures, path) {
   validateArrayIfPresent(successMeasures.kpis, `${path}.successMeasures.kpis`);
 }
 
-function validateSteps(steps, ownerPath) {
+function validateSteps(steps, ownerPath, options = {}) {
   if (steps === undefined) return;
   if (!Array.isArray(steps)) {
     errors.push(`${ownerPath}.steps should be an array.`);
@@ -172,13 +212,13 @@ function validateSteps(steps, ownerPath) {
     addId(step.id, stepPath);
     stepIds.add(step.id);
     ['title', 'period', 'summary'].forEach((field) => requireField(step, field, stepPath));
-    validateTimelinePeriod(step.period, `${step.id}`);
+    validateTimelinePeriod(step.period, `${step.id}.period`, options);
     validateArrayIfPresent(step.outputs, `${stepPath}.outputs`);
     validateArrayIfPresent(step.decisions, `${stepPath}.decisions`);
     validateArrayIfPresent(step.risks, `${stepPath}.risks`);
     validateArrayIfPresent(step.issues, `${stepPath}.issues`);
     validateArrayIfPresent(step.assumptions, `${stepPath}.assumptions`);
-    validateResources(step.resources, stepPath);
+    validateResources(step.resources, stepPath, options);
   });
 }
 
@@ -194,6 +234,7 @@ allProjects.forEach((project, projectIndex) => {
   if (!Array.isArray(project.deliverables)) errors.push(`${project.id} should contain a deliverables array.`);
   project.deliverables?.forEach((deliverable, deliverableIndex) => {
     const deliverablePath = `${project.id}.deliverables[${deliverableIndex}]`;
+    const allowLegacyPeriods = !deliverable.planningStatus || deliverable.planningStatus === 'pre-draft';
     addId(deliverable.id, deliverablePath);
     deliverableIds.add(deliverable.id);
     ['title', 'lead', 'summary', 'problemSolved', 'whatChanges'].forEach((field) => requireField(deliverable, field, deliverablePath));
@@ -210,8 +251,8 @@ allProjects.forEach((project, projectIndex) => {
     validateArrayIfPresent(deliverable.risks, `${deliverablePath}.risks`);
     validateArrayIfPresent(deliverable.decisions, `${deliverablePath}.decisions`);
     validateSuccessMeasures(deliverable.successMeasures, deliverablePath);
-    validateResources(deliverable.resources, deliverablePath);
-    validateSteps(deliverable.steps, deliverable.id);
+    validateResources(deliverable.resources, deliverablePath, { allowLegacy: allowLegacyPeriods });
+    validateSteps(deliverable.steps, deliverable.id, { allowLegacy: allowLegacyPeriods });
   });
 });
 
