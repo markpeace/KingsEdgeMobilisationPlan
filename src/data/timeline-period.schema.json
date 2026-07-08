@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/markpeace/KingsEdgeMobilisationPlan/src/data/timeline-period.schema.json",
+  "title": "King's Edge timeline period schema",
+  "description": "Authoring schema for delivery step period values. Visible buckets run from Jul-Dec 2026 to Jul-Dec 2030. Each bucket has hidden a/b/c thirds for sequencing.",
+  "$defs": {
+    "bucketId": {
+      "type": "string",
+      "enum": [
+        "jul-dec-2026",
+        "jan-jun-2027",
+        "jul-dec-2027",
+        "jan-jun-2028",
+        "jul-dec-2028",
+        "jan-jun-2029",
+        "jul-dec-2029",
+        "jan-jun-2030",
+        "jul-dec-2030"
+      ]
+    },
+    "segment": {
+      "type": "string",
+      "enum": ["a", "b", "c", "ab", "bc", "abc"]
+    },
+    "periodPoint": {
+      "oneOf": [
+        {
+          "type": "string",
+          "pattern": "^(jul-dec-2026|jan-jun-2027|jul-dec-2027|jan-jun-2028|jul-dec-2028|jan-jun-2029|jul-dec-2029|jan-jun-2030|jul-dec-2030)(:(a|b|c|ab|bc|abc))?$"
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["bucket"],
+          "properties": {
+            "bucket": { "$ref": "#/$defs/bucketId" },
+            "segment": { "$ref": "#/$defs/segment", "default": "abc" }
+          }
+        }
+      ]
+    }
+  },
+  "oneOf": [
+    { "$ref": "#/$defs/periodPoint" },
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["start", "end"],
+      "properties": {
+        "start": { "$ref": "#/$defs/periodPoint" },
+        "end": { "$ref": "#/$defs/periodPoint" }
+      }
+    }
+  ],
+  "examples": [
+    "jul-dec-2026:ab",
+    "jan-jun-2027:abc",
+    { "start": "jan-jun-2027:b", "end": "jul-dec-2027:ab" }
+  ]
+}
