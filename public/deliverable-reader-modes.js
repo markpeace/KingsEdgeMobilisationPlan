@@ -172,8 +172,11 @@ function outputItems(card) {
 
 function renderStepHeader(card, index) {
   const periodPill = card.querySelector(':scope > .period-pill');
+  const title = card.querySelector(':scope > h3');
   const period = periodPill?.textContent?.trim();
+  const titleText = title?.textContent?.trim() || 'Step title TBC';
   periodPill?.classList.add('step-source-hidden');
+  title?.classList.add('step-source-hidden');
 
   let header = card.querySelector(':scope > .step-card-header');
   if (!header) {
@@ -181,7 +184,10 @@ function renderStepHeader(card, index) {
     header.className = 'step-card-header';
     card.insertAdjacentElement('afterbegin', header);
   }
-  setHtmlIfChanged(header, `<span>${escapeHtml(stepLabelFor(index))}</span><strong>${escapeHtml(period || 'Period TBC')}</strong>`);
+  setHtmlIfChanged(header, `
+    <div class="step-card-header-meta"><span>${escapeHtml(stepLabelFor(index))}</span><strong>${escapeHtml(period || 'Period TBC')}</strong></div>
+    <h3 class="step-card-header-title">${escapeHtml(titleText)}</h3>
+  `);
 }
 
 function renderStepStory(card, titleMap, index) {
