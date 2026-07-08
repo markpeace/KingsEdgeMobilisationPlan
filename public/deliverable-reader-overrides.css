@@ -13,6 +13,14 @@
   max-width: none;
 }
 
+.planning-notice-clone {
+  margin: -0.25rem 0 1.15rem;
+}
+
+.planning-notice-inline-hidden {
+  display: none !important;
+}
+
 .route-through-panel > .steps-list,
 main .route-through-panel > .steps-list,
 .detailed-plan-reveal .route-through-panel > .steps-list {
@@ -32,6 +40,38 @@ main .route-through-panel > .steps-list .step-card,
   flex: 0 0 calc((100% - 2.55rem) / 4);
   min-width: 0;
   scroll-snap-align: start;
+}
+
+.step-card-signals {
+  order: 4;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-top: 0.85rem;
+}
+
+.step-card-signals span {
+  display: inline-flex;
+  align-items: center;
+  border: 2px solid var(--ink);
+  padding: 0.2rem 0.34rem;
+  background: #ffffff;
+  color: var(--ink);
+  font-size: 0.68rem;
+  font-weight: 850;
+  line-height: 1.05;
+  letter-spacing: 0.035em;
+  text-transform: uppercase;
+}
+
+.step-card-signals span:nth-child(2) {
+  border-color: var(--accent);
+  color: var(--accent-dark);
+}
+
+.step-card-signals span:nth-child(3) {
+  border-color: var(--border);
+  color: var(--muted);
 }
 
 .decision-dependency-panel .compact-list,
