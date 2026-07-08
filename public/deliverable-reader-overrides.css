@@ -114,17 +114,17 @@ main .route-through-panel > .steps-list .step-card,
 .timeline-refresh .timeline-grid,
 .timeline-refresh .timeline-header,
 .timeline-refresh .timeline-row {
-  min-width: 2160px !important;
+  min-width: 1900px !important;
 }
 
 .timeline-refresh .timeline-header.timeline-grid,
 .timeline-refresh .timeline-row.timeline-grid {
-  grid-template-columns: 280px repeat(36, minmax(42px, 1fr)) !important;
+  grid-template-columns: 280px repeat(30, minmax(42px, 1fr)) !important;
 }
 
 .timeline-refresh .timeline-lane {
-  grid-template-columns: repeat(36, minmax(42px, 1fr)) !important;
-  background-size: calc(100% / 12) 100% !important;
+  grid-template-columns: repeat(30, minmax(42px, 1fr)) !important;
+  background-size: calc(100% / 10) 100% !important;
 }
 
 .timeline-refresh .timeline-header > div:not(:first-child) {
