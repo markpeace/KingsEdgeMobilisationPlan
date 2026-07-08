@@ -109,7 +109,7 @@ Example:
       "type": "brief",
       "description": "Sets out the student journey, data requirements and touchpoints.",
       "owner": "TBC",
-      "due": "jan-summer-2027",
+      "due": "jan-jun-2027:bc",
       "status": "not-started"
     }
   ],
@@ -144,13 +144,33 @@ The step can also include optional detail:
 - `decisions`
 - `risks`
 
-Example:
+The current timeline period schema uses visible six-month buckets from `jul-dec-2026` to `jul-dec-2030`. Each bucket has hidden thirds for sequencing. Use `a`, `b`, `c`, `ab`, `bc` or `abc` after a colon when the step only uses part of a bucket.
+
+Examples:
+
+```json
+{ "period": "jul-dec-2026:ab" }
+{ "period": "jan-jun-2027:abc" }
+```
+
+For a step that spans more than one bucket, use explicit start and end points:
+
+```json
+{
+  "period": {
+    "start": "jan-jun-2027:b",
+    "end": "jul-dec-2027:ab"
+  }
+}
+```
+
+Full step example:
 
 ```json
 {
   "id": "2.2.1-step-2",
   "title": "Design Canvas tools and prompts",
-  "period": "jan-summer-2027",
+  "period": "jan-jun-2027:bc",
   "summary": "Specify AI functionality, reflection prompts, planning tools, skills links and student outputs.",
   "dependsOn": ["2.2.1-step-1", "2.1.3-step-1"],
   "outputs": [
@@ -175,7 +195,7 @@ Example:
         "category": "research",
         "amount": 15000,
         "currency": "GBP",
-        "period": "jan-summer-2027",
+        "period": "jan-jun-2027:bc",
         "recurrence": "one-off",
         "confidence": "estimate",
         "notes": "Workshops, incentives and synthesis."
@@ -195,7 +215,7 @@ Example:
     {
       "title": "Confirm build route",
       "owner": "TBC",
-      "neededBy": "jan-summer-2027",
+      "neededBy": "jan-jun-2027:bc",
       "notes": "Needed before detailed tool design is finalised."
     }
   ],
@@ -217,82 +237,3 @@ Step-level dependencies sit in:
 ```text
 src/data/step-dependencies.json
 ```
-
-Use this file to show which specific steps need other specific steps to land first.
-
-Example:
-
-```json
-{
-  "2.3.1-step-3": ["2.2.1-step-2", "single-app-step-2"]
-}
-```
-
-## Editing status and confidence
-
-Status and confidence sit in:
-
-```text
-src/data/status.json
-```
-
-Each item can include:
-
-- `status`
-- `confidence`
-- `decisionNeeded`
-- `note`
-
-Supported statuses:
-
-- `not-started`
-- `scoping`
-- `active`
-- `blocked`
-- `complete`
-
-Supported confidence levels:
-
-- `settled`
-- `needs-validation`
-- `placeholder`
-
-## Current timeline period ids
-
-- `now-xmas-2026`
-- `jan-summer-2027`
-- `ay-2027-28-to-2028-29`
-- `ay-2029-30`
-
-## JSON validation
-
-Before committing changes, check that the JSON remains valid and that references resolve.
-
-Run:
-
-```bash
-npm run validate:data
-```
-
-The validation script checks:
-
-- duplicate ids
-- required project fields
-- required deliverable fields
-- required step fields
-- optional success measure shape
-- optional resource shape
-- delivery context values
-- timeline period ids
-- feeds into references
-- related deliverable references
-- step-level dependency references
-- status entries
-
-The production build runs validation automatically:
-
-```bash
-npm run build
-```
-
-If validation fails, the build will stop before deployment.
