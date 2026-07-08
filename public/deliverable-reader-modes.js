@@ -170,7 +170,22 @@ function outputItems(card) {
     .slice(0, 3);
 }
 
-function renderStepStory(card, titleMap) {
+function renderStepHeader(card, index) {
+  const periodPill = card.querySelector(':scope > .period-pill');
+  const period = periodPill?.textContent?.trim();
+  periodPill?.classList.add('step-source-hidden');
+
+  let header = card.querySelector(':scope > .step-card-header');
+  if (!header) {
+    header = document.createElement('div');
+    header.className = 'step-card-header';
+    card.insertAdjacentElement('afterbegin', header);
+  }
+  setHtmlIfChanged(header, `<span>${escapeHtml(stepLabelFor(index))}</span><strong>${escapeHtml(period || 'Period TBC')}</strong>`);
+}
+
+function renderStepStory(card, titleMap, index) {
+  renderStepHeader(card, index);
   const summary = card.querySelector(':scope > p:not(.depends)');
   const depends = card.querySelector(':scope > .depends');
   const purpose = summary?.textContent?.trim() || 'Purpose not yet captured.';
@@ -220,7 +235,7 @@ function refineDeliveryTimeline() {
   );
 
   const titleMap = buildStepTitleMap(panel);
-  panel.querySelectorAll('.step-card').forEach((card) => renderStepStory(card, titleMap));
+  panel.querySelectorAll('.step-card').forEach((card, index) => renderStepStory(card, titleMap, index));
 
   refineStepDetailDisclosure();
 }
