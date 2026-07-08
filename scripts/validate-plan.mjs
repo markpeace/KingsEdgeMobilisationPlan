@@ -15,11 +15,54 @@ const statusData = readJson('../src/data/status.json');
 
 const errors = [];
 const warnings = [];
-const requiredTimelinePeriods = new Set(plan.timelinePeriods.map((period) => period.id));
+const timelineBucketIds = new Set([2025, 2026, 2027, 2028, 2029, 2030].flatMap((year) => [`jan-jun-${year}`, `jul-dec-${year}`]));
+const timelineThirdIds = new Set([...timelineBucketIds].flatMap((bucket) => ['a', 'b', 'c'].map((third) => `${bucket}-${third}`)));
+const legacyTimelineIds = new Set([
+  'now-xmas-2026',
+  'jan-summer-2027',
+  'ay-2027-28-to-2028-29',
+  'ay-2029-30',
+  'now-sep-2026',
+  'oct-2026-mar-2027',
+  'apr-sep-2027',
+  'oct-2027-mar-2028',
+  'apr-sep-2028',
+  'oct-2028-mar-2029',
+  'apr-sep-2029',
+  'oct-2029-mar-2030',
+  'apr-sep-2030'
+]);
+const requiredTimelinePeriods = new Set([
+  ...plan.timelinePeriods.map((period) => period.id),
+  ...timelineBucketIds,
+  ...timelineThirdIds,
+  ...legacyTimelineIds
+]);
+const validThirdSegments = new Set(['a', 'b', 'c', 'ab', 'bc', 'abc']);
 const ids = new Set();
 const deliverableIds = new Set();
 const stepIds = new Set();
 const projectIds = new Set();
+
+function timelinePeriodKey(period) {
+  if (period && typeof period === 'object') return period.bucket || period.period || period.id;
+  return String(period || '').split(':')[0];
+}
+
+function timelinePeriodSegment(period) {
+  if (period && typeof period === 'object') return period.segment || period.third || period.part || 'abc';
+  return String(period || '').split(':')[1] || 'abc';
+}
+
+function validateTimelinePeriod(period, path) {
+  if (!period) return;
+  const bucket = timelinePeriodKey(period);
+  const segment = timelinePeriodSegment(period).toLowerCase();
+  if (!requiredTimelinePeriods.has(bucket)) errors.push(`${path} uses unknown timeline period: ${period}`);
+  if (String(period).includes(':') || (period && typeof period === 'object')) {
+    if (!validThirdSegments.has(segment)) errors.push(`${path} uses unknown timeline segment: ${segment}`);
+  }
+}
 
 function mergeDeliverableOverride(...overrides) {
   return overrides.reduce((merged, override) => {
@@ -104,7 +147,7 @@ function validateResources(resources, path) {
   });
   resources.cashCosts?.forEach((cost, index) => {
     if (cost.amount !== undefined && typeof cost.amount !== 'number') errors.push(`${path}.resources.cashCosts[${index}].amount should be a number.`);
-    if (cost.period && !requiredTimelinePeriods.has(cost.period)) errors.push(`${path}.resources.cashCosts[${index}] uses unknown period: ${cost.period}`);
+    validateTimelinePeriod(cost.period, `${path}.resources.cashCosts[${index}]`);
   });
 }
 
@@ -129,7 +172,7 @@ function validateSteps(steps, ownerPath) {
     addId(step.id, stepPath);
     stepIds.add(step.id);
     ['title', 'period', 'summary'].forEach((field) => requireField(step, field, stepPath));
-    if (step.period && !requiredTimelinePeriods.has(step.period)) errors.push(`${step.id} uses unknown timeline period: ${step.period}`);
+    validateTimelinePeriod(step.period, `${step.id}`);
     validateArrayIfPresent(step.outputs, `${stepPath}.outputs`);
     validateArrayIfPresent(step.decisions, `${stepPath}.decisions`);
     validateArrayIfPresent(step.risks, `${stepPath}.risks`);
