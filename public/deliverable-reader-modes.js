@@ -71,6 +71,14 @@ function syncPlanningStagePosition() {
   if (clone.className !== cloneClassName) clone.className = cloneClassName;
 }
 
+function syncWhyThisMattersPosition() {
+  const mainFlow = document.querySelector('.deliverable-main-flow');
+  const casePanel = mainFlow?.querySelector('.case-panel');
+  const firstAnchor = mainFlow?.querySelector('.planning-notice + .at-a-glance-panel, .at-a-glance-panel');
+  if (!mainFlow || !casePanel || !firstAnchor || casePanel.nextElementSibling === firstAnchor) return;
+  mainFlow.insertBefore(casePanel, firstAnchor);
+}
+
 function refineDeliveryTimeline() {
   const panel = document.querySelector('.route-through-panel');
   if (!panel) return;
@@ -158,6 +166,7 @@ function refineCrossDeliverableDependencies() {
 function refreshReaderModes() {
   refreshScheduled = false;
   syncPlanningStagePosition();
+  syncWhyThisMattersPosition();
   refineDeliveryTimeline();
   refineCrossDeliverableDependencies();
 
@@ -178,6 +187,7 @@ function refreshReaderModes() {
           const latestIndex = activeReaderModeIndex(latestButtons);
           document.body.dataset.readerModeAppliedKey = `${window.location.hash}:${latestIndex}`;
           applyReaderMode(latestIndex);
+          syncWhyThisMattersPosition();
           refineDeliveryTimeline();
           refineCrossDeliverableDependencies();
         }, 100);
@@ -191,6 +201,7 @@ function refreshReaderModes() {
     document.body.dataset.readerModeAppliedKey = applyKey;
     window.setTimeout(() => {
       applyReaderMode(activeIndex);
+      syncWhyThisMattersPosition();
       refineDeliveryTimeline();
       refineCrossDeliverableDependencies();
     }, 60);
