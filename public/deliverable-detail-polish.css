@@ -151,6 +151,23 @@ main > .detail-grid:last-child .panel h2,
   counter-reset: step;
 }
 
+main > .panel:has(> .steps-list) > .steps-list {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: calc((100% - 2.55rem) / 4);
+  grid-template-columns: none !important;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-bottom: 0.75rem;
+  scroll-snap-type: x proximity;
+  scrollbar-color: var(--accent) #f1f1f1;
+}
+
+main > .panel:has(> .steps-list) > .steps-list .step-card {
+  min-width: 0;
+  scroll-snap-align: start;
+}
+
 .step-card {
   counter-increment: step;
   display: flex !important;
@@ -245,9 +262,12 @@ main > .detail-grid:last-child .chip,
 }
 
 @media (max-width: 1180px) {
-  .component-grid,
-  .steps-list {
+  .component-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  main > .panel:has(> .steps-list) > .steps-list {
+    grid-auto-columns: calc((100% - 0.85rem) / 2);
   }
 }
 
@@ -259,9 +279,12 @@ main > .detail-grid:last-child .chip,
   .detail-hero:not(.project-detail-hero) + .detail-grid,
   main > .detail-grid:last-child,
   .detailed-plan-reveal > .detail-grid:last-child,
-  .component-grid,
-  .steps-list {
+  .component-grid {
     grid-template-columns: 1fr;
+  }
+
+  main > .panel:has(> .steps-list) > .steps-list {
+    grid-auto-columns: min(86vw, 360px);
   }
 
   .detail-hero:not(.project-detail-hero) + .detail-grid .panel:first-child {
