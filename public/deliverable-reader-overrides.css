@@ -114,17 +114,17 @@ main .route-through-panel > .steps-list .step-card,
 .timeline-refresh .timeline-grid,
 .timeline-refresh .timeline-header,
 .timeline-refresh .timeline-row {
-  min-width: 1900px !important;
+  min-width: 1780px !important;
 }
 
 .timeline-refresh .timeline-header.timeline-grid,
 .timeline-refresh .timeline-row.timeline-grid {
-  grid-template-columns: 280px repeat(30, minmax(42px, 1fr)) !important;
+  grid-template-columns: 280px repeat(27, minmax(42px, 1fr)) !important;
 }
 
 .timeline-refresh .timeline-lane {
-  grid-template-columns: repeat(30, minmax(42px, 1fr)) !important;
-  background-size: calc(100% / 10) 100% !important;
+  grid-template-columns: repeat(27, minmax(42px, 1fr)) !important;
+  background-size: calc(100% / 9) 100% !important;
 }
 
 .timeline-refresh .timeline-header > div:not(:first-child) {
@@ -135,17 +135,17 @@ main .route-through-panel > .steps-list .step-card,
 }
 
 .timeline-refresh .timeline-header > div:nth-child(3n + 2) {
-  justify-content: flex-start;
+  grid-column: span 3;
+  justify-content: center;
   padding-left: 0.45rem;
   border-left: 3px solid rgba(255, 255, 255, 0.52);
+  border-right: 1px solid rgba(255, 255, 255, 0.26);
   font-weight: 850;
 }
 
 .timeline-refresh .timeline-header > div:nth-child(3n + 3),
 .timeline-refresh .timeline-header > div:nth-child(3n + 4) {
-  color: rgba(255, 255, 255, 0.72);
-  font-size: 0.74rem;
-  text-transform: uppercase;
+  display: none;
 }
 
 .timeline-refresh .timeline-block {
