@@ -1,16 +1,5 @@
-const readerModeLabels = [
-  ['Headline view', 'Why this matters, delivery timeline, decisions and key dependencies.'],
-  ['Institutional view', 'Headline view plus governance, value, evidence and handoffs.'],
-  ['Project management view', 'Institutional view plus resources, components, risks and delivery detail.']
-];
-
-const readerModeSections = [
-  [],
-  ['governance', 'value-evidence', 'dependencies'],
-  ['governance', 'value-evidence', 'definition-of-done', 'resources', 'components', 'risks-decisions', 'dependencies']
-];
-
 let refreshScheduled = false;
+let accordionsInitialised = false;
 
 function setTextIfChanged(node, text) {
   if (node && node.textContent !== text) node.textContent = text;
@@ -27,18 +16,6 @@ function setAccordionState(sectionId, shouldOpen) {
   if (!button) return;
   const isOpen = button.getAttribute('aria-expanded') === 'true';
   if (isOpen !== shouldOpen) button.click();
-}
-
-function applyReaderMode(index) {
-  const openSections = new Set(readerModeSections[index] || []);
-  document.querySelectorAll('.detail-accordion[id]').forEach((section) => {
-    setAccordionState(section.id, openSections.has(section.id));
-  });
-}
-
-function activeReaderModeIndex(buttons) {
-  const index = buttons.findIndex((button) => button.classList.contains('active'));
-  return index >= 0 ? index : 0;
 }
 
 function syncPlanningStagePosition() {
@@ -73,7 +50,11 @@ function syncPlanningStagePosition() {
 
 function removeOverviewPanel() {
   document.querySelector('.at-a-glance-panel')?.remove();
-  document.querySelector('.deliverable-page-index a[href="#overview"]')?.remove();
+}
+
+function removeReaderNavigation() {
+  document.querySelector('.deliverable-page-index')?.remove();
+  document.querySelector('.deliverable-layout')?.classList.add('deliverable-layout-single-column');
 }
 
 function syncWhyThisMattersPosition() {
@@ -84,6 +65,15 @@ function syncWhyThisMattersPosition() {
   mainFlow.insertBefore(casePanel, routePanel);
 }
 
+function initialiseAccordionDisclosure() {
+  const key = window.location.hash;
+  if (accordionsInitialised === key) return;
+  const accordions = [...document.querySelectorAll('.detail-accordion[id]')];
+  if (!accordions.length) return;
+  accordions.forEach((section) => setAccordionState(section.id, false));
+  accordionsInitialised = key;
+}
+
 function refineDeliveryTimeline() {
   const panel = document.querySelector('.route-through-panel');
   if (!panel) return;
@@ -91,11 +81,8 @@ function refineDeliveryTimeline() {
   setTextIfChanged(panel.querySelector('h2'), 'Delivery timeline');
   setTextIfChanged(
     panel.querySelector(':scope > .subtle'),
-    'The main delivery route for this deliverable. Scroll across to see the full sequence; switch to Project management view to reveal step-level outputs, resources, risks and decisions.'
+    'The main delivery route for this deliverable. Scroll across to see the full sequence; expand Project management detail below for step-level outputs, resources, risks and decisions.'
   );
-
-  const indexLink = document.querySelector('.deliverable-page-index a[href="#route-through"]');
-  setTextIfChanged(indexLink, 'Delivery timeline');
 
   panel.querySelectorAll('.step-card').forEach((card) => {
     const period = card.querySelector('.period-pill')?.textContent?.trim();
@@ -168,71 +155,34 @@ function refineCrossDeliverableDependencies() {
   });
 }
 
-function refreshReaderModes() {
+function refreshDeliverablePage() {
   refreshScheduled = false;
   syncPlanningStagePosition();
   removeOverviewPanel();
+  removeReaderNavigation();
   syncWhyThisMattersPosition();
   refineDeliveryTimeline();
   refineCrossDeliverableDependencies();
-
-  const buttons = [...document.querySelectorAll('.reader-mode-control button')];
-  const accordions = document.querySelectorAll('.detail-accordion[id]');
-  if (buttons.length < 3 || !accordions.length) return;
-
-  buttons.slice(0, 3).forEach((button, index) => {
-    const [label, help] = readerModeLabels[index];
-    setTextIfChanged(button.querySelector('strong'), label);
-    setTextIfChanged(button.querySelector('span'), help);
-
-    if (!button.dataset.readerModeRefined) {
-      button.dataset.readerModeRefined = 'true';
-      button.addEventListener('click', () => {
-        window.setTimeout(() => {
-          const latestButtons = [...document.querySelectorAll('.reader-mode-control button')];
-          const latestIndex = activeReaderModeIndex(latestButtons);
-          document.body.dataset.readerModeAppliedKey = `${window.location.hash}:${latestIndex}`;
-          applyReaderMode(latestIndex);
-          removeOverviewPanel();
-          syncWhyThisMattersPosition();
-          refineDeliveryTimeline();
-          refineCrossDeliverableDependencies();
-        }, 100);
-      });
-    }
-  });
-
-  const activeIndex = activeReaderModeIndex(buttons);
-  const applyKey = `${window.location.hash}:${activeIndex}`;
-  if (document.body.dataset.readerModeAppliedKey !== applyKey) {
-    document.body.dataset.readerModeAppliedKey = applyKey;
-    window.setTimeout(() => {
-      applyReaderMode(activeIndex);
-      removeOverviewPanel();
-      syncWhyThisMattersPosition();
-      refineDeliveryTimeline();
-      refineCrossDeliverableDependencies();
-    }, 60);
-  }
+  initialiseAccordionDisclosure();
 }
 
-function scheduleRefreshReaderModes() {
+function scheduleRefreshDeliverablePage() {
   if (refreshScheduled) return;
   refreshScheduled = true;
-  window.requestAnimationFrame(refreshReaderModes);
+  window.requestAnimationFrame(refreshDeliverablePage);
 }
 
-const readerModeObserver = new MutationObserver(scheduleRefreshReaderModes);
-readerModeObserver.observe(document.documentElement, { childList: true, subtree: true });
+const deliverablePageObserver = new MutationObserver(scheduleRefreshDeliverablePage);
+deliverablePageObserver.observe(document.documentElement, { childList: true, subtree: true });
 
 window.addEventListener('hashchange', () => {
-  delete document.body.dataset.readerModeAppliedKey;
+  accordionsInitialised = false;
   document.querySelector('.planning-notice-clone')?.remove();
-  scheduleRefreshReaderModes();
+  scheduleRefreshDeliverablePage();
 });
 
 if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', scheduleRefreshReaderModes);
+  document.addEventListener('DOMContentLoaded', scheduleRefreshDeliverablePage);
 } else {
-  scheduleRefreshReaderModes();
+  scheduleRefreshDeliverablePage();
 }
