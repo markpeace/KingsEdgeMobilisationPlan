@@ -76,20 +76,65 @@ function syncWhyThisMattersPosition() {
   mainFlow.insertBefore(casePanel, routePanel);
 }
 
-function moveValueEvidencePanel() {
+function setPromotedAccordionOpen(panel, open) {
+  panel.classList.toggle('value-evidence-promoted-open', open);
+  const button = panel.querySelector('.detail-accordion-header');
+  const label = button?.querySelector('strong');
+  button?.setAttribute('aria-expanded', String(open));
+  setTextIfChanged(label, open ? 'Hide' : 'Show');
+}
+
+function wirePromotedAccordion(panel) {
+  const button = panel.querySelector('.detail-accordion-header');
+  const body = panel.querySelector('.detail-accordion-body');
+  if (!button || !body) return false;
+  body.id = 'value-evidence-promoted-body';
+  button.setAttribute('aria-controls', body.id);
+  if (!button.dataset.promotedToggleWired) {
+    button.dataset.promotedToggleWired = 'true';
+    button.addEventListener('click', (event) => {
+      event.preventDefault();
+      event.stopPropagation();
+      setPromotedAccordionOpen(panel, !panel.classList.contains('value-evidence-promoted-open'));
+    });
+  }
+  setPromotedAccordionOpen(panel, panel.classList.contains('value-evidence-promoted-open'));
+  return true;
+}
+
+function promoteValueEvidencePanel() {
   const mainFlow = document.querySelector('.deliverable-main-flow');
   const casePanel = mainFlow?.querySelector('.case-panel');
-  const valuePanel = document.getElementById('value-evidence');
   const routePanel = mainFlow?.querySelector('.route-through-panel');
-  if (!mainFlow || !casePanel || !valuePanel || !routePanel) return;
-  if (casePanel.nextElementSibling === valuePanel && valuePanel.nextElementSibling === routePanel) return;
-  mainFlow.insertBefore(valuePanel, routePanel);
+  const source = document.getElementById('value-evidence');
+  if (!mainFlow || !casePanel || !routePanel || !source) return;
+
+  source.classList.add('value-evidence-source-hidden');
+
+  if (!source.querySelector('.detail-accordion-body')) {
+    setAccordionState('value-evidence', true);
+    return;
+  }
+
+  let promoted = document.getElementById('value-evidence-promoted');
+  if (!promoted) {
+    promoted = source.cloneNode(true);
+    promoted.id = 'value-evidence-promoted';
+    promoted.classList.add('value-evidence-promoted');
+    promoted.classList.remove('value-evidence-source-hidden');
+    setPromotedAccordionOpen(promoted, false);
+  }
+
+  if (!wirePromotedAccordion(promoted)) return;
+  if (casePanel.nextElementSibling !== promoted || promoted.nextElementSibling !== routePanel) {
+    mainFlow.insertBefore(promoted, routePanel);
+  }
 }
 
 function initialiseAccordionDisclosure() {
   const key = window.location.hash;
   if (accordionsInitialised === key) return;
-  const accordions = [...document.querySelectorAll('.detail-accordion[id]')];
+  const accordions = [...document.querySelectorAll('.detail-accordion[id]:not(#value-evidence-promoted)')];
   if (!accordions.length) return;
   accordions.forEach((section) => setAccordionState(section.id, false));
   accordionsInitialised = key;
@@ -231,7 +276,7 @@ function refreshDeliverablePage() {
   enableStepDetailsMode();
   removeReaderNavigation();
   syncWhyThisMattersPosition();
-  moveValueEvidencePanel();
+  promoteValueEvidencePanel();
   refineDeliveryTimeline();
   refinePlanningDetailCopy();
   refineCrossDeliverableDependencies();
@@ -251,6 +296,7 @@ window.addEventListener('hashchange', () => {
   accordionsInitialised = false;
   delete document.body.dataset.stepDetailsEnabledKey;
   document.querySelector('.planning-notice-clone')?.remove();
+  document.getElementById('value-evidence-promoted')?.remove();
   scheduleRefreshDeliverablePage();
 });
 
