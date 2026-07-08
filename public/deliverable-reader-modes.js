@@ -51,7 +51,10 @@ function syncPlanningStagePosition() {
     return;
   }
 
-  source.classList.add('planning-notice-inline-hidden');
+  if (!source.classList.contains('planning-notice-inline-hidden')) {
+    source.classList.add('planning-notice-inline-hidden');
+  }
+
   let clone = existing;
   if (!clone) {
     clone = source.cloneNode(true);
@@ -62,8 +65,8 @@ function syncPlanningStagePosition() {
 
   const sourceHtml = source.innerHTML;
   if (clone.innerHTML !== sourceHtml) clone.innerHTML = sourceHtml;
-  clone.className = source.className.replace('planning-notice-inline-hidden', '').trim();
-  clone.classList.add('planning-notice-clone');
+  const cloneClassName = `${source.className.replace('planning-notice-inline-hidden', '').trim()} planning-notice-clone`.trim();
+  if (clone.className !== cloneClassName) clone.className = cloneClassName;
 }
 
 function refineDeliveryTimeline() {
@@ -89,7 +92,7 @@ function refineDeliveryTimeline() {
       signals.className = 'step-card-signals';
       const depends = card.querySelector('.depends');
       const summary = card.querySelector('p:not(.depends)');
-      (depends || summary || card).insertAdjacentElement(depends ? 'afterend' : 'afterend', signals);
+      (depends || summary || card).insertAdjacentElement('afterend', signals);
     }
 
     const html = [
