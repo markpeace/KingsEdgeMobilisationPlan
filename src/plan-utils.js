@@ -12,7 +12,7 @@ const thirdSegments = [
   { id: 'c', label: 'c', longLabel: 'final third' }
 ];
 
-const halfYearBuckets = [2025, 2026, 2027, 2028, 2029, 2030].flatMap((year, index) => [
+const halfYearBuckets = [2026, 2027, 2028, 2029, 2030].flatMap((year, index) => [
   { id: `jan-jun-${year}`, label: `January to June ${year}`, shortLabel: `Jan-Jun ${String(year).slice(2)}`, order: index * 2 + 1 },
   { id: `jul-dec-${year}`, label: `July to December ${year}`, shortLabel: `Jul-Dec ${String(year).slice(2)}`, order: index * 2 + 2 }
 ]);
