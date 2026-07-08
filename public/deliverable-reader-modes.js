@@ -18,6 +18,15 @@ function setAccordionState(sectionId, shouldOpen) {
   if (isOpen !== shouldOpen) button.click();
 }
 
+function escapeHtml(value) {
+  return String(value || '')
+    .replaceAll('&', '&amp;')
+    .replaceAll('<', '&lt;')
+    .replaceAll('>', '&gt;')
+    .replaceAll('"', '&quot;')
+    .replaceAll("'", '&#039;');
+}
+
 function syncPlanningStagePosition() {
   const hero = document.querySelector('.detail-hero:not(.project-detail-hero)');
   const source = document.querySelector('.deliverable-main-flow > .planning-notice');
@@ -84,22 +93,27 @@ function setPromotedAccordionOpen(panel, open) {
   setTextIfChanged(label, open ? 'Hide' : 'Show');
 }
 
-function wirePromotedAccordion(panel) {
-  const button = panel.querySelector('.detail-accordion-header');
-  const body = panel.querySelector('.detail-accordion-body');
-  if (!button || !body) return false;
-  body.id = 'value-evidence-promoted-body';
-  button.setAttribute('aria-controls', body.id);
-  if (!button.dataset.promotedToggleWired) {
-    button.dataset.promotedToggleWired = 'true';
-    button.addEventListener('click', (event) => {
-      event.preventDefault();
-      event.stopPropagation();
-      setPromotedAccordionOpen(panel, !panel.classList.contains('value-evidence-promoted-open'));
-    });
-  }
-  setPromotedAccordionOpen(panel, panel.classList.contains('value-evidence-promoted-open'));
-  return true;
+function createPromotedValueEvidencePanel(source, body) {
+  const title = source.querySelector('.detail-accordion-header span')?.textContent?.trim() || 'Value, products and evidence';
+  const summary = source.querySelector('.detail-accordion-header em')?.textContent?.trim() || 'Benefits to realise, outputs to produce and measures to test whether the benefit is happening.';
+  const promoted = document.createElement('section');
+  promoted.id = 'value-evidence-promoted';
+  promoted.className = 'panel detail-accordion value-evidence-promoted';
+  promoted.innerHTML = `
+    <button type="button" class="detail-accordion-header" aria-expanded="false" aria-controls="value-evidence-promoted-body">
+      <span>${escapeHtml(title)}</span>
+      <em>${escapeHtml(summary)}</em>
+      <strong>Show</strong>
+    </button>
+    <div class="detail-accordion-body" id="value-evidence-promoted-body"></div>
+  `;
+  promoted.querySelector('.detail-accordion-body').innerHTML = body.innerHTML;
+  promoted.querySelector('.detail-accordion-header').addEventListener('click', (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+    setPromotedAccordionOpen(promoted, !promoted.classList.contains('value-evidence-promoted-open'));
+  });
+  return promoted;
 }
 
 function promoteValueEvidencePanel() {
@@ -110,22 +124,22 @@ function promoteValueEvidencePanel() {
   if (!mainFlow || !casePanel || !routePanel || !source) return;
 
   source.classList.add('value-evidence-source-hidden');
-
   if (!source.querySelector('.detail-accordion-body')) {
     setAccordionState('value-evidence', true);
     return;
   }
 
+  const body = source.querySelector('.detail-accordion-body');
   let promoted = document.getElementById('value-evidence-promoted');
+  const wasOpen = promoted?.classList.contains('value-evidence-promoted-open') || false;
   if (!promoted) {
-    promoted = source.cloneNode(true);
-    promoted.id = 'value-evidence-promoted';
-    promoted.classList.add('value-evidence-promoted');
-    promoted.classList.remove('value-evidence-source-hidden');
-    setPromotedAccordionOpen(promoted, false);
+    promoted = createPromotedValueEvidencePanel(source, body);
+  } else {
+    const promotedBody = promoted.querySelector('.detail-accordion-body');
+    if (promotedBody && promotedBody.innerHTML !== body.innerHTML) promotedBody.innerHTML = body.innerHTML;
   }
+  setPromotedAccordionOpen(promoted, wasOpen);
 
-  if (!wirePromotedAccordion(promoted)) return;
   if (casePanel.nextElementSibling !== promoted || promoted.nextElementSibling !== routePanel) {
     mainFlow.insertBefore(promoted, routePanel);
   }
@@ -134,7 +148,7 @@ function promoteValueEvidencePanel() {
 function initialiseAccordionDisclosure() {
   const key = window.location.hash;
   if (accordionsInitialised === key) return;
-  const accordions = [...document.querySelectorAll('.detail-accordion[id]:not(#value-evidence-promoted)')];
+  const accordions = [...document.querySelectorAll('.detail-accordion[id]:not(#value-evidence):not(#value-evidence-promoted)')];
   if (!accordions.length) return;
   accordions.forEach((section) => setAccordionState(section.id, false));
   accordionsInitialised = key;
