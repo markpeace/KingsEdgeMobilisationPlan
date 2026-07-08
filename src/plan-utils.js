@@ -12,10 +12,13 @@ const thirdSegments = [
   { id: 'c', label: 'c', longLabel: 'final third' }
 ];
 
-const halfYearBuckets = [2026, 2027, 2028, 2029, 2030].flatMap((year, index) => [
-  { id: `jan-jun-${year}`, label: `January to June ${year}`, shortLabel: `Jan-Jun ${String(year).slice(2)}`, order: index * 2 + 1 },
-  { id: `jul-dec-${year}`, label: `July to December ${year}`, shortLabel: `Jul-Dec ${String(year).slice(2)}`, order: index * 2 + 2 }
-]);
+const halfYearBuckets = [
+  { id: 'jul-dec-2026', label: 'July to December 2026', shortLabel: 'Jul-Dec 26', order: 1 },
+  ...[2027, 2028, 2029, 2030].flatMap((year, index) => [
+    { id: `jan-jun-${year}`, label: `January to June ${year}`, shortLabel: `Jan-Jun ${String(year).slice(2)}`, order: index * 2 + 2 },
+    { id: `jul-dec-${year}`, label: `July to December ${year}`, shortLabel: `Jul-Dec ${String(year).slice(2)}`, order: index * 2 + 3 }
+  ])
+];
 
 export const timelineBuckets = halfYearBuckets;
 
@@ -35,11 +38,11 @@ const timelinePeriodIndex = new Map(timelinePeriods.map((period, index) => [peri
 const timelineBucketMap = new Map(halfYearBuckets.map((bucket) => [bucket.id, bucket]));
 
 const broadPeriodSpans = {
-  'now-xmas-2026': { start: 'jan-jun-2026-a', end: 'jul-dec-2026-c', label: 'January to December 2026' },
+  'now-xmas-2026': { start: 'jul-dec-2026-a', end: 'jul-dec-2026-c', label: 'July to December 2026' },
   'jan-summer-2027': { start: 'jan-jun-2027-a', end: 'jul-dec-2027-b', label: 'January to September 2027' },
   'ay-2027-28-to-2028-29': { start: 'jul-dec-2027-b', end: 'jul-dec-2029-b', label: 'September 2027 to September 2029' },
   'ay-2029-30': { start: 'jul-dec-2029-b', end: 'jul-dec-2030-b', label: 'September 2029 to September 2030' },
-  'now-sep-2026': { start: 'jan-jun-2026-a', end: 'jul-dec-2026-b', label: 'January to September 2026' },
+  'now-sep-2026': { start: 'jul-dec-2026-a', end: 'jul-dec-2026-b', label: 'July to September 2026' },
   'oct-2026-mar-2027': { start: 'jul-dec-2026-b', end: 'jan-jun-2027-b', label: 'October 2026 to March 2027' },
   'apr-sep-2027': { start: 'jan-jun-2027-b', end: 'jul-dec-2027-b', label: 'April to September 2027' },
   'oct-2027-mar-2028': { start: 'jul-dec-2027-b', end: 'jan-jun-2028-b', label: 'October 2027 to March 2028' },
@@ -80,11 +83,10 @@ function resolveTimelineSpan(period) {
   if (!timelineBucketMap.has(bucket)) return { start: bucket, end: bucket, label: bucket };
   const [startThird, endThird] = segmentSpans[String(segment || 'abc').toLowerCase()] || segmentSpans.abc;
   const bucketEntry = timelineBucketMap.get(bucket);
-  const segmentLabel = String(segment || 'abc').toLowerCase() === 'abc' ? '' : ` · ${String(segment).toLowerCase()}`;
   return {
     start: `${bucket}-${startThird}`,
     end: `${bucket}-${endThird}`,
-    label: `${bucketEntry.label}${segmentLabel}`,
+    label: bucketEntry.label,
     bucket,
     segment: String(segment || 'abc').toLowerCase()
   };
