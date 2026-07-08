@@ -1,5 +1,6 @@
 let refreshScheduled = false;
 let accordionsInitialised = false;
+let promotedValueToggleWired = false;
 
 function setTextIfChanged(node, text) {
   if (node && node.textContent !== text) node.textContent = text;
@@ -85,15 +86,32 @@ function syncWhyThisMattersPosition() {
   mainFlow.insertBefore(casePanel, routePanel);
 }
 
+function copyValueEvidenceBody() {
+  const sourceBody = document.querySelector('#value-evidence .detail-accordion-body');
+  const promotedBody = document.querySelector('#value-evidence-promoted .detail-accordion-body');
+  if (sourceBody && promotedBody && promotedBody.innerHTML !== sourceBody.innerHTML) {
+    promotedBody.innerHTML = sourceBody.innerHTML;
+  }
+  return Boolean(sourceBody && promotedBody && promotedBody.innerHTML.trim());
+}
+
+function hydratePromotedValueBody() {
+  if (copyValueEvidenceBody()) return;
+  setAccordionState('value-evidence', true);
+  window.setTimeout(copyValueEvidenceBody, 0);
+  window.setTimeout(copyValueEvidenceBody, 80);
+}
+
 function setPromotedAccordionOpen(panel, open) {
   panel.classList.toggle('value-evidence-promoted-open', open);
   const button = panel.querySelector('.detail-accordion-header');
   const label = button?.querySelector('strong');
   button?.setAttribute('aria-expanded', String(open));
   setTextIfChanged(label, open ? 'Hide' : 'Show');
+  if (open) hydratePromotedValueBody();
 }
 
-function createPromotedValueEvidencePanel(source, body) {
+function createPromotedValueEvidencePanel(source) {
   const title = source.querySelector('.detail-accordion-header span')?.textContent?.trim() || 'Value, products and evidence';
   const summary = source.querySelector('.detail-accordion-header em')?.textContent?.trim() || 'Benefits to realise, outputs to produce and measures to test whether the benefit is happening.';
   const promoted = document.createElement('section');
@@ -107,13 +125,21 @@ function createPromotedValueEvidencePanel(source, body) {
     </button>
     <div class="detail-accordion-body" id="value-evidence-promoted-body"></div>
   `;
-  promoted.querySelector('.detail-accordion-body').innerHTML = body.innerHTML;
-  promoted.querySelector('.detail-accordion-header').addEventListener('click', (event) => {
+  return promoted;
+}
+
+function wirePromotedValueToggle() {
+  if (promotedValueToggleWired) return;
+  promotedValueToggleWired = true;
+  document.addEventListener('click', (event) => {
+    const button = event.target.closest?.('#value-evidence-promoted .detail-accordion-header');
+    if (!button) return;
+    const panel = document.getElementById('value-evidence-promoted');
+    if (!panel) return;
     event.preventDefault();
     event.stopPropagation();
-    setPromotedAccordionOpen(promoted, !promoted.classList.contains('value-evidence-promoted-open'));
-  });
-  return promoted;
+    setPromotedAccordionOpen(panel, !panel.classList.contains('value-evidence-promoted-open'));
+  }, true);
 }
 
 function promoteValueEvidencePanel() {
@@ -124,20 +150,12 @@ function promoteValueEvidencePanel() {
   if (!mainFlow || !casePanel || !routePanel || !source) return;
 
   source.classList.add('value-evidence-source-hidden');
-  if (!source.querySelector('.detail-accordion-body')) {
-    setAccordionState('value-evidence', true);
-    return;
-  }
+  setAccordionState('value-evidence', true);
 
-  const body = source.querySelector('.detail-accordion-body');
   let promoted = document.getElementById('value-evidence-promoted');
   const wasOpen = promoted?.classList.contains('value-evidence-promoted-open') || false;
-  if (!promoted) {
-    promoted = createPromotedValueEvidencePanel(source, body);
-  } else {
-    const promotedBody = promoted.querySelector('.detail-accordion-body');
-    if (promotedBody && promotedBody.innerHTML !== body.innerHTML) promotedBody.innerHTML = body.innerHTML;
-  }
+  if (!promoted) promoted = createPromotedValueEvidencePanel(source);
+  copyValueEvidenceBody();
   setPromotedAccordionOpen(promoted, wasOpen);
 
   if (casePanel.nextElementSibling !== promoted || promoted.nextElementSibling !== routePanel) {
@@ -285,6 +303,7 @@ function refineCrossDeliverableDependencies() {
 
 function refreshDeliverablePage() {
   refreshScheduled = false;
+  wirePromotedValueToggle();
   syncPlanningStagePosition();
   removeOverviewPanel();
   enableStepDetailsMode();
