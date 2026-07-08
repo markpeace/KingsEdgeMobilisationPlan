@@ -15,7 +15,7 @@ const statusData = readJson('../src/data/status.json');
 
 const errors = [];
 const warnings = [];
-const timelineBucketIds = new Set([2026, 2027, 2028, 2029, 2030].flatMap((year) => [`jan-jun-${year}`, `jul-dec-${year}`]));
+const timelineBucketIds = new Set(['jul-dec-2026', ...[2027, 2028, 2029, 2030].flatMap((year) => [`jan-jun-${year}`, `jul-dec-${year}`])]);
 const timelineThirdIds = new Set([...timelineBucketIds].flatMap((bucket) => ['a', 'b', 'c'].map((third) => `${bucket}-${third}`)));
 const legacyTimelineIds = new Set([
   'now-xmas-2026',
