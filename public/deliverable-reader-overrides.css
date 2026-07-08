@@ -20,7 +20,6 @@
 .planning-notice-inline-hidden,
 .at-a-glance-panel,
 .deliverable-page-index,
-.value-evidence-source-hidden,
 [class~="internal-dependency-hidden"] {
   display: none !important;
 }
@@ -32,14 +31,6 @@
 
 .deliverable-main-flow {
   max-width: none;
-}
-
-.value-evidence-promoted:not(.value-evidence-promoted-open) > .detail-accordion-body {
-  display: none !important;
-}
-
-.value-evidence-promoted.value-evidence-promoted-open > .detail-accordion-body {
-  display: block;
 }
 
 .detailed-plan-control {
