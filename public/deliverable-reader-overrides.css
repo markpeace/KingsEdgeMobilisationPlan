@@ -121,10 +121,32 @@ main .route-through-panel > .steps-list .step-card,
   scroll-snap-align: start;
 }
 
-.route-through-panel .step-card > .period-pill {
+.route-through-panel .step-card-header {
   order: 1;
-  align-self: flex-start;
-  margin: 0.85rem 0 0.75rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 0.55rem;
+  align-items: center;
+  margin: -0.05rem -0.05rem 0.9rem;
+  border: 2px solid var(--accent-dark);
+  background: var(--accent);
+  color: #ffffff;
+  padding: 0.55rem 0.65rem;
+  line-height: 1.05;
+  text-transform: uppercase;
+}
+
+.route-through-panel .step-card-header span,
+.route-through-panel .step-card-header strong {
+  color: inherit;
+  font-size: 0.78rem;
+  font-weight: 950;
+  letter-spacing: 0.055em;
+}
+
+.route-through-panel .step-card-header span::after {
+  content: "-";
+  margin-left: 0.55rem;
 }
 
 .route-through-panel .step-card > h3 {
