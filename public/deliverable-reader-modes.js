@@ -242,24 +242,42 @@ function refineDeliveryTimeline() {
   refineStepDetailDisclosure();
 }
 
-function linkPointsToCurrentDeliverable(link) {
-  if (!link?.href || !window.location.hash) return false;
+function deliverableIdFromHash(hash) {
+  const match = String(hash || '').match(/#\/deliverables\/([^/?#]+)/);
+  return match ? decodeURIComponent(match[1]) : '';
+}
+
+function currentDeliverableId() {
+  return deliverableIdFromHash(window.location.hash);
+}
+
+function linkTargetDeliverableId(link) {
+  if (!link?.href) return '';
   try {
-    return new URL(link.href, window.location.href).hash === window.location.hash;
+    return deliverableIdFromHash(new URL(link.href, window.location.href).hash);
   } catch {
-    return false;
+    return '';
   }
+}
+
+function isSameDeliverableDependency(link) {
+  const currentId = currentDeliverableId();
+  if (!currentId) return false;
+  const targetId = linkTargetDeliverableId(link);
+  if (targetId === currentId) return true;
+  const text = link?.textContent?.trim() || '';
+  return text.startsWith(`${currentId}:`) || text.startsWith(`${currentId} `);
 }
 
 function hideInternalDependencyLinks(container) {
   container.querySelectorAll('.link-list .chip').forEach((chip) => {
-    const isInternal = chip.matches('a') && linkPointsToCurrentDeliverable(chip);
+    const isInternal = chip.matches('a') && isSameDeliverableDependency(chip);
     chip.classList.toggle('internal-dependency-hidden', isInternal);
   });
 
   container.querySelectorAll('.compact-list li').forEach((item) => {
     const link = item.querySelector('a.chip');
-    item.classList.toggle('internal-dependency-hidden', linkPointsToCurrentDeliverable(link));
+    item.classList.toggle('internal-dependency-hidden', isSameDeliverableDependency(link));
   });
 }
 
