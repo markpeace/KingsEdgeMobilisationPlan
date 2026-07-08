@@ -1,10 +1,24 @@
 /* Overrides for the restructured deliverable detail page. */
 
-.route-through-panel > .steps-list {
-  display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: calc((100% - 2.55rem) / 4);
-  grid-template-columns: none !important;
+.detail-hero:not(.project-detail-hero) {
+  max-width: none;
+}
+
+.detail-hero:not(.project-detail-hero) h1,
+.detail-hero:not(.project-detail-hero) > p {
+  max-width: none !important;
+}
+
+.detail-hero:not(.project-detail-hero) .detail-summary {
+  max-width: none;
+}
+
+.route-through-panel > .steps-list,
+main .route-through-panel > .steps-list,
+.detailed-plan-reveal .route-through-panel > .steps-list {
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  gap: 0.85rem;
   overflow-x: auto;
   overflow-y: hidden;
   padding-bottom: 0.75rem;
@@ -12,7 +26,10 @@
   scrollbar-color: var(--accent) #f1f1f1;
 }
 
-.route-through-panel > .steps-list .step-card {
+.route-through-panel > .steps-list .step-card,
+main .route-through-panel > .steps-list .step-card,
+.detailed-plan-reveal .route-through-panel > .steps-list .step-card {
+  flex: 0 0 calc((100% - 2.55rem) / 4);
   min-width: 0;
   scroll-snap-align: start;
 }
@@ -42,13 +59,17 @@
 }
 
 @media (max-width: 1180px) {
-  .route-through-panel > .steps-list {
-    grid-auto-columns: calc((100% - 0.85rem) / 2);
+  .route-through-panel > .steps-list .step-card,
+  main .route-through-panel > .steps-list .step-card,
+  .detailed-plan-reveal .route-through-panel > .steps-list .step-card {
+    flex-basis: calc((100% - 0.85rem) / 2);
   }
 }
 
 @media (max-width: 760px) {
-  .route-through-panel > .steps-list {
-    grid-auto-columns: min(86vw, 360px);
+  .route-through-panel > .steps-list .step-card,
+  main .route-through-panel > .steps-list .step-card,
+  .detailed-plan-reveal .route-through-panel > .steps-list .step-card {
+    flex-basis: min(86vw, 360px);
   }
 }
