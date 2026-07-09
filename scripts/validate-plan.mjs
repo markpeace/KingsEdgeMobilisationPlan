@@ -4,11 +4,12 @@ function readJson(relativePath) {
   return JSON.parse(fs.readFileSync(new URL(relativePath, import.meta.url), 'utf8'));
 }
 
+function readJsonFromUrl(url) {
+  return JSON.parse(fs.readFileSync(url, 'utf8'));
+}
+
 const plan = readJson('../src/data/kings-edge-plan.json');
-const graduateFutures211 = readJson('../src/data/deliverable-overrides/2.1.1.json');
-const graduateFutures211Overview = readJson('../src/data/deliverable-overrides/2.1.1-overview-patch.json');
-const graduateFutures211OutputsMeasures = readJson('../src/data/deliverable-overrides/2.1.1-outputs-measures-patch.json');
-const graduateFutures211Steps = readJson('../src/data/deliverable-overrides/2.1.1-steps-patch.json');
+const deliverableManifest = readJson('../src/data/deliverables/manifest.json');
 const outOfProgrammeProjects = readJson('../src/data/enabling-projects.json');
 const stepDependencies = readJson('../src/data/step-dependencies.json');
 const statusData = readJson('../src/data/status.json');
@@ -104,41 +105,54 @@ function validateTimelinePeriod(period, path, { allowLegacy = false } = {}) {
   validateTimelinePoint(period, path);
 }
 
-function mergeDeliverableOverride(...overrides) {
-  return overrides.reduce((merged, override) => {
-    const resources = override.resources
+function mergeDeliverableParts(...parts) {
+  return parts.reduce((merged, part) => {
+    const resources = part.resources
       ? {
           ...(merged.resources || {}),
-          ...override.resources,
+          ...part.resources,
           investmentAsk: {
             ...(merged.resources?.investmentAsk || {}),
-            ...(override.resources?.investmentAsk || {})
+            ...(part.resources?.investmentAsk || {})
           }
         }
       : merged.resources;
     return {
       ...merged,
-      ...override,
+      ...part,
       caseForChange: {
         ...(merged.caseForChange || {}),
-        ...(override.caseForChange || {})
+        ...(part.caseForChange || {})
       },
       ownership: {
         ...(merged.ownership || {}),
-        ...(override.ownership || {})
+        ...(part.ownership || {})
       },
       resources
     };
   }, {});
 }
 
-const graduateFutures211Merged = mergeDeliverableOverride(
-  graduateFutures211,
-  graduateFutures211Overview,
-  graduateFutures211OutputsMeasures,
-  graduateFutures211Steps
-);
-const deliverableOverrides = new Map([[graduateFutures211Merged.id, graduateFutures211Merged]]);
+const deliverablePartsBaseUrl = new URL('../src/data/deliverables/', import.meta.url);
+
+function readDeliverablePart(partPath, deliverableId) {
+  try {
+    return readJsonFromUrl(new URL(partPath, deliverablePartsBaseUrl));
+  } catch (error) {
+    errors.push(`Deliverable registry could not read part ${partPath} for ${deliverableId}: ${error.message}`);
+    return {};
+  }
+}
+
+const registeredDeliverables = (deliverableManifest.deliverables || []).map((entry) => {
+  const deliverable = mergeDeliverableParts(...(entry.parts || []).map((partPath) => readDeliverablePart(partPath, entry.id)));
+  return {
+    ...deliverable,
+    id: deliverable.id || entry.id,
+    projectId: deliverable.projectId || entry.projectId
+  };
+});
+const deliverableOverrides = new Map(registeredDeliverables.map((deliverable) => [deliverable.id, deliverable]));
 
 function applyDeliverableOverrides(project) {
   if (!Array.isArray(project.deliverables)) return project;
