@@ -1,10 +1,7 @@
 import plan from './data/kings-edge-plan.json';
 import outOfProgrammeProjects from './data/enabling-projects.json';
 import stepDependencyOverrides from './data/step-dependencies.json';
-import graduateFutures211 from './data/deliverable-overrides/2.1.1.json';
-import graduateFutures211Overview from './data/deliverable-overrides/2.1.1-overview-patch.json';
-import graduateFutures211OutputsMeasures from './data/deliverable-overrides/2.1.1-outputs-measures-patch.json';
-import graduateFutures211Steps from './data/deliverable-overrides/2.1.1-steps-patch.json';
+import { registeredDeliverableMap } from './data/deliverables/index.js';
 
 const thirdSegments = [
   { id: 'a', label: 'a', longLabel: 'first third' },
@@ -118,42 +115,6 @@ function resolveTimelineSpan(period) {
   };
 }
 
-function mergeDeliverableOverride(...overrides) {
-  return overrides.reduce((merged, override) => {
-    const resources = override.resources
-      ? {
-          ...(merged.resources || {}),
-          ...override.resources,
-          investmentAsk: {
-            ...(merged.resources?.investmentAsk || {}),
-            ...(override.resources?.investmentAsk || {})
-          }
-        }
-      : merged.resources;
-    return {
-      ...merged,
-      ...override,
-      caseForChange: {
-        ...(merged.caseForChange || {}),
-        ...(override.caseForChange || {})
-      },
-      ownership: {
-        ...(merged.ownership || {}),
-        ...(override.ownership || {})
-      },
-      resources
-    };
-  }, {});
-}
-
-const graduateFutures211Merged = mergeDeliverableOverride(
-  graduateFutures211,
-  graduateFutures211Overview,
-  graduateFutures211OutputsMeasures,
-  graduateFutures211Steps
-);
-const deliverableOverrides = new Map([[graduateFutures211Merged.id, graduateFutures211Merged]]);
-
 const asArray = (value) => Array.isArray(value) ? value : [];
 const textOf = (item, fallback = 'Item') => typeof item === 'string' ? item : item?.title || item?.label || item?.item || item?.role || item?.condition || fallback;
 const withVisibility = (item, fallback = 'internal-planning') => ({ ...item, visibility: item?.visibility || fallback });
@@ -161,7 +122,7 @@ const summaryOf = (item) => item.summary || item.shortDescription || '';
 const detailSummaryOf = (item) => item.detailSummary || item.longDescription || item.description || item.longSummary || '';
 
 function deliverableWithOverride(deliverable) {
-  return deliverableOverrides.get(deliverable.id) || deliverable;
+  return registeredDeliverableMap.get(deliverable.id) || deliverable;
 }
 
 function normaliseResources(resources = {}) {
