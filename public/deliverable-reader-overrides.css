@@ -13,6 +13,10 @@
   max-width: none;
 }
 
+.detail-hero:not(.project-detail-hero) .hero-context-line .planning-status {
+  display: none !important;
+}
+
 .planning-notice-clone {
   margin: 0 0 1.15rem !important;
 }
