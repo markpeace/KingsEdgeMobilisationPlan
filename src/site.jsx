@@ -42,21 +42,6 @@ const isPreDraft = (item) => planningStatus(item) === 'pre-draft';
 const isBeyondPreDraft = (item) => !isPreDraft(item);
 const hasDistinctDetail = (item) => Boolean(item?.detailSummary && item.detailSummary !== item.summary);
 
-const allPlanningSections = [
-  'governance',
-  'value-evidence',
-  'definition-of-done',
-  'resources',
-  'components',
-  'risks-decisions',
-  'dependencies'
-];
-const defaultSectionsByMode = {
-  senior: ['governance', 'dependencies'],
-  delivery: ['governance', 'resources', 'risks-decisions', 'dependencies'],
-  full: allPlanningSections
-};
-
 function useHashRoute() {
   const getPath = () => window.location.hash.replace(/^#/, '') || '/';
   const [path, setPath] = useState(getPath);
@@ -107,7 +92,7 @@ function DeliverableContextLine({ deliverable, showProject = false }) {
 
 function PlanningNotice({ deliverable }) {
   const predraft = isPreDraft(deliverable);
-  return <section className={`planning-notice ${predraft ? 'planning-notice-predraft' : ''}`} aria-label="Planning stage"><div className="planning-notice-main"><span className="planning-notice-label">Planning stage</span><PlanningStatusTag item={deliverable} /><p>{predraft ? 'Included in the mobilisation map, but not yet scrutinised against the full planning schema. Detailed planning assumptions are shown through progressive disclosure below.' : 'This deliverable has moved beyond pre-draft and is shown in the delivery, measures and timeline views.'}</p></div>{predraft && <p className="planning-notice-next"><strong>Next scrutiny:</strong> Confirm case for change, ownership, benefits, measures, resources and dependencies before moving to draft.</p>}</section>;
+  return <section className={`planning-notice ${predraft ? 'planning-notice-predraft' : ''}`} aria-label="Planning stage"><div className="planning-notice-main"><span className="planning-notice-label">Planning stage</span><PlanningStatusTag item={deliverable} /><p>{predraft ? 'Included in the mobilisation map, but not yet scrutinised against the full planning schema. Detailed planning assumptions are shown through progressive disclosure below.' : 'This deliverable has moved beyond pre-draft and is shown in the deliverables, measures and timeline indexes.'}</p></div>{predraft && <p className="planning-notice-next"><strong>Next scrutiny:</strong> Confirm case for change, ownership, benefits, measures, resources and dependencies before moving to draft.</p>}</section>;
 }
 
 function SmartLink({ id, idMap }) {
@@ -189,32 +174,6 @@ function CaseForChangePanel({ deliverable }) {
   return <section className="panel case-panel" id="why-this-matters"><h2>Why this matters</h2><div className="case-grid">{entries.map(([title, value]) => <FieldCard title={title} key={title}><p>{value}</p></FieldCard>)}</div></section>;
 }
 
-function AtAGlancePanel({ deliverable, stepDeps, onward }) {
-  const decisionsCount = deliverable.decisions?.length || 0;
-  const fields = [
-    ['Benefit owner', deliverable.ownership?.benefitOwner],
-    ['Decision forum', deliverable.ownership?.decisionForum],
-    ['Planning maturity', deliverable.planningMaturity || 'TBC'],
-    ['Route', `${deliverable.steps?.length || 0} delivery steps`],
-    ['Dependencies', `${stepDeps.length} in · ${onward.length} onward`],
-    ['Decisions', decisionsCount ? `${decisionsCount} captured` : 'None captured yet']
-  ];
-  return <section className="panel at-a-glance-panel" id="overview"><h2>At a glance</h2><div className="at-a-glance-grid">{fields.filter(([, value]) => value).map(([label, value]) => <article key={label}><span>{label}</span><strong>{value}</strong></article>)}</div></section>;
-}
-
-function ReaderModeControl({ mode, onChange }) {
-  const options = [
-    ['senior', 'Senior view', 'Overview, route, decisions and dependencies.'],
-    ['delivery', 'Delivery view', 'Governance, route, resources, risks and handoffs.'],
-    ['full', 'Full planning view', 'All planning sections open.']
-  ];
-  return <div className="reader-mode-control"><p className="planning-notice-label">Reader view</p>{options.map(([value, label, help]) => <button type="button" key={value} className={mode === value ? 'active' : ''} onClick={() => onChange(value)}><strong>{label}</strong><span>{help}</span></button>)}</div>;
-}
-
-function DeliverablePageIndex({ mode, setMode }) {
-  return <aside className="deliverable-page-index" aria-label="Deliverable page index"><ReaderModeControl mode={mode} onChange={setMode} /><nav><a href="#overview">Overview</a><a href="#why-this-matters">Why this matters</a><a href="#route-through">Route through</a><a href="#decisions-dependencies">Decisions and dependencies</a><a href="#governance">Governance</a><a href="#value-evidence">Value and evidence</a><a href="#resources">Resources</a><a href="#risks-decisions">Risks and decisions</a></nav></aside>;
-}
-
 function DetailAccordion({ id, title, summary, open, onToggle, children }) {
   return <section className="panel detail-accordion" id={id}><button type="button" className="detail-accordion-header" aria-expanded={open} onClick={() => onToggle(id)}><span>{title}</span>{summary && <em>{summary}</em>}<strong>{open ? 'Hide' : 'Show'}</strong></button>{open && <div className="detail-accordion-body">{children}</div>}</section>;
 }
@@ -265,14 +224,14 @@ function StepExtras({ step }) {
   return extras.length ? <div className="step-extras">{extras}</div> : null;
 }
 
-function DeliveryStepsPanel({ deliverable, idMap, showExtras }) {
-  return <section className="panel route-through-panel" id="route-through"><h2>Route through</h2><p className="subtle">The delivery steps are the main route map for this deliverable. Four are shown by default on wider screens; scroll sideways where more steps are captured.</p><div className="steps-list">{deliverable.steps.map((step) => <article className={`step-card ${isPreDraft(deliverable) ? 'indicative-step-card' : ''}`} key={step.id}><span className="period-pill">{periodLabel(step.period)}</span>{isPreDraft(deliverable) && <span className="indicative-label">Indicative</span>}<h3>{step.title}</h3><p>{step.summary}</p>{getStepDependencies(step).length > 0 && <p className="depends">Depends on: {getStepDependencies(step).map((id) => resolveLabel(id, idMap)).join('; ')}</p>}{showExtras && <StepExtras step={step} />}</article>)}</div></section>;
+function DeliveryStepsPanel({ deliverable, idMap }) {
+  return <section className="panel route-through-panel" id="route-through"><h2>Delivery timeline</h2><p className="subtle">The main delivery route for this deliverable. Each card shows the step purpose, what it produces and what it needs. Open step detail for decisions, resources, risks, issues and assumptions.</p><div className="steps-list">{deliverable.steps.map((step) => <article className={`step-card ${isPreDraft(deliverable) ? 'indicative-step-card' : ''}`} key={step.id}><span className="period-pill">{periodLabel(step.period)}</span>{isPreDraft(deliverable) && <span className="indicative-label">Indicative</span>}<h3>{step.title}</h3><p>{step.summary}</p>{getStepDependencies(step).length > 0 && <p className="depends">Depends on: {getStepDependencies(step).map((id) => resolveLabel(id, idMap)).join('; ')}</p>}<StepExtras step={step} /></article>)}</div></section>;
 }
 
 function DecisionsDependenciesPanel({ deliverable, stepDeps, onward, idMap }) {
   const decisions = deliverable.decisions || [];
   if (!decisions.length && !stepDeps.length && !onward.length) return null;
-  return <section className="panel decision-dependency-panel" id="decisions-dependencies"><h2>Decisions and dependencies</h2><div className="decision-dependency-grid"><div><h3>Decisions needing attention</h3>{decisions.length ? <div className="decision-card-stack">{decisions.map((item, index) => <article className="schema-card" key={index}><h4>{asText(item)}</h4>{desc(item) && <p>{desc(item)}</p>}<p className="schema-meta">{meta([item.owner, item.decisionMaker, item.decisionNeededBy || item.neededBy, item.confidence])}</p></article>)}</div> : <p>No decisions captured yet.</p>}</div><div><h3>Dependencies and handoffs</h3>{stepDeps.length ? <><p className="subtle">Depends on</p><div className="link-list">{stepDeps.map((id) => <SmartLink key={id} id={id} idMap={idMap} />)}</div></> : <p>No incoming step dependencies captured yet.</p>}{onward.length ? <><p className="subtle">Feeds into</p><ul className="compact-list">{onward.map((entry, index) => <li key={`${entry.parent.id}-${entry.step.id}-${index}`}><SmartLink id={entry.step.id} idMap={idMap} /></li>)}</ul></> : <p>No onward step dependencies captured yet.</p>}</div></div></section>;
+  return <section className="panel decision-dependency-panel" id="decisions-dependencies"><h2>Cross-cutting decisions and dependencies</h2><p className="subtle cross-cutting-scope-note">Only whole-deliverable decisions, cross-deliverable dependencies and escalation points are shown here. Step-level sequencing, handoffs and operational choices sit in the Delivery timeline.</p><div className="decision-dependency-grid"><div><h3>Whole-deliverable decisions</h3>{decisions.length ? <div className="decision-card-stack">{decisions.map((item, index) => <article className="schema-card" key={index}><h4>{asText(item)}</h4>{desc(item) && <p>{desc(item)}</p>}<p className="schema-meta">{meta([item.owner, item.decisionMaker, item.decisionNeededBy || item.neededBy, item.confidence])}</p></article>)}</div> : <p>No whole-deliverable decisions or escalation points captured yet.</p>}</div><div><h3>Cross-deliverable dependencies</h3>{stepDeps.length ? <><p className="subtle">Cross-deliverable depends on</p><div className="link-list">{stepDeps.map((id) => <SmartLink key={id} id={id} idMap={idMap} />)}</div></> : <p>No cross-deliverable dependencies or handoffs captured yet. Step-level sequencing is shown in the Delivery timeline.</p>}{onward.length ? <><p className="subtle">Cross-deliverable feeds into</p><ul className="compact-list">{onward.map((entry, index) => <li key={`${entry.parent.id}-${entry.step.id}-${index}`}><SmartLink id={entry.step.id} idMap={idMap} /></li>)}</ul></> : <p>No onward cross-deliverable handoffs captured yet.</p>}</div></div></section>;
 }
 
 function ComponentPanel({ deliverable }) {
@@ -284,23 +243,17 @@ function DependenciesPanel({ stepDeps, onward, idMap }) {
 }
 
 function DeliverableDetail({ deliverable, idMap, dependencyIndex }) {
-  const [viewMode, setViewMode] = useState('senior');
-  const [openSections, setOpenSections] = useState(defaultSectionsByMode.senior);
-
-  useEffect(() => {
-    setOpenSections(defaultSectionsByMode[viewMode]);
-  }, [viewMode]);
+  const [openSections, setOpenSections] = useState([]);
 
   if (!deliverable) return <main><section className="section-heading"><h1>Deliverable not found</h1></section></main>;
 
   const steps = deliverable.steps || [];
   const stepDeps = [...new Set(steps.flatMap((step) => getStepDependencies(step)))];
   const onward = steps.flatMap((step) => dependencyIndex.get(step.id) || []);
-  const showStepExtras = viewMode !== 'senior';
   const toggleSection = (id) => setOpenSections((sections) => sections.includes(id) ? sections.filter((section) => section !== id) : [...sections, id]);
   const isOpen = (id) => openSections.includes(id);
 
-  return <main><a className="back-link" href="#/deliverables">Back to deliverables</a><section className="detail-hero"><div className="deliverable-context-line hero-context-line"><span className="reference hero-reference">{displayId(deliverable)}</span><span className="project-context">Project {displayId(deliverable.project)} {deliverable.project.title}</span><PlanningStatusTag item={deliverable} /></div><h1><span className="hero-title-text">{deliverable.title}</span></h1><p>{deliverable.summary}</p><DetailSummary item={deliverable} /><div className="detail-meta"><span>Accountable owner: {deliverable.ownership?.accountableOwner || deliverable.project.owner}</span><span>Delivery lead: {deliverable.ownership?.deliveryLead || deliverable.lead}</span></div></section><div className="deliverable-layout"><DeliverablePageIndex mode={viewMode} setMode={setViewMode} /><div className="deliverable-main-flow"><PlanningNotice deliverable={deliverable} /><AtAGlancePanel deliverable={deliverable} stepDeps={stepDeps} onward={onward} /><CaseForChangePanel deliverable={deliverable} /><DeliveryStepsPanel deliverable={deliverable} idMap={idMap} showExtras={showStepExtras} /><DecisionsDependenciesPanel deliverable={deliverable} stepDeps={stepDeps} onward={onward} idMap={idMap} /><section className="panel detailed-plan-control"><h2>Planning detail</h2><p>Use the reader view and section controls to show the level of detail you need. The route through stays visible because it is the main sense-making layer for the deliverable.</p></section><div className="detailed-plan-reveal">{isPreDraft(deliverable) && <section className="panel pre-draft-note"><h2>Pre-draft planning detail</h2><p>This deliverable is currently pre-draft. Detailed planning fields are working assumptions and will be refined through deliverable-level scrutiny.</p></section>}<DetailAccordion id="governance" title="Governance and contributors" summary="Benefit ownership, decision route and contributor base." open={isOpen('governance')} onToggle={toggleSection}><GovernancePanel deliverable={deliverable} /></DetailAccordion><DetailAccordion id="value-evidence" title="Value, products and evidence" summary="Benefits to realise, outputs to produce and measures to test whether the benefit is happening." open={isOpen('value-evidence')} onToggle={toggleSection}><DeliveryModelPanel deliverable={deliverable} /></DetailAccordion><DetailAccordion id="definition-of-done" title="Definition of done" summary="What needs to be true before this deliverable can be treated as delivered or ready for handover." open={isOpen('definition-of-done')} onToggle={toggleSection}><DefinitionPanel deliverable={deliverable} /></DetailAccordion>{hasResources(deliverable.resources) && <DetailAccordion id="resources" title="Resources" summary="Existing capacity, new investment and enabling conditions." open={isOpen('resources')} onToggle={toggleSection}><ResourcesBlock resources={deliverable.resources} /></DetailAccordion>}<DetailAccordion id="components" title="Components" summary="The main building blocks of the deliverable." open={isOpen('components')} onToggle={toggleSection}><ComponentPanel deliverable={deliverable} /></DetailAccordion><DetailAccordion id="risks-decisions" title="Planning risks and decisions" summary="Risks, issues, assumptions and decisions captured for planning scrutiny." open={isOpen('risks-decisions')} onToggle={toggleSection}><RaidPanel deliverable={deliverable} /></DetailAccordion><DetailAccordion id="dependencies" title="Dependencies and handoffs" summary="Step-level dependencies and onward feeds." open={isOpen('dependencies')} onToggle={toggleSection}><DependenciesPanel stepDeps={stepDeps} onward={onward} idMap={idMap} /></DetailAccordion></div></div></div></main>;
+  return <main><a className="back-link" href="#/deliverables">Back to deliverables</a><section className="detail-hero"><div className="deliverable-context-line hero-context-line"><span className="reference hero-reference">{displayId(deliverable)}</span><span className="project-context">Project {displayId(deliverable.project)} {deliverable.project.title}</span><PlanningStatusTag item={deliverable} /></div><h1><span className="hero-title-text">{deliverable.title}</span></h1><p>{deliverable.summary}</p><DetailSummary item={deliverable} /><div className="detail-meta"><span>Accountable owner: {deliverable.ownership?.accountableOwner || deliverable.project.owner}</span><span>Delivery lead: {deliverable.ownership?.deliveryLead || deliverable.lead}</span></div></section><div className="deliverable-main-flow"><PlanningNotice deliverable={deliverable} /><CaseForChangePanel deliverable={deliverable} /><DeliveryStepsPanel deliverable={deliverable} idMap={idMap} /><DecisionsDependenciesPanel deliverable={deliverable} stepDeps={stepDeps} onward={onward} idMap={idMap} /><section className="panel detailed-plan-control"><h2>Planning detail</h2><p>Use the concertina sections below for cross-cutting planning detail. Step-specific outputs, decisions, resources, risks, issues and assumptions are available inside the Delivery timeline cards above.</p></section><div className="detailed-plan-reveal">{isPreDraft(deliverable) && <section className="panel pre-draft-note"><h2>Pre-draft planning detail</h2><p>This deliverable is currently pre-draft. Detailed planning fields are working assumptions and will be refined through deliverable-level scrutiny.</p></section>}<DetailAccordion id="governance" title="Governance and contributors" summary="Benefit ownership, decision route and contributor base." open={isOpen('governance')} onToggle={toggleSection}><GovernancePanel deliverable={deliverable} /></DetailAccordion><DetailAccordion id="value-evidence" title="Value, products and evidence" summary="Benefits to realise, outputs to produce and measures to test whether the benefit is happening." open={isOpen('value-evidence')} onToggle={toggleSection}><DeliveryModelPanel deliverable={deliverable} /></DetailAccordion><DetailAccordion id="definition-of-done" title="Definition of done" summary="What needs to be true before this deliverable can be treated as delivered or ready for handover." open={isOpen('definition-of-done')} onToggle={toggleSection}><DefinitionPanel deliverable={deliverable} /></DetailAccordion>{hasResources(deliverable.resources) && <DetailAccordion id="resources" title="Resources" summary="Existing capacity, new investment and enabling conditions." open={isOpen('resources')} onToggle={toggleSection}><ResourcesBlock resources={deliverable.resources} /></DetailAccordion>}<DetailAccordion id="components" title="Components" summary="The main building blocks of the deliverable." open={isOpen('components')} onToggle={toggleSection}><ComponentPanel deliverable={deliverable} /></DetailAccordion><DetailAccordion id="risks-decisions" title="Planning risks and decisions" summary="Risks, issues, assumptions and decisions captured for planning scrutiny." open={isOpen('risks-decisions')} onToggle={toggleSection}><RaidPanel deliverable={deliverable} /></DetailAccordion><DetailAccordion id="dependencies" title="Dependencies and handoffs" summary="Step-level dependencies and onward feeds." open={isOpen('dependencies')} onToggle={toggleSection}><DependenciesPanel stepDeps={stepDeps} onward={onward} idMap={idMap} /></DetailAccordion></div></div></main>;
 }
 
 function TimelineView({ timelineItems, idMap, dependencyIndex }) {
