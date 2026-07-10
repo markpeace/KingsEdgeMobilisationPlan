@@ -117,48 +117,16 @@
     },
     {
       "id": "2.1.1-step-4",
-      "title": "Work with early programme partners to refine the approach",
-      "period": {"start": "jul-dec-2026:c", "end": "jan-jun-2027:a"},
-      "summary": "This step works with a small number of early programme partners to try the pack and conversation model in real programme settings. These colleagues help us understand whether the approach feels useful, fair and proportionate, and whether it helps programmes surface their distinctive value as well as areas for further attention.",
-      "stepType": "early-programme-partner-testing",
+      "title": "Pilot and iterate the evidence pack and guided conversation",
+      "period": {"start": "jul-dec-2026:c", "end": "jan-jun-2027:c"},
+      "summary": "This step works with early programme partners to try the evidence pack and guided conversation in real programme settings, then uses what is learned to improve the pack, prompts, guidance and programme profile materials while the learning is still live.",
+      "stepType": "pilot-and-iterate",
       "dependsOn": ["2.1.1-step-2", "2.1.1-step-3"],
       "outputs": [
         {"title": "Early programme conversations", "summary": "A small number of real programme conversations using the evidence pack and guided conversation structure."},
         {"title": "Feedback from academic colleagues", "summary": "Feedback on the pack, prompts, facilitation approach and overall usefulness of the process."},
         {"title": "Examples of programme insight and story", "summary": "Examples of the kinds of insights, questions, possible actions and graduate futures stories the approach can generate."},
         {"title": "Learning record", "summary": "A record of where the evidence was useful, where it was unclear and where further explanation or support was needed."},
-        {"title": "Recommended changes", "summary": "Changes to the pack, guidance and conversation model before wider use."}
-      ],
-      "resources": {
-        "existingCapacity": [
-          {"role": "Early programme partners", "contribution": "Use the pack and conversation model in real programme settings and help shape the approach."},
-          {"role": "Faculty colleagues", "contribution": "Support or host early conversations."},
-          {"role": "Careers, data and education colleagues", "contribution": "Interpret what is learned and identify changes needed before wider use."},
-          {"role": "King's Academy", "contribution": "Review whether the conversation model feels developmental, proportionate and academically credible where useful."}
-        ],
-        "nonCashNeeds": [{"need": "Debrief and learning time after each early conversation", "rationale": "The value of this step is in learning carefully from early use, not simply in completing the conversations."}]
-      },
-      "decisions": [
-        {"title": "Confirm early programme partners", "summary": "Agree which programmes should act as early partners."},
-        {"title": "Confirm invitation and briefing approach", "summary": "Agree how early partners should be invited and briefed so the work feels collegiate and constructive."},
-        {"title": "Confirm learning mix", "summary": "Agree what mix of programme types, disciplines and student profiles would give the most useful learning."},
-        {"title": "Confirm readiness for wider use", "summary": "Agree what evidence from early use is enough to support wider use."},
-        {"title": "Confirm how findings are shared", "summary": "Agree how learning can be shared without exposing, labelling or over-interpreting individual programmes."}
-      ],
-      "risks": [
-        {"title": "Early partners are read as being judged", "mitigation": "Choose and invite partners for learning value, not because they are seen as problems."},
-        {"title": "Early examples imply a single correct model", "mitigation": "Use examples to show variation, not prescribe one programme story."},
-        {"title": "The approach works only in unusually engaged contexts", "mitigation": "Select early partners that provide useful variation in discipline, student profile and programme context."}
-      ]
-    },
-    {
-      "id": "2.1.1-step-5",
-      "title": "Improve the pack and conversation model from early use",
-      "period": "jan-jun-2027:abc",
-      "summary": "This step uses what early programme partners tell us to make the pack and conversation model clearer, lighter and more useful. It is a chance to improve the evidence, the prompts, the guidance and the profile materials before wider programme engagement begins.",
-      "stepType": "model-refinement",
-      "dependsOn": ["2.1.1-step-4"],
-      "outputs": [
         {"title": "Improved graduate futures evidence pack", "summary": "A revised pack that better supports programme story, responsible interpretation and practical reflection."},
         {"title": "Updated interpretation guidance", "summary": "Clearer guidance on responsible use, caveats and points that need better explanation."},
         {"title": "Refined guided conversation structure", "summary": "Revised prompts and facilitation notes based on early programme use."},
@@ -167,33 +135,45 @@
       ],
       "resources": {
         "existingCapacity": [
+          {"role": "Early programme partners", "contribution": "Use the pack and conversation model in real programme settings and help shape the approach."},
+          {"role": "Faculty colleagues", "contribution": "Support or host early conversations and help interpret what is learned locally."},
+          {"role": "Careers and Employability Service", "contribution": "Support interpretation, responsible-use guidance and refinement of the pack."},
           {"role": "Data and visualisation colleagues", "contribution": "Make changes to the pack in response to early use."},
-          {"role": "Careers and Employability Service", "contribution": "Refine interpretation guidance and responsible-use principles."},
-          {"role": "King's Academy", "contribution": "Support refinements to conversation materials where the facilitation model needs adjustment."},
-          {"role": "Faculty colleagues and early programme partners", "contribution": "Confirm whether the revised approach is workable, proportionate and credible."}
+          {"role": "King's Academy", "contribution": "Review whether the conversation model feels developmental, proportionate and academically credible, and support refinements where needed."},
+          {"role": "Faculty colleagues and early programme partners", "contribution": "Confirm whether the revised approach is workable, proportionate and credible."
+          }
         ],
-        "nonCashNeeds": [{"need": "Coordination capacity", "rationale": "Needed to prepare the next phase and avoid the work becoming too heavy for faculties or programme teams."}]
+        "nonCashNeeds": [
+          {"need": "Debrief and learning time after each early conversation", "rationale": "The value of this step is in learning carefully from early use, not simply in completing the conversations."},
+          {"need": "Coordination capacity", "rationale": "Needed to keep the pilot-and-iterate loop moving and avoid the work becoming too heavy for faculties or programme teams."}
+        ]
       },
       "decisions": [
+        {"title": "Confirm early programme partners", "summary": "Agree which programmes should act as early partners."},
+        {"title": "Confirm invitation and briefing approach", "summary": "Agree how early partners should be invited and briefed so the work feels collegiate and constructive."},
+        {"title": "Confirm learning mix", "summary": "Agree what mix of programme types, disciplines and student profiles would give the most useful learning."},
         {"title": "Confirm essential changes", "summary": "Agree which changes are essential before wider use and which can wait."},
         {"title": "Confirm standard and flexible elements", "summary": "Agree which parts of the approach should be consistent across King's and which can flex locally."},
         {"title": "Confirm next programme groups", "summary": "Agree which programme groups should be invited into the next phase."},
         {"title": "Confirm rationale language", "summary": "Agree how to explain the rationale for the next programme groups in a fair and constructive way."},
-        {"title": "Confirm deeper conversation triggers", "summary": "Agree what level of evidence, opportunity or concern should lead to a deeper programme conversation."}
+        {"title": "Confirm how findings are shared", "summary": "Agree how learning can be shared without exposing, labelling or over-interpreting individual programmes."}
       ],
       "risks": [
+        {"title": "Early partners are read as being judged", "mitigation": "Choose and invite partners for learning value, not because they are seen as problems."},
         {"title": "The model is locked too early", "mitigation": "Use early feedback to make real changes rather than simply confirm the original design."},
+        {"title": "Early examples imply a single correct model", "mitigation": "Use examples to show variation, not prescribe one programme story."},
+        {"title": "The approach works only in unusually engaged contexts", "mitigation": "Select early partners that provide useful variation in discipline, student profile and programme context."},
         {"title": "Local flexibility makes the approach incoherent", "mitigation": "Define a light common core with space for local adaptation."},
         {"title": "The next phase feels like targeting", "mitigation": "Explain the rationale as focused support, story development and institutional learning."}
       ]
     },
     {
-      "id": "2.1.1-step-6",
+      "id": "2.1.1-step-5",
       "title": "Work with agreed programme groups where the evidence can be most useful",
       "period": {"start": "jan-jun-2027:c", "end": "jul-dec-2027:b"},
       "summary": "This step works with agreed programme groups through a shared and transparent process. The evidence helps identify where a deeper conversation may be valuable, but faculty knowledge and programme context matter just as much. The purpose is to help colleagues strengthen their graduate futures story and identify practical next steps, not to label programmes.",
       "stepType": "shared-prioritisation-engagement",
-      "dependsOn": ["2.1.1-step-5"],
+      "dependsOn": ["2.1.1-step-4"],
       "outputs": [
         {"title": "Shared prioritisation approach", "summary": "An agreed approach for selecting programme groups, combining evidence, faculty knowledge, programme context and local judgement."},
         {"title": "Guided programme conversations", "summary": "Supported conversations with agreed programme groups using the improved pack and conversation model."},
@@ -226,12 +206,12 @@
       ]
     },
     {
-      "id": "2.1.1-step-7",
+      "id": "2.1.1-step-6",
       "title": "Make the evidence pack a living resource",
       "period": {"start": "jan-jun-2027:c", "end": "jul-dec-2027:a"},
       "summary": "This step makes sure the evidence pack remains useful after the first phase of work. It agrees who will maintain it, how the evidence will be refreshed, how colleagues will get support with interpretation, and how graduate futures evidence will connect to ongoing quality assurance and continual improvement.",
       "stepType": "living-resource-and-handoff",
-      "dependsOn": ["2.1.1-step-2", "2.1.1-step-5"],
+      "dependsOn": ["2.1.1-step-2", "2.1.1-step-4"],
       "outputs": [
         {"title": "Evidence refresh rhythm", "summary": "An agreed rhythm for refreshing the evidence pack, including which data can be updated regularly and which data needs longer cycles."},
         {"title": "Clear ownership model", "summary": "Ownership for maintaining the data, dashboard, narrative guidance and interpretation materials."},
@@ -267,12 +247,12 @@
       ]
     },
     {
-      "id": "2.1.1-step-8",
+      "id": "2.1.1-step-7",
       "title": "Enable every programme to review and strengthen its graduate futures evidence",
       "period": {"start": "jul-dec-2027:c", "end": "jul-dec-2028:ab"},
       "summary": "This step makes sure every agreed programme has a meaningful way to engage with its graduate futures evidence. Some programmes will have a supported conversation, while others will be enabled to self-review using the pack and guidance. The aim is that every programme can understand, evidence and strengthen its graduate futures story, and that King's can learn from the patterns emerging across programmes.",
       "stepType": "full-programme-review-and-synthesis",
-      "dependsOn": ["2.1.1-step-6"],
+      "dependsOn": ["2.1.1-step-5"],
       "outputs": [
         {"title": "Supported reviews for remaining agreed programme groups", "summary": "Supported graduate futures conversations where direct support is needed."},
         {"title": "Self-review route", "summary": "A route for programmes able to use the evidence pack, guidance and conversation materials without a supported conversation."},
