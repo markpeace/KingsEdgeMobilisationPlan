@@ -1,57 +1,35 @@
 const benefitEvidenceByDeliverable = {
   '2.1.1': {
     '2.1.1-B1': {
-      successLooksLike: "Programme teams can make confident, nuanced and evidence-informed claims about their excellence, distinctive strengths and students' graduate futures, without reducing that story to a single metric.",
+      successLooksLike: 'Programme and institutional narratives claim graduate futures value with confidence, nuance and evidence, while remaining context-sensitive, academically owned and appropriately caveated.',
       evidenceOfSuccess: [
         'Programme reflections, profiles or story materials explain what programmes enable for students using evidence, context and academic judgement.',
         'Programme teams recognise themselves in the story and feel able to use it with students, applicants, colleagues or external audiences.',
-        'Student-facing or applicant-facing claims are evidence-linked, context-sensitive, appropriately caveated and agreed with the relevant programme teams.'
+        'Student-facing, applicant-facing or institutional claims about graduate futures are evidence-linked, context-sensitive, appropriately caveated and agreed with the relevant programme teams.',
+        "Programme and institutional stories feed recruitment, open day, programme review, graduate premium evidence or related King's Edge work without reducing programme value to a single metric."
       ],
       enabledBy: [
         { stepId: '2.1.1-step-1', label: 'Step 01: First working graduate futures evidence pack' },
         { stepId: '2.1.1-step-3', label: 'Step 03: Programme reflection and profile template' },
-        { stepId: '2.1.1-step-5', label: 'Step 05: Examples of distinctive programme value' }
+        { stepId: '2.1.1-step-5', label: 'Step 05: Examples of distinctive programme value' },
+        { stepId: '2.1.1-step-7', label: 'Step 07: Institutional graduate futures synthesis' }
       ]
     },
     '2.1.1-B2': {
-      successLooksLike: 'Teams can distinguish strengths to claim, questions to investigate and focused areas for development, without treating the evidence as a deficit report or judgement on programme quality.',
+      successLooksLike: 'Programme and institutional conversations use graduate futures evidence to identify strengths, questions, support needs and focused opportunities for enhancement without treating the evidence as a deficit report, ranking or judgement on programme quality.',
       evidenceOfSuccess: [
         'Guided conversations capture agreed questions, practical local actions or areas for further support.',
         'Actions or focus areas are taken into normal programme, department or faculty planning routes rather than remaining as standalone project paperwork.',
-        'Programme teams use academic judgement to describe how the evidence helped them see both existing strengths and where more is possible for students.'
+        'Faculty-level learning and institutional synthesis draw out recurring strengths, questions, student pathways and support needs across contexts.',
+        "Shared themes inform King's Edge work, faculty planning, curriculum enhancement, skills-related activity or support priorities without creating programme comparison or league-table logic."
       ],
       enabledBy: [
         { stepId: '2.1.1-step-3', label: 'Step 03: Guided programme conversation structure' },
         { stepId: '2.1.1-step-4', label: 'Step 04: Examples of programme insight and story' },
-        { stepId: '2.1.1-step-5', label: 'Step 05: Practical local actions' }
-      ]
-    },
-    '2.1.1-B3': {
-      successLooksLike: "King's can see patterns across programme stories and graduate futures evidence without flattening difference or turning the synthesis into programme comparison.",
-      evidenceOfSuccess: [
-        'Faculty-level learning and institutional synthesis draw out strengths, recurring questions, student pathways and support needs across contexts.',
-        'Shared themes are discussed as learning, support and strategic development needs, not as programme league tables.',
-        "Institutional synthesis informs King's Edge work, faculty planning, graduate premium evidence, curriculum enhancement or skills-related activity."
-      ],
-      enabledBy: [
-        { stepId: '2.1.1-step-2', label: 'Step 02: Early institutional summary' },
+        { stepId: '2.1.1-step-5', label: 'Step 05: Practical local actions' },
         { stepId: '2.1.1-step-5', label: 'Step 05: Faculty-level learning' },
         { stepId: '2.1.1-step-7', label: 'Step 07: Institutional graduate futures synthesis' },
         { stepId: '2.1.1-step-7', label: "Step 07: Recommendations for related King's Edge work" }
-      ]
-    },
-    '2.1.1-B4': {
-      successLooksLike: 'The evidence packs and guided review process have a clear owner, refresh rhythm, access route and place in existing programme, department, faculty or institutional planning conversations.',
-      evidenceOfSuccess: [
-        'Ownership, refresh rhythm, access route and interpretation support for the evidence packs are confirmed.',
-        'Graduate futures evidence has an agreed place in quality assurance, continual improvement or programme enhancement cycles.',
-        'Ongoing feedback from colleagues who use the packs and review process leads to updates in evidence, guidance or support over time.'
-      ],
-      enabledBy: [
-        { stepId: '2.1.1-step-6', label: 'Step 06: Evidence refresh rhythm' },
-        { stepId: '2.1.1-step-6', label: 'Step 06: Business-as-usual ownership model' },
-        { stepId: '2.1.1-step-6', label: 'Step 06: Quality assurance and continual improvement handoff' },
-        { stepId: '2.1.1-step-6', label: 'Step 06: Ongoing feedback process' }
       ]
     }
   }
