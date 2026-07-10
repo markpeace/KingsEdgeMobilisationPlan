@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://github.com/markpeace/KingsEdgeMobilisationPlan/src/data/timeline-period.schema.json",
   "title": "King's Edge timeline period schema",
-  "description": "Authoring schema for delivery step period values. Visible buckets run from Jul-Dec 2026 to Jul-Dec 2030. Each bucket has hidden a/b/c thirds for sequencing.",
+  "description": "Authoring schema for delivery step period values. Visible buckets run from Jul-Dec 2026 to Jul-Dec 2030. Each bucket has hidden a/b/c thirds for sequencing. Steps can use a whole bucket, part of one bucket, or an explicit start/end span across buckets.",
   "$defs": {
     "bucketId": {
       "type": "string",
@@ -23,6 +23,7 @@
       "enum": ["a", "b", "c", "ab", "bc", "abc"]
     },
     "periodPoint": {
+      "description": "A point or partial span inside one visible bucket. When used as a start point, the first third of the segment is used. When used as an end point, the final third of the segment is used.",
       "oneOf": [
         {
           "type": "string",
@@ -44,6 +45,7 @@
     { "$ref": "#/$defs/periodPoint" },
     {
       "type": "object",
+      "description": "A cross-bucket or cross-segment span. Use this when a step starts in one bucket or third and ends in another. For example, start in c of one bucket and run through ab of the next.",
       "additionalProperties": false,
       "required": ["start", "end"],
       "properties": {
@@ -55,6 +57,11 @@
   "examples": [
     "jul-dec-2026:ab",
     "jan-jun-2027:abc",
-    { "start": "jan-jun-2027:b", "end": "jul-dec-2027:ab" }
+    { "start": "jan-jun-2027:b", "end": "jul-dec-2027:ab" },
+    { "start": "jul-dec-2026:c", "end": "jan-jun-2027:ab" },
+    {
+      "start": { "bucket": "jul-dec-2026", "segment": "c" },
+      "end": { "bucket": "jan-jun-2027", "segment": "ab" }
+    }
   ]
 }
