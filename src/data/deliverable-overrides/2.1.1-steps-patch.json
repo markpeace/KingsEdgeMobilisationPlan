@@ -4,7 +4,7 @@
       "id": "2.1.1-step-1",
       "title": "Create and test the first graduate futures evidence pack",
       "period": "jul-dec-2026:ab",
-      "summary": "Agree the evidence, interpretation principles and caveats, then create a first visual and narrative pack that tests whether programme teams can understand and evidence their students' graduate futures story fairly and usefully.",
+      "summary": "This step creates the first working version of the evidence pack that programme teams will use to understand their students' graduate futures. It starts with the evidence itself: what we can include, what needs careful interpretation, and where the data has limits. It then tests whether the pack helps colleagues see a fair and useful picture of what their programme enables for students.",
       "stepType": "evidence-pack-prototype",
       "dependsOn": [],
       "outputs": [
@@ -127,7 +127,7 @@
       "id": "2.1.1-step-2",
       "title": "Share the first programme packs and learn from use",
       "period": "jul-dec-2026:bc",
-      "summary": "Turn the first tested pack into programme-facing packs that colleagues can use to recognise strengths, describe their graduate futures story, spot patterns, ask better questions and identify where further discussion would be useful.",
+      "summary": "This step shares the first programme-facing packs with colleagues and learns from how they use them. The aim is to see whether the packs help programme teams recognise strengths, ask better questions, and describe their students' graduate futures with more confidence. It should also show where the evidence, language or guidance needs to be improved.",
       "stepType": "programme-pack-sharing-and-learning",
       "dependsOn": [
         "2.1.1-step-1"
@@ -230,7 +230,7 @@
       "id": "2.1.1-step-3",
       "title": "Design the guided programme conversation",
       "period": "jul-dec-2026:abc",
-      "summary": "Design the structure, prompts and materials that help programme teams move from story, to evidence, to questions, to action, with the right balance of recognition, reflection and practical next steps.",
+      "summary": "This step designs the conversation that helps colleagues make sense of the evidence together. The conversation should help programme teams move from what they already know about their programme, to what the evidence adds, to what they may want to strengthen next. It should support academic judgement, not replace it.",
       "stepType": "guided-conversation-design",
       "dependsOn": [
         "2.1.1-step-1"
@@ -318,7 +318,7 @@
       "id": "2.1.1-step-4",
       "title": "Work with early programme partners to refine the approach",
       "period": "jul-dec-2026:bc",
-      "summary": "Work with a small number of early programme partners to try out the evidence pack and guided conversation in real settings, testing whether the approach surfaces distinctive programme value as well as useful areas for enhancement.",
+      "summary": "This step works with a small number of early programme partners to try the pack and conversation model in real programme settings. These colleagues help us understand whether the approach feels useful, fair and proportionate, and whether it helps programmes surface their distinctive value as well as areas for further attention.",
       "stepType": "early-programme-partner-testing",
       "dependsOn": [
         "2.1.1-step-2",
@@ -413,7 +413,7 @@
       "id": "2.1.1-step-5",
       "title": "Improve the pack and conversation model from early use",
       "period": "jan-jun-2027:ab",
-      "summary": "Use learning from early programme partners to make the evidence pack, guidance and conversation materials clearer, lighter and more useful before wider engagement.",
+      "summary": "This step uses what early programme partners tell us to make the pack and conversation model clearer, lighter and more useful. It is a chance to improve the evidence, the prompts, the guidance and the profile materials before wider programme engagement begins.",
       "stepType": "model-refinement",
       "dependsOn": [
         "2.1.1-step-4"
@@ -510,7 +510,7 @@
         "start": "jan-jun-2027:b",
         "end": "jul-dec-2027:ab"
       },
-      "summary": "Use a shared prioritisation process, combining evidence from the packs with faculty knowledge, programme context and local judgement, to agree programme groups where the evidence can help strengthen story, support or practice.",
+      "summary": "This step works with agreed programme groups through a shared and transparent process. The evidence helps identify where a deeper conversation may be valuable, but faculty knowledge and programme context matter just as much. The purpose is to help colleagues strengthen their graduate futures story and identify practical next steps, not to label programmes.",
       "stepType": "shared-prioritisation-engagement",
       "dependsOn": [
         "2.1.1-step-5"
@@ -615,7 +615,7 @@
         "start": "jan-jun-2027:a",
         "end": "jul-dec-2028:ab"
       },
-      "summary": "Establish how the evidence pack will be refreshed, maintained, accessed and used over time, including handoff into the institutional routes that support quality assurance and continual improvement.",
+      "summary": "This step makes sure the evidence pack remains useful after the first phase of work. It agrees who will maintain it, how the evidence will be refreshed, how colleagues will get support with interpretation, and how graduate futures evidence will connect to ongoing quality assurance and continual improvement.",
       "stepType": "living-resource-and-handoff",
       "dependsOn": [
         "2.1.1-step-2"
@@ -724,7 +724,7 @@
         "start": "jul-dec-2027:c",
         "end": "jul-dec-2028:ab"
       },
-      "summary": "Ensure every agreed programme either has a supported graduate futures conversation or is enabled to self-review using the pack, guidance and conversation materials, then synthesise what is learned across King's.",
+      "summary": "This step makes sure every agreed programme has a meaningful way to engage with its graduate futures evidence. Some programmes will have a supported conversation, while others will be enabled to self-review using the pack and guidance. The aim is that every programme can understand, evidence and strengthen its graduate futures story, and that King's can learn from the patterns emerging across programmes.",
       "stepType": "full-programme-review-and-synthesis",
       "dependsOn": [
         "2.1.1-step-6"
