@@ -1,0 +1,99 @@
+{
+  "benefits": [
+    {
+      "id": "2.1.1-B1",
+      "title": "Programmes can tell a stronger graduate futures story",
+      "statement": "Programme teams have clearer evidence and language for explaining what their programme enables for students and how that value shows up in graduate futures.",
+      "beneficiary": "Programme teams, departments, students, applicants, recruitment teams and faculties",
+      "benefitType": "articulation and evidence",
+      "realisationPeriod": "2026/27 onwards",
+      "successLooksLike": "Programme teams can make confident, nuanced and evidence-informed claims about what their programmes enable.",
+      "evidenceOfSuccess": [
+        "Programme Graduate Futures Profiles or equivalent story materials are used in programme review, recruitment, open days or student-facing contexts.",
+        "Programme teams report that the evidence helps them explain distinctive strengths with greater confidence.",
+        "Claims made in student-facing or applicant-facing contexts are linked to evidence and agreed with relevant programme teams."
+      ],
+      "enabledBy": [
+        {"stepId": "2.1.1-step-1", "outputTitle": "First working graduate futures evidence pack"},
+        {"stepId": "2.1.1-step-3", "outputTitle": "Programme reflection and profile template"},
+        {"stepId": "2.1.1-step-5", "outputTitle": "Programme Graduate Futures Profiles"}
+      ]
+    },
+    {
+      "id": "2.1.1-B2",
+      "title": "Programmes identify where to strengthen practice",
+      "statement": "Programme and department teams use graduate futures evidence to identify where curriculum, skills, opportunity, support or articulation work could make the programme story stronger.",
+      "beneficiary": "Programme teams, departments, faculties, Careers and Employability Service and students",
+      "benefitType": "programme enhancement",
+      "realisationPeriod": "2026/27 to 2027/28",
+      "successLooksLike": "Teams identify credible areas for development without reducing the evidence to deficit, ranking or compliance reporting.",
+      "evidenceOfSuccess": [
+        "Guided conversations capture agreed questions, actions or focus areas for programme, department or faculty follow-up.",
+        "Graduate Futures Action Plans or equivalent local action sets are taken into normal department or faculty planning routes.",
+        "Programme teams can distinguish between strengths to celebrate, questions to investigate and areas where additional support may be useful."
+      ],
+      "enabledBy": [
+        {"stepId": "2.1.1-step-3", "outputTitle": "Guided programme conversation structure"},
+        {"stepId": "2.1.1-step-4", "outputTitle": "Examples of programme insight and story"},
+        {"stepId": "2.1.1-step-5", "outputTitle": "Graduate Futures Action Plans"}
+      ]
+    },
+    {
+      "id": "2.1.1-B3",
+      "title": "King's gains a clearer institutional view of graduate futures",
+      "statement": "Shared strengths, questions, student pathways and support needs can be seen across programmes without flattening disciplinary nuance.",
+      "beneficiary": "King's Edge, faculties, senior education leaders, Careers and Employability Service and students",
+      "benefitType": "institutional learning",
+      "realisationPeriod": "2027/28 onwards",
+      "successLooksLike": "King's can see patterns across programme stories and graduate futures evidence while preserving local context and academic judgement.",
+      "evidenceOfSuccess": [
+        "Institutional synthesis informs King's Edge work, faculty planning, graduate premium evidence and related curriculum or skills activity.",
+        "Shared themes are discussed as learning and support needs, not as programme league tables.",
+        "Faculty and institutional planning can see where graduate futures strengths, questions and infrastructure needs recur across contexts."
+      ],
+      "enabledBy": [
+        {"stepId": "2.1.1-step-2", "outputTitle": "Early institutional summary"},
+        {"stepId": "2.1.1-step-6", "outputTitle": "Institutional synthesis"},
+        {"stepId": "2.1.1-step-8", "outputTitle": "Ongoing learning loop"}
+      ]
+    },
+    {
+      "id": "2.1.1-B4",
+      "title": "Evidence is used responsibly and credibly",
+      "statement": "Colleagues understand the caveats, context and limits of the evidence and use it alongside academic judgement rather than as a blunt performance signal.",
+      "beneficiary": "Programme teams, departments, faculties, students and senior education leaders",
+      "benefitType": "responsible evidence use",
+      "realisationPeriod": "2026/27 onwards",
+      "successLooksLike": "Programme-facing use of evidence is fair, interpretable and developmental, avoiding ranking, league-table or punitive readings.",
+      "evidenceOfSuccess": [
+        "Feedback suggests that the evidence is useful, fair and interpretable when caveats and context are visible.",
+        "Programme teams use academic judgement to interpret the evidence and challenge over-simple readings.",
+        "Pack, profile and story materials include appropriate caveats and avoid unsupported claims."
+      ],
+      "enabledBy": [
+        {"stepId": "2.1.1-step-1", "outputTitle": "Interpretation approach"},
+        {"stepId": "2.1.1-step-2", "outputTitle": "Short user guide"},
+        {"stepId": "2.1.1-step-3", "outputTitle": "Responsible-use guidance"}
+      ]
+    },
+    {
+      "id": "2.1.1-B5",
+      "title": "Distinctive programme strengths are surfaced and shared",
+      "statement": "Programmes can claim excellence and distinctive value with pride and nuance, supported by evidence and local academic interpretation.",
+      "beneficiary": "Programme teams, applicants, students, recruitment teams, faculties and King's Edge",
+      "benefitType": "distinctiveness and activation",
+      "realisationPeriod": "2026/27 onwards",
+      "successLooksLike": "Distinctive programme strengths are surfaced, agreed with programme teams and used responsibly in student-facing, applicant-facing or institutional contexts.",
+      "evidenceOfSuccess": [
+        "Examples of distinctive programme value are captured through programme conversations and reflected in profile or story materials.",
+        "Story materials are used in appropriate recruitment, open day, advising, programme review or student-facing contexts.",
+        "Programme teams recognise themselves in the story and feel able to use it confidently."
+      ],
+      "enabledBy": [
+        {"stepId": "2.1.1-step-4", "outputTitle": "Examples of programme insight and story"},
+        {"stepId": "2.1.1-step-5", "outputTitle": "Programme Graduate Futures Story Materials"},
+        {"stepId": "2.1.1-step-6", "outputTitle": "Institutional synthesis"}
+      ]
+    }
+  ]
+}
