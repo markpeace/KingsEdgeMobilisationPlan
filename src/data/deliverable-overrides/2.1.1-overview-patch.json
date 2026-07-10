@@ -1,10 +1,10 @@
 {
-  "summary": "Helps programme teams understand, evidence and strengthen their students' graduate futures story through clear evidence packs, guided conversations, shared review and a living resource that supports ongoing enhancement.",
-  "detailSummary": "This deliverable gives King's a clearer and more useful account of graduate futures at programme level. It brings together employability outcomes, graduate destinations, benchmarking, student aspiration and readiness data, comparator evidence and programme context into evidence packs that academic colleagues can use to understand what their programmes make possible for students.\n\nThe purpose is not to rank programmes or produce central judgements. It is to help programme teams tell a stronger evidence-informed story about their students' graduate futures, while also supporting thoughtful reflection on where that story could be strengthened. The evidence should help colleagues recognise existing strengths, ask better questions, identify where students may need more visible or consistent support, and decide what should be taken forward through normal programme, department or faculty routes.\n\nThe first delivery gate is September 2026: the data specification is complete, the first working evidence pack is built, and the pack has been tested with selected users so that findings can shape the next version. By Christmas 2026, the first programme-facing packs are shared with colleagues, supported by a short user guide, faculty conversations and an early institutional summary for the agreed senior education forum.\n\nIn parallel, the guided programme conversation is designed with input from King's Academy, Careers and faculty colleagues. Early programme partners then help test whether the pack and conversation model surface distinctive programme value as well as useful areas for enhancement. The model is refined before wider engagement with agreed programme groups through a shared prioritisation process that combines evidence, faculty knowledge, programme context and local judgement.\n\nAcross 2027 and 2028, the evidence pack becomes a living resource with a confirmed refresh rhythm, ownership model and route into quality assurance and continual improvement. By the end of the programme-facing phase, every agreed programme should either have taken part in a supported graduate futures conversation or have been enabled to self-review using the pack, guidance and conversation materials. The final synthesis brings together what King's is learning about graduate futures across programmes, departments and faculties.",
-  "whatChanges": "Programmes, departments and faculties gain evidence packs and guided conversations that help them understand, evidence and strengthen their graduate futures story. King's also gains a more coherent institutional view of programme-level strengths, questions, support needs and student pathways, with a living evidence resource connected to quality assurance and continual improvement cycles.",
+  "summary": "Helps programme teams understand, evidence and strengthen their students' graduate futures story through clear evidence packs, guided conversations, shared review and a business-as-usual process that supports ongoing enhancement.",
+  "detailSummary": "This deliverable gives King's a clearer and more useful account of graduate futures at programme level. It brings together employability outcomes, graduate destinations, benchmarking, student aspiration and readiness data, comparator evidence and programme context into evidence packs that academic colleagues can use to understand what their programmes make possible for students.\n\nThe purpose is not to rank programmes or produce central judgements. It is to help programme teams tell a stronger evidence-informed story about their students' graduate futures, while also supporting thoughtful reflection on where that story could be strengthened. The evidence should help colleagues recognise existing strengths, ask better questions, identify where students may need more visible or consistent support, and decide what should be taken forward through normal programme, department or faculty routes.\n\nThe detailed sequencing now sits in the delivery steps. At summary level, the work moves from evidence pack design and guided conversation materials, through pilot-and-iterate work with early programme partners, into the first round of guided conversations, transfer of the data packs and review process into business as usual, and completion of graduate futures reviews across the rest of the institution by June 2028. The final synthesis brings together what King's is learning about graduate futures across programmes, departments and faculties.",
+  "whatChanges": "Programmes, departments and faculties gain evidence packs and guided conversations that help them understand, evidence and strengthen their graduate futures story. King's also gains a more coherent institutional view of programme-level strengths, questions, support needs and student pathways, with data packs and a review process connected to quality assurance and continual improvement cycles.",
   "caseForChange": {
     "opportunity": "By creating clear graduate futures evidence packs and a guided programme conversation, King's can help programmes articulate their value to students with more confidence, surface distinctive strengths, identify where support or enhancement would be useful, and create credible material for programme development, student articulation, open days and graduate premium evidence work. Early faculty conversations and a senior education summary also allow the institution to learn from the evidence before full programme engagement is complete.",
-    "intendedChange": "King's moves from fragmented or underused employability reporting to a coherent graduate futures evidence, story and enhancement model. Programme teams receive usable evidence packs, test and refine the approach through early programme partners, engage through a shared prioritisation process and wider review or self-review, and use the evidence to strengthen both programme practice and the way their graduate futures story is understood."
+    "intendedChange": "King's moves from fragmented or underused employability reporting to a coherent graduate futures evidence, story and enhancement model. Programme teams receive usable evidence packs, test and refine the approach through early programme partners, engage through a shared identification process and wider review or self-review, and use the evidence to strengthen both programme practice and the way their graduate futures story is understood. Management of the data packs and review process is transferred into business as usual so the work can continue beyond the mobilisation phase."
   },
   "components": [
     {
@@ -24,20 +24,20 @@
       "summary": "Design the prompts, facilitation notes and light templates that help programme teams move from story, to evidence, to questions, to action."
     },
     {
-      "title": "Early programme partners",
-      "summary": "Work with a small number of programmes to test whether the pack and conversation model are useful, fair, proportionate and academically credible."
+      "title": "Pilot and iterate with early programme partners",
+      "summary": "Work with a small number of programmes to test and refine whether the pack and conversation model are useful, fair, proportionate and academically credible."
     },
     {
-      "title": "Shared prioritisation and focused programme engagement",
-      "summary": "Agree programme groups through a shared process that combines evidence, faculty knowledge, programme context and local judgement."
+      "title": "First guided conversations with agreed programme groups",
+      "summary": "Identify programme groups where the evidence could be most useful and run the first round of guided programme conversations."
     },
     {
-      "title": "Living evidence resource and institutional handoff",
-      "summary": "Establish the refresh rhythm, ownership model, interpretation guidance and connection to quality assurance and continual improvement cycles."
+      "title": "Business-as-usual transfer",
+      "summary": "Transfer management of the data packs, interpretation guidance and review process into normal ownership and quality assurance or continual improvement routes."
     },
     {
-      "title": "Programme review, self-review and synthesis",
-      "summary": "Enable every agreed programme to complete supported review or self-review, then synthesise themes, strengths, questions and support needs across King's."
+      "title": "Institution-wide review and synthesis",
+      "summary": "Complete graduate futures reviews across the rest of the institution, then synthesise themes, strengths, questions and support needs across King's."
     }
   ],
   "benefits": [
@@ -83,7 +83,7 @@
     },
     {
       "id": "2.1.1-B6",
-      "title": "Graduate futures evidence becomes a living resource",
+      "title": "Graduate futures evidence becomes part of normal review practice",
       "statement": "The evidence pack, guidance and refresh cycle become part of ongoing programme reflection and enhancement rather than a one-off mobilisation exercise.",
       "beneficiary": "Careers and Employability Service, faculties, departments, King's Edge and senior education leaders",
       "benefitType": "sustained capability",
@@ -107,13 +107,13 @@
     "Faculty conversations are held and learning from use is captured by Christmas 2026.",
     "An early institutional summary is submitted to Education Committee or the agreed senior education forum by Christmas 2026.",
     "The guided programme conversation structure, prompts, facilitation notes and light templates are designed with appropriate input from King's Academy, Careers and faculty colleagues.",
-    "Early programme partners test the pack and guided conversation model, with findings captured before wider engagement.",
+    "Early programme partners test and help iterate the pack and guided conversation model before wider engagement.",
     "The pack, guidance, conversation model and programme profile materials are refined in response to early use.",
-    "A shared prioritisation process is agreed for identifying programme groups where the evidence can be most useful.",
-    "Agreed programme groups complete supported graduate futures conversations by September 2027.",
-    "The evidence pack has a confirmed refresh rhythm, ownership model, access route and interpretation guidance.",
-    "Graduate futures evidence is handed into quality assurance and continual improvement cycles so it can support ongoing programme reflection and enhancement.",
-    "Every agreed programme has either completed a supported review or has been enabled to complete a self-review using the pack, guidance and conversation materials by September 2028.",
+    "An identification process is agreed for programme groups where the evidence can be most useful.",
+    "First agreed programme groups complete supported graduate futures conversations by September 2027.",
+    "The data packs have a confirmed refresh rhythm, ownership model, access route and interpretation guidance.",
+    "Management of the data packs and review process is transferred into business as usual through quality assurance and continual improvement cycles.",
+    "Graduate futures reviews across the rest of the institution are completed by June 2028, through supported review or enabled self-review routes.",
     "Institutional synthesis draws out strengths, recurring questions, support needs and implications for related King's Edge work.",
     "Programme stories or examples used in student-facing or applicant-facing contexts are evidence-linked and agreed with the relevant programme teams."
   ]
