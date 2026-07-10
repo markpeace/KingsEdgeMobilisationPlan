@@ -83,7 +83,7 @@
     {
       "id": "2.1.1-step-3",
       "title": "Design the guided programme conversation",
-      "period": {"start": "jan-jun-2027:a", "end": "jan-jun-2027:b"},
+      "period": {"start": "jul-dec-2026:c", "end": "jan-jun-2027:a"},
       "summary": "This step designs the conversation that helps colleagues make sense of the evidence together. The conversation should help programme teams move from what they already know about their programme, to what the evidence adds, to what they may want to strengthen next. It should support academic judgement, not replace it.",
       "stepType": "guided-conversation-design",
       "dependsOn": ["2.1.1-step-1"],
@@ -118,7 +118,7 @@
     {
       "id": "2.1.1-step-4",
       "title": "Work with early programme partners to refine the approach",
-      "period": "jan-jun-2027:bc",
+      "period": "jan-jun-2027:ab",
       "summary": "This step works with a small number of early programme partners to try the pack and conversation model in real programme settings. These colleagues help us understand whether the approach feels useful, fair and proportionate, and whether it helps programmes surface their distinctive value as well as areas for further attention.",
       "stepType": "early-programme-partner-testing",
       "dependsOn": ["2.1.1-step-2", "2.1.1-step-3"],
@@ -154,7 +154,7 @@
     {
       "id": "2.1.1-step-5",
       "title": "Improve the pack and conversation model from early use",
-      "period": {"start": "jan-jun-2027:c", "end": "jul-dec-2027:a"},
+      "period": "jan-jun-2027:bc",
       "summary": "This step uses what early programme partners tell us to make the pack and conversation model clearer, lighter and more useful. It is a chance to improve the evidence, the prompts, the guidance and the profile materials before wider programme engagement begins.",
       "stepType": "model-refinement",
       "dependsOn": ["2.1.1-step-4"],
@@ -190,7 +190,7 @@
     {
       "id": "2.1.1-step-6",
       "title": "Work with agreed programme groups where the evidence can be most useful",
-      "period": {"start": "jul-dec-2027:b", "end": "jan-jun-2028:a"},
+      "period": {"start": "jan-jun-2027:c", "end": "jul-dec-2027:b"},
       "summary": "This step works with agreed programme groups through a shared and transparent process. The evidence helps identify where a deeper conversation may be valuable, but faculty knowledge and programme context matter just as much. The purpose is to help colleagues strengthen their graduate futures story and identify practical next steps, not to label programmes.",
       "stepType": "shared-prioritisation-engagement",
       "dependsOn": ["2.1.1-step-5"],
@@ -228,7 +228,7 @@
     {
       "id": "2.1.1-step-7",
       "title": "Make the evidence pack a living resource",
-      "period": {"start": "jul-dec-2027:a", "end": "jul-dec-2027:b"},
+      "period": {"start": "jan-jun-2027:c", "end": "jul-dec-2027:a"},
       "summary": "This step makes sure the evidence pack remains useful after the first phase of work. It agrees who will maintain it, how the evidence will be refreshed, how colleagues will get support with interpretation, and how graduate futures evidence will connect to ongoing quality assurance and continual improvement.",
       "stepType": "living-resource-and-handoff",
       "dependsOn": ["2.1.1-step-2", "2.1.1-step-5"],
@@ -269,7 +269,7 @@
     {
       "id": "2.1.1-step-8",
       "title": "Enable every programme to review and strengthen its graduate futures evidence",
-      "period": {"start": "jan-jun-2028:b", "end": "jul-dec-2028:ab"},
+      "period": {"start": "jul-dec-2027:c", "end": "jul-dec-2028:ab"},
       "summary": "This step makes sure every agreed programme has a meaningful way to engage with its graduate futures evidence. Some programmes will have a supported conversation, while others will be enabled to self-review using the pack and guidance. The aim is that every programme can understand, evidence and strengthen its graduate futures story, and that King's can learn from the patterns emerging across programmes.",
       "stepType": "full-programme-review-and-synthesis",
       "dependsOn": ["2.1.1-step-6"],
