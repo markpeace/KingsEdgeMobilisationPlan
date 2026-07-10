@@ -118,7 +118,7 @@
     {
       "id": "2.1.1-step-4",
       "title": "Pilot and iterate the evidence pack and guided conversation",
-      "period": {"start": "jul-dec-2026:c", "end": "jan-jun-2027:c"},
+      "period": "jan-jun-2027:ab",
       "summary": "This step works with early programme partners to try the evidence pack and guided conversation in real programme settings, then uses what is learned to improve the pack, prompts, guidance and programme profile materials while the learning is still live.",
       "stepType": "pilot-and-iterate",
       "dependsOn": ["2.1.1-step-2", "2.1.1-step-3"],
