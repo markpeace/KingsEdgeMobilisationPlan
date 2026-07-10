@@ -70,8 +70,7 @@
 }
 
 .deliverable-main-flow > .detailed-plan-control {
-  order: 6;
-  margin-top: 1rem;
+  display: none !important;
 }
 
 .detailed-plan-reveal > .pre-draft-note {
