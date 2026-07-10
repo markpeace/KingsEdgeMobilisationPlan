@@ -152,20 +152,33 @@ Keep deliverable-level decisions and dependency sections thin. They should only 
 
 The current timeline period schema uses visible six-month buckets from `jul-dec-2026` to `jul-dec-2030`. Each bucket has hidden thirds for sequencing. Use `a`, `b`, `c`, `ab`, `bc` or `abc` after a colon when the step only uses part of a bucket.
 
-Examples:
+For a step that stays inside one bucket, use a string:
 
 ```json
 { "period": "jul-dec-2026:ab" }
 { "period": "jan-jun-2027:abc" }
 ```
 
-For a step that spans more than one bucket, use explicit start and end points:
+For a step that crosses a bucket boundary, use explicit `start` and `end` points. The start point uses the first third in the segment. The end point uses the final third in the segment.
 
 ```json
 {
   "period": {
-    "start": "jan-jun-2027:b",
-    "end": "jul-dec-2027:ab"
+    "start": "jul-dec-2026:c",
+    "end": "jan-jun-2027:ab"
+  }
+}
+```
+
+That example starts in the final third of July to December 2026 and runs through the first two thirds of January to June 2027.
+
+You can also use object points when that is easier to read:
+
+```json
+{
+  "period": {
+    "start": { "bucket": "jul-dec-2026", "segment": "c" },
+    "end": { "bucket": "jan-jun-2027", "segment": "ab" }
   }
 }
 ```
