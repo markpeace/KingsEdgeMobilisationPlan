@@ -14,6 +14,12 @@ Use this logic:
 Benefit -> what success looks like -> evidence of success -> enabled by timeline outputs
 ```
 
+Measures should be benefit-led:
+
+```text
+Benefit -> what success looks like -> evidence of success -> measure / indicator -> enabled by timeline outputs
+```
+
 ## Delivery timeline owns
 
 - steps;
@@ -59,6 +65,15 @@ Recommended fields:
     "Programme stories are used in programme review, recruitment, open days or student-facing contexts.",
     "Claims are linked to evidence and agreed with relevant programme teams."
   ],
+  "measures": [
+    {
+      "id": "2.1.1-B1-M1",
+      "title": "Use of programme story material",
+      "measureType": "usage and qualitative evidence",
+      "questionAnswered": "Are programme stories being used in meaningful contexts?",
+      "measure": "Examples of use in review, open days, recruitment or student-facing material."
+    }
+  ],
   "enabledBy": [
     {
       "stepId": "2.1.1-step-1",
@@ -69,6 +84,29 @@ Recommended fields:
 ```
 
 Use `outputId` when the step output has a stable ID. Use `outputTitle` when the step output is currently title-only.
+
+## Measures and indicators
+
+Default to benefit-level measures when a measure tests one specific benefit. This keeps the logic clear:
+
+```text
+this is the benefit -> this is what success looks like -> this is how we will know
+```
+
+Use top-level deliverable `measures` only when the measure is cross-cutting, legacy, or genuinely supports more than one benefit. In that case, add `supportsBenefits` so the relationship is explicit.
+
+```json
+{
+  "id": "2.1.1-M6",
+  "title": "Programme story and responsible interpretation quality",
+  "measureType": "quality-assurance",
+  "supportsBenefits": ["2.1.1-B1", "2.1.1-B4", "2.1.1-B5"],
+  "questionAnswered": "Are colleagues using the evidence to tell accurate, context-sensitive programme stories and interpret caveats responsibly?",
+  "measure": "Review of early profiles, caveat use, facilitator feedback and programme confirmation of story material."
+}
+```
+
+Do not duplicate a measure under every benefit it supports. Prefer one top-level cross-cutting measure with `supportsBenefits` when the same evidence question supports several benefits.
 
 ## Evidence of success
 
@@ -107,3 +145,5 @@ The section heading should avoid the word product. Use either:
 - `Benefits and evidence of success`.
 
 The UI should show products and outputs in the Delivery timeline, and only show them in the value section as secondary traceability links under `Enabled by`.
+
+The current UI does not need to render benefit-level measures separately yet. It is acceptable for the visible section to show `evidenceOfSuccess` first, with cross-cutting measures still shown in the evidence column or measures index. A later UI pass can add explicit benefit-level measure rows once more deliverables use them consistently.
