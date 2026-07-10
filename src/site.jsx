@@ -224,37 +224,8 @@ function StepExtras({ step }) {
   return extras.length ? <div className="step-extras">{extras}</div> : null;
 }
 
-function stepLabelFor(index) {
-  return `Step ${String(index + 1).padStart(2, '0')}`;
-}
-
-function buildStepIndexMap(steps) {
-  return new Map(steps.map((step, index) => [step.id, stepLabelFor(index)]));
-}
-
-function stepOutputItems(step) {
-  return (step.outputs || []).map(asText).filter(Boolean).slice(0, 3);
-}
-
-function compactStepNeeds(step, stepIndexMap, idMap) {
-  const dependencies = getStepDependencies(step);
-  if (!dependencies.length) return 'None';
-  const internalLabels = dependencies.map((id) => stepIndexMap.get(id)).filter(Boolean);
-  const externalCount = dependencies.filter((id) => !stepIndexMap.has(id) && idMap.get(id)).length;
-  if (internalLabels.length && externalCount) return `${internalLabels.join(', ')} + cross-deliverable input`;
-  if (internalLabels.length) return internalLabels.join(', ');
-  return externalCount ? 'Cross-deliverable input' : 'Earlier step(s)';
-}
-
-function StepStory({ step, stepIndexMap, idMap }) {
-  const outputs = stepOutputItems(step);
-  return <div className="step-card-story" data-native-step-story="true"><div className="step-story-block step-purpose-block"><span>Purpose</span><p>{step.summary || 'Purpose not yet captured.'}</p></div><div className="step-story-block step-produces-block"><span>Produces</span>{outputs.length ? <ul>{outputs.map((item, index) => <li key={index}>{item}</li>)}</ul> : <p>No outputs captured yet.</p>}</div><div className="step-story-block step-needs-block"><span>Needs</span><p>{compactStepNeeds(step, stepIndexMap, idMap)}</p></div></div>;
-}
-
 function DeliveryStepsPanel({ deliverable, idMap }) {
-  const steps = deliverable.steps || [];
-  const stepIndexMap = buildStepIndexMap(steps);
-  return <section className="panel route-through-panel" id="route-through"><h2>Delivery timeline</h2><p className="subtle">The main delivery route for this deliverable. Each card shows the step purpose, what it produces and what it needs. Open step detail for decisions, resources, risks, issues and assumptions.</p><div className="steps-list">{steps.map((step, index) => <article className={`step-card ${isPreDraft(deliverable) ? 'indicative-step-card' : ''}`} data-step-id={step.id} key={step.id}><div className="step-card-header"><div className="step-card-header-meta"><span>{stepLabelFor(index)}</span><strong>{periodLabel(step.period)}</strong></div></div>{isPreDraft(deliverable) && <span className="indicative-label">Indicative</span>}<h3>{step.title}</h3><StepStory step={step} stepIndexMap={stepIndexMap} idMap={idMap} /><StepExtras step={step} /></article>)}</div></section>;
+  return <section className="panel route-through-panel" id="route-through"><h2>Delivery timeline</h2><p className="subtle">The main delivery route for this deliverable. Each card shows the step purpose, what it produces and what it needs. Open step detail for decisions, resources, risks, issues and assumptions.</p><div className="steps-list">{deliverable.steps.map((step) => <article className={`step-card ${isPreDraft(deliverable) ? 'indicative-step-card' : ''}`} key={step.id}><span className="period-pill">{periodLabel(step.period)}</span>{isPreDraft(deliverable) && <span className="indicative-label">Indicative</span>}<h3>{step.title}</h3><p>{step.summary}</p>{getStepDependencies(step).length > 0 && <p className="depends">Depends on: {getStepDependencies(step).map((id) => resolveLabel(id, idMap)).join('; ')}</p>}<StepExtras step={step} /></article>)}</div></section>;
 }
 
 function DecisionsDependenciesPanel({ deliverable, stepDeps, onward, idMap }) {
