@@ -154,7 +154,7 @@
     {
       "id": "2.1.1-step-5",
       "title": "Improve the pack and conversation model from early use",
-      "period": "jan-jun-2027:b",
+      "period": "jan-jun-2027:bc",
       "summary": "This step uses what early programme partners tell us to make the pack and conversation model clearer, lighter and more useful. It is a chance to improve the evidence, the prompts, the guidance and the profile materials before wider programme engagement begins.",
       "stepType": "model-refinement",
       "dependsOn": ["2.1.1-step-4"],
