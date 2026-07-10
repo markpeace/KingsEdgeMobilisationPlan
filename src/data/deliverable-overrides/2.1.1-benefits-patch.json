@@ -3,98 +3,168 @@
   "benefits": [
     {
       "id": "2.1.1-B1",
-      "title": "Programmes can tell a stronger graduate futures story",
-      "statement": "Programme teams have clearer evidence and language for explaining what their programme enables for students and how that value shows up in graduate futures.",
+      "title": "Programmes can tell confident, nuanced graduate futures stories",
+      "statement": "Programme teams have clearer evidence and language for explaining what their programme makes possible for students and where that value shows up in graduate futures.",
       "beneficiary": "Programme teams, departments, students, applicants, recruitment teams and faculties",
-      "benefitType": "articulation and evidence",
+      "benefitType": "story, articulation and evidence",
       "realisationPeriod": "2026/27 onwards",
-      "successLooksLike": "Programme teams can make confident, nuanced and evidence-informed claims about what their programmes enable.",
+      "successLooksLike": "Programme teams can make confident, nuanced and evidence-informed claims about their excellence, distinctive strengths and students' graduate futures, without reducing that story to a single metric.",
       "evidenceOfSuccess": [
-        "Programme Graduate Futures Profiles or equivalent story materials are used in programme review, recruitment, open days or student-facing contexts.",
-        "Programme teams report that the evidence helps them explain distinctive strengths with greater confidence.",
-        "Claims made in student-facing or applicant-facing contexts are linked to evidence and agreed with relevant programme teams."
+        "Programme reflections, profiles or story materials explain what programmes enable for students using evidence, context and academic judgement.",
+        "Programme teams recognise themselves in the story and feel able to use it with students, applicants, colleagues or external audiences.",
+        "Student-facing or applicant-facing claims are evidence-linked, context-sensitive and agreed with the relevant programme teams."
       ],
       "enabledBy": [
         {"stepId": "2.1.1-step-1", "outputTitle": "First working graduate futures evidence pack"},
         {"stepId": "2.1.1-step-3", "outputTitle": "Programme reflection and profile template"},
-        {"stepId": "2.1.1-step-5", "outputTitle": "Programme Graduate Futures Profiles"}
+        {"stepId": "2.1.1-step-5", "outputTitle": "Examples of distinctive programme value"}
       ]
     },
     {
       "id": "2.1.1-B2",
       "title": "Programmes identify where to strengthen practice",
-      "statement": "Programme and department teams use graduate futures evidence to identify where curriculum, skills, opportunity, support or articulation work could make the programme story stronger.",
+      "statement": "Programme and department teams use graduate futures evidence to identify where curriculum, skills, opportunity, support or articulation work could make their programme story stronger.",
       "beneficiary": "Programme teams, departments, faculties, Careers and Employability Service and students",
       "benefitType": "programme enhancement",
       "realisationPeriod": "2026/27 to 2027/28",
-      "successLooksLike": "Teams identify credible areas for development without reducing the evidence to deficit, ranking or compliance reporting.",
+      "successLooksLike": "Teams can distinguish strengths to claim, questions to investigate and focused areas for development, without treating the evidence as a deficit report or judgement on programme quality.",
       "evidenceOfSuccess": [
-        "Guided conversations capture agreed questions, actions or focus areas for programme, department or faculty follow-up.",
-        "Graduate Futures Action Plans or equivalent local action sets are taken into normal department or faculty planning routes.",
-        "Programme teams can distinguish between strengths to celebrate, questions to investigate and areas where additional support may be useful."
+        "Guided conversations capture agreed questions, practical local actions or areas for further support.",
+        "Actions or focus areas are taken into normal programme, department or faculty planning routes rather than remaining as standalone project paperwork.",
+        "Programme teams can describe how the evidence helped them see both existing strengths and where more is possible for students."
       ],
       "enabledBy": [
         {"stepId": "2.1.1-step-3", "outputTitle": "Guided programme conversation structure"},
         {"stepId": "2.1.1-step-4", "outputTitle": "Examples of programme insight and story"},
-        {"stepId": "2.1.1-step-5", "outputTitle": "Graduate Futures Action Plans"}
+        {"stepId": "2.1.1-step-5", "outputTitle": "Practical local actions"}
       ]
     },
     {
       "id": "2.1.1-B3",
-      "title": "King's gains a clearer institutional view of graduate futures",
-      "statement": "Shared strengths, questions, student pathways and support needs can be seen across programmes without flattening disciplinary nuance.",
-      "beneficiary": "King's Edge, faculties, senior education leaders, Careers and Employability Service and students",
-      "benefitType": "institutional learning",
-      "realisationPeriod": "2027/28 onwards",
-      "successLooksLike": "King's can see patterns across programme stories and graduate futures evidence while preserving local context and academic judgement.",
-      "evidenceOfSuccess": [
-        "Institutional synthesis informs King's Edge work, faculty planning, graduate premium evidence and related curriculum or skills activity.",
-        "Shared themes are discussed as learning and support needs, not as programme league tables.",
-        "Faculty and institutional planning can see where graduate futures strengths, questions and infrastructure needs recur across contexts."
-      ],
-      "enabledBy": [
-        {"stepId": "2.1.1-step-2", "outputTitle": "Early institutional summary"},
-        {"stepId": "2.1.1-step-6", "outputTitle": "Institutional synthesis"},
-        {"stepId": "2.1.1-step-8", "outputTitle": "Ongoing learning loop"}
-      ]
-    },
-    {
-      "id": "2.1.1-B4",
       "title": "Evidence is used responsibly and credibly",
       "statement": "Colleagues understand the caveats, context and limits of the evidence and use it alongside academic judgement rather than as a blunt performance signal.",
       "beneficiary": "Programme teams, departments, faculties, students and senior education leaders",
       "benefitType": "responsible evidence use",
       "realisationPeriod": "2026/27 onwards",
-      "successLooksLike": "Programme-facing use of evidence is fair, interpretable and developmental, avoiding ranking, league-table or punitive readings.",
+      "successLooksLike": "Programme-facing use of graduate futures evidence is fair, interpretable and developmental, avoiding ranking, league-table or punitive readings.",
       "evidenceOfSuccess": [
-        "Feedback suggests that the evidence is useful, fair and interpretable when caveats and context are visible.",
-        "Programme teams use academic judgement to interpret the evidence and challenge over-simple readings.",
-        "Pack, profile and story materials include appropriate caveats and avoid unsupported claims."
+        "Feedback from academic and professional services colleagues suggests the packs are useful, fair and interpretable when caveats and context are visible.",
+        "Programme conversations use academic judgement to challenge over-simple readings of destinations, outcomes, aspiration data or comparator evidence.",
+        "Pack, profile, story and student-facing materials include appropriate caveats and avoid unsupported or over-claimed conclusions."
       ],
       "enabledBy": [
         {"stepId": "2.1.1-step-1", "outputTitle": "Interpretation approach"},
         {"stepId": "2.1.1-step-2", "outputTitle": "Short user guide"},
-        {"stepId": "2.1.1-step-3", "outputTitle": "Responsible-use guidance"}
+        {"stepId": "2.1.1-step-3", "outputTitle": "Responsible-use guidance"},
+        {"stepId": "2.1.1-step-4", "outputTitle": "Updated interpretation guidance"}
+      ]
+    },
+    {
+      "id": "2.1.1-B4",
+      "title": "King's gains a clearer institutional view of graduate futures",
+      "statement": "Shared strengths, questions, student pathways and support needs can be seen across programmes while preserving disciplinary nuance, local context and academic judgement.",
+      "beneficiary": "King's Edge, faculties, senior education leaders, Careers and Employability Service, programme teams and students",
+      "benefitType": "institutional learning",
+      "realisationPeriod": "2027/28 onwards",
+      "successLooksLike": "King's can see patterns across programme stories and graduate futures evidence without flattening difference or turning the synthesis into programme comparison.",
+      "evidenceOfSuccess": [
+        "Faculty-level learning and institutional synthesis draw out strengths, recurring questions, student pathways and support needs across contexts.",
+        "Shared themes are discussed as learning, support and strategic development needs, not as programme league tables.",
+        "Institutional synthesis informs King's Edge work, faculty planning, graduate premium evidence, curriculum enhancement or skills-related activity."
+      ],
+      "enabledBy": [
+        {"stepId": "2.1.1-step-2", "outputTitle": "Early institutional summary"},
+        {"stepId": "2.1.1-step-5", "outputTitle": "Faculty-level learning"},
+        {"stepId": "2.1.1-step-7", "outputTitle": "Institutional graduate futures synthesis"},
+        {"stepId": "2.1.1-step-7", "outputTitle": "Recommendations for related King's Edge work"}
       ]
     },
     {
       "id": "2.1.1-B5",
-      "title": "Distinctive programme strengths are surfaced and shared",
-      "statement": "Programmes can claim excellence and distinctive value with pride and nuance, supported by evidence and local academic interpretation.",
-      "beneficiary": "Programme teams, applicants, students, recruitment teams, faculties and King's Edge",
-      "benefitType": "distinctiveness and activation",
-      "realisationPeriod": "2026/27 onwards",
-      "successLooksLike": "Distinctive programme strengths are surfaced, agreed with programme teams and used responsibly in student-facing, applicant-facing or institutional contexts.",
+      "title": "Graduate futures evidence becomes part of normal review practice",
+      "statement": "Graduate futures evidence, interpretation guidance and programme review become part of ongoing programme reflection and enhancement rather than a one-off mobilisation exercise.",
+      "beneficiary": "Programme teams, departments, faculties, Careers and Employability Service, quality assurance and continual improvement owners and students",
+      "benefitType": "sustained capability",
+      "realisationPeriod": "2027/28 onwards",
+      "successLooksLike": "The evidence packs and guided review process have a clear owner, refresh rhythm, access route and place in existing programme, department, faculty or institutional planning conversations.",
       "evidenceOfSuccess": [
-        "Examples of distinctive programme value are captured through programme conversations and reflected in profile or story materials.",
-        "Story materials are used in appropriate recruitment, open day, advising, programme review or student-facing contexts.",
-        "Programme teams recognise themselves in the story and feel able to use it confidently."
+        "Ownership, refresh rhythm, access route and interpretation support for the evidence packs are confirmed.",
+        "Graduate futures evidence has an agreed place in quality assurance, continual improvement or programme enhancement cycles.",
+        "Ongoing feedback from colleagues who use the packs and review process leads to updates in evidence, guidance or support over time."
       ],
       "enabledBy": [
-        {"stepId": "2.1.1-step-4", "outputTitle": "Examples of programme insight and story"},
-        {"stepId": "2.1.1-step-5", "outputTitle": "Programme Graduate Futures Story Materials"},
-        {"stepId": "2.1.1-step-6", "outputTitle": "Institutional synthesis"}
+        {"stepId": "2.1.1-step-6", "outputTitle": "Evidence refresh rhythm"},
+        {"stepId": "2.1.1-step-6", "outputTitle": "Business-as-usual ownership model"},
+        {"stepId": "2.1.1-step-6", "outputTitle": "Quality assurance and continual improvement handoff"},
+        {"stepId": "2.1.1-step-6", "outputTitle": "Ongoing feedback process"}
       ]
+    }
+  ],
+  "measures": [
+    {
+      "id": "2.1.1-M1",
+      "title": "Confidence and quality of programme graduate futures stories",
+      "measureType": "benefit-realisation",
+      "questionAnswered": "Are programme teams able to tell confident, nuanced and evidence-informed stories about what their programmes enable?",
+      "measure": "Review of programme reflections, profile materials, story examples and programme-team feedback on whether the evidence helps them claim strengths and explain value with confidence.",
+      "owner": "Heads of Department, with support from Careers and Employability Service and Mark Peace",
+      "cadence": "During early programme partner review and annual synthesis",
+      "confidence": "developing",
+      "baseline": "Programme-level graduate futures stories are currently uneven and not consistently evidence-linked.",
+      "target": "Programme stories used in review, recruitment, open days or student-facing contexts are evidence-linked, context-sensitive and agreed with relevant programme teams.",
+      "relatedBenefitIds": ["2.1.1-B1"]
+    },
+    {
+      "id": "2.1.1-M2",
+      "title": "Quality of practice-strengthening actions",
+      "measureType": "benefit-realisation",
+      "questionAnswered": "Does the process help programmes identify useful areas for strengthening practice without feeling judged or ranked?",
+      "measure": "Review of guided conversation outputs, agreed questions, practical local actions and evidence that actions are routed through normal programme, department or faculty planning.",
+      "owner": "Heads of Department and faculty education leads",
+      "cadence": "Termly during supported conversations and annual synthesis",
+      "confidence": "developing",
+      "baseline": "Actions from graduate futures evidence are not yet consistently captured or routed through local planning.",
+      "target": "Engaged programme groups produce proportionate reflections or actions that distinguish strengths, questions and areas where additional support or enhancement would be useful.",
+      "relatedBenefitIds": ["2.1.1-B2"]
+    },
+    {
+      "id": "2.1.1-M3",
+      "title": "Responsible evidence use and interpretation quality",
+      "measureType": "quality-and-responsible-use",
+      "questionAnswered": "Is graduate futures evidence being used fairly, credibly and with appropriate caveats?",
+      "measure": "Feedback and review of packs, guidance, programme conversations, profile materials and student-facing claims for responsible interpretation, visible caveats and avoidance of over-simple comparison.",
+      "owner": "Careers and Employability Service",
+      "cadence": "During testing, early programme partner review and annual synthesis",
+      "confidence": "developing",
+      "baseline": "Programme-level evidence use currently depends on local interpretation and may over-rely on headline indicators.",
+      "target": "Programme-facing materials and conversations use caveats, academic judgement and contextual interpretation, and avoid league-table or punitive readings.",
+      "relatedBenefitIds": ["2.1.1-B3"]
+    },
+    {
+      "id": "2.1.1-M4",
+      "title": "Institutional learning from programme graduate futures evidence",
+      "measureType": "strategic-learning",
+      "questionAnswered": "Is King's developing a clearer institutional view of graduate futures while preserving programme nuance?",
+      "measure": "Review of faculty-level learning, early institutional summary, institutional graduate futures synthesis and evidence that themes inform King's Edge, faculty planning, graduate premium evidence or related curriculum and skills activity.",
+      "owner": "Mark Peace, with Careers and Employability Service and faculty education leads",
+      "cadence": "Christmas 2026 early summary and annual synthesis during 2027/28",
+      "confidence": "developing",
+      "baseline": "King's does not yet have a coherent programme-level synthesis of graduate futures strengths, questions, support needs and student pathways.",
+      "target": "Institutional synthesis identifies strengths, recurring questions, support needs and implications for related work without reducing programmes to categories or rankings.",
+      "relatedBenefitIds": ["2.1.1-B4"]
+    },
+    {
+      "id": "2.1.1-M5",
+      "title": "Sustained use through normal review and enhancement cycles",
+      "measureType": "sustained-capability",
+      "questionAnswered": "Has graduate futures evidence become part of normal review and enhancement practice rather than a one-off project output?",
+      "measure": "Confirmation of evidence refresh rhythm, business-as-usual ownership, access route, interpretation support, quality assurance or continual improvement handoff and ongoing feedback process.",
+      "owner": "Careers and Employability Service, quality assurance and continual improvement owners and faculty education leads",
+      "cadence": "Annual operating review from 2027/28",
+      "confidence": "developing",
+      "baseline": "No agreed business-as-usual home, refresh rhythm or review route yet exists for programme-level graduate futures evidence.",
+      "target": "The data packs, interpretation guidance and review process have confirmed ownership and a recognised place in ongoing programme, department, faculty or institutional planning conversations.",
+      "relatedBenefitIds": ["2.1.1-B5"]
     }
   ]
 }
