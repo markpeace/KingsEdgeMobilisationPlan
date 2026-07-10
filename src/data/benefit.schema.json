@@ -26,6 +26,35 @@
           "description": "Optional explanation of how this step or output enables the benefit."
         }
       }
+    },
+    "benefitMeasure": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["id", "title"],
+      "properties": {
+        "id": { "type": "string" },
+        "title": { "type": "string" },
+        "measureType": {
+          "type": "string",
+          "description": "Type of evidence, for example usage, qualitative feedback, judgement-based review, adoption, quality assurance or quantitative indicator."
+        },
+        "questionAnswered": {
+          "type": "string",
+          "description": "The evidence question this measure answers for the benefit."
+        },
+        "measure": {
+          "type": "string",
+          "description": "How evidence will be gathered or interpreted. This should test benefit realisation, not only activity completion."
+        },
+        "evidence": {
+          "type": "string",
+          "description": "Alias for measure when the evidence is qualitative or judgement-based."
+        },
+        "owner": { "type": "string" },
+        "cadence": { "type": "string" },
+        "baseline": { "type": "string" },
+        "target": { "type": "string" }
+      }
     }
   },
   "type": "object",
@@ -59,6 +88,11 @@
       "description": "Qualitative, usage-based, judgement-based or quantitative evidence that would show the benefit is being realised. This should test value, not just activity completion.",
       "items": { "type": "string" }
     },
+    "measures": {
+      "type": "array",
+      "description": "Optional benefit-level measures or indicators. Use this as the default location for measures that test one specific benefit.",
+      "items": { "$ref": "#/$defs/benefitMeasure" }
+    },
     "enabledBy": {
       "type": "array",
       "description": "Traceability references back to outputs or steps already defined in the delivery timeline. Do not define new products here.",
@@ -82,6 +116,15 @@
       "evidenceOfSuccess": [
         "Programme stories are used in programme review, recruitment, open days or student-facing contexts.",
         "Claims are linked to evidence and agreed with relevant programme teams."
+      ],
+      "measures": [
+        {
+          "id": "2.1.1-B1-M1",
+          "title": "Use of programme story material",
+          "measureType": "usage and qualitative evidence",
+          "questionAnswered": "Are programme stories being used in meaningful contexts?",
+          "measure": "Examples of use in review, open days, recruitment or student-facing material."
+        }
       ],
       "enabledBy": [
         { "stepId": "2.1.1-step-1", "outputTitle": "First working graduate futures evidence pack" },
