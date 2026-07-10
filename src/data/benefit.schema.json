@@ -1,0 +1,92 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/markpeace/KingsEdgeMobilisationPlan/src/data/benefit.schema.json",
+  "title": "King's Edge deliverable benefit schema",
+  "description": "Authoring schema for deliverable-level benefits and evidence of success. Benefits describe value, not products. Products and outputs should be defined in delivery timeline steps and referenced from benefits where useful.",
+  "$defs": {
+    "enabledByReference": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["stepId"],
+      "properties": {
+        "stepId": {
+          "type": "string",
+          "description": "ID of the delivery timeline step that produces or enables the thing being referenced."
+        },
+        "outputId": {
+          "type": "string",
+          "description": "Optional ID of a step output when the output has a stable authored ID."
+        },
+        "outputTitle": {
+          "type": "string",
+          "description": "Optional title of a step output when no stable output ID exists yet."
+        },
+        "note": {
+          "type": "string",
+          "description": "Optional explanation of how this step or output enables the benefit."
+        }
+      }
+    }
+  },
+  "type": "object",
+  "additionalProperties": true,
+  "required": ["id", "title", "statement"],
+  "properties": {
+    "id": { "type": "string" },
+    "title": { "type": "string" },
+    "statement": {
+      "type": "string",
+      "description": "Short statement of the value created when the deliverable is used. This should not be a product or task description."
+    },
+    "beneficiary": {
+      "type": "string",
+      "description": "Who benefits from the value being realised."
+    },
+    "benefitType": {
+      "type": "string",
+      "description": "Broad type of value, for example articulation, evidence, improvement, institutional learning or responsible-use."
+    },
+    "realisationPeriod": {
+      "type": "string",
+      "description": "When the value is expected to begin or mature."
+    },
+    "successLooksLike": {
+      "type": "string",
+      "description": "Outcome-oriented description of what would be true if the benefit were being realised."
+    },
+    "evidenceOfSuccess": {
+      "type": "array",
+      "description": "Qualitative, usage-based, judgement-based or quantitative evidence that would show the benefit is being realised. This should test value, not just activity completion.",
+      "items": { "type": "string" }
+    },
+    "enabledBy": {
+      "type": "array",
+      "description": "Traceability references back to outputs or steps already defined in the delivery timeline. Do not define new products here.",
+      "items": { "$ref": "#/$defs/enabledByReference" }
+    },
+    "linkedOutputs": {
+      "type": "array",
+      "description": "Alias for enabledBy when authors find that language clearer.",
+      "items": { "$ref": "#/$defs/enabledByReference" }
+    }
+  },
+  "examples": [
+    {
+      "id": "2.1.1-B1",
+      "title": "Programmes can tell a stronger graduate futures story",
+      "statement": "Programme teams have clearer evidence and language for explaining what their programme enables for students.",
+      "beneficiary": "Programme teams, departments, students, applicants, recruitment teams and faculties",
+      "benefitType": "articulation and evidence",
+      "realisationPeriod": "2026/27 onwards",
+      "successLooksLike": "Programme teams can make confident, nuanced and evidence-informed claims about what their programmes enable.",
+      "evidenceOfSuccess": [
+        "Programme stories are used in programme review, recruitment, open days or student-facing contexts.",
+        "Claims are linked to evidence and agreed with relevant programme teams."
+      ],
+      "enabledBy": [
+        { "stepId": "2.1.1-step-1", "outputTitle": "First working graduate futures evidence pack" },
+        { "stepId": "2.1.1-step-3", "outputTitle": "Programme reflection and profile template" }
+      ]
+    }
+  ]
+}
