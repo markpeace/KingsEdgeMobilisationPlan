@@ -1,115 +1,120 @@
 {
-  "summary": "Creates programme-level graduate futures intelligence packs, validates them through Power BI and user testing, then uses staged workshop waves to move from institutional insight to programme action, BAU refresh and full rollout.",
-  "detailSummary": "This deliverable gives King's a stronger institutional and programme-level handle on graduate futures. It brings together employability outcomes, graduate destinations, benchmarking, student aspiration and readiness data, segmentation and programme strategy evidence into a reusable insight model. The purpose is not to rank programmes against each other, but to help departments and programme teams understand their students' graduate futures in context, compare meaningfully with relevant subject or sector peers, and examine how those patterns interact with the programme's own employability strategy.\n\nThe first delivery gate is September 2026: the graduate futures data specification is complete, Power BI V1 is built, and the first iteration has been validated with selected users so that findings can shape V2. By Christmas 2026, V2 self-service programme packs are produced and disseminated across the institution, showcased in agreed forums, explored through high-level faculty roundtables, and reported to Education Committee through an executive data deep-dive report.\n\nIn parallel, the programme workshop structure and materials are designed and tested with pre-identified wayfinder programmes. These early partners validate whether the packs, workshop prompts, interpretation guidance and output templates are usable and appropriately framed. The model is then refined before rollout to institutionally agreed priority segments by September 2027, followed by a final wave to the remaining agreed coverage population. Across 2027 and 2028, the data product also moves into business as usual through a confirmed refresh rhythm, ownership model and Power BI maintenance route.",
-  "whatChanges": "Programmes, departments and faculties gain validated graduate futures intelligence, V2 self-service packs and a structured workshop model that help them understand data, reflect on programme strategy, identify actions for improvement and celebrate their graduate futures offer with evidence-informed confidence. King's also establishes a standing data refresh and BAU ownership model so the work does not remain a one-off insight exercise.",
+  "summary": "Helps programme teams understand, evidence and strengthen their students' graduate futures story through clear evidence packs, guided conversations, shared review and a living resource that supports ongoing enhancement.",
+  "detailSummary": "This deliverable gives King's a clearer and more useful account of graduate futures at programme level. It brings together employability outcomes, graduate destinations, benchmarking, student aspiration and readiness data, comparator evidence and programme context into evidence packs that academic colleagues can use to understand what their programmes make possible for students.\n\nThe purpose is not to rank programmes or produce central judgements. It is to help programme teams tell a stronger evidence-informed story about their students' graduate futures, while also supporting thoughtful reflection on where that story could be strengthened. The evidence should help colleagues recognise existing strengths, ask better questions, identify where students may need more visible or consistent support, and decide what should be taken forward through normal programme, department or faculty routes.\n\nThe first delivery gate is September 2026: the data specification is complete, the first working evidence pack is built, and the pack has been tested with selected users so that findings can shape the next version. By Christmas 2026, the first programme-facing packs are shared with colleagues, supported by a short user guide, faculty conversations and an early institutional summary for the agreed senior education forum.\n\nIn parallel, the guided programme conversation is designed with input from King's Academy, Careers and faculty colleagues. Early programme partners then help test whether the pack and conversation model surface distinctive programme value as well as useful areas for enhancement. The model is refined before wider engagement with agreed programme groups through a shared prioritisation process that combines evidence, faculty knowledge, programme context and local judgement.\n\nAcross 2027 and 2028, the evidence pack becomes a living resource with a confirmed refresh rhythm, ownership model and route into quality assurance and continual improvement. By the end of the programme-facing phase, every agreed programme should either have taken part in a supported graduate futures conversation or have been enabled to self-review using the pack, guidance and conversation materials. The final synthesis brings together what King's is learning about graduate futures across programmes, departments and faculties.",
+  "whatChanges": "Programmes, departments and faculties gain evidence packs and guided conversations that help them understand, evidence and strengthen their graduate futures story. King's also gains a more coherent institutional view of programme-level strengths, questions, support needs and student pathways, with a living evidence resource connected to quality assurance and continual improvement cycles.",
   "caseForChange": {
-    "opportunity": "By creating validated graduate futures intelligence, V2 programme packs and a staged workshop model, King's can help programmes understand their graduate futures position, surface hidden strengths, target support more intelligently and create credible material for programme enhancement, student articulation, open days and graduate premium evidence work. Early faculty roundtables and an Education Committee report also allow the institution to act on the data deep dive before full programme rollout is complete.",
-    "intendedChange": "King's moves from fragmented or underused employability reporting to a coherent graduate futures intelligence, action and refresh model. Programme teams receive usable V2 packs, test the approach through wayfinder workshops, engage through priority and final rollout waves, and use the evidence to agree targeted actions and articulate their contribution to students' graduate futures in a developmental and evidence-informed way."
+    "opportunity": "By creating clear graduate futures evidence packs and a guided programme conversation, King's can help programmes articulate their value to students with more confidence, surface distinctive strengths, identify where support or enhancement would be useful, and create credible material for programme development, student articulation, open days and graduate premium evidence work. Early faculty conversations and a senior education summary also allow the institution to learn from the evidence before full programme engagement is complete.",
+    "intendedChange": "King's moves from fragmented or underused employability reporting to a coherent graduate futures evidence, story and enhancement model. Programme teams receive usable evidence packs, test and refine the approach through early programme partners, engage through a shared prioritisation process and wider review or self-review, and use the evidence to strengthen both programme practice and the way their graduate futures story is understood."
   },
   "components": [
-    {"title": "Data specification and governance", "summary": "Confirm datasets, fields, owners, caveats, suppression rules, update cycles and responsible-use principles for programme-level graduate futures insight."},
-    {"title": "Destination taxonomy and comparator framework", "summary": "Define how graduate, non-graduate, marginal, transitional and pathway destinations should be interpreted, and agree meaningful subject, sector and Russell Group comparator sets."},
-    {"title": "Power BI V1 build and validation", "summary": "Build the first Power BI dashboard iteration and validate it with selected faculty, programme and professional services users by September 2026."},
-    {"title": "V2 programme packs, dissemination and reporting", "summary": "Use validation findings to produce V2 self-service programme packs, disseminate and showcase them across the institution, hold faculty roundtables and submit an executive report to Education Committee."},
-    {"title": "Programme workshop structure and wayfinder validation", "summary": "Design the workshop structure, facilitation materials and output templates, then test them with pre-identified wayfinder programmes before wider rollout."},
-    {"title": "Priority segment workshop rollout", "summary": "Roll out the refined workshop model to institutionally agreed priority programmes, departments, clusters or student-outcome segments by September 2027."},
-    {"title": "Data refresh and business-as-usual integration", "summary": "Establish the refresh rhythm, ownership model, Power BI maintenance route and ongoing pack update process."},
-    {"title": "Remaining institutional rollout and synthesis", "summary": "Extend the workshop model to the rest of the agreed coverage population and synthesise patterns, strengths, support needs, strategy types and implications for related King's Edge work."}
+    {
+      "title": "Evidence specification and responsible use",
+      "summary": "Confirm datasets, fields, owners, caveats, suppression rules, update cycles and responsible-use principles for programme-level graduate futures evidence."
+    },
+    {
+      "title": "First evidence pack build and testing",
+      "summary": "Create and test the first visual and narrative evidence pack with selected users by September 2026."
+    },
+    {
+      "title": "Programme packs and early institutional learning",
+      "summary": "Share the first programme-facing packs, support responsible use, hold faculty conversations and produce an early institutional summary."
+    },
+    {
+      "title": "Guided programme conversation",
+      "summary": "Design the prompts, facilitation notes and light templates that help programme teams move from story, to evidence, to questions, to action."
+    },
+    {
+      "title": "Early programme partners",
+      "summary": "Work with a small number of programmes to test whether the pack and conversation model are useful, fair, proportionate and academically credible."
+    },
+    {
+      "title": "Shared prioritisation and focused programme engagement",
+      "summary": "Agree programme groups through a shared process that combines evidence, faculty knowledge, programme context and local judgement."
+    },
+    {
+      "title": "Living evidence resource and institutional handoff",
+      "summary": "Establish the refresh rhythm, ownership model, interpretation guidance and connection to quality assurance and continual improvement cycles."
+    },
+    {
+      "title": "Programme review, self-review and synthesis",
+      "summary": "Enable every agreed programme to complete supported review or self-review, then synthesise themes, strengths, questions and support needs across King's."
+    }
   ],
   "benefits": [
-    {"id": "2.1.1-B1", "title": "Stronger institutional grip on graduate futures data", "statement": "King's can see patterns, nuances and segmentations in employability outcomes, destinations, aspirations and readiness more clearly.", "beneficiary": "King's Edge, Careers and Employability Service, faculties, departments and senior education leaders", "benefitType": "institutional intelligence", "realisationPeriod": "September 2026 onwards"},
-    {"id": "2.1.1-B2", "title": "Early institutional learning from the data deep dive", "statement": "Faculty roundtables and the Education Committee report give King's an early institutional account of emerging patterns, risks, strengths and priority questions.", "beneficiary": "Education Committee, Vice Deans Education, faculties, King's Edge and Careers and Employability Service", "benefitType": "strategic learning", "realisationPeriod": "Christmas 2026 onwards"},
-    {"id": "2.1.1-B3", "title": "Programme teams can understand and act on their graduate futures position", "statement": "Programme and department teams can interpret outcomes, destinations, aspirations and comparator intelligence in ways that support local enhancement.", "beneficiary": "Programme teams, departments and students", "benefitType": "programme enhancement", "realisationPeriod": "2026/27 to 2027/28"},
-    {"id": "2.1.1-B4", "title": "Improvement activity is better targeted", "statement": "Departments, faculties, Careers and King's Edge can focus support where the evidence suggests it is most needed, starting with agreed priority segments.", "beneficiary": "Heads of Department, faculty education leads, Careers and Employability Service and students", "benefitType": "targeted improvement", "realisationPeriod": "2027/28 onwards"},
-    {"id": "2.1.1-B5", "title": "Programmes can celebrate their graduate futures contribution more confidently", "statement": "Programmes have credible, evidence-informed language and proof points for open days, recruitment, induction, advising and student-facing communications.", "beneficiary": "Programme teams, applicants, students, recruitment teams and faculties", "benefitType": "articulation and activation", "realisationPeriod": "2026/27 onwards"},
-    {"id": "2.1.1-B6", "title": "Graduate futures intelligence becomes a standing product", "statement": "The Power BI dashboard, programme packs and data refresh cycle become part of business as usual rather than a one-off mobilisation exercise.", "beneficiary": "Careers and Employability Service, faculties, departments, King's Edge and senior education leaders", "benefitType": "business-as-usual capability", "realisationPeriod": "January 2027 to September 2028"},
-    {"id": "2.1.1-B7", "title": "Graduate premium evidence work is better grounded", "statement": "The packs, profiles, action plans, story packs and institutional synthesis provide a stronger evidence base for graduate premium evidence work.", "beneficiary": "King's Edge, senior leaders, faculties, students and external audiences", "benefitType": "graduate premium evidence", "realisationPeriod": "2027/28 onwards"}
+    {
+      "id": "2.1.1-B1",
+      "title": "Programmes can tell a stronger graduate futures story",
+      "statement": "Programme teams have clearer evidence and language for explaining what their programme enables for students and how that value shows up in graduate futures.",
+      "beneficiary": "Programme teams, departments, students, applicants, recruitment teams and faculties",
+      "benefitType": "articulation and evidence",
+      "realisationPeriod": "2026/27 onwards"
+    },
+    {
+      "id": "2.1.1-B2",
+      "title": "Programme teams can reflect on graduate futures more usefully",
+      "statement": "Programme and department teams can interpret outcomes, destinations, aspirations and comparator evidence in ways that support thoughtful local enhancement.",
+      "beneficiary": "Programme teams, departments and students",
+      "benefitType": "programme enhancement",
+      "realisationPeriod": "2026/27 to 2027/28"
+    },
+    {
+      "id": "2.1.1-B3",
+      "title": "King's has a stronger institutional view of graduate futures",
+      "statement": "King's can see patterns, nuances, strengths, questions and student pathways in graduate futures evidence more clearly.",
+      "beneficiary": "King's Edge, Careers and Employability Service, faculties, departments and senior education leaders",
+      "benefitType": "institutional intelligence",
+      "realisationPeriod": "September 2026 onwards"
+    },
+    {
+      "id": "2.1.1-B4",
+      "title": "Distinctive programme value is surfaced and shared responsibly",
+      "statement": "Programmes with distinctive strengths, interesting pathways or effective practice can evidence and share those stories in ways that remain accurate and academically owned.",
+      "beneficiary": "Programme teams, faculties, students, applicants and King's Edge",
+      "benefitType": "story and practice sharing",
+      "realisationPeriod": "2026/27 onwards"
+    },
+    {
+      "id": "2.1.1-B5",
+      "title": "Support and improvement activity is agreed more fairly",
+      "statement": "Faculties and departments can use evidence alongside local judgement to agree where focused support, deeper conversation or enhancement would be most useful.",
+      "beneficiary": "Heads of Department, faculty education leads, Careers and Employability Service and students",
+      "benefitType": "focused support",
+      "realisationPeriod": "2027/28 onwards"
+    },
+    {
+      "id": "2.1.1-B6",
+      "title": "Graduate futures evidence becomes a living resource",
+      "statement": "The evidence pack, guidance and refresh cycle become part of ongoing programme reflection and enhancement rather than a one-off mobilisation exercise.",
+      "beneficiary": "Careers and Employability Service, faculties, departments, King's Edge and senior education leaders",
+      "benefitType": "sustained capability",
+      "realisationPeriod": "January 2027 to September 2028"
+    },
+    {
+      "id": "2.1.1-B7",
+      "title": "Graduate premium evidence work is better grounded",
+      "statement": "Programme profiles, actions, stories and institutional synthesis provide a stronger evidence base for wider graduate premium work.",
+      "beneficiary": "King's Edge, senior leaders, faculties, students and external audiences",
+      "benefitType": "graduate premium evidence",
+      "realisationPeriod": "2027/28 onwards"
+    }
   ],
   "definitionOfDone": [
-    "Data specification, inventory, destination taxonomy and comparator framework are complete by September 2026.",
-    "Power BI V1 is built and validated with selected users by September 2026.",
-    "Validation findings are translated into a prioritised V2 improvement list.",
-    "V2 self-service programme packs are produced, disseminated and showcased by Christmas 2026.",
-    "Faculty roundtables are held and initial observations are captured by Christmas 2026.",
-    "An executive report is submitted to Education Committee by Christmas 2026.",
-    "Programme workshop structure, facilitation materials and output templates are designed by Christmas 2026.",
-    "Wayfinder programmes test the workshop model and provide validation findings before wider rollout.",
-    "The model is refined after wayfinder workshops.",
-    "Workshops are rolled out to agreed priority segments by September 2027.",
-    "Data refresh rhythm, BAU ownership and Power BI maintenance route are confirmed before full rollout completes.",
-    "The workshop model is rolled out to the remaining agreed coverage population during 2027/28.",
-    "Programme profile, action and story materials are used where appropriate across rollout waves.",
-    "Heads of Department are confirmed as benefit owners and action follow-up remains internal to departments and faculties.",
-    "Faculty returns are synthesised into institutional patterns, strengths and support needs.",
-    "Findings feed related King's Edge work, including evidence packs, market activation, skills work and curriculum enhancement."
-  ],
-  "resources": {
-    "fundingSummary": "Requires alignment of Careers and Employability Service data capacity, Power BI development, programme delivery coordination, content design, governance support and faculty facilitator time. Additional or protected resource is likely needed because September and Christmas 2026 include validation, V2 production, dissemination, roundtables, reporting and wayfinder testing.",
-    "existingCapacity": [
-      {"role": "Careers and Employability Service", "contribution": "Own or co-own the data product, provide employability expertise and support interpretation."},
-      {"role": "Mark Peace", "contribution": "Provide institutional graduate futures leadership, reporting and synthesis."},
-      {"role": "Daniel Robson", "contribution": "Lead delivery of the insight pack model, workshop design and rollout coordination."},
-      {"role": "Vice Deans Education or delegates", "contribution": "Act as decision forum and faculty delivery route."},
-      {"role": "Heads of Department", "contribution": "Own benefit realisation and local follow-up."},
-      {"role": "Faculty facilitators", "contribution": "Run local workshops using the agreed model."}
-    ],
-    "newInvestment": [
-      {"item": "Protected analytical and Power BI capacity", "category": "data product development", "rationale": "Needed to produce and validate Power BI V1 and maintain the insight model.", "periodNeeded": "now-xmas-2026", "confidence": "medium", "fundingRoute": "TBC"},
-      {"item": "Content design and governance coordination support", "category": "coordination and content", "rationale": "Needed for V2 packs, dissemination, faculty roundtables, Education Committee reporting, workshop materials and wayfinder testing.", "periodNeeded": "now-xmas-2026 to jan-summer-2027", "confidence": "medium", "fundingRoute": "TBC"},
-      {"item": "Sandwich year placement or equivalent coordination resource", "category": "project support", "rationale": "Could support inventory maintenance, pack preparation, testing, return tracking and synthesis.", "periodNeeded": "now-xmas-2026 to ay-2027-28-to-2028-29", "confidence": "developing", "fundingRoute": "TBC"},
-      {"item": "Ongoing product maintenance capacity", "category": "BAU support", "rationale": "Needed to avoid the dashboard and packs becoming a one-off product.", "periodNeeded": "jan-summer-2027 onwards", "confidence": "developing", "fundingRoute": "TBC"}
-    ],
-    "enablingConditions": [
-      {"condition": "Access to graduate outcomes, LEO, TEF, benchmarking, enrolment supplement and relevant internal datasets.", "owner": "Careers and Employability Service", "riskIfMissing": "The data product cannot provide a credible programme-level view."},
-      {"condition": "Power BI prioritisation or equivalent data visualisation route.", "owner": "Careers and Employability Service", "riskIfMissing": "The pack may remain static or manually produced."},
-      {"condition": "Education Committee route and showcase forums are confirmed early.", "owner": "Mark Peace", "riskIfMissing": "Initial findings may not create institutional understanding or decision momentum."},
-      {"condition": "Faculty agreement to use the local workshop model.", "owner": "Vice Deans Education or delegates", "riskIfMissing": "The central team becomes a bottleneck."},
-      {"condition": "BAU product ownership and refresh cadence are agreed.", "owner": "Careers and Employability Service", "riskIfMissing": "The product becomes a one-off mobilisation asset."}
-    ],
-    "investmentAsk": {"required": true, "fundingRoute": "TBC", "priority": "High for September 2026 validation and Christmas 2026 V2 dissemination", "decisionNeededBy": "Summer 2026", "confidence": "developing", "rationale": "The milestones require protected analytical, Power BI, content design and coordination capacity."}
-  },
-  "risks": [
-    {"id": "2.1.1-R1", "title": "September 2026 V1 validation deadline is missed", "description": "The specification, Power BI build or validation may be under-resourced.", "likelihood": "medium", "impact": "high", "mitigation": "Lock minimum viable scope, secure capacity and schedule UAT early.", "owner": "Daniel Robson"},
-    {"id": "2.1.1-R2", "title": "UAT is too shallow to support V2", "description": "Validation may not involve enough representative users.", "likelihood": "medium", "impact": "high", "mitigation": "Define user groups, test questions and success criteria before UAT.", "owner": "Daniel Robson"},
-    {"id": "2.1.1-R3", "title": "Christmas 2026 delivery window is overloaded", "description": "V2 packs, dissemination, roundtables, reporting, workshop design and wayfinder testing overlap.", "likelihood": "medium", "impact": "high", "mitigation": "Define minimum viable outputs and resource coordination explicitly.", "owner": "Mark Peace"},
-    {"id": "2.1.1-R4", "title": "V2 packs are read as final judgements", "description": "Programmes may see packs as performance assessment rather than caveated intelligence.", "likelihood": "medium", "impact": "high", "mitigation": "Use developmental framing and clear caveats.", "owner": "Careers and Employability Service"},
-    {"id": "2.1.1-R5", "title": "Faculty roundtables surface sensitive findings", "description": "Early observations may raise sensitive questions before the model is mature.", "likelihood": "medium", "impact": "high", "mitigation": "Agree chairing, caveat language and escalation routes.", "owner": "Vice Deans Education or delegates"},
-    {"id": "2.1.1-R6", "title": "Wayfinder programmes are not representative enough", "description": "The model may work with early partners but not harder priority segments.", "likelihood": "medium", "impact": "high", "mitigation": "Select wayfinders for useful variation.", "owner": "Daniel Robson"},
-    {"id": "2.1.1-R7", "title": "Priority segment selection is perceived as punitive", "description": "Selected areas may feel labelled as problems.", "likelihood": "medium", "impact": "high", "mitigation": "Use transparent criteria and frame as support and learning.", "owner": "Vice Deans Education or delegates"},
-    {"id": "2.1.1-R8", "title": "Data is over-interpreted or used punitively", "description": "Small numbers, volatility or comparator misuse could lead to unfair interpretations.", "likelihood": "medium", "impact": "high", "mitigation": "Use caveat guide, facilitator training and responsible interpretation principles.", "owner": "Careers and Employability Service"},
-    {"id": "2.1.1-R9", "title": "BAU refresh is under-owned", "description": "The dashboard and packs may become one-off products.", "likelihood": "medium", "impact": "high", "mitigation": "Confirm product owner, refresh cadence and maintenance route.", "owner": "Careers and Employability Service"},
-    {"id": "2.1.1-R10", "title": "Action plans are not followed up", "description": "Programme action plans may be created but not owned.", "likelihood": "medium", "impact": "high", "mitigation": "Confirm HoDs as benefit owners and use internal planning routes.", "owner": "Heads of Department"},
-    {"id": "2.1.1-R11", "title": "Story Pack content becomes unsupported marketing language", "description": "Recruitment language could drift beyond evidence.", "likelihood": "medium", "impact": "high", "mitigation": "Require evidence-linked proof points and programme confirmation.", "owner": "Programme teams"}
-  ],
-  "issues": [
-    {"id": "2.1.1-I1", "title": "Data product resourcing needs confirmation", "description": "Additional or protected capacity may be needed for specification, Power BI V1 and UAT.", "owner": "Careers and Employability Service", "neededBy": "Summer 2026"},
-    {"id": "2.1.1-I2", "title": "Christmas 2026 coordination load needs managing", "description": "V2 production, dissemination, roundtables, reporting, workshop design and wayfinder testing overlap.", "owner": "Mark Peace and Daniel Robson", "neededBy": "Start of autumn 2026"},
-    {"id": "2.1.1-I3", "title": "Wayfinder programmes need selecting", "description": "Early partner programmes are required to validate the workshop model.", "owner": "Vice Deans Education or delegates", "neededBy": "Autumn 2026"},
-    {"id": "2.1.1-I4", "title": "Priority segment criteria need agreement", "description": "The institution needs to agree priority areas and how selection is framed.", "owner": "Vice Deans Education or delegates", "neededBy": "Spring 2027"},
-    {"id": "2.1.1-I5", "title": "BAU refresh ownership needs confirmation", "description": "The product needs an owner, refresh cadence and maintenance route.", "owner": "Careers and Employability Service", "neededBy": "Before full rollout completes"},
-    {"id": "2.1.1-I6", "title": "Remaining coverage definition still needs to be locked", "description": "The unit of final coverage needs confirmation: programme, department, pathway or cluster.", "owner": "Vice Deans Education or delegates", "neededBy": "Before final rollout planning"}
-  ],
-  "assumptions": [
-    {"id": "2.1.1-A1", "title": "Core data is available", "summary": "The main challenge is specification, presentation, interpretation, validation and refresh."},
-    {"id": "2.1.1-A2", "title": "Power BI V1 can be validated by September 2026", "summary": "The milestone requires enough build maturity and user access to complete meaningful UAT."},
-    {"id": "2.1.1-A3", "title": "V2 packs can be informative before workshops", "summary": "Programmes can use the packs to understand initial patterns before deeper facilitated work."},
-    {"id": "2.1.1-A4", "title": "Workshop design can run in parallel with V2 pack production", "summary": "V1 validation and emerging V2 design provide enough evidence to design the workshop structure."},
-    {"id": "2.1.1-A5", "title": "Wayfinder programmes will help validate the approach", "summary": "Early partners will pressure-test the pack and workshop model before priority and full rollout."},
-    {"id": "2.1.1-A6", "title": "Faculty-led delivery is necessary for scale", "summary": "The central team cannot deliver workshops for every programme."},
-    {"id": "2.1.1-A7", "title": "Programme confirmation is enough for Story Pack use", "summary": "Programme teams can confirm story language is accurate and evidence-informed."},
-    {"id": "2.1.1-A8", "title": "Action plan follow-up remains internal", "summary": "Actions should be followed up through department and faculty planning routes."},
-    {"id": "2.1.1-A9", "title": "BAU refresh can be integrated during rollout", "summary": "Refresh and operating model work can run alongside priority and remaining rollout."}
-  ],
-  "decisions": [
-    {"id": "2.1.1-D1", "title": "Confirm protected resource for data product development", "description": "Decide whether analyst, Power BI or coordination capacity is required for September 2026.", "decisionMaker": "Vice Deans Education or delegates, with Careers and Employability Service", "decisionNeededBy": "Summer 2026", "status": "needed"},
-    {"id": "2.1.1-D2", "title": "Lock the September 2026 V1 scope", "description": "Confirm minimum viable sources, dashboard pages, pack structure, comparator framework, taxonomy and UAT standard.", "decisionMaker": "Mark Peace, Daniel Robson and Careers and Employability Service", "decisionNeededBy": "Summer 2026", "status": "needed"},
-    {"id": "2.1.1-D3", "title": "Confirm validation and UAT participants", "description": "Agree selected faculty, programme and professional services users who will test V1.", "decisionMaker": "Daniel Robson and Vice Deans Education or delegates", "decisionNeededBy": "Summer 2026", "status": "needed"},
-    {"id": "2.1.1-D4", "title": "Confirm V2 dissemination and showcase routes", "description": "Agree where V2 packs must be disseminated and showcased.", "decisionMaker": "Mark Peace and Vice Deans Education or delegates", "decisionNeededBy": "Autumn 2026", "status": "needed"},
-    {"id": "2.1.1-D5", "title": "Confirm Education Committee reporting route", "description": "Agree timing, format and route for the executive report.", "decisionMaker": "Mark Peace and relevant governance route", "decisionNeededBy": "Autumn 2026", "status": "needed"},
-    {"id": "2.1.1-D6", "title": "Select wayfinder programmes", "description": "Agree early programmes that will validate the workshop model.", "decisionMaker": "Vice Deans Education or delegates, with Mark Peace and Daniel Robson", "decisionNeededBy": "Autumn 2026", "status": "needed"},
-    {"id": "2.1.1-D7", "title": "Confirm workshop outputs", "description": "Decide which outputs the workshop model must produce.", "decisionMaker": "Mark Peace, Daniel Robson and Vice Deans Education or delegates", "decisionNeededBy": "Autumn 2026", "status": "needed"},
-    {"id": "2.1.1-D8", "title": "Confirm priority segment criteria", "description": "Agree criteria for selecting priority programmes, departments, clusters or student-outcome segments.", "decisionMaker": "Vice Deans Education or delegates", "decisionNeededBy": "Spring 2027", "status": "needed"},
-    {"id": "2.1.1-D9", "title": "Confirm BAU refresh owner and cadence", "description": "Agree product owner, refresh cycle, Power BI maintenance and pack update route.", "decisionMaker": "Careers and Employability Service with Mark Peace and relevant data owners", "decisionNeededBy": "Before full rollout completes", "status": "needed"},
-    {"id": "2.1.1-D10", "title": "Confirm remaining institutional coverage definition", "description": "Agree coverage unit after wayfinder and priority phases.", "decisionMaker": "Vice Deans Education or delegates", "decisionNeededBy": "Before final rollout planning", "status": "needed"}
+    "Data specification, evidence inventory, caveat handling and responsible-use principles are complete by September 2026.",
+    "The first working graduate futures evidence pack is built and tested with selected users by September 2026.",
+    "The approximately £3,000 summer student placement is confirmed or an equivalent support route is identified for Steps 1 and 2.",
+    "Testing findings are translated into a prioritised improvement list for the next version of the packs.",
+    "First programme-facing packs are shared with colleagues by Christmas 2026, supported by a short user guide and careful framing.",
+    "Faculty conversations are held and learning from use is captured by Christmas 2026.",
+    "An early institutional summary is submitted to Education Committee or the agreed senior education forum by Christmas 2026.",
+    "The guided programme conversation structure, prompts, facilitation notes and light templates are designed with appropriate input from King's Academy, Careers and faculty colleagues.",
+    "Early programme partners test the pack and guided conversation model, with findings captured before wider engagement.",
+    "The pack, guidance, conversation model and programme profile materials are refined in response to early use.",
+    "A shared prioritisation process is agreed for identifying programme groups where the evidence can be most useful.",
+    "Agreed programme groups complete supported graduate futures conversations by September 2027.",
+    "The evidence pack has a confirmed refresh rhythm, ownership model, access route and interpretation guidance.",
+    "Graduate futures evidence is handed into quality assurance and continual improvement cycles so it can support ongoing programme reflection and enhancement.",
+    "Every agreed programme has either completed a supported review or has been enabled to complete a self-review using the pack, guidance and conversation materials by September 2028.",
+    "Institutional synthesis draws out strengths, recurring questions, support needs and implications for related King's Edge work.",
+    "Programme stories or examples used in student-facing or applicant-facing contexts are evidence-linked and agreed with the relevant programme teams."
   ]
 }
