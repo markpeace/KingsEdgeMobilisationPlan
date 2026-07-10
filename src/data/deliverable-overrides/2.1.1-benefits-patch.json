@@ -3,17 +3,17 @@
   "benefits": [
     {
       "id": "2.1.1-B1",
-      "title": "King's can assert its graduate premium more confidently and credibly",
-      "statement": "King's can make stronger, more nuanced and evidence-informed claims about the futures its programmes make possible for students, including distinctive excellence, student pathways, outcomes and value.",
-      "beneficiary": "Programme teams, departments, faculties, students, applicants, recruitment teams, senior education leaders and King's Edge",
-      "benefitType": "graduate premium evidence and articulation",
+      "title": "Programme teams can evidence and claim their graduate futures value more confidently",
+      "statement": "Programme teams can make stronger, more nuanced and evidence-informed claims about the futures their programme makes possible for students, including distinctive excellence, student pathways, outcomes and value.",
+      "beneficiary": "Programme teams, departments, faculties, students, applicants, recruitment teams and King's Edge",
+      "benefitType": "programme-level graduate futures evidence and articulation",
       "realisationPeriod": "2026/27 onwards",
-      "successLooksLike": "Programme and institutional narratives claim graduate futures value with confidence, nuance and evidence, while remaining context-sensitive, academically owned and appropriately caveated.",
+      "successLooksLike": "Programme-level narratives claim graduate futures value with confidence, nuance and evidence, while remaining context-sensitive, academically owned and appropriately caveated. These local stories are strong enough to be used by programme teams and to feed King’s-level graduate premium synthesis through 2.4.1.",
       "evidenceOfSuccess": [
         "Programme reflections, profiles or story materials explain what programmes enable for students using evidence, context and academic judgement.",
         "Programme teams recognise themselves in the story and feel able to use it with students, applicants, colleagues or external audiences.",
-        "Student-facing, applicant-facing or institutional claims about graduate futures are evidence-linked, context-sensitive, appropriately caveated and agreed with the relevant programme teams.",
-        "Programme and institutional stories feed recruitment, open day, programme review, graduate premium evidence or related King's Edge work without reducing programme value to a single metric."
+        "Student-facing, applicant-facing or programme-facing claims about graduate futures are evidence-linked, context-sensitive, appropriately caveated and agreed with the relevant programme teams.",
+        "Programme stories provide credible local material that can feed institutional graduate premium evidence and related King’s Edge work, including 2.4.1, without reducing programme value to a single metric."
       ],
       "enabledBy": [
         {"stepId": "2.1.1-step-1", "outputTitle": "First working graduate futures evidence pack"},
@@ -24,17 +24,17 @@
     },
     {
       "id": "2.1.1-B2",
-      "title": "King's understands graduate futures enhancement opportunities better",
-      "statement": "Programmes, departments, faculties and the institution can see where existing strengths should be amplified and where curriculum, skills, opportunity, support or articulation work could most strengthen students' futures.",
-      "beneficiary": "Programme teams, departments, faculties, Careers and Employability Service, senior education leaders, King's Edge and students",
-      "benefitType": "enhancement insight and strategic learning",
+      "title": "Programme teams and faculties understand graduate futures enhancement opportunities better",
+      "statement": "Programme teams, departments and faculties can see where existing strengths should be amplified and where curriculum, skills, opportunity, support or articulation work could most strengthen students' futures.",
+      "beneficiary": "Programme teams, departments, faculties, Careers and Employability Service, King's Edge and students",
+      "benefitType": "programme and faculty enhancement insight",
       "realisationPeriod": "2026/27 to 2027/28 onwards",
-      "successLooksLike": "Programme and institutional conversations use graduate futures evidence to identify strengths, questions, support needs and focused opportunities for enhancement without treating the evidence as a deficit report, ranking or judgement on programme quality.",
+      "successLooksLike": "Programme and faculty conversations use graduate futures evidence to identify strengths, questions, support needs and focused opportunities for enhancement without treating the evidence as a deficit report, ranking or judgement on programme quality. These local insights are clear enough to support action and to feed King’s-level pattern-finding through 2.4.1.",
       "evidenceOfSuccess": [
         "Guided conversations capture agreed questions, practical local actions or areas for further support.",
         "Actions or focus areas are taken into normal programme, department or faculty planning routes rather than remaining as standalone project paperwork.",
-        "Faculty-level learning and institutional synthesis draw out recurring strengths, questions, student pathways and support needs across contexts.",
-        "Shared themes inform King's Edge work, faculty planning, curriculum enhancement, skills-related activity or support priorities without creating programme comparison or league-table logic."
+        "Faculty-level learning draws out recurring strengths, questions, student pathways and support needs across local contexts.",
+        "Local themes inform faculty planning, curriculum enhancement, skills-related activity, support priorities or King’s-level synthesis through 2.4.1 without creating programme comparison or league-table logic."
       ],
       "enabledBy": [
         {"stepId": "2.1.1-step-3", "outputTitle": "Guided programme conversation structure"},
@@ -49,28 +49,28 @@
   "measures": [
     {
       "id": "2.1.1-M1",
-      "title": "Confidence and credibility of graduate premium claims",
+      "title": "Confidence and credibility of programme graduate futures claims",
       "measureType": "benefit-realisation",
-      "questionAnswered": "Can King's and its programme teams assert graduate futures value more confidently and credibly?",
-      "measure": "Review of programme reflections, profile materials, story examples, institutional synthesis and programme-team feedback on whether the evidence helps colleagues claim strengths and explain value with confidence, nuance, context and appropriate caveats.",
+      "questionAnswered": "Can programme teams assert their graduate futures value more confidently and credibly?",
+      "measure": "Review of programme reflections, profile materials, story examples and programme-team feedback on whether the evidence helps colleagues claim strengths and explain value with confidence, nuance, context and appropriate caveats, including whether local stories are usable in programme contexts and can feed 2.4.1.",
       "owner": "Heads of Department, with support from Careers and Employability Service and Mark Peace",
       "cadence": "During early programme partner review and annual synthesis",
       "confidence": "developing",
       "baseline": "Programme-level graduate futures stories and graduate premium claims are currently uneven and not consistently evidence-linked.",
-      "target": "Programme and institutional stories used in review, recruitment, open days, student-facing contexts or graduate premium evidence work are evidence-linked, context-sensitive and agreed with relevant programme teams.",
+      "target": "Programme stories used in review, recruitment, open days, student-facing contexts or graduate premium evidence work are evidence-linked, context-sensitive and agreed with relevant programme teams, with local material suitable to inform 2.4.1.",
       "relatedBenefitIds": ["2.1.1-B1"]
     },
     {
       "id": "2.1.1-M2",
-      "title": "Quality of graduate futures enhancement insight",
+      "title": "Quality of local graduate futures enhancement insight",
       "measureType": "benefit-realisation",
-      "questionAnswered": "Does the process help King's understand where graduate futures practice, support or articulation could be strengthened?",
-      "measure": "Review of guided conversation outputs, agreed questions, practical local actions, faculty-level learning, institutional synthesis and evidence that themes are interpreted responsibly and routed through normal programme, department, faculty or King's Edge planning.",
+      "questionAnswered": "Does the process help programme teams and faculties understand where graduate futures practice, support or articulation could be strengthened?",
+      "measure": "Review of guided conversation outputs, agreed questions, practical local actions, faculty-level learning and evidence that themes are interpreted responsibly and routed through normal programme, department, faculty or King’s Edge planning, including whether local insights are clear enough to feed 2.4.1.",
       "owner": "Heads of Department, faculty education leads, Careers and Employability Service and Mark Peace",
       "cadence": "Termly during supported conversations and annual synthesis",
       "confidence": "developing",
       "baseline": "Enhancement opportunities from programme-level graduate futures evidence are not yet consistently captured, synthesised or routed through local and institutional planning.",
-      "target": "Engaged programme groups and institutional synthesis identify strengths, questions, support needs and focused enhancement opportunities without reducing programmes to categories, rankings or deficit labels.",
+      "target": "Engaged programme groups and faculty-level learning identify strengths, questions, support needs and focused enhancement opportunities without reducing programmes to categories, rankings or deficit labels, with local insights suitable to inform 2.4.1.",
       "relatedBenefitIds": ["2.1.1-B2"]
     }
   ]
