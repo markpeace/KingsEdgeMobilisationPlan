@@ -5,7 +5,7 @@ const benefitEvidenceByDeliverable = {
       evidenceOfSuccess: [
         'Programme reflections, profiles or story materials explain what programmes enable for students using evidence, context and academic judgement.',
         'Programme teams recognise themselves in the story and feel able to use it with students, applicants, colleagues or external audiences.',
-        'Student-facing or applicant-facing claims are evidence-linked, context-sensitive and agreed with the relevant programme teams.'
+        'Student-facing or applicant-facing claims are evidence-linked, context-sensitive, appropriately caveated and agreed with the relevant programme teams.'
       ],
       enabledBy: [
         { stepId: '2.1.1-step-1', label: 'Step 01: First working graduate futures evidence pack' },
@@ -18,7 +18,7 @@ const benefitEvidenceByDeliverable = {
       evidenceOfSuccess: [
         'Guided conversations capture agreed questions, practical local actions or areas for further support.',
         'Actions or focus areas are taken into normal programme, department or faculty planning routes rather than remaining as standalone project paperwork.',
-        'Programme teams can describe how the evidence helped them see both existing strengths and where more is possible for students.'
+        'Programme teams use academic judgement to describe how the evidence helped them see both existing strengths and where more is possible for students.'
       ],
       enabledBy: [
         { stepId: '2.1.1-step-3', label: 'Step 03: Guided programme conversation structure' },
@@ -27,20 +27,6 @@ const benefitEvidenceByDeliverable = {
       ]
     },
     '2.1.1-B3': {
-      successLooksLike: 'Programme-facing use of graduate futures evidence is fair, interpretable and developmental, avoiding ranking, league-table or punitive readings.',
-      evidenceOfSuccess: [
-        'Feedback from academic and professional services colleagues suggests the packs are useful, fair and interpretable when caveats and context are visible.',
-        'Programme conversations use academic judgement to challenge over-simple readings of destinations, outcomes, aspiration data or comparator evidence.',
-        'Pack, profile, story and student-facing materials include appropriate caveats and avoid unsupported or over-claimed conclusions.'
-      ],
-      enabledBy: [
-        { stepId: '2.1.1-step-1', label: 'Step 01: Interpretation approach' },
-        { stepId: '2.1.1-step-2', label: 'Step 02: Short user guide' },
-        { stepId: '2.1.1-step-3', label: 'Step 03: Responsible-use guidance' },
-        { stepId: '2.1.1-step-4', label: 'Step 04: Updated interpretation guidance' }
-      ]
-    },
-    '2.1.1-B4': {
       successLooksLike: "King's can see patterns across programme stories and graduate futures evidence without flattening difference or turning the synthesis into programme comparison.",
       evidenceOfSuccess: [
         'Faculty-level learning and institutional synthesis draw out strengths, recurring questions, student pathways and support needs across contexts.',
@@ -54,7 +40,7 @@ const benefitEvidenceByDeliverable = {
         { stepId: '2.1.1-step-7', label: "Step 07: Recommendations for related King's Edge work" }
       ]
     },
-    '2.1.1-B5': {
+    '2.1.1-B4': {
       successLooksLike: 'The evidence packs and guided review process have a clear owner, refresh rhythm, access route and place in existing programme, department, faculty or institutional planning conversations.',
       evidenceOfSuccess: [
         'Ownership, refresh rhythm, access route and interpretation support for the evidence packs are confirmed.',
