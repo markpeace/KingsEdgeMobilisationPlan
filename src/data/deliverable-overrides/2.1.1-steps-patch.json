@@ -140,8 +140,7 @@
           {"role": "Careers and Employability Service", "contribution": "Support interpretation, responsible-use guidance and refinement of the pack."},
           {"role": "Data and visualisation colleagues", "contribution": "Make changes to the pack in response to early use."},
           {"role": "King's Academy", "contribution": "Review whether the conversation model feels developmental, proportionate and academically credible, and support refinements where needed."},
-          {"role": "Faculty colleagues and early programme partners", "contribution": "Confirm whether the revised approach is workable, proportionate and credible."
-          }
+          {"role": "Faculty colleagues and early programme partners", "contribution": "Confirm whether the revised approach is workable, proportionate and credible."}
         ],
         "nonCashNeeds": [
           {"need": "Debrief and learning time after each early conversation", "rationale": "The value of this step is in learning carefully from early use, not simply in completing the conversations."},
@@ -169,14 +168,14 @@
     },
     {
       "id": "2.1.1-step-5",
-      "title": "Work with agreed programme groups where the evidence can be most useful",
+      "title": "Identify programme groups where the evidence could be most useful and run the first guided conversations",
       "period": {"start": "jan-jun-2027:c", "end": "jul-dec-2027:b"},
-      "summary": "This step works with agreed programme groups through a shared and transparent process. The evidence helps identify where a deeper conversation may be valuable, but faculty knowledge and programme context matter just as much. The purpose is to help colleagues strengthen their graduate futures story and identify practical next steps, not to label programmes.",
+      "summary": "This step identifies programme groups where the evidence could be most useful, using a shared and transparent process, then implements the first round of guided conversations with those groups. The purpose is to help colleagues strengthen their graduate futures story and identify practical next steps, without labelling programmes or treating the evidence as a judgement in itself.",
       "stepType": "shared-prioritisation-engagement",
       "dependsOn": ["2.1.1-step-4"],
       "outputs": [
-        {"title": "Shared prioritisation approach", "summary": "An agreed approach for selecting programme groups, combining evidence, faculty knowledge, programme context and local judgement."},
-        {"title": "Guided programme conversations", "summary": "Supported conversations with agreed programme groups using the improved pack and conversation model."},
+        {"title": "Identification approach for first programme groups", "summary": "An agreed approach for selecting programme groups, combining evidence, faculty knowledge, programme context and local judgement."},
+        {"title": "First round of guided programme conversations", "summary": "Supported conversations with agreed programme groups using the improved pack and conversation model."},
         {"title": "Programme reflections", "summary": "Reflections on graduate futures strengths, questions, opportunities and support needs."},
         {"title": "Practical local actions", "summary": "A small number of actions that programme teams can take forward locally."},
         {"title": "Examples of distinctive programme value", "summary": "Evidence-informed examples of effective practice or distinctive graduate futures stories, where programme teams are comfortable for these to be shared."},
@@ -184,7 +183,7 @@
       ],
       "resources": {
         "existingCapacity": [
-          {"role": "Vice Deans Education or delegates", "contribution": "Lead the shared prioritisation process and agree the programme groups with faculties."},
+          {"role": "Vice Deans Education or delegates", "contribution": "Lead the shared identification process and agree the programme groups with faculties."},
           {"role": "Faculty-led facilitators", "contribution": "Host and facilitate programme conversations locally."},
           {"role": "Careers and Employability Service", "contribution": "Support deeper interpretation where needed."},
           {"role": "Department and programme leaders", "contribution": "Engage with the evidence, own reflections and identify practical next steps."},
@@ -193,70 +192,70 @@
         "nonCashNeeds": [{"need": "Coordination across faculties", "rationale": "Needed to keep the work manageable, avoid duplication and bring learning together without creating unnecessary reporting burden."}]
       },
       "decisions": [
-        {"title": "Confirm prioritisation criteria", "summary": "Agree what criteria should inform programme group selection."},
-        {"title": "Confirm who agrees programme groups", "summary": "Agree who needs to be involved so prioritisation combines evidence, faculty knowledge and local judgement."},
+        {"title": "Confirm identification criteria", "summary": "Agree what criteria should inform programme group selection."},
+        {"title": "Confirm who agrees programme groups", "summary": "Agree who needs to be involved so selection combines evidence, faculty knowledge and local judgement."},
         {"title": "Confirm rationale for inclusion", "summary": "Agree how the rationale for inclusion will be explained to colleagues."},
         {"title": "Confirm support offer", "summary": "Agree what support programme teams can expect before, during and after the conversation."},
         {"title": "Confirm theme capture", "summary": "Agree how faculty and institutional themes should be captured without reducing programmes to categories."}
       ],
       "risks": [
-        {"title": "Prioritisation feels punitive", "mitigation": "Use a transparent shared process and include strengths, distinctive practice and learning value as well as support needs."},
+        {"title": "Selection feels punitive", "mitigation": "Use a transparent shared process and include strengths, distinctive practice and learning value as well as support needs."},
         {"title": "Programme groups feel labelled", "mitigation": "Frame the work as focused support for programme development and story strengthening."},
         {"title": "Programme actions become performative paperwork", "mitigation": "Keep actions small, owned and routed through existing programme, department or faculty routes."}
       ]
     },
     {
       "id": "2.1.1-step-6",
-      "title": "Make the evidence pack a living resource",
+      "title": "Transfer management of the data packs and review process into business as usual",
       "period": {"start": "jan-jun-2027:c", "end": "jul-dec-2027:a"},
-      "summary": "This step makes sure the evidence pack remains useful after the first phase of work. It agrees who will maintain it, how the evidence will be refreshed, how colleagues will get support with interpretation, and how graduate futures evidence will connect to ongoing quality assurance and continual improvement.",
-      "stepType": "living-resource-and-handoff",
+      "summary": "This step moves ongoing management of the graduate futures data packs, interpretation guidance and programme review process into business as usual. It agrees who owns the data packs, how evidence will be refreshed, how colleagues will get support with interpretation, and where the review process sits within existing quality assurance and continual improvement routes.",
+      "stepType": "business-as-usual-transfer",
       "dependsOn": ["2.1.1-step-2", "2.1.1-step-4"],
       "outputs": [
-        {"title": "Evidence refresh rhythm", "summary": "An agreed rhythm for refreshing the evidence pack, including which data can be updated regularly and which data needs longer cycles."},
-        {"title": "Clear ownership model", "summary": "Ownership for maintaining the data, dashboard, narrative guidance and interpretation materials."},
-        {"title": "Update route", "summary": "A route for updating the pack as data sources, student patterns, programme needs or institutional priorities change."},
-        {"title": "Place in academic planning", "summary": "An agreed place for the pack in existing programme, department, faculty or institutional planning conversations."},
+        {"title": "Evidence refresh rhythm", "summary": "An agreed rhythm for refreshing the evidence packs, including which data can be updated regularly and which data needs longer cycles."},
+        {"title": "Business-as-usual ownership model", "summary": "Ownership for maintaining the data packs, dashboard, narrative guidance, interpretation materials and review process."},
+        {"title": "Update route", "summary": "A route for updating the packs as data sources, student patterns, programme needs or institutional priorities change."},
+        {"title": "Place in business-as-usual planning and review", "summary": "An agreed place for the data packs and review process in existing programme, department, faculty or institutional planning conversations."},
         {"title": "Quality assurance and continual improvement handoff", "summary": "A clear route for graduate futures evidence to inform programme reflection and enhancement through existing cycles."},
-        {"title": "Ongoing feedback process", "summary": "A simple process for gathering feedback from colleagues who use the pack over time."}
+        {"title": "Ongoing feedback process", "summary": "A simple process for gathering feedback from colleagues who use the packs and review process over time."}
       ],
       "resources": {
         "existingCapacity": [
           {"role": "Careers and Employability Service", "contribution": "Own or co-own the ongoing evidence resource, interpretation guidance and refresh route."},
           {"role": "Data and visualisation owner", "contribution": "Maintain the dashboard, data updates and pack access route."},
-          {"role": "Faculty education leads or delegates", "contribution": "Agree how the pack will be used locally."},
+          {"role": "Faculty education leads or delegates", "contribution": "Agree how the packs and review process will be used locally."},
           {"role": "Quality assurance and continual improvement routes", "contribution": "Provide the institutional home for continued use of graduate futures evidence in programme reflection and enhancement."}
         ],
         "enablingConditions": [
-          {"condition": "A clear institutional home for the evidence pack after the initial project phase.", "riskIfMissing": "The pack risks becoming a one-off output rather than a sustained part of how King's understands graduate futures."},
+          {"condition": "A clear business-as-usual home for the data packs and review process after the initial project phase.", "riskIfMissing": "The packs risk becoming one-off outputs rather than a sustained part of how King's understands graduate futures."},
           {"condition": "Agreement on how graduate futures evidence connects to existing quality assurance and continual improvement cycles.", "riskIfMissing": "The evidence may remain available but not meaningfully shape programme enhancement."}
         ]
       },
       "decisions": [
-        {"title": "Confirm ongoing owner", "summary": "Agree who owns the evidence pack after the initial project phase."},
+        {"title": "Confirm business-as-usual owner", "summary": "Agree who owns the data packs and review process after the initial project phase."},
         {"title": "Confirm refresh rhythm", "summary": "Agree how often the evidence should be refreshed."},
         {"title": "Confirm interpretation ownership", "summary": "Agree who owns the interpretation guidance and responsible-use principles."},
-        {"title": "Confirm central and local responsibilities", "summary": "Agree which parts of the pack need central maintenance and which can be shaped locally."},
-        {"title": "Confirm quality assurance and continual improvement route", "summary": "Agree where the pack sits in existing quality assurance, planning, review or enhancement cycles."},
+        {"title": "Confirm central and local responsibilities", "summary": "Agree which parts of the packs and review process need central maintenance and which can be shaped locally."},
+        {"title": "Confirm quality assurance and continual improvement route", "summary": "Agree where the review process sits in existing quality assurance, planning, review or enhancement cycles."},
         {"title": "Confirm support route", "summary": "Agree what support is available when colleagues need help interpreting the evidence."}
       ],
       "risks": [
-        {"title": "The pack becomes a static dashboard", "mitigation": "Confirm ownership for data, visualisation, narrative guidance and interpretation, not just dashboard refresh."},
-        {"title": "The handoff is only technical", "mitigation": "Include both technical ownership of the pack and academic ownership of how it is used."},
-        {"title": "The pack creates a parallel process", "mitigation": "Embed it in existing quality assurance, planning and enhancement cycles."}
+        {"title": "The packs become static dashboards", "mitigation": "Confirm ownership for data, visualisation, narrative guidance, interpretation and the review process, not just dashboard refresh."},
+        {"title": "The transfer is only technical", "mitigation": "Include both technical ownership of the data packs and academic ownership of how they are used in review and enhancement."},
+        {"title": "The review process creates a parallel process", "mitigation": "Embed it in existing quality assurance, planning and enhancement cycles."}
       ]
     },
     {
       "id": "2.1.1-step-7",
-      "title": "Enable every programme to review and strengthen its graduate futures evidence",
-      "period": {"start": "jul-dec-2027:c", "end": "jul-dec-2028:ab"},
-      "summary": "This step makes sure every agreed programme has a meaningful way to engage with its graduate futures evidence. Some programmes will have a supported conversation, while others will be enabled to self-review using the pack and guidance. The aim is that every programme can understand, evidence and strengthen its graduate futures story, and that King's can learn from the patterns emerging across programmes.",
-      "stepType": "full-programme-review-and-synthesis",
+      "title": "Complete graduate futures reviews across the rest of the institution",
+      "period": {"start": "jul-dec-2027:c", "end": "jan-jun-2028:c"},
+      "summary": "This step applies the evidence pack and review model across the remaining agreed programmes, so the rest of the institution has a meaningful way to review and strengthen its graduate futures evidence. Some programmes will have supported conversations, while others will use the self-review route, with institutional synthesis used to identify strengths, recurring questions and further support needs.",
+      "stepType": "institution-wide-review-and-synthesis",
       "dependsOn": ["2.1.1-step-5"],
       "outputs": [
-        {"title": "Supported reviews for remaining agreed programme groups", "summary": "Supported graduate futures conversations where direct support is needed."},
-        {"title": "Self-review route", "summary": "A route for programmes able to use the evidence pack, guidance and conversation materials without a supported conversation."},
-        {"title": "Review or enabled self-review confirmation", "summary": "Confirmation that every agreed programme has either completed a supported review or has been enabled to complete a self-review."},
+        {"title": "Supported reviews for remaining programme groups", "summary": "Supported graduate futures conversations where direct support is needed."},
+        {"title": "Self-review route for remaining programmes", "summary": "A route for programmes able to use the evidence pack, guidance and conversation materials without a supported conversation."},
+        {"title": "Institution-wide review completion", "summary": "Confirmation that the remaining agreed programmes have either completed a supported review or have been enabled to complete a self-review."},
         {"title": "Institutional graduate futures synthesis", "summary": "A synthesis of themes across programmes, departments and faculties, including strengths, recurring questions and areas where further support may be needed."},
         {"title": "Recommendations for related King's Edge work", "summary": "Recommendations for curriculum enhancement, skills, opportunity, evidence and student-facing story work."}
       ],
@@ -271,7 +270,7 @@
         "nonCashNeeds": [{"need": "Coverage and synthesis coordination", "rationale": "Needed to track supported review and enabled self-review, bring findings together and avoid turning the final phase into a compliance exercise."}]
       },
       "decisions": [
-        {"title": "Confirm agreed programme population", "summary": "Agree what counts as an agreed programme for the purpose of this phase."},
+        {"title": "Confirm remaining programme population", "summary": "Agree what counts as the remaining programme population for the purpose of this phase."},
         {"title": "Confirm supported review and self-review routes", "summary": "Agree which programmes need a supported conversation and which can use the self-review route."},
         {"title": "Confirm enabled self-review threshold", "summary": "Agree the minimum evidence needed to confirm that a programme has been enabled to self-review."},
         {"title": "Confirm synthesis destination", "summary": "Agree where institutional themes and recommendations should go after this deliverable."},
