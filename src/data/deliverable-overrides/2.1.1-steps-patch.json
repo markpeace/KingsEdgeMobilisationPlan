@@ -118,7 +118,7 @@
     {
       "id": "2.1.1-step-4",
       "title": "Work with early programme partners to refine the approach",
-      "period": "jan-jun-2027:ab",
+      "period": {"start": "jul-dec-2026:c", "end": "jan-jun-2027:a"},
       "summary": "This step works with a small number of early programme partners to try the pack and conversation model in real programme settings. These colleagues help us understand whether the approach feels useful, fair and proportionate, and whether it helps programmes surface their distinctive value as well as areas for further attention.",
       "stepType": "early-programme-partner-testing",
       "dependsOn": ["2.1.1-step-2", "2.1.1-step-3"],
@@ -154,7 +154,7 @@
     {
       "id": "2.1.1-step-5",
       "title": "Improve the pack and conversation model from early use",
-      "period": "jan-jun-2027:bc",
+      "period": "jan-jun-2027:abc",
       "summary": "This step uses what early programme partners tell us to make the pack and conversation model clearer, lighter and more useful. It is a chance to improve the evidence, the prompts, the guidance and the profile materials before wider programme engagement begins.",
       "stepType": "model-refinement",
       "dependsOn": ["2.1.1-step-4"],
