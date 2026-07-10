@@ -83,7 +83,7 @@
     {
       "id": "2.1.1-step-3",
       "title": "Design the guided programme conversation",
-      "period": {"start": "jul-dec-2026:c", "end": "jan-jun-2027:a"},
+      "period": "jul-dec-2026:bc",
       "summary": "This step designs the conversation that helps colleagues make sense of the evidence together. The conversation should help programme teams move from what they already know about their programme, to what the evidence adds, to what they may want to strengthen next. It should support academic judgement, not replace it.",
       "stepType": "guided-conversation-design",
       "dependsOn": ["2.1.1-step-1"],
