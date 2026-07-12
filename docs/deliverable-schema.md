@@ -5,12 +5,12 @@ This document describes the canonical project and deliverable model for the King
 The model is deliberately compact. A deliverable should answer five questions:
 
 1. Why does it exist?
-2. Who owns it?
+2. Who is accountable for it?
 3. What value should it create?
 4. How will it be delivered?
 5. What evidence will show that the value is being realised?
 
-The Delivery timeline is the source of truth for operational delivery. Do not create parallel whole-deliverable sections that repeat the timeline.
+The Delivery timeline is the source of truth for operational delivery. Do not create parallel whole-deliverable sections that repeat it.
 
 ## Canonical planning-stage workflow
 
@@ -25,16 +25,7 @@ Allowed values:
 - `mobilising`
 - `in-delivery`
 
-Meanings:
-
-- `pre-draft`: included in the mobilisation map, but not yet scrutinised against the canonical model.
-- `draft`: coherent as a planning object, but not approved.
-- `validated-draft`: checked with relevant owners, contributors or stakeholders.
-- `decision-ready`: mature enough for a decision about priority, investment, ownership, sequencing or mobilisation.
-- `mobilising`: the relevant decision has been made and delivery is being organised.
-- `in-delivery`: work is actively underway.
-
-A deliverable should normally move from `pre-draft` to `draft` only after its case for change, ownership, benefits, measures, delivery steps, step-level resource asks and material risks have been scrutinised.
+A deliverable should normally move from `pre-draft` to `draft` only after its case for change, ownership, benefits, measures, governance, delivery steps, resources and material risks have been scrutinised.
 
 Do not use `tags`, `planningMaturity`, `visibility` or `src/data/status.json` as the planning-stage workflow.
 
@@ -57,28 +48,32 @@ Use `deliveryContext: "edge"` for King's Edge projects and `deliveryContext: "ou
 
 Canonical deliverable fields:
 
-- `id`: stable identifier, for example `2.1.1`.
-- `title`: public title.
-- `lead`: delivery lead.
-- `summary`: concise card-facing proposition.
-- `detailSummary`: fuller detail-page explanation.
-- `planningStatus`: canonical planning stage.
-- `caseForChange`: problem, opportunity, why now and intended change.
-- `ownership`: accountable owner, delivery lead, benefit owner, contributors and decision forum.
-- `benefits`: value expected from use of the deliverable.
-- `measures`: evidence used to test whether benefits are being realised.
-- `steps`: the sequenced delivery route.
+- `id`: stable identifier, for example `2.1.1`;
+- `title`: public title;
+- `lead`: delivery lead;
+- `summary`: concise card-facing proposition;
+- `detailSummary`: fuller detail-page explanation;
+- `planningStatus`: canonical planning stage;
+- `caseForChange`: problem, opportunity, why now and intended change;
+- `ownership`: accountable owner and delivery lead;
+- `governance`: decision route, business-as-usual ownership and essential delivery partners;
+- `benefits`: value expected from use of the deliverable;
+- `measures`: evidence used to test whether benefits are being realised;
+- `steps`: the sequenced delivery route;
 - `risks`, `issues`, `assumptions`: optional whole-route planning concerns where they genuinely affect the whole deliverable.
 
 The following older fields are no longer part of the canonical deliverable model and should not be authored for new or revised deliverables:
 
-- `components`
-- `definitionOfDone`
-- deliverable-level `dependencies`
-- deliverable-level `decisions`
-- deliverable-level `resources`
+- `components`;
+- `definitionOfDone`;
+- deliverable-level `dependencies`;
+- deliverable-level `decisions`;
+- deliverable-level `resources`;
+- `ownership.benefitOwner`;
+- `ownership.contributors`;
+- `ownership.decisionForum`.
 
-Existing legacy values may remain readable in old source data, but the deliverable detail view does not present them as independent sections.
+Existing legacy values may remain readable in old source data, but the deliverable detail view should not present them as independent sections.
 
 ## Case for change
 
@@ -93,22 +88,62 @@ Subfields:
 
 Backwards-compatible aliases:
 
-- `problemSolved` maps to `caseForChange.problem`.
+- `problemSolved` maps to `caseForChange.problem`;
 - `whatChanges` maps to `caseForChange.intendedChange`.
 
-## Ownership
+## Ownership and hero information
 
 Field: `ownership`
 
-Subfields:
+Canonical subfields:
 
 - `accountableOwner`
 - `deliveryLead`
-- `benefitOwner`
-- `contributors`
-- `decisionForum`
 
-Use `decisionForum` to identify where a material escalation or approval should go. Do not create a separate whole-deliverable decision list.
+These appear in the deliverable hero and should not be repeated in the governance panel.
+
+## Governance
+
+Field: `governance`
+
+Recommended subfields:
+
+- `decisionForum`
+- `decisionScope`
+- `businessAsUsualOwner`
+- `businessAsUsualOwnershipNote`
+- `deliveryPartners`
+
+Example:
+
+```json
+{
+  "governance": {
+    "decisionForum": "Vice Deans Education or delegates",
+    "decisionScope": "Material choices about scope, investment, faculty participation, enduring ownership and escalation.",
+    "businessAsUsualOwner": "TBC",
+    "businessAsUsualOwnershipNote": "The enduring owner will be confirmed through the business-as-usual transfer step.",
+    "deliveryPartners": [
+      {
+        "group": "Evidence and data",
+        "partners": ["Careers and Employability Service", "Planning and analytics colleagues"],
+        "contribution": "Provide, interpret and maintain the evidence and responsible-use guidance."
+      }
+    ]
+  }
+}
+```
+
+The governance section should answer:
+
+- where material decisions and escalations go;
+- who will own the enduring service, process, evidence resource or capability after mobilisation;
+- which small set of partner groups is essential and what each contributes;
+- who owns each benefit, derived from the benefits themselves.
+
+Do not put accountable owner, delivery lead, planning maturity, step decisions, resource asks or a comprehensive stakeholder register in governance.
+
+See `docs/governance-model.md` for the full authoring model.
 
 ## Benefits and measures
 
@@ -121,9 +156,12 @@ Recommended benefit fields:
 - `statement`
 - `beneficiary`
 - `benefitType`
+- `owner`
 - `realisationPeriod`
 - `successLooksLike`
 - `enabledBy`
+
+Put the owner on each benefit. Different benefits may have different owners.
 
 Measures are authored once at deliverable level and linked to benefits using `supportsBenefits`.
 
@@ -198,7 +236,7 @@ The timeline and dependency views derive relationships from step IDs. Do not dup
 
 Put a decision on the step that it gates, changes or completes.
 
-Use the deliverable ownership `decisionForum` for the escalation route. Do not create a separate whole-deliverable decisions section.
+Use `governance.decisionForum` for the escalation route. Do not create a separate whole-deliverable decision list.
 
 ### Timing
 
@@ -240,37 +278,7 @@ A resource ask should normally state:
 - confidence;
 - the delivery risk if the ask is not met.
 
-Example:
-
-```json
-"resources": {
-  "newInvestment": [
-    {
-      "id": "2.1.1-step-1-resource-investment-1",
-      "item": "Summer student placement",
-      "amount": 3000,
-      "currency": "GBP",
-      "owner": "Careers and Employability Service",
-      "decisionNeededBy": "Summer 2026",
-      "confidence": "estimate",
-      "rationale": "Supports data preparation, visualisation development and early testing.",
-      "riskIfMissing": "The first pack may not be ready for September testing."
-    }
-  ]
-}
-```
-
-When `periodNeeded` is omitted, the app uses the parent step period.
-
-The app derives a `Resource and investment profile` from all step asks. That profile sequences capacity, investment and enabling conditions by step and period. It is a roll-up, not a second authored resource plan.
-
-See `src/data/step-resource.schema.json` for the authoring schema.
-
-Backwards-compatible aliases remain readable while legacy data is migrated:
-
-- `people` maps to `existingCapacity`;
-- `cashCosts` maps to `newInvestment`;
-- `dataAndSystems`, `governance`, `engagementNeeds` and `nonCashNeeds` map to `enablingConditions`.
+The app derives the deliverable-level resource and investment profile from step asks. Do not author a separate deliverable-level resource plan.
 
 ## Risks, issues and assumptions
 
@@ -280,17 +288,20 @@ Keep a risk, issue or assumption at deliverable level only when it materially af
 
 Do not duplicate the same item at both levels.
 
-## Authoring discipline
+## Final authoring check
 
-Prefer the smallest useful model:
+Before moving a deliverable to `draft`, check that:
 
-- value belongs in benefits;
-- evidence belongs in linked measures;
-- products and completion evidence belong in timeline outputs;
-- sequencing and handoffs belong in `dependsOn`;
-- decisions belong on the step they gate;
-- resource asks belong on the step that needs them;
-- the resource profile is derived from those asks;
-- RAID belongs at the most local useful level.
-
-The deliverable detail page should remain a clear route through case for change, benefits and evidence, delivery timeline, governance, the derived resource profile and material planning risks. It should not become a collection of parallel planning taxonomies.
+- the case for change is clear;
+- accountable ownership and delivery leadership are credible;
+- each benefit has a clear owner;
+- benefits describe value rather than products;
+- measures test benefit realisation;
+- the decision and escalation route is explicit;
+- business-as-usual ownership is named or honestly shown as `TBC` with a route to resolution;
+- key delivery partners are grouped by contribution rather than listed as a stakeholder register;
+- every product is defined on a timeline step;
+- completion evidence sits with the relevant output;
+- dependencies and decisions sit on the relevant step;
+- resources and material risks are captured at the most local useful level;
+- the timeline is coherent enough to explain the route without a second planning structure.
