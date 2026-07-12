@@ -34,7 +34,7 @@ Meanings:
 - `mobilising`: the relevant decision has been made and delivery is being organised.
 - `in-delivery`: work is actively underway.
 
-A deliverable should normally move from `pre-draft` to `draft` only after its case for change, ownership, benefits, measures, delivery steps, resources and material risks have been scrutinised.
+A deliverable should normally move from `pre-draft` to `draft` only after its case for change, ownership, benefits, measures, delivery steps, step-level resource asks and material risks have been scrutinised.
 
 Do not use `tags`, `planningMaturity`, `visibility` or `src/data/status.json` as the planning-stage workflow.
 
@@ -68,7 +68,6 @@ Canonical deliverable fields:
 - `benefits`: value expected from use of the deliverable.
 - `measures`: evidence used to test whether benefits are being realised.
 - `steps`: the sequenced delivery route.
-- `resources`: optional whole-route resource position or investment ask.
 - `risks`, `issues`, `assumptions`: optional whole-route planning concerns where they genuinely affect the whole deliverable.
 
 The following older fields are no longer part of the canonical deliverable model and should not be authored for new or revised deliverables:
@@ -77,6 +76,7 @@ The following older fields are no longer part of the canonical deliverable model
 - `definitionOfDone`
 - deliverable-level `dependencies`
 - deliverable-level `decisions`
+- deliverable-level `resources`
 
 Existing legacy values may remain readable in old source data, but the deliverable detail view does not present them as independent sections.
 
@@ -188,8 +188,6 @@ Completion evidence belongs with the relevant output or step. Do not maintain a 
 
 Use step-level `dependsOn` for all sequencing and handoffs, including dependencies on steps in another deliverable.
 
-Examples:
-
 ```json
 "dependsOn": ["2.1.1-step-2", "2.4.1-step-1"]
 ```
@@ -221,26 +219,57 @@ A step crossing a boundary can use:
 }
 ```
 
-## Resources
+## Step resource asks
 
-Resources may appear at step level or, where genuinely cross-cutting, at deliverable level.
+All resource demand belongs on the step that needs it.
 
-Use step-level resources for the people, money, data, systems, engagement or enabling conditions needed by that step.
+Use three canonical groups:
 
-Use deliverable-level resources only for the consolidated investment ask or whole-route resource position.
+- `existingCapacity`: existing people, expertise or operational capacity that must be aligned or protected;
+- `newInvestment`: additional cash or funded capacity required for the step;
+- `enablingConditions`: non-cash conditions such as data access, governance agreement, roadmap priority or faculty participation.
 
-Canonical resource groups:
+A resource ask should normally state:
 
-- `existingCapacity`
-- `newInvestment`
-- `enablingConditions`
-- `fundingSummary`
-- `investmentAsk`
+- the role, item or condition;
+- why it is needed;
+- the owner or source team where known;
+- the period needed, when it differs from the parent step period;
+- the decision deadline where relevant;
+- cost or estimate for new investment where known;
+- confidence;
+- the delivery risk if the ask is not met.
 
-Backwards-compatible aliases:
+Example:
 
-- `people` maps to `existingCapacity`.
-- `cashCosts` maps to `newInvestment`.
+```json
+"resources": {
+  "newInvestment": [
+    {
+      "id": "2.1.1-step-1-resource-investment-1",
+      "item": "Summer student placement",
+      "amount": 3000,
+      "currency": "GBP",
+      "owner": "Careers and Employability Service",
+      "decisionNeededBy": "Summer 2026",
+      "confidence": "estimate",
+      "rationale": "Supports data preparation, visualisation development and early testing.",
+      "riskIfMissing": "The first pack may not be ready for September testing."
+    }
+  ]
+}
+```
+
+When `periodNeeded` is omitted, the app uses the parent step period.
+
+The app derives a `Resource and investment profile` from all step asks. That profile sequences capacity, investment and enabling conditions by step and period. It is a roll-up, not a second authored resource plan.
+
+See `src/data/step-resource.schema.json` for the authoring schema.
+
+Backwards-compatible aliases remain readable while legacy data is migrated:
+
+- `people` maps to `existingCapacity`;
+- `cashCosts` maps to `newInvestment`;
 - `dataAndSystems`, `governance`, `engagementNeeds` and `nonCashNeeds` map to `enablingConditions`.
 
 ## Risks, issues and assumptions
@@ -260,6 +289,8 @@ Prefer the smallest useful model:
 - products and completion evidence belong in timeline outputs;
 - sequencing and handoffs belong in `dependsOn`;
 - decisions belong on the step they gate;
-- resources and RAID belong at the most local useful level.
+- resource asks belong on the step that needs them;
+- the resource profile is derived from those asks;
+- RAID belongs at the most local useful level.
 
-The deliverable detail page should remain a clear route through case for change, benefits and evidence, delivery timeline, governance, resources and material planning risks. It should not become a collection of parallel planning taxonomies.
+The deliverable detail page should remain a clear route through case for change, benefits and evidence, delivery timeline, governance, the derived resource profile and material planning risks. It should not become a collection of parallel planning taxonomies.
