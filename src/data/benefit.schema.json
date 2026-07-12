@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://github.com/markpeace/KingsEdgeMobilisationPlan/src/data/benefit.schema.json",
   "title": "King's Edge deliverable benefit schema",
-  "description": "Authoring schema for deliverable-level benefits and evidence of success. Benefits describe value, not products. Products and outputs should be defined in delivery timeline steps and referenced from benefits where useful.",
+  "description": "Canonical authoring schema for deliverable-level benefits. Benefits describe value and the future state to be realised. Measures are authored once at deliverable level and linked back to benefits through supportsBenefits.",
   "$defs": {
     "enabledByReference": {
       "type": "object",
@@ -26,46 +26,17 @@
           "description": "Optional explanation of how this step or output enables the benefit."
         }
       }
-    },
-    "benefitMeasure": {
-      "type": "object",
-      "additionalProperties": true,
-      "required": ["id", "title"],
-      "properties": {
-        "id": { "type": "string" },
-        "title": { "type": "string" },
-        "measureType": {
-          "type": "string",
-          "description": "Type of evidence, for example usage, qualitative feedback, judgement-based review, adoption, quality assurance or quantitative indicator."
-        },
-        "questionAnswered": {
-          "type": "string",
-          "description": "The evidence question this measure answers for the benefit."
-        },
-        "measure": {
-          "type": "string",
-          "description": "How evidence will be gathered or interpreted. This should test benefit realisation, not only activity completion."
-        },
-        "evidence": {
-          "type": "string",
-          "description": "Alias for measure when the evidence is qualitative or judgement-based."
-        },
-        "owner": { "type": "string" },
-        "cadence": { "type": "string" },
-        "baseline": { "type": "string" },
-        "target": { "type": "string" }
-      }
     }
   },
   "type": "object",
   "additionalProperties": true,
-  "required": ["id", "title", "statement"],
+  "required": ["id", "title", "statement", "successLooksLike"],
   "properties": {
     "id": { "type": "string" },
     "title": { "type": "string" },
     "statement": {
       "type": "string",
-      "description": "Short statement of the value created when the deliverable is used. This should not be a product or task description."
+      "description": "Short statement of the value created when the deliverable is used. This should not be a product, task or activity description."
     },
     "beneficiary": {
       "type": "string",
@@ -73,7 +44,7 @@
     },
     "benefitType": {
       "type": "string",
-      "description": "Broad type of value, for example articulation, evidence, improvement, institutional learning or responsible-use."
+      "description": "Broad type of value, for example articulation, evidence, improvement, institutional learning or responsible use."
     },
     "realisationPeriod": {
       "type": "string",
@@ -81,17 +52,7 @@
     },
     "successLooksLike": {
       "type": "string",
-      "description": "Outcome-oriented description of what would be true if the benefit were being realised."
-    },
-    "evidenceOfSuccess": {
-      "type": "array",
-      "description": "Qualitative, usage-based, judgement-based or quantitative evidence that would show the benefit is being realised. This should test value, not just activity completion.",
-      "items": { "type": "string" }
-    },
-    "measures": {
-      "type": "array",
-      "description": "Optional benefit-level measures or indicators. Use this as the default location for measures that test one specific benefit.",
-      "items": { "$ref": "#/$defs/benefitMeasure" }
+      "description": "Concise, outcome-oriented description of the future state if the benefit is being realised."
     },
     "enabledBy": {
       "type": "array",
@@ -100,32 +61,32 @@
     },
     "linkedOutputs": {
       "type": "array",
-      "description": "Alias for enabledBy when authors find that language clearer.",
+      "description": "Legacy alias for enabledBy. New authoring should use enabledBy.",
+      "deprecated": true,
       "items": { "$ref": "#/$defs/enabledByReference" }
+    },
+    "evidenceOfSuccess": {
+      "type": "array",
+      "description": "Deprecated authored evidence list. The app should derive evidence of success from measures linked through supportsBenefits.",
+      "deprecated": true,
+      "items": { "type": "string" }
+    },
+    "measures": {
+      "type": "array",
+      "description": "Deprecated nested measure list. Author measures once at deliverable level and link them with supportsBenefits.",
+      "deprecated": true,
+      "items": { "type": "object" }
     }
   },
   "examples": [
     {
       "id": "2.1.1-B1",
-      "title": "Programmes can tell a stronger graduate futures story",
-      "statement": "Programme teams have clearer evidence and language for explaining what their programme enables for students.",
+      "title": "Programmes can claim their graduate futures value with confidence",
+      "statement": "Programme teams can make stronger, more nuanced and evidence-informed claims about the futures their programme makes possible for students.",
       "beneficiary": "Programme teams, departments, students, applicants, recruitment teams and faculties",
-      "benefitType": "articulation and evidence",
+      "benefitType": "programme evidence and articulation",
       "realisationPeriod": "2026/27 onwards",
-      "successLooksLike": "Programme teams can make confident, nuanced and evidence-informed claims about what their programmes enable.",
-      "evidenceOfSuccess": [
-        "Programme stories are used in programme review, recruitment, open days or student-facing contexts.",
-        "Claims are linked to evidence and agreed with relevant programme teams."
-      ],
-      "measures": [
-        {
-          "id": "2.1.1-B1-M1",
-          "title": "Use of programme story material",
-          "measureType": "usage and qualitative evidence",
-          "questionAnswered": "Are programme stories being used in meaningful contexts?",
-          "measure": "Examples of use in review, open days, recruitment or student-facing material."
-        }
-      ],
+      "successLooksLike": "Programme-level graduate futures stories are confident, evidence-linked, academically owned and appropriately caveated.",
       "enabledBy": [
         { "stepId": "2.1.1-step-1", "outputTitle": "First working graduate futures evidence pack" },
         { "stepId": "2.1.1-step-3", "outputTitle": "Programme reflection and profile template" }
