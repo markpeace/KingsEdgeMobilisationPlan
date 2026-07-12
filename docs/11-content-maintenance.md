@@ -22,8 +22,19 @@ project
   deliverables
     caseForChange
     ownership
+      accountableOwner
+      deliveryLead
+    governance
+      decisionForum
+      decisionScope
+      businessAsUsualOwner
+      deliveryPartners
     benefits
+      owner
+      successLooksLike
+      enabledBy
     measures
+      supportsBenefits
     risks / issues / assumptions where genuinely cross-cutting
     steps
       outputs
@@ -73,17 +84,7 @@ Each project should include:
 - `deliveryContext`
 - `deliverables`
 
-Use:
-
-```json
-"deliveryContext": "edge"
-```
-
-or:
-
-```json
-"deliveryContext": "out-of-programme"
-```
+Use `deliveryContext: "edge"` or `deliveryContext: "out-of-programme"`.
 
 ## Editing deliverables
 
@@ -97,6 +98,7 @@ Each revised deliverable should normally include:
 - `planningStatus`
 - `caseForChange`
 - `ownership`
+- `governance`
 - `benefits`
 - `measures`
 - `steps`
@@ -119,8 +121,56 @@ Use whole-route fields sparingly. Operational content should sit on steps.
 - deliverable-level `dependencies`
 - deliverable-level `decisions`
 - deliverable-level `resources`
+- `ownership.benefitOwner`
+- `ownership.contributors`
+- `ownership.decisionForum`
 
 Legacy source data may still contain them, but they are not part of the canonical model or deliverable detail view.
+
+## Ownership and governance
+
+The hero already shows:
+
+- `ownership.accountableOwner`
+- `ownership.deliveryLead`
+
+Do not repeat them in governance.
+
+The governance object should normally include:
+
+- `decisionForum`
+- `decisionScope`
+- `businessAsUsualOwner`
+- `businessAsUsualOwnershipNote` where useful
+- `deliveryPartners`
+
+Example:
+
+```json
+{
+  "ownership": {
+    "accountableOwner": "Aranee Manoharan",
+    "deliveryLead": "Daniel Robson"
+  },
+  "governance": {
+    "decisionForum": "Vice Deans Education or delegates",
+    "decisionScope": "Material choices about scope, investment, faculty participation, enduring ownership and escalation.",
+    "businessAsUsualOwner": "TBC",
+    "businessAsUsualOwnershipNote": "The enduring owner will be confirmed through the business-as-usual transfer step.",
+    "deliveryPartners": [
+      {
+        "group": "Evidence and data",
+        "partners": ["Careers and Employability Service", "Planning and analytics colleagues"],
+        "contribution": "Provide, interpret and maintain the evidence and responsible-use guidance."
+      }
+    ]
+  }
+}
+```
+
+Keep `deliveryPartners` small and grouped by contribution. It is not a comprehensive stakeholder register.
+
+See `docs/governance-model.md` for full guidance.
 
 ## Benefits and measures
 
@@ -132,6 +182,8 @@ Each benefit should normally include:
 - `title`
 - `statement`
 - `beneficiary`
+- `benefitType` where useful
+- `owner`
 - `realisationPeriod`
 - `successLooksLike`
 - `enabledBy`
@@ -144,6 +196,7 @@ Example:
   "title": "Programmes can claim their graduate futures value with confidence",
   "statement": "Programme teams have credible evidence and language for articulating distinctive programme value.",
   "beneficiary": "Programme teams, students, applicants and faculties",
+  "owner": "Heads of Department",
   "realisationPeriod": "2026/27 onwards",
   "successLooksLike": "Each participating programme has a programme-confirmed, evidence-linked and appropriately caveated graduate futures story.",
   "enabledBy": [
@@ -171,7 +224,7 @@ Measures are authored once at deliverable level and linked to benefits through `
 }
 ```
 
-Do not separately author an `evidenceOfSuccess` list when the linked measures already express the evidence.
+Do not separately author an `evidenceOfSuccess` list when linked measures already express the evidence.
 
 Do not put products or outputs inside benefits. Reference the relevant timeline output through `enabledBy`.
 
@@ -194,62 +247,6 @@ Optional step detail:
 - `issues`
 - `assumptions`
 
-Example:
-
-```json
-{
-  "id": "2.2.1-step-2",
-  "title": "Design Canvas tools and prompts",
-  "period": "jan-jun-2027:bc",
-  "summary": "Specify the student journey, tools, prompts and implementation requirements.",
-  "dependsOn": ["2.2.1-step-1", "2.1.3-step-1"],
-  "outputs": [
-    {
-      "id": "2.2.1-step-2-output-blueprint",
-      "title": "Canvas service blueprint",
-      "summary": "Sets out the proposed student journey and implementation requirements.",
-      "acceptanceCriteria": [
-        "Student journey agreed with relevant owners.",
-        "Data and system requirements identified.",
-        "Implementation route is sufficiently clear for the next step."
-      ]
-    }
-  ],
-  "resources": {
-    "existingCapacity": [
-      {
-        "role": "Project manager",
-        "fte": 0.4,
-        "contribution": "Coordinate design and owner input.",
-        "owner": "Project team",
-        "confidence": "developing",
-        "riskIfMissing": "Design and owner input will not stay coordinated."
-      }
-    ],
-    "enablingConditions": [
-      {
-        "condition": "Digital roadmap input",
-        "owner": "Digital product owner",
-        "riskIfMissing": "The design may not align with the build route."
-      }
-    ]
-  },
-  "decisions": [
-    {
-      "title": "Confirm build route",
-      "owner": "TBC",
-      "neededBy": "jan-jun-2027:bc"
-    }
-  ],
-  "risks": [
-    {
-      "title": "Tool design runs ahead of digital capacity",
-      "mitigation": "Tie requirements into roadmap planning early."
-    }
-  ]
-}
-```
-
 ### Products and completion evidence
 
 Define each product or output on the step that produces it.
@@ -260,7 +257,7 @@ Use `acceptanceCriteria`, an output-specific completion statement or another loc
 
 Put decisions on the step they gate or change.
 
-Use `ownership.decisionForum` to identify the escalation or approval route.
+Use `governance.decisionForum` to identify the escalation or approval route.
 
 ### Dependencies
 
@@ -291,40 +288,19 @@ Across a bucket boundary:
 }
 ```
 
-The start point uses the first third represented by its segment. The end point uses the final third represented by its segment.
+## Step-level resources
 
-## Step resource asks
+All resource demand belongs on the step that needs it.
 
-All resource demand should be authored on the step that needs it.
+Canonical groups:
 
-Use:
+- `existingCapacity`
+- `newInvestment`
+- `enablingConditions`
 
-- `existingCapacity` for existing people, expertise or operational capacity that must be aligned or protected;
-- `newInvestment` for additional cash or funded capacity;
-- `enablingConditions` for non-cash requirements such as data access, governance agreement, roadmap priority or faculty participation.
+Each ask should identify why it is needed and, where known, owner, timing, decision deadline, cost, confidence and risk if missing.
 
-Each ask should be specific enough to support a decision. Include where relevant:
-
-- `id`
-- `owner`
-- `periodNeeded`
-- `decisionNeededBy`
-- `confidence`
-- `rationale` or `contribution`
-- `riskIfMissing`
-- `amount`, `currency`, `estimatedCost` or `fundingRoute` for new investment
-
-When `periodNeeded` is omitted, the parent step period is used.
-
-The app derives the Resource and investment profile from these step asks. Do not separately author a whole-deliverable resource summary, investment ask or consolidated capacity list.
-
-See `src/data/step-resource.schema.json` for the formal authoring shape.
-
-Legacy aliases remain readable during migration:
-
-- `people` maps to `existingCapacity`;
-- `cashCosts` maps to `newInvestment`;
-- `dataAndSystems`, `governance`, `engagementNeeds` and `nonCashNeeds` map to `enablingConditions`.
+The app derives the Resource and investment profile from these step asks.
 
 ## Risks, issues and assumptions
 
@@ -334,28 +310,20 @@ Keep an item at deliverable level only where it affects the whole route or benef
 
 Do not duplicate the same item at both levels.
 
-## Step-level dependency overrides
-
-Step-level dependency overrides sit in:
-
-```text
-src/data/step-dependencies.json
-```
-
-Prefer authoring `dependsOn` directly on the step where practical. Use the override file only when central maintenance is genuinely useful.
-
 ## Final authoring check
 
 Before moving a deliverable to `draft`, check that:
 
 - the case for change is clear;
-- ownership and benefit ownership are credible;
+- accountable owner and delivery lead are credible;
+- every benefit has an owner;
 - benefits describe value rather than products;
 - measures test benefit realisation;
+- the decision and escalation route is explicit;
+- business-as-usual ownership is named or honestly shown as `TBC` with a route to resolution;
+- key partners are grouped by contribution rather than listed indiscriminately;
 - every product is defined on a timeline step;
 - completion evidence sits with the relevant output;
 - dependencies and decisions sit on the relevant step;
-- every resource ask is attached to the step that needs it;
-- resource timing, decision deadlines and delivery consequences are clear where material;
-- material risks are captured at the most local useful level;
+- resources and material risks are captured at the most local useful level;
 - the timeline is coherent enough to explain the route without a second planning structure.
