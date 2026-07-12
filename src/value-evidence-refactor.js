@@ -17,6 +17,10 @@ function escapeHtml(value) {
     .replaceAll("'", '&#039;');
 }
 
+function setText(node, value) {
+  if (node && node.textContent !== value) node.textContent = value;
+}
+
 function linkedBenefitIds(measure) {
   return measure.supportsBenefits || measure.relatedBenefitIds || [];
 }
@@ -144,10 +148,11 @@ function renderValueEvidenceSection() {
   const deliverable = deliverableById.get(currentDeliverableId());
   if (!deliverable) return;
 
-  const heading = section.querySelector('.detail-accordion-header span');
-  const summary = section.querySelector('.detail-accordion-header em');
-  if (heading) heading.textContent = 'Benefits and evidence';
-  if (summary) summary.textContent = 'The value this deliverable should create, what success looks like, and the measures that will show whether it is being realised.';
+  setText(section.querySelector('.detail-accordion-header span'), 'Benefits and evidence');
+  setText(
+    section.querySelector('.detail-accordion-header em'),
+    'The value this deliverable should create, what success looks like, and the measures that will show whether it is being realised.'
+  );
 
   const panel = section.querySelector('.delivery-model-panel');
   if (!panel) return;
