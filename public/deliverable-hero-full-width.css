@@ -1,0 +1,14 @@
+/* Deliverable hero content should use the full internal width of the hero frame. */
+
+.detail-hero:not(.project-detail-hero) h1,
+.detail-hero:not(.project-detail-hero) > p:not(.detail-summary),
+.detail-hero:not(.project-detail-hero) .detail-summary,
+.detail-hero:not(.project-detail-hero) .detail-meta {
+  width: 100%;
+  max-width: none !important;
+}
+
+.detail-hero:not(.project-detail-hero) .hero-context-line {
+  width: 100%;
+  max-width: none;
+}
