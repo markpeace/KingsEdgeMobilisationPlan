@@ -2,5 +2,26 @@
   "components": [],
   "definitionOfDone": [],
   "dependencies": [],
-  "decisions": []
+  "decisions": [],
+  "resources": {
+    "fundingSummary": "",
+    "resourceSummary": "",
+    "existingCapacity": [],
+    "newInvestment": [],
+    "enablingConditions": [],
+    "people": [],
+    "cashCosts": [],
+    "dataAndSystems": [],
+    "governance": [],
+    "engagementNeeds": [],
+    "nonCashNeeds": [],
+    "investmentAsk": {
+      "required": false,
+      "fundingRoute": "Derived from step-level resource asks",
+      "priority": "",
+      "decisionNeededBy": "",
+      "confidence": "",
+      "rationale": ""
+    }
+  }
 }
