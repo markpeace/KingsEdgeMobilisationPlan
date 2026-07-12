@@ -146,33 +146,40 @@ function normaliseResources(resources = {}) {
 }
 
 function normaliseDeliverable(deliverable, project) {
-  const caseForChange = deliverable.caseForChange || {
-    problem: deliverable.problemSolved || '',
-    opportunity: deliverable.opportunity || '',
-    whyNow: deliverable.whyNow || '',
-    intendedChange: deliverable.whatChanges || ''
+  const {
+    components: _legacyComponents,
+    definitionOfDone: _legacyDefinitionOfDone,
+    dependencies: _legacyDependencies,
+    decisions: _legacyDecisions,
+    ...canonicalDeliverable
+  } = deliverable;
+
+  const caseForChange = canonicalDeliverable.caseForChange || {
+    problem: canonicalDeliverable.problemSolved || '',
+    opportunity: canonicalDeliverable.opportunity || '',
+    whyNow: canonicalDeliverable.whyNow || '',
+    intendedChange: canonicalDeliverable.whatChanges || ''
   };
-  const ownership = deliverable.ownership || {
+  const ownership = canonicalDeliverable.ownership || {
     accountableOwner: project.owner || 'TBC',
-    deliveryLead: deliverable.lead || 'TBC',
+    deliveryLead: canonicalDeliverable.lead || 'TBC',
     benefitOwner: project.owner || 'TBC',
     contributors: [],
     decisionForum: 'TBC'
   };
-  const measures = asArray(deliverable.measures || deliverable.successMeasures?.measures || deliverable.successMeasures?.kpis).map((measure, index) => ({ id: measure.id || `${deliverable.id}-M${index + 1}`, title: measure.title || measure.label || 'Measure', measureType: measure.measureType || measure.type || 'measure', confidence: measure.confidence || 'developing', ...measure }));
-  const outputs = asArray(deliverable.outputs || deliverable.successMeasures?.outputs).map((output, index) => ({ id: output.id || `${deliverable.id}-O${index + 1}`, title: textOf(output, 'Output'), type: output.type || output.outputType || 'output', ...output }));
-  const benefits = asArray(deliverable.benefits || deliverable.successMeasures?.benefits).length ? asArray(deliverable.benefits || deliverable.successMeasures?.benefits) : deliverable.whatChanges ? [{ id: `${deliverable.id}-B1`, title: 'Intended change realised', statement: deliverable.whatChanges, beneficiary: 'Students / programmes / institution', benefitType: 'strategic value' }] : [];
-  const steps = asArray(deliverable.steps).map((step) => ({ ...step, stepType: step.stepType || 'task', resources: normaliseResources(step.resources || {}), outputs: asArray(step.outputs), decisions: asArray(step.decisions), risks: asArray(step.risks), issues: asArray(step.issues), assumptions: asArray(step.assumptions) }));
-  const definitionOfDone = asArray(deliverable.definitionOfDone).length ? deliverable.definitionOfDone : ['Dependencies, assumptions and risks are reviewed with the accountable owner.', 'Benefit owner and route to adoption or business-as-usual are confirmed.'];
+  const measures = asArray(canonicalDeliverable.measures || canonicalDeliverable.successMeasures?.measures || canonicalDeliverable.successMeasures?.kpis).map((measure, index) => ({ id: measure.id || `${canonicalDeliverable.id}-M${index + 1}`, title: measure.title || measure.label || 'Measure', measureType: measure.measureType || measure.type || 'measure', confidence: measure.confidence || 'developing', ...measure }));
+  const outputs = asArray(canonicalDeliverable.outputs || canonicalDeliverable.successMeasures?.outputs).map((output, index) => ({ id: output.id || `${canonicalDeliverable.id}-O${index + 1}`, title: textOf(output, 'Output'), type: output.type || output.outputType || 'output', ...output }));
+  const benefits = asArray(canonicalDeliverable.benefits || canonicalDeliverable.successMeasures?.benefits).length ? asArray(canonicalDeliverable.benefits || canonicalDeliverable.successMeasures?.benefits) : canonicalDeliverable.whatChanges ? [{ id: `${canonicalDeliverable.id}-B1`, title: 'Intended change realised', statement: canonicalDeliverable.whatChanges, beneficiary: 'Students / programmes / institution', benefitType: 'strategic value' }] : [];
+  const steps = asArray(canonicalDeliverable.steps).map((step) => ({ ...step, stepType: step.stepType || 'task', resources: normaliseResources(step.resources || {}), outputs: asArray(step.outputs), decisions: asArray(step.decisions), risks: asArray(step.risks), issues: asArray(step.issues), assumptions: asArray(step.assumptions) }));
 
   return {
-    ...deliverable,
-    displayId: deliverable.id,
-    summary: summaryOf(deliverable),
-    detailSummary: detailSummaryOf(deliverable),
-    planningStatus: deliverable.planningStatus || 'pre-draft',
-    planningMaturity: deliverable.planningMaturity || 'concept',
-    visibility: deliverable.visibility || 'staff-visible',
+    ...canonicalDeliverable,
+    displayId: canonicalDeliverable.id,
+    summary: summaryOf(canonicalDeliverable),
+    detailSummary: detailSummaryOf(canonicalDeliverable),
+    planningStatus: canonicalDeliverable.planningStatus || 'pre-draft',
+    planningMaturity: canonicalDeliverable.planningMaturity || 'concept',
+    visibility: canonicalDeliverable.visibility || 'staff-visible',
     caseForChange,
     ownership,
     benefits,
@@ -180,13 +187,10 @@ function normaliseDeliverable(deliverable, project) {
     measures,
     steps,
     deliverySteps: steps,
-    resources: normaliseResources(deliverable.resources || {}),
-    dependencies: asArray(deliverable.dependencies),
-    assumptions: asArray(deliverable.assumptions).map(withVisibility),
-    issues: asArray(deliverable.issues).map(withVisibility),
-    risks: asArray(deliverable.risks).map(withVisibility),
-    decisions: asArray(deliverable.decisions).map(withVisibility),
-    definitionOfDone
+    resources: normaliseResources(canonicalDeliverable.resources || {}),
+    assumptions: asArray(canonicalDeliverable.assumptions).map(withVisibility),
+    issues: asArray(canonicalDeliverable.issues).map(withVisibility),
+    risks: asArray(canonicalDeliverable.risks).map(withVisibility)
   };
 }
 
