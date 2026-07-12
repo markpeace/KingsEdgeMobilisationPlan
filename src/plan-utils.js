@@ -116,7 +116,7 @@ function resolveTimelineSpan(period) {
 }
 
 const asArray = (value) => Array.isArray(value) ? value : [];
-const textOf = (item, fallback = 'Item') => typeof item === 'string' ? item : item?.title || item?.label || item?.item || item?.role || item?.condition || fallback;
+const textOf = (item, fallback = 'Item') => typeof item === 'string' ? item : item?.title || item?.label || item?.item || item?.role || item?.condition || item?.need || fallback;
 const withVisibility = (item, fallback = 'internal-planning') => ({ ...item, visibility: item?.visibility || fallback });
 const summaryOf = (item) => item.summary || item.shortDescription || '';
 const detailSummaryOf = (item) => item.detailSummary || item.longDescription || item.description || item.longSummary || '';
@@ -125,23 +125,62 @@ function deliverableWithOverride(deliverable) {
   return registeredDeliverableMap.get(deliverable.id) || deliverable;
 }
 
-function normaliseResources(resources = {}) {
-  const existingCapacity = asArray(resources.existingCapacity).length ? resources.existingCapacity : asArray(resources.people).map((item) => ({ role: item.role, contribution: item.notes || item.contribution || '', ...item }));
-  const newInvestment = asArray(resources.newInvestment).length ? resources.newInvestment : asArray(resources.cashCosts).map((item) => ({ item: item.item, rationale: item.notes || item.rationale || '', currency: item.currency || 'GBP', ...item }));
-  const enablingConditions = asArray(resources.enablingConditions).length ? resources.enablingConditions : [
+function uniqueResourceItems(items) {
+  const seen = new Set();
+  return items.filter((item) => {
+    const key = textOf(item, '').trim().toLowerCase();
+    if (!key || seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  });
+}
+
+function normaliseResourceItem(item, askType, index, context = {}) {
+  const label = textOf(item, askType === 'existing-capacity' ? 'Capacity ask' : askType === 'new-investment' ? 'Investment ask' : 'Enabling condition');
+  return {
+    ...item,
+    id: item.id || `${context.stepId || 'step'}-resource-${askType}-${index + 1}`,
+    askType,
+    label,
+    stepId: context.stepId,
+    periodNeeded: item.periodNeeded || item.period || context.period,
+    owner: item.owner || item.sourceTeam || item.team || '',
+    rationale: item.rationale || item.notes || item.contribution || '',
+    riskIfMissing: item.riskIfMissing || ''
+  };
+}
+
+function normaliseResources(resources = {}, context = {}) {
+  const existingCapacityRaw = uniqueResourceItems([
+    ...asArray(resources.existingCapacity),
+    ...asArray(resources.people).map((item) => ({ role: item.role, contribution: item.notes || item.contribution || '', ...item }))
+  ]);
+
+  const cashCosts = asArray(resources.cashCosts);
+  const newInvestmentRaw = uniqueResourceItems([
+    ...asArray(resources.newInvestment).map((item) => {
+      const matchingCost = cashCosts.find((cost) => String(cost.item || '').trim().toLowerCase() === String(item.item || '').trim().toLowerCase());
+      return matchingCost ? { ...matchingCost, ...item, amount: item.amount ?? matchingCost.amount, currency: item.currency || matchingCost.currency } : item;
+    }),
+    ...cashCosts
+  ]);
+
+  const enablingConditionsRaw = uniqueResourceItems([
+    ...asArray(resources.enablingConditions),
     ...asArray(resources.dataAndSystems),
     ...asArray(resources.governance),
     ...asArray(resources.engagementNeeds),
-    ...asArray(resources.nonCashNeeds)
-  ].map((item) => ({ condition: item.condition || item.item || textOf(item, 'Enabling condition'), ...item }));
+    ...asArray(resources.nonCashNeeds).map((item) => ({ condition: item.condition || item.need || item.item || textOf(item, 'Enabling condition'), ...item }))
+  ]);
+
+  const existingCapacity = existingCapacityRaw.map((item, index) => normaliseResourceItem(item, 'existing-capacity', index, context));
+  const newInvestment = newInvestmentRaw.map((item, index) => normaliseResourceItem(item, 'new-investment', index, context));
+  const enablingConditions = enablingConditionsRaw.map((item, index) => normaliseResourceItem(item, 'enabling-condition', index, context));
 
   return {
-    ...resources,
     existingCapacity,
     newInvestment,
-    enablingConditions,
-    fundingSummary: resources.fundingSummary || resources.resourceSummary || '',
-    investmentAsk: resources.investmentAsk || { required: newInvestment.length > 0, fundingRoute: newInvestment.length ? 'TBC' : 'None identified at this stage' }
+    enablingConditions
   };
 }
 
@@ -151,6 +190,7 @@ function normaliseDeliverable(deliverable, project) {
     definitionOfDone: _legacyDefinitionOfDone,
     dependencies: _legacyDependencies,
     decisions: _legacyDecisions,
+    resources: _legacyDeliverableResources,
     ...canonicalDeliverable
   } = deliverable;
 
@@ -170,7 +210,16 @@ function normaliseDeliverable(deliverable, project) {
   const measures = asArray(canonicalDeliverable.measures || canonicalDeliverable.successMeasures?.measures || canonicalDeliverable.successMeasures?.kpis).map((measure, index) => ({ id: measure.id || `${canonicalDeliverable.id}-M${index + 1}`, title: measure.title || measure.label || 'Measure', measureType: measure.measureType || measure.type || 'measure', confidence: measure.confidence || 'developing', ...measure }));
   const outputs = asArray(canonicalDeliverable.outputs || canonicalDeliverable.successMeasures?.outputs).map((output, index) => ({ id: output.id || `${canonicalDeliverable.id}-O${index + 1}`, title: textOf(output, 'Output'), type: output.type || output.outputType || 'output', ...output }));
   const benefits = asArray(canonicalDeliverable.benefits || canonicalDeliverable.successMeasures?.benefits).length ? asArray(canonicalDeliverable.benefits || canonicalDeliverable.successMeasures?.benefits) : canonicalDeliverable.whatChanges ? [{ id: `${canonicalDeliverable.id}-B1`, title: 'Intended change realised', statement: canonicalDeliverable.whatChanges, beneficiary: 'Students / programmes / institution', benefitType: 'strategic value' }] : [];
-  const steps = asArray(canonicalDeliverable.steps).map((step) => ({ ...step, stepType: step.stepType || 'task', resources: normaliseResources(step.resources || {}), outputs: asArray(step.outputs), decisions: asArray(step.decisions), risks: asArray(step.risks), issues: asArray(step.issues), assumptions: asArray(step.assumptions) }));
+  const steps = asArray(canonicalDeliverable.steps).map((step) => ({
+    ...step,
+    stepType: step.stepType || 'task',
+    resources: normaliseResources(step.resources || {}, { stepId: step.id, period: step.period }),
+    outputs: asArray(step.outputs),
+    decisions: asArray(step.decisions),
+    risks: asArray(step.risks),
+    issues: asArray(step.issues),
+    assumptions: asArray(step.assumptions)
+  }));
 
   return {
     ...canonicalDeliverable,
@@ -187,7 +236,6 @@ function normaliseDeliverable(deliverable, project) {
     measures,
     steps,
     deliverySteps: steps,
-    resources: normaliseResources(canonicalDeliverable.resources || {}),
     assumptions: asArray(canonicalDeliverable.assumptions).map(withVisibility),
     issues: asArray(canonicalDeliverable.issues).map(withVisibility),
     risks: asArray(canonicalDeliverable.risks).map(withVisibility)
