@@ -14,7 +14,7 @@ Use one chain:
 Timeline outputs -> benefit -> what success looks like -> linked measures
 ```
 
-The app presents linked measures under the reader-facing heading `Evidence of success`.
+The app presents linked measures under the reader-facing heading `How we will know`.
 
 ## Canonical model
 
@@ -58,7 +58,7 @@ A measure can support more than one benefit. Do not duplicate it under every ben
 
 ### Evidence of success
 
-`Evidence of success` is a presentation label, not a second authored data structure.
+`How we will know` is a presentation label, not a second authored data structure.
 
 The app derives the evidence shown under each benefit from measures whose `supportsBenefits` includes that benefit ID.
 
@@ -128,7 +128,7 @@ Examples:
 - guidance approved;
 - handoff route agreed.
 
-Keep delivery controls with the relevant timeline step, output acceptance criteria, milestone or definition of done. Do not count them as evidence that a benefit has already been realised.
+Keep delivery controls with the relevant timeline step, output acceptance criteria or milestone. Do not count them as evidence that a benefit has already been realised.
 
 ## Proportionate measurement
 
@@ -159,8 +159,8 @@ For each benefit, show:
 
 - the benefit title and statement;
 - beneficiary and realisation period;
-- what success looks like;
-- linked measures under `Evidence of success`;
+- what success means;
+- linked measures under `How we will know`;
 - secondary `Enabled by` references back to timeline outputs.
 
 Keep full measure detail compact or expandable so the section remains readable.
