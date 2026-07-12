@@ -2,45 +2,57 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://github.com/markpeace/KingsEdgeMobilisationPlan/src/data/measure.schema.json",
   "title": "King's Edge deliverable measure schema",
-  "description": "Authoring schema for deliverable-level measures. Prefer benefit-level measures when a measure tests one benefit. Use deliverable-level measures for cross-cutting indicators and map them to benefits with supportsBenefits.",
+  "description": "Canonical authoring schema for benefit-realisation measures. Each measure is authored once at deliverable level and linked to one or more benefits through supportsBenefits.",
   "type": "object",
   "additionalProperties": true,
-  "required": ["id", "title"],
+  "required": ["id", "title", "supportsBenefits", "questionAnswered", "measure"],
   "properties": {
     "id": { "type": "string" },
     "title": { "type": "string" },
     "measureType": {
       "type": "string",
-      "description": "Type of evidence, for example usage, qualitative feedback, judgement-based review, adoption, quality assurance, readiness or quantitative indicator."
-    },
-    "questionAnswered": {
-      "type": "string",
-      "description": "The evidence question this measure answers. It should usually be phrased around benefit realisation."
-    },
-    "measure": {
-      "type": "string",
-      "description": "How evidence will be gathered or interpreted. This should test value, not just activity completion."
+      "description": "Type of evidence, for example usage, qualitative judgement, adoption, quality assurance or quantitative benefit-realisation indicator."
     },
     "supportsBenefits": {
       "type": "array",
-      "description": "Benefit IDs supported by this measure. Required in practice for cross-cutting deliverable-level measures.",
+      "minItems": 1,
+      "uniqueItems": true,
+      "description": "Benefit IDs whose realisation this measure tests.",
       "items": { "type": "string" }
+    },
+    "relatedBenefitIds": {
+      "type": "array",
+      "description": "Deprecated alias for supportsBenefits.",
+      "deprecated": true,
+      "items": { "type": "string" }
+    },
+    "questionAnswered": {
+      "type": "string",
+      "description": "The benefit-realisation question this measure answers."
+    },
+    "measure": {
+      "type": "string",
+      "description": "What evidence will be gathered, counted or judged. It should test whether value is being realised, not only whether delivery activity occurred."
     },
     "owner": { "type": "string" },
     "cadence": { "type": "string" },
     "confidence": { "type": "string" },
     "baseline": { "type": "string" },
-    "target": { "type": "string" },
+    "target": {
+      "type": "string",
+      "description": "Target, threshold or qualitative success standard. Use a judgement-based threshold where a numerical target would create false precision."
+    },
     "dataSource": { "type": "string" }
   },
   "examples": [
     {
-      "id": "2.1.1-M6",
-      "title": "Programme story and responsible interpretation quality",
-      "measureType": "quality-assurance",
-      "supportsBenefits": ["2.1.1-B1", "2.1.1-B4", "2.1.1-B5"],
-      "questionAnswered": "Are colleagues using the evidence to tell accurate, context-sensitive programme stories and interpret caveats responsibly?",
-      "measure": "Review of early profiles, caveat use, facilitator feedback and programme confirmation of story material."
+      "id": "2.1.1-M3",
+      "title": "Evidence is useful, fair and responsibly interpreted",
+      "measureType": "qualitative judgement and quality assurance",
+      "supportsBenefits": ["2.1.1-B1", "2.1.1-B2"],
+      "questionAnswered": "Do programme teams find the evidence useful, fair and interpretable?",
+      "measure": "Structured programme-team feedback and sample review of profiles and story materials for clarity, caveat use and responsible interpretation.",
+      "target": "Programme teams judge the evidence usable and fair; sampled materials are appropriately caveated and avoid ranking or punitive comparison."
     }
   ]
 }
