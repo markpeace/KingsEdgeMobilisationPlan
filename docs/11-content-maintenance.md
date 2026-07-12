@@ -24,11 +24,13 @@ project
     ownership
     benefits
     measures
-    resources
     risks / issues / assumptions where genuinely cross-cutting
     steps
       outputs
       resources
+        existingCapacity
+        newInvestment
+        enablingConditions
       decisions
       risks
       issues
@@ -43,9 +45,10 @@ Do not add independent deliverable-level sections for:
 - components;
 - definition of done;
 - dependencies;
-- decisions.
+- decisions;
+- resources.
 
-Products, completion criteria, dependencies and decisions belong on the relevant delivery step.
+Products, completion criteria, dependencies, decisions and resource asks belong on the relevant delivery step.
 
 ## Editing projects
 
@@ -100,7 +103,6 @@ Each revised deliverable should normally include:
 
 Optional whole-route fields:
 
-- `resources`
 - `risks`
 - `issues`
 - `assumptions`
@@ -116,6 +118,7 @@ Use whole-route fields sparingly. Operational content should sit on steps.
 - `definitionOfDone`
 - deliverable-level `dependencies`
 - deliverable-level `decisions`
+- deliverable-level `resources`
 
 Legacy source data may still contain them, but they are not part of the canonical model or deliverable detail view.
 
@@ -217,7 +220,17 @@ Example:
       {
         "role": "Project manager",
         "fte": 0.4,
-        "contribution": "Coordinate design and owner input."
+        "contribution": "Coordinate design and owner input.",
+        "owner": "Project team",
+        "confidence": "developing",
+        "riskIfMissing": "Design and owner input will not stay coordinated."
+      }
+    ],
+    "enablingConditions": [
+      {
+        "condition": "Digital roadmap input",
+        "owner": "Digital product owner",
+        "riskIfMissing": "The design may not align with the build route."
       }
     ]
   },
@@ -280,19 +293,38 @@ Across a bucket boundary:
 
 The start point uses the first third represented by its segment. The end point uses the final third represented by its segment.
 
-## Resources
+## Step resource asks
 
-Use step-level resources wherever possible.
+All resource demand should be authored on the step that needs it.
 
-Canonical groups:
+Use:
 
-- `existingCapacity`
-- `newInvestment`
-- `enablingConditions`
-- `fundingSummary`
-- `investmentAsk`
+- `existingCapacity` for existing people, expertise or operational capacity that must be aligned or protected;
+- `newInvestment` for additional cash or funded capacity;
+- `enablingConditions` for non-cash requirements such as data access, governance agreement, roadmap priority or faculty participation.
 
-Use deliverable-level resources only for a consolidated whole-route position or investment ask.
+Each ask should be specific enough to support a decision. Include where relevant:
+
+- `id`
+- `owner`
+- `periodNeeded`
+- `decisionNeededBy`
+- `confidence`
+- `rationale` or `contribution`
+- `riskIfMissing`
+- `amount`, `currency`, `estimatedCost` or `fundingRoute` for new investment
+
+When `periodNeeded` is omitted, the parent step period is used.
+
+The app derives the Resource and investment profile from these step asks. Do not separately author a whole-deliverable resource summary, investment ask or consolidated capacity list.
+
+See `src/data/step-resource.schema.json` for the formal authoring shape.
+
+Legacy aliases remain readable during migration:
+
+- `people` maps to `existingCapacity`;
+- `cashCosts` maps to `newInvestment`;
+- `dataAndSystems`, `governance`, `engagementNeeds` and `nonCashNeeds` map to `enablingConditions`.
 
 ## Risks, issues and assumptions
 
@@ -323,5 +355,7 @@ Before moving a deliverable to `draft`, check that:
 - every product is defined on a timeline step;
 - completion evidence sits with the relevant output;
 - dependencies and decisions sit on the relevant step;
-- resources and material risks are captured at the most local useful level;
+- every resource ask is attached to the step that needs it;
+- resource timing, decision deadlines and delivery consequences are clear where material;
+- material risks are captured at the most local useful level;
 - the timeline is coherent enough to explain the route without a second planning structure.
