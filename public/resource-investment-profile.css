@@ -117,7 +117,7 @@
 
 .resource-step-group > summary {
   display: grid;
-  grid-template-columns: minmax(8.5rem, 0.7fr) minmax(0, 2fr) auto;
+  grid-template-columns: minmax(8.5rem, 0.7fr) minmax(0, 2fr) auto auto;
   gap: 0.8rem;
   align-items: center;
   cursor: pointer;
@@ -131,6 +131,7 @@
 
 .resource-step-group > summary::after {
   content: '+';
+  justify-self: end;
   color: var(--accent-dark);
   font-size: 1rem;
   font-weight: 950;
@@ -278,7 +279,7 @@
   }
 
   .resource-step-group > summary {
-    grid-template-columns: 1fr auto;
+    grid-template-columns: 1fr auto auto;
   }
 
   .resource-step-period,
@@ -288,6 +289,12 @@
 
   .resource-step-count {
     grid-column: 2;
+    grid-row: 1 / span 2;
+    align-self: center;
+  }
+
+  .resource-step-group > summary::after {
+    grid-column: 3;
     grid-row: 1 / span 2;
     align-self: center;
   }
