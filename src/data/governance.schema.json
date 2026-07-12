@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/markpeace/KingsEdgeMobilisationPlan/src/data/governance.schema.json",
+  "title": "King's Edge deliverable governance schema",
+  "description": "Governance should add information not already shown in the deliverable hero. The hero owns accountable owner and delivery lead. Benefits own benefit ownership. Governance owns the decision route, enduring ownership and essential delivery partners.",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "decisionForum": {
+      "type": "string",
+      "description": "Forum or role that resolves material choices and escalations that cannot be handled within an individual step."
+    },
+    "decisionScope": {
+      "type": "string",
+      "description": "Plain-English description of the kinds of matters that should go to the decision forum."
+    },
+    "businessAsUsualOwner": {
+      "type": "string",
+      "description": "Role or team that will own the enduring service, process, evidence resource or capability after mobilisation. Use TBC honestly when this has not yet been agreed."
+    },
+    "businessAsUsualOwnershipNote": {
+      "type": "string",
+      "description": "Optional explanation of the ownership model, transition route or outstanding ownership decision."
+    },
+    "deliveryPartners": {
+      "type": "array",
+      "description": "Small grouped list of essential partners and the contribution they make. Do not use this as a comprehensive stakeholder register.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["group", "contribution"],
+        "properties": {
+          "group": { "type": "string" },
+          "partners": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "contribution": { "type": "string" }
+        }
+      }
+    }
+  },
+  "examples": [
+    {
+      "decisionForum": "Vice Deans Education or delegates",
+      "decisionScope": "Material choices about scope, investment, faculty participation, enduring ownership and escalation.",
+      "businessAsUsualOwner": "TBC",
+      "businessAsUsualOwnershipNote": "The enduring owner will be confirmed through the business-as-usual transfer step.",
+      "deliveryPartners": [
+        {
+          "group": "Evidence and data",
+          "partners": ["Careers and Employability Service", "Planning and analytics colleagues"],
+          "contribution": "Provide, interpret and maintain the evidence and responsible-use guidance."
+        }
+      ]
+    }
+  ]
+}
