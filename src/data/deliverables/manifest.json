@@ -9,7 +9,8 @@
         "../deliverable-overrides/2.1.1-outputs-measures-patch.json",
         "../deliverable-overrides/2.1.1-steps-patch.json",
         "../deliverable-overrides/2.1.1-benefits-patch.json",
-        "../deliverable-overrides/2.1.1-measures-benefit-map-patch.json"
+        "../deliverable-overrides/2.1.1-measures-benefit-map-patch.json",
+        "../deliverable-overrides/2.1.1-model-simplification-patch.json"
       ]
     }
   ]
