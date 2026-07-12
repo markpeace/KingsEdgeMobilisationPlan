@@ -1,0 +1,52 @@
+{
+  "ownership": {
+    "accountableOwner": "Aranee Manoharan",
+    "deliveryLead": "Daniel Robson",
+    "benefitOwner": "",
+    "contributors": [],
+    "decisionForum": ""
+  },
+  "governance": {
+    "decisionForum": "Vice Deans Education or delegates",
+    "decisionScope": "Material choices about scope, prioritisation, investment, faculty participation, business-as-usual ownership and escalations that cannot be resolved within an individual delivery step.",
+    "businessAsUsualOwner": "TBC",
+    "businessAsUsualOwnershipNote": "Step 6 will confirm the enduring ownership of the evidence packs, refresh rhythm, interpretation guidance, access route and programme review process. The likely model will require clear central evidence ownership alongside faculty ownership of local use and follow-through.",
+    "deliveryPartners": [
+      {
+        "group": "Evidence and data",
+        "partners": [
+          "Careers and Employability Service",
+          "Planning, analytics and relevant institutional data colleagues",
+          "Power BI or equivalent data visualisation support"
+        ],
+        "contribution": "Provide, interpret, visualise and maintain the graduate futures evidence, with appropriate caveats and responsible-use guidance."
+      },
+      {
+        "group": "Academic and faculty delivery",
+        "partners": [
+          "Vice Deans Education or delegates",
+          "Faculty education leads",
+          "Heads of Department",
+          "Programme leads"
+        ],
+        "contribution": "Shape local participation, facilitate programme use, own programme-level interpretation and route agreed actions through normal faculty and department processes."
+      },
+      {
+        "group": "Facilitation and enhancement",
+        "partners": [
+          "King's Academy",
+          "Associate Directors of Education",
+          "Careers faculty partners"
+        ],
+        "contribution": "Help keep the programme conversation developmental, proportionate, academically credible and connected to practical enhancement support."
+      },
+      {
+        "group": "Story activation",
+        "partners": [
+          "Student recruitment and open-day colleagues, where programme story materials are used"
+        ],
+        "contribution": "Support responsible use of programme-confirmed, evidence-linked story material in agreed student-facing and applicant-facing contexts."
+      }
+    ]
+  }
+}
