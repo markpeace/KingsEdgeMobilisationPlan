@@ -1,63 +1,205 @@
-/* Benefits-and-evidence treatment for the former value/products/evidence section. */
+/* Compact benefits-realisation presentation. */
 
-.value-evidence-output-column-hidden {
-  display: none !important;
-}
-
-.value-evidence-refined .delivery-model-grid {
-  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
-}
-
-.value-evidence-refined .benefit-card {
+.value-evidence-refined .delivery-model-panel {
   display: grid;
-  gap: 0.75rem;
+  gap: 1rem;
 }
 
-.value-evidence-refined .benefit-card > p {
+.value-evidence-explainer {
+  max-width: 78ch;
   margin: 0;
 }
 
-.benefit-evidence-detail {
+.benefit-realisation-list {
   display: grid;
-  gap: 0.75rem;
-  margin-top: 0.15rem;
-  padding-top: 0.75rem;
-  border-top: 2px solid var(--border);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
 }
 
-.benefit-evidence-detail h5 {
-  margin: 0 0 0.3rem;
+.benefit-realisation-card {
+  display: grid;
+  align-content: start;
+  gap: 0.9rem;
+  min-width: 0;
+  border: 2px solid var(--border);
+  border-left: 5px solid var(--accent);
+  background: #ffffff;
+  padding: 1rem;
+}
+
+.benefit-card-header {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.benefit-card-header h4 {
+  margin: 0;
+  color: var(--ink);
+  font-size: clamp(1.12rem, 1.2vw, 1.38rem);
+  line-height: 1.12;
+}
+
+.benefit-card-header > p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.96rem;
+  line-height: 1.4;
+}
+
+.benefit-meta {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 750;
+  line-height: 1.35;
+}
+
+.benefit-success-look {
+  display: grid;
+  gap: 0.35rem;
+  border-left: 3px solid var(--ink);
+  background: #f6f6f3;
+  padding: 0.8rem 0.85rem;
+}
+
+.benefit-success-look h5,
+.benefit-evidence-heading h5,
+.benefit-evidence-empty h5,
+.benefit-enabled-by h5,
+.benefit-measure-body h6 {
+  margin: 0;
   color: var(--accent-dark);
-  font-size: 0.72rem;
+  font-size: 0.7rem;
   font-weight: 900;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.075em;
   line-height: 1;
   text-transform: uppercase;
 }
 
-.benefit-evidence-detail p {
+.benefit-success-look p,
+.benefit-evidence-empty p {
   margin: 0;
   color: var(--ink);
-  font-size: 0.95rem;
-  font-weight: 650;
-  line-height: 1.35;
-}
-
-.benefit-evidence-detail ul {
-  display: grid;
-  gap: 0.35rem;
-  margin: 0;
-  padding-left: 1.05rem;
-}
-
-.benefit-evidence-detail li {
-  color: var(--muted);
   font-size: 0.94rem;
+  font-weight: 650;
+  line-height: 1.38;
+}
+
+.benefit-evidence-group,
+.benefit-evidence-empty,
+.benefit-enabled-by {
+  display: grid;
+  gap: 0.55rem;
+  padding-top: 0.8rem;
+  border-top: 2px solid var(--border);
+}
+
+.benefit-evidence-heading {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.benefit-evidence-heading > span {
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 850;
+  text-transform: uppercase;
+}
+
+.benefit-measure-list {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.benefit-measure {
+  border: 1px solid var(--border-strong);
+  background: #ffffff;
+}
+
+.benefit-measure > summary {
+  display: flex;
+  gap: 0.65rem;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  list-style: none;
+  padding: 0.65rem 0.7rem;
+}
+
+.benefit-measure > summary::-webkit-details-marker {
+  display: none;
+}
+
+.benefit-measure > summary::after {
+  content: '+';
+  flex: 0 0 auto;
+  color: var(--accent-dark);
+  font-size: 1rem;
+  font-weight: 950;
+  line-height: 1;
+}
+
+.benefit-measure[open] > summary::after {
+  content: '−';
+}
+
+.benefit-measure-summary-main {
+  display: grid;
+  gap: 0.2rem;
+  min-width: 0;
+}
+
+.benefit-measure-summary-main strong {
+  color: var(--ink);
+  font-size: 0.9rem;
+  line-height: 1.2;
+}
+
+.benefit-measure-type {
+  display: none;
+}
+
+.benefit-measure-body {
+  display: grid;
+  gap: 0.7rem;
+  border-top: 1px solid var(--border);
+  padding: 0.75rem;
+}
+
+.benefit-measure-question {
+  margin: 0;
+  color: var(--ink);
+  font-size: 0.94rem;
+  font-weight: 800;
   line-height: 1.35;
 }
 
-.benefit-enabled-by {
-  padding-top: 0.1rem;
+.benefit-measure-method {
+  display: grid;
+  gap: 0.3rem;
+}
+
+.benefit-measure-method p,
+.benefit-measure-thresholds p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.38;
+}
+
+.benefit-measure-thresholds {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.65rem;
+}
+
+.benefit-measure-thresholds > div {
+  display: grid;
+  gap: 0.3rem;
+  background: #f6f6f3;
+  padding: 0.65rem;
 }
 
 .benefit-enabled-by-list {
@@ -67,32 +209,53 @@
 }
 
 .benefit-enabled-chip {
-  display: inline-flex;
-  align-items: center;
+  display: inline-grid;
+  gap: 0.12rem;
   max-width: 100%;
-  border: 1px solid var(--border-strong);
+  border: 1px solid var(--border);
   background: #f7f7f5;
+  color: var(--muted);
+  padding: 0.38rem 0.48rem;
+  font-size: 0.74rem;
+  line-height: 1.2;
+}
+
+.benefit-enabled-chip strong {
   color: var(--ink);
-  padding: 0.34rem 0.46rem;
-  font-size: 0.76rem;
-  font-weight: 800;
-  line-height: 1.12;
-  text-decoration: none;
+  font-size: 0.68rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
 }
 
-.benefit-enabled-chip:hover,
-.benefit-enabled-chip:focus-visible {
-  border-color: var(--accent);
-  color: var(--accent-dark);
-  outline: none;
+.unmapped-evidence-block {
+  display: grid;
+  gap: 0.65rem;
+  border: 2px dashed var(--border-strong);
+  background: #fff8ef;
+  padding: 0.9rem;
 }
 
-.value-evidence-refined .measure-card-small {
-  border-left-color: var(--accent-soft);
+.unmapped-evidence-block h4,
+.unmapped-evidence-block p {
+  margin: 0;
 }
 
-@media (max-width: 1180px) {
-  .value-evidence-refined .delivery-model-grid {
+.unmapped-evidence-block code {
+  font-size: 0.86em;
+}
+
+@media (max-width: 1100px) {
+  .benefit-realisation-list {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 700px) {
+  .benefit-measure-thresholds {
+    grid-template-columns: 1fr;
+  }
+
+  .benefit-measure > summary {
+    align-items: flex-start;
   }
 }
