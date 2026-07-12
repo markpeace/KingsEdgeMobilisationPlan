@@ -1,0 +1,149 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/markpeace/KingsEdgeMobilisationPlan/src/data/step-resource.schema.json",
+  "title": "King's Edge step resource model",
+  "description": "Resource demand is authored on the delivery step that needs it. The app derives the deliverable-level resource and investment profile by aggregating these step asks.",
+  "$defs": {
+    "baseAsk": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Optional stable ID. The app generates one from the step when omitted."
+        },
+        "periodNeeded": {
+          "description": "When the resource is needed. Omit when it is the same as the parent step period.",
+          "oneOf": [
+            { "type": "string" },
+            {
+              "type": "object",
+              "required": ["start", "end"],
+              "properties": {
+                "start": {},
+                "end": {}
+              }
+            }
+          ]
+        },
+        "owner": {
+          "type": "string",
+          "description": "Person or team responsible for securing or supplying the resource."
+        },
+        "decisionNeededBy": {
+          "type": "string",
+          "description": "Latest useful point for a funding, prioritisation or capacity decision."
+        },
+        "confidence": {
+          "type": "string",
+          "description": "Confidence in the estimate or availability."
+        },
+        "rationale": {
+          "type": "string",
+          "description": "Why this resource is needed for the step."
+        },
+        "riskIfMissing": {
+          "type": "string",
+          "description": "Delivery consequence if the ask is not met."
+        }
+      }
+    },
+    "existingCapacityAsk": {
+      "allOf": [
+        { "$ref": "#/$defs/baseAsk" },
+        {
+          "type": "object",
+          "required": ["role"],
+          "properties": {
+            "role": { "type": "string" },
+            "contribution": { "type": "string" },
+            "fte": { "type": "number", "minimum": 0 }
+          }
+        }
+      ]
+    },
+    "newInvestmentAsk": {
+      "allOf": [
+        { "$ref": "#/$defs/baseAsk" },
+        {
+          "type": "object",
+          "required": ["item"],
+          "properties": {
+            "item": { "type": "string" },
+            "category": { "type": "string" },
+            "amount": { "type": "number", "minimum": 0 },
+            "currency": { "type": "string", "default": "GBP" },
+            "estimatedCost": { "type": "string" },
+            "fundingRoute": { "type": "string" }
+          }
+        }
+      ]
+    },
+    "enablingConditionAsk": {
+      "allOf": [
+        { "$ref": "#/$defs/baseAsk" },
+        {
+          "type": "object",
+          "required": ["condition"],
+          "properties": {
+            "condition": { "type": "string" },
+            "whatItUnlocks": { "type": "string" }
+          }
+        }
+      ]
+    }
+  },
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "existingCapacity": {
+      "type": "array",
+      "description": "Existing people, expertise or operational capacity that must be aligned or protected for this step.",
+      "items": { "$ref": "#/$defs/existingCapacityAsk" }
+    },
+    "newInvestment": {
+      "type": "array",
+      "description": "Additional cash or funded capacity required by this step.",
+      "items": { "$ref": "#/$defs/newInvestmentAsk" }
+    },
+    "enablingConditions": {
+      "type": "array",
+      "description": "Non-cash conditions such as data access, governance agreement, roadmap priority or faculty participation.",
+      "items": { "$ref": "#/$defs/enablingConditionAsk" }
+    }
+  },
+  "examples": [
+    {
+      "existingCapacity": [
+        {
+          "role": "Planning and analytics colleagues",
+          "contribution": "Support data access, specification and quality checks.",
+          "owner": "Planning and Analytics",
+          "confidence": "developing",
+          "riskIfMissing": "The first evidence pack cannot be produced to the required standard."
+        }
+      ],
+      "newInvestment": [
+        {
+          "id": "2.1.1-step-1-resource-investment-1",
+          "item": "Summer student placement",
+          "category": "student placement",
+          "amount": 3000,
+          "currency": "GBP",
+          "owner": "Careers and Employability Service",
+          "decisionNeededBy": "Summer 2026",
+          "confidence": "estimate",
+          "rationale": "Supports data preparation, visualisation development and early testing.",
+          "riskIfMissing": "The first pack may not be ready for September testing."
+        }
+      ],
+      "enablingConditions": [
+        {
+          "condition": "Access to relevant graduate outcomes and programme context data",
+          "owner": "Careers and Employability Service",
+          "riskIfMissing": "The pack cannot provide a credible programme-level view."
+        }
+      ]
+    }
+  ]
+}
