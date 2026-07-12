@@ -4,11 +4,11 @@
     {
       "id": "2.1.1-B1",
       "title": "Programmes can claim their graduate futures value with confidence",
-      "statement": "Programme teams can make stronger, more nuanced and evidence-informed claims about the futures their programme makes possible for students, including distinctive excellence, student pathways, outcomes and value.",
+      "statement": "Programme teams have credible evidence and language for articulating distinctive programme value to students, applicants and colleagues.",
       "beneficiary": "Programme teams, departments, faculties, students, applicants, recruitment teams and King's Edge",
       "benefitType": "programme evidence and articulation",
       "realisationPeriod": "2026/27 onwards",
-      "successLooksLike": "Programme-level graduate futures stories are confident, nuanced, evidence-linked, academically owned and appropriately caveated. Programme teams recognise the story as their own and can use it in appropriate review, recruitment and student-facing contexts.",
+      "successLooksLike": "Each participating programme has a programme-confirmed graduate futures story that is evidence-linked, appropriately caveated and suitable for at least one agreed review, recruitment or student-facing use.",
       "enabledBy": [
         {"stepId": "2.1.1-step-1", "outputTitle": "First working graduate futures evidence pack"},
         {"stepId": "2.1.1-step-3", "outputTitle": "Programme reflection and profile template"},
@@ -18,11 +18,11 @@
     {
       "id": "2.1.1-B2",
       "title": "Programmes and faculties can act on graduate futures insight",
-      "statement": "Programme teams, departments and faculties can see where existing strengths should be amplified and where curriculum, skills, opportunity, support or articulation work could most strengthen students' futures.",
+      "statement": "Programme teams and faculties can translate graduate futures evidence into focused questions, support needs and locally owned action.",
       "beneficiary": "Programme teams, departments, faculties, Careers and Employability Service, King's Edge and students",
       "benefitType": "programme and faculty enhancement insight",
       "realisationPeriod": "2026/27 to 2027/28 onwards",
-      "successLooksLike": "Programme and faculty conversations identify strengths, questions, support needs and focused opportunities for enhancement without treating the evidence as a deficit report, ranking or judgement on programme quality. Agreed insights enter normal programme or faculty planning and inform King's-level synthesis through 2.4.1.",
+      "successLooksLike": "Guided conversations or self-review produce proportionate, agreed insights that enter normal programme or faculty planning and inform King's-level synthesis, while allowing a legitimate conclusion that no additional action is needed.",
       "enabledBy": [
         {"stepId": "2.1.1-step-3", "outputTitle": "Guided programme conversation structure"},
         {"stepId": "2.1.1-step-5", "outputTitle": "Practical local actions and faculty learning"},
