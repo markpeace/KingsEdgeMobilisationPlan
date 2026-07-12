@@ -2,7 +2,8 @@ const obsoleteSectionIds = [
   'decisions-dependencies',
   'definition-of-done',
   'components',
-  'dependencies'
+  'dependencies',
+  'resources'
 ];
 
 function setText(node, value) {
