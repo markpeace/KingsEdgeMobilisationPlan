@@ -32,9 +32,29 @@ function stepLabels(deliverable) {
   ]));
 }
 
+function benefitLabel(benefit) {
+  const match = String(benefit.id || '').match(/B(\d+)$/i);
+  return match ? `Benefit ${Number(match[1])}` : 'Benefit';
+}
+
 function renderMeta(items) {
   const values = items.filter(Boolean);
   return values.length ? `<p class="benefit-meta">${values.map(escapeHtml).join(' · ')}</p>` : '';
+}
+
+function renderBenefitContext(benefit) {
+  const items = [
+    benefit.beneficiary ? ['Who benefits', benefit.beneficiary] : null,
+    benefit.realisationPeriod ? ['Realisation', benefit.realisationPeriod] : null
+  ].filter(Boolean);
+
+  if (!items.length) return '';
+
+  return `
+    <dl class="benefit-context">
+      ${items.map(([label, value]) => `<div><dt>${escapeHtml(label)}</dt><dd>${escapeHtml(value)}</dd></div>`).join('')}
+    </dl>
+  `;
 }
 
 function renderEnabledBy(benefit, deliverable) {
@@ -43,7 +63,7 @@ function renderEnabledBy(benefit, deliverable) {
   const labels = stepLabels(deliverable);
   return `
     <div class="benefit-enabled-by">
-      <h5>Enabled by timeline outputs</h5>
+      <h5>Enabled by</h5>
       <div class="benefit-enabled-by-list">
         ${items.map((item) => {
           const stepLabel = labels.get(item.stepId) || item.stepId;
@@ -58,7 +78,7 @@ function renderEnabledBy(benefit, deliverable) {
 function renderMeasure(measure) {
   const type = measure.measureType ? `<span class="benefit-measure-type">${escapeHtml(measure.measureType)}</span>` : '';
   const question = measure.questionAnswered ? `<p class="benefit-measure-question">${escapeHtml(measure.questionAnswered)}</p>` : '';
-  const method = measure.measure ? `<div class="benefit-measure-method"><h6>What we will examine</h6><p>${escapeHtml(measure.measure)}</p></div>` : '';
+  const method = measure.measure ? `<div class="benefit-measure-method"><h6>Evidence examined</h6><p>${escapeHtml(measure.measure)}</p></div>` : '';
   const thresholds = [
     measure.baseline ? `<div><h6>Baseline</h6><p>${escapeHtml(measure.baseline)}</p></div>` : '',
     measure.target ? `<div><h6>Success threshold</h6><p>${escapeHtml(measure.target)}</p></div>` : ''
@@ -93,7 +113,7 @@ function renderEvidence(measures) {
   if (!measures.length) {
     return `
       <div class="benefit-evidence-empty">
-        <h5>Evidence of success</h5>
+        <h5>How we will know</h5>
         <p>No benefit-realisation measure is linked yet.</p>
       </div>
     `;
@@ -103,7 +123,7 @@ function renderEvidence(measures) {
   return `
     <div class="benefit-evidence-group">
       <div class="benefit-evidence-heading">
-        <h5>Evidence of success</h5>
+        <h5>How we will know</h5>
         <span>${countLabel}</span>
       </div>
       <div class="benefit-measure-list">
@@ -117,13 +137,13 @@ function renderBenefit(benefit, measures, deliverable) {
   return `
     <article class="benefit-realisation-card">
       <header class="benefit-card-header">
-        <span class="reference">${escapeHtml(benefit.id)}</span>
+        <span class="benefit-label" title="${escapeHtml(benefit.id)}">${escapeHtml(benefitLabel(benefit))}</span>
         <h4>${escapeHtml(benefit.title)}</h4>
-        <p>${escapeHtml(benefit.statement)}</p>
-        ${renderMeta([benefit.beneficiary, benefit.benefitType, benefit.realisationPeriod])}
+        <p class="benefit-value-statement">${escapeHtml(benefit.statement)}</p>
+        ${renderBenefitContext(benefit)}
       </header>
       <div class="benefit-success-look">
-        <h5>What success looks like</h5>
+        <h5>Success means</h5>
         <p>${escapeHtml(benefit.successLooksLike || 'Success description not yet captured.')}</p>
       </div>
       ${renderEvidence(measures)}
@@ -151,7 +171,7 @@ function renderValueEvidenceSection() {
   setText(section.querySelector('.detail-accordion-header span'), 'Benefits and evidence');
   setText(
     section.querySelector('.detail-accordion-header em'),
-    'The value this deliverable should create, what success looks like, and the measures that will show whether it is being realised.'
+    'The outcomes this deliverable should create, how we will know, and which timeline outputs enable them.'
   );
 
   const panel = section.querySelector('.delivery-model-panel');
@@ -180,7 +200,7 @@ function renderValueEvidenceSection() {
   ` : '';
 
   panel.innerHTML = `
-    <p class="subtle value-evidence-explainer">This section describes the benefits the deliverable is expected to create and how we will know they are being realised. Products, outputs and delivery controls remain in the Delivery timeline.</p>
+    <p class="subtle value-evidence-explainer">Each benefit shows the outcome we want, how we will know it is happening, and the timeline outputs that make it possible.</p>
     <div class="benefit-realisation-list">
       ${benefitCards || '<p>No benefits captured yet.</p>'}
     </div>
