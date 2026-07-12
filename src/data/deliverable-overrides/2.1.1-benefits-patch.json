@@ -3,75 +3,31 @@
   "benefits": [
     {
       "id": "2.1.1-B1",
-      "title": "Programme teams can evidence and claim their graduate futures value more confidently",
+      "title": "Programmes can claim their graduate futures value with confidence",
       "statement": "Programme teams can make stronger, more nuanced and evidence-informed claims about the futures their programme makes possible for students, including distinctive excellence, student pathways, outcomes and value.",
       "beneficiary": "Programme teams, departments, faculties, students, applicants, recruitment teams and King's Edge",
-      "benefitType": "programme-level graduate futures evidence and articulation",
+      "benefitType": "programme evidence and articulation",
       "realisationPeriod": "2026/27 onwards",
-      "successLooksLike": "Programme-level narratives claim graduate futures value with confidence, nuance and evidence, while remaining context-sensitive, academically owned and appropriately caveated. These local stories are strong enough to be used by programme teams and to feed King’s-level graduate premium synthesis through 2.4.1.",
-      "evidenceOfSuccess": [
-        "Number and percentage of agreed programme groups with a completed Programme Graduate Futures Profile, programme reflection or equivalent story artefact.",
-        "Number and percentage of completed profiles or story artefacts confirmed by the relevant programme team as accurate, usable and appropriately caveated.",
-        "Number of evidence-informed programme stories or claims used in programme review, recruitment, open days, student-facing contexts or applicant-facing contexts.",
-        "Number of programme-level story inputs passed forward for King’s-level graduate premium synthesis through 2.4.1."
-      ],
+      "successLooksLike": "Programme-level graduate futures stories are confident, nuanced, evidence-linked, academically owned and appropriately caveated. Programme teams recognise the story as their own and can use it in appropriate review, recruitment and student-facing contexts.",
       "enabledBy": [
         {"stepId": "2.1.1-step-1", "outputTitle": "First working graduate futures evidence pack"},
         {"stepId": "2.1.1-step-3", "outputTitle": "Programme reflection and profile template"},
-        {"stepId": "2.1.1-step-5", "outputTitle": "Examples of distinctive programme value"},
-        {"stepId": "2.1.1-step-7", "outputTitle": "Institutional graduate futures synthesis"}
+        {"stepId": "2.1.1-step-5", "outputTitle": "Examples of distinctive programme value"}
       ]
     },
     {
       "id": "2.1.1-B2",
-      "title": "Programme teams and faculties understand graduate futures enhancement opportunities better",
+      "title": "Programmes and faculties can act on graduate futures insight",
       "statement": "Programme teams, departments and faculties can see where existing strengths should be amplified and where curriculum, skills, opportunity, support or articulation work could most strengthen students' futures.",
       "beneficiary": "Programme teams, departments, faculties, Careers and Employability Service, King's Edge and students",
       "benefitType": "programme and faculty enhancement insight",
       "realisationPeriod": "2026/27 to 2027/28 onwards",
-      "successLooksLike": "Programme and faculty conversations use graduate futures evidence to identify strengths, questions, support needs and focused opportunities for enhancement without treating the evidence as a deficit report, ranking or judgement on programme quality. These local insights are clear enough to support action and to feed King’s-level pattern-finding through 2.4.1.",
-      "evidenceOfSuccess": [
-        "Number and percentage of agreed programme groups completing a guided conversation or enabled self-review.",
-        "Number and percentage of completed conversations or reviews producing at least one agreed question, focus area, support need or local action.",
-        "Number and percentage of local actions or focus areas routed into programme, department or faculty planning.",
-        "Number of faculty-level themes, recurring support needs or enhancement opportunities passed forward for King’s-level synthesis through 2.4.1."
-      ],
+      "successLooksLike": "Programme and faculty conversations identify strengths, questions, support needs and focused opportunities for enhancement without treating the evidence as a deficit report, ranking or judgement on programme quality. Agreed insights enter normal programme or faculty planning and inform King's-level synthesis through 2.4.1.",
       "enabledBy": [
         {"stepId": "2.1.1-step-3", "outputTitle": "Guided programme conversation structure"},
-        {"stepId": "2.1.1-step-4", "outputTitle": "Examples of programme insight and story"},
-        {"stepId": "2.1.1-step-5", "outputTitle": "Practical local actions"},
-        {"stepId": "2.1.1-step-5", "outputTitle": "Faculty-level learning"},
-        {"stepId": "2.1.1-step-7", "outputTitle": "Institutional graduate futures synthesis"},
-        {"stepId": "2.1.1-step-7", "outputTitle": "Recommendations for related King's Edge work"}
+        {"stepId": "2.1.1-step-5", "outputTitle": "Practical local actions and faculty learning"},
+        {"stepId": "2.1.1-step-7", "outputTitle": "Institutional graduate futures synthesis"}
       ]
-    }
-  ],
-  "measures": [
-    {
-      "id": "2.1.1-M1",
-      "title": "Programme graduate futures stories completed, agreed and used",
-      "measureType": "benefit-realisation-count",
-      "questionAnswered": "How many agreed programme groups are producing credible, evidence-linked graduate futures claims that programme teams can use?",
-      "measure": "Count and percentage of agreed programme groups with a completed Programme Graduate Futures Profile, reflection or equivalent story artefact; count and percentage of those artefacts confirmed by the relevant programme team as accurate, usable and appropriately caveated; count of evidence-informed programme stories or claims used in review, recruitment, open days, student-facing or applicant-facing contexts; count of programme-level story inputs passed forward for 2.4.1.",
-      "owner": "Heads of Department, with support from Careers and Employability Service and Mark Peace",
-      "cadence": "Termly during supported conversations, with annual synthesis",
-      "confidence": "developing",
-      "baseline": "0 agreed programme groups have completed a graduate futures profile, reflection or equivalent story artefact through this model.",
-      "target": "Target to be set once the agreed programme-group denominator is confirmed. Minimum expected evidence: each agreed programme group completes a profile, reflection or equivalent story artefact; completed artefacts are programme-confirmed before external or student-facing use; story inputs suitable for 2.4.1 are logged.",
-      "relatedBenefitIds": ["2.1.1-B1"]
-    },
-    {
-      "id": "2.1.1-M2",
-      "title": "Programme and faculty enhancement insights generated and routed",
-      "measureType": "benefit-realisation-count",
-      "questionAnswered": "How many agreed programme groups and faculties are generating actionable graduate futures enhancement insight?",
-      "measure": "Count and percentage of agreed programme groups completing a guided conversation or enabled self-review; count and percentage of completed conversations or reviews producing at least one agreed question, focus area, support need or local action; count and percentage of local actions or focus areas routed into programme, department or faculty planning; count of faculty-level themes, recurring support needs or enhancement opportunities passed forward for 2.4.1.",
-      "owner": "Heads of Department, faculty education leads, Careers and Employability Service and Mark Peace",
-      "cadence": "Termly during supported conversations, with annual synthesis",
-      "confidence": "developing",
-      "baseline": "0 agreed programme groups have completed a guided conversation or enabled self-review through this model.",
-      "target": "Target to be set once the agreed programme-group denominator is confirmed. Minimum expected evidence: each agreed programme group completes a guided conversation or enabled self-review; completed reviews produce at least one agreed question, focus area, support need or local action; faculty-level themes suitable for 2.4.1 are logged.",
-      "relatedBenefitIds": ["2.1.1-B2"]
     }
   ]
 }
