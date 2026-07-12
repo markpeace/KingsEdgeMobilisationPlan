@@ -4,125 +4,139 @@
 
 The deliverable page separates delivery from value.
 
-The Delivery timeline is the source of truth for delivery. It owns steps, timing, products, outputs, dependencies, resources, decisions, risks, assumptions and step-level completion evidence.
+The Delivery timeline is the source of truth for delivery. It owns steps, timing, products, outputs, dependencies, resources, decisions, risks, assumptions and completion evidence.
 
-The Value and evidence section explains the value the deliverable is expected to create and how we will know that value is being realised. It should not create a second hidden delivery plan.
+The Benefits and evidence section explains the value the deliverable is expected to create and how we will know that value is being realised. It should not create a second delivery plan.
 
-Use this logic:
-
-```text
-Benefit -> what success looks like -> evidence of success -> enabled by timeline outputs
-```
-
-Measures should be benefit-led:
+Use one chain:
 
 ```text
-Benefit -> what success looks like -> evidence of success -> measure / indicator -> enabled by timeline outputs
+Timeline outputs -> benefit -> what success looks like -> linked measures
 ```
 
-## Delivery timeline owns
+The app presents linked measures under the reader-facing heading `Evidence of success`.
 
-- steps;
-- products and outputs;
-- timing;
-- dependencies and handoffs;
-- resources;
-- decisions;
-- risks, issues and assumptions;
-- step-level completion evidence or definition of done where relevant.
+## Canonical model
 
-## Value and evidence owns
+### Benefit
 
-- benefits;
-- beneficiaries;
-- what success looks like;
-- evidence of success or measures;
-- realisation period;
-- references back to existing step outputs, products or step IDs.
+A benefit describes a worthwhile change for identifiable beneficiaries.
+
+Author:
+
+- `id`;
+- `title`;
+- `statement`;
+- `beneficiary`;
+- `benefitType` where useful;
+- `realisationPeriod`;
+- `successLooksLike`;
+- `enabledBy` references to timeline steps or outputs.
+
+Do not author products, tasks or activities as benefits.
+
+### Measure
+
+A measure describes how we will know whether one or more benefits are being realised.
+
+Author each measure once at deliverable level and link it through `supportsBenefits`.
+
+Author:
+
+- `id`;
+- `title`;
+- `supportsBenefits`;
+- `questionAnswered`;
+- `measure`;
+- `baseline` where known;
+- `target` or qualitative success threshold;
+- `owner`;
+- `cadence`;
+- `confidence` where useful.
+
+A measure can support more than one benefit. Do not duplicate it under every benefit.
+
+### Evidence of success
+
+`Evidence of success` is a presentation label, not a second authored data structure.
+
+The app derives the evidence shown under each benefit from measures whose `supportsBenefits` includes that benefit ID.
+
+The older benefit fields `evidenceOfSuccess` and nested `measures` remain readable for backwards compatibility, but new authoring should not use them.
 
 ## Authoring rule
 
 Do not create new products or outputs in the value section.
 
-Products and outputs belong in the timeline. If a benefit needs to mention a product, output or pack, author that product or output on the relevant delivery step, then reference it from the benefit through `enabledBy` or `linkedOutputs`.
+Products and outputs belong in the timeline. If a benefit depends on a pack, profile, conversation model, dashboard or synthesis, author that item on the relevant delivery step and reference it through `enabledBy`.
 
 A benefit should describe value realised through use, not the thing being produced.
 
-## Benefit shape
-
-Recommended fields:
+## Example
 
 ```json
 {
-  "id": "2.1.1-B1",
-  "title": "Programmes can tell a stronger graduate futures story",
-  "statement": "Programme teams have clearer evidence and language for explaining what their programme enables for students and how that value shows up in graduate futures.",
-  "beneficiary": "Programme teams, departments, students, applicants, recruitment teams and faculties",
-  "benefitType": "articulation and evidence",
-  "realisationPeriod": "2026/27 onwards",
-  "successLooksLike": "Programme teams can make confident, nuanced and evidence-informed claims about what their programmes enable.",
-  "evidenceOfSuccess": [
-    "Programme stories are used in programme review, recruitment, open days or student-facing contexts.",
-    "Claims are linked to evidence and agreed with relevant programme teams."
+  "benefits": [
+    {
+      "id": "2.1.1-B1",
+      "title": "Programmes can claim their graduate futures value with confidence",
+      "statement": "Programme teams can make stronger, more nuanced and evidence-informed claims about the futures their programme makes possible for students.",
+      "beneficiary": "Programme teams, students, applicants and faculties",
+      "realisationPeriod": "2026/27 onwards",
+      "successLooksLike": "Programme-level graduate futures stories are confident, evidence-linked, academically owned and appropriately caveated.",
+      "enabledBy": [
+        {
+          "stepId": "2.1.1-step-1",
+          "outputTitle": "First working graduate futures evidence pack"
+        }
+      ]
+    }
   ],
   "measures": [
     {
-      "id": "2.1.1-B1-M1",
-      "title": "Use of programme story material",
-      "measureType": "usage and qualitative evidence",
-      "questionAnswered": "Are programme stories being used in meaningful contexts?",
-      "measure": "Examples of use in review, open days, recruitment or student-facing material."
-    }
-  ],
-  "enabledBy": [
-    {
-      "stepId": "2.1.1-step-1",
-      "outputTitle": "First working graduate futures evidence pack"
+      "id": "2.1.1-M1",
+      "title": "Programme graduate futures profiles completed and confirmed",
+      "supportsBenefits": ["2.1.1-B1"],
+      "questionAnswered": "Are agreed programme groups producing credible graduate futures profiles that programme teams recognise and can use?",
+      "measure": "Count and percentage of agreed programme groups with a completed and programme-confirmed profile or equivalent story artefact.",
+      "baseline": "0 through this model.",
+      "target": "Each agreed programme group completes and confirms a proportionate story artefact before wider use."
     }
   ]
 }
 ```
 
-Use `outputId` when the step output has a stable ID. Use `outputTitle` when the step output is currently title-only.
+## Distinguishing benefit measures from delivery controls
 
-## Measures and indicators
-
-Default to benefit-level measures when a measure tests one specific benefit. This keeps the logic clear:
-
-```text
-this is the benefit -> this is what success looks like -> this is how we will know
-```
-
-Use top-level deliverable `measures` only when the measure is cross-cutting, legacy, or genuinely supports more than one benefit. In that case, add `supportsBenefits` so the relationship is explicit.
-
-```json
-{
-  "id": "2.1.1-M6",
-  "title": "Programme story and responsible interpretation quality",
-  "measureType": "quality-assurance",
-  "supportsBenefits": ["2.1.1-B1", "2.1.1-B4", "2.1.1-B5"],
-  "questionAnswered": "Are colleagues using the evidence to tell accurate, context-sensitive programme stories and interpret caveats responsibly?",
-  "measure": "Review of early profiles, caveat use, facilitator feedback and programme confirmation of story material."
-}
-```
-
-Do not duplicate a measure under every benefit it supports. Prefer one top-level cross-cutting measure with `supportsBenefits` when the same evidence question supports several benefits.
-
-## Evidence of success
-
-Evidence of success should show whether the value is being realised, not just whether an activity happened.
-
-Good evidence can be qualitative, usage-based or judgement-based. It does not need to be purely numerical.
+Benefit measures test whether value is being realised.
 
 Examples:
 
-- programme teams report that evidence is useful, fair and interpretable;
-- programme stories are used in student-facing or applicant-facing contexts;
-- guided conversations result in agreed questions, actions or focus areas;
-- institutional synthesis is used in planning or related King's Edge work;
-- evidence is interpreted with appropriate caveats and academic judgement.
+- programme teams confirm that a story is accurate, useful and appropriately caveated;
+- graduate futures stories are used in review, recruitment or student-facing contexts;
+- guided conversations generate agreed strengths, questions, support needs or actions;
+- agreed insights enter normal programme or faculty planning;
+- recurring themes inform King's-level synthesis.
 
-Avoid measures that incentivise programme ranking, league tables, punitive comparison or false precision.
+Delivery controls test whether work has been completed or accepted.
+
+Examples:
+
+- evidence specification completed;
+- first pack produced;
+- user testing session held;
+- guidance approved;
+- handoff route agreed.
+
+Keep delivery controls with the relevant timeline step, output acceptance criteria, milestone or definition of done. Do not count them as evidence that a benefit has already been realised.
+
+## Proportionate measurement
+
+Measures may be quantitative, qualitative, usage-based or judgement-based.
+
+Do not force a numerical target where that would create false precision. A credible qualitative threshold can be stronger than an arbitrary percentage.
+
+Avoid measures that incentivise programme ranking, league tables, punitive comparison or unsupported claims of causality.
 
 ## 2.1.1 framing
 
@@ -130,20 +144,23 @@ For Programme Graduate Futures Insight and Action Packs, keep the framing story-
 
 The benefits should emphasise:
 
-- helping programmes tell a stronger, more confident and nuanced story about their students' graduate futures;
-- claiming distinctive strengths and excellence with evidence;
-- identifying where curriculum, skills, opportunity, support or articulation work could make that story stronger;
-- using evidence responsibly, with caveats and academic judgement;
-- avoiding league-table, ranking or punitive interpretations;
-- feeding shared learning into faculty and institutional planning.
+- stronger, more confident and nuanced programme graduate futures stories;
+- evidence-informed claims about distinctive value and excellence;
+- identification of focused enhancement opportunities;
+- responsible interpretation with caveats and academic judgement;
+- no ranking, league-table or punitive programme comparison;
+- feed-through of shared learning into faculty and King's-level planning.
 
 ## UI implication
 
-The section heading should avoid the word product. Use either:
+Use the section heading `Benefits and evidence`.
 
-- `Value and evidence`; or
-- `Benefits and evidence of success`.
+For each benefit, show:
 
-The UI should show products and outputs in the Delivery timeline, and only show them in the value section as secondary traceability links under `Enabled by`.
+- the benefit title and statement;
+- beneficiary and realisation period;
+- what success looks like;
+- linked measures under `Evidence of success`;
+- secondary `Enabled by` references back to timeline outputs.
 
-The current UI does not need to render benefit-level measures separately yet. It is acceptable for the visible section to show `evidenceOfSuccess` first, with cross-cutting measures still shown in the evidence column or measures index. A later UI pass can add explicit benefit-level measure rows once more deliverables use them consistently.
+Keep full measure detail compact or expandable so the section remains readable.
