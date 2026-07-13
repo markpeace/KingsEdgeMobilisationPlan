@@ -1,8 +1,6 @@
 import manifest from './manifest.json';
 
-const localDeliverableParts = import.meta.glob('./**/*.json', { eager: true, import: 'default' });
-const legacyDeliverableParts = import.meta.glob('../deliverable-overrides/*.json', { eager: true, import: 'default' });
-const deliverableParts = { ...localDeliverableParts, ...legacyDeliverableParts };
+const deliverableParts = import.meta.glob('./**/*.json', { eager: true, import: 'default' });
 
 export function mergeDeliverableParts(...parts) {
   return parts.reduce((merged, part) => {

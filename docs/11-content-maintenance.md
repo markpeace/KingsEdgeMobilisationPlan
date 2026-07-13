@@ -12,7 +12,7 @@ src/data/enabling-projects.json
 src/data/step-dependencies.json
 src/data/status.json
 src/data/deliverables/manifest.json
-src/data/deliverable-overrides/
+src/data/deliverables/<deliverable-id>/
 ```
 
 ## Canonical hierarchy

@@ -4,14 +4,14 @@
       "id": "2.1.1",
       "projectId": "2.1",
       "parts": [
-        "../deliverable-overrides/2.1.1.json",
-        "../deliverable-overrides/2.1.1-overview-patch.json",
-        "../deliverable-overrides/2.1.1-outputs-measures-patch.json",
-        "../deliverable-overrides/2.1.1-steps-patch.json",
-        "../deliverable-overrides/2.1.1-benefits-patch.json",
-        "../deliverable-overrides/2.1.1-measures-benefit-map-patch.json",
-        "../deliverable-overrides/2.1.1-model-simplification-patch.json",
-        "../deliverable-overrides/2.1.1-governance-patch.json"
+        "./2.1.1/core.json",
+        "./2.1.1/overview.json",
+        "./2.1.1/outputs-measures.json",
+        "./2.1.1/steps.json",
+        "./2.1.1/benefits.json",
+        "./2.1.1/measures-benefit-map.json",
+        "./2.1.1/model-simplification.json",
+        "./2.1.1/governance.json"
       ]
     }
   ]

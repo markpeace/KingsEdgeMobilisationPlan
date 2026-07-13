@@ -11,11 +11,12 @@ Before editing anything, read these files in this order:
 1. `docs/hydration-guide.md`
 2. `docs/working-modes.md`
 3. `docs/deliverable-schema.md`
-4. `docs/repository-memory.md`
-5. `docs/schema-source-of-truth-audit.md`
-6. `docs/next-repository-update-brief.md`
-7. `src/plan-utils.js`
-8. Relevant JSON files under `src/data/`
+4. `docs/json-spine.md`
+5. `docs/repository-memory.md`
+6. `docs/schema-source-of-truth-audit.md`
+7. `docs/next-repository-update-brief.md`
+8. `src/plan-utils.js`
+9. Relevant JSON files under `src/data/`
 
 If the task is about app rendering or UI, also inspect:
 
@@ -62,7 +63,7 @@ Some work crosses both modes. Schema changes that also need rendering changes sh
 
 Use this prompt to start a new project manager mode chat:
 
-You are working in project manager mode on the King's Edge Mobilisation Plan repository. Hydrate yourself before editing. Read `docs/working-modes.md`, `docs/deliverable-schema.md`, `docs/repository-memory.md`, `docs/schema-source-of-truth-audit.md`, `docs/next-repository-update-brief.md`, `src/plan-utils.js` and the relevant JSON files under `src/data/`.
+You are working in project manager mode on the King's Edge Mobilisation Plan repository. Hydrate yourself before editing. Read `docs/working-modes.md`, `docs/deliverable-schema.md`, `docs/json-spine.md`, `docs/repository-memory.md`, `docs/schema-source-of-truth-audit.md`, `docs/next-repository-update-brief.md`, `src/plan-utils.js` and the relevant JSON files under `src/data/`.
 
 In this mode, treat JSON as the primary editing surface. Work mainly in `src/data/kings-edge-plan.json`, `src/data/enabling-projects.json`, `src/data/step-dependencies.json` and `src/data/status.json`. Do not make React, CSS, layout or rendering changes unless I explicitly switch to developer mode or ask for schema-plus-rendering work.
 
@@ -80,7 +81,7 @@ Before making major JSON changes, explain the proposed shape and any risks to pl
 
 Use this prompt to start a new developer mode chat:
 
-You are working in developer mode on the King's Edge Mobilisation Plan repository. Hydrate yourself before editing. Read `docs/working-modes.md`, `docs/deliverable-schema.md`, `docs/repository-memory.md`, `docs/schema-source-of-truth-audit.md`, `docs/next-repository-update-brief.md`, `src/plan-utils.js`, `src/site.jsx`, relevant CSS files in `public/` and `src/styles.css`.
+You are working in developer mode on the King's Edge Mobilisation Plan repository. Hydrate yourself before editing. Read `docs/working-modes.md`, `docs/deliverable-schema.md`, `docs/json-spine.md`, `docs/repository-memory.md`, `docs/schema-source-of-truth-audit.md`, `docs/next-repository-update-brief.md`, `src/plan-utils.js`, `src/site.jsx`, relevant CSS files in `public/` and `src/styles.css`.
 
 In this mode, treat the website rendering as the primary editing surface. Work mainly in React, CSS, HTML and configuration. You may inspect JSON to understand the data model, but do not change the plan data unless I explicitly ask for a schema or content update.
 
@@ -94,8 +95,10 @@ After making changes, summarise what changed, which files were edited and whethe
 
 Core plan data:
 
-- `src/data/kings-edge-plan.json`: core Edge programme, projects, deliverables and steps. This is the main source of truth.
+- `src/data/kings-edge-plan.json`: core Edge programme, projects, deliverables and steps. This is the main source of truth for programme and project structure.
 - `src/data/enabling-projects.json`: out-of-programme or enabling projects.
+- `src/data/deliverables/manifest.json`: registry for detailed deliverable JSON parts.
+- `src/data/deliverables/<deliverable-id>/`: JSON spine folders for detailed deliverables.
 - `src/data/schema-example-content.json`: retired overlay. Do not use it to add hidden content.
 - `src/data/step-dependencies.json`: currently empty. Step dependencies should usually live in the core plan data.
 - `src/data/status.json`: hidden delivery-control metadata. Not the planning-stage workflow.
@@ -115,6 +118,7 @@ Background documentation:
 
 - `docs/working-modes.md`: explains project manager mode and developer mode.
 - `docs/deliverable-schema.md`: describes the current deliverable schema.
+- `docs/json-spine.md`: explains the JSON spine, registry and no-workaround rendering contract.
 - `docs/repository-memory.md`: background decisions and working assumptions.
 - `docs/schema-source-of-truth-audit.md`: records the completed source-of-truth cleanup and guardrails.
 - `docs/next-repository-update-brief.md`: next project-manager-mode work brief.
