@@ -14,7 +14,9 @@ import {
   periodLabel
 } from './plan-utils.js';
 import { getStatus, labelStatus, labelConfidence, statusClass, confidenceClass } from './status-utils.js';
+import './design-system.css';
 import './styles.css';
+import './styles/legacy-public.css';
 
 const hasItems = (items) => Array.isArray(items) && items.length > 0;
 const asText = (item) => typeof item === 'string' ? item : item?.title || item?.label || item?.item || item?.role || item?.condition || 'Item';
