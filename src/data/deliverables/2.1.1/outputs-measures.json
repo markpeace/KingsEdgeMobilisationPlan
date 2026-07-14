@@ -307,10 +307,10 @@
     {
       "id": "2.1.1-R1",
       "title": "The work becomes too centrally resource-intensive",
-      "description": "Central teams cannot facilitate programme conversations for every programme or manually sustain all pack production.",
+      "description": "Central teams cannot directly support a review for every course or manually sustain all pack production.",
       "likelihood": "high",
       "impact": "high",
-      "mitigation": "Use faculty-owned facilitation, supported self-review and a common toolkit, with central support focused on evidence, method, guidance and synthesis.",
+      "mitigation": "Use a common self-run workshop, faculty-owned support and clear guidance, with central effort focused on evidence, method and institutional synthesis.",
       "owner": "Vice Deans Education or delegates"
     },
     {
@@ -319,16 +319,16 @@
       "description": "Small numbers, suppression, volatility, coding issues or comparator misuse could lead to unfair or unhelpful interpretations.",
       "likelihood": "medium",
       "impact": "high",
-      "mitigation": "Use caveat guidance, responsible-use principles, facilitation support and clear language throughout the evidence pack and conversation route.",
+      "mitigation": "Use clear caveats, responsible-use principles, workshop guidance and plain language throughout the pack and review.",
       "owner": "Careers and Employability Service"
     },
     {
       "id": "2.1.1-R3",
-      "title": "Programme story becomes unsupported marketing language",
+      "title": "Course claim becomes unsupported marketing language",
       "description": "Student-facing or applicant-facing language could drift beyond the evidence or lose academic ownership.",
       "likelihood": "medium",
       "impact": "high",
-      "mitigation": "Require evidence-linked proof points and programme confirmation before story material is used more visibly.",
+      "mitigation": "Require evidence-linked proof points and course confirmation before claim material is used more visibly.",
       "owner": "Programme teams"
     },
     {
@@ -337,16 +337,16 @@
       "description": "Local facilitation, supported review and self-review may vary in quality, tone and completion across faculties.",
       "likelihood": "medium",
       "impact": "high",
-      "mitigation": "Use a common pack, guided conversation materials, responsible-use guidance, faculty ownership and progress tracking.",
+      "mitigation": "Use a common pack and self-run workshop, responsible-use guidance, faculty ownership and progress tracking.",
       "owner": "Vice Deans Education or delegates"
     },
     {
       "id": "2.1.1-R5",
       "title": "Prioritisation is perceived as punitive",
-      "description": "Programmes included in focused engagement may feel labelled as weak or problematic.",
+      "description": "Courses selected for the first rollout may feel labelled as weak or problematic.",
       "likelihood": "medium",
       "impact": "high",
-      "mitigation": "Use a transparent shared prioritisation process that includes evidence, faculty judgement, programme context, strengths, learning value and support needs.",
+      "mitigation": "Use a transparent selection process that considers evidence, faculty judgement, course context, strengths, learning value and support needs.",
       "owner": "Vice Deans Education or delegates"
     },
     {
@@ -355,13 +355,13 @@
       "description": "The pack, visualisation, refresh rhythm and guidance could remain dependent on project goodwill after initial delivery.",
       "likelihood": "medium",
       "impact": "high",
-      "mitigation": "Confirm refresh cadence, owner, access route, interpretation guidance maintenance and quality assurance or continual improvement handoff before full programme engagement completes.",
+      "mitigation": "Confirm the refresh timetable, owner, access route, interpretation guidance and quality enhancement monitoring handoff before the second rollout is complete.",
       "owner": "Careers and Employability Service"
     },
     {
       "id": "2.1.1-R7",
-      "title": "Self-review becomes abandonment",
-      "description": "Programmes using the self-review route may receive materials but not enough guidance or support to use them well.",
+      "title": "Self-run review lacks enough support",
+      "description": "Courses may receive the pack and workshop materials without enough guidance or support to use them well.",
       "likelihood": "medium",
       "impact": "high",
       "mitigation": "Provide clear guidance, responsible-use materials and a route for help where evidence is unclear or sensitive.",
@@ -378,22 +378,22 @@
     },
     {
       "id": "2.1.1-I2",
-      "title": "Faculty-owned engagement route needs to be locked",
-      "description": "The model depends on Vice Deans Education or delegates confirming local facilitation, supported review, self-review expectations and benefit ownership routes.",
+      "title": "Faculty support route needs confirmation",
+      "description": "Vice Deans Education or their delegates need to confirm local support, expectations for the self-run workshop and routes for owning the resulting actions.",
       "owner": "Vice Deans Education or delegates",
       "neededBy": "Before focused programme engagement planning"
     },
     {
       "id": "2.1.1-I3",
-      "title": "Shared prioritisation process needs agreement",
-      "description": "The institution needs an agreed way to combine evidence, faculty knowledge, programme context and local judgement when selecting programme groups for focused engagement.",
+      "title": "Selection of focal courses needs agreement",
+      "description": "The institution needs an agreed way to combine evidence, faculty knowledge, course context and local judgement when selecting focal courses for the first rollout.",
       "owner": "Vice Deans Education or delegates",
       "neededBy": "Spring 2027"
     },
     {
       "id": "2.1.1-I4",
-      "title": "Living resource and institutional handoff route needs confirmation",
-      "description": "The evidence pack, refresh rhythm, interpretation guidance and synthesis need a confirmed ownership route connected to quality assurance and continual improvement cycles.",
+      "title": "Ongoing ownership and monitoring need confirmation",
+      "description": "The evidence pack, refresh timetable, interpretation guidance and synthesis need a confirmed owner and a route into existing quality enhancement monitoring.",
       "owner": "Careers and Employability Service and Mark Peace",
       "neededBy": "Before full programme engagement completes"
     }
@@ -401,33 +401,33 @@
   "assumptions": [
     {
       "id": "2.1.1-A1",
-      "title": "Evidence can support both story and enhancement",
-      "summary": "The same evidence can help programmes tell a stronger graduate futures story and identify where students may need more visible or consistent support."
+      "title": "Evidence can support both claims and enhancement",
+      "summary": "The same evidence can help courses articulate a stronger graduate futures claim and identify where student support could be strengthened."
     },
     {
       "id": "2.1.1-A2",
       "title": "Faculty-led engagement is necessary for scale",
-      "summary": "The central team cannot support every programme directly, so faculties must own supported review and self-review routes."
+      "summary": "The central team cannot support every course directly, so faculties must own local support for the self-run review."
     },
     {
       "id": "2.1.1-A3",
-      "title": "Early programme partners will improve the approach",
-      "summary": "Early partners will help test whether the pack and guided conversation are useful, fair, proportionate and academically credible."
+      "title": "Early course partners will improve the approach",
+      "summary": "Early course partners will help test whether the pack and self-run workshop are useful, fair, proportionate and academically credible."
     },
     {
       "id": "2.1.1-A4",
       "title": "Shared prioritisation can be agreed constructively",
-      "summary": "Programme groups for focused engagement can be agreed through evidence, faculty knowledge, programme context and local judgement."
+      "summary": "Focal courses for the first rollout can be agreed through evidence, faculty knowledge, course context and local judgement."
     },
     {
       "id": "2.1.1-A5",
-      "title": "Programmes can self-review where support needs are lower",
-      "summary": "Some programmes can use the pack, guidance and conversation materials without a supported conversation, provided the self-review route is clear."
+      "title": "Courses can complete self-run reviews where support needs are lower",
+      "summary": "Some courses can use the pack, workshop and guidance with minimal additional support, provided there is a clear route for help."
     },
     {
       "id": "2.1.1-A6",
-      "title": "Programme confirmation is enough for visible story use",
-      "summary": "Programme teams can confirm that student-facing or applicant-facing story language is accurate, fair and evidence-informed before local use."
+      "title": "Course confirmation supports wider use of a claim",
+      "summary": "Course teams can confirm that student-facing or applicant-facing claim language is accurate, fair and evidence-informed before local use."
     },
     {
       "id": "2.1.1-A7",
