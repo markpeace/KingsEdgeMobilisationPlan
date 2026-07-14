@@ -869,3 +869,173 @@ main {
     border-left-width: 1rem;
   }
 }
+
+.deliverable-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+  margin: 0 0 1rem;
+}
+
+.print-a3-button {
+  border: 2px solid var(--ink);
+  border-radius: 0;
+  padding: 0.52rem 0.78rem;
+  color: #ffffff;
+  background: var(--accent);
+  font: 700 0.9rem/1.1 var(--font-body);
+  cursor: pointer;
+}
+
+.print-a3-button:hover,
+.print-a3-button:focus-visible {
+  background: var(--accent-dark);
+}
+
+.a3-print-sheet {
+  display: none;
+}
+
+@media print {
+  @page {
+    size: A3 landscape;
+    margin: 8mm;
+  }
+
+  html,
+  body,
+  #root {
+    width: 100%;
+    min-width: 0;
+    margin: 0;
+    background: #ffffff;
+  }
+
+  body * {
+    visibility: hidden;
+  }
+
+  .a3-print-sheet,
+  .a3-print-sheet * {
+    visibility: visible;
+  }
+
+  .site-header,
+  .site-footer,
+  .deliverable-detail-page > :not(.a3-print-sheet) {
+    display: none !important;
+  }
+
+  .a3-print-sheet {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 4mm;
+    width: 100%;
+    min-height: 0;
+    color: #090909;
+    background: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 8.5pt;
+    line-height: 1.22;
+    page-break-after: avoid;
+    break-after: avoid;
+  }
+
+  .a3-print-header {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 82mm;
+    gap: 5mm;
+    padding: 4mm 5mm;
+    border: 1.2pt solid #090909;
+    border-left: 8mm solid #ed1c24;
+  }
+
+  .a3-print-kicker {
+    margin: 0 0 1.5mm;
+    color: #ed1c24;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .a3-print-header h2 {
+    margin: 0 0 2mm;
+    font-family: var(--font-brand), Arial, Helvetica, sans-serif;
+    font-size: 25pt;
+    font-weight: 400;
+    line-height: 0.95;
+  }
+
+  .a3-print-header p {
+    margin: 0;
+    font-size: 9.5pt;
+  }
+
+  .a3-print-meta {
+    display: grid;
+    gap: 1.4mm;
+    align-content: start;
+  }
+
+  .a3-print-meta span {
+    padding: 1.4mm 1.8mm;
+    border: 0.8pt solid #090909;
+    font-weight: 700;
+  }
+
+  .a3-print-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.35fr 1fr;
+    grid-template-rows: repeat(2, minmax(0, 1fr));
+    gap: 3mm;
+    flex: 1 1 auto;
+    min-height: 0;
+  }
+
+  .a3-print-grid article {
+    overflow: hidden;
+    padding: 3mm;
+    border: 0.9pt solid #090909;
+    break-inside: avoid;
+  }
+
+  .a3-print-grid h3 {
+    margin: 0 0 2mm;
+    padding-bottom: 1.5mm;
+    border-bottom: 0.8pt solid #090909;
+    color: #ed1c24;
+    font-size: 11pt;
+  }
+
+  .a3-print-grid p,
+  .a3-print-grid ul,
+  .a3-print-grid ol {
+    margin: 0 0 1.7mm;
+  }
+
+  .a3-print-grid ul,
+  .a3-print-grid ol {
+    padding-left: 4.5mm;
+  }
+
+  .a3-print-grid li {
+    margin-bottom: 1.3mm;
+  }
+
+  .a3-print-grid li span {
+    display: inline-block;
+    margin-left: 1.5mm;
+    color: #555555;
+    font-weight: 700;
+  }
+
+  .a3-print-sheet footer {
+    padding-top: 1.5mm;
+    border-top: 0.8pt solid #090909;
+    font-size: 7.5pt;
+    text-align: right;
+  }
+}
