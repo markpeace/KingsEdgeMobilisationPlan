@@ -3,32 +3,58 @@
   "benefits": [
     {
       "id": "2.1.1-B1",
-      "title": "Programmes can claim their graduate futures value with confidence",
-      "statement": "Programme teams have credible evidence and language for articulating distinctive programme value to students, applicants and colleagues.",
-      "beneficiary": "Programme teams, departments, faculties, students, applicants, recruitment teams and King's Edge",
-      "benefitType": "programme evidence and articulation",
+      "title": "Course teams can claim their graduate futures value with confidence",
+      "statement": "Course teams receive trusted course-level evidence and complete a structured review that enables them to understand and articulate the graduate futures value of their course with confidence.",
+      "beneficiary": "Course teams, departments, faculties, students, applicants, recruitment teams and King's Edge",
+      "benefitType": "course evidence and articulation",
       "owner": "Heads of Department",
       "realisationPeriod": "2026/27 onwards",
-      "successLooksLike": "Each participating programme has a programme-confirmed graduate futures story that is evidence-linked, appropriately caveated and suitable for at least one agreed review, recruitment or student-facing use.",
+      "successLooksLike": "Each in-scope course has an approved graduate futures pack, completes a structured review and produces a course-confirmed Graduate Futures Claim and Action on a Page that is evidence-linked, appropriately caveated and suitable for agreed use.",
       "enabledBy": [
-        {"stepId": "2.1.1-step-1", "outputTitle": "First working graduate futures evidence pack"},
-        {"stepId": "2.1.1-step-3", "outputTitle": "Programme reflection and profile template"},
-        {"stepId": "2.1.1-step-5", "outputTitle": "Examples of distinctive programme value"}
+        {
+          "stepId": "2.1.1-step-1",
+          "outputTitle": "First working graduate futures evidence pack"
+        },
+        {
+          "stepId": "2.1.1-step-3",
+          "outputTitle": "Graduate Futures Claim and Action on a Page template"
+        },
+        {
+          "stepId": "2.1.1-step-5",
+          "note": "The first rollout phase produces course-owned claims and actions."
+        },
+        {
+          "stepId": "2.1.1-step-7",
+          "note": "The second rollout phase completes coverage across the remaining in-scope courses."
+        }
       ]
     },
     {
       "id": "2.1.1-B2",
-      "title": "Programmes and faculties can act on graduate futures insight",
-      "statement": "Programme teams and faculties can translate graduate futures evidence into focused questions, support needs and locally owned action.",
-      "beneficiary": "Programme teams, departments, faculties, Careers and Employability Service, King's Edge and students",
-      "benefitType": "programme and faculty enhancement insight",
+      "title": "Course teams can take evidence-informed action on graduate futures",
+      "statement": "Course and department teams use graduate futures evidence and structured sense-making to identify proportionate actions, assign ownership and progress them through normal curriculum, planning or enhancement routes, with the aim of strengthening how courses support students' graduate futures.",
+      "beneficiary": "Course teams, departments, faculties and students",
+      "benefitType": "course and faculty enhancement action",
       "owner": "Vice Deans Education or delegates",
       "realisationPeriod": "2026/27 to 2027/28 onwards",
-      "successLooksLike": "Guided conversations or self-review produce proportionate, agreed insights that enter normal programme or faculty planning and inform King's-level synthesis, while allowing a legitimate conclusion that no additional action is needed.",
+      "successLooksLike": "Where a review identifies an opportunity or need, the course records a proportionate action, names an owner and incorporates it into the appropriate existing quality enhancement route. Supported conclusions that no additional action is required are also valid.",
       "enabledBy": [
-        {"stepId": "2.1.1-step-3", "outputTitle": "Guided programme conversation structure"},
-        {"stepId": "2.1.1-step-5", "outputTitle": "Practical local actions and faculty learning"},
-        {"stepId": "2.1.1-step-7", "outputTitle": "Institutional graduate futures synthesis"}
+        {
+          "stepId": "2.1.1-step-3",
+          "outputTitle": "Graduate Futures Claim and Action on a Page template"
+        },
+        {
+          "stepId": "2.1.1-step-5",
+          "note": "The first rollout phase records course-owned conclusions and actions."
+        },
+        {
+          "stepId": "2.1.1-step-6",
+          "outputTitle": "Quality assurance and continual improvement handoff"
+        },
+        {
+          "stepId": "2.1.1-step-7",
+          "note": "The second rollout phase extends the model across the remaining in-scope courses."
+        }
       ]
     }
   ]
