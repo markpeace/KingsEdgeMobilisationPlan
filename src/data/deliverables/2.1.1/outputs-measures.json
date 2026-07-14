@@ -329,7 +329,7 @@
       "likelihood": "medium",
       "impact": "high",
       "mitigation": "Require evidence-linked proof points and course confirmation before claim material is used more visibly.",
-      "owner": "Programme teams"
+      "owner": "Course teams"
     },
     {
       "id": "2.1.1-R4",
@@ -381,7 +381,7 @@
       "title": "Faculty support route needs confirmation",
       "description": "Vice Deans Education or their delegates need to confirm local support, expectations for the self-run workshop and routes for owning the resulting actions.",
       "owner": "Vice Deans Education or delegates",
-      "neededBy": "Before focused programme engagement planning"
+      "neededBy": "Before first rollout planning"
     },
     {
       "id": "2.1.1-I3",
@@ -395,7 +395,7 @@
       "title": "Ongoing ownership and monitoring need confirmation",
       "description": "The evidence pack, refresh timetable, interpretation guidance and synthesis need a confirmed owner and a route into existing quality enhancement monitoring.",
       "owner": "Careers and Employability Service and Mark Peace",
-      "neededBy": "Before full programme engagement completes"
+      "neededBy": "Before the second rollout is complete"
     }
   ],
   "assumptions": [
