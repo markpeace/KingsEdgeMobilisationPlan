@@ -2,9 +2,15 @@ import { buildLookups, getStepPeriodSpan, periodLabel, projects } from './plan-u
 
 const { deliverables } = buildLookups(projects);
 const deliverableById = new Map(deliverables.map((deliverable) => [deliverable.id, deliverable]));
+const projectById = new Map(projects.map((project) => [project.id, project]));
 
 function currentDeliverableId() {
   const match = String(window.location.hash || '').match(/#\/deliverables\/([^/?#]+)/);
+  return match ? decodeURIComponent(match[1]) : '';
+}
+
+function currentProjectId() {
+  const match = String(window.location.hash || '').match(/#\/projects\/([^/?#]+)/);
   return match ? decodeURIComponent(match[1]) : '';
 }
 
@@ -96,16 +102,17 @@ function renderResourceGroup(group, step) {
   `;
 }
 
-function renderStepResources(step, index) {
+function renderStepResources(step, index, contextLabel = '') {
   const groups = resourceGroups(step);
   const askCount = groups.reduce((total, group) => total + group.items.length, 0);
   const countLabel = `${askCount} ${askCount === 1 ? 'ask' : 'asks'}`;
+  const label = [contextLabel, stepLabel(index)].filter(Boolean).join(' · ');
 
   return `
     <details class="resource-step-group">
       <summary>
         <span class="resource-step-period">${escapeHtml(periodLabel(step.period))}</span>
-        <span class="resource-step-title"><strong>${escapeHtml(stepLabel(index))}</strong><span>${escapeHtml(step.title)}</span></span>
+        <span class="resource-step-title"><strong>${escapeHtml(label)}</strong><span>${escapeHtml(step.title)}</span></span>
         <span class="resource-step-count">${escapeHtml(countLabel)}</span>
       </summary>
       <div class="resource-step-body">
@@ -132,7 +139,7 @@ function resourceSummary(steps) {
   };
 }
 
-function signatureFor(deliverable) {
+function signatureForDeliverable(deliverable) {
   return JSON.stringify((deliverable.steps || []).map((step) => ({
     id: step.id,
     title: step.title,
@@ -141,7 +148,7 @@ function signatureFor(deliverable) {
   })));
 }
 
-function createProfile(deliverable) {
+function createDeliverableProfile(deliverable) {
   const steps = (deliverable.steps || [])
     .map((step, sourceIndex) => ({ step, sourceIndex, span: getStepPeriodSpan(step.period) }))
     .filter(({ step }) => stepAskCount(step) > 0)
@@ -154,7 +161,7 @@ function createProfile(deliverable) {
   const profile = document.createElement('details');
   profile.id = 'resource-investment-profile';
   profile.className = 'panel resource-investment-profile';
-  profile.dataset.resourceProfileSignature = signatureFor(deliverable);
+  profile.dataset.resourceProfileSignature = signatureForDeliverable(deliverable);
   profile.innerHTML = `
     <summary class="resource-profile-summary">
       <span class="resource-profile-heading">
@@ -180,21 +187,88 @@ function createProfile(deliverable) {
   return profile;
 }
 
+function projectDeliverablesWithResources(project) {
+  return (project.deliverables || [])
+    .map((deliverable) => ({
+      deliverable,
+      steps: (deliverable.steps || [])
+        .map((step, sourceIndex) => ({ step, sourceIndex, span: getStepPeriodSpan(step.period) }))
+        .filter(({ step }) => stepAskCount(step) > 0)
+        .sort((a, b) => a.span.startIndex - b.span.startIndex || a.sourceIndex - b.sourceIndex)
+    }))
+    .filter(({ steps }) => steps.length);
+}
+
+function signatureForProject(project) {
+  return JSON.stringify(projectDeliverablesWithResources(project).map(({ deliverable, steps }) => ({
+    id: deliverable.id,
+    steps: steps.map(({ step }) => ({
+      id: step.id,
+      title: step.title,
+      period: step.period,
+      resources: step.resources
+    }))
+  })));
+}
+
+function createProjectProfile(project) {
+  const deliverableGroups = projectDeliverablesWithResources(project);
+  if (!deliverableGroups.length) return null;
+
+  const steps = deliverableGroups.flatMap(({ steps: deliverableSteps }) => deliverableSteps.map(({ step }) => step));
+  const summary = resourceSummary(steps);
+  const knownInvestment = summary.knownInvestment ? formatMoney(summary.knownInvestment) : 'No quantified total yet';
+  const profile = document.createElement('details');
+  profile.id = 'resource-investment-profile';
+  profile.className = 'panel resource-investment-profile';
+  profile.dataset.resourceProfileSignature = signatureForProject(project);
+  profile.innerHTML = `
+    <summary class="resource-profile-summary">
+      <span class="resource-profile-heading">
+        <strong>Project resource and investment profile</strong>
+        <em>Derived from the delivery-step asks across this project's deliverables.</em>
+      </span>
+      <span class="resource-profile-toggle" aria-hidden="true"></span>
+    </summary>
+    <div class="resource-profile-body">
+      <p class="subtle resource-profile-explainer">Delivery steps remain the source of truth. This project roll-up brings their capacity, investment and enabling conditions together without creating a second authored resource plan.</p>
+      <div class="resource-profile-summary-grid">
+        <article><strong>${escapeHtml(deliverableGroups.length)}</strong><span>Deliverables with asks</span></article>
+        <article><strong>${escapeHtml(summary.capacityAsks)}</strong><span>Capacity asks</span></article>
+        <article><strong>${escapeHtml(summary.investmentAsks)}</strong><span>Investment asks</span></article>
+        <article><strong>${escapeHtml(knownInvestment)}</strong><span>Known investment</span></article>
+        <article><strong>${escapeHtml(summary.enablingConditions)}</strong><span>Enabling conditions</span></article>
+      </div>
+      <div class="resource-step-sequence">
+        ${deliverableGroups.map(({ deliverable, steps: deliverableSteps }) => `
+          <section class="resource-project-deliverable">
+            <h3><a href="#/deliverables/${encodeURIComponent(deliverable.id)}">${escapeHtml(deliverable.id)} ${escapeHtml(deliverable.title)}</a></h3>
+            ${deliverableSteps.map(({ step, sourceIndex }) => renderStepResources(step, sourceIndex, deliverable.id)).join('')}
+          </section>
+        `).join('')}
+      </div>
+    </div>
+  `;
+  return profile;
+}
+
 function renderResourceProfile() {
   const existing = document.getElementById('resource-investment-profile');
   const deliverable = deliverableById.get(currentDeliverableId());
+  const project = projectById.get(currentProjectId());
   const route = document.getElementById('route-through');
+  const projectDeliverablePanel = document.querySelector('.project-deliverable-panel');
 
-  if (!deliverable || !route) {
+  if (!deliverable && !project) {
     existing?.remove();
     return;
   }
 
-  const signature = signatureFor(deliverable);
+  const signature = deliverable ? signatureForDeliverable(deliverable) : signatureForProject(project);
   if (existing?.dataset.resourceProfileSignature === signature) return;
 
   const wasOpen = Boolean(existing?.open);
-  const profile = createProfile(deliverable);
+  const profile = deliverable ? createDeliverableProfile(deliverable) : createProjectProfile(project);
   if (!profile) {
     existing?.remove();
     return;
@@ -202,7 +276,8 @@ function renderResourceProfile() {
 
   profile.open = wasOpen;
   if (existing) existing.replaceWith(profile);
-  else route.insertAdjacentElement('afterend', profile);
+  else if (deliverable && route) route.insertAdjacentElement('afterend', profile);
+  else if (project && projectDeliverablePanel) projectDeliverablePanel.insertAdjacentElement('beforebegin', profile);
 }
 
 let refreshScheduled = false;

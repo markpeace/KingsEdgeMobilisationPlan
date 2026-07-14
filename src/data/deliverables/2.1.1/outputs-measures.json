@@ -1,308 +1,4 @@
 {
-  "outputs": [
-    {
-      "id": "2.1.1-O1",
-      "title": "Graduate futures evidence pack and responsible-use model",
-      "type": "evidence-pack",
-      "description": "The data specification, interpretation principles, caveat handling and visual or narrative pack model that help programme teams understand their students' graduate futures evidence responsibly.",
-      "owner": "Careers and Employability Service",
-      "duePeriod": "now-xmas-2026",
-      "targetDate": "Christmas 2026",
-      "acceptanceCriteria": [
-        "Data specification, caveats, taxonomy and comparator principles are coherent across the first and second pack versions.",
-        "The first evidence pack has been tested with selected users by September 2026.",
-        "The programme-facing pack can be understood by academic colleagues without appearing to rank or judge programmes."
-      ]
-    },
-    {
-      "id": "2.1.1-O2",
-      "title": "Guided programme conversation and self-review model",
-      "type": "delivery-model",
-      "description": "The model for helping programme teams move from story, to evidence, to questions, to action, including prompts, facilitation notes, responsible-use guidance, early programme partner testing and a self-review route.",
-      "owner": "Daniel Robson",
-      "duePeriod": "now-xmas-2026 to jan-summer-2027",
-      "targetDate": "Spring 2027",
-      "acceptanceCriteria": [
-        "Conversation materials guide colleagues from programme story and evidence to practical reflection and action.",
-        "Early programme partners have tested the framing, usability, outputs and tone of the approach.",
-        "The model distinguishes supported review and self-review routes for later programme engagement."
-      ]
-    },
-    {
-      "id": "2.1.1-O3",
-      "title": "Programme Graduate Futures Profile and action set",
-      "type": "programme-output-set",
-      "description": "The repeatable output set that programmes, departments or agreed groups can produce through supported review or self-review: an evidence-informed graduate futures profile, practical actions, story material and light reflections.",
-      "owner": "Heads of Department",
-      "duePeriod": "jan-summer-2027 to ay-2027-28-to-2028-29",
-      "targetDate": "September 2028",
-      "acceptanceCriteria": [
-        "Agreed programme groups produce evidence-informed profiles, practical actions and story material where appropriate by September 2027.",
-        "Every agreed programme either completes a supported review or is enabled to complete a self-review by September 2028.",
-        "Outputs distinguish evidence, interpretation, action and student-facing story material."
-      ]
-    },
-    {
-      "id": "2.1.1-O4",
-      "title": "Living evidence resource and institutional handoff model",
-      "type": "operating-model",
-      "description": "A sustainable model for refreshing the evidence, maintaining the pack, updating guidance and connecting graduate futures evidence to quality assurance and continual improvement cycles.",
-      "owner": "Careers and Employability Service",
-      "duePeriod": "ay-2027-28-to-2028-29",
-      "targetDate": "September 2028",
-      "acceptanceCriteria": [
-        "Refresh cadence and owners are confirmed.",
-        "Data, visualisation, access and interpretation guidance maintenance routes are agreed.",
-        "Graduate futures evidence has a clear place in quality assurance, continual improvement and programme enhancement cycles."
-      ]
-    },
-    {
-      "id": "2.1.1-O5",
-      "title": "Institutional graduate futures synthesis and feed-through",
-      "type": "synthesis",
-      "description": "Institutional synthesis of programme stories, destination patterns, strengths, recurring questions, support needs and implications for related King's Edge work.",
-      "owner": "Mark Peace",
-      "duePeriod": "ay-2027-28-to-2028-29",
-      "targetDate": "September 2028",
-      "acceptanceCriteria": [
-        "Faculty and programme learning is synthesised into strengths, questions, support needs and institutional implications.",
-        "Findings feed related King's Edge deliverables and curriculum enhancement activity.",
-        "The synthesis avoids ranking programmes and distinguishes evidence, interpretation and recommended institutional action."
-      ]
-    }
-  ],
-  "measures": [
-    {
-      "id": "2.1.1-M1",
-      "title": "Evidence specification readiness",
-      "measureType": "readiness",
-      "questionAnswered": "Has the evidence specification been completed in time for the first pack?",
-      "measure": "Completion of data specification, inventory, caveat register, taxonomy, comparator principles and responsible-use approach.",
-      "owner": "Careers and Employability Service",
-      "cadence": "September 2026 milestone review",
-      "confidence": "developing",
-      "baseline": "Not yet established.",
-      "target": "Evidence specification and interpretation framework complete by September 2026."
-    },
-    {
-      "id": "2.1.1-M2",
-      "title": "First evidence pack validation",
-      "measureType": "user-acceptance-testing",
-      "questionAnswered": "Can selected users understand and use the first pack to interpret programme graduate futures evidence responsibly?",
-      "measure": "Testing findings covering clarity, credibility, responsible interpretation, caveats, usefulness and ability to support programme story.",
-      "owner": "Daniel Robson",
-      "cadence": "September 2026 milestone review",
-      "confidence": "developing",
-      "baseline": "Not yet established.",
-      "target": "First evidence pack tested with selected users by September 2026."
-    },
-    {
-      "id": "2.1.1-M3",
-      "title": "Programme pack sharing and learning from use",
-      "measureType": "adoption",
-      "questionAnswered": "Have the first programme-facing packs been shared in a way that helps colleagues recognise strengths, ask useful questions and understand caveats?",
-      "measure": "Completion of programme-facing packs, short user guide, sharing route and captured learning from early use.",
-      "owner": "Mark Peace",
-      "cadence": "Christmas 2026 milestone review",
-      "confidence": "developing",
-      "baseline": "Not yet established.",
-      "target": "Programme-facing packs shared and learning captured by Christmas 2026."
-    },
-    {
-      "id": "2.1.1-M4",
-      "title": "Early institutional learning",
-      "measureType": "governance-reporting",
-      "questionAnswered": "Has early use of the packs created useful faculty and institutional learning without treating programme packs as final judgements?",
-      "measure": "Faculty conversations completed and early institutional summary submitted to the agreed senior education forum.",
-      "owner": "Mark Peace",
-      "cadence": "Christmas 2026 milestone review",
-      "confidence": "developing",
-      "baseline": "Not yet established.",
-      "target": "Faculty conversations held and early institutional summary submitted by Christmas 2026."
-    },
-    {
-      "id": "2.1.1-M5",
-      "title": "Early programme partner testing",
-      "measureType": "early-partner-testing",
-      "questionAnswered": "Have early programme partners shown that the pack and guided conversation help surface programme value as well as areas for enhancement?",
-      "measure": "Early programme conversations and feedback on usability, credibility, framing, story value, actionability and outputs.",
-      "owner": "Daniel Robson",
-      "cadence": "Christmas 2026 to Spring 2027 review",
-      "confidence": "developing",
-      "baseline": "Not yet established.",
-      "target": "Early programme partners complete meaningful tests before wider engagement."
-    },
-    {
-      "id": "2.1.1-M6",
-      "title": "Programme story and responsible interpretation quality",
-      "measureType": "quality-assurance",
-      "questionAnswered": "Are colleagues using the evidence to tell accurate, context-sensitive programme stories and interpret caveats responsibly?",
-      "measure": "Review of early profiles, reflection templates, caveat use, facilitator feedback and programme confirmation of story material.",
-      "owner": "Careers and Employability Service",
-      "cadence": "During testing and programme engagement reviews",
-      "confidence": "developing",
-      "baseline": "Not yet established.",
-      "target": "Programme story material is evidence-linked, context-sensitive and agreed with programme teams."
-    },
-    {
-      "id": "2.1.1-M7",
-      "title": "Shared prioritisation and focused engagement",
-      "measureType": "engagement",
-      "questionAnswered": "Has the next phase reached agreed programme groups through a fair shared prioritisation process?",
-      "measure": "Agreed prioritisation criteria, completed supported conversations, reflections, practical actions and captured faculty learning.",
-      "owner": "Vice Deans Education or delegates",
-      "cadence": "Termly during 2026/27 engagement",
-      "confidence": "developing",
-      "baseline": "Not yet established.",
-      "target": "Agreed programme groups complete supported conversations by September 2027."
-    },
-    {
-      "id": "2.1.1-M8",
-      "title": "Programme profile and action quality",
-      "measureType": "benefit-realisation",
-      "questionAnswered": "Does the process help programmes produce credible graduate futures profiles and realistic actions?",
-      "measure": "Quality of Programme Graduate Futures Profiles, practical action sets, story material and identified support needs.",
-      "owner": "Heads of Department",
-      "cadence": "Annual internal review",
-      "confidence": "developing",
-      "baseline": "Not yet established.",
-      "target": "Programmes engaged through supported review or self-review produce proportionate evidence-informed outputs."
-    },
-    {
-      "id": "2.1.1-M9",
-      "title": "Living resource and institutional handoff",
-      "measureType": "operating-model",
-      "questionAnswered": "Has the evidence pack become a maintained resource connected to quality assurance and continual improvement?",
-      "measure": "Confirmed owner, refresh cadence, access route, interpretation guidance maintenance and quality assurance or continual improvement handoff.",
-      "owner": "Careers and Employability Service",
-      "cadence": "Annual operating review",
-      "confidence": "developing",
-      "baseline": "Not yet established.",
-      "target": "Living resource ownership and institutional handoff confirmed before full programme engagement completes."
-    },
-    {
-      "id": "2.1.1-M10",
-      "title": "Full programme review or enabled self-review and synthesis",
-      "measureType": "strategic-learning",
-      "questionAnswered": "Has every agreed programme completed supported review or been enabled to self-review, and has institutional learning been synthesised?",
-      "measure": "Coverage confirmation, self-review enablement evidence and synthesis of strengths, recurring questions, support needs and implications.",
-      "owner": "Mark Peace",
-      "cadence": "Annual synthesis",
-      "confidence": "developing",
-      "baseline": "Not yet established.",
-      "target": "Every agreed programme has completed supported review or enabled self-review, with synthesis completed during 2027/28."
-    }
-  ],
-  "resources": {
-    "fundingSummary": "Whole-route resourcing depends on protected data and visualisation capacity, a modest summer student placement for early data and visualisation work, delivery coordination, faculty facilitator time, King's Academy input and a sustainable ownership route for the living evidence resource. Step-level resources describe where each type of capacity is needed in the delivery route.",
-    "existingCapacity": [
-      {
-        "role": "Careers and Employability Service",
-        "contribution": "Own or co-own the graduate futures evidence resource, interpretation principles, caveat guidance and ongoing refresh route.",
-        "type": "existing capacity to align"
-      },
-      {
-        "role": "Daniel Robson",
-        "contribution": "Lead the evidence pack, guided conversation and engagement model across the deliverable.",
-        "type": "existing delivery capacity"
-      },
-      {
-        "role": "King's Academy",
-        "contribution": "Advise on academic development, facilitation design and proportionate programme enhancement language.",
-        "type": "existing academic development capacity to align"
-      },
-      {
-        "role": "Vice Deans Education or delegates",
-        "contribution": "Provide the faculty decision and delivery route for early partner selection, shared prioritisation, supported review and self-review.",
-        "type": "existing governance capacity"
-      },
-      {
-        "role": "Heads of Department",
-        "contribution": "Own benefit realisation and follow up agreed programme actions through normal department and faculty routes.",
-        "type": "existing academic leadership capacity"
-      },
-      {
-        "role": "Mark Peace",
-        "contribution": "Maintain institutional graduate futures coherence and lead the synthesis into related King's Edge work.",
-        "type": "existing leadership capacity"
-      }
-    ],
-    "newInvestment": [
-      {
-        "item": "Summer student placement",
-        "category": "student placement",
-        "rationale": "Needed to support data preparation, visualisation development, pack production and early user testing across Steps 1 and 2.",
-        "periodNeeded": "Summer 2026",
-        "estimatedCost": "Approximately £3,000 including on-costs",
-        "confidence": "medium",
-        "fundingRoute": "TBC"
-      },
-      {
-        "item": "Protected analytical and data visualisation capacity",
-        "category": "evidence resource development",
-        "rationale": "Needed to produce, validate and maintain a credible evidence pack and scalable visualisation route rather than relying on ad hoc manual production.",
-        "periodNeeded": "jul-dec-2026 to jan-jun-2027",
-        "confidence": "medium",
-        "fundingRoute": "TBC"
-      },
-      {
-        "item": "Coordination and synthesis support",
-        "category": "project support",
-        "rationale": "Could support pack preparation, programme engagement logistics, self-review tracking, evidence handling and institutional synthesis.",
-        "periodNeeded": "jul-dec-2026 to jul-dec-2028",
-        "confidence": "developing",
-        "fundingRoute": "TBC"
-      },
-      {
-        "item": "Living resource maintenance capacity",
-        "category": "ongoing evidence resource support",
-        "rationale": "Needed to avoid the evidence pack, guidance and visualisation route becoming a one-off project output.",
-        "periodNeeded": "jan-jun-2027 onwards",
-        "confidence": "developing",
-        "fundingRoute": "TBC"
-      }
-    ],
-    "enablingConditions": [
-      {
-        "condition": "Sustained access to graduate outcomes, LEO, TEF, benchmarking, enrolment supplement, aspiration and relevant internal datasets.",
-        "owner": "Careers and Employability Service",
-        "riskIfMissing": "The model cannot provide a credible programme-level graduate futures view."
-      },
-      {
-        "condition": "Power BI prioritisation or equivalent scalable data visualisation route.",
-        "owner": "Careers and Employability Service",
-        "riskIfMissing": "The evidence pack may remain static or manually produced, limiting institutional use."
-      },
-      {
-        "condition": "Faculty agreement to own local facilitation and self-review support rather than expecting central delivery for every programme.",
-        "owner": "Vice Deans Education or delegates",
-        "riskIfMissing": "The central team becomes the bottleneck and full programme engagement is not achievable."
-      },
-      {
-        "condition": "Heads of Department accept benefit ownership for programme reflections and actions.",
-        "owner": "Vice Deans Education or delegates",
-        "riskIfMissing": "Programme reflections and actions are produced but not owned or followed up."
-      },
-      {
-        "condition": "Programme confirmation is accepted as sufficient approval for student-facing or applicant-facing story material.",
-        "owner": "Programme teams",
-        "riskIfMissing": "Story activation becomes too slow, over-governed or disconnected from academic ownership."
-      },
-      {
-        "condition": "Quality assurance and continual improvement routes accept graduate futures evidence as part of ongoing programme reflection.",
-        "owner": "Quality assurance and continual improvement owners",
-        "riskIfMissing": "The pack remains available but does not shape sustained programme enhancement."
-      }
-    ],
-    "investmentAsk": {
-      "required": true,
-      "fundingRoute": "TBC",
-      "priority": "High for September 2026 evidence pack testing, Christmas 2026 programme pack sharing and the shared Step 1 and Step 2 summer placement",
-      "decisionNeededBy": "Summer 2026",
-      "confidence": "developing",
-      "rationale": "The deliverable needs protected analytical, visualisation and coordination capacity, plus a modest student placement of approximately £3,000 including on-costs to support early data and visualisation work. Step-level plans identify where the capacity is used; the deliverable-level ask is the overall resourcing decision."
-    }
-  },
   "risks": [
     {
       "id": "2.1.1-R1",
@@ -310,8 +6,8 @@
       "description": "Central teams cannot directly support a review for every course or manually sustain all pack production.",
       "likelihood": "high",
       "impact": "high",
-      "mitigation": "Use a common self-run workshop, faculty-owned support and clear guidance, with central effort focused on evidence, method and institutional synthesis.",
-      "owner": "Vice Deans Education or delegates"
+      "mitigation": "Use a common self-run workshop and clear guidance, with central effort focused on evidence and method, focal-area support delivered through faculty-linked Careers Consultants, and broader-rollout support available through normal business-partner relationships.",
+      "owner": "Daniel Robson and Rachel Kershaw"
     },
     {
       "id": "2.1.1-R2",
@@ -337,7 +33,7 @@
       "description": "Local facilitation, supported review and self-review may vary in quality, tone and completion across faculties.",
       "likelihood": "medium",
       "impact": "high",
-      "mitigation": "Use a common pack and self-run workshop, responsible-use guidance, faculty ownership and progress tracking.",
+      "mitigation": "Use a common pack and self-run workshop, faculty-linked Careers Consultant support, responsible-use guidance, transparent coverage reporting and an agreed exception route.",
       "owner": "Vice Deans Education or delegates"
     },
     {
@@ -365,37 +61,37 @@
       "likelihood": "medium",
       "impact": "high",
       "mitigation": "Provide clear guidance, responsible-use materials and a route for help where evidence is unclear or sensitive.",
-      "owner": "Vice Deans Education or delegates"
+      "owner": "Rachel Kershaw and the King's Academy Academic Development Lead"
     }
   ],
   "issues": [
     {
       "id": "2.1.1-I1",
-      "title": "Early data, visualisation and placement resource needs confirmation",
-      "description": "The deliverable requires a decision on protected analytical and visualisation capacity, including the approximately £3,000 summer student placement for Steps 1 and 2.",
-      "owner": "Careers and Employability Service",
-      "neededBy": "Summer 2026"
+      "title": "Project management capacity is not yet secured",
+      "description": "Step 1 will proceed through minimal interim coordination by Mark Peace, Rachel Kershaw and Daniel Robson. Borrowed Transformation Office project management capacity is required from October 2026 at 0.2 FTE, reducing to 0.1 FTE from July 2027.",
+      "owner": "Mark Peace",
+      "neededBy": "October 2026"
     },
     {
       "id": "2.1.1-I2",
-      "title": "Faculty support route needs confirmation",
-      "description": "Vice Deans Education or their delegates need to confirm local support, expectations for the self-run workshop and routes for owning the resulting actions.",
-      "owner": "Vice Deans Education or delegates",
-      "neededBy": "Before first rollout planning"
+      "title": "Named specialist contributors need confirmation",
+      "description": "Rachel Kershaw needs to confirm the Data Manager contribution and nominate the Careers Workshop, Pilot and Mobilisation Lead. Daniel Robson needs to secure a named King's Academy Academic Development Lead and Academic Quality needs to nominate an operational CER contact.",
+      "owner": "Rachel Kershaw and Daniel Robson",
+      "neededBy": "Before substantive design and pilot activity"
     },
     {
       "id": "2.1.1-I3",
-      "title": "Selection of focal courses needs agreement",
-      "description": "The institution needs an agreed way to combine evidence, faculty knowledge, course context and local judgement when selecting focal courses for the first rollout.",
-      "owner": "Vice Deans Education or delegates",
-      "neededBy": "Spring 2027"
+      "title": "Actual focal areas remain to be selected",
+      "description": "The selection process and decision route are agreed, but the feasible Careers capacity envelope, evidence-informed proposal and Education Executive decision are still required.",
+      "owner": "Daniel Robson and Rachel Kershaw",
+      "neededBy": "Before first-rollout invitations"
     },
     {
       "id": "2.1.1-I4",
-      "title": "Ongoing ownership and monitoring need confirmation",
-      "description": "The evidence pack, refresh timetable, interpretation guidance and synthesis need a confirmed owner and a route into existing quality enhancement monitoring.",
-      "owner": "Careers and Employability Service and Mark Peace",
-      "neededBy": "Before the second rollout is complete"
+      "title": "Operational data access and handover need confirmation",
+      "description": "The intended Careers BAU ownership is agreed, but the named enrolment-data owner, Fabric permissions, data access, CER workflow and documented technical and assurance handover still need to be completed.",
+      "owner": "Rachel Kershaw with Mark Peace during Step 1",
+      "neededBy": "Access before the internship; handover before BAU transfer"
     }
   ],
   "assumptions": [
@@ -406,8 +102,8 @@
     },
     {
       "id": "2.1.1-A2",
-      "title": "Faculty-led engagement is necessary for scale",
-      "summary": "The central team cannot support every course directly, so faculties must own local support for the self-run review."
+      "title": "Existing Careers and local arrangements can support scale",
+      "summary": "The project assumes that the existing Careers Consultant business-partner model can provide higher-touch focal-area support and remain available on request during broader rollout, while programmes arrange their own local participation."
     },
     {
       "id": "2.1.1-A3",
@@ -421,8 +117,8 @@
     },
     {
       "id": "2.1.1-A5",
-      "title": "Courses can complete self-run reviews where support needs are lower",
-      "summary": "Some courses can use the pack, workshop and guidance with minimal additional support, provided there is a clear route for help."
+      "title": "Programmes can run the review using the provided materials",
+      "summary": "Programmes can use the pack, self-run workshop and guidance with proportionate support from their linked Careers Consultant where needed."
     },
     {
       "id": "2.1.1-A6",
@@ -433,80 +129,6 @@
       "id": "2.1.1-A7",
       "title": "The evidence resource can become a maintained service",
       "summary": "The deliverable assumes that visualisation maintenance, data refresh, interpretation guidance and access routes can move from project delivery into a sustainable institutional route."
-    }
-  ],
-  "decisions": [
-    {
-      "id": "2.1.1-D1",
-      "title": "Confirm protected resource for early evidence and visualisation work",
-      "description": "Decide whether additional analytical, visualisation or coordination capacity is required, including the approximately £3,000 summer student placement to support Steps 1 and 2.",
-      "decisionMaker": "Vice Deans Education or delegates, with Careers and Employability Service",
-      "decisionNeededBy": "Summer 2026",
-      "status": "needed"
-    },
-    {
-      "id": "2.1.1-D2",
-      "title": "Confirm first evidence pack scope and responsible-use approach",
-      "description": "Agree minimum viable sources, pack structure, comparator principles, caveats, interpretation guidance and user testing standard for September 2026.",
-      "decisionMaker": "Mark Peace, Daniel Robson and Careers and Employability Service",
-      "decisionNeededBy": "Summer 2026",
-      "status": "needed"
-    },
-    {
-      "id": "2.1.1-D3",
-      "title": "Confirm early testing and sharing route",
-      "description": "Agree selected users for the first pack, how programme-facing packs will be shared, and which senior education forum receives the early institutional summary.",
-      "decisionMaker": "Mark Peace, Daniel Robson and Vice Deans Education or delegates",
-      "decisionNeededBy": "Autumn 2026",
-      "status": "needed"
-    },
-    {
-      "id": "2.1.1-D4",
-      "title": "Confirm guided programme conversation model",
-      "description": "Agree the conversation structure, role of King's Academy input, facilitation route, light templates and expectations for follow-up.",
-      "decisionMaker": "Mark Peace, Daniel Robson and Vice Deans Education or delegates",
-      "decisionNeededBy": "Autumn 2026",
-      "status": "needed"
-    },
-    {
-      "id": "2.1.1-D5",
-      "title": "Confirm early programme partners",
-      "description": "Agree the early programme partners that will test whether the pack and guided conversation are useful, fair and academically credible.",
-      "decisionMaker": "Vice Deans Education or delegates, with Mark Peace and Daniel Robson",
-      "decisionNeededBy": "Autumn 2026",
-      "status": "needed"
-    },
-    {
-      "id": "2.1.1-D6",
-      "title": "Confirm shared prioritisation process",
-      "description": "Agree criteria and decision route for identifying programme groups where the evidence can be most useful, combining evidence with faculty knowledge, programme context and local judgement.",
-      "decisionMaker": "Vice Deans Education or delegates",
-      "decisionNeededBy": "Spring 2027",
-      "status": "needed"
-    },
-    {
-      "id": "2.1.1-D7",
-      "title": "Confirm living evidence resource ownership and handoff",
-      "description": "Agree the owner, refresh rhythm, access route, interpretation guidance maintenance and connection to quality assurance and continual improvement cycles.",
-      "decisionMaker": "Careers and Employability Service with Mark Peace and relevant quality assurance or continual improvement owners",
-      "decisionNeededBy": "Before full programme engagement completes",
-      "status": "needed"
-    },
-    {
-      "id": "2.1.1-D8",
-      "title": "Confirm review coverage and self-review threshold",
-      "description": "Agree the final programme population, which programmes need supported review, which can self-review, and what evidence confirms that a programme has been enabled to self-review.",
-      "decisionMaker": "Vice Deans Education or delegates",
-      "decisionNeededBy": "Before final programme engagement planning",
-      "status": "needed"
-    },
-    {
-      "id": "2.1.1-D9",
-      "title": "Confirm institutional synthesis and feed-through route",
-      "description": "Agree where the institutional synthesis will be reviewed and how findings feed related King's Edge deliverables, curriculum enhancement, skills, opportunity and student-facing story work.",
-      "decisionMaker": "Mark Peace and Vice Deans Education or delegates",
-      "decisionNeededBy": "Before September 2028 synthesis",
-      "status": "needed"
     }
   ]
 }

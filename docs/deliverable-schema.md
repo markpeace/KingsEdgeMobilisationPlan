@@ -278,7 +278,9 @@ A resource ask should normally state:
 - confidence;
 - the delivery risk if the ask is not met.
 
-The app derives the deliverable-level resource and investment profile from step asks. Do not author a separate deliverable-level resource plan.
+The app derives the deliverable-level resource and investment profile from step asks. Project-level profiles are then derived from the step asks across all deliverables in the project. Do not author separate deliverable-level or project-level resource plans.
+
+To avoid double-counting, record a cash investment only on the step where the funding is first required. A later step may describe continued use of that funded capacity in an existing-capacity ask, but should not repeat the amount as new investment.
 
 ## Risks, issues and assumptions
 

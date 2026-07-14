@@ -1,60 +1,61 @@
 {
   "ownership": {
     "accountableOwner": "Aranee Manoharan",
-    "deliveryLead": "Daniel Robson",
-    "benefitOwner": "",
-    "contributors": [],
-    "decisionForum": ""
+    "deliveryLead": "Daniel Robson"
   },
   "governance": {
-    "decisionForum": "Vice Deans Education or delegates",
-    "decisionScope": "Decisions about scope, priorities, investment, faculty participation, ongoing ownership and any escalation that cannot be resolved within an individual delivery step.",
-    "businessAsUsualOwner": "To be confirmed in Step 6",
-    "businessAsUsualOwnershipNote": "Step 6 will confirm the enduring ownership of the evidence packs, refresh timetable, interpretation guidance, access route and course review process. The likely model requires clear central ownership of the evidence and pack production, faculty ownership of local use and follow-through, and oversight of graduate futures actions through the Academic Standards and Quality Enhancement Subcommittee of Education Committee and existing quality enhancement monitoring.",
+    "decisionForum": "Education Executive, with escalation through the King's Edge Programme Board and Portfolio Board",
+    "decisionScope": "Education Executive approves the institutional pack and workshop framework and decides the focal areas and departmental bundles for the first rollout, involving Vice-Deans Education. Delivery exceptions are managed through the project and escalated through the King's Edge Programme Board and Portfolio Board where required.",
+    "businessAsUsualOwner": "Careers and Employability Service",
+    "businessAsUsualOwnershipNote": "Rachel Kershaw provides senior accountable Careers ownership. The Data Manager, Careers and Student Success role is the operational owner for pack production, data refresh, analytical quality and documentation. Course and department teams own their reviews and resulting conclusions. Actions, questions and support needs enter Curriculum Education Review by default, or an agreed alternative where CER does not apply. Faculty education committees monitor local follow-through and the Academic Standards and Quality Enhancement Subcommittee receives an aggregate view through existing quality-enhancement reporting.",
     "deliveryPartners": [
       {
-        "group": "Evidence and data",
+        "group": "Evidence, pack production and technical delivery",
         "partners": [
           "Careers and Employability Service",
-          "Planning, analytics and relevant institutional data colleagues",
-          "Power BI or equivalent data visualisation support"
+          "Data Services",
+          "Student Success Directorate enrolment data owner"
         ],
-        "contribution": "Provide, interpret, visualise and maintain the graduate futures evidence, with appropriate caveats and responsible-use guidance."
+        "contribution": "Provide, interpret, produce and maintain the course-level evidence packs; manage data access, definitions, caveats and refresh; and establish a supportable Microsoft Fabric and analytical route."
       },
       {
-        "group": "Academic and faculty delivery",
-        "partners": [
-          "Vice Deans Education or delegates",
-          "Faculty education leads",
-          "Heads of Department",
-          "Course leads"
-        ],
-        "contribution": "Agree local participation, support course teams to use the packs and workshops, own course-level interpretation and route agreed actions through normal department and faculty processes."
-      },
-      {
-        "group": "Facilitation and enhancement",
+        "group": "Workshop, mobilisation and local support",
         "partners": [
           "King's Academy",
-          "Associate Directors of Education",
-          "Careers faculty partners"
+          "Careers Workshop, Pilot and Mobilisation Lead",
+          "Faculty-linked Careers Consultants",
+          "Course and department teams"
         ],
-        "contribution": "Help make the self-run workshop clear, developmental, proportionate and connected to practical enhancement support."
+        "contribution": "Design and test the self-run workshop, mobilise departmental bundles, support interpretation through the existing Careers business-partner model and enable programmes to organise their own reviews."
       },
       {
-        "group": "Using course claims",
+        "group": "Institutional validation and approval",
         "partners": [
-          "Student recruitment and open-day colleagues, where course claims are used"
+          "Institution-wide Reference Group",
+          "Education Executive",
+          "Vice-Deans Education"
         ],
-        "contribution": "Support responsible use of course-confirmed, evidence-linked claims in agreed student-facing and applicant-facing contexts."
+        "contribution": "Validate usefulness, credibility and responsible representation; approve the framework; and decide the focal areas for the first rollout."
       },
       {
-        "group": "Quality enhancement oversight",
+        "group": "Quality enhancement integration",
         "partners": [
+          "Director of Academic Quality or delegate",
+          "Operational CER contact",
+          "Faculty education committees",
           "Academic Standards and Quality Enhancement Subcommittee of Education Committee"
         ],
-        "contribution": "Monitor whether agreed graduate futures actions enter existing quality enhancement processes and whether they are progressing, while course, department and faculty owners remain responsible for delivery."
+        "contribution": "Connect resulting actions, questions and support needs to CER or an agreed alternative, assure the monitoring handoff and provide local and institutional oversight through existing quality-enhancement processes."
+      },
+      {
+        "group": "Project coordination and reporting",
+        "partners": [
+          "Transformation Office project manager",
+          "King's Edge Programme Board",
+          "Portfolio Board"
+        ],
+        "contribution": "Coordinate the plan, risks, decisions, dependencies, approvals, rollout, exceptions, reporting, handover and closure. Routine reporting is aggregated through the project, with Daniel Robson attending higher forums for specific decisions or exceptions."
       }
     ]
-  },
-  "businessAsUsualOwnershipNote": "Step 6 will confirm the enduring ownership of the evidence packs, refresh timetable, interpretation guidance, access route and course review process. The likely model requires clear central ownership of the evidence and pack production, faculty ownership of local use and follow-through, and oversight of graduate futures actions through the Academic Standards and Quality Enhancement Subcommittee of Education Committee and existing quality enhancement monitoring."
+  }
 }
