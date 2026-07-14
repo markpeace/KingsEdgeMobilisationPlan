@@ -8,9 +8,9 @@
   },
   "governance": {
     "decisionForum": "Vice Deans Education or delegates",
-    "decisionScope": "Material choices about scope, prioritisation, investment, faculty participation, business-as-usual ownership and escalations that cannot be resolved within an individual delivery step.",
-    "businessAsUsualOwner": "TBC",
-    "businessAsUsualOwnershipNote": "Step 6 will confirm the enduring ownership of the evidence packs, refresh rhythm, interpretation guidance, access route and programme review process. The likely model will require clear central evidence ownership alongside faculty ownership of local use and follow-through.",
+    "decisionScope": "Decisions about scope, priorities, investment, faculty participation, ongoing ownership and any escalation that cannot be resolved within an individual delivery step.",
+    "businessAsUsualOwner": "To be confirmed in Step 6",
+    "businessAsUsualOwnershipNote": "Step 6 will confirm the enduring ownership of the evidence packs, refresh timetable, interpretation guidance, access route and course review process. The likely model requires clear central ownership of the evidence and pack production, faculty ownership of local use and follow-through, and oversight of graduate futures actions through the Academic Standards and Quality Enhancement Subcommittee of Education Committee and existing quality enhancement monitoring.",
     "deliveryPartners": [
       {
         "group": "Evidence and data",
@@ -27,9 +27,9 @@
           "Vice Deans Education or delegates",
           "Faculty education leads",
           "Heads of Department",
-          "Programme leads"
+          "Course leads"
         ],
-        "contribution": "Shape local participation, facilitate programme use, own programme-level interpretation and route agreed actions through normal faculty and department processes."
+        "contribution": "Agree local participation, support course teams to use the packs and workshops, own course-level interpretation and route agreed actions through normal department and faculty processes."
       },
       {
         "group": "Facilitation and enhancement",
@@ -38,16 +38,23 @@
           "Associate Directors of Education",
           "Careers faculty partners"
         ],
-        "contribution": "Help keep the programme conversation developmental, proportionate, academically credible and connected to practical enhancement support."
+        "contribution": "Help make the self-run workshop clear, developmental, proportionate and connected to practical enhancement support."
       },
       {
-        "group": "Story activation",
+        "group": "Using course claims",
         "partners": [
-          "Student recruitment and open-day colleagues, where programme story materials are used"
+          "Student recruitment and open-day colleagues, where course claims are used"
         ],
-        "contribution": "Support responsible use of programme-confirmed, evidence-linked story material in agreed student-facing and applicant-facing contexts."
+        "contribution": "Support responsible use of course-confirmed, evidence-linked claims in agreed student-facing and applicant-facing contexts."
+      },
+      {
+        "group": "Quality enhancement oversight",
+        "partners": [
+          "Academic Standards and Quality Enhancement Subcommittee of Education Committee"
+        ],
+        "contribution": "Monitor whether agreed graduate futures actions enter existing quality enhancement processes and whether they are progressing, while course, department and faculty owners remain responsible for delivery."
       }
     ]
   },
-  "businessAsUsualOwnershipNote": "Step 6 will confirm the enduring ownership of the evidence packs, refresh rhythm, interpretation guidance, access route and course review process. The likely model will require clear central evidence ownership, faculty ownership of local use and follow-through, and oversight of graduate futures actions through the Academic Standards and Quality Enhancement Subcommittee of Education Committee and existing quality enhancement monitoring."
+  "businessAsUsualOwnershipNote": "Step 6 will confirm the enduring ownership of the evidence packs, refresh timetable, interpretation guidance, access route and course review process. The likely model requires clear central ownership of the evidence and pack production, faculty ownership of local use and follow-through, and oversight of graduate futures actions through the Academic Standards and Quality Enhancement Subcommittee of Education Committee and existing quality enhancement monitoring."
 }
