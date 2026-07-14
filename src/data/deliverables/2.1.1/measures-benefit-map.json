@@ -7,7 +7,7 @@
         "2.1.1-B1"
       ],
       "questionAnswered": "Has the graduate futures pack framework, including its data measures, representations and self-run workshop, been judged useful, credible and suitable for wider course-level use?",
-      "measure": "Completion of three sequential gates: Reference Group approval of the usefulness and responsible representation of the measures; Education Executive approval that the framework is proportionate and suitable for course and department engagement; and pilot acceptance demonstrating that course and department teams can interpret the pack, complete the workshop and reach a meaningful course-level review.",
+      "measure": "Completion of three gates: the project Reference Group approves the usefulness and responsible presentation of the measures; Education Executive approves the framework as proportionate and suitable for course and department use; and the pilot shows that teams can interpret the pack, complete the workshop and reach a meaningful course-level review.",
       "measureType": "readiness, governance approval and user acceptance",
       "owner": "Daniel Robson, with each approving body responsible for its respective gate",
       "cadence": "Once during initial framework development and again after any material framework change",
@@ -23,13 +23,13 @@
         "2.1.1-B1"
       ],
       "questionAnswered": "How completely has the approved graduate futures pack framework reached the agreed population of courses?",
-      "measure": "Count and percentage of in-scope courses for which a course-level pack has been produced, completed the required data and configuration checks, and been distributed with the self-run workshop materials to a named course or department contact. Production and distribution are reported separately by rollout phase, department and faculty. Packs may be distributed as departmental bundles, while coverage remains counted at course level.",
+      "measure": "Count and percentage of in-scope courses for which a course-level pack has been checked and distributed, with the self-run workshop materials, to a named course or department contact. Report production and distribution separately for the first and second rollouts, and by department and faculty. Packs may be sent as departmental bundles, but coverage is counted by course.",
       "measureType": "coverage and implementation",
       "owner": "Daniel Robson, supported by Careers and Employability Service, data colleagues and faculty or department contacts",
       "cadence": "Monthly during active production, with formal reporting at the end of each rollout phase",
       "confidence": "developing",
       "baseline": "No course packs have yet been produced and distributed through the approved framework.",
-      "target": "Following successful piloting, all in-scope courses in phase 1 focal areas receive a checked pack before their review window. All remaining in-scope courses receive one during phase 2. Any course for which a pack cannot be produced has a documented reason, owner and agreed exception or resolution route.",
+      "target": "After the pilot, every in-scope course in the first rollout, covering the agreed focal areas, receives a checked pack before its review window. Every other in-scope course receives one in the second rollout. Any exception records the reason, owner and agreed resolution.",
       "dataSource": "Agreed course population, pack production register, quality-assurance record and distribution log."
     },
     {
@@ -39,45 +39,45 @@
         "2.1.1-B1"
       ],
       "questionAnswered": "Are course teams able to turn their graduate futures evidence and course-level review into a concise, course-owned account of the graduate futures their course enables?",
-      "measure": "Count and percentage of in-scope courses that complete the first side of a Graduate Futures Claim and Action on a Page and confirm that it provides a fair, useful, evidence-informed and appropriately caveated account of their course. A completed claim states the central graduate futures narrative, identifies principal supporting evidence, describes the course's distinctive contribution, records relevant caveats, and includes course-level confirmation and wider-use status.",
+      "measure": "Count and percentage of in-scope courses that complete the first side of a Graduate Futures Claim and Action on a Page and confirm that it is fair, useful, evidence-informed and appropriately caveated. To count, it must include the central narrative, supporting evidence, the course's distinctive contribution, relevant caveats, course confirmation and its status for wider use.",
       "measureType": "qualitative benefit realisation and coverage",
       "owner": "Heads of Department, with course-level completion led by course leads and central collation by Daniel Robson",
       "cadence": "At completion of each course review, reported termly and synthesised at the end of each rollout phase",
       "confidence": "developing",
       "baseline": "No in-scope courses have completed and confirmed a Graduate Futures Claim and Action on a Page through the approved framework.",
-      "target": "All focal courses complete and confirm the first side during phase 1. All remaining in-scope courses do so during phase 2, subject to documented and approved exceptions. Every claim counted meets the agreed completion standard and has course-level confirmation.",
+      "target": "Every focal course completes and confirms the first side during the first rollout. Every remaining in-scope course does so during the second rollout, apart from documented and approved exceptions. Every claim counted meets the agreed completion standard.",
       "dataSource": "Completed Graduate Futures Claim and Action on a Page, course confirmation record and central course-review register."
     },
     {
       "id": "2.1.1-M4",
-      "title": "Course reviews produce actionable graduate futures conclusions",
+      "title": "Course reviews reach a clear graduate futures conclusion",
       "supportsBenefits": [
         "2.1.1-B2"
       ],
-      "questionAnswered": "Are course teams using graduate futures evidence to reach a clear and proportionate conclusion that they can act on?",
-      "measure": "Count and percentage of completed Graduate Futures Claim and Action on a Page templates whose second side records one or more of: an existing strength to amplify, a specific enhancement action, a material question requiring further investigation, or a supported conclusion that no additional action is required. Where action or investigation is proposed, the record states what will be done, the supporting rationale, the intended contribution to students' graduate futures and the route through which it should be taken forward.",
+      "questionAnswered": "Are course teams using the evidence to reach a clear conclusion about whether any action is needed?",
+      "measure": "Count and percentage of completed Graduate Futures Claim and Action on a Page templates whose second side records a strength to amplify, an enhancement action, a question requiring further investigation, or a reasoned conclusion that no additional action is required. Any proposed action or investigation records what will be done, why, how it could support students' graduate futures and where it will be taken forward.",
       "measureType": "qualitative benefit realisation and decision quality",
       "owner": "Course leads and Heads of Department, with faculty education leads supporting consistent interpretation and central synthesis led by Daniel Robson",
       "cadence": "At completion of each course review, reported termly and synthesised at the end of each rollout phase",
       "confidence": "developing",
       "baseline": "No course-level actionable conclusions have yet been recorded through the approved framework.",
-      "target": "Every completed review records an actionable or explicitly supported conclusion. Every conclusion identifies its evidence or rationale, and every proposed action describes its intended contribution to students' graduate futures. No numerical target is set for the proportion of courses expected to identify an enhancement.",
+      "target": "Every completed review records a clear conclusion supported by evidence or rationale. Every proposed action explains its intended contribution to students' graduate futures. There is no numerical target for how many courses should identify an enhancement.",
       "dataSource": "Completed second side of the Graduate Futures Claim and Action on a Page and the central course-review register."
     },
     {
       "id": "2.1.1-M5",
-      "title": "Graduate futures actions incorporated into existing quality enhancement monitoring",
+      "title": "Graduate futures actions enter existing quality enhancement monitoring",
       "supportsBenefits": [
         "2.1.1-B2"
       ],
-      "questionAnswered": "Are actions arising from course-level graduate futures reviews being owned and incorporated into the institution's existing approaches to monitoring quality enhancement?",
-      "measure": "Count and percentage of agreed graduate futures actions recorded on the second side of the Graduate Futures Claim and Action on a Page that have a named owner, an appropriate course, department or faculty route, an intended timescale or review point, and incorporation into the relevant existing quality enhancement record or process. Report also the number and percentage of courses with at least one action successfully incorporated. Supported no-action conclusions are excluded from the action-level denominator.",
+      "questionAnswered": "Are agreed graduate futures actions given an owner and added to the appropriate existing quality enhancement process?",
+      "measure": "For every agreed action, record whether it has a named owner, an appropriate course, department or faculty route, a timescale or review date, and a place in the relevant existing quality enhancement process. Report both how many actions have entered monitoring and how many courses have at least one action in monitoring. Courses concluding that no action is required are reported separately.",
       "measureType": "adoption, governance and business-as-usual integration",
       "owner": "Academic Standards and Quality Enhancement Subcommittee of Education Committee for institutional oversight, with course leads, Heads of Department and faculty education leads responsible for local incorporation",
       "cadence": "Aligned with existing quality enhancement monitoring cycles and the Subcommittee's established reporting timetable",
       "confidence": "developing",
       "baseline": "No graduate futures actions have yet been incorporated into existing quality enhancement monitoring through this framework.",
-      "target": "Every agreed graduate futures action has a named owner and review point and is incorporated into the appropriate existing quality enhancement process. Any action that cannot be incorporated has a documented reason and agreed alternative route.",
+      "target": "Every agreed action has a named owner and review date and enters the appropriate existing quality enhancement process. If an action cannot enter that process, record the reason and agree another route.",
       "dataSource": "Graduate Futures Claim and Action on a Page, existing course and department quality enhancement records, relevant monitoring returns, and Subcommittee papers or records."
     },
     {
@@ -86,14 +86,14 @@
       "supportsBenefits": [
         "2.1.1-B2"
       ],
-      "questionAnswered": "Are agreed graduate futures actions being progressed through the existing quality enhancement processes into which they have been incorporated?",
-      "measure": "For actions reaching their agreed review point, report the number and percentage that are underway and on track, completed, revised, appropriately closed with a rationale, overdue or requiring escalation, or missing an updated status. Report also the number and percentage of courses with at least one action underway or completed, recurring action themes, and actions requiring institutional support.",
+      "questionAnswered": "Are agreed graduate futures actions being progressed and kept up to date through existing quality enhancement processes?",
+      "measure": "For each action that has reached its review date, record whether it is underway and on track, completed, revised, closed with a reason, overdue or needing escalation, or missing an update. Also report how many courses have at least one action underway or completed, the recurring themes and any actions that need institutional support.",
       "measureType": "action, implementation and business-as-usual monitoring",
       "owner": "Academic Standards and Quality Enhancement Subcommittee of Education Committee for institutional oversight, with named action owners and relevant course, department or faculty leads responsible for delivery and status updates",
-      "cadence": "Aligned with existing quality enhancement review points and the Subcommittee's established reporting timetable",
+      "cadence": "At existing quality enhancement review points, following the Subcommittee's normal reporting timetable",
       "confidence": "developing",
       "baseline": "No graduate futures actions have yet reached a formal monitoring point through this framework.",
-      "target": "Every action reaching its agreed review point has an updated status. Completed actions include proportionate evidence of completion; revised or closed actions include a documented rationale; overdue actions have an agreed recovery, support or escalation route; and recurring or systemic issues are visible to the appropriate faculty or institutional body.",
+      "target": "Every action due for review has a current status. Completed actions have proportionate evidence; revised or closed actions have a recorded reason; overdue actions have a recovery, support or escalation route; and recurring issues are visible to the appropriate faculty or institutional body.",
       "dataSource": "Existing course, department and faculty quality enhancement action records, scheduled monitoring returns, and relevant Subcommittee papers or records."
     }
   ]
