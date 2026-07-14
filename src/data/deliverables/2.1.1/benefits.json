@@ -21,11 +21,11 @@
         },
         {
           "stepId": "2.1.1-step-5",
-          "note": "The first rollout phase produces course-owned claims and actions."
+          "note": "The first rollout produces course-owned claims and actions."
         },
         {
           "stepId": "2.1.1-step-7",
-          "note": "The second rollout phase completes coverage across the remaining in-scope courses."
+          "note": "The second rollout completes coverage across the remaining in-scope courses."
         }
       ]
     },
@@ -36,7 +36,7 @@
       "beneficiary": "Course teams, departments, faculties and students",
       "benefitType": "course and faculty enhancement action",
       "owner": "Vice Deans Education or delegates",
-      "realisationPeriod": "2026/27 to 2027/28 onwards",
+      "realisationPeriod": "From 2026/27, with full rollout by 2027/28",
       "successLooksLike": "Where a review identifies an opportunity or need, the course records a proportionate action, names an owner and incorporates it into the appropriate existing quality enhancement route. Supported conclusions that no additional action is required are also valid.",
       "enabledBy": [
         {
@@ -45,15 +45,15 @@
         },
         {
           "stepId": "2.1.1-step-5",
-          "note": "The first rollout phase records course-owned conclusions and actions."
+          "note": "The first rollout records course-owned conclusions and actions."
         },
         {
           "stepId": "2.1.1-step-6",
-          "outputTitle": "Quality assurance and continual improvement handoff"
+          "outputTitle": "Quality enhancement monitoring handoff"
         },
         {
           "stepId": "2.1.1-step-7",
-          "note": "The second rollout phase extends the model across the remaining in-scope courses."
+          "note": "The second rollout extends the model across the remaining in-scope courses."
         }
       ]
     }
