@@ -4,12 +4,12 @@
       "id": "2.1.1-step-1",
       "title": "Create and test the first graduate futures evidence pack",
       "period": "jul-dec-2026:ab",
-      "summary": "This step creates the first working version of the evidence pack that programme teams will use to understand their students' graduate futures. It starts with the evidence itself: what we can include, what needs careful interpretation, and where the data has limits. It then tests whether the pack helps colleagues see a fair and useful picture of what their programme enables for students.",
+      "summary": "This step creates the first working version of the evidence pack that course teams will use to understand their students' graduate futures. It starts with the evidence itself: what we can include, what needs careful interpretation, and where the data has limits. It then tests whether the pack helps colleagues see a fair and useful picture of what their course enables for students.",
       "stepType": "evidence-pack-prototype",
       "dependsOn": [],
       "outputs": [
         {"title": "Data specification", "summary": "A clear specification of the sources, fields, owners, caveats, update cycles, suppression rules, segmentation and responsible-use principles for the first pack."},
-        {"title": "Interpretation approach", "summary": "An agreed approach to interpreting destinations, outcomes, comparator evidence, student aspiration data and programme context."},
+        {"title": "Interpretation approach", "summary": "An agreed approach to interpreting destinations, outcomes, comparator evidence, student aspiration data and course context."},
         {"title": "First working graduate futures evidence pack", "summary": "A first visual and narrative pack, including core data visualisations and explanatory material for testing with colleagues."},
         {"title": "Early user feedback", "summary": "Feedback from selected academic and professional services users on whether the pack is understandable, credible, fair and useful."},
         {"title": "Improvement list for the next version", "summary": "A short, prioritised list of changes needed before the pack is shared more widely."}
@@ -19,19 +19,19 @@
           {"role": "Careers and Employability Service", "contribution": "Provide employability data expertise, destination interpretation and responsible-use guidance."},
           {"role": "Planning, analytics and data colleagues", "contribution": "Support data access, specification, caveats and data quality checks."},
           {"role": "Power BI or equivalent visualisation support", "contribution": "Help turn the specification into a usable first visual pack."},
-          {"role": "Academic reviewers", "contribution": "Test whether the first pack is clear, fair and useful from a programme perspective."},
+          {"role": "Academic reviewers", "contribution": "Test whether the first pack is clear, fair and useful from a course perspective."},
           {"role": "Mark Peace, Daniel Robson and Careers colleagues", "contribution": "Shape the evidence pack, interpretation approach and testing questions."}
         ],
         "cashCosts": [{"item": "Summer student placement", "amount": 3000, "currency": "GBP", "period": "jul-dec-2026", "rationale": "Approximate cost including on-costs for a student placement to support data preparation, visualisation development and early testing across Steps 1 and 2."}],
         "newInvestment": [{"item": "Summer student placement", "category": "student placement", "rationale": "Modest dedicated capacity to support data preparation, dashboard or pack development, visualisation quality and user testing.", "periodNeeded": "Summer 2026", "estimatedCost": "Approximately £3,000 including on-costs", "fundingRoute": "TBC"}],
         "enablingConditions": [
-          {"condition": "Access to the relevant graduate outcomes, destinations, aspiration, comparator and programme context data.", "riskIfMissing": "The first pack cannot provide a credible programme-level view."},
+          {"condition": "Access to the relevant graduate outcomes, destinations, aspiration, comparator and course context data.", "riskIfMissing": "The first pack cannot provide a credible course-level view."},
           {"condition": "Agreement on responsible use, caveats and small-number handling.", "riskIfMissing": "The pack could look more definitive than the evidence allows."}
         ]
       },
       "decisions": [
         {"title": "Confirm evidence for the first version", "summary": "Agree what evidence is robust enough to include and what should be held back because it is incomplete, misleading or too difficult to interpret responsibly."},
-        {"title": "Confirm early testers", "summary": "Agree which programme, department, faculty and professional services colleagues should test the first version."},
+        {"title": "Confirm early testers", "summary": "Agree which course, department, faculty and professional services colleagues should test the first version."},
         {"title": "Confirm caveats and interpretation guidance", "summary": "Agree what explanation must sit alongside the data so colleagues can interpret it responsibly."},
         {"title": "Confirm September 2026 scope", "summary": "Agree what the pack needs to do by September 2026 and what can wait for later versions."},
         {"title": "Confirm summer placement funding", "summary": "Agree the approximately £3,000 student placement investment that supports data and visualisation work across Steps 1 and 2."}
@@ -40,22 +40,22 @@
         {"title": "The first pack looks too definitive", "mitigation": "Use visible caveats, clear development status and testing language."},
         {"title": "Comparator evidence encourages league-table thinking", "mitigation": "Frame comparators as context for reflection, not ranking."},
         {"title": "Uncertainty is hidden", "mitigation": "Make data gaps, small numbers, suppression and volatility visible."},
-        {"title": "Testing misses the academic user perspective", "mitigation": "Include colleagues who will actually need to use the pack in programme conversations."}
+        {"title": "Testing misses the academic user perspective", "mitigation": "Include colleagues who will actually need to use the pack in course reviews."}
       ]
     },
     {
       "id": "2.1.1-step-2",
-      "title": "Share the first programme packs and learn from use",
+      "title": "Share the first course packs and learn from use",
       "period": "jul-dec-2026:bc",
-      "summary": "This step shares the first programme-facing packs with colleagues and learns from how they use them. The aim is to see whether the packs help programme teams recognise strengths, ask better questions, and describe their students' graduate futures with more confidence. It should also show where the evidence, language or guidance needs to be improved.",
-      "stepType": "programme-pack-sharing-and-learning",
+      "summary": "This step shares the first course-level packs with selected colleagues and learns from how they use them. The aim is to check whether the packs help course teams recognise strengths, ask useful questions and describe their students' graduate futures with confidence, and to identify improvements to the evidence, language and guidance.",
+      "stepType": "course-pack-sharing-and-learning",
       "dependsOn": ["2.1.1-step-1"],
       "outputs": [
-        {"title": "Second version of the programme evidence packs", "summary": "Programme-facing packs improved from the first round of testing."},
+        {"title": "Second version of the course evidence packs", "summary": "Course-facing packs improved from the first round of testing."},
         {"title": "Short user guide", "summary": "A concise guide to help colleagues read and use the packs responsibly."},
         {"title": "Faculty conversations", "summary": "Faculty-level discussions about what the evidence is showing, where it is useful and where it needs care."},
         {"title": "Early institutional summary", "summary": "A short summary for Education Committee or the agreed senior education forum, drawing out early themes and questions."},
-        {"title": "Learning from use", "summary": "A record of what colleagues find useful, confusing, sensitive or missing, to inform the next version of the packs and the guided programme conversations."}
+        {"title": "Learning from use", "summary": "A record of what colleagues find useful, confusing, sensitive or missing, to inform the next version of the packs and the self-run course sense-making workshops."}
       ],
       "resources": {
         "existingCapacity": [
@@ -64,11 +64,11 @@
           {"role": "Faculty colleagues", "contribution": "Host and shape local conversations about the packs."},
           {"role": "Mark Peace and Daniel Robson", "contribution": "Bring together learning from use and prepare the early institutional summary."}
         ],
-        "newInvestment": [{"item": "Shared use of the Step 1 summer student placement", "category": "student placement", "rationale": "The same placement cost covers support for the first evidence pack, the second programme pack version, data preparation, visualisation development and early testing.", "periodNeeded": "Summer 2026", "additionalCost": "No additional cost beyond the approximately £3,000 identified in Step 1."}],
+        "newInvestment": [{"item": "Shared use of the Step 1 summer student placement", "category": "student placement", "rationale": "The same placement cost covers support for the first evidence pack, the second course pack version, data preparation, visualisation development and early testing.", "periodNeeded": "Summer 2026", "additionalCost": "No additional cost beyond the approximately £3,000 identified in Step 1."}],
         "nonCashNeeds": [{"need": "Light editorial support", "rationale": "Needed to keep the packs and user guide clear, concise and accessible rather than turning them into technical manuals."}]
       },
       "decisions": [
-        {"title": "Confirm sharing route", "summary": "Agree how the first programme packs should be shared and with whom."},
+        {"title": "Confirm sharing route", "summary": "Agree how the first course packs should be shared and with whom."},
         {"title": "Confirm faculty and institutional conversations", "summary": "Agree which faculty or institutional conversations need to happen before wider use."},
         {"title": "Confirm senior forum", "summary": "Agree whether Education Committee or another senior education forum should receive the early institutional summary."},
         {"title": "Confirm interpretation level", "summary": "Agree how much interpretation should be included in the packs themselves."},
@@ -82,141 +82,141 @@
     },
     {
       "id": "2.1.1-step-3",
-      "title": "Design the guided programme conversation",
+      "title": "Design the self-run course sense-making workshop",
       "period": "jul-dec-2026:bc",
-      "summary": "This step designs the conversation that helps colleagues make sense of the evidence together. The conversation should help programme teams move from what they already know about their programme, to what the evidence adds, to what they may want to strengthen next. It should support academic judgement, not replace it.",
+      "summary": "This step designs the self-run sense-making workshop that accompanies each course pack. It provides clear prompts, guidance and a two-sided Graduate Futures Claim and Action on a Page so course teams can interpret the evidence, agree a graduate futures narrative and record any proportionate action or supported conclusion.",
       "stepType": "guided-conversation-design",
       "dependsOn": ["2.1.1-step-1"],
       "outputs": [
-        {"title": "Guided programme conversation structure", "summary": "A clear structure for moving from evidence, to interpretation, to programme story, to possible action."},
-        {"title": "Discussion prompts", "summary": "A small set of prompts to help programme teams explore patterns, strengths, questions and uncertainties in the evidence."},
-        {"title": "Facilitation notes", "summary": "Notes for faculty, department or programme colleagues who may lead the conversation locally."},
+        {"title": "Self-run sense-making workshop plan", "summary": "A practical workshop plan that course teams can run themselves, with a clear sequence from evidence to claim, questions and action."},
+        {"title": "Sense-making prompts", "summary": "A small set of prompts to help course teams explore patterns, strengths, questions and uncertainties in the evidence."},
+        {"title": "Workshop guidance", "summary": "Plain-language guidance for the person convening the workshop, including timing, tone, participation and handling uncertainty."},
         {"title": "Graduate Futures Claim and Action on a Page template", "summary": "A two-sided course-level template that captures an evidence-informed graduate futures claim, supporting evidence, caveats, strengths to amplify, and any action, question or supported no-action conclusion arising from the review."},
         {"title": "Responsible-use guidance", "summary": "Guidance on uncertainty, small numbers, sensitive comparisons and differences between disciplinary contexts."}
       ],
       "resources": {
         "existingCapacity": [
-          {"role": "King's Academy", "contribution": "Provide input on academic development, facilitation, proportionate programme enhancement and the tone of the guided conversation."},
+          {"role": "King's Academy", "contribution": "Provide input on academic development, facilitation, proportionate course enhancement and the tone of the self-run sense-making workshop."},
           {"role": "Careers and Employability Service", "contribution": "Support interpretation of graduate futures evidence and responsible-use principles."},
-          {"role": "Faculty education leads or delegates", "contribution": "Test whether the conversation structure is credible and realistic in local programme contexts."},
+          {"role": "Faculty education leads or delegates", "contribution": "Test whether the conversation structure is credible and realistic in local course contexts."},
           {"role": "Academic colleagues", "contribution": "Provide feedback on whether the materials support good judgement without creating a heavy process."}
         ]
       },
       "decisions": [
-        {"title": "Confirm purpose of the conversation", "summary": "Agree what a useful programme conversation should produce."},
+        {"title": "Confirm purpose of the conversation", "summary": "Agree what a useful course review should produce."},
         {"title": "Confirm facilitation route", "summary": "Agree who is best placed to facilitate conversations locally."},
         {"title": "Confirm level of structure", "summary": "Agree how much structure is helpful without making the conversation feel scripted."},
-        {"title": "Confirm capture method", "summary": "Agree how programme reflections, actions and story material should be captured without creating unnecessary burden."},
-        {"title": "Confirm follow-up expectation", "summary": "Agree what should happen after a programme has had the conversation."}
+        {"title": "Confirm capture method", "summary": "Agree how course reflections, actions and claim material should be captured without creating unnecessary burden."},
+        {"title": "Confirm follow-up expectation", "summary": "Agree what should happen after a course has had the conversation."}
       ],
       "risks": [
-        {"title": "The conversation feels diagnostic or corrective", "mitigation": "Design prompts around programme story, evidence, questions and action, not deficit identification."},
+        {"title": "The conversation feels diagnostic or corrective", "mitigation": "Design prompts around course graduate futures claim, evidence, questions and action, not deficit identification."},
         {"title": "The materials become too heavy", "mitigation": "Use a light core structure, with optional deeper prompts where needed."},
-        {"title": "The model does not fit different disciplines", "mitigation": "Test with colleagues from varied programme contexts and leave space for local interpretation."}
+        {"title": "The model does not fit different disciplines", "mitigation": "Test with colleagues from varied course contexts and leave space for local interpretation."}
       ]
     },
     {
       "id": "2.1.1-step-4",
-      "title": "Pilot and iterate the evidence pack and guided conversation",
+      "title": "Pilot and refine the pack and self-run workshop",
       "period": "jan-jun-2027:ab",
-      "summary": "This step works with early programme partners to try the evidence pack and guided conversation in real programme settings, then uses what is learned to improve the pack, prompts, guidance and programme profile materials while the learning is still live.",
+      "summary": "This step tests the pack, self-run workshop and Graduate Futures Claim and Action on a Page with early course partners. Their feedback is used to improve the evidence, wording, guidance and templates before the first wider rollout.",
       "stepType": "pilot-and-iterate",
       "dependsOn": ["2.1.1-step-2", "2.1.1-step-3"],
       "outputs": [
-        {"title": "Early programme conversations", "summary": "A small number of real programme conversations using the evidence pack and guided conversation structure."},
+        {"title": "Early course pilots", "summary": "A small number of real course pilots using the evidence pack, self-run workshop and two-sided template."},
         {"title": "Feedback from academic colleagues", "summary": "Feedback on the pack, prompts, facilitation approach and overall usefulness of the process."},
-        {"title": "Examples of programme insight and story", "summary": "Examples of the kinds of insights, questions, possible actions and graduate futures stories the approach can generate."},
+        {"title": "Examples of course insight and graduate futures claims", "summary": "Examples of the kinds of insights, questions, possible actions and graduate futures stories the approach can generate."},
         {"title": "Learning record", "summary": "A record of where the evidence was useful, where it was unclear and where further explanation or support was needed."},
-        {"title": "Improved graduate futures evidence pack", "summary": "A revised pack that better supports programme story, responsible interpretation and practical reflection."},
+        {"title": "Improved graduate futures evidence pack", "summary": "A revised pack that better supports course graduate futures claim, responsible interpretation and practical reflection."},
         {"title": "Updated interpretation guidance", "summary": "Clearer guidance on responsible use, caveats and points that need better explanation."},
-        {"title": "Refined guided conversation structure", "summary": "Revised prompts and facilitation notes based on early programme use."},
+        {"title": "Refined self-run sense-making workshop plan", "summary": "Revised prompts and facilitation notes based on early course use."},
         {"title": "Refined Graduate Futures Claim and Action on a Page template", "summary": "A tested two-sided template for capturing course-owned graduate futures claims and proportionate actions or conclusions, refined through early course use."},
-        {"title": "Plan for the next programme groups", "summary": "A clear plan for the next group of programmes to work with, including the rationale for why those groups should come next."}
+        {"title": "Plan for the first rollout", "summary": "A clear plan for the focal courses in the first rollout, including the rationale for their selection and the support available."}
       ],
       "resources": {
         "existingCapacity": [
-          {"role": "Early programme partners", "contribution": "Use the pack and conversation model in real programme settings and help shape the approach."},
+          {"role": "Early course partners", "contribution": "Use the pack and workshop model in real course settings and help shape the approach."},
           {"role": "Faculty colleagues", "contribution": "Support or host early conversations and help interpret what is learned locally."},
           {"role": "Careers and Employability Service", "contribution": "Support interpretation, responsible-use guidance and refinement of the pack."},
           {"role": "Data and visualisation colleagues", "contribution": "Make changes to the pack in response to early use."},
-          {"role": "King's Academy", "contribution": "Review whether the conversation model feels developmental, proportionate and academically credible, and support refinements where needed."},
-          {"role": "Faculty colleagues and early programme partners", "contribution": "Confirm whether the revised approach is workable, proportionate and credible."}
+          {"role": "King's Academy", "contribution": "Review whether the workshop model feels developmental, proportionate and academically credible, and support refinements where needed."},
+          {"role": "Faculty colleagues and early course partners", "contribution": "Confirm whether the revised approach is workable, proportionate and credible."}
         ],
         "nonCashNeeds": [
           {"need": "Debrief and learning time after each early conversation", "rationale": "The value of this step is in learning carefully from early use, not simply in completing the conversations."},
-          {"need": "Coordination capacity", "rationale": "Needed to keep the pilot-and-iterate loop moving and avoid the work becoming too heavy for faculties or programme teams."}
+          {"need": "Coordination capacity", "rationale": "Needed to keep the pilot-and-iterate loop moving and avoid the work becoming too heavy for faculties or course teams."}
         ]
       },
       "decisions": [
-        {"title": "Confirm early programme partners", "summary": "Agree which programmes should act as early partners."},
+        {"title": "Confirm early course partners", "summary": "Agree which courses should act as early partners."},
         {"title": "Confirm invitation and briefing approach", "summary": "Agree how early partners should be invited and briefed so the work feels collegiate and constructive."},
-        {"title": "Confirm learning mix", "summary": "Agree what mix of programme types, disciplines and student profiles would give the most useful learning."},
+        {"title": "Confirm learning mix", "summary": "Agree what mix of course types, disciplines and student profiles would give the most useful learning."},
         {"title": "Confirm essential changes", "summary": "Agree which changes are essential before wider use and which can wait."},
         {"title": "Confirm standard and flexible elements", "summary": "Agree which parts of the approach should be consistent across King's and which can flex locally."},
-        {"title": "Confirm next programme groups", "summary": "Agree which programme groups should be invited into the next phase."},
-        {"title": "Confirm rationale language", "summary": "Agree how to explain the rationale for the next programme groups in a fair and constructive way."},
-        {"title": "Confirm how findings are shared", "summary": "Agree how learning can be shared without exposing, labelling or over-interpreting individual programmes."}
+        {"title": "Confirm next groups of courses", "summary": "Agree which groups of courses should be invited into the next phase."},
+        {"title": "Confirm rationale language", "summary": "Agree how to explain the rationale for the next groups of courses in a fair and constructive way."},
+        {"title": "Confirm how findings are shared", "summary": "Agree how learning can be shared without exposing, labelling or over-interpreting individual courses."}
       ],
       "risks": [
         {"title": "Early partners are read as being judged", "mitigation": "Choose and invite partners for learning value, not because they are seen as problems."},
         {"title": "The model is locked too early", "mitigation": "Use early feedback to make real changes rather than simply confirm the original design."},
-        {"title": "Early examples imply a single correct model", "mitigation": "Use examples to show variation, not prescribe one programme story."},
-        {"title": "The approach works only in unusually engaged contexts", "mitigation": "Select early partners that provide useful variation in discipline, student profile and programme context."},
+        {"title": "Early examples imply a single correct model", "mitigation": "Use examples to show variation, not prescribe one course graduate futures claim."},
+        {"title": "The approach works only in unusually engaged contexts", "mitigation": "Select early partners that provide useful variation in discipline, student profile and course context."},
         {"title": "Local flexibility makes the approach incoherent", "mitigation": "Define a light common core with space for local adaptation."},
         {"title": "The next phase feels like targeting", "mitigation": "Explain the rationale as focused support, story development and institutional learning."}
       ]
     },
     {
       "id": "2.1.1-step-5",
-      "title": "Identify programme groups where the evidence could be most useful and run the first guided conversations",
+      "title": "Complete the first rollout with focal courses",
       "period": {"start": "jan-jun-2027:c", "end": "jul-dec-2027:b"},
-      "summary": "This step identifies programme groups where the evidence could be most useful, using a shared and transparent process, then implements the first round of guided conversations with those groups. The purpose is to help colleagues strengthen their graduate futures story and identify practical next steps, without labelling programmes or treating the evidence as a judgement in itself.",
+      "summary": "This step agrees the focal courses for the first rollout, distributes their packs and supports them to complete the self-run sense-making workshop. Each course records its graduate futures claim and any action or supported conclusion on the two-sided template. Selection is transparent and avoids presenting inclusion as a judgement on course quality.",
       "stepType": "shared-prioritisation-engagement",
       "dependsOn": ["2.1.1-step-4"],
       "outputs": [
-        {"title": "Identification approach for first programme groups", "summary": "An agreed approach for selecting programme groups, combining evidence, faculty knowledge, programme context and local judgement."},
-        {"title": "First round of guided programme conversations", "summary": "Supported conversations with agreed programme groups using the improved pack and conversation model."},
-        {"title": "Programme reflections", "summary": "Reflections on graduate futures strengths, questions, opportunities and support needs."},
-        {"title": "Practical local actions", "summary": "A small number of actions that programme teams can take forward locally."},
-        {"title": "Examples of distinctive programme value", "summary": "Evidence-informed examples of effective practice or distinctive graduate futures stories, where programme teams are comfortable for these to be shared."},
+        {"title": "Selection approach for focal courses", "summary": "A transparent approach for agreeing the focal courses in the first rollout without implying that selection is a judgement on course quality."},
+        {"title": "First rollout completed", "summary": "Focal courses receive their packs and complete the self-run sense-making workshop, with additional support where needed."},
+        {"title": "Completed Graduate Futures Claims and Actions on a Page", "summary": "Course-owned records of graduate futures claims, supporting evidence, caveats and any agreed action or supported conclusion."},
+        {"title": "Practical local actions", "summary": "A small number of actions that course teams can take forward locally."},
+        {"title": "Examples of distinctive course value", "summary": "Evidence-informed examples of effective practice or distinctive graduate futures stories, where course teams are comfortable for these to be shared."},
         {"title": "Faculty-level learning", "summary": "Common themes, recurring questions and areas where further support may be needed."}
       ],
       "resources": {
         "existingCapacity": [
-          {"role": "Vice Deans Education or delegates", "contribution": "Lead the shared identification process and agree the programme groups with faculties."},
-          {"role": "Faculty-led facilitators", "contribution": "Host and facilitate programme conversations locally."},
+          {"role": "Vice Deans Education or delegates", "contribution": "Lead the shared identification process and agree the groups of courses with faculties."},
+          {"role": "Faculty-led facilitators", "contribution": "Host and facilitate course reviews locally."},
           {"role": "Careers and Employability Service", "contribution": "Support deeper interpretation where needed."},
-          {"role": "Department and programme leaders", "contribution": "Engage with the evidence, own reflections and identify practical next steps."},
-          {"role": "Data colleagues", "contribution": "Respond to questions raised by programme teams where feasible."}
+          {"role": "Department and course leaders", "contribution": "Engage with the evidence, own reflections and identify practical next steps."},
+          {"role": "Data colleagues", "contribution": "Respond to questions raised by course teams where feasible."}
         ],
         "nonCashNeeds": [{"need": "Coordination across faculties", "rationale": "Needed to keep the work manageable, avoid duplication and bring learning together without creating unnecessary reporting burden."}]
       },
       "decisions": [
-        {"title": "Confirm identification criteria", "summary": "Agree what criteria should inform programme group selection."},
-        {"title": "Confirm who agrees programme groups", "summary": "Agree who needs to be involved so selection combines evidence, faculty knowledge and local judgement."},
+        {"title": "Confirm identification criteria", "summary": "Agree what criteria should inform course group selection."},
+        {"title": "Confirm who agrees groups of courses", "summary": "Agree who needs to be involved so selection combines evidence, faculty knowledge and local judgement."},
         {"title": "Confirm rationale for inclusion", "summary": "Agree how the rationale for inclusion will be explained to colleagues."},
-        {"title": "Confirm support offer", "summary": "Agree what support programme teams can expect before, during and after the conversation."},
-        {"title": "Confirm theme capture", "summary": "Agree how faculty and institutional themes should be captured without reducing programmes to categories."}
+        {"title": "Confirm support offer", "summary": "Agree what support course teams can expect before, during and after the conversation."},
+        {"title": "Confirm theme capture", "summary": "Agree how faculty and institutional themes should be captured without reducing courses to categories."}
       ],
       "risks": [
         {"title": "Selection feels punitive", "mitigation": "Use a transparent shared process and include strengths, distinctive practice and learning value as well as support needs."},
-        {"title": "Programme groups feel labelled", "mitigation": "Frame the work as focused support for programme development and story strengthening."},
-        {"title": "Programme actions become performative paperwork", "mitigation": "Keep actions small, owned and routed through existing programme, department or faculty routes."}
+        {"title": "Course groups feel labelled", "mitigation": "Frame the work as focused support for course development and story strengthening."},
+        {"title": "Course actions become performative paperwork", "mitigation": "Keep actions small, owned and routed through existing course, department or faculty routes."}
       ]
     },
     {
       "id": "2.1.1-step-6",
-      "title": "Transfer management of the data packs and review process into business as usual",
+      "title": "Move the packs and review process into normal ongoing practice",
       "period": {"start": "jan-jun-2027:c", "end": "jul-dec-2027:a"},
-      "summary": "This step moves ongoing management of the graduate futures data packs, interpretation guidance and programme review process into business as usual. It agrees who owns the data packs, how evidence will be refreshed, how colleagues will get support with interpretation, and where the review process sits within existing quality assurance and continual improvement routes.",
+      "summary": "This step moves ongoing production and use of the graduate futures packs into normal institutional practice. It confirms who owns the data and pack production, how often evidence is refreshed, where colleagues get help with interpretation, and how agreed course actions enter existing quality enhancement monitoring.",
       "stepType": "business-as-usual-transfer",
       "dependsOn": ["2.1.1-step-2", "2.1.1-step-4"],
       "outputs": [
         {"title": "Evidence refresh rhythm", "summary": "An agreed rhythm for refreshing the evidence packs, including which data can be updated regularly and which data needs longer cycles."},
-        {"title": "Business-as-usual ownership model", "summary": "Ownership for maintaining the data packs, dashboard, narrative guidance, interpretation materials and review process."},
-        {"title": "Update route", "summary": "A route for updating the packs as data sources, student patterns, programme needs or institutional priorities change."},
-        {"title": "Place in business-as-usual planning and review", "summary": "An agreed place for the data packs and review process in existing programme, department, faculty or institutional planning conversations."},
-        {"title": "Quality assurance and continual improvement handoff", "summary": "A clear route for graduate futures evidence to inform programme reflection and enhancement through existing cycles."},
+        {"title": "Ongoing ownership model", "summary": "Ownership for maintaining the data packs, dashboard, narrative guidance, interpretation materials and review process."},
+        {"title": "Update route", "summary": "A route for updating the packs as data sources, student patterns, course needs or institutional priorities change."},
+        {"title": "Place in normal planning and review", "summary": "An agreed place for the data packs and review process in existing course, department, faculty or institutional planning conversations."},
+        {"title": "Quality enhancement monitoring handoff", "summary": "A clear route for agreed graduate futures actions to enter existing quality enhancement monitoring."},
         {"title": "Ongoing feedback process", "summary": "A simple process for gathering feedback from colleagues who use the packs and review process over time."}
       ],
       "resources": {
@@ -224,11 +224,11 @@
           {"role": "Careers and Employability Service", "contribution": "Own or co-own the ongoing evidence resource, interpretation guidance and refresh route."},
           {"role": "Data and visualisation owner", "contribution": "Maintain the dashboard, data updates and pack access route."},
           {"role": "Faculty education leads or delegates", "contribution": "Agree how the packs and review process will be used locally."},
-          {"role": "Quality assurance and continual improvement routes", "contribution": "Provide the institutional home for continued use of graduate futures evidence in programme reflection and enhancement."}
+          {"role": "Quality assurance and continual improvement routes", "contribution": "Provide the institutional home for continued use of graduate futures evidence in course reflection and enhancement."}
         ],
         "enablingConditions": [
           {"condition": "A clear business-as-usual home for the data packs and review process after the initial project phase.", "riskIfMissing": "The packs risk becoming one-off outputs rather than a sustained part of how King's understands graduate futures."},
-          {"condition": "Agreement on how graduate futures evidence connects to existing quality assurance and continual improvement cycles.", "riskIfMissing": "The evidence may remain available but not meaningfully shape programme enhancement."}
+          {"condition": "Agreement on how graduate futures evidence connects to existing quality assurance and continual improvement cycles.", "riskIfMissing": "The evidence may remain available but not meaningfully shape course enhancement."}
         ]
       },
       "decisions": [
@@ -247,22 +247,22 @@
     },
     {
       "id": "2.1.1-step-7",
-      "title": "Complete graduate futures reviews across the rest of the institution",
+      "title": "Complete the second rollout across remaining courses",
       "period": {"start": "jul-dec-2027:c", "end": "jan-jun-2028:c"},
-      "summary": "This step applies the evidence pack and review model across the remaining agreed programmes, so the rest of the institution has a meaningful way to review and strengthen its graduate futures evidence. Some programmes will have supported conversations, while others will use the self-review route, with institutional synthesis used to identify strengths, recurring questions and further support needs.",
+      "summary": "This step extends the pack and self-run workshop to all remaining in-scope courses. Additional support is available where needed. The resulting claims and actions are then synthesised to identify institutional strengths, recurring questions and support needs.",
       "stepType": "institution-wide-review-and-synthesis",
       "dependsOn": ["2.1.1-step-5"],
       "outputs": [
-        {"title": "Supported reviews for remaining programme groups", "summary": "Supported graduate futures conversations where direct support is needed."},
-        {"title": "Self-review route for remaining programmes", "summary": "A route for programmes able to use the evidence pack, guidance and conversation materials without a supported conversation."},
-        {"title": "Institution-wide review completion", "summary": "Confirmation that the remaining agreed programmes have either completed a supported review or have been enabled to complete a self-review."},
-        {"title": "Institutional graduate futures synthesis", "summary": "A synthesis of themes across programmes, departments and faculties, including strengths, recurring questions and areas where further support may be needed."},
+        {"title": "Supported reviews for remaining courses", "summary": "Supported graduate futures conversations where direct support is needed."},
+        {"title": "Self-run review route for remaining courses", "summary": "A route for courses able to use the evidence pack, guidance and workshop materials without a supported review."},
+        {"title": "Institution-wide review completion", "summary": "Confirmation that the remaining agreed courses have either completed a supported review or have been enabled to complete a self-review."},
+        {"title": "Institutional graduate futures synthesis", "summary": "A synthesis of themes across courses, departments and faculties, including strengths, recurring questions and areas where further support may be needed."},
         {"title": "Recommendations for related King's Edge work", "summary": "Recommendations for curriculum enhancement, skills, opportunity, evidence and student-facing story work."}
       ],
       "resources": {
         "existingCapacity": [
-          {"role": "Faculty facilitators", "contribution": "Support remaining programme conversations where direct support is needed."},
-          {"role": "Programme teams", "contribution": "Use the supported or self-review route to understand, evidence and strengthen their graduate futures story."},
+          {"role": "Faculty facilitators", "contribution": "Support remaining course reviews where direct support is needed."},
+          {"role": "Course teams", "contribution": "Use the supported or self-review route to understand, evidence and strengthen their graduate futures story."},
           {"role": "Careers and Employability Service", "contribution": "Support interpretation and synthesis."},
           {"role": "Data and visualisation colleagues", "contribution": "Maintain the evidence pack and respond to feasible data questions."},
           {"role": "Mark Peace", "contribution": "Lead institutional synthesis and feed-through into related King's Edge work."}
@@ -270,11 +270,11 @@
         "nonCashNeeds": [{"need": "Coverage and synthesis coordination", "rationale": "Needed to track supported review and enabled self-review, bring findings together and avoid turning the final phase into a compliance exercise."}]
       },
       "decisions": [
-        {"title": "Confirm remaining programme population", "summary": "Agree what counts as the remaining programme population for the purpose of this phase."},
-        {"title": "Confirm supported review and self-review routes", "summary": "Agree which programmes need a supported conversation and which can use the self-review route."},
-        {"title": "Confirm enabled self-review threshold", "summary": "Agree the minimum evidence needed to confirm that a programme has been enabled to self-review."},
+        {"title": "Confirm remaining course population", "summary": "Agree what counts as the remaining course population for the purpose of this phase."},
+        {"title": "Confirm supported review and self-review routes", "summary": "Agree which courses need a supported review and which can use the self-review route."},
+        {"title": "Confirm enabled self-review threshold", "summary": "Agree the minimum evidence needed to confirm that a course has been enabled to self-review."},
         {"title": "Confirm synthesis destination", "summary": "Agree where institutional themes and recommendations should go after this deliverable."},
-        {"title": "Confirm consent for visible examples", "summary": "Agree how programme ownership and consent will be handled where examples or stories are shared in student-facing, applicant-facing or recruitment-facing contexts."}
+        {"title": "Confirm consent for visible examples", "summary": "Agree how course ownership and consent will be handled where examples or stories are shared in student-facing, applicant-facing or recruitment-facing contexts."}
       ],
       "risks": [
         {"title": "The final phase becomes a coverage exercise", "mitigation": "Emphasise meaningful engagement with graduate futures evidence, with different routes depending on context, need and capacity."},
