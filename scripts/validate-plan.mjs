@@ -1,4 +1,5 @@
 import fs from 'node:fs';
+import Ajv2020 from 'ajv/dist/2020.js';
 
 function readJson(relativePath) {
   return JSON.parse(fs.readFileSync(new URL(relativePath, import.meta.url), 'utf8'));
@@ -13,6 +14,7 @@ const deliverableManifest = readJson('../src/data/deliverables/manifest.json');
 const outOfProgrammeProjects = readJson('../src/data/enabling-projects.json');
 const stepDependencies = readJson('../src/data/step-dependencies.json');
 const statusData = readJson('../src/data/status.json');
+const measureSchema = readJson('../src/data/measure.schema.json');
 
 const errors = [];
 const warnings = [];
@@ -49,6 +51,9 @@ const ids = new Set();
 const deliverableIds = new Set();
 const stepIds = new Set();
 const projectIds = new Set();
+const measureIds = new Set();
+const ajv = new Ajv2020({ allErrors: true });
+const validateMeasureSchema = ajv.compile(measureSchema);
 
 function periodForMessage(period) {
   return typeof period === 'string' ? period : JSON.stringify(period);
@@ -215,6 +220,63 @@ function validateSuccessMeasures(successMeasures, path) {
   validateArrayIfPresent(successMeasures.kpis, `${path}.successMeasures.kpis`);
 }
 
+function pathFromSchemaError(error) {
+  const instancePath = error.instancePath
+    .split('/')
+    .filter(Boolean)
+    .map((segment) => segment.replace(/~1/g, '/').replace(/~0/g, '~'))
+    .reduce((path, segment) => (/^\d+$/.test(segment) ? `${path}[${segment}]` : `${path}.${segment}`), '');
+
+  if (error.keyword === 'required') return `${instancePath}.${error.params.missingProperty}`;
+  return instancePath || '';
+}
+
+function measureValidationMessage(error) {
+  if (error.keyword === 'required') return `is missing required field: ${error.params.missingProperty}`;
+  if (error.keyword === 'type') return `should be ${error.params.type}`;
+  if (error.keyword === 'minItems') return `should contain at least ${error.params.limit} item`;
+  if (error.keyword === 'uniqueItems') return 'should not contain duplicate entries';
+  return error.message || 'is invalid';
+}
+
+function validateMeasures(measures, deliverable, path) {
+  if (measures === undefined) return;
+  if (!Array.isArray(measures)) {
+    errors.push(`${path}.measures should be an array.`);
+    return;
+  }
+
+  const benefitIds = new Set((deliverable.benefits || []).map((benefit) => benefit?.id).filter(Boolean));
+
+  measures.forEach((measure, measureIndex) => {
+    const measureId = measure?.id;
+    const measureLabel = measureId || `measures[${measureIndex}]`;
+    const measurePath = `${path}.measures[${measureIndex}]`;
+
+    if (measureId) {
+      if (measureIds.has(measureId)) errors.push(`${deliverable.id} ${measureLabel}.id duplicates measure id: ${measureId}`);
+      measureIds.add(measureId);
+      addId(measureId, `${measurePath}.id`);
+    }
+
+    if (!validateMeasureSchema(measure)) {
+      validateMeasureSchema.errors.forEach((error) => {
+        const propertyPath = pathFromSchemaError(error);
+        const fullPath = `${measurePath}${propertyPath}`;
+        errors.push(`${deliverable.id} ${measureLabel} ${fullPath}: ${measureValidationMessage(error)}.`);
+      });
+    }
+
+    if (Array.isArray(measure?.supportsBenefits)) {
+      measure.supportsBenefits.forEach((benefitId, benefitIndex) => {
+        if (typeof benefitId === 'string' && !benefitIds.has(benefitId)) {
+          errors.push(`${deliverable.id} ${measureLabel} ${measurePath}.supportsBenefits[${benefitIndex}]: unknown benefit id: ${benefitId}.`);
+        }
+      });
+    }
+  });
+}
+
 function validateSteps(steps, ownerPath, options = {}) {
   if (steps === undefined) return;
   if (!Array.isArray(steps)) {
@@ -255,7 +317,7 @@ allProjects.forEach((project, projectIndex) => {
     validateArrayIfPresent(deliverable.components, `${deliverablePath}.components`);
     validateArrayIfPresent(deliverable.benefits, `${deliverablePath}.benefits`);
     validateArrayIfPresent(deliverable.outputs, `${deliverablePath}.outputs`);
-    validateArrayIfPresent(deliverable.measures, `${deliverablePath}.measures`);
+    validateMeasures(deliverable.measures, deliverable, deliverablePath);
     validateArrayIfPresent(deliverable.definitionOfDone, `${deliverablePath}.definitionOfDone`);
     validateArrayIfPresent(deliverable.dependencies, `${deliverablePath}.dependencies`);
     validateArrayIfPresent(deliverable.feedsInto, `${deliverablePath}.feedsInto`);
