@@ -1,0 +1,80 @@
+{
+  "components": [
+    {
+      "title": "King's Canvas tool design",
+      "summary": "Design the AI-enriched tool for aspiration, purpose, planning and reflection."
+    },
+    {
+      "title": "Lifecycle integration",
+      "summary": "Embed Canvas from pre-entry and offer-holder engagement through induction, transitions, final year and graduation."
+    },
+    {
+      "title": "Rhythm within and beyond the curriculum",
+      "summary": "Define when students revisit purpose, plans and opportunities across curriculum, advising, Careers and wider student life."
+    },
+    {
+      "title": "Human-supported use model",
+      "summary": "Connect Canvas to advisers, tutors, Careers, KCLSU, subject societies and student-facing staff."
+    }
+  ],
+  "steps": [
+    {
+      "id": "2.2.1-step-1",
+      "title": "Define the purpose conversation and lifecycle model",
+      "period": "now-xmas-2026",
+      "summary": "Set out what Canvas covers and where it sits from pre-entry to graduation.",
+      "dependsOn": []
+    },
+    {
+      "id": "2.2.1-step-2",
+      "title": "Design Canvas tools and prompts",
+      "period": "jan-summer-2027",
+      "summary": "Specify AI functionality, reflection prompts, planning tools, skills links and student outputs.",
+      "dependsOn": [
+        "2.2.1-step-1",
+        "2.1.3"
+      ]
+    },
+    {
+      "id": "2.2.1-step-3",
+      "title": "Pilot across lifecycle moments",
+      "period": "ay-2027-28-to-2028-29",
+      "summary": "Test Canvas in induction, year transition, module choice, Careers engagement or final-year planning.",
+      "dependsOn": [
+        "2.2.1-step-2"
+      ]
+    },
+    {
+      "id": "2.2.1-step-4",
+      "title": "Embed as a recurring rhythm",
+      "period": "ay-2029-30",
+      "summary": "Build Canvas into curriculum, co-curriculum, advising, opportunity navigation, reflection and evidence capture.",
+      "dependsOn": [
+        "2.2.1-step-3",
+        "single-student-app"
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "targetId": "2.1.3",
+      "type": "input",
+      "label": "Needs the skills vocabulary and future skills mapping model."
+    },
+    {
+      "targetId": "single-student-app",
+      "type": "handoff",
+      "label": "Digital implementation should sit in the Single Student App / Digital Portal."
+    }
+  ],
+  "feedsInto": [
+    "2.3.1",
+    "2.4.3",
+    "2.2.4"
+  ],
+  "relatedDeliverables": [
+    "2.1.3",
+    "2.3.1",
+    "2.4.3"
+  ]
+}
