@@ -1,0 +1,44 @@
+{
+  "benefits": [
+    {
+      "id": "2.2.1-B1",
+      "title": "Students have greater agency and ownership over their King’s journey",
+      "statement": "Students are better able to articulate what matters to them, explore uncertainty and make intentional choices about their university experience. They can revisit their direction as they develop and experience their journey as something they actively shape.",
+      "beneficiary": "Students",
+      "benefitType": "student agency and ownership",
+      "successLooksLike": "Students can articulate and revisit their purposes, make intentional choices about their King’s experience and explain how those choices connect to what matters to them."
+    },
+    {
+      "id": "2.2.1-B2",
+      "title": "Students navigate the King’s opportunity ecology more coherently and equitably",
+      "statement": "Students can better understand the breadth of opportunity available, identify what is relevant to their purposes and recognise how different experiences connect. Navigation depends less heavily on prior confidence, networks or familiarity with university culture, reducing avoidable inequality and fear of missing out.",
+      "beneficiary": "Students, particularly those with less prior access to institutional knowledge and networks",
+      "benefitType": "equitable opportunity navigation",
+      "successLooksLike": "Students from different backgrounds can identify and access opportunities relevant to their purposes with less reliance on informal knowledge, personal networks or confidence in navigating the institution."
+    },
+    {
+      "id": "2.2.1-B3",
+      "title": "Students develop stronger connections with community and contribution",
+      "statement": "Students are supported to recognise belonging, relationships, service and contribution as legitimate parts of their purpose. They can build a university experience that feels more connected and relevant while considering how their knowledge and capabilities might contribute to communities and society.",
+      "beneficiary": "Students and the communities in which they participate",
+      "benefitType": "belonging, service and contribution",
+      "successLooksLike": "Students can identify the communities, relationships and forms of contribution that matter to them and connect these to purposeful choices within their King’s experience."
+    },
+    {
+      "id": "2.2.1-B4",
+      "title": "Students build an enduring capacity for self-direction",
+      "statement": "Repeated reflection and purposeful choice strengthen students’ ability to set direction, respond to change and connect knowledge with experience. Students leave King’s better able to continue shaping their lives, learning and contribution beyond the university.",
+      "beneficiary": "Students and graduates",
+      "benefitType": "self-direction and adaptability",
+      "successLooksLike": "Students demonstrate increasing confidence in setting and revising direction, connecting learning with experience and making purposeful choices as their circumstances and ambitions change."
+    },
+    {
+      "id": "2.2.1-B5",
+      "title": "King’s invests in enrichment with greater confidence",
+      "statement": "King’s gains a stronger understanding of students’ expressed ambitions, interests and needs. This supports more relevant recommendations and better-informed decisions about which opportunities to commission, expand, target, adapt or stop, increasing confidence in the reach, relevance and return on investment of enrichment provision.",
+      "beneficiary": "Students, opportunity providers and King’s",
+      "benefitType": "responsive provision and investment confidence",
+      "successLooksLike": "Decisions about enrichment provision draw on visible patterns of student purpose and demand, with clearer evidence for where opportunities should grow, change or stop and who they are intended to serve."
+    }
+  ]
+}
