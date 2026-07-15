@@ -1062,7 +1062,7 @@
             "riskIfMissing": "The broader rollout may retain project dependency rather than operating as normal practice."
           },
           {
-            "condition": "Programmes decide local participation and use local time. The central project does not prescribe or cost programme-level workshop membership.",
+            "condition": "Course teams decide local participation and use local time. The central project does not prescribe or cost course-review participation.",
             "owner": "Locally designated curriculum owner",
             "confidence": "confirmed",
             "riskIfMissing": "The resource plan could imply central ownership of activity that belongs to programmes."

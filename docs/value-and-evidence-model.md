@@ -140,7 +140,7 @@ Avoid measures that incentivise programme ranking, league tables, punitive compa
 
 ## 2.1.1 framing
 
-For Programme Graduate Futures Insight and Action Packs, keep the framing story-first and improvement-second.
+For Course-Level Graduate Futures Insight and Action Packs, keep the framing story-first and improvement-second.
 
 The benefits should emphasise:
 

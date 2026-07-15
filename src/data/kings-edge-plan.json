@@ -40,78 +40,7 @@
       "transformationClaim": "Every student studies on a programme that can explicitly understand, evidence and articulate its contribution to their graduate futures, gives them meaningful access to experiential learning throughout their course, and immerses them in an externally meaningful language of skills they can recognise, develop and use.",
       "deliverables": [
         {
-          "id": "2.1.1",
-          "title": "Programme Graduate Premium Deep Dives",
-          "lead": "Daniel Robson",
-          "planningStatus": "pre-draft",
-          "summary": "Programme or department-level deep dives combining data and narrative work to articulate the distinctive value graduates take out into the world.",
-          "problemSolved": "The value of a programme is often implicit, under-evidenced or not described in language that connects with students, applicants, employers or the discipline itself.",
-          "whatChanges": "Programmes develop evidenced and meaningful accounts of what students develop, where graduates go, and how students can recognise and articulate that value.",
-          "components": [
-            {
-              "title": "Data deep dives",
-              "summary": "Use outcomes, destinations, further study, highly skilled employment, salary where useful, progression patterns, demographics and opportunity participation."
-            },
-            {
-              "title": "Narrative articulation",
-              "summary": "Work with programme teams, students, alumni and potentially employers to describe the value graduates take into the world."
-            },
-            {
-              "title": "Programme profiles",
-              "summary": "Create curriculum-facing accounts of skills, disciplinary identity, experiences, capabilities and future-facing value."
-            },
-            {
-              "title": "Link to evidence packs",
-              "summary": "Feed programme-level articulation into evidence packs and market-facing narratives."
-            }
-          ],
-          "steps": [
-            {
-              "id": "2.1.1-step-1",
-              "title": "Define the deep dive model",
-              "period": "now-xmas-2026",
-              "summary": "Agree what a programme-level deep dive should include and how data and narrative work are combined.",
-              "dependsOn": []
-            },
-            {
-              "id": "2.1.1-step-2",
-              "title": "Select early departments",
-              "period": "now-xmas-2026",
-              "summary": "Identify test areas with useful data, appetite and a clear link to evidence pack development.",
-              "dependsOn": []
-            },
-            {
-              "id": "2.1.1-step-3",
-              "title": "Run data and narrative deep dives",
-              "period": "jan-summer-2027",
-              "summary": "Work with selected programmes to combine evidence with a structured conversation about value.",
-              "dependsOn": [
-                "2.1.1-step-1"
-              ]
-            },
-            {
-              "id": "2.1.1-step-4",
-              "title": "Produce scalable templates",
-              "period": "ay-2027-28-to-2028-29",
-              "summary": "Turn early deep dives into a repeatable model for programme review, evidence packs, recruitment and student articulation.",
-              "dependsOn": [
-                "2.1.1-step-3"
-              ]
-            }
-          ],
-          "dependencies": [
-            {
-              "targetId": "2.4.1",
-              "type": "evidence-feed",
-              "label": "Feeds programme-level articulation into graduate premium evidence packs."
-            }
-          ],
-          "feedsInto": [
-            "2.4.1"
-          ],
-          "relatedDeliverables": [
-            "2.4.1"
-          ]
+          "id": "2.1.1"
         },
         {
           "id": "2.1.2",
@@ -454,7 +383,11 @@
         {
           "id": "2.2.2",
           "title": "Experiential Opportunity Operating Model and Partnership Infrastructure",
-          "lead": "Andrew Wright",
+          "lead": "Eleanor Hannan",
+          "ownership": {
+            "accountableOwner": "Eleanor Hannan",
+            "deliveryLead": "Eleanor Hannan"
+          },
           "planningStatus": "pre-draft",
           "summary": "Builds the partnership, operational and learning design support needed to deliver experiential opportunities within and beyond the curriculum.",
           "problemSolved": "Strong ideas for experiential opportunity often fail to scale because partnership, operational and learning design support are unclear or inconsistent.",
@@ -1013,7 +946,7 @@
     {
       "id": "2.4",
       "title": "Articulating and Evidencing The King's Graduate Premium",
-      "owner": "Rachel Kershaw",
+      "owner": "Andrew Wright",
       "summary": "Equips programmes and students to surface, evidence and communicate the future-oriented value students build through their course of study and wider King's experience.",
       "detailSummary": "This project defines and evidences the King's graduate premium as an integrated account of the advantages students build through their programme, wider experiences, relationships, choices and future ambitions. It brings together data, student stories, alumni insight and employer validation to help programmes make more explicit the broad, future-oriented gains already embedded in their provision, while also identifying strategic opportunities to strengthen those gains where this would make the greatest difference. It helps students connect what they study with what they do and where they want to go, and supports King's to project that value with confidence to applicants, families, partners, markets and wider audiences.",
       "transformationClaim": "King's and its students more assertively lay claim to the advantages a King's education confers, using data, evidence and external validation to make those advantages more explicit, strengthen them where it matters most, and help students recognise, communicate and carry them into their futures.",
