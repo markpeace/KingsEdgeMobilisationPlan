@@ -44,10 +44,10 @@ Do not treat `tags`, `planningMaturity`, `visibility`, or `src/data/status.json`
 
 The source-of-truth migration has been applied. `src/data/kings-edge-plan.json` now carries the canonical project order and IDs directly:
 
-1. `2.1` Articulating and Evidencing The King's Graduate Premium
-2. `2.2` Curriculum Embedded Graduate Advantage
-3. `2.3` Co-Curricular Opportunity to Go Further
-4. `2.4` Extra Curricular Provision for Belonging and Participation
+1. `2.1` Curriculum Embedded Graduate Advantage
+2. `2.2` A Co-Curricular Scaffold for Purpose
+3. `2.3` An Extra-Curricular Invitation to Participate
+4. `2.4` Articulating and Evidencing The King's Graduate Premium
 
 `src/plan-utils.js` should not contain hidden project renumbering, title substitution or display-order remapping. If project order, title or numbering is wrong, fix the JSON source of truth.
 
