@@ -25,10 +25,10 @@ The site should render the plan through this hierarchy:
 
 At the top level, users should see four projects:
 
-1. Curriculum-Embedded Graduate Premium
-2. Co-Curricular Opportunity and Purpose
-3. Extra-Curricular Student Life, Navigation and Belonging
-4. Evidence and Articulation of the King's Graduate Premium
+1. Curriculum Embedded Graduate Advantage
+2. A Co-Curricular Scaffold for Purpose
+3. An Extra-Curricular Invitation to Participate
+4. Articulating and Evidencing The King's Graduate Premium
 
 Each project contains four deliverables. Each deliverable contains a summary, owner, components, delivery steps, dependencies and related deliverables.
 
