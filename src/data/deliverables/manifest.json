@@ -13,6 +13,16 @@
         "./2.1.1/model-simplification.json",
         "./2.1.1/governance.json"
       ]
+    },
+    {
+      "id": "2.2.1",
+      "projectId": "2.2",
+      "parts": [
+        "./2.2.1/core.json",
+        "./2.2.1/overview.json",
+        "./2.2.1/benefits.json",
+        "./2.2.1/steps.json"
+      ]
     }
   ]
 }
