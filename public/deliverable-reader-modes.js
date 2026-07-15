@@ -144,23 +144,6 @@ function stepLabelFor(index) {
   return `Step ${String(index + 1).padStart(2, '0')}`;
 }
 
-function buildStepTitleMap(panel) {
-  return [...panel.querySelectorAll('.step-card')].map((card, index) => ({
-    label: stepLabelFor(index),
-    title: card.querySelector('h3')?.textContent?.trim() || ''
-  })).filter((entry) => entry.title);
-}
-
-function compactNeeds(card, titleMap) {
-  const depends = card.querySelector(':scope > .depends');
-  const text = depends?.textContent?.trim() || '';
-  if (!text) return 'None';
-  const matched = titleMap
-    .filter((entry) => text.toLowerCase().includes(entry.title.toLowerCase()))
-    .map((entry) => entry.label);
-  return matched.length ? matched.join(', ') : 'Earlier step(s)';
-}
-
 function outputItems(card) {
   const outputBlock = [...card.querySelectorAll('.step-extras .mini-block')]
     .find((block) => block.querySelector('h4')?.textContent?.trim().toLowerCase() === 'outputs');
@@ -186,12 +169,11 @@ function renderStepHeader(card, index) {
   setHtmlIfChanged(header, `<div class="step-card-header-meta"><span>${escapeHtml(stepLabelFor(index))}</span><strong>${escapeHtml(period || 'Period TBC')}</strong></div>`);
 }
 
-function renderStepStory(card, titleMap, index) {
+function renderStepStory(card, index) {
   renderStepHeader(card, index);
   const summary = card.querySelector(':scope > p:not(.depends)');
   const depends = card.querySelector(':scope > .depends');
   const purpose = summary?.textContent?.trim() || 'Purpose not yet captured.';
-  const needs = compactNeeds(card, titleMap);
   const outputs = outputItems(card);
 
   summary?.classList.add('step-source-hidden');
@@ -219,10 +201,6 @@ function renderStepStory(card, titleMap, index) {
       <span>Produces</span>
       ${outputsHtml}
     </div>
-    <div class="step-story-block step-needs-block">
-      <span>Needs</span>
-      <p>${escapeHtml(needs)}</p>
-    </div>
   `);
 }
 
@@ -236,8 +214,7 @@ function refineDeliveryTimeline() {
     'The main delivery route for this deliverable. Each card shows the step purpose, what it produces and what it needs. Open step detail for decisions, resources, risks, issues and assumptions.'
   );
 
-  const titleMap = buildStepTitleMap(panel);
-  panel.querySelectorAll('.step-card').forEach((card, index) => renderStepStory(card, titleMap, index));
+  panel.querySelectorAll('.step-card').forEach((card, index) => renderStepStory(card, index));
 
   refineStepDetailDisclosure();
 }
