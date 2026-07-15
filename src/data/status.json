@@ -3,7 +3,8 @@
     "status": "not-started",
     "confidence": "needs-validation",
     "decisionNeeded": false,
-    "note": "Initial placeholder status. Planning stage is tracked separately through planningStatus in the core plan data."
+    "asOf": null,
+    "note": "Delivery status has not yet been updated. Planning stage is tracked separately through planningStatus."
   },
   "items": {}
 }
