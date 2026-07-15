@@ -8,39 +8,174 @@
       "stepType": "evidence-pack-prototype",
       "dependsOn": [],
       "outputs": [
-        {"title": "Data specification", "summary": "A clear specification of the sources, fields, owners, caveats, update cycles, suppression rules, segmentation and responsible-use principles for the first pack."},
-        {"title": "Interpretation approach", "summary": "An agreed approach to interpreting destinations, outcomes, comparator evidence, student aspiration data and course context."},
-        {"title": "First working graduate futures evidence pack", "summary": "A first visual and narrative pack, including core data visualisations and explanatory material for testing with colleagues."},
-        {"title": "Early user feedback", "summary": "Feedback from selected academic and professional services users on whether the pack is understandable, credible, fair and useful."},
-        {"title": "Improvement list for the next version", "summary": "A short, prioritised list of changes needed before the pack is shared more widely."}
+        {
+          "title": "Data specification",
+          "summary": "A clear specification of the sources, fields, owners, caveats, update cycles, suppression rules, segmentation and responsible-use principles for the first pack."
+        },
+        {
+          "title": "Interpretation approach",
+          "summary": "An agreed approach to interpreting destinations, outcomes, comparator evidence, student aspiration data and course context."
+        },
+        {
+          "title": "First working graduate futures evidence pack",
+          "summary": "A first visual and narrative pack, including core data visualisations and explanatory material for testing with colleagues."
+        },
+        {
+          "title": "Early user feedback",
+          "summary": "Feedback from selected academic and professional services users on whether the pack is understandable, credible, fair and useful."
+        },
+        {
+          "title": "Improvement list for the next version",
+          "summary": "A short, prioritised list of changes needed before the pack is shared more widely."
+        }
       ],
       "resources": {
         "existingCapacity": [
-          {"role": "Careers and Employability Service", "contribution": "Provide employability data expertise, destination interpretation and responsible-use guidance."},
-          {"role": "Planning, analytics and data colleagues", "contribution": "Support data access, specification, caveats and data quality checks."},
-          {"role": "Power BI or equivalent visualisation support", "contribution": "Help turn the specification into a usable first visual pack."},
-          {"role": "Academic reviewers", "contribution": "Test whether the first pack is clear, fair and useful from a course perspective."},
-          {"role": "Mark Peace, Daniel Robson and Careers colleagues", "contribution": "Shape the evidence pack, interpretation approach and testing questions."}
+          {
+            "role": "Interim delivery coordination",
+            "owner": "Mark Peace, Rachel Kershaw and Daniel Robson",
+            "contribution": "Maintain the minimum plan, decisions, access arrangements, recruitment controls and delivery coordination until project management capacity begins.",
+            "periodNeeded": "July to September 2026",
+            "confidence": "confirmed",
+            "riskIfMissing": "Step 1 could proceed without clear ownership of immediate decisions, access and dependencies."
+          },
+          {
+            "role": "Deliverable Lead",
+            "owner": "Daniel Robson",
+            "fte": 0.1,
+            "contribution": "Direct the evidence-pack prototype, interpretation approach and user-testing standard.",
+            "periodNeeded": "July 2026 to June 2027",
+            "confidence": "confirmed"
+          },
+          {
+            "role": "Careers and Employability Workstream Lead",
+            "owner": "Rachel Kershaw",
+            "fte": 0.05,
+            "contribution": "Lead the Careers contribution, manage the internship placement and coordinate data, pack-production and analytical input.",
+            "periodNeeded": "July 2026 to June 2028",
+            "confidence": "confirmed"
+          },
+          {
+            "role": "Data Manager, Careers and Student Success",
+            "owner": "Careers and Employability Service",
+            "contribution": "Provide operational data expertise and support pack production, refresh, analytical quality and documentation. The named contribution and availability will be confirmed by Rachel Kershaw.",
+            "confidence": "developing",
+            "riskIfMissing": "The prototype may not establish a sustainable or operationally credible production process."
+          },
+          {
+            "role": "Data Services Technical Adviser",
+            "owner": "Anubhav Kakar or delegate",
+            "contribution": "Provide the initial part of up to three working days of advice on Microsoft Fabric setup, access and technical approach.",
+            "confidence": "developing",
+            "riskIfMissing": "The prototype may be built without a supportable technical and handover route."
+          },
+          {
+            "role": "Academic prototype testers",
+            "owner": "Daniel Robson",
+            "contribution": "Three to five academics from varied faculties and course contexts test whether the first pack is understandable, credible, fair and useful.",
+            "confidence": "developing",
+            "riskIfMissing": "Testing will not adequately represent the academic users expected to use the pack."
+          }
         ],
-        "cashCosts": [{"item": "Summer student placement", "amount": 3000, "currency": "GBP", "period": "jul-dec-2026", "rationale": "Approximate cost including on-costs for a student placement to support data preparation, visualisation development and early testing across Steps 1 and 2."}],
-        "newInvestment": [{"item": "Summer student placement", "category": "student placement", "rationale": "Modest dedicated capacity to support data preparation, dashboard or pack development, visualisation quality and user testing.", "periodNeeded": "Summer 2026", "estimatedCost": "Approximately £3,000 including on-costs", "fundingRoute": "TBC"}],
+        "newInvestment": [
+          {
+            "item": "Six-week student internship",
+            "amount": 4000,
+            "currency": "GBP",
+            "fundingRoute": "Confirmed Student Futures Programme residuals",
+            "periodNeeded": "August to early September 2026",
+            "confidence": "confirmed",
+            "rationale": "A capped budget for a full-time, six-week placement of 210 hours, including wages at the applicable London Living Wage, employer on-costs and contingency. The intern will produce and test the first course-level pack and document a reusable production process.",
+            "riskIfMissing": "The first pack and reusable production method would need to be assembled from existing capacity, reducing pace and depth of testing."
+          },
+          {
+            "item": "LLM usage for initial prototype",
+            "amount": 300,
+            "currency": "GBP",
+            "fundingRoute": "Confirmed Student Futures Programme residuals",
+            "periodNeeded": "July to December 2026",
+            "confidence": "confirmed",
+            "rationale": "Support controlled prototyping of advanced qualitative analysis using the UK Standard Skills Classification as the shared skills language.",
+            "riskIfMissing": "The prototype would use a more limited manual analytical approach."
+          }
+        ],
         "enablingConditions": [
-          {"condition": "Access to the relevant graduate outcomes, destinations, aspiration, comparator and course context data.", "riskIfMissing": "The first pack cannot provide a credible course-level view."},
-          {"condition": "Agreement on responsible use, caveats and small-number handling.", "riskIfMissing": "The pack could look more definitive than the evidence allows."}
+          {
+            "condition": "Complete a short internship recruitment process led jointly by Mark Peace and Rachel Kershaw.",
+            "owner": "Mark Peace and Rachel Kershaw",
+            "decisionNeededBy": "Before August 2026",
+            "confidence": "confirmed",
+            "riskIfMissing": "The six-week placement cannot begin in the required summer window."
+          },
+          {
+            "condition": "Provide a Microsoft Fabric project workspace, suitable capacity and appropriate permissions for Rachel Kershaw, the intern and technical contributors.",
+            "owner": "Mark Peace with Data Services",
+            "decisionNeededBy": "Before the intern requires access",
+            "confidence": "developing",
+            "riskIfMissing": "The pack cannot be developed and handed over through the intended institutional platform."
+          },
+          {
+            "condition": "Confirm controlled access to Graduate Outcomes and core employability data, with agreed definitions, caveats, suppression and refresh arrangements.",
+            "owner": "Careers and Employability Service",
+            "decisionNeededBy": "Before prototype production",
+            "confidence": "developing",
+            "riskIfMissing": "The first pack cannot provide a credible course-level view."
+          },
+          {
+            "condition": "Identify the Enrolment Data Owner in the Student Success Directorate and agree course populations, fields, permissions, caveats and refresh arrangements.",
+            "owner": "Mark Peace and Rachel Kershaw",
+            "decisionNeededBy": "Before the intern requires access",
+            "confidence": "developing",
+            "riskIfMissing": "Course-level coverage and segmentation may be incomplete or inconsistent."
+          },
+          {
+            "condition": "Use an approved LLM environment with permitted data, controlled access, human validation and a recorded information-governance and AI-assurance route.",
+            "owner": "Mark Peace during Step 1",
+            "decisionNeededBy": "Before LLM-supported analysis begins",
+            "confidence": "developing",
+            "riskIfMissing": "LLM-assisted analysis could create information-governance, quality or responsible-use risks."
+          }
         ]
       },
       "decisions": [
-        {"title": "Confirm evidence for the first version", "summary": "Agree what evidence is robust enough to include and what should be held back because it is incomplete, misleading or too difficult to interpret responsibly."},
-        {"title": "Confirm early testers", "summary": "Agree which course, department, faculty and professional services colleagues should test the first version."},
-        {"title": "Confirm caveats and interpretation guidance", "summary": "Agree what explanation must sit alongside the data so colleagues can interpret it responsibly."},
-        {"title": "Confirm September 2026 scope", "summary": "Agree what the pack needs to do by September 2026 and what can wait for later versions."},
-        {"title": "Confirm summer placement funding", "summary": "Agree the approximately £3,000 student placement investment that supports data and visualisation work across Steps 1 and 2."}
+        {
+          "title": "Confirm evidence for the first version",
+          "summary": "Agree what evidence is robust enough to include and what should be held back because it is incomplete, misleading or too difficult to interpret responsibly."
+        },
+        {
+          "title": "Confirm early testers",
+          "summary": "Agree which course, department, faculty and professional services colleagues should test the first version."
+        },
+        {
+          "title": "Confirm caveats and interpretation guidance",
+          "summary": "Agree what explanation must sit alongside the data so colleagues can interpret it responsibly."
+        },
+        {
+          "title": "Confirm September 2026 scope",
+          "summary": "Agree what the pack needs to do by September 2026 and what can wait for later versions."
+        },
+        {
+          "title": "Confirm internship recruitment and access arrangements",
+          "summary": "Confirm the placement brief, selection process, supervision, start date, Fabric workspace and data access. Funding of up to £4,000 from Student Futures Programme residuals is already confirmed."
+        }
       ],
       "risks": [
-        {"title": "The first pack looks too definitive", "mitigation": "Use visible caveats, clear development status and testing language."},
-        {"title": "Comparator evidence encourages league-table thinking", "mitigation": "Frame comparators as context for reflection, not ranking."},
-        {"title": "Uncertainty is hidden", "mitigation": "Make data gaps, small numbers, suppression and volatility visible."},
-        {"title": "Testing misses the academic user perspective", "mitigation": "Include colleagues who will actually need to use the pack in course reviews."}
+        {
+          "title": "The first pack looks too definitive",
+          "mitigation": "Use visible caveats, clear development status and testing language."
+        },
+        {
+          "title": "Comparator evidence encourages league-table thinking",
+          "mitigation": "Frame comparators as context for reflection, not ranking."
+        },
+        {
+          "title": "Uncertainty is hidden",
+          "mitigation": "Make data gaps, small numbers, suppression and volatility visible."
+        },
+        {
+          "title": "Testing misses the academic user perspective",
+          "mitigation": "Include colleagues who will actually need to use the pack in course reviews."
+        }
       ]
     },
     {
@@ -49,35 +184,134 @@
       "period": "jul-dec-2026:bc",
       "summary": "This step shares the first course-level packs with selected colleagues and learns from how they use them. The aim is to check whether the packs help course teams recognise strengths, ask useful questions and describe their students' graduate futures with confidence, and to identify improvements to the evidence, language and guidance.",
       "stepType": "course-pack-sharing-and-learning",
-      "dependsOn": ["2.1.1-step-1"],
+      "dependsOn": [
+        "2.1.1-step-1"
+      ],
       "outputs": [
-        {"title": "Second version of the course evidence packs", "summary": "Course-facing packs improved from the first round of testing."},
-        {"title": "Short user guide", "summary": "A concise guide to help colleagues read and use the packs responsibly."},
-        {"title": "Faculty conversations", "summary": "Faculty-level discussions about what the evidence is showing, where it is useful and where it needs care."},
-        {"title": "Early institutional summary", "summary": "A short summary for Education Committee or the agreed senior education forum, drawing out early themes and questions."},
-        {"title": "Learning from use", "summary": "A record of what colleagues find useful, confusing, sensitive or missing, to inform the next version of the packs and the self-run course sense-making workshops."}
+        {
+          "title": "Second version of the course evidence packs",
+          "summary": "Course-facing packs improved from the first round of testing."
+        },
+        {
+          "title": "Short user guide",
+          "summary": "A concise guide to help colleagues read and use the packs responsibly."
+        },
+        {
+          "title": "Faculty conversations",
+          "summary": "Faculty-level discussions about what the evidence is showing, where it is useful and where it needs care."
+        },
+        {
+          "title": "Early institutional summary",
+          "summary": "A short summary for Education Committee or the agreed senior education forum, drawing out early themes and questions."
+        },
+        {
+          "title": "Learning from use",
+          "summary": "A record of what colleagues find useful, confusing, sensitive or missing, to inform the next version of the packs and the self-run course sense-making workshops."
+        }
       ],
       "resources": {
         "existingCapacity": [
-          {"role": "Data and visualisation colleagues", "contribution": "Produce the second version of the packs and respond to issues from early testing."},
-          {"role": "Careers and Employability Service", "contribution": "Support interpretation and responsible-use guidance."},
-          {"role": "Faculty colleagues", "contribution": "Host and shape local conversations about the packs."},
-          {"role": "Mark Peace and Daniel Robson", "contribution": "Bring together learning from use and prepare the early institutional summary."}
+          {
+            "role": "Deliverable Lead",
+            "owner": "Daniel Robson",
+            "fte": 0.1,
+            "contribution": "Own interpretation, conclusions and the early institutional synthesis, and chair the Reference Group.",
+            "periodNeeded": "July 2026 to June 2027",
+            "confidence": "confirmed"
+          },
+          {
+            "role": "Careers and Employability Workstream Lead",
+            "owner": "Rachel Kershaw",
+            "fte": 0.05,
+            "contribution": "Oversee pack production, analytical synthesis and the Careers contribution to early sharing and learning.",
+            "confidence": "confirmed"
+          },
+          {
+            "role": "Data Manager, Careers and Student Success",
+            "owner": "Careers and Employability Service",
+            "contribution": "Produce the next pack version and respond to data, quality and interpretation issues identified through early use.",
+            "confidence": "developing"
+          },
+          {
+            "role": "Borrowed Project Manager",
+            "owner": "Transformation Office",
+            "fte": 0.2,
+            "contribution": "Maintain the plan, risks, decisions and dependencies; coordinate workstreams and approvals; provide Reference Group secretariat; and record conditions and issue resolution.",
+            "periodNeeded": "October 2026 to June 2027",
+            "confidence": "developing",
+            "riskIfMissing": "Daniel, Rachel and Mark would continue carrying coordination activity that should sit with a project manager."
+          },
+          {
+            "role": "Academic prototype testers",
+            "owner": "Daniel Robson",
+            "contribution": "Use early course packs and provide structured feedback on clarity, usefulness, responsible representation and support needs.",
+            "confidence": "developing"
+          },
+          {
+            "role": "Faculty-linked Careers Consultants",
+            "owner": "Careers and Employability Service",
+            "contribution": "Use existing faculty business-partner relationships to support interpretation and route early questions without creating a separate faculty engagement structure.",
+            "confidence": "developing"
+          },
+          {
+            "role": "Institution-wide Reference Group",
+            "owner": "Daniel Robson as chair",
+            "contribution": "One named representative from every faculty, collectively drawing on Vice-Deans Education, Associate Directors of Education and Deputy Vice-Deans for Student Success, validates usefulness, credibility and responsible representation through asynchronous review.",
+            "confidence": "developing"
+          }
         ],
-        "newInvestment": [{"item": "Shared use of the Step 1 summer student placement", "category": "student placement", "rationale": "The same placement cost covers support for the first evidence pack, the second course pack version, data preparation, visualisation development and early testing.", "periodNeeded": "Summer 2026", "additionalCost": "No additional cost beyond the approximately £3,000 identified in Step 1."}],
-        "nonCashNeeds": [{"need": "Light editorial support", "rationale": "Needed to keep the packs and user guide clear, concise and accessible rather than turning them into technical manuals."}]
+        "newInvestment": [],
+        "enablingConditions": [
+          {
+            "condition": "Complete the first asynchronous Reference Group review and record approval conditions, material issues and their resolution.",
+            "owner": "Borrowed Project Manager",
+            "decisionNeededBy": "Before Education Executive approval",
+            "confidence": "developing",
+            "riskIfMissing": "The pack may proceed without credible institution-wide validation."
+          },
+          {
+            "condition": "Separate analytical synthesis from institutional judgement: Careers produces the analytical synthesis, the Project Manager coordinates inputs and evidence, and Daniel Robson owns interpretation and conclusions.",
+            "owner": "Daniel Robson and Rachel Kershaw",
+            "confidence": "confirmed",
+            "riskIfMissing": "Institutional reporting could have unclear authorship or accountability."
+          }
+        ]
       },
       "decisions": [
-        {"title": "Confirm sharing route", "summary": "Agree how the first course packs should be shared and with whom."},
-        {"title": "Confirm faculty and institutional conversations", "summary": "Agree which faculty or institutional conversations need to happen before wider use."},
-        {"title": "Confirm senior forum", "summary": "Agree whether Education Committee or another senior education forum should receive the early institutional summary."},
-        {"title": "Confirm interpretation level", "summary": "Agree how much interpretation should be included in the packs themselves."},
-        {"title": "Confirm handling of sensitive findings", "summary": "Agree how sensitive or surprising findings should be discussed without creating anxiety, defensiveness or premature conclusions."}
+        {
+          "title": "Confirm sharing route",
+          "summary": "Agree how the first course packs should be shared and with whom."
+        },
+        {
+          "title": "Confirm faculty and institutional conversations",
+          "summary": "Agree which faculty or institutional conversations need to happen before wider use."
+        },
+        {
+          "title": "Confirm Reference Group validation outcome",
+          "summary": "Daniel Robson confirms whether the Reference Group's conditions and material issues have been resolved sufficiently for the framework to proceed to Education Executive approval."
+        },
+        {
+          "title": "Confirm interpretation level",
+          "summary": "Agree how much interpretation should be included in the packs themselves."
+        },
+        {
+          "title": "Confirm handling of sensitive findings",
+          "summary": "Agree how sensitive or surprising findings should be discussed without creating anxiety, defensiveness or premature conclusions."
+        }
       ],
       "risks": [
-        {"title": "Sharing feels like performance reporting", "mitigation": "Use developmental framing and make clear that the packs are intended to help colleagues understand and evidence their graduate futures story."},
-        {"title": "The packs are useful only with heavy explanation", "mitigation": "Use a short guide and test whether colleagues can understand the core messages directly."},
-        {"title": "Christmas 2026 becomes overloaded", "mitigation": "Keep the scope focused and separate essential outputs from improvements that can wait."}
+        {
+          "title": "Sharing feels like performance reporting",
+          "mitigation": "Use developmental framing and make clear that the packs are intended to help colleagues understand and evidence their graduate futures story."
+        },
+        {
+          "title": "The packs are useful only with heavy explanation",
+          "mitigation": "Use a short guide and test whether colleagues can understand the core messages directly."
+        },
+        {
+          "title": "Christmas 2026 becomes overloaded",
+          "mitigation": "Keep the scope focused and separate essential outputs from improvements that can wait."
+        }
       ]
     },
     {
@@ -86,33 +320,135 @@
       "period": "jul-dec-2026:bc",
       "summary": "This step designs the self-run sense-making workshop that accompanies each course pack. It provides clear prompts, guidance and a two-sided Graduate Futures Claim and Action on a Page so course teams can interpret the evidence, agree a graduate futures narrative and record any proportionate action or supported conclusion.",
       "stepType": "guided-conversation-design",
-      "dependsOn": ["2.1.1-step-1"],
+      "dependsOn": [
+        "2.1.1-step-1"
+      ],
       "outputs": [
-        {"title": "Self-run sense-making workshop plan", "summary": "A practical workshop plan that course teams can run themselves, with a clear sequence from evidence to claim, questions and action."},
-        {"title": "Sense-making prompts", "summary": "A small set of prompts to help course teams explore patterns, strengths, questions and uncertainties in the evidence."},
-        {"title": "Workshop guidance", "summary": "Plain-language guidance for the person convening the workshop, including timing, tone, participation and handling uncertainty."},
-        {"title": "Graduate Futures Claim and Action on a Page template", "summary": "A two-sided course-level template that captures an evidence-informed graduate futures claim, supporting evidence, caveats, strengths to amplify, and any action, question or supported no-action conclusion arising from the review."},
-        {"title": "Responsible-use guidance", "summary": "Guidance on uncertainty, small numbers, sensitive comparisons and differences between disciplinary contexts."}
+        {
+          "title": "Self-run sense-making workshop plan",
+          "summary": "A practical workshop plan that course teams can run themselves, with a clear sequence from evidence to claim, questions and action."
+        },
+        {
+          "title": "Sense-making prompts",
+          "summary": "A small set of prompts to help course teams explore patterns, strengths, questions and uncertainties in the evidence."
+        },
+        {
+          "title": "Workshop guidance",
+          "summary": "Plain-language guidance for the person convening the workshop, including timing, tone, participation and handling uncertainty."
+        },
+        {
+          "title": "Graduate Futures Claim and Action on a Page template",
+          "summary": "A two-sided course-level template that captures an evidence-informed graduate futures claim, supporting evidence, caveats, strengths to amplify, and any action, question or supported no-action conclusion arising from the review."
+        },
+        {
+          "title": "Responsible-use guidance",
+          "summary": "Guidance on uncertainty, small numbers, sensitive comparisons and differences between disciplinary contexts."
+        }
       ],
       "resources": {
         "existingCapacity": [
-          {"role": "King's Academy", "contribution": "Provide input on academic development, facilitation, proportionate course enhancement and the tone of the self-run sense-making workshop."},
-          {"role": "Careers and Employability Service", "contribution": "Support interpretation of graduate futures evidence and responsible-use principles."},
-          {"role": "Faculty education leads or delegates", "contribution": "Test whether the conversation structure is credible and realistic in local course contexts."},
-          {"role": "Academic colleagues", "contribution": "Provide feedback on whether the materials support good judgement without creating a heavy process."}
+          {
+            "role": "King's Academy Academic Development Lead",
+            "owner": "King's Academy; nomination requested by Daniel Robson",
+            "fte": 0.1,
+            "contribution": "Lead the educational design of the self-run workshop and templates and shape the evaluation approach.",
+            "periodNeeded": "Design through completion of the pilot",
+            "confidence": "developing",
+            "riskIfMissing": "The workshop may not be proportionate, academically credible or suitable for self-run use."
+          },
+          {
+            "role": "Careers Workshop, Pilot and Mobilisation Lead",
+            "owner": "Careers and Employability Service; nomination by Rachel Kershaw",
+            "fte": 0.1,
+            "contribution": "Co-design the discussion pack, connect the workshop to Careers practice and prepare the Careers contribution to piloting and mobilisation.",
+            "periodNeeded": "Design, pilot and first rollout",
+            "confidence": "developing",
+            "riskIfMissing": "The workshop may not connect effectively to the evidence, Careers support or mobilisation route."
+          },
+          {
+            "role": "Data Manager, Careers and Student Success",
+            "owner": "Careers and Employability Service",
+            "contribution": "Ensure the workshop and template reflect the evidence, analytical caveats and feasible pack-production process.",
+            "confidence": "developing"
+          },
+          {
+            "role": "Borrowed Project Manager",
+            "owner": "Transformation Office",
+            "fte": 0.2,
+            "contribution": "Coordinate design inputs, decisions, dependencies, testing and approvals.",
+            "confidence": "developing"
+          },
+          {
+            "role": "Academic prototype testers",
+            "owner": "Daniel Robson",
+            "contribution": "Test whether the workshop and two-sided template are clear, proportionate and realistic in varied course contexts.",
+            "confidence": "developing"
+          },
+          {
+            "role": "Academic Quality and Enhancement Adviser",
+            "owner": "Phil Berry or delegate",
+            "contribution": "Provide the first of three two-hour specialist advisory and assurance touchpoints, focused on the workshop design and Curriculum Education Review route.",
+            "confidence": "developing"
+          },
+          {
+            "role": "Operational CER Contact",
+            "owner": "Director of Academic Quality to nominate",
+            "contribution": "Advise on CER categories, workflow, guidance, reporting and cross-referencing.",
+            "confidence": "developing"
+          }
+        ],
+        "newInvestment": [],
+        "enablingConditions": [
+          {
+            "condition": "Daniel Robson secures a named King's Academy Academic Development Lead and Rachel Kershaw nominates the Careers Workshop, Pilot and Mobilisation Lead.",
+            "owner": "Daniel Robson and Rachel Kershaw",
+            "decisionNeededBy": "Before substantive workshop design",
+            "confidence": "developing",
+            "riskIfMissing": "Design accountability and coordinated specialist input will remain unclear."
+          },
+          {
+            "condition": "Design the Graduate Futures Claim and Action on a Page as the initial course-owned record, with actions, questions and support needs transferable into CER where applicable.",
+            "owner": "King's Academy lead, Careers lead and Operational CER Contact",
+            "confidence": "developing",
+            "riskIfMissing": "The review output may duplicate existing quality processes or fail to create a usable action record."
+          }
         ]
       },
       "decisions": [
-        {"title": "Confirm purpose of the conversation", "summary": "Agree what a useful course review should produce."},
-        {"title": "Confirm facilitation route", "summary": "Agree who is best placed to facilitate conversations locally."},
-        {"title": "Confirm level of structure", "summary": "Agree how much structure is helpful without making the conversation feel scripted."},
-        {"title": "Confirm capture method", "summary": "Agree how course reflections, actions and claim material should be captured without creating unnecessary burden."},
-        {"title": "Confirm follow-up expectation", "summary": "Agree what should happen after a course has had the conversation."}
+        {
+          "title": "Confirm purpose of the conversation",
+          "summary": "Agree what a useful course review should produce."
+        },
+        {
+          "title": "Confirm facilitation route",
+          "summary": "Agree who is best placed to facilitate conversations locally."
+        },
+        {
+          "title": "Confirm level of structure",
+          "summary": "Agree how much structure is helpful without making the conversation feel scripted."
+        },
+        {
+          "title": "Confirm Claim and Action on a Page and CER interface",
+          "summary": "Agree what the two-sided course-owned template records and how resulting actions, questions and support needs transfer into CER or an agreed alternative route."
+        },
+        {
+          "title": "Confirm follow-up expectation",
+          "summary": "Agree what should happen after a course has had the conversation."
+        }
       ],
       "risks": [
-        {"title": "The conversation feels diagnostic or corrective", "mitigation": "Design prompts around course graduate futures claim, evidence, questions and action, not deficit identification."},
-        {"title": "The materials become too heavy", "mitigation": "Use a light core structure, with optional deeper prompts where needed."},
-        {"title": "The model does not fit different disciplines", "mitigation": "Test with colleagues from varied course contexts and leave space for local interpretation."}
+        {
+          "title": "The conversation feels diagnostic or corrective",
+          "mitigation": "Design prompts around course graduate futures claim, evidence, questions and action, not deficit identification."
+        },
+        {
+          "title": "The materials become too heavy",
+          "mitigation": "Use a light core structure, with optional deeper prompts where needed."
+        },
+        {
+          "title": "The model does not fit different disciplines",
+          "mitigation": "Test with colleagues from varied course contexts and leave space for local interpretation."
+        }
       ]
     },
     {
@@ -121,165 +457,661 @@
       "period": "jan-jun-2027:ab",
       "summary": "This step tests the pack, self-run workshop and Graduate Futures Claim and Action on a Page with early course partners. Their feedback is used to improve the evidence, wording, guidance and templates before the first wider rollout.",
       "stepType": "pilot-and-iterate",
-      "dependsOn": ["2.1.1-step-2", "2.1.1-step-3"],
+      "dependsOn": [
+        "2.1.1-step-2",
+        "2.1.1-step-3"
+      ],
       "outputs": [
-        {"title": "Early course pilots", "summary": "A small number of real course pilots using the evidence pack, self-run workshop and two-sided template."},
-        {"title": "Feedback from academic colleagues", "summary": "Feedback on the pack, prompts, facilitation approach and overall usefulness of the process."},
-        {"title": "Examples of course insight and graduate futures claims", "summary": "Examples of the kinds of insights, questions, possible actions and graduate futures stories the approach can generate."},
-        {"title": "Learning record", "summary": "A record of where the evidence was useful, where it was unclear and where further explanation or support was needed."},
-        {"title": "Improved graduate futures evidence pack", "summary": "A revised pack that better supports course graduate futures claim, responsible interpretation and practical reflection."},
-        {"title": "Updated interpretation guidance", "summary": "Clearer guidance on responsible use, caveats and points that need better explanation."},
-        {"title": "Refined self-run sense-making workshop plan", "summary": "Revised prompts and facilitation notes based on early course use."},
-        {"title": "Refined Graduate Futures Claim and Action on a Page template", "summary": "A tested two-sided template for capturing course-owned graduate futures claims and proportionate actions or conclusions, refined through early course use."},
-        {"title": "Plan for the first rollout", "summary": "A clear plan for the focal courses in the first rollout, including the rationale for their selection and the support available."}
+        {
+          "title": "Early course pilots",
+          "summary": "A small number of real course pilots using the evidence pack, self-run workshop and two-sided template."
+        },
+        {
+          "title": "Feedback from academic colleagues",
+          "summary": "Feedback on the pack, prompts, facilitation approach and overall usefulness of the process."
+        },
+        {
+          "title": "Examples of course insight and graduate futures claims",
+          "summary": "Examples of the kinds of insights, questions, possible actions and graduate futures stories the approach can generate."
+        },
+        {
+          "title": "Learning record",
+          "summary": "A record of where the evidence was useful, where it was unclear and where further explanation or support was needed."
+        },
+        {
+          "title": "Improved graduate futures evidence pack",
+          "summary": "A revised pack that better supports course graduate futures claim, responsible interpretation and practical reflection."
+        },
+        {
+          "title": "Updated interpretation guidance",
+          "summary": "Clearer guidance on responsible use, caveats and points that need better explanation."
+        },
+        {
+          "title": "Refined self-run sense-making workshop plan",
+          "summary": "Revised prompts and facilitation notes based on early course use."
+        },
+        {
+          "title": "Refined Graduate Futures Claim and Action on a Page template",
+          "summary": "A tested two-sided template for capturing course-owned graduate futures claims and proportionate actions or conclusions, refined through early course use."
+        },
+        {
+          "title": "Plan for the first rollout",
+          "summary": "A clear plan for the focal courses in the first rollout, including the rationale for their selection and the support available."
+        }
       ],
       "resources": {
         "existingCapacity": [
-          {"role": "Early course partners", "contribution": "Use the pack and workshop model in real course settings and help shape the approach."},
-          {"role": "Faculty colleagues", "contribution": "Support or host early conversations and help interpret what is learned locally."},
-          {"role": "Careers and Employability Service", "contribution": "Support interpretation, responsible-use guidance and refinement of the pack."},
-          {"role": "Data and visualisation colleagues", "contribution": "Make changes to the pack in response to early use."},
-          {"role": "King's Academy", "contribution": "Review whether the workshop model feels developmental, proportionate and academically credible, and support refinements where needed."},
-          {"role": "Faculty colleagues and early course partners", "contribution": "Confirm whether the revised approach is workable, proportionate and credible."}
+          {
+            "role": "Deliverable Lead",
+            "owner": "Daniel Robson",
+            "fte": 0.1,
+            "contribution": "Own the pilot standard, interpretation of findings and decision on changes required before wider use.",
+            "confidence": "confirmed"
+          },
+          {
+            "role": "Careers and Employability Workstream Lead",
+            "owner": "Rachel Kershaw",
+            "fte": 0.05,
+            "contribution": "Oversee Careers participation, pack refinement and operational learning.",
+            "confidence": "confirmed"
+          },
+          {
+            "role": "Borrowed Project Manager",
+            "owner": "Transformation Office",
+            "fte": 0.2,
+            "contribution": "Coordinate three to five pilots, feedback, debriefs, evidence, decisions and issue resolution.",
+            "confidence": "developing"
+          },
+          {
+            "role": "King's Academy Academic Development Lead",
+            "owner": "King's Academy",
+            "fte": 0.1,
+            "contribution": "Support or observe selected pilots, shape evaluation and lead workshop refinements.",
+            "confidence": "developing"
+          },
+          {
+            "role": "Careers Workshop, Pilot and Mobilisation Lead",
+            "owner": "Careers and Employability Service",
+            "fte": 0.1,
+            "contribution": "Coordinate Careers support, observe selected pilots and refine the workshop and support offer.",
+            "confidence": "developing"
+          },
+          {
+            "role": "Data Manager, Careers and Student Success",
+            "owner": "Careers and Employability Service",
+            "contribution": "Revise the pack and production process in response to pilot learning.",
+            "confidence": "developing"
+          },
+          {
+            "role": "Faculty-linked Careers Consultants",
+            "owner": "Careers and Employability Service",
+            "contribution": "Provide a named linked consultant and up to half a day of support for each pilot departmental setting.",
+            "confidence": "developing",
+            "riskIfMissing": "Pilot teams may not receive enough help to interpret unfamiliar or sensitive evidence."
+          },
+          {
+            "role": "Data Services Technical Adviser",
+            "owner": "Anubhav Kakar or delegate",
+            "contribution": "Provide the mid-build part of up to three working days of technical review and assurance.",
+            "confidence": "developing"
+          },
+          {
+            "role": "Academic Quality and Enhancement Adviser",
+            "owner": "Phil Berry or delegate",
+            "contribution": "Provide the second two-hour advisory and assurance touchpoint after the pilot.",
+            "confidence": "developing"
+          }
         ],
-        "nonCashNeeds": [
-          {"need": "Debrief and learning time after each early conversation", "rationale": "The value of this step is in learning carefully from early use, not simply in completing the conversations."},
-          {"need": "Coordination capacity", "rationale": "Needed to keep the pilot-and-iterate loop moving and avoid the work becoming too heavy for faculties or course teams."}
+        "newInvestment": [
+          {
+            "item": "LLM usage for pilot and refinement",
+            "amount": 300,
+            "currency": "GBP",
+            "fundingRoute": "Confirmed Student Futures Programme residuals",
+            "periodNeeded": "January to June 2027",
+            "confidence": "confirmed",
+            "rationale": "Refine the controlled qualitative analysis method and test its usefulness in real course contexts.",
+            "riskIfMissing": "Pilot refinement would rely on more limited manual analysis."
+          }
+        ],
+        "enablingConditions": [
+          {
+            "condition": "Secure three to five pilot courses from varied contexts. Course teams decide their own local participants and arrange local time.",
+            "owner": "Daniel Robson with faculty education leadership",
+            "decisionNeededBy": "Before pilot scheduling",
+            "confidence": "developing",
+            "riskIfMissing": "The pilot will not provide enough evidence about usability across different course contexts."
+          },
+          {
+            "condition": "Use human validation for every LLM-assisted interpretation and retain a clear record of source evidence, caveats and changes.",
+            "owner": "Rachel Kershaw and Daniel Robson",
+            "confidence": "developing",
+            "riskIfMissing": "Automated interpretation could be accepted without sufficient subject or contextual judgement."
+          },
+          {
+            "condition": "Complete the second Reference Group review after material pilot changes, or record why no further review is required.",
+            "owner": "Daniel Robson and Borrowed Project Manager",
+            "confidence": "developing",
+            "riskIfMissing": "Material changes may not receive adequate institution-wide validation."
+          }
         ]
       },
       "decisions": [
-        {"title": "Confirm early course partners", "summary": "Agree which courses should act as early partners."},
-        {"title": "Confirm invitation and briefing approach", "summary": "Agree how early partners should be invited and briefed so the work feels collegiate and constructive."},
-        {"title": "Confirm learning mix", "summary": "Agree what mix of course types, disciplines and student profiles would give the most useful learning."},
-        {"title": "Confirm essential changes", "summary": "Agree which changes are essential before wider use and which can wait."},
-        {"title": "Confirm standard and flexible elements", "summary": "Agree which parts of the approach should be consistent across King's and which can flex locally."},
-        {"title": "Confirm next groups of courses", "summary": "Agree which groups of courses should be invited into the next phase."},
-        {"title": "Confirm rationale language", "summary": "Agree how to explain the rationale for the next groups of courses in a fair and constructive way."},
-        {"title": "Confirm how findings are shared", "summary": "Agree how learning can be shared without exposing, labelling or over-interpreting individual courses."}
+        {
+          "title": "Confirm three to five pilot courses",
+          "summary": "Select a small, varied pilot group for learning value, readiness and context, rather than because courses are judged to be problematic."
+        },
+        {
+          "title": "Confirm invitation and briefing approach",
+          "summary": "Agree how early partners should be invited and briefed so the work feels collegiate and constructive."
+        },
+        {
+          "title": "Confirm learning mix",
+          "summary": "Agree what mix of course types, disciplines and student profiles would give the most useful learning."
+        },
+        {
+          "title": "Confirm essential changes",
+          "summary": "Agree which changes are essential before wider use and which can wait."
+        },
+        {
+          "title": "Confirm standard and flexible elements",
+          "summary": "Agree which parts of the approach should be consistent across King's and which can flex locally."
+        },
+        {
+          "title": "Confirm readiness for Education Executive approval",
+          "summary": "Agree whether the pack, workshop and Claim and Action on a Page have met the pilot acceptance criteria and are ready for the institutional approval gate."
+        },
+        {
+          "title": "Confirm rationale language",
+          "summary": "Agree how to explain the rationale for the next groups of courses in a fair and constructive way."
+        },
+        {
+          "title": "Confirm how findings are shared",
+          "summary": "Agree how learning can be shared without exposing, labelling or over-interpreting individual courses."
+        }
       ],
       "risks": [
-        {"title": "Early partners are read as being judged", "mitigation": "Choose and invite partners for learning value, not because they are seen as problems."},
-        {"title": "The model is locked too early", "mitigation": "Use early feedback to make real changes rather than simply confirm the original design."},
-        {"title": "Early examples imply a single correct model", "mitigation": "Use examples to show variation, not prescribe one course graduate futures claim."},
-        {"title": "The approach works only in unusually engaged contexts", "mitigation": "Select early partners that provide useful variation in discipline, student profile and course context."},
-        {"title": "Local flexibility makes the approach incoherent", "mitigation": "Define a light common core with space for local adaptation."},
-        {"title": "The next phase feels like targeting", "mitigation": "Explain the rationale as focused support, story development and institutional learning."}
+        {
+          "title": "Early partners are read as being judged",
+          "mitigation": "Choose and invite partners for learning value, not because they are seen as problems."
+        },
+        {
+          "title": "The model is locked too early",
+          "mitigation": "Use early feedback to make real changes rather than simply confirm the original design."
+        },
+        {
+          "title": "Early examples imply a single correct model",
+          "mitigation": "Use examples to show variation, not prescribe one course graduate futures claim."
+        },
+        {
+          "title": "The approach works only in unusually engaged contexts",
+          "mitigation": "Select early partners that provide useful variation in discipline, student profile and course context."
+        },
+        {
+          "title": "Local flexibility makes the approach incoherent",
+          "mitigation": "Define a light common core with space for local adaptation."
+        },
+        {
+          "title": "The next phase feels like targeting",
+          "mitigation": "Explain the rationale as focused support, story development and institutional learning."
+        }
       ]
     },
     {
       "id": "2.1.1-step-5",
       "title": "Complete the first rollout with focal courses",
-      "period": {"start": "jan-jun-2027:c", "end": "jul-dec-2027:b"},
+      "period": {
+        "start": "jan-jun-2027:c",
+        "end": "jul-dec-2027:b"
+      },
       "summary": "This step agrees the focal courses for the first rollout, distributes their packs and supports them to complete the self-run sense-making workshop. Each course records its graduate futures claim and any action or supported conclusion on the two-sided template. Selection is transparent and avoids presenting inclusion as a judgement on course quality.",
       "stepType": "shared-prioritisation-engagement",
-      "dependsOn": ["2.1.1-step-4"],
+      "dependsOn": [
+        "2.1.1-step-4"
+      ],
       "outputs": [
-        {"title": "Selection approach for focal courses", "summary": "A transparent approach for agreeing the focal courses in the first rollout without implying that selection is a judgement on course quality."},
-        {"title": "First rollout completed", "summary": "Focal courses receive their packs and complete the self-run sense-making workshop, with additional support where needed."},
-        {"title": "Completed Graduate Futures Claims and Actions on a Page", "summary": "Course-owned records of graduate futures claims, supporting evidence, caveats and any agreed action or supported conclusion."},
-        {"title": "Practical local actions", "summary": "A small number of actions that course teams can take forward locally."},
-        {"title": "Examples of distinctive course value", "summary": "Evidence-informed examples of effective practice or distinctive graduate futures stories, where course teams are comfortable for these to be shared."},
-        {"title": "Faculty-level learning", "summary": "Common themes, recurring questions and areas where further support may be needed."}
+        {
+          "title": "Selection approach for focal courses",
+          "summary": "A transparent approach for agreeing the focal courses in the first rollout without implying that selection is a judgement on course quality."
+        },
+        {
+          "title": "First rollout completed",
+          "summary": "Focal courses receive their packs and complete the self-run sense-making workshop, with additional support where needed."
+        },
+        {
+          "title": "Completed Graduate Futures Claims and Actions on a Page",
+          "summary": "Course-owned records of graduate futures claims, supporting evidence, caveats and any agreed action or supported conclusion."
+        },
+        {
+          "title": "Practical local actions",
+          "summary": "A small number of actions that course teams can take forward locally."
+        },
+        {
+          "title": "Examples of distinctive course value",
+          "summary": "Evidence-informed examples of effective practice or distinctive graduate futures stories, where course teams are comfortable for these to be shared."
+        },
+        {
+          "title": "Faculty-level learning",
+          "summary": "Common themes, recurring questions and areas where further support may be needed."
+        }
       ],
       "resources": {
         "existingCapacity": [
-          {"role": "Vice Deans Education or delegates", "contribution": "Lead the shared identification process and agree the groups of courses with faculties."},
-          {"role": "Faculty-led facilitators", "contribution": "Host and facilitate course reviews locally."},
-          {"role": "Careers and Employability Service", "contribution": "Support deeper interpretation where needed."},
-          {"role": "Department and course leaders", "contribution": "Engage with the evidence, own reflections and identify practical next steps."},
-          {"role": "Data colleagues", "contribution": "Respond to questions raised by course teams where feasible."}
+          {
+            "role": "Deliverable Lead",
+            "owner": "Daniel Robson",
+            "contribution": "Provide 0.1 FTE through June 2027 and 0.05 FTE from July 2027, own the prioritisation proposal and confirm the approved rollout.",
+            "confidence": "confirmed"
+          },
+          {
+            "role": "Careers and Employability Workstream Lead",
+            "owner": "Rachel Kershaw",
+            "fte": 0.05,
+            "contribution": "Establish the feasible Careers capacity envelope, oversee pack production and co-develop the prioritisation proposal.",
+            "confidence": "confirmed"
+          },
+          {
+            "role": "Borrowed Project Manager",
+            "owner": "Transformation Office",
+            "contribution": "Provide 0.2 FTE through June 2027 and 0.1 FTE from July 2027 to coordinate prioritisation, rollout, dependencies, coverage, decisions and exceptions.",
+            "confidence": "developing"
+          },
+          {
+            "role": "Data Manager, Careers and Student Success",
+            "owner": "Careers and Employability Service",
+            "contribution": "Produce, check and distribute course-level packs in departmental bundles and maintain the production register.",
+            "confidence": "developing"
+          },
+          {
+            "role": "Careers Workshop, Pilot and Mobilisation Lead",
+            "owner": "Careers and Employability Service",
+            "fte": 0.1,
+            "contribution": "Coordinate the Careers contribution to focal-area mobilisation and support linked consultants.",
+            "confidence": "developing"
+          },
+          {
+            "role": "Faculty-linked Careers Consultants",
+            "owner": "Careers and Employability Service",
+            "contribution": "Provide up to half a day of support for each selected focal departmental bundle through existing faculty business-partner relationships.",
+            "confidence": "developing",
+            "riskIfMissing": "The feasible focal-area scale may need to be reduced."
+          }
         ],
-        "nonCashNeeds": [{"need": "Coordination across faculties", "rationale": "Needed to keep the work manageable, avoid duplication and bring learning together without creating unnecessary reporting burden."}]
+        "newInvestment": [
+          {
+            "item": "LLM usage for first rollout and pre-BAU pack production",
+            "amount": 400,
+            "currency": "GBP",
+            "fundingRoute": "Confirmed Student Futures Programme residuals",
+            "periodNeeded": "First rollout through pre-BAU production",
+            "confidence": "confirmed",
+            "rationale": "Support pack production and controlled qualitative analysis before the method moves into BAU. Unused amounts from earlier phases may carry forward.",
+            "riskIfMissing": "The first rollout may require more manual analysis or a smaller production envelope."
+          }
+        ],
+        "enablingConditions": [
+          {
+            "condition": "Careers and the Project Manager establish the feasible pack-production and Careers Consultant capacity envelope before focal areas are proposed.",
+            "owner": "Rachel Kershaw and Borrowed Project Manager",
+            "decisionNeededBy": "Before Education Executive prioritisation",
+            "confidence": "developing",
+            "riskIfMissing": "The institution could approve a rollout that cannot be supported with available capacity."
+          },
+          {
+            "condition": "Daniel Robson and Rachel Kershaw prepare an evidence-informed proposal using value, readiness, data, strategic relevance, diversity, support and non-punitive selection criteria.",
+            "owner": "Daniel Robson and Rachel Kershaw",
+            "decisionNeededBy": "Before Education Executive prioritisation",
+            "confidence": "developing",
+            "riskIfMissing": "The rationale for focal-area selection may be unclear or perceived as punitive."
+          },
+          {
+            "condition": "Education Executive, involving Vice-Deans Education, approves the focal areas and departmental bundles for the first rollout.",
+            "owner": "Education Executive",
+            "decisionNeededBy": "Before rollout invitations",
+            "confidence": "developing",
+            "riskIfMissing": "The focal-area decision will lack the required institutional and faculty authority."
+          },
+          {
+            "condition": "Packs are produced and coverage is counted at course level, while mobilisation and distribution may be organised through departmental bundles.",
+            "owner": "Careers and Employability Service",
+            "confidence": "confirmed",
+            "riskIfMissing": "Coverage reporting and the practical unit of mobilisation could become confused."
+          }
+        ]
       },
       "decisions": [
-        {"title": "Confirm identification criteria", "summary": "Agree what criteria should inform course group selection."},
-        {"title": "Confirm who agrees groups of courses", "summary": "Agree who needs to be involved so selection combines evidence, faculty knowledge and local judgement."},
-        {"title": "Confirm rationale for inclusion", "summary": "Agree how the rationale for inclusion will be explained to colleagues."},
-        {"title": "Confirm support offer", "summary": "Agree what support course teams can expect before, during and after the conversation."},
-        {"title": "Confirm theme capture", "summary": "Agree how faculty and institutional themes should be captured without reducing courses to categories."}
+        {
+          "title": "Confirm the feasible capacity envelope",
+          "summary": "Rachel Kershaw, Careers and the Project Manager confirm how many departmental bundles can be supported through available pack-production and Careers Consultant capacity."
+        },
+        {
+          "title": "Approve focal areas and departmental bundles",
+          "summary": "Education Executive, involving Vice-Deans Education, approves the actual focal areas using the evidence-informed proposal and records any conditions or deferred areas."
+        },
+        {
+          "title": "Confirm the support offer",
+          "summary": "Agree the pack, guidance, Careers Consultant support and escalation route available to focal departments, without centrally prescribing local programme participation."
+        },
+        {
+          "title": "Confirm coverage and exception recording",
+          "summary": "Agree how course-level production, distribution, completed review and documented exceptions will be recorded within departmental bundles."
+        }
       ],
       "risks": [
-        {"title": "Selection feels punitive", "mitigation": "Use a transparent shared process and include strengths, distinctive practice and learning value as well as support needs."},
-        {"title": "Course groups feel labelled", "mitigation": "Frame the work as focused support for course development and story strengthening."},
-        {"title": "Course actions become performative paperwork", "mitigation": "Keep actions small, owned and routed through existing course, department or faculty routes."}
+        {
+          "title": "Selection feels punitive",
+          "mitigation": "Use a transparent shared process and include strengths, distinctive practice and learning value as well as support needs."
+        },
+        {
+          "title": "Course groups feel labelled",
+          "mitigation": "Frame the work as focused support for course development and story strengthening."
+        },
+        {
+          "title": "Course actions become performative paperwork",
+          "mitigation": "Keep actions small, owned and routed through existing course, department or faculty routes."
+        }
       ]
     },
     {
       "id": "2.1.1-step-6",
       "title": "Move the packs and review process into normal ongoing practice",
-      "period": {"start": "jan-jun-2027:c", "end": "jul-dec-2027:a"},
+      "period": {
+        "start": "jan-jun-2027:c",
+        "end": "jul-dec-2027:a"
+      },
       "summary": "This step moves ongoing production and use of the graduate futures packs into normal institutional practice. It confirms who owns the data and pack production, how often evidence is refreshed, where colleagues get help with interpretation, and how agreed course actions enter existing quality enhancement monitoring.",
       "stepType": "business-as-usual-transfer",
-      "dependsOn": ["2.1.1-step-2", "2.1.1-step-4"],
+      "dependsOn": [
+        "2.1.1-step-2",
+        "2.1.1-step-4"
+      ],
       "outputs": [
-        {"title": "Evidence refresh rhythm", "summary": "An agreed rhythm for refreshing the evidence packs, including which data can be updated regularly and which data needs longer cycles."},
-        {"title": "Ongoing ownership model", "summary": "Ownership for maintaining the data packs, dashboard, narrative guidance, interpretation materials and review process."},
-        {"title": "Update route", "summary": "A route for updating the packs as data sources, student patterns, course needs or institutional priorities change."},
-        {"title": "Place in normal planning and review", "summary": "An agreed place for the data packs and review process in existing course, department, faculty or institutional planning conversations."},
-        {"title": "Quality enhancement monitoring handoff", "summary": "A clear route for agreed graduate futures actions to enter existing quality enhancement monitoring."},
-        {"title": "Ongoing feedback process", "summary": "A simple process for gathering feedback from colleagues who use the packs and review process over time."}
+        {
+          "title": "Evidence refresh rhythm",
+          "summary": "An agreed rhythm for refreshing the evidence packs, including which data can be updated regularly and which data needs longer cycles."
+        },
+        {
+          "title": "Ongoing ownership model",
+          "summary": "Ownership for maintaining the data packs, dashboard, narrative guidance, interpretation materials and review process."
+        },
+        {
+          "title": "Update route",
+          "summary": "A route for updating the packs as data sources, student patterns, course needs or institutional priorities change."
+        },
+        {
+          "title": "Place in normal planning and review",
+          "summary": "An agreed place for the data packs and review process in existing course, department, faculty or institutional planning conversations."
+        },
+        {
+          "title": "Quality enhancement monitoring handoff",
+          "summary": "A clear route for agreed graduate futures actions to enter existing quality enhancement monitoring."
+        },
+        {
+          "title": "Ongoing feedback process",
+          "summary": "A simple process for gathering feedback from colleagues who use the packs and review process over time."
+        }
       ],
       "resources": {
         "existingCapacity": [
-          {"role": "Careers and Employability Service", "contribution": "Own or co-own the ongoing evidence resource, interpretation guidance and refresh route."},
-          {"role": "Data and visualisation owner", "contribution": "Maintain the dashboard, data updates and pack access route."},
-          {"role": "Faculty education leads or delegates", "contribution": "Agree how the packs and review process will be used locally."},
-          {"role": "Quality assurance and continual improvement routes", "contribution": "Provide the institutional home for continued use of graduate futures evidence in course reflection and enhancement."}
+          {
+            "role": "Careers and Employability Workstream Lead and senior BAU owner",
+            "owner": "Rachel Kershaw",
+            "fte": 0.05,
+            "contribution": "Provide senior accountability for the evidence-pack service and agree the BAU operating model.",
+            "confidence": "confirmed"
+          },
+          {
+            "role": "Operational pack owner",
+            "owner": "Data Manager, Careers and Student Success",
+            "contribution": "Own pack production, data refresh, analytical quality, documentation and continuity in BAU.",
+            "confidence": "developing"
+          },
+          {
+            "role": "Careers Workshop, Pilot and Mobilisation Lead",
+            "owner": "Careers and Employability Service",
+            "fte": 0.1,
+            "contribution": "Support transition of the workshop, guidance and mobilisation approach into normal Careers practice.",
+            "confidence": "developing"
+          },
+          {
+            "role": "Borrowed Project Manager",
+            "owner": "Transformation Office",
+            "contribution": "Coordinate the capacity checkpoint, handover evidence, decisions, assurance and closure conditions.",
+            "confidence": "developing"
+          },
+          {
+            "role": "Operational CER Contact",
+            "owner": "Academic Quality",
+            "contribution": "Confirm CER categories, workflow, guidance, reporting and the documented alternative where CER does not apply.",
+            "confidence": "developing"
+          },
+          {
+            "role": "Academic Quality and Enhancement Adviser",
+            "owner": "Phil Berry or delegate",
+            "contribution": "Provide the final two-hour advisory and assurance touchpoint on BAU and monitoring handoff.",
+            "confidence": "developing"
+          },
+          {
+            "role": "Data Services Technical Adviser",
+            "owner": "Anubhav Kakar or delegate",
+            "contribution": "Provide the final part of up to three working days of technical assurance and Fabric handover.",
+            "confidence": "developing"
+          }
         ],
+        "newInvestment": [],
         "enablingConditions": [
-          {"condition": "A clear business-as-usual home for the data packs and review process after the initial project phase.", "riskIfMissing": "The packs risk becoming one-off outputs rather than a sustained part of how King's understands graduate futures."},
-          {"condition": "Agreement on how graduate futures evidence connects to existing quality assurance and continual improvement cycles.", "riskIfMissing": "The evidence may remain available but not meaningfully shape course enhancement."}
+          {
+            "condition": "Complete a formal Careers data-capacity checkpoint using evidence about production time, automation, refresh workload, analytical queries, pilot support and LLM-assisted analysis.",
+            "owner": "Rachel Kershaw and Daniel Robson",
+            "decisionNeededBy": "Before confirming BAU capacity",
+            "confidence": "developing",
+            "riskIfMissing": "BAU may be accepted without evidence that existing capacity is sufficient."
+          },
+          {
+            "condition": "Document the Fabric workspace, data permissions, publishing, maintenance, refresh, quality-assurance, LLM and information-governance arrangements.",
+            "owner": "Careers and Employability Service with Data Services",
+            "decisionNeededBy": "Before BAU handover",
+            "confidence": "developing",
+            "riskIfMissing": "The service may depend on undocumented access or project-specific knowledge."
+          },
+          {
+            "condition": "Use CER as the default route for actions, questions and support needs, with a documented alternative where CER does not apply.",
+            "owner": "Academic Quality and Careers and Employability Service",
+            "decisionNeededBy": "Before wider BAU use",
+            "confidence": "developing",
+            "riskIfMissing": "Review outputs may not enter an established ownership and monitoring process."
+          },
+          {
+            "condition": "Assign resulting actions to the locally designated curriculum owner, recognising that curriculum ownership varies between faculties.",
+            "owner": "Faculty education leadership",
+            "confidence": "confirmed",
+            "riskIfMissing": "Actions may be assigned to a role that does not hold curriculum ownership locally."
+          }
         ]
       },
       "decisions": [
-        {"title": "Confirm business-as-usual owner", "summary": "Agree who owns the data packs and review process after the initial project phase."},
-        {"title": "Confirm refresh rhythm", "summary": "Agree how often the evidence should be refreshed."},
-        {"title": "Confirm interpretation ownership", "summary": "Agree who owns the interpretation guidance and responsible-use principles."},
-        {"title": "Confirm central and local responsibilities", "summary": "Agree which parts of the packs and review process need central maintenance and which can be shaped locally."},
-        {"title": "Confirm quality assurance and continual improvement route", "summary": "Agree where the review process sits in existing quality assurance, planning, review or enhancement cycles."},
-        {"title": "Confirm support route", "summary": "Agree what support is available when colleagues need help interpreting the evidence."}
+        {
+          "title": "Confirm the Careers BAU operating model",
+          "summary": "Confirm Rachel Kershaw as senior accountable Careers owner, the Data Manager role as operational pack owner, and the production, refresh, access and support arrangements."
+        },
+        {
+          "title": "Confirm whether existing data capacity is sufficient",
+          "summary": "Use the post-prototype and pilot capacity evidence to decide whether the agreed BAU service can be sustained without additional analytical capacity."
+        },
+        {
+          "title": "Confirm the CER and alternative action routes",
+          "summary": "Agree how actions, questions and support needs move into CER, how faculty education committees monitor follow-through, and what route applies where CER is not suitable."
+        },
+        {
+          "title": "Confirm technical and assurance handover",
+          "summary": "Accept the documented Fabric, data, quality, LLM and information-governance arrangements and any outstanding conditions."
+        }
       ],
       "risks": [
-        {"title": "The packs become static dashboards", "mitigation": "Confirm ownership for data, visualisation, narrative guidance, interpretation and the review process, not just dashboard refresh."},
-        {"title": "The transfer is only technical", "mitigation": "Include both technical ownership of the data packs and academic ownership of how they are used in review and enhancement."},
-        {"title": "The review process creates a parallel process", "mitigation": "Embed it in existing quality assurance, planning and enhancement cycles."}
+        {
+          "title": "The packs become static dashboards",
+          "mitigation": "Confirm ownership for data, visualisation, narrative guidance, interpretation and the review process, not just dashboard refresh."
+        },
+        {
+          "title": "The transfer is only technical",
+          "mitigation": "Include both technical ownership of the data packs and academic ownership of how they are used in review and enhancement."
+        },
+        {
+          "title": "The review process creates a parallel process",
+          "mitigation": "Embed it in existing quality assurance, planning and enhancement cycles."
+        }
       ]
     },
     {
       "id": "2.1.1-step-7",
       "title": "Complete the second rollout across remaining courses",
-      "period": {"start": "jul-dec-2027:c", "end": "jan-jun-2028:c"},
+      "period": {
+        "start": "jul-dec-2027:c",
+        "end": "jan-jun-2028:c"
+      },
       "summary": "This step extends the pack and self-run workshop to all remaining in-scope courses. Additional support is available where needed. The resulting claims and actions are then synthesised to identify institutional strengths, recurring questions and support needs.",
       "stepType": "institution-wide-review-and-synthesis",
-      "dependsOn": ["2.1.1-step-5"],
+      "dependsOn": [
+        "2.1.1-step-5"
+      ],
       "outputs": [
-        {"title": "Supported reviews for remaining courses", "summary": "Supported graduate futures conversations where direct support is needed."},
-        {"title": "Self-run review route for remaining courses", "summary": "A route for courses able to use the evidence pack, guidance and workshop materials without a supported review."},
-        {"title": "Institution-wide review completion", "summary": "Confirmation that the remaining agreed courses have either completed a supported review or have been enabled to complete a self-review."},
-        {"title": "Institutional graduate futures synthesis", "summary": "A synthesis of themes across courses, departments and faculties, including strengths, recurring questions and areas where further support may be needed."},
-        {"title": "Recommendations for related King's Edge work", "summary": "Recommendations for curriculum enhancement, skills, opportunity, evidence and student-facing story work."}
+        {
+          "title": "Supported reviews for remaining courses",
+          "summary": "Supported graduate futures conversations where direct support is needed."
+        },
+        {
+          "title": "Self-run review route for remaining courses",
+          "summary": "A route for courses able to use the evidence pack, guidance and workshop materials without a supported review."
+        },
+        {
+          "title": "Institution-wide review completion",
+          "summary": "Confirmation that the remaining agreed courses have either completed a supported review or have been enabled to complete a self-review."
+        },
+        {
+          "title": "Institutional graduate futures synthesis",
+          "summary": "A synthesis of themes across courses, departments and faculties, including strengths, recurring questions and areas where further support may be needed."
+        },
+        {
+          "title": "Recommendations for related King's Edge work",
+          "summary": "Recommendations for curriculum enhancement, skills, opportunity, evidence and student-facing story work."
+        }
       ],
       "resources": {
         "existingCapacity": [
-          {"role": "Faculty facilitators", "contribution": "Support remaining course reviews where direct support is needed."},
-          {"role": "Course teams", "contribution": "Use the supported or self-review route to understand, evidence and strengthen their graduate futures story."},
-          {"role": "Careers and Employability Service", "contribution": "Support interpretation and synthesis."},
-          {"role": "Data and visualisation colleagues", "contribution": "Maintain the evidence pack and respond to feasible data questions."},
-          {"role": "Mark Peace", "contribution": "Lead institutional synthesis and feed-through into related King's Edge work."}
+          {
+            "role": "Deliverable Lead",
+            "owner": "Daniel Robson",
+            "fte": 0.05,
+            "contribution": "Provide light oversight, resolve exceptions and own final interpretation, conclusions and deliverable synthesis.",
+            "periodNeeded": "July 2027 to June 2028",
+            "confidence": "confirmed"
+          },
+          {
+            "role": "Careers and Employability Workstream Lead",
+            "owner": "Rachel Kershaw",
+            "fte": 0.05,
+            "contribution": "Provide senior Careers oversight of broader rollout and BAU pack production.",
+            "confidence": "confirmed"
+          },
+          {
+            "role": "Borrowed Project Manager",
+            "owner": "Transformation Office",
+            "fte": 0.1,
+            "contribution": "Track production, distribution, review completion and exceptions; coordinate reporting, synthesis inputs, handover and closure.",
+            "periodNeeded": "July 2027 to June 2028",
+            "confidence": "developing"
+          },
+          {
+            "role": "Operational pack owner",
+            "owner": "Data Manager, Careers and Student Success",
+            "contribution": "Maintain and distribute the course-level packs through the agreed BAU process.",
+            "confidence": "developing"
+          },
+          {
+            "role": "Careers Workshop, Pilot and Mobilisation Lead",
+            "owner": "Careers and Employability Service",
+            "fte": 0.05,
+            "contribution": "Provide light coordination and support during the broader rollout.",
+            "confidence": "developing"
+          },
+          {
+            "role": "Faculty-linked Careers Consultants",
+            "owner": "Careers and Employability Service",
+            "contribution": "Remain available on request through normal faculty business-partner relationships, rather than receiving a separate allocation for every department.",
+            "confidence": "developing"
+          },
+          {
+            "role": "Institutional analytical synthesis",
+            "owner": "Careers and Employability Service",
+            "contribution": "Produce the analytical synthesis of pack coverage, claims, actions, recurring themes and support needs.",
+            "confidence": "developing"
+          },
+          {
+            "role": "King's Edge Programme Lead",
+            "owner": "Mark Peace",
+            "contribution": "Use the agreed synthesis across King's Edge and related projects without acting as its producer.",
+            "confidence": "confirmed"
+          }
         ],
-        "nonCashNeeds": [{"need": "Coverage and synthesis coordination", "rationale": "Needed to track supported review and enabled self-review, bring findings together and avoid turning the final phase into a compliance exercise."}]
+        "newInvestment": [],
+        "enablingConditions": [
+          {
+            "condition": "Careers produces and distributes packs through BAU, programmes organise their own reviews, and course-level actions enter CER or the documented alternative route.",
+            "owner": "Careers and Employability Service, programmes and Academic Quality",
+            "confidence": "developing",
+            "riskIfMissing": "The broader rollout may retain project dependency rather than operating as normal practice."
+          },
+          {
+            "condition": "Programmes decide local participation and use local time. The central project does not prescribe or cost programme-level workshop membership.",
+            "owner": "Locally designated curriculum owner",
+            "confidence": "confirmed",
+            "riskIfMissing": "The resource plan could imply central ownership of activity that belongs to programmes."
+          },
+          {
+            "condition": "Faculty education committees monitor local follow-through and ASQES receives an aggregate view through existing quality-enhancement reporting.",
+            "owner": "Faculty education committees and ASQES",
+            "confidence": "developing",
+            "riskIfMissing": "Actions and recurring support needs may not remain visible through existing oversight."
+          },
+          {
+            "condition": "Any continuing BAU LLM requirement is assessed and funded separately from the £1,000 project allocation.",
+            "owner": "Careers and Employability Service",
+            "confidence": "confirmed",
+            "riskIfMissing": "Unfunded BAU usage could be assumed from a time-limited project budget."
+          }
+        ]
       },
       "decisions": [
-        {"title": "Confirm remaining course population", "summary": "Agree what counts as the remaining course population for the purpose of this phase."},
-        {"title": "Confirm supported review and self-review routes", "summary": "Agree which courses need a supported review and which can use the self-review route."},
-        {"title": "Confirm enabled self-review threshold", "summary": "Agree the minimum evidence needed to confirm that a course has been enabled to self-review."},
-        {"title": "Confirm synthesis destination", "summary": "Agree where institutional themes and recommendations should go after this deliverable."},
-        {"title": "Confirm consent for visible examples", "summary": "Agree how course ownership and consent will be handled where examples or stories are shared in student-facing, applicant-facing or recruitment-facing contexts."}
+        {
+          "title": "Confirm the remaining in-scope course population",
+          "summary": "Agree the course population for the broader rollout and record any approved exceptions."
+        },
+        {
+          "title": "Confirm BAU support and exception route",
+          "summary": "Confirm how programmes request Careers Consultant help, how data or interpretation questions are routed, and how completion exceptions are resolved."
+        },
+        {
+          "title": "Confirm final synthesis and feed-through",
+          "summary": "Careers produces the analytical synthesis; the Project Manager coordinates inputs and evidence; Daniel Robson owns interpretation and conclusions; faculties validate themes; and Mark Peace uses the agreed synthesis across King's Edge."
+        },
+        {
+          "title": "Confirm consent for visible examples",
+          "summary": "Agree how course ownership and consent will be handled where examples or stories are shared in student-facing, applicant-facing or recruitment-facing contexts."
+        }
       ],
       "risks": [
-        {"title": "The final phase becomes a coverage exercise", "mitigation": "Emphasise meaningful engagement with graduate futures evidence, with different routes depending on context, need and capacity."},
-        {"title": "Self-review becomes abandonment", "mitigation": "Provide clear materials, interpretation guidance and a route for help where evidence is unclear or sensitive."},
-        {"title": "Synthesis flattens disciplinary difference", "mitigation": "Draw out themes and examples while preserving context and avoiding categories or league tables."}
+        {
+          "title": "The final phase becomes a coverage exercise",
+          "mitigation": "Emphasise meaningful engagement with graduate futures evidence, with different routes depending on context, need and capacity."
+        },
+        {
+          "title": "Self-review becomes abandonment",
+          "mitigation": "Provide clear materials, interpretation guidance and a route for help where evidence is unclear or sensitive."
+        },
+        {
+          "title": "Synthesis flattens disciplinary difference",
+          "mitigation": "Draw out themes and examples while preserving context and avoiding categories or league tables."
+        }
       ]
     }
   ]

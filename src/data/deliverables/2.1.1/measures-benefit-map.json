@@ -25,7 +25,7 @@
       "questionAnswered": "How completely has the approved graduate futures pack framework reached the agreed population of courses?",
       "measure": "Count and percentage of in-scope courses for which a course-level pack has been checked and distributed, with the self-run workshop materials, to a named course or department contact. Report production and distribution separately for the first and second rollouts, and by department and faculty. Packs may be sent as departmental bundles, but coverage is counted by course.",
       "measureType": "coverage and implementation",
-      "owner": "Daniel Robson, supported by Careers and Employability Service, data colleagues and faculty or department contacts",
+      "owner": "Careers and Employability Service, with Rachel Kershaw as senior accountable owner and the Data Manager, Careers and Student Success role responsible for operational production and recording",
       "cadence": "Monthly during active production, with formal reporting at the end of each rollout phase",
       "confidence": "developing",
       "baseline": "No course packs have yet been produced and distributed through the approved framework.",
@@ -41,7 +41,7 @@
       "questionAnswered": "Are course teams able to turn their graduate futures evidence and course-level review into a concise, course-owned account of the graduate futures their course enables?",
       "measure": "Count and percentage of in-scope courses that complete the first side of a Graduate Futures Claim and Action on a Page and confirm that it is fair, useful, evidence-informed and appropriately caveated. To count, it must include the central narrative, supporting evidence, the course's distinctive contribution, relevant caveats, course confirmation and its status for wider use.",
       "measureType": "qualitative benefit realisation and coverage",
-      "owner": "Heads of Department, with course-level completion led by course leads and central collation by Daniel Robson",
+      "owner": "The locally designated curriculum owner confirms the course claim; Careers and Employability Service maintains the central course-review register",
       "cadence": "At completion of each course review, reported termly and synthesised at the end of each rollout phase",
       "confidence": "developing",
       "baseline": "No in-scope courses have completed and confirmed a Graduate Futures Claim and Action on a Page through the approved framework.",
@@ -57,7 +57,7 @@
       "questionAnswered": "Are course teams using the evidence to reach a clear conclusion about whether any action is needed?",
       "measure": "Count and percentage of completed Graduate Futures Claim and Action on a Page templates whose second side records a strength to amplify, an enhancement action, a question requiring further investigation, or a reasoned conclusion that no additional action is required. Any proposed action or investigation records what will be done, why, how it could support students' graduate futures and where it will be taken forward.",
       "measureType": "qualitative benefit realisation and decision quality",
-      "owner": "Course leads and Heads of Department, with faculty education leads supporting consistent interpretation and central synthesis led by Daniel Robson",
+      "owner": "The locally designated curriculum owner owns the conclusion; Daniel Robson leads central interpretation and synthesis during the deliverable",
       "cadence": "At completion of each course review, reported termly and synthesised at the end of each rollout phase",
       "confidence": "developing",
       "baseline": "No course-level actionable conclusions have yet been recorded through the approved framework.",
@@ -71,14 +71,14 @@
         "2.1.1-B2"
       ],
       "questionAnswered": "Are agreed graduate futures actions given an owner and added to the appropriate existing quality enhancement process?",
-      "measure": "For every agreed action, record whether it has a named owner, an appropriate course, department or faculty route, a timescale or review date, and a place in the relevant existing quality enhancement process. Report both how many actions have entered monitoring and how many courses have at least one action in monitoring. Courses concluding that no action is required are reported separately.",
+      "measure": "For every agreed action, record whether it has a named owner, an appropriate course, department or faculty route, a timescale or review date, and a place in CER or another documented existing quality-enhancement process. Report both how many actions have entered monitoring and how many courses have at least one action in monitoring. Courses concluding that no action is required are reported separately.",
       "measureType": "adoption, governance and business-as-usual integration",
-      "owner": "Academic Standards and Quality Enhancement Subcommittee of Education Committee for institutional oversight, with course leads, Heads of Department and faculty education leads responsible for local incorporation",
+      "owner": "Named action owners and locally designated curriculum owners are responsible for incorporation; faculty education committees monitor local follow-through; the Academic Standards and Quality Enhancement Subcommittee provides institutional oversight",
       "cadence": "Aligned with existing quality enhancement monitoring cycles and the Subcommittee's established reporting timetable",
       "confidence": "developing",
       "baseline": "No graduate futures actions have yet been incorporated into existing quality enhancement monitoring through this framework.",
       "target": "Every agreed action has a named owner and review date and enters the appropriate existing quality enhancement process. If an action cannot enter that process, record the reason and agree another route.",
-      "dataSource": "Graduate Futures Claim and Action on a Page, existing course and department quality enhancement records, relevant monitoring returns, and Subcommittee papers or records."
+      "dataSource": "Graduate Futures Claim and Action on a Page, CER action plans using the relevant Career Readiness/Positive Graduate Outcomes or Employability Benchmarks categories, documented alternative action routes, faculty education committee records, and relevant Subcommittee papers or records."
     },
     {
       "id": "2.1.1-M6",
@@ -89,12 +89,12 @@
       "questionAnswered": "Are agreed graduate futures actions being progressed and kept up to date through existing quality enhancement processes?",
       "measure": "For each action that has reached its review date, record whether it is underway and on track, completed, revised, closed with a reason, overdue or needing escalation, or missing an update. Also report how many courses have at least one action underway or completed, the recurring themes and any actions that need institutional support.",
       "measureType": "action, implementation and business-as-usual monitoring",
-      "owner": "Academic Standards and Quality Enhancement Subcommittee of Education Committee for institutional oversight, with named action owners and relevant course, department or faculty leads responsible for delivery and status updates",
+      "owner": "Named action owners and locally designated curriculum owners are responsible for delivery and status updates; faculty education committees monitor local follow-through; the Academic Standards and Quality Enhancement Subcommittee provides institutional oversight",
       "cadence": "At existing quality enhancement review points, following the Subcommittee's normal reporting timetable",
       "confidence": "developing",
       "baseline": "No graduate futures actions have yet reached a formal monitoring point through this framework.",
       "target": "Every action due for review has a current status. Completed actions have proportionate evidence; revised or closed actions have a recorded reason; overdue actions have a recovery, support or escalation route; and recurring issues are visible to the appropriate faculty or institutional body.",
-      "dataSource": "Existing course, department and faculty quality enhancement action records, scheduled monitoring returns, and relevant Subcommittee papers or records."
+      "dataSource": "CER action plans, documented alternative course, department or faculty quality-enhancement records, scheduled faculty monitoring returns, and relevant Subcommittee papers or records."
     }
   ]
 }
