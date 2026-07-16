@@ -135,11 +135,11 @@ KPIs can use this shape:
 
 ```json
 {
-  "id": "2.2.1-step-2",
-  "title": "Design Canvas tools and prompts",
+  "id": "example-deliverable-step-2",
+  "title": "Design and test the delivery model",
   "period": "jan-summer-2027",
-  "summary": "Specify AI functionality, reflection prompts, planning tools, skills links and student outputs.",
-  "dependsOn": ["2.2.1-step-1", "2.1.3-step-1"],
+  "summary": "Define the model, test it with users and refine the route to implementation.",
+  "dependsOn": ["example-deliverable-step-1", "other-deliverable-step-1"],
   "outputs": [],
   "resources": {},
   "decisions": [],
