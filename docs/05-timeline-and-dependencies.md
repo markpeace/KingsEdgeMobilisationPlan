@@ -107,7 +107,7 @@ Example:
 ```json
 {
   "2.2.2-step-2": ["2.1.2-step-4"],
-  "2.3.1-step-3": ["2.2.1-step-2", "single-app-step-2"]
+  "2.3.1-step-3": ["2.2.2-step-2", "single-app-step-2"]
 }
 ```
 
