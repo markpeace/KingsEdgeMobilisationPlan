@@ -18,6 +18,15 @@ const measureSchema = readJson('../src/data/measure.schema.json');
 
 const errors = [];
 const warnings = [];
+const validPlanningStatuses = new Set([
+  'pre-draft',
+  'proposition-draft',
+  'draft',
+  'validated-draft',
+  'decision-ready',
+  'mobilising',
+  'in-delivery'
+]);
 const timelineBucketIdList = ['jul-dec-2026', ...[2027, 2028, 2029, 2030].flatMap((year) => [`jan-jun-${year}`, `jul-dec-${year}`])];
 const timelineBucketIds = new Set(timelineBucketIdList);
 const timelineThirdIdList = timelineBucketIdList.flatMap((bucket) => ['a', 'b', 'c'].map((third) => `${bucket}-${third}`));
@@ -310,9 +319,11 @@ allProjects.forEach((project, projectIndex) => {
   if (!Array.isArray(project.deliverables)) errors.push(`${project.id} should contain a deliverables array.`);
   project.deliverables?.forEach((deliverable, deliverableIndex) => {
     const deliverablePath = `${project.id}.deliverables[${deliverableIndex}]`;
-    const allowLegacyPeriods = !deliverable.planningStatus || deliverable.planningStatus === 'pre-draft';
+    const status = deliverable.planningStatus || 'pre-draft';
+    const allowLegacyPeriods = ['pre-draft', 'proposition-draft'].includes(status);
     addId(deliverable.id, deliverablePath);
     deliverableIds.add(deliverable.id);
+    if (!validPlanningStatuses.has(status)) errors.push(`${deliverable.id} uses unknown planningStatus: ${status}`);
     ['title', 'lead', 'summary', 'problemSolved', 'whatChanges'].forEach((field) => requireField(deliverable, field, deliverablePath));
     validateArrayIfPresent(deliverable.components, `${deliverablePath}.components`);
     validateArrayIfPresent(deliverable.benefits, `${deliverablePath}.benefits`);

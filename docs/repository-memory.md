@@ -88,13 +88,20 @@ The only canonical planning-stage workflow is `planningStatus`.
 Allowed values:
 
 - `pre-draft`
-- `draft`
+- `proposition-draft` (Proposition draft)
+- `draft` (Delivery draft)
 - `validated-draft`
 - `decision-ready`
 - `mobilising`
 - `in-delivery`
 
-All current deliverables are `pre-draft` unless explicitly moved to a later `planningStatus`.
+Deliverables default to `pre-draft` unless explicitly moved to a later `planningStatus`. `2.2.1` is the reference example of Proposition draft: its summary, case for change and benefits are ready to test, while delivery planning remains intentionally incomplete.
+
+The early-stage gates are:
+
+- Proposition draft: coherent summary, fuller proposition, case for change and benefits.
+- Delivery draft: the wider delivery model has been mocked out, including ownership, measures, governance, steps, step-level resources and material risks.
+- Validated draft: the Delivery draft has been tested with relevant owners, partners and evidence.
 
 Do not use `tags`, `planningMaturity`, `visibility`, or `src/data/status.json` as the planning-stage workflow.
 
@@ -108,7 +115,7 @@ If a future agent is unsure which field matters, use `planningStatus`.
 
 ### Generic tags are thematic only
 
-The `tags` field is optional thematic metadata. It is not a status field and should not be used for pre-draft, draft, decision-ready, or delivery stages.
+The `tags` field is optional thematic metadata. It is not a status field and should not be used for proposition, delivery-draft, decision-ready or delivery stages.
 
 If tags create confusion during hydration, ignore them or remove them from display. Do not create a second tagging workflow.
 
@@ -147,7 +154,7 @@ Pre-draft measures should be hidden by default or clearly labelled as emerging. 
 ## Current working assumptions
 
 - The next content task is project-by-project naming and description scrutiny.
-- After project naming, the next major task is deliverable-by-deliverable scrutiny to move items from `pre-draft` to `draft`.
+- After project naming, the next major task is deliverable-by-deliverable scrutiny to move items from `pre-draft` to Proposition draft, then mock out the delivery model to reach Delivery draft.
 - The plan should remain senior-leadership ready: clear, concise, defensible and not over-bureaucratic.
 - Benefits should be written as realised value, not disguised outputs.
 - Measures should test whether benefits are happening, not merely count activity.
@@ -167,7 +174,7 @@ For each of the four projects, sharpen:
 - institutional transformation claim;
 - whether the four deliverables underneath still feel like the right grouping.
 
-Second pass: deliverables from pre-draft to draft.
+Second pass: deliverables from pre-draft to Proposition draft, then Delivery draft.
 
 For each deliverable, test:
 

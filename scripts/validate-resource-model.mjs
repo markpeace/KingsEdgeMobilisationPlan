@@ -126,7 +126,8 @@ function validateStepResources(step, deliverableId, stepIndex) {
 
 deliverables.forEach((deliverable) => {
   const planningStatus = deliverable.planningStatus || 'pre-draft';
-  if (planningStatus !== 'pre-draft' && hasDeliverableResourceContent(deliverable.resources)) {
+  const hasDeliveryPlan = !['pre-draft', 'proposition-draft'].includes(planningStatus);
+  if (hasDeliveryPlan && hasDeliverableResourceContent(deliverable.resources)) {
     errors.push(`${deliverable.id} has deliverable-level resource content. Move each ask to the step that needs it; the app derives the resource profile from step resources.`);
   }
 

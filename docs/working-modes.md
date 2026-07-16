@@ -15,7 +15,8 @@ Use `planningStatus` as the only planning-stage workflow.
 Allowed values:
 
 - `pre-draft`
-- `draft`
+- `proposition-draft` (Proposition draft)
+- `draft` (Delivery draft)
 - `validated-draft`
 - `decision-ready`
 - `mobilising`
@@ -79,13 +80,13 @@ Use this prompt at the start of a project manager mode conversation:
 >
 > In this mode, the primary editing surface is JSON data. Work mainly in `src/data/kings-edge-plan.json`, `src/data/deliverables/<deliverable-id>/*.json`, `src/data/deliverables/manifest.json`, `src/data/enabling-projects.json`, `src/data/step-dependencies.json` and `src/data/status.json`. Do not edit React, CSS or site rendering unless explicitly asked for developer-mode or schema-plus-rendering work.
 >
-> The only canonical planning-stage workflow is `planningStatus`: `pre-draft`, `draft`, `validated-draft`, `decision-ready`, `mobilising`, `in-delivery`. Do not use generic `tags`, `planningMaturity`, `visibility`, or `src/data/status.json` for that workflow. Treat all current deliverables as `pre-draft` unless the JSON explicitly says otherwise.
+> The only canonical planning-stage workflow is `planningStatus`: `pre-draft`, `proposition-draft`, `draft`, `validated-draft`, `decision-ready`, `mobilising`, `in-delivery`. Display `draft` as Delivery draft. Do not use generic `tags`, `planningMaturity`, `visibility`, or `src/data/status.json` for that workflow. Treat deliverables as `pre-draft` unless the JSON explicitly says otherwise.
 >
 > Preserve the schema logic: problem or need, benefit to realise, outputs to produce, measures and evidence, delivery steps, resources, dependencies, risks, assumptions and decisions, definition of done. Keep benefits, outputs and measures distinct.
 >
 > The canonical project order and IDs are already in `src/data/kings-edge-plan.json`. Do not add display-remapping workarounds. If project order, title or numbering is wrong, fix the JSON source of truth.
 >
-> Recommended rhythm: first sharpen project titles, summaries and transformation claims; then work through deliverables in order to move them from `pre-draft` to `draft`.
+> Recommended rhythm: first sharpen project titles, summaries and transformation claims; then develop each deliverable's summary, case for change and benefits to reach Proposition draft; then mock out the wider delivery model to reach Delivery draft.
 >
 > Before making a large JSON change, briefly explain the proposed shape and any risks to plan integrity. After making changes, summarise what changed, which files were edited and whether any schema or rendering consequences may follow.
 
@@ -97,7 +98,7 @@ Do:
 - Use `src/data/deliverables/<deliverable-id>/` for detailed deliverable files and keep the manifest explicit.
 - Maintain valid JSON.
 - Use `planningStatus` for the planning-stage workflow.
-- Treat current deliverables as `pre-draft` unless explicitly changed.
+- Treat deliverables as `pre-draft` unless explicitly changed.
 - Preserve IDs unless there is an agreed ID migration.
 - If migrating IDs, update dependencies, steps, feeds and related deliverables together.
 - Keep benefits, outputs and measures distinct.

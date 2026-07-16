@@ -49,13 +49,16 @@ Acceptable compatibility logic is limited to normalising old field names into th
 `planningStatus` is the only planning-stage workflow. Allowed values are:
 
 - `pre-draft`
-- `draft`
+- `proposition-draft` (displayed as Proposition draft)
+- `draft` (displayed as Delivery draft)
 - `validated-draft`
 - `decision-ready`
 - `mobilising`
 - `in-delivery`
 
 Do not use `tags`, `planningMaturity`, `visibility` or `status.json` as substitutes for planning stage.
+
+Proposition drafts are visible in the Deliverables index for challenge and refinement. Measures and Timeline require Delivery draft or later because those views imply a mocked-out delivery model.
 
 ## How an LLM project manager should work safely
 

@@ -30,7 +30,8 @@ Use `planningStatus`.
 Allowed values:
 
 - `pre-draft`
-- `draft`
+- `proposition-draft` (Proposition draft)
+- `draft` (Delivery draft)
 - `validated-draft`
 - `decision-ready`
 - `mobilising`

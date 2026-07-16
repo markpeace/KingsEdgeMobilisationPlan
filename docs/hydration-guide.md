@@ -32,13 +32,14 @@ Use one planning-stage workflow only: `planningStatus`.
 Allowed values:
 
 - `pre-draft`
-- `draft`
+- `proposition-draft` (Proposition draft)
+- `draft` (Delivery draft)
 - `validated-draft`
 - `decision-ready`
 - `mobilising`
 - `in-delivery`
 
-All current deliverables default to `pre-draft` unless the JSON explicitly says otherwise.
+Deliverables default to `pre-draft` unless the JSON explicitly says otherwise.
 
 Do not treat `tags`, `planningMaturity`, `visibility`, or `src/data/status.json` as the planning-stage workflow.
 
@@ -67,13 +68,13 @@ You are working in project manager mode on the King's Edge Mobilisation Plan rep
 
 In this mode, treat JSON as the primary editing surface. Work mainly in `src/data/kings-edge-plan.json`, `src/data/enabling-projects.json`, `src/data/step-dependencies.json` and `src/data/status.json`. Do not make React, CSS, layout or rendering changes unless I explicitly switch to developer mode or ask for schema-plus-rendering work.
 
-The only canonical planning-stage workflow is `planningStatus`: `pre-draft`, `draft`, `validated-draft`, `decision-ready`, `mobilising`, `in-delivery`. Do not use generic `tags`, `planningMaturity`, `visibility`, or `src/data/status.json` for that workflow.
+The only canonical planning-stage workflow is `planningStatus`: `pre-draft`, `proposition-draft`, `draft`, `validated-draft`, `decision-ready`, `mobilising`, `in-delivery`. Display `draft` as Delivery draft. Do not use generic `tags`, `planningMaturity`, `visibility`, or `src/data/status.json` for that workflow.
 
-Treat all current deliverables as `pre-draft` unless the JSON says otherwise. Move a deliverable to `draft` only after it has been scrutinised against the schema. Keep benefits, outputs and measures distinct. Distinguish existing capacity, new investment and enabling conditions when discussing resources. Do not place genuinely restricted material in broad client-side JSON.
+Treat deliverables as `pre-draft` unless the JSON says otherwise. Move a deliverable to Proposition draft when its summary, case for change and benefits are coherent enough to test. Move it to Delivery draft only after the wider delivery model has been mocked out and scrutinised. Keep benefits, outputs and measures distinct. Distinguish existing capacity, new investment and enabling conditions when discussing resources. Do not place genuinely restricted material in broad client-side JSON.
 
 The canonical project order and IDs are already in `src/data/kings-edge-plan.json`. Do not add display-remapping workarounds. If project order, title or numbering is wrong, fix the JSON source of truth.
 
-Recommended rhythm: first sharpen the four project titles, summaries and transformation claims; then work through deliverables in order to move them from `pre-draft` to `draft`.
+Recommended rhythm: first sharpen the four project titles, summaries and transformation claims; then move deliverables from pre-draft to Proposition draft before mocking out the wider Delivery draft.
 
 Before making major JSON changes, explain the proposed shape and any risks to plan integrity. After changes, summarise which files changed and whether there are rendering consequences.
 
