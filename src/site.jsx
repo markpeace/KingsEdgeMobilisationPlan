@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import {
   plan,
@@ -304,48 +304,6 @@ function timelineStatusIcon(status) {
   return '○';
 }
 
-function TimelineInspector({ entry, deps, onward, idMap, onClear, onOpen, inspectorRef }) {
-  if (!entry || entry.type !== 'step') {
-    return <section className="ke-timeline-inspector ke-timeline-inspector-empty" aria-live="polite">
-      <div>
-        <span className="eyebrow">Dependency inspector</span>
-        <h2>Select a delivery step</h2>
-        <p>Choose a step to see its timing, prerequisites and onward handoffs.</p>
-      </div>
-    </section>;
-  }
-
-  const step = entry.item;
-  const parent = entry.parent;
-  const status = getStatus(step.id);
-  return <section className="ke-timeline-inspector" ref={inspectorRef} tabIndex="-1" aria-live="polite" aria-labelledby="ke-timeline-inspector-title">
-    <div className="ke-timeline-inspector-main">
-      <div className="ke-timeline-inspector-kicker">
-        <span className="eyebrow">{displayId(parent)}</span>
-        <span className={'ke-delivery-status ' + statusClass(status.status)}>{timelineStatusIcon(status.status)} {labelStatus(status.status)}</span>
-      </div>
-      <h2 id="ke-timeline-inspector-title">{step.title}</h2>
-      <p>{step.summary}</p>
-      <span className="period-pill">{periodLabel(step.period)}</span>
-      {status.note && <p className="ke-timeline-status-note"><strong>Status note:</strong> {status.note}</p>}
-    </div>
-    <div className="ke-timeline-inspector-dependencies">
-      <div>
-        <h3>Depends on</h3>
-        {deps.length ? <div className="link-list">{deps.map((id) => <SmartLink key={id} id={id} idMap={idMap} />)}</div> : <p>No prerequisites captured.</p>}
-      </div>
-      <div>
-        <h3>Feeds into</h3>
-        {onward.length ? <ul className="compact-list">{onward.map((item, index) => <li key={item.parent.id + '-' + item.step.id + '-' + index}><SmartLink id={item.step.id} idMap={idMap} /></li>)}</ul> : <p>No onward handoffs captured.</p>}
-      </div>
-    </div>
-    <div className="ke-timeline-inspector-actions">
-      <button type="button" className="secondary-button" onClick={onOpen}>Open step detail</button>
-      <button type="button" className="ke-text-button" onClick={onClear}>Clear selection</button>
-    </div>
-  </section>;
-}
-
 function TimelineHeader({ periods, gridStyle, todayPosition }) {
   const buckets = buildBucketGroups(periods);
   return <div className="ke-timeline-header" role="rowgroup">
@@ -388,13 +346,14 @@ function TimelineStepButton({ item, step, stepNumber, span, lane, dependencyStat
     aria-pressed={dependencyState === 'is-selected'}
     aria-label={'Step ' + String(stepNumber).padStart(2, '0') + ': ' + step.title + '. ' + periodLabel(step.period) + '. ' + labelStatus(status.status) + '.'}
     data-step-id={step.id}
+    title={step.title + ' · ' + labelStatus(status.status)}
     onClick={onSelect}
   >
     <span className="ke-timeline-step-number">Step {String(stepNumber).padStart(2, '0')}</span>
     <span className="ke-timeline-step-title">{step.title}</span>
     <span className={'ke-timeline-step-status ' + statusClass(status.status)}>
       <span aria-hidden="true">{timelineStatusIcon(status.status)}</span>
-      <span>{labelStatus(status.status)}</span>
+      <span className="ke-timeline-step-status-label">{labelStatus(status.status)}</span>
     </span>
   </button>;
 }
@@ -412,7 +371,7 @@ function TimelineRow({ item, steps, periods, horizon, gridStyle, selectedStepId,
   const delivery = deriveDeliverySummary(item.steps.map((step) => step.id));
   const laneStyle = {
     gridTemplateColumns: 'repeat(' + periods.length + ', minmax(64px, 1fr))',
-    gridTemplateRows: 'repeat(' + allocation.laneCount + ', minmax(52px, auto))',
+    gridTemplateRows: 'repeat(' + allocation.laneCount + ', 62px)',
     '--ke-period-count': periods.length
   };
   const normalizedQuery = query.trim().toLowerCase();
@@ -427,12 +386,15 @@ function TimelineRow({ item, steps, periods, horizon, gridStyle, selectedStepId,
 
   return <div className="ke-timeline-row" role="row" style={gridStyle}>
     <a className="ke-timeline-row-header" role="rowheader" href={'#/deliverables/' + item.id}>
-      <DeliverableContextLine deliverable={item} />
+      <div className="ke-timeline-row-kicker">
+        <span className="reference">{displayId(item)}</span>
+        <PlanningStatusTag item={item} />
+      </div>
       <strong>{item.title}</strong>
-      <span>{item.ownerLabel}</span>
-      <span className="ke-timeline-row-progress">
-        {delivery.counts.complete} of {delivery.total} complete
-        {delivery.counts.blocked > 0 ? ' · ' + delivery.counts.blocked + ' blocked' : ''}
+      <span className="ke-timeline-row-meta">
+        <span>{item.ownerLabel}</span>
+        <span aria-hidden="true">·</span>
+        <span>{delivery.counts.complete}/{delivery.total} complete{delivery.counts.blocked > 0 ? ' · ' + delivery.counts.blocked + ' blocked' : ''}</span>
       </span>
     </a>
     <div className="ke-timeline-lane" role="cell" style={laneStyle}>
@@ -516,7 +478,7 @@ function TimelineView({ timelineItems, idMap, dependencyIndex }) {
   const [horizonMode, setHorizonMode] = useState('fit');
   const [selectedStepId, setSelectedStepId] = useState(null);
   const [modalStepId, setModalStepId] = useState(null);
-  const inspectorRef = useRef(null);
+  const modalTriggerRef = useRef(null);
 
   const eligible = timelineItems.filter(isBeyondPreDraft);
   const availableProjectIds = new Set(eligible.map((item) => item.project?.id).filter(Boolean));
@@ -544,8 +506,8 @@ function TimelineView({ timelineItems, idMap, dependencyIndex }) {
     .filter((row) => row.visibleSteps.length > 0);
   const todayPosition = findTodayPosition(visiblePeriods);
   const gridStyle = {
-    gridTemplateColumns: '280px repeat(' + visiblePeriods.length + ', minmax(64px, 1fr))',
-    minWidth: (280 + visiblePeriods.length * 64) + 'px'
+    gridTemplateColumns: '260px repeat(' + visiblePeriods.length + ', minmax(64px, 1fr))',
+    minWidth: (260 + visiblePeriods.length * 64) + 'px'
   };
 
   const selectedEntry = selectedStepId ? idMap.get(selectedStepId) : null;
@@ -560,10 +522,9 @@ function TimelineView({ timelineItems, idMap, dependencyIndex }) {
   const modalOnward = modalStepId ? dependencyIndex.get(modalStepId) || [] : [];
 
   const selectStep = (id, event) => {
+    modalTriggerRef.current = event?.currentTarget || document.activeElement;
     setSelectedStepId(id);
-    if (event?.detail === 0) {
-      window.requestAnimationFrame(() => inspectorRef.current?.focus());
-    }
+    setModalStepId(id);
   };
 
   const clearSelection = () => {
@@ -575,6 +536,8 @@ function TimelineView({ timelineItems, idMap, dependencyIndex }) {
     });
   };
 
+  const closeModal = useCallback(() => setModalStepId(null), []);
+
   useEffect(() => {
     if (selectedStepId && !idMap.has(selectedStepId)) setSelectedStepId(null);
   }, [selectedStepId, idMap]);
@@ -582,7 +545,7 @@ function TimelineView({ timelineItems, idMap, dependencyIndex }) {
   return <main className="timeline-page ke-timeline-page">
     <section className="section-heading">
       <h1>Timeline</h1>
-      <p>Explore delivery timing, operational status and step-to-step dependencies for plans that have moved beyond pre-draft.</p>
+      <p>Explore delivery timing and status. Select a step to open its details and highlight its dependencies.</p>
     </section>
 
     <div className="ke-timeline-toolbar" aria-label="Timeline controls">
@@ -618,22 +581,13 @@ function TimelineView({ timelineItems, idMap, dependencyIndex }) {
     </div>
 
     <div className="ke-timeline-key" aria-label="Timeline key">
-      <span><i className="ke-key-box is-selected" /> Selected</span>
-      <span><i className="ke-key-box is-prerequisite" /> Prerequisite</span>
-      <span><i className="ke-key-box is-onward" /> Feeds into</span>
-      <span><i className="ke-key-status">✓</i> Complete</span>
-      <span><i className="ke-key-status">!</i> Blocked</span>
+      <div className="ke-timeline-key-items">
+        <span><i className="ke-key-box is-selected" /> Selected</span>
+        <span><i className="ke-key-box is-prerequisite" /> Depends on</span>
+        <span><i className="ke-key-box is-onward" /> Feeds into</span>
+      </div>
+      {selectedStepId && <button type="button" className="ke-text-button" onClick={clearSelection}>Clear highlight</button>}
     </div>
-
-    <TimelineInspector
-      entry={selectedEntry}
-      deps={selectedDeps}
-      onward={selectedOnward}
-      idMap={idMap}
-      onClear={clearSelection}
-      onOpen={() => selectedStepId && setModalStepId(selectedStepId)}
-      inspectorRef={inspectorRef}
-    />
 
     {visibleRows.length === 0 ? <EmptyState title="No timeline items match the current view">
       <p>{eligible.length === 0 ? 'Timeline items will appear once deliverables move beyond pre-draft.' : 'Change the project, search, status or date-range filters to see more work.'}</p>
@@ -661,44 +615,79 @@ function TimelineView({ timelineItems, idMap, dependencyIndex }) {
       <TimelineMobileList rows={visibleRows} selectedStepId={selectedStepId} selectedDeps={selectedDeps} onwardIds={onwardIds} onSelect={selectStep} />
     </>}
 
-    <TimelineStepModal step={modalStep} parent={modalParent} deps={modalDeps} onward={modalOnward} idMap={idMap} onClose={() => setModalStepId(null)} />
+    <TimelineStepModal step={modalStep} parent={modalParent} deps={modalDeps} onward={modalOnward} idMap={idMap} onClose={closeModal} returnFocusRef={modalTriggerRef} />
   </main>;
 }
 
-function TimelineStepModal({ step, parent, deps, onward, idMap, onClose }) {
+function TimelineStepModal({ step, parent, deps, onward, idMap, onClose, returnFocusRef }) {
+  const dialogRef = useRef(null);
+  const closeRef = useRef(null);
+
   useEffect(() => {
     if (!step) return undefined;
-    const onKeyDown = (event) => event.key === 'Escape' && onClose();
+    const previousOverflow = document.body.style.overflow;
+    const returnFocusTo = returnFocusRef.current;
+    document.body.style.overflow = 'hidden';
+
+    const focusTimer = window.requestAnimationFrame(() => closeRef.current?.focus());
+    const onKeyDown = (event) => {
+      if (event.key === 'Escape') {
+        event.preventDefault();
+        onClose();
+        return;
+      }
+      if (event.key !== 'Tab' || !dialogRef.current) return;
+      const focusable = [...dialogRef.current.querySelectorAll('a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])')]
+        .filter((element) => element.offsetParent !== null);
+      if (!focusable.length) return;
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
+    };
     window.addEventListener('keydown', onKeyDown);
-    return () => window.removeEventListener('keydown', onKeyDown);
-  }, [step, onClose]);
+    return () => {
+      window.cancelAnimationFrame(focusTimer);
+      window.removeEventListener('keydown', onKeyDown);
+      document.body.style.overflow = previousOverflow;
+      window.requestAnimationFrame(() => returnFocusTo?.isConnected && returnFocusTo.focus());
+    };
+  }, [step, onClose, returnFocusRef]);
 
   if (!step || !parent) return null;
   const status = getStatus(step.id);
+  const stepNumber = parent.steps.findIndex((candidate) => candidate.id === step.id) + 1;
   return <div className="ke-timeline-modal-backdrop" role="presentation" onClick={onClose}>
-    <section className="ke-timeline-modal" role="dialog" aria-modal="true" aria-labelledby="ke-timeline-modal-title" onClick={(event) => event.stopPropagation()}>
-      <button type="button" className="ke-timeline-modal-close" onClick={onClose}>Close</button>
+    <section className="ke-timeline-modal" ref={dialogRef} role="dialog" aria-modal="true" aria-labelledby="ke-timeline-modal-title" aria-describedby="ke-timeline-modal-summary" onClick={(event) => event.stopPropagation()}>
+      <button ref={closeRef} type="button" className="ke-timeline-modal-close" aria-label="Close step details" onClick={onClose}><span aria-hidden="true">×</span></button>
       <div className="ke-timeline-modal-main">
-        <span className="eyebrow">{displayId(parent)}</span>
+        <span className="eyebrow">{displayId(parent)} · Step {String(stepNumber).padStart(2, '0')}</span>
         <h2 id="ke-timeline-modal-title">{step.title}</h2>
         <div className="ke-timeline-modal-meta">
-          <PlanningStatusTag item={parent} />
           <span className={'ke-delivery-status ' + statusClass(status.status)}>{timelineStatusIcon(status.status)} {labelStatus(status.status)}</span>
           <span className="period-pill">{periodLabel(step.period)}</span>
         </div>
-        <p>{step.summary}</p>
+        <p id="ke-timeline-modal-summary">{step.summary}</p>
       </div>
       <div className="ke-timeline-modal-grid">
-        <div>
+        <section>
           <h3>Depends on</h3>
           {deps.length ? <div className="link-list">{deps.map((id) => <SmartLink key={id} id={id} idMap={idMap} />)}</div> : <p>No prerequisites captured.</p>}
-        </div>
-        <div>
+        </section>
+        <section>
           <h3>Feeds into</h3>
           {onward.length ? <ul className="compact-list">{onward.map((entry, index) => <li key={entry.parent.id + '-' + entry.step.id + '-' + index}><SmartLink id={entry.step.id} idMap={idMap} /></li>)}</ul> : <p>No onward handoffs captured.</p>}
-        </div>
+        </section>
       </div>
-      <a className="secondary-button ke-timeline-open-deliverable" href={'#/deliverables/' + parent.id}>Open deliverable</a>
+      <footer className="ke-timeline-modal-actions">
+        <a className="secondary-button ke-timeline-open-deliverable" href={'#/deliverables/' + parent.id}>Open full deliverable</a>
+        <button type="button" className="ke-text-button" onClick={onClose}>Close and view timeline</button>
+      </footer>
     </section>
   </div>;
 }
