@@ -15,6 +15,15 @@
       ]
     },
     {
+      "id": "2.1.3",
+      "projectId": "2.1",
+      "parts": [
+        "./2.1.3/core.json",
+        "./2.1.3/overview.json",
+        "./2.1.3/benefits.json"
+      ]
+    },
+    {
       "id": "2.2.1",
       "projectId": "2.2",
       "parts": [

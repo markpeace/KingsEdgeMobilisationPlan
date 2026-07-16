@@ -1,0 +1,36 @@
+{
+  "benefits": [
+    {
+      "id": "2.1.3-B1",
+      "title": "Students can recognise, shape and carry forward the full value of their learning",
+      "statement": "Students develop a detailed and evidence-informed understanding of the capabilities they build through their course and wider King’s experience. They can connect those capabilities with their purposes, identify what they want to develop and communicate their distinctive value with greater confidence.",
+      "beneficiary": "Students and graduates",
+      "benefitType": "student agency and articulation",
+      "successLooksLike": "Students can explain the skills they have developed, provide credible evidence, understand their relevance to different futures and make informed choices about further development."
+    },
+    {
+      "id": "2.1.3-B2",
+      "title": "Disciplinary skills become visible within a shared institutional language",
+      "statement": "Programme teams and faculties can surface the distinctive combinations of skills developed through their disciplines without having to fit them into a narrow set of generic attributes or create isolated local frameworks.",
+      "beneficiary": "Students, programme teams and faculties",
+      "benefitType": "disciplinary clarity and intentional development",
+      "successLooksLike": "Programmes can describe their characteristic skills within a common King’s architecture, make these visible to students and use them to support meaningful conversations about curriculum and development."
+    },
+    {
+      "id": "2.1.3-B3",
+      "title": "King’s can connect education, opportunity and student futures more coherently",
+      "statement": "A shared skills language connects student purpose, curriculum, wider opportunities, recognition, micro-credentials and graduate articulation. It provides a stronger basis for engagement with employers and allows King’s to identify signature features of its education while preserving individual and disciplinary diversity.",
+      "beneficiary": "Students, King’s, employers and external partners",
+      "benefitType": "institutional coherence and external relevance",
+      "successLooksLike": "Skills information can be used coherently across the student journey and understood beyond King’s, with signature institutional features emerging from the richness of student and disciplinary experience."
+    },
+    {
+      "id": "2.1.3-B4",
+      "title": "King’s leads a confident higher education response to the national skills agenda",
+      "statement": "By working ambitiously with the UK Standard Skills Classification, King’s can demonstrate how degree-level education contributes to the skills needs of students, employers and the economy while preserving academic breadth and disciplinary integrity. This positions King’s as a constructive partner in the development and application of a flagship national skills infrastructure.",
+      "beneficiary": "King’s, students, the higher education sector, government and employers",
+      "benefitType": "sector leadership and national collaboration",
+      "successLooksLike": "King’s is recognised as a credible partner in applying and developing the UK Standard Skills Classification, its approach informs wider sector practice, and it contributes practical insight into how a shared national skills language can strengthen degree-level education."
+    }
+  ]
+}

@@ -125,78 +125,7 @@
           ]
         },
         {
-          "id": "2.1.3",
-          "title": "A More Granular and Communicable Approach to Skills",
-          "lead": "Vanessa Freeman",
-          "planningStatus": "pre-draft",
-          "summary": "Uses the Standard Skills Classification as a granular vocabulary for mapping programmes, opportunities and student futures, with discipline and Edge-level overlays.",
-          "problemSolved": "Skills work across the sector often maps the curriculum rather than starting from student futures and the skills those futures require.",
-          "whatChanges": "King's adopts a detailed skills vocabulary that can map curricula, opportunities, experiences and destinations, while preserving discipline-level emphases and Edge attributes.",
-          "components": [
-            {
-              "title": "Full skills vocabulary",
-              "summary": "Use the Standard Skills Classification as the detailed skills language."
-            },
-            {
-              "title": "Future-facing mapping",
-              "summary": "Map backwards from student futures and destination skills needs, not only outward from the curriculum."
-            },
-            {
-              "title": "Discipline-level emphases",
-              "summary": "Allow programmes to surface skills especially characteristic of their discipline."
-            },
-            {
-              "title": "University-level Edge attributes",
-              "summary": "Define a smaller set of King's Edge attributes as an overlay, not a replacement."
-            }
-          ],
-          "steps": [
-            {
-              "id": "2.1.3-step-1",
-              "title": "Confirm the skills architecture",
-              "period": "now-xmas-2026",
-              "summary": "Confirm use of the Standard Skills Classification and the discipline and Edge overlays.",
-              "dependsOn": []
-            },
-            {
-              "id": "2.1.3-step-2",
-              "title": "Design future-facing mapping",
-              "period": "jan-summer-2027",
-              "summary": "Develop the method for mapping student futures and destination needs back to skills.",
-              "dependsOn": [
-                "2.1.3-step-1"
-              ]
-            },
-            {
-              "id": "2.1.3-step-3",
-              "title": "Pilot skills mapping",
-              "period": "ay-2027-28-to-2028-29",
-              "summary": "Test the model with selected programmes, destinations and opportunities.",
-              "dependsOn": [
-                "2.1.3-step-2"
-              ]
-            },
-            {
-              "id": "2.1.3-step-4",
-              "title": "Embed into curriculum, digital and recognition work",
-              "period": "ay-2029-30",
-              "summary": "Ensure the model informs curriculum audit, app requirements, Canvas, opportunity navigation and recognition.",
-              "dependsOn": [
-                "2.1.3-step-3"
-              ]
-            }
-          ],
-          "feedsInto": [
-            "2.1.4",
-            "2.2.1",
-            "2.3.1",
-            "2.4.3"
-          ],
-          "relatedDeliverables": [
-            "2.2.1",
-            "2.3.1",
-            "2.4.3"
-          ]
+          "id": "2.1.3"
         },
         {
           "id": "2.1.4",
