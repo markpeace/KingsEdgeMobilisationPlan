@@ -20,8 +20,7 @@
       "parts": [
         "./2.2.1/core.json",
         "./2.2.1/overview.json",
-        "./2.2.1/benefits.json",
-        "./2.2.1/steps.json"
+        "./2.2.1/benefits.json"
       ]
     }
   ]
