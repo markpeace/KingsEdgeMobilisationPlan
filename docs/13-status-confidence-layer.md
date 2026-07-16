@@ -7,13 +7,16 @@ The repository tracks plan maturity and operational delivery on separate axes.
 `planningStatus` describes how settled and authorised a deliverable plan is:
 
 - `pre-draft`
-- `draft`
+- `proposition-draft` (Proposition draft)
+- `draft` (Delivery draft)
 - `validated-draft`
 - `decision-ready`
 - `mobilising`
 - `in-delivery`
 
 Planning stage belongs in the canonical deliverable JSON. It must not be inferred from delivery activity.
+
+Proposition draft means the case for change and benefits are ready to test while delivery planning remains intentionally incomplete. Delivery draft means the wider delivery model has been mocked out. Validated draft means that delivery model has been tested with relevant owners, partners and evidence.
 
 ## Delivery status
 

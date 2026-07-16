@@ -20,13 +20,14 @@ The source-of-truth cleanup has been completed.
 Allowed values:
 
 - `pre-draft`
-- `draft`
+- `proposition-draft` (Proposition draft)
+- `draft` (Delivery draft)
 - `validated-draft`
 - `decision-ready`
 - `mobilising`
 - `in-delivery`
 
-All current deliverables are `pre-draft` unless explicitly moved to a later `planningStatus`.
+Deliverables default to `pre-draft` unless explicitly moved to a later `planningStatus`.
 
 Do not use these as planning-stage workflows:
 
@@ -63,7 +64,7 @@ Work through the four projects in order and sharpen:
 
 The project titles need to name a mobilisable programme of work, not only describe a strategic domain.
 
-### Second pass: deliverables from pre-draft to draft
+### Second pass: deliverables from pre-draft to Proposition draft
 
 For each deliverable, test:
 
@@ -72,21 +73,26 @@ For each deliverable, test:
 - is a fuller `detailSummary` needed?
 - is the problem sharp enough?
 - is the intended change genuinely transformational?
-- are benefits, outputs and measures distinct?
-- are dependencies and ownership plausible?
-- what would need to be true for this to become `draft`?
+- are the intended benefits distinct from possible outputs?
+- is the proposition coherent enough to test with others?
+- what would need to be true for this to become Proposition draft?
 
-A deliverable only moves from `pre-draft` to `draft` once these have been scrutinised:
+A deliverable moves from `pre-draft` to Proposition draft once these have been scrutinised:
 
 - case for change;
-- ownership;
 - benefits;
+- summary and fuller proposition.
+
+### Third pass: Proposition draft to Delivery draft
+
+Mock out and scrutinise:
+
+- ownership;
 - outputs;
 - measures;
-- definition of done;
 - delivery steps;
 - dependencies;
-- resources;
+- step-level resources;
 - investment ask, if any;
 - risks, issues, assumptions and decisions.
 
@@ -112,9 +118,9 @@ Mitigation: distinguish strategic domain, mobilisable programme of work and publ
 
 Mitigation: keep `summary` concise for cards and use `detailSummary` for detail-page context.
 
-### Risk: deliverables move to draft too early
+### Risk: deliverables move to Delivery draft too early
 
-Mitigation: keep everything `pre-draft` until the deliverable has been scrutinised against the schema.
+Mitigation: use Proposition draft for coherent thinking that is ready to test, and reserve Delivery draft for a mocked-out delivery model.
 
 ### Risk: benefits become disguised outputs
 

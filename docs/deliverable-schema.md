@@ -19,13 +19,21 @@ Use `planningStatus` as the only planning-stage field.
 Allowed values:
 
 - `pre-draft`
-- `draft`
+- `proposition-draft` (displayed as **Proposition draft**)
+- `draft` (displayed as **Delivery draft**)
 - `validated-draft`
 - `decision-ready`
 - `mobilising`
 - `in-delivery`
 
-A deliverable should normally move from `pre-draft` to `draft` only after its case for change, ownership, benefits, measures, governance, delivery steps, resources and material risks have been scrutinised.
+The early-stage gates are:
+
+- **Pre-draft:** the proposition is still forming.
+- **Proposition draft:** the summary, fuller proposition, case for change and benefits are coherent enough to test and challenge. A delivery route is not yet required.
+- **Delivery draft:** the wider delivery model has been mocked out, including ownership, measures, governance, delivery steps, step-level resources and material risks.
+- **Validated draft:** the Delivery draft has been tested with the relevant owners, partners and evidence, and revised in response.
+
+A deliverable may therefore enter the Deliverables index at Proposition draft, but should not appear as a live measures set or delivery timeline until it reaches Delivery draft.
 
 Do not use `tags`, `planningMaturity`, `visibility` or `src/data/status.json` as the planning-stage workflow.
 

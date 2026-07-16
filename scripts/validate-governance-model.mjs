@@ -53,7 +53,7 @@ function requireText(value, path) {
 
 function validateGovernance(deliverable) {
   const planningStatus = deliverable.planningStatus || 'pre-draft';
-  if (planningStatus === 'pre-draft') return;
+  if (['pre-draft', 'proposition-draft'].includes(planningStatus)) return;
 
   const path = deliverable.id;
   const governance = deliverable.governance;

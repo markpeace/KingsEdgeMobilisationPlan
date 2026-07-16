@@ -27,7 +27,8 @@ const meta = (items) => items.filter(Boolean).join(' · ');
 const displayId = (item) => item?.displayId || item?.id;
 const planningStatus = (item) => item?.planningStatus || 'pre-draft';
 const planningStatusOptions = [
-  ['draft', 'Draft'],
+  ['proposition-draft', 'Proposition draft'],
+  ['draft', 'Delivery draft'],
   ['validated-draft', 'Validated draft'],
   ['decision-ready', 'Decision-ready'],
   ['mobilising', 'Mobilising'],
@@ -35,7 +36,8 @@ const planningStatusOptions = [
 ];
 const planningStatusLabel = (status) => ({
   'pre-draft': 'Pre-draft',
-  draft: 'Draft',
+  'proposition-draft': 'Proposition draft',
+  draft: 'Delivery draft',
   'validated-draft': 'Validated draft',
   'decision-ready': 'Decision-ready',
   mobilising: 'Mobilising',
@@ -44,6 +46,8 @@ const planningStatusLabel = (status) => ({
 const planningStatusClass = (item) => `planning-status planning-status-${planningStatus(item)}`;
 const isPreDraft = (item) => planningStatus(item) === 'pre-draft';
 const isBeyondPreDraft = (item) => !isPreDraft(item);
+const hasDeliveryDraft = (item) => !['pre-draft', 'proposition-draft'].includes(planningStatus(item));
+const hasIndicativeDeliveryDetail = (item) => !hasDeliveryDraft(item);
 const hasDistinctDetail = (item) => Boolean(item?.detailSummary && item.detailSummary !== item.summary);
 
 function useHashRoute() {
@@ -95,8 +99,22 @@ function DeliverableContextLine({ deliverable, showProject = false }) {
 }
 
 function PlanningNotice({ deliverable }) {
-  const predraft = isPreDraft(deliverable);
-  return <section className={`planning-notice ${predraft ? 'planning-notice-predraft' : ''}`} aria-label="Planning stage"><div className="planning-notice-main"><span className="planning-notice-label">Planning stage</span><PlanningStatusTag item={deliverable} /><p>{predraft ? 'Included in the mobilisation map, but not yet scrutinised against the full planning schema. Detailed planning assumptions are shown through progressive disclosure below.' : 'This deliverable has moved beyond pre-draft and is shown in the deliverables, measures and timeline indexes.'}</p></div>{predraft && <p className="planning-notice-next"><strong>Next scrutiny:</strong> Confirm case for change, ownership, benefits, measures, resources and dependencies before moving to draft.</p>}</section>;
+  const status = planningStatus(deliverable);
+  const copy = status === 'pre-draft'
+    ? {
+        description: 'The proposition is still forming and remains visible only in the mobilisation map and its detail page.',
+        next: 'Develop the summary, case for change and benefits before moving to Proposition draft.'
+      }
+    : status === 'proposition-draft'
+      ? {
+          description: 'The core proposition is developed enough to test and challenge. The delivery plan is intentionally incomplete at this stage.',
+          next: 'Mock out ownership, measures, governance, delivery steps, resources and material risks before moving to Delivery draft.'
+        }
+      : {
+          description: 'A delivery plan has been drafted and is available in the measures and timeline views.',
+          next: null
+        };
+  return <section className={`planning-notice ${hasIndicativeDeliveryDetail(deliverable) ? 'planning-notice-predraft' : ''}`} aria-label="Planning stage"><div className="planning-notice-main"><span className="planning-notice-label">Planning stage</span><PlanningStatusTag item={deliverable} /><p>{copy.description}</p></div>{copy.next && <p className="planning-notice-next"><strong>Next scrutiny:</strong> {copy.next}</p>}</section>;
 }
 
 function SmartLink({ id, idMap }) {
@@ -109,7 +127,7 @@ function SmartLink({ id, idMap }) {
 }
 
 function Landing() {
-  return <main className="landing-main"><section className="hero landing-hero"><p className="eyebrow">Interactive delivery map</p><h1>{plan.programme.title}</h1><p>{plan.programme.purpose}</p><div className="landing-links"><a href="#/projects"><span>01</span><strong>Projects view</strong><em>Browse the core projects and the related out of programme work.</em></a><a href="#/deliverables"><span>02</span><strong>Deliverables index</strong><em>Search and filter deliverables that have moved beyond pre-draft.</em></a><a href="#/measures"><span>03</span><strong>Measures</strong><em>Track benefit measures for draft or later deliverables.</em></a><a href="#/timeline"><span>04</span><strong>Timeline</strong><em>View sequencing and step-to-step dependencies for draft or later deliverables.</em></a></div></section></main>;
+  return <main className="landing-main"><section className="hero landing-hero"><p className="eyebrow">Interactive delivery map</p><h1>{plan.programme.title}</h1><p>{plan.programme.purpose}</p><div className="landing-links"><a href="#/projects"><span>01</span><strong>Projects view</strong><em>Browse the core projects and the related out of programme work.</em></a><a href="#/deliverables"><span>02</span><strong>Deliverables index</strong><em>Review propositions and delivery plans that have moved beyond pre-draft.</em></a><a href="#/measures"><span>03</span><strong>Measures</strong><em>Track benefit measures for Delivery draft or later deliverables.</em></a><a href="#/timeline"><span>04</span><strong>Timeline</strong><em>View sequencing and dependencies for Delivery draft or later deliverables.</em></a></div></section></main>;
 }
 
 function ProjectsPage() {
@@ -128,7 +146,7 @@ function ProjectDetail({ project }) {
 }
 
 function ProjectDeliverableColumn({ deliverable }) {
-  return <section className="project-deliverable-column"><a className="project-deliverable-header" href={`#/deliverables/${deliverable.id}`}><DeliverableContextLine deliverable={deliverable} /><h3>{deliverable.title}</h3><p>{deliverable.summary}</p><p className="lead">Lead: {deliverable.lead}</p></a><div className="project-step-stack">{deliverable.steps.map((step) => <a className={`project-step-card ${isPreDraft(deliverable) ? 'indicative-step-card' : ''}`} href={`#/deliverables/${deliverable.id}`} key={step.id}><span className="period-pill">{periodLabel(step.period)}</span>{isPreDraft(deliverable) && <span className="indicative-label">Indicative</span>}<h4>{step.title}</h4><p>{step.summary}</p>{getStepDependencies(step).length > 0 && <p className="depends">{getStepDependencies(step).length} dependencies</p>}</a>)}</div></section>;
+  return <section className="project-deliverable-column"><a className="project-deliverable-header" href={`#/deliverables/${deliverable.id}`}><DeliverableContextLine deliverable={deliverable} /><h3>{deliverable.title}</h3><p>{deliverable.summary}</p><p className="lead">Lead: {deliverable.lead}</p></a><div className="project-step-stack">{deliverable.steps.map((step) => <a className={`project-step-card ${hasIndicativeDeliveryDetail(deliverable) ? 'indicative-step-card' : ''}`} href={`#/deliverables/${deliverable.id}`} key={step.id}><span className="period-pill">{periodLabel(step.period)}</span>{hasIndicativeDeliveryDetail(deliverable) && <span className="indicative-label">Indicative</span>}<h4>{step.title}</h4><p>{step.summary}</p>{getStepDependencies(step).length > 0 && <p className="depends">{getStepDependencies(step).length} dependencies</p>}</a>)}</div></section>;
 }
 
 function EmptyState({ title, children }) {
@@ -152,19 +170,19 @@ function DeliverablesIndex({ deliverables }) {
     const text = [deliverable.id, displayId(deliverable), displayId(deliverable.project), deliverable.project.title, deliverable.title, deliverable.lead, deliverable.summary, deliverable.detailSummary, planningStatusLabel(planningStatus(deliverable)), ...(deliverable.tags || [])].join(' ').toLowerCase();
     return matchesProject && matchesStatus && text.includes(query.toLowerCase());
   });
-  return <main><section className="section-heading"><h1>Deliverables index</h1><p>Search or filter deliverables that have moved beyond pre-draft. Pre-draft deliverables stay in the project map and individual detail pages, but are not listed here.</p></section><div className="toolbar"><input type="search" placeholder="Search deliverables, owners or themes" value={query} onChange={(event) => setQuery(event.target.value)} /><select value={projectFilter} onChange={(event) => setProjectFilter(event.target.value)}><option value="all">All projects</option>{projectOptions.map((project) => <option key={project.id} value={project.id}>{displayId(project)} {project.title}</option>)}</select><select value={statusFilter} onChange={(event) => setStatusFilter(event.target.value)}><option value="all">All visible planning statuses</option>{planningStatusOptions.map(([value, label]) => <option key={value} value={value}>{label}</option>)}</select></div>{filtered.length === 0 ? <EmptyState title="No draft or later deliverables to show"><p>{eligible.length === 0 ? 'Deliverables will appear here once they have moved beyond pre-draft.' : 'No visible deliverables match the current filters.'}</p></EmptyState> : <div className="index-list">{filtered.map((deliverable) => <a href={`#/deliverables/${deliverable.id}`} className="index-row deliverable-index-row" key={deliverable.id}><div className="index-row-main"><DeliverableContextLine deliverable={deliverable} showProject /><h3>{deliverable.title}</h3><p>{deliverable.summary}</p><div className="index-owner-line"><span>Accountable owner: {deliverable.ownership?.accountableOwner || deliverable.project.owner}</span><span>Delivery lead: {deliverable.ownership?.deliveryLead || deliverable.lead}</span></div></div></a>)}</div>}</main>;
+  return <main><section className="section-heading"><h1>Deliverables index</h1><p>Search or filter propositions and delivery plans that have moved beyond pre-draft. Pre-draft deliverables stay in the project map and individual detail pages.</p></section><div className="toolbar"><input type="search" placeholder="Search deliverables, owners or themes" value={query} onChange={(event) => setQuery(event.target.value)} /><select value={projectFilter} onChange={(event) => setProjectFilter(event.target.value)}><option value="all">All projects</option>{projectOptions.map((project) => <option key={project.id} value={project.id}>{displayId(project)} {project.title}</option>)}</select><select value={statusFilter} onChange={(event) => setStatusFilter(event.target.value)}><option value="all">All visible planning statuses</option>{planningStatusOptions.map(([value, label]) => <option key={value} value={value}>{label}</option>)}</select></div>{filtered.length === 0 ? <EmptyState title="No propositions or delivery drafts to show"><p>{eligible.length === 0 ? 'Deliverables will appear here once they reach Proposition draft.' : 'No visible deliverables match the current filters.'}</p></EmptyState> : <div className="index-list">{filtered.map((deliverable) => <a href={`#/deliverables/${deliverable.id}`} className="index-row deliverable-index-row" key={deliverable.id}><div className="index-row-main"><DeliverableContextLine deliverable={deliverable} showProject /><h3>{deliverable.title}</h3><p>{deliverable.summary}</p><div className="index-owner-line"><span>Accountable owner: {deliverable.ownership?.accountableOwner || deliverable.project.owner}</span><span>Delivery lead: {deliverable.ownership?.deliveryLead || deliverable.lead}</span></div></div></a>)}</div>}</main>;
 }
 
 function MeasuresView({ deliverables }) {
   const [projectFilter, setProjectFilter] = useState('all');
   const [typeFilter, setTypeFilter] = useState('all');
-  const eligible = deliverables.filter(isBeyondPreDraft);
+  const eligible = deliverables.filter(hasDeliveryDraft);
   const measures = eligible.flatMap((deliverable) => (deliverable.measures || []).map((measure, index) => ({ id: measure.id || `${deliverable.id}-measure-${index}`, deliverable, measure })));
   const types = [...new Set(measures.map((entry) => entry.measure.measureType).filter(Boolean))].sort();
   const projectOptions = projectOptionsFor(eligible);
   const filtered = measures.filter((entry) => (projectFilter === 'all' || entry.deliverable.project.id === projectFilter) && (typeFilter === 'all' || entry.measure.measureType === typeFilter));
   const projectsWithMeasures = new Set(measures.map((entry) => entry.deliverable.project.id)).size;
-  return <main><section className="section-heading"><h1>Measures</h1><p>Track benefit measures and evidence questions for deliverables that have moved beyond pre-draft.</p></section><div className="measure-summary"><article className="measure-card"><span>{measures.length}</span><strong>Measures shown</strong></article><article className="measure-card"><span>{projectsWithMeasures}</span><strong>Projects represented</strong></article><article className="measure-card"><span>{eligible.length}</span><strong>Visible deliverables</strong></article></div><div className="toolbar"><select value={projectFilter} onChange={(event) => setProjectFilter(event.target.value)}><option value="all">All projects</option>{projectOptions.map((project) => <option key={project.id} value={project.id}>{displayId(project)} {project.title}</option>)}</select><select value={typeFilter} onChange={(event) => setTypeFilter(event.target.value)}><option value="all">All measure types</option>{types.map((type) => <option key={type} value={type}>{type}</option>)}</select></div>{filtered.length === 0 ? <EmptyState title="No measures to show yet"><p>{measures.length === 0 ? 'Measures will appear here once deliverables have moved beyond pre-draft and have associated measures.' : 'No measures match the current filters.'}</p></EmptyState> : <div className="index-list measure-list">{filtered.map(({ id, deliverable, measure }) => <a href={`#/deliverables/${deliverable.id}`} className="index-row measure-row" key={id}><div><DeliverableContextLine deliverable={deliverable} showProject /><h3>{measure.title}</h3><p>{[measure.questionAnswered, measure.measure, measure.target ? `Target: ${measure.target}` : null, measure.baseline ? `Baseline: ${measure.baseline}` : null, measure.dataSource ? `Source: ${measure.dataSource}` : null].filter(Boolean).join(' · ')}</p></div><div className="index-meta"><strong>{measure.measureType || 'measure'}</strong><span>{measure.confidence || 'Confidence TBC'}</span></div></a>)}</div>}</main>;
+  return <main><section className="section-heading"><h1>Measures</h1><p>Track benefit measures and evidence questions for Delivery draft or later deliverables.</p></section><div className="measure-summary"><article className="measure-card"><span>{measures.length}</span><strong>Measures shown</strong></article><article className="measure-card"><span>{projectsWithMeasures}</span><strong>Projects represented</strong></article><article className="measure-card"><span>{eligible.length}</span><strong>Visible deliverables</strong></article></div><div className="toolbar"><select value={projectFilter} onChange={(event) => setProjectFilter(event.target.value)}><option value="all">All projects</option>{projectOptions.map((project) => <option key={project.id} value={project.id}>{displayId(project)} {project.title}</option>)}</select><select value={typeFilter} onChange={(event) => setTypeFilter(event.target.value)}><option value="all">All measure types</option>{types.map((type) => <option key={type} value={type}>{type}</option>)}</select></div>{filtered.length === 0 ? <EmptyState title="No measures to show yet"><p>{measures.length === 0 ? 'Measures will appear here once deliverables reach Delivery draft and have associated measures.' : 'No measures match the current filters.'}</p></EmptyState> : <div className="index-list measure-list">{filtered.map(({ id, deliverable, measure }) => <a href={`#/deliverables/${deliverable.id}`} className="index-row measure-row" key={id}><div><DeliverableContextLine deliverable={deliverable} showProject /><h3>{measure.title}</h3><p>{[measure.questionAnswered, measure.measure, measure.target ? `Target: ${measure.target}` : null, measure.baseline ? `Baseline: ${measure.baseline}` : null, measure.dataSource ? `Source: ${measure.dataSource}` : null].filter(Boolean).join(' · ')}</p></div><div className="index-meta"><strong>{measure.measureType || 'measure'}</strong><span>{measure.confidence || 'Confidence TBC'}</span></div></a>)}</div>}</main>;
 }
 
 function FieldCard({ title, children, className = '' }) {
@@ -229,7 +247,7 @@ function StepExtras({ step }) {
 }
 
 function DeliveryStepsPanel({ deliverable, idMap }) {
-  return <section className="panel route-through-panel" id="route-through"><h2>Delivery timeline</h2><p className="subtle">The main delivery route for this deliverable. Each card shows the step purpose, what it produces and what it needs. Open step detail for decisions, resources, risks, issues and assumptions.</p><div className="steps-list">{deliverable.steps.map((step) => <article className={`step-card ${isPreDraft(deliverable) ? 'indicative-step-card' : ''}`} key={step.id}><span className="period-pill">{periodLabel(step.period)}</span>{isPreDraft(deliverable) && <span className="indicative-label">Indicative</span>}<h3>{step.title}</h3><p>{step.summary}</p>{getStepDependencies(step).length > 0 && <p className="depends">Depends on: {getStepDependencies(step).map((id) => resolveLabel(id, idMap)).join('; ')}</p>}<StepExtras step={step} /></article>)}</div></section>;
+  return <section className="panel route-through-panel" id="route-through"><h2>Delivery timeline</h2><p className="subtle">The main delivery route for this deliverable. Each card shows the step purpose, what it produces and what it needs. Open step detail for decisions, resources, risks, issues and assumptions.</p><div className="steps-list">{deliverable.steps.map((step) => <article className={`step-card ${hasIndicativeDeliveryDetail(deliverable) ? 'indicative-step-card' : ''}`} key={step.id}><span className="period-pill">{periodLabel(step.period)}</span>{hasIndicativeDeliveryDetail(deliverable) && <span className="indicative-label">Indicative</span>}<h3>{step.title}</h3><p>{step.summary}</p>{getStepDependencies(step).length > 0 && <p className="depends">Depends on: {getStepDependencies(step).map((id) => resolveLabel(id, idMap)).join('; ')}</p>}<StepExtras step={step} /></article>)}</div></section>;
 }
 
 function DecisionsDependenciesPanel({ deliverable, stepDeps, onward, idMap }) {
@@ -480,7 +498,7 @@ function TimelineView({ timelineItems, idMap, dependencyIndex }) {
   const [modalStepId, setModalStepId] = useState(null);
   const modalTriggerRef = useRef(null);
 
-  const eligible = timelineItems.filter(isBeyondPreDraft);
+  const eligible = timelineItems.filter(hasDeliveryDraft);
   const availableProjectIds = new Set(eligible.map((item) => item.project?.id).filter(Boolean));
   const projectOptions = projects.filter((project) => availableProjectIds.has(project.id));
   const normalizedQuery = query.trim().toLowerCase();
@@ -590,7 +608,7 @@ function TimelineView({ timelineItems, idMap, dependencyIndex }) {
     </div>
 
     {visibleRows.length === 0 ? <EmptyState title="No timeline items match the current view">
-      <p>{eligible.length === 0 ? 'Timeline items will appear once deliverables move beyond pre-draft.' : 'Change the project, search, status or date-range filters to see more work.'}</p>
+      <p>{eligible.length === 0 ? 'Timeline items will appear once deliverables reach Delivery draft.' : 'Change the project, search, status or date-range filters to see more work.'}</p>
       <button type="button" className="secondary-button" onClick={() => { setProjectFilter('all'); setQuery(''); setStatusFilter('all'); setHorizonMode('fit'); }}>Reset timeline</button>
     </EmptyState> : <>
       <div className="ke-timeline-table" role="table" aria-label="King's Edge delivery timeline">

@@ -1799,6 +1799,12 @@ main > .detail-grid:last-child .chip,
   color: var(--muted);
 }
 
+.planning-status-proposition-draft {
+  border: 1px solid var(--accent);
+  background: var(--accent-soft);
+  color: var(--accent-dark);
+}
+
 .planning-status-draft,
 .planning-status-validated-draft,
 .planning-status-decision-ready,
