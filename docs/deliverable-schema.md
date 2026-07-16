@@ -29,6 +29,19 @@ A deliverable should normally move from `pre-draft` to `draft` only after its ca
 
 Do not use `tags`, `planningMaturity`, `visibility` or `src/data/status.json` as the planning-stage workflow.
 
+## Delivery status
+
+`planningStatus` records the maturity of the deliverable plan. Operational progress is recorded separately against step IDs in `src/data/status.json`.
+
+Use these canonical delivery statuses:
+
+- `not-started`
+- `in-progress`
+- `blocked`
+- `complete`
+
+The app derives deliverable progress from its steps. Do not author a competing deliverable-level delivery status. A step becomes complete when its outputs or acceptance evidence have been achieved, not merely when its scheduled period has ended.
+
 ## Project fields
 
 Each project should be able to carry:
