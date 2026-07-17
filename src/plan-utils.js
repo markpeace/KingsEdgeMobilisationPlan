@@ -2,6 +2,7 @@ import plan from './data/kings-edge-plan.json';
 import outOfProgrammeProjects from './data/enabling-projects.json';
 import stepDependencyOverrides from './data/step-dependencies.json';
 import { registeredDeliverableMap } from './data/deliverables/index.js';
+import { DEFAULT_PLANNING_STATUS } from './planning-status.js';
 
 const thirdSegments = [
   { id: 'a', label: 'a', longLabel: 'first third' },
@@ -226,7 +227,7 @@ function normaliseDeliverable(deliverable, project) {
     displayId: canonicalDeliverable.id,
     summary: summaryOf(canonicalDeliverable),
     detailSummary: detailSummaryOf(canonicalDeliverable),
-    planningStatus: canonicalDeliverable.planningStatus || 'pre-draft',
+    planningStatus: canonicalDeliverable.planningStatus || DEFAULT_PLANNING_STATUS,
     planningMaturity: canonicalDeliverable.planningMaturity || 'concept',
     visibility: canonicalDeliverable.visibility || 'staff-visible',
     caseForChange,
@@ -236,6 +237,7 @@ function normaliseDeliverable(deliverable, project) {
     measures,
     steps,
     deliverySteps: steps,
+    decisionLog: asArray(canonicalDeliverable.decisionLog),
     assumptions: asArray(canonicalDeliverable.assumptions).map(withVisibility),
     issues: asArray(canonicalDeliverable.issues).map(withVisibility),
     risks: asArray(canonicalDeliverable.risks).map(withVisibility)

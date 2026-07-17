@@ -2,7 +2,7 @@
 
 This repository supports two distinct modes of work: project manager mode and developer mode.
 
-Start new conversations with `docs/hydration-guide.md`. Then read `docs/deliverable-schema.md`, `docs/json-spine.md`, `docs/repository-memory.md` and `docs/schema-source-of-truth-audit.md`.
+Start new conversations with `docs/hydration-guide.md`. Then read `docs/deliverable-schema.md`, `docs/deliverable-gates.md`, `docs/json-spine.md`, `docs/repository-memory.md` and `docs/schema-source-of-truth-audit.md`.
 
 These docs are for agent and collaborator continuity only. Do not render them in the app or treat them as programme content.
 
@@ -14,13 +14,14 @@ Use `planningStatus` as the only planning-stage workflow.
 
 Allowed values:
 
-- `pre-draft`
-- `proposition-draft` (Proposition draft)
-- `draft` (Delivery draft)
-- `validated-draft`
-- `decision-ready`
-- `mobilising`
-- `in-delivery`
+- `proposition-development`
+- `proposition-review`
+- `delivery-design`
+- `resource-planning`
+- `plan-validation`
+- `portfolio-board-approval`
+- `resource-confirmation`
+- `approved-to-mobilise`
 
 Do not use `tags`, `planningMaturity`, `visibility`, or `src/data/status.json` as the planning-stage workflow.
 
@@ -50,6 +51,7 @@ Primary files:
 
 Supporting file:
 
+- `src/planning-status.js`
 - `src/plan-utils.js`
 
 Project manager mode may read `src/plan-utils.js` to understand normalisation, but should not change rendering unless the user explicitly asks for schema-plus-rendering work.
@@ -76,17 +78,17 @@ Each deliverable should answer:
 
 Use this prompt at the start of a project manager mode conversation:
 
-> You are working in project manager mode on the King's Edge Mobilisation Plan repository. Hydrate yourself before editing. Read `docs/hydration-guide.md`, `docs/deliverable-schema.md`, `docs/json-spine.md`, `docs/repository-memory.md`, `docs/schema-source-of-truth-audit.md`, `docs/next-repository-update-brief.md`, `src/plan-utils.js` and the relevant JSON files under `src/data/`.
+> You are working in project manager mode on the King's Edge Mobilisation Plan repository. Hydrate yourself before editing. Read `docs/hydration-guide.md`, `docs/deliverable-schema.md`, `docs/deliverable-gates.md`, `docs/json-spine.md`, `docs/repository-memory.md`, `docs/schema-source-of-truth-audit.md`, `docs/next-repository-update-brief.md`, `src/planning-status.js`, `src/plan-utils.js` and the relevant JSON files under `src/data/`.
 >
 > In this mode, the primary editing surface is JSON data. Work mainly in `src/data/kings-edge-plan.json`, `src/data/deliverables/<deliverable-id>/*.json`, `src/data/deliverables/manifest.json`, `src/data/enabling-projects.json`, `src/data/step-dependencies.json` and `src/data/status.json`. Do not edit React, CSS or site rendering unless explicitly asked for developer-mode or schema-plus-rendering work.
 >
-> The only canonical planning-stage workflow is `planningStatus`: `pre-draft`, `proposition-draft`, `draft`, `validated-draft`, `decision-ready`, `mobilising`, `in-delivery`. Display `draft` as Delivery draft. Do not use generic `tags`, `planningMaturity`, `visibility`, or `src/data/status.json` for that workflow. Treat deliverables as `pre-draft` unless the JSON explicitly says otherwise.
+> The only canonical planning-stage workflow is `planningStatus`: `proposition-development`, `proposition-review`, `delivery-design`, `resource-planning`, `plan-validation`, `portfolio-board-approval`, `resource-confirmation`, `approved-to-mobilise`. Follow `docs/deliverable-gates.md`; do not use generic `tags`, `planningMaturity`, `visibility`, or `src/data/status.json` for that workflow. Treat deliverables as `proposition-development` unless the JSON explicitly says otherwise.
 >
 > Preserve the schema logic: problem or need, benefit to realise, outputs to produce, measures and evidence, delivery steps, resources, dependencies, risks, assumptions and decisions, definition of done. Keep benefits, outputs and measures distinct.
 >
 > The canonical project order and IDs are already in `src/data/kings-edge-plan.json`. Do not add display-remapping workarounds. If project order, title or numbering is wrong, fix the JSON source of truth.
 >
-> Recommended rhythm: first sharpen project titles, summaries and transformation claims; then develop each deliverable's summary, case for change and benefits to reach Proposition draft; then mock out the wider delivery model to reach Delivery draft.
+> Recommended rhythm: develop and informally review the proposition; design the delivery route without resource constraints; define resources; validate the complete plan; seek Portfolio Board approval; then confirm resources and align ambition before approval to mobilise.
 >
 > Before making a large JSON change, briefly explain the proposed shape and any risks to plan integrity. After making changes, summarise what changed, which files were edited and whether any schema or rendering consequences may follow.
 
@@ -98,7 +100,7 @@ Do:
 - Use `src/data/deliverables/<deliverable-id>/` for detailed deliverable files and keep the manifest explicit.
 - Maintain valid JSON.
 - Use `planningStatus` for the planning-stage workflow.
-- Treat deliverables as `pre-draft` unless explicitly changed.
+- Treat deliverables as `proposition-development` unless explicitly changed.
 - Preserve IDs unless there is an agreed ID migration.
 - If migrating IDs, update dependencies, steps, feeds and related deliverables together.
 - Keep benefits, outputs and measures distinct.
@@ -135,13 +137,13 @@ Developer mode may read JSON files to understand the data model, but should not 
 
 Use this prompt at the start of a developer mode conversation:
 
-> You are working in developer mode on the King's Edge Mobilisation Plan repository. Hydrate yourself before editing. Read `docs/hydration-guide.md`, `docs/deliverable-schema.md`, `docs/json-spine.md`, `docs/repository-memory.md`, `docs/schema-source-of-truth-audit.md`, `src/plan-utils.js`, `src/site.jsx`, relevant CSS files in `public/` and `src/styles.css`.
+> You are working in developer mode on the King's Edge Mobilisation Plan repository. Hydrate yourself before editing. Read `docs/hydration-guide.md`, `docs/deliverable-schema.md`, `docs/deliverable-gates.md`, `docs/json-spine.md`, `docs/repository-memory.md`, `docs/schema-source-of-truth-audit.md`, `src/planning-status.js`, `src/plan-utils.js`, `src/site.jsx`, relevant CSS files in `public/` and `src/styles.css`.
 >
 > In this mode, treat rendering as the primary editing surface. Work mainly in React, CSS, HTML and configuration. You may inspect JSON to understand the data model, but do not change plan data unless explicitly asked.
 >
 > Preserve the separation between data and rendering. Do not hard-code plan content into React or CSS. Do not add display-remapping workarounds to hide source-data problems. If a UI improvement requires a schema or ID change, pause and explain the implication for the plan before editing JSON.
 >
-> Rendering should make `planningStatus` visible without implying false maturity. Treat “Reveal detailed plan” as progressive disclosure, not security. Measures and Timeline views should respect planning status.
+> Rendering should make `planningStatus` visible without implying false maturity. Treat “Reveal detailed plan” as progressive disclosure, not security. Measures and Timeline begin at Delivery design; operational status is step-level and begins after Approved to mobilise.
 >
 > After making changes, summarise what changed, which files were edited and whether the change affects data, rendering or both.
 
@@ -153,7 +155,7 @@ Do:
 - Keep React components aligned with the normalised schema.
 - Preserve JSON as the source of truth.
 - Flag when a rendering issue is actually a data-shape issue.
-- Make pre-draft content visually and verbally clear.
+- Make developing propositions and pre-approval delivery routes visually and verbally clear.
 
 Do not:
 

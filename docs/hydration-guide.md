@@ -11,12 +11,14 @@ Before editing anything, read these files in this order:
 1. `docs/hydration-guide.md`
 2. `docs/working-modes.md`
 3. `docs/deliverable-schema.md`
-4. `docs/json-spine.md`
-5. `docs/repository-memory.md`
-6. `docs/schema-source-of-truth-audit.md`
-7. `docs/next-repository-update-brief.md`
-8. `src/plan-utils.js`
-9. Relevant JSON files under `src/data/`
+4. `docs/deliverable-gates.md`
+5. `docs/json-spine.md`
+6. `docs/repository-memory.md`
+7. `docs/schema-source-of-truth-audit.md`
+8. `docs/next-repository-update-brief.md`
+9. `src/planning-status.js`
+10. `src/plan-utils.js`
+11. Relevant JSON files under `src/data/`
 
 If the task is about app rendering or UI, also inspect:
 
@@ -31,15 +33,16 @@ Use one planning-stage workflow only: `planningStatus`.
 
 Allowed values:
 
-- `pre-draft`
-- `proposition-draft` (Proposition draft)
-- `draft` (Delivery draft)
-- `validated-draft`
-- `decision-ready`
-- `mobilising`
-- `in-delivery`
+- `proposition-development`
+- `proposition-review`
+- `delivery-design`
+- `resource-planning`
+- `plan-validation`
+- `portfolio-board-approval`
+- `resource-confirmation`
+- `approved-to-mobilise`
 
-Deliverables default to `pre-draft` unless the JSON explicitly says otherwise.
+Deliverables default to `proposition-development` unless the JSON explicitly says otherwise. The canonical labels, work and gates are centralised in `src/planning-status.js` and documented in `docs/deliverable-gates.md`.
 
 Do not treat `tags`, `planningMaturity`, `visibility`, or `src/data/status.json` as the planning-stage workflow.
 
@@ -68,13 +71,13 @@ You are working in project manager mode on the King's Edge Mobilisation Plan rep
 
 In this mode, treat JSON as the primary editing surface. Work mainly in `src/data/kings-edge-plan.json`, `src/data/enabling-projects.json`, `src/data/step-dependencies.json` and `src/data/status.json`. Do not make React, CSS, layout or rendering changes unless I explicitly switch to developer mode or ask for schema-plus-rendering work.
 
-The only canonical planning-stage workflow is `planningStatus`: `pre-draft`, `proposition-draft`, `draft`, `validated-draft`, `decision-ready`, `mobilising`, `in-delivery`. Display `draft` as Delivery draft. Do not use generic `tags`, `planningMaturity`, `visibility`, or `src/data/status.json` for that workflow.
+The only canonical planning-stage workflow is `planningStatus`: `proposition-development`, `proposition-review`, `delivery-design`, `resource-planning`, `plan-validation`, `portfolio-board-approval`, `resource-confirmation`, `approved-to-mobilise`. Do not use generic `tags`, `planningMaturity`, `visibility`, or `src/data/status.json` for that workflow.
 
-Treat deliverables as `pre-draft` unless the JSON says otherwise. Move a deliverable to Proposition draft when its summary, case for change and benefits are coherent enough to test. Move it to Delivery draft only after the wider delivery model has been mocked out and scrutinised. Keep benefits, outputs and measures distinct. Distinguish existing capacity, new investment and enabling conditions when discussing resources. Do not place genuinely restricted material in broad client-side JSON.
+Treat deliverables as `proposition-development` unless the JSON says otherwise. Follow the stages and gates in `docs/deliverable-gates.md`. Keep benefits, outputs and measures distinct. Design the route before constraining it by resource, then distinguish existing capacity, new investment and enabling conditions during Resource planning. Do not place genuinely restricted material in broad client-side JSON.
 
 The canonical project order and IDs are already in `src/data/kings-edge-plan.json`. Do not add display-remapping workarounds. If project order, title or numbering is wrong, fix the JSON source of truth.
 
-Recommended rhythm: first sharpen the four project titles, summaries and transformation claims; then move deliverables from pre-draft to Proposition draft before mocking out the wider Delivery draft.
+Recommended rhythm: develop the proposition, run the informal proposition review, design the delivery route, define its resource requirement, validate the full plan, seek Portfolio Board approval, then confirm resources and align ambition before approval to mobilise.
 
 Before making major JSON changes, explain the proposed shape and any risks to plan integrity. After changes, summarise which files changed and whether there are rendering consequences.
 
@@ -88,7 +91,7 @@ In this mode, treat the website rendering as the primary editing surface. Work m
 
 Preserve the separation between data and rendering. Do not hard-code plan content into React or CSS when it belongs in JSON. Do not add display-remapping workarounds to hide source-data problems. If a UI improvement requires a schema or ID change, pause and explain the implication for the plan before editing JSON.
 
-Make planning status visible without turning it into red/amber/green performance status. Treat “Reveal detailed plan” as progressive disclosure, not security. Ensure Measures and Timeline views do not present pre-draft assumptions as approved KPIs or live delivery plans.
+Make planning status visible without turning it into red/amber/green performance status. Treat “Reveal detailed plan” as progressive disclosure, not security. Show proposed measures and timeline steps from Delivery design, label pre-approval steps as indicative, and show operational step status only after Approved to mobilise.
 
 After making changes, summarise what changed, which files were edited and whether the change affects data, rendering or both.
 
@@ -138,7 +141,7 @@ Ask these questions before changing files:
 - Will this affect routing, dependencies, display IDs or timeline sequencing?
 - Am I adding a display workaround instead of fixing JSON?
 - Do I need to preserve backwards compatibility?
-- Does this imply false maturity for pre-draft content?
+- Does this imply approval or operational progress before the relevant gate has passed?
 - Am I using reveal as progressive disclosure rather than security?
 - Should this decision be recorded in `docs/repository-memory.md`?
 

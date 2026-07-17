@@ -6,17 +6,18 @@ The repository tracks plan maturity and operational delivery on separate axes.
 
 `planningStatus` describes how settled and authorised a deliverable plan is:
 
-- `pre-draft`
-- `proposition-draft` (Proposition draft)
-- `draft` (Delivery draft)
-- `validated-draft`
-- `decision-ready`
-- `mobilising`
-- `in-delivery`
+- `proposition-development` (Proposition development)
+- `proposition-review` (Proposition review)
+- `delivery-design` (Delivery design)
+- `resource-planning` (Resource planning)
+- `plan-validation` (Plan validation)
+- `portfolio-board-approval` (For Board approval)
+- `resource-confirmation` (Resource confirmation)
+- `approved-to-mobilise` (Approved to mobilise)
 
 Planning stage belongs in the canonical deliverable JSON. It must not be inferred from delivery activity.
 
-Proposition draft means the case for change and benefits are ready to test while delivery planning remains intentionally incomplete. Delivery draft means the wider delivery model has been mocked out. Validated draft means that delivery model has been tested with relevant owners, partners and evidence.
+See `docs/deliverable-gates.md` for the work and exit gate at each stage. Portfolio Board approval and resource confirmation are deliberately separate, even when the same meeting records both decisions.
 
 ## Delivery status
 
@@ -37,7 +38,7 @@ Legacy values `scoping` and `active` remain readable while old data is migrated,
 
 ## Step-level source of truth
 
-Author delivery status against step IDs. Do not maintain a second manually authored deliverable status.
+Author delivery status against step IDs only after the parent deliverable is `approved-to-mobilise`. Do not maintain a second manually authored deliverable status.
 
 ```json
 {
@@ -77,16 +78,16 @@ A completed step should include a completion date and short evidence note:
 
 Do not use percentage completion unless a future delivery method provides a meaningful, consistently maintained calculation.
 
-## Derived deliverable status
+## Derived delivery summary
 
-The app derives the operational summary for a deliverable from its steps:
+For approved-to-mobilise deliverables, the app derives an operational summary from the steps:
 
 - all steps not started: `not-started`
 - any materially gating step blocked: `blocked`
 - any step in progress, or a mixture of completed and remaining steps: `in-progress`
 - all steps complete: `complete`
 
-The timeline may display a summary such as `2 of 7 complete · 1 blocked`.
+The timeline may display a summary such as `2 of 7 complete · 1 blocked`. Before approval to mobilise, the timeline labels the route as indicative and does not display operational status.
 
 ## Completion rule
 
@@ -107,7 +108,7 @@ The existing confidence values remain available for content and status records:
 - `needs-validation`
 - `placeholder`
 
-Confidence must not replace either `planningStatus` or delivery status. The timeline prioritises operational status and keeps plan maturity visible at deliverable level.
+Confidence must not replace either `planningStatus` or delivery status. The timeline prioritises planning stage before mobilisation approval and step status afterwards.
 
 ## Update discipline
 

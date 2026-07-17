@@ -1,4 +1,5 @@
 import fs from 'node:fs';
+import { DEFAULT_PLANNING_STATUS, hasDeliveryDesign } from '../src/planning-status.js';
 
 function readJson(relativePath) {
   return JSON.parse(fs.readFileSync(new URL(relativePath, import.meta.url), 'utf8'));
@@ -52,13 +53,13 @@ function requireText(value, path) {
 }
 
 function validateGovernance(deliverable) {
-  const planningStatus = deliverable.planningStatus || 'pre-draft';
-  if (['pre-draft', 'proposition-draft'].includes(planningStatus)) return;
+  const planningStatus = deliverable.planningStatus || DEFAULT_PLANNING_STATUS;
+  if (!hasDeliveryDesign(planningStatus)) return;
 
   const path = deliverable.id;
   const governance = deliverable.governance;
   if (!governance || typeof governance !== 'object' || Array.isArray(governance)) {
-    errors.push(`${path}.governance should be an object for a draft-or-later deliverable.`);
+    errors.push(`${path}.governance should be an object for a delivery-design-or-later deliverable.`);
     return;
   }
 

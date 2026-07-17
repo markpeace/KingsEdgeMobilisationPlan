@@ -1794,22 +1794,23 @@ main > .detail-grid:last-child .chip,
   white-space: nowrap;
 }
 
-.planning-status-pre-draft {
+.planning-status-proposition-development {
   background: var(--faint);
   color: var(--muted);
 }
 
-.planning-status-proposition-draft {
+.planning-status-proposition-review {
   border: 1px solid var(--accent);
   background: var(--accent-soft);
   color: var(--accent-dark);
 }
 
-.planning-status-draft,
-.planning-status-validated-draft,
-.planning-status-decision-ready,
-.planning-status-mobilising,
-.planning-status-in-delivery {
+.planning-status-delivery-design,
+.planning-status-resource-planning,
+.planning-status-plan-validation,
+.planning-status-portfolio-board-approval,
+.planning-status-resource-confirmation,
+.planning-status-approved-to-mobilise {
   background: var(--ink);
   color: #ffffff;
 }
@@ -1987,7 +1988,7 @@ main > .detail-grid:last-child .chip,
 
 .staff-summary-panel,
 .detailed-plan-control,
-.pre-draft-note {
+.proposition-stage-note {
   margin: 1.15rem 0;
 }
 
@@ -2033,12 +2034,12 @@ main > .detail-grid:last-child .chip,
   margin-top: 1rem;
 }
 
-.pre-draft-note {
+.proposition-stage-note {
   border-style: dashed !important;
   background: #fff9ed !important;
 }
 
-.pre-draft-note h2 {
+.proposition-stage-note h2 {
   font-size: clamp(1.65rem, 2.4vw, 2.45rem) !important;
 }
 
@@ -2058,7 +2059,7 @@ main > .detail-grid:last-child .chip,
 }
 
 .indicative-step-card,
-.timeline-row-predraft .timeline-title,
+.timeline-row-indicative .timeline-title,
 .timeline-block-indicative {
   border-style: dashed !important;
 }
@@ -2262,8 +2263,60 @@ main > .detail-grid:last-child .chip,
   color: var(--ink);
 }
 
-.planning-notice-predraft {
+.planning-notice-early-stage {
   border-style: dashed;
+}
+
+.decision-log-list {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.decision-log-entry {
+  padding: 0.9rem;
+  border: 1px solid var(--faint);
+  background: #ffffff;
+}
+
+.decision-log-heading {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.55rem;
+}
+
+.decision-log-heading time {
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 750;
+}
+
+.decision-log-type {
+  display: inline-flex;
+  padding: 0.25rem 0.42rem;
+  border: 1px solid var(--ink);
+  color: var(--ink);
+  font-size: 0.68rem;
+  font-weight: 850;
+  letter-spacing: 0.05em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.decision-log-type-decision {
+  background: var(--ink);
+  color: #ffffff;
+}
+
+.decision-log-entry h3,
+.decision-log-entry p {
+  margin-top: 0;
+}
+
+.decision-log-entry p:last-child {
+  margin-bottom: 0;
 }
 
 .empty-state-panel {
@@ -2654,7 +2707,7 @@ main > .detail-grid:last-child .chip,
   display: none !important;
 }
 
-.detailed-plan-reveal > .pre-draft-note {
+.detailed-plan-reveal > .proposition-stage-note {
   order: 7;
 }
 
@@ -2662,24 +2715,28 @@ main > .detail-grid:last-child .chip,
   order: 8;
 }
 
-.detailed-plan-reveal > #definition-of-done {
+.detailed-plan-reveal > #decision-log {
   order: 9;
 }
 
-.detailed-plan-reveal > #resources {
+.detailed-plan-reveal > #definition-of-done {
   order: 10;
 }
 
-.detailed-plan-reveal > #components {
+.detailed-plan-reveal > #resources {
   order: 11;
 }
 
-.detailed-plan-reveal > #risks-decisions {
+.detailed-plan-reveal > #components {
   order: 12;
 }
 
-.detailed-plan-reveal > #dependencies {
+.detailed-plan-reveal > #risks-decisions {
   order: 13;
+}
+
+.detailed-plan-reveal > #dependencies {
+  order: 14;
 }
 
 .route-through-panel > .steps-list,
@@ -4495,12 +4552,16 @@ main .route-through-panel > .steps-list,
   order: 6;
 }
 
-.detailed-plan-reveal > .pre-draft-note {
+.detailed-plan-reveal > .proposition-stage-note {
   order: 7;
 }
 
-.detailed-plan-reveal > #risks-decisions {
+.detailed-plan-reveal > #decision-log {
   order: 8;
+}
+
+.detailed-plan-reveal > #risks-decisions {
+  order: 9;
 }
 
 /* Responsive */

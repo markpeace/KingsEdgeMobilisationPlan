@@ -29,13 +29,14 @@ Use `planningStatus`.
 
 Allowed values:
 
-- `pre-draft`
-- `proposition-draft` (Proposition draft)
-- `draft` (Delivery draft)
-- `validated-draft`
-- `decision-ready`
-- `mobilising`
-- `in-delivery`
+- `proposition-development`
+- `proposition-review`
+- `delivery-design`
+- `resource-planning`
+- `plan-validation`
+- `portfolio-board-approval`
+- `resource-confirmation`
+- `approved-to-mobilise`
 
 This is the only workflow that should be described as the planning-stage tag.
 
@@ -71,6 +72,6 @@ Unacceptable utility work includes:
 
 Do not add another tagging workflow.
 
-Use `planningStatus` for the workflow from pre-draft to delivery. Treat other labels as secondary metadata only.
+Use `planningStatus` for the workflow from proposition development to approval to mobilise. Treat other labels as secondary metadata only. Use `src/planning-status.js` as the code source of truth and `docs/deliverable-gates.md` as the authoring reference.
 
 Do not add display remapping to hide source data problems. If the plan order, numbering or title is wrong, fix the JSON source of truth.

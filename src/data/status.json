@@ -4,7 +4,7 @@
     "confidence": "needs-validation",
     "decisionNeeded": false,
     "asOf": null,
-    "note": "Delivery status has not yet been updated. Planning stage is tracked separately through planningStatus."
+    "note": "Step delivery status has not yet been updated. Operational tracking begins after the parent deliverable is approved to mobilise."
   },
   "items": {}
 }

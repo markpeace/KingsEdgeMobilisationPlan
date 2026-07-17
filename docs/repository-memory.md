@@ -87,21 +87,18 @@ The only canonical planning-stage workflow is `planningStatus`.
 
 Allowed values:
 
-- `pre-draft`
-- `proposition-draft` (Proposition draft)
-- `draft` (Delivery draft)
-- `validated-draft`
-- `decision-ready`
-- `mobilising`
-- `in-delivery`
+- `proposition-development`
+- `proposition-review`
+- `delivery-design`
+- `resource-planning`
+- `plan-validation`
+- `portfolio-board-approval`
+- `resource-confirmation`
+- `approved-to-mobilise`
 
-Deliverables default to `pre-draft` unless explicitly moved to a later `planningStatus`. `2.2.1` is the reference example of Proposition draft: its summary, case for change and benefits are ready to test, while delivery planning remains intentionally incomplete.
+Deliverables default to `proposition-development` unless explicitly moved to a later `planningStatus`. `2.1.3`, `2.2.1` and `2.4.3` are at Proposition review. `2.1.1` is conservatively at Plan validation; no deliverable should imply Board or resource approval without an explicit recorded decision.
 
-The early-stage gates are:
-
-- Proposition draft: coherent summary, fuller proposition, case for change and benefits.
-- Delivery draft: the wider delivery model has been mocked out, including ownership, measures, governance, steps, step-level resources and material risks.
-- Validated draft: the Delivery draft has been tested with relevant owners, partners and evidence.
+The canonical work, gate and UX behaviour for each stage are documented in `docs/deliverable-gates.md` and centralised in `src/planning-status.js`.
 
 Do not use `tags`, `planningMaturity`, `visibility`, or `src/data/status.json` as the planning-stage workflow.
 
@@ -115,7 +112,7 @@ If a future agent is unsure which field matters, use `planningStatus`.
 
 ### Generic tags are thematic only
 
-The `tags` field is optional thematic metadata. It is not a status field and should not be used for proposition, delivery-draft, decision-ready or delivery stages.
+The `tags` field is optional thematic metadata. It is not a status field and should not be used for any proposition, planning, approval or delivery stage.
 
 If tags create confusion during hydration, ignore them or remove them from display. Do not create a second tagging workflow.
 
@@ -123,7 +120,11 @@ If tags create confusion during hydration, ignore them or remove them from displ
 
 `src/data/status.json` is hidden delivery-control metadata. It is not the planning-stage source of truth.
 
-Status pills are visually hidden. Do not reintroduce them unless explicitly asked.
+Operational status is authored against steps only after the parent deliverable is approved to mobilise. Do not display a competing operational status on deliverable cards.
+
+### Decisions and consultation log
+
+Each deliverable carries a simple `decisionLog` array containing material consultations and decisions, or an empty array until there is something to record. Entries use `date`, `type`, `forum` and `outcome`, with optional `seenBy` and `notes`. The log does not automatically drive `planningStatus` and does not replace decisions attached to the step they gate.
 
 ### Reveal detailed plan is progressive disclosure, not security
 
@@ -143,9 +144,9 @@ This distinction matters for strategic investment fund asks.
 
 ### Measures and Timeline views must respect planning status
 
-Measures and Timeline should not present pre-draft assumptions as approved KPIs or firm delivery commitments.
+Measures and Timeline should not present pre-approval assumptions as approved KPIs or firm delivery commitments.
 
-Pre-draft measures should be hidden by default or clearly labelled as emerging. Pre-draft timeline items should be visually indicative.
+Measures and timeline sequencing appear from Delivery design. Timeline steps remain visually indicative and do not show operational status until Approved to mobilise.
 
 ### Visibility classification is handling guidance, not access control
 
@@ -154,7 +155,7 @@ Pre-draft measures should be hidden by default or clearly labelled as emerging. 
 ## Current working assumptions
 
 - The next content task is project-by-project naming and description scrutiny.
-- After project naming, the next major task is deliverable-by-deliverable scrutiny to move items from `pre-draft` to Proposition draft, then mock out the delivery model to reach Delivery draft.
+- Deliverable development follows the stages in `docs/deliverable-gates.md`, keeping delivery design separate from subsequent resource planning.
 - The plan should remain senior-leadership ready: clear, concise, defensible and not over-bureaucratic.
 - Benefits should be written as realised value, not disguised outputs.
 - Measures should test whether benefits are happening, not merely count activity.
@@ -174,7 +175,7 @@ For each of the four projects, sharpen:
 - institutional transformation claim;
 - whether the four deliverables underneath still feel like the right grouping.
 
-Second pass: deliverables from pre-draft to Proposition draft, then Delivery draft.
+Second pass: develop and informally review each proposition, then design its unconstrained delivery route.
 
 For each deliverable, test:
 
@@ -185,7 +186,7 @@ For each deliverable, test:
 - whether the intended change is genuinely transformational;
 - whether benefits, outputs and measures are distinct;
 - whether dependencies and ownership are plausible;
-- what needs to be true for the deliverable to become `draft`.
+- what needs to be true to pass its current gate.
 
 ## Known cautions for future agents
 
@@ -198,7 +199,7 @@ For each deliverable, test:
 - Do not assume every TBC is a weakness. Some TBCs are honest planning maturity markers.
 - Do not treat reveal controls, filters or CSS as security.
 - Do not put genuinely restricted content into broad client-side JSON.
-- Do not present pre-draft measures as approved KPIs.
-- Do not present pre-draft timeline items as firm delivery commitments.
+- Do not present pre-approval measures as approved KPIs.
+- Do not present pre-approval timeline items as firm delivery commitments or operational progress.
 - Do not add another tagging workflow.
 - Do not add display-remapping workarounds for project order or numbering.
