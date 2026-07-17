@@ -324,7 +324,10 @@ allProjects.forEach((project, projectIndex) => {
     addId(deliverable.id, deliverablePath);
     deliverableIds.add(deliverable.id);
     if (!validPlanningStatuses.has(status)) errors.push(`${deliverable.id} uses unknown planningStatus: ${status}`);
-    ['title', 'lead', 'summary', 'problemSolved', 'whatChanges'].forEach((field) => requireField(deliverable, field, deliverablePath));
+    ['title', 'lead', 'summary'].forEach((field) => requireField(deliverable, field, deliverablePath));
+    if (status !== 'pre-draft') {
+      ['problemSolved', 'whatChanges'].forEach((field) => requireField(deliverable, field, deliverablePath));
+    }
     validateArrayIfPresent(deliverable.components, `${deliverablePath}.components`);
     validateArrayIfPresent(deliverable.benefits, `${deliverablePath}.benefits`);
     validateArrayIfPresent(deliverable.outputs, `${deliverablePath}.outputs`);
