@@ -1,4 +1,5 @@
 import fs from 'node:fs';
+import { DEFAULT_PLANNING_STATUS, hasDeliveryDesign } from '../src/planning-status.js';
 
 function readJson(relativePath) {
   return JSON.parse(fs.readFileSync(new URL(relativePath, import.meta.url), 'utf8'));
@@ -125,8 +126,8 @@ function validateStepResources(step, deliverableId, stepIndex) {
 }
 
 deliverables.forEach((deliverable) => {
-  const planningStatus = deliverable.planningStatus || 'pre-draft';
-  const hasDeliveryPlan = !['pre-draft', 'proposition-draft'].includes(planningStatus);
+  const planningStatus = deliverable.planningStatus || DEFAULT_PLANNING_STATUS;
+  const hasDeliveryPlan = hasDeliveryDesign(planningStatus);
   if (hasDeliveryPlan && hasDeliverableResourceContent(deliverable.resources)) {
     errors.push(`${deliverable.id} has deliverable-level resource content. Move each ask to the step that needs it; the app derives the resource profile from step resources.`);
   }

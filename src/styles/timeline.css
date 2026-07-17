@@ -165,6 +165,11 @@
   border-color: #2f7d62;
 }
 
+.ke-delivery-status.is-indicative {
+  border-style: dashed;
+  color: var(--muted);
+}
+
 .ke-timeline-table {
   position: relative;
   max-height: calc(100vh - 120px);
@@ -425,6 +430,15 @@
 
 .ke-timeline-step-status.status-complete {
   color: #24634f;
+}
+
+.ke-timeline-step-status.is-indicative {
+  color: var(--muted);
+}
+
+.ke-timeline-step.is-indicative {
+  border-style: dashed;
+  background: #fff9ed;
 }
 
 .ke-timeline-step.is-selected {

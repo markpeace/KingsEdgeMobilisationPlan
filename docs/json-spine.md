@@ -48,17 +48,18 @@ Acceptable compatibility logic is limited to normalising old field names into th
 
 `planningStatus` is the only planning-stage workflow. Allowed values are:
 
-- `pre-draft`
-- `proposition-draft` (displayed as Proposition draft)
-- `draft` (displayed as Delivery draft)
-- `validated-draft`
-- `decision-ready`
-- `mobilising`
-- `in-delivery`
+- `proposition-development`
+- `proposition-review`
+- `delivery-design`
+- `resource-planning`
+- `plan-validation`
+- `portfolio-board-approval`
+- `resource-confirmation`
+- `approved-to-mobilise`
 
 Do not use `tags`, `planningMaturity`, `visibility` or `status.json` as substitutes for planning stage.
 
-Proposition drafts are visible in the Deliverables index for challenge and refinement. Measures and Timeline require Delivery draft or later because those views imply a mocked-out delivery model.
+Proposition review and later stages are visible in the Deliverables index. Measures and Timeline require Delivery design or later because those views imply a proposed delivery route. Operational step status appears only after Approved to mobilise. The complete stage and gate definitions live in `docs/deliverable-gates.md`.
 
 ## How an LLM project manager should work safely
 

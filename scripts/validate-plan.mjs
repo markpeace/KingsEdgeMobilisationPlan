@@ -1,5 +1,10 @@
 import fs from 'node:fs';
 import Ajv2020 from 'ajv/dist/2020.js';
+import {
+  DEFAULT_PLANNING_STATUS,
+  PLANNING_STATUS_SET,
+  hasDeliveryDesign
+} from '../src/planning-status.js';
 
 function readJson(relativePath) {
   return JSON.parse(fs.readFileSync(new URL(relativePath, import.meta.url), 'utf8'));
@@ -18,15 +23,6 @@ const measureSchema = readJson('../src/data/measure.schema.json');
 
 const errors = [];
 const warnings = [];
-const validPlanningStatuses = new Set([
-  'pre-draft',
-  'proposition-draft',
-  'draft',
-  'validated-draft',
-  'decision-ready',
-  'mobilising',
-  'in-delivery'
-]);
 const timelineBucketIdList = ['jul-dec-2026', ...[2027, 2028, 2029, 2030].flatMap((year) => [`jan-jun-${year}`, `jul-dec-${year}`])];
 const timelineBucketIds = new Set(timelineBucketIdList);
 const timelineThirdIdList = timelineBucketIdList.flatMap((bucket) => ['a', 'b', 'c'].map((third) => `${bucket}-${third}`));
@@ -198,6 +194,25 @@ function validateArrayIfPresent(value, path) {
   if (value !== undefined && !Array.isArray(value)) errors.push(`${path} should be an array.`);
 }
 
+function validateDecisionLog(decisionLog, path) {
+  if (!Array.isArray(decisionLog)) {
+    errors.push(`${path}.decisionLog should be an array.`);
+    return;
+  }
+  decisionLog.forEach((entry, index) => {
+    const entryPath = `${path}.decisionLog[${index}]`;
+    if (!entry || typeof entry !== 'object' || Array.isArray(entry)) {
+      errors.push(`${entryPath} should be an object.`);
+      return;
+    }
+    ['date', 'type', 'forum', 'outcome'].forEach((field) => requireField(entry, field, entryPath));
+    if (entry.type && !['consultation', 'decision'].includes(entry.type)) errors.push(`${entryPath}.type should be consultation or decision.`);
+    if (entry.date && !/^\d{4}-\d{2}-\d{2}$/.test(entry.date)) errors.push(`${entryPath}.date should use YYYY-MM-DD.`);
+    validateArrayIfPresent(entry.seenBy, `${entryPath}.seenBy`);
+    if (entry.notes !== undefined && typeof entry.notes !== 'string') errors.push(`${entryPath}.notes should be a string.`);
+  });
+}
+
 function validateResources(resources, path, options = {}) {
   if (resources === undefined) return;
   if (!resources || typeof resources !== 'object' || Array.isArray(resources)) {
@@ -319,15 +334,16 @@ allProjects.forEach((project, projectIndex) => {
   if (!Array.isArray(project.deliverables)) errors.push(`${project.id} should contain a deliverables array.`);
   project.deliverables?.forEach((deliverable, deliverableIndex) => {
     const deliverablePath = `${project.id}.deliverables[${deliverableIndex}]`;
-    const status = deliverable.planningStatus || 'pre-draft';
-    const allowLegacyPeriods = ['pre-draft', 'proposition-draft'].includes(status);
+    const status = deliverable.planningStatus || DEFAULT_PLANNING_STATUS;
+    const allowLegacyPeriods = !hasDeliveryDesign(status);
     addId(deliverable.id, deliverablePath);
     deliverableIds.add(deliverable.id);
-    if (!validPlanningStatuses.has(status)) errors.push(`${deliverable.id} uses unknown planningStatus: ${status}`);
+    if (!PLANNING_STATUS_SET.has(status)) errors.push(`${deliverable.id} uses unknown planningStatus: ${status}`);
     ['title', 'lead', 'summary'].forEach((field) => requireField(deliverable, field, deliverablePath));
-    if (status !== 'pre-draft') {
+    if (status !== 'proposition-development') {
       ['problemSolved', 'whatChanges'].forEach((field) => requireField(deliverable, field, deliverablePath));
     }
+    validateDecisionLog(deliverable.decisionLog, deliverablePath);
     validateArrayIfPresent(deliverable.components, `${deliverablePath}.components`);
     validateArrayIfPresent(deliverable.benefits, `${deliverablePath}.benefits`);
     validateArrayIfPresent(deliverable.outputs, `${deliverablePath}.outputs`);

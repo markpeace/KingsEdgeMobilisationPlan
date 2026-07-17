@@ -73,4 +73,4 @@ For a new mature deliverable:
 3. Add the deliverable to `src/data/deliverables/manifest.json`.
 4. Run `npm run validate:data` before committing.
 
-For small pre-draft deliverables, it is still acceptable to leave the content directly in the spine until the object becomes too large to edit comfortably.
+For small deliverables still in Proposition development, it is acceptable to leave the content directly in the spine until the object becomes too large to edit comfortably.

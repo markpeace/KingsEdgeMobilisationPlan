@@ -19,15 +19,16 @@ The source-of-truth cleanup has been completed.
 
 Allowed values:
 
-- `pre-draft`
-- `proposition-draft` (Proposition draft)
-- `draft` (Delivery draft)
-- `validated-draft`
-- `decision-ready`
-- `mobilising`
-- `in-delivery`
+- `proposition-development`
+- `proposition-review`
+- `delivery-design`
+- `resource-planning`
+- `plan-validation`
+- `portfolio-board-approval`
+- `resource-confirmation`
+- `approved-to-mobilise`
 
-Deliverables default to `pre-draft` unless explicitly moved to a later `planningStatus`.
+Deliverables default to `proposition-development` unless explicitly moved to a later `planningStatus`. See `docs/deliverable-gates.md` for the complete process.
 
 Do not use these as planning-stage workflows:
 
@@ -64,7 +65,7 @@ Work through the four projects in order and sharpen:
 
 The project titles need to name a mobilisable programme of work, not only describe a strategic domain.
 
-### Second pass: deliverables from pre-draft to Proposition draft
+### Second pass: proposition development and review
 
 For each deliverable, test:
 
@@ -75,26 +76,30 @@ For each deliverable, test:
 - is the intended change genuinely transformational?
 - are the intended benefits distinct from possible outputs?
 - is the proposition coherent enough to test with others?
-- what would need to be true for this to become Proposition draft?
+- what would need to be true for this to be ready for an informal proposition sense-check?
 
-A deliverable moves from `pre-draft` to Proposition draft once these have been scrutinised:
+A deliverable moves from Proposition development to Proposition review once these have been scrutinised:
 
 - case for change;
 - benefits;
 - summary and fuller proposition.
 
-### Third pass: Proposition draft to Delivery draft
+The informal review should involve the proposed owner, likely delivery lead and a small reference group of selected senior, key or specialist stakeholders. Record material feedback in `decisionLog`.
 
-Mock out and scrutinise:
+### Third pass: delivery design
+
+Design and scrutinise the route without yet constraining it by resource:
 
 - ownership;
 - outputs;
 - measures;
 - delivery steps;
 - dependencies;
-- step-level resources;
-- investment ask, if any;
 - risks, issues, assumptions and decisions.
+
+### Fourth pass: resources, validation and approval
+
+Define the resource requirement after the route is coherent. Then validate the complete plan with owners, leads, partners, benefit owners, resource teams and dependency owners. Seek Portfolio Board approval, confirm the resources actually available, and adjust ambition or planning where necessary before marking the deliverable Approved to mobilise.
 
 ## Source-of-truth guardrails
 
@@ -118,9 +123,9 @@ Mitigation: distinguish strategic domain, mobilisable programme of work and publ
 
 Mitigation: keep `summary` concise for cards and use `detailSummary` for detail-page context.
 
-### Risk: deliverables move to Delivery draft too early
+### Risk: deliverables imply approval too early
 
-Mitigation: use Proposition draft for coherent thinking that is ready to test, and reserve Delivery draft for a mocked-out delivery model.
+Mitigation: use the exact gates in `docs/deliverable-gates.md`; record Board and resource decisions separately even when they happen together.
 
 ### Risk: benefits become disguised outputs
 

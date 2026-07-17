@@ -18,28 +18,24 @@ Use `planningStatus` as the only planning-stage field.
 
 Allowed values:
 
-- `pre-draft`
-- `proposition-draft` (displayed as **Proposition draft**)
-- `draft` (displayed as **Delivery draft**)
-- `validated-draft`
-- `decision-ready`
-- `mobilising`
-- `in-delivery`
+- `proposition-development` (**Proposition development**)
+- `proposition-review` (**Proposition review**)
+- `delivery-design` (**Delivery design**)
+- `resource-planning` (**Resource planning**)
+- `plan-validation` (**Plan validation**)
+- `portfolio-board-approval` (**For Board approval**)
+- `resource-confirmation` (**Resource confirmation**)
+- `approved-to-mobilise` (**Approved to mobilise**)
 
-The early-stage gates are:
+The stages separate proposition development, informal consultation, delivery design, resource planning, plan validation, Portfolio Board approval and resource confirmation. See `docs/deliverable-gates.md` for the work and gate at each stage.
 
-- **Pre-draft:** the proposition is still forming.
-- **Proposition draft:** the summary, fuller proposition, case for change and benefits are coherent enough to test and challenge. A delivery route is not yet required.
-- **Delivery draft:** the wider delivery model has been mocked out, including ownership, measures, governance, delivery steps, step-level resources and material risks.
-- **Validated draft:** the Delivery draft has been tested with the relevant owners, partners and evidence, and revised in response.
-
-A deliverable may therefore enter the Deliverables index at Proposition draft, but should not appear as a live measures set or delivery timeline until it reaches Delivery draft.
+A deliverable enters the Deliverables index at Proposition review. Measures and indicative timeline steps appear from Delivery design. Operational step status appears only after Approved to mobilise.
 
 Do not use `tags`, `planningMaturity`, `visibility` or `src/data/status.json` as the planning-stage workflow.
 
 ## Delivery status
 
-`planningStatus` records the maturity of the deliverable plan. Operational progress is recorded separately against step IDs in `src/data/status.json`.
+`planningStatus` records the development and approval stage of the deliverable plan. Operational progress is recorded separately against step IDs in `src/data/status.json`, and starts only after the deliverable is approved to mobilise.
 
 Use these canonical delivery statuses:
 
@@ -75,6 +71,7 @@ Canonical deliverable fields:
 - `summary`: concise card-facing proposition;
 - `detailSummary`: fuller detail-page explanation;
 - `planningStatus`: canonical planning stage;
+- `decisionLog`: historical record of material consultations and decisions; use an empty array until there is something to record;
 - `caseForChange`: problem, opportunity, why now and intended change;
 - `ownership`: accountable owner and delivery lead;
 - `governance`: decision route, business-as-usual ownership and essential delivery partners;
@@ -95,6 +92,21 @@ The following older fields are no longer part of the canonical deliverable model
 - `ownership.decisionForum`.
 
 Existing legacy values may remain readable in old source data, but the deliverable detail view should not present them as independent sections.
+
+## Decisions and consultation log
+
+Field: `decisionLog`
+
+This is a lightweight chronological record of where the deliverable has been considered and the outcome. It does not drive `planningStatus` automatically and it does not replace decisions attached to the delivery step they gate.
+
+Each entry requires:
+
+- `date`: `YYYY-MM-DD`;
+- `type`: `consultation` or `decision`;
+- `forum`: where the deliverable was seen;
+- `outcome`: the feedback, decision or agreed direction.
+
+Optional fields are `id`, `seenBy` and `notes`. Record material consultations and decisions only. See `docs/deliverable-gates.md` for an example.
 
 ## Case for change
 
@@ -311,20 +323,28 @@ Keep a risk, issue or assumption at deliverable level only when it materially af
 
 Do not duplicate the same item at both levels.
 
-## Final authoring check
+## Gate authoring checks
 
-Before moving a deliverable to `draft`, check that:
+Before moving a deliverable from `delivery-design` to `resource-planning`, check that:
 
 - the case for change is clear;
 - accountable ownership and delivery leadership are credible;
 - each benefit has a clear owner;
 - benefits describe value rather than products;
 - measures test benefit realisation;
-- the decision and escalation route is explicit;
-- business-as-usual ownership is named or honestly shown as `TBC` with a route to resolution;
-- key delivery partners are grouped by contribution rather than listed as a stakeholder register;
 - every product is defined on a timeline step;
 - completion evidence sits with the relevant output;
 - dependencies and decisions sit on the relevant step;
-- resources and material risks are captured at the most local useful level;
 - the timeline is coherent enough to explain the route without a second planning structure.
+
+Before moving to `portfolio-board-approval`, also check that:
+
+- the resource requirement is explicit at the steps that need it;
+- the decision and escalation route is explicit;
+- business-as-usual ownership is named or honestly shown as `TBC` with a route to resolution;
+- key delivery partners are grouped by contribution rather than listed as a stakeholder register;
+- relevant owners, leads, partners and specialists have validated the route and resource case;
+- material consultation outcomes are recorded in `decisionLog`;
+- material risks are captured at the most local useful level.
+
+Before moving to `approved-to-mobilise`, confirm the Portfolio Board decision, resource authority, named capacity, enabling conditions and any adjustment of scope, pace, outputs or benefit expectations.
