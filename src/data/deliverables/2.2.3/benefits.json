@@ -1,0 +1,20 @@
+{
+  "benefits": [
+    {
+      "id": "2.2.3-B1",
+      "title": "Students can pursue wider ambitions within their formal degree",
+      "statement": "Students can access a broader range of learning opportunities aligned with their purposes and future ambitions, including experiences that cross or extend beyond their discipline. Placing these opportunities within the time, credit and recognition structures of the degree makes participation more equitable and ensures that the learning is formally valued.",
+      "beneficiary": "Students",
+      "benefitType": "equitable access and purposeful development",
+      "successLooksLike": "Students from different backgrounds use recognised pathways to undertake ambition-aligned learning alongside their course, with participation less dependent on discretionary time outside formal study."
+    },
+    {
+      "id": "2.2.3-B2",
+      "title": "King’s can provide cross-cutting developmental opportunities more efficiently",
+      "statement": "Shared module shells, regulatory routes and administrative models allow King’s to offer a varied range of cross-cutting developmental opportunities without repeatedly creating bespoke structures for individual programmes. This reduces replication and administrative inefficiency while making successful provision easier to reuse and extend.",
+      "beneficiary": "King’s, programmes and faculties",
+      "benefitType": "institutional efficiency and reusable provision",
+      "successLooksLike": "Programmes and faculties use a small number of shared structures to offer diverse learning experiences, reducing duplicated design, approval and administration while maintaining a coherent student experience."
+    }
+  ]
+}
