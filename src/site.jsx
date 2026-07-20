@@ -107,7 +107,7 @@ function ProjectsPage() {
 
 function ProjectColumn({ project }) {
   const isOut = project.deliveryContext === 'out-of-programme';
-  return <section className={`project-column ${isOut ? 'related-project-column' : ''}`}><a className={`project-column-header project-header-link ${isOut ? 'related-project-header' : ''}`} href={`#/projects/${project.id}`}><span className="reference">{isOut ? 'Out' : displayId(project)}</span><h2>{project.title}</h2><p>{project.summary}</p><p className="owner">Owner: {project.owner}</p></a><div className="deliverable-stack">{project.deliverables.map((deliverable) => <a className="deliverable-card" href={`#/deliverables/${deliverable.id}`} key={deliverable.id}><DeliverableContextLine deliverable={deliverable} /><h3>{deliverable.title}</h3><p>{deliverable.summary}</p><p className="lead">Lead: {deliverable.lead}</p></a>)}</div></section>;
+  return <section className={`project-column ${isOut ? 'related-project-column' : ''}`}><a className={`project-column-header project-header-link ${isOut ? 'related-project-header' : ''}`} href={`#/projects/${project.id}`}><span className="reference">{displayId(project)}</span><h2>{project.title}</h2><p>{project.summary}</p><p className="owner">Owner: {project.owner}</p></a><div className="deliverable-stack">{project.deliverables.map((deliverable) => <a className="deliverable-card" href={`#/deliverables/${deliverable.id}`} key={deliverable.id}><DeliverableContextLine deliverable={deliverable} /><h3>{deliverable.title}</h3><p>{deliverable.summary}</p><p className="lead">Lead: {deliverable.lead}</p></a>)}</div></section>;
 }
 
 function ProjectDetail({ project }) {
