@@ -74,9 +74,9 @@
               "id": "2.1.2-step-1",
               "title": "Convene and scope the Community of Practice",
               "period": "now-xmas-2026",
-              "summary": "Establish the group through Education Cultures and Innovation, with Edge requirements in its remit.",
+              "summary": "Establish the group through 1.4 Education Cultures, with Edge requirements in its remit.",
               "dependsOn": [
-                "education-cultures-innovation"
+                "1.4.2"
               ]
             },
             {
@@ -109,7 +109,7 @@
           ],
           "dependencies": [
             {
-              "targetId": "education-cultures-innovation",
+              "targetId": "1.4.2",
               "type": "input",
               "label": "Delivered through the Experiential Learning Strategic Community of Practice."
             }
@@ -974,9 +974,9 @@
   ],
   "crossProgrammeDependencies": [
     {
-      "id": "education-cultures-innovation",
-      "title": "Education Cultures and Innovation",
-      "summary": "Provides the shared practice infrastructure King's Edge needs in order to grow experiential learning with quality, confidence and coherence.",
+      "id": "1.4",
+      "title": "Education Cultures",
+      "summary": "Creates the infrastructure through which educational development, innovation, impact, recognition and influence can grow more consistently across King's.",
       "edgeNeedsServiced": [
         "Experiential learning typology across curriculum and co-curriculum",
         "Learning design principles for high-quality experiential provision",
