@@ -1,6 +1,4 @@
-import { projects } from './plan-utils.js';
-
-const projectById = new Map(projects.map((project) => [project.id, project]));
+import programmeContexts from './data/project-programme-contexts.json';
 
 function currentProjectId() {
   const match = String(window.location.hash || '').match(/#\/projects\/([^/?#]+)/);
@@ -8,11 +6,11 @@ function currentProjectId() {
 }
 
 function renderProjectProgrammeContext() {
-  const project = projectById.get(currentProjectId());
-  if (!project?.programme) return;
+  const programme = programmeContexts[currentProjectId()];
+  if (!programme) return;
 
   const context = document.querySelector('.project-detail-hero .project-context');
-  if (context && context.textContent !== project.programme) context.textContent = project.programme;
+  if (context && context.textContent !== programme) context.textContent = programme;
 }
 
 let refreshScheduled = false;
