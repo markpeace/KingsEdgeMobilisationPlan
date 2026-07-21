@@ -1,0 +1,128 @@
+{
+  "steps": [
+    {
+      "id": "1.4.2-step-1",
+      "title": "Coalesce and launch the Experiential Learning Community",
+      "period": "jul-dec-2026:ab",
+      "summary": "Build on work already under way to bring together the founding experiential learning community, clarify its initial priorities and deliver the confirmed September 2026 launch under interim institutional leadership.",
+      "dependsOn": [],
+      "outputs": [
+        {
+          "title": "Experiential Learning Community launch",
+          "summary": "A September launch with a founding membership, initial priorities and a clear rhythm for continued participation."
+        }
+      ]
+    },
+    {
+      "id": "1.4.2-step-2",
+      "title": "Develop the governance and resourcing model",
+      "period": "jul-dec-2026:ab",
+      "summary": "Develop the operating model for the Strategic Communities of Practice, including the remit of the Innovation Committee, interim and funded convenorship, community support, funded projects, accountability and the indicative resource envelope.",
+      "dependsOn": [],
+      "outputs": [
+        {
+          "title": "Governance and resourcing model",
+          "summary": "An agreed model ready to support the establishment of the Innovation Committee and the development of the communities."
+        }
+      ]
+    },
+    {
+      "id": "1.4.2-step-3",
+      "title": "Agree faculty principles for release and backfill",
+      "period": {
+        "start": "jul-dec-2026:b",
+        "end": "jan-jun-2027:a"
+      },
+      "summary": "Work with faculties to agree the principles through which future community convenors can receive release, workload allocation or backfill support, including central and faculty contributions, eligibility, duration and review.",
+      "dependsOn": [
+        "1.4.2-step-2"
+      ],
+      "outputs": [
+        {
+          "title": "Agreed release and backfill principles",
+          "summary": "A sufficiently clear and equitable institutional offer to support the February 2027 call for funded convenors."
+        }
+      ]
+    },
+    {
+      "id": "1.4.2-step-4",
+      "title": "Establish the Innovation Committee",
+      "period": "jul-dec-2026:b",
+      "summary": "Stand up the Innovation Committee with an agreed remit, membership and authority to govern the communities, convenorship and funded activity within the developing model.",
+      "dependsOn": [
+        "1.4.2-step-2"
+      ],
+      "outputs": [
+        {
+          "title": "Operational Innovation Committee",
+          "summary": "A governing committee able to steward the communities and the transition to funded leadership and activity."
+        }
+      ]
+    },
+    {
+      "id": "1.4.2-step-5",
+      "title": "Confirm interim convenors and integrate the remaining communities",
+      "period": "jul-dec-2026:bc",
+      "summary": "Identify existing institutional leaders to act as interim, unremitted convenors and use their leadership to bring the AI in Education and Inclusive Education communities into the shared institutional frame by December 2026.",
+      "dependsOn": [
+        "1.4.2-step-4"
+      ],
+      "outputs": [
+        {
+          "title": "Three communities operating in a common frame",
+          "summary": "Experiential Learning, AI in Education and Inclusive Education each have interim leadership, a founding constituency and an initial programme of activity."
+        }
+      ]
+    },
+    {
+      "id": "1.4.2-step-6",
+      "title": "Launch calls for funded convenors and community projects",
+      "period": "jan-jun-2027:a",
+      "summary": "Launch coordinated February 2027 calls for funded Community Convenors and community-aligned projects, with the project call designed to strengthen participation, collaborative inquiry and shared educational development.",
+      "dependsOn": [
+        "1.4.2-step-3",
+        "1.4.2-step-4",
+        "1.4.2-step-5"
+      ],
+      "outputs": [
+        {
+          "title": "Open institutional calls",
+          "summary": "Published calls with clear eligibility, support, selection criteria, expectations and decision routes."
+        }
+      ]
+    },
+    {
+      "id": "1.4.2-step-7",
+      "title": "Build the communities and establish a sustainable rhythm",
+      "period": {
+        "start": "jan-jun-2027:a",
+        "end": "jul-dec-2027:a"
+      },
+      "summary": "Grow the committed core and wider periphery of all three communities through regular convening, collaborative inquiry, emerging shards, student and partner participation, communication and routes into institutional influence. Funded convenors and projects add capacity and momentum as appointments are made.",
+      "dependsOn": [
+        "1.4.2-step-5"
+      ],
+      "outputs": [
+        {
+          "title": "Active and recognisable communities",
+          "summary": "Three communities with sustained participation, supported leadership, visible identities and credible programmes of shared activity by July 2027."
+        }
+      ]
+    },
+    {
+      "id": "1.4.2-step-8",
+      "title": "Appoint funded convenors and select the first project portfolio",
+      "period": "jan-jun-2027:b",
+      "summary": "Run the selection processes, confirm faculty release and backfill arrangements, appoint funded convenors and agree the first portfolio of community-aligned funded projects.",
+      "dependsOn": [
+        "1.4.2-step-6"
+      ],
+      "outputs": [
+        {
+          "title": "Funded leadership and project portfolio",
+          "summary": "Appointed convenors and an approved first set of projects that strengthen the communities and their shared work."
+        }
+      ]
+    }
+  ]
+}
