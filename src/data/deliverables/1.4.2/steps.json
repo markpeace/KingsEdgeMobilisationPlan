@@ -3,8 +3,11 @@
     {
       "id": "1.4.2-step-1",
       "title": "Coalesce and launch the Experiential Learning Community",
-      "period": "jul-dec-2026:ab",
-      "summary": "Build on work already under way to bring together the founding experiential learning community, clarify its initial priorities and deliver the confirmed September 2026 launch under interim institutional leadership.",
+      "period": {
+        "start": "jul-dec-2026:a",
+        "end": "jul-dec-2026:b"
+      },
+      "summary": "Build on work already under way through the July-August and September-October planning windows to bring together the founding experiential learning community, clarify its initial priorities and deliver the confirmed September 2026 launch under interim institutional leadership.",
       "dependsOn": [],
       "outputs": [
         {
@@ -16,8 +19,11 @@
     {
       "id": "1.4.2-step-2",
       "title": "Develop the governance and resourcing model",
-      "period": "jul-dec-2026:ab",
-      "summary": "Develop the operating model for the Strategic Communities of Practice, including the remit of the Innovation Committee, interim and funded convenorship, community support, funded projects, accountability and the indicative resource envelope.",
+      "period": {
+        "start": "jul-dec-2026:a",
+        "end": "jul-dec-2026:b"
+      },
+      "summary": "Develop the operating model across the July-August and September-October planning windows, including the remit of the Innovation Committee, interim and funded convenorship, community support, funded projects, accountability and the indicative resource envelope.",
       "dependsOn": [],
       "outputs": [
         {
@@ -30,10 +36,10 @@
       "id": "1.4.2-step-3",
       "title": "Agree faculty principles for release and backfill",
       "period": {
-        "start": "jul-dec-2026:b",
+        "start": "jul-dec-2026:a",
         "end": "jan-jun-2027:a"
       },
-      "summary": "Work with faculties to agree the principles through which future community convenors can receive release, workload allocation or backfill support, including central and faculty contributions, eligibility, duration and review.",
+      "summary": "Begin faculty engagement in the July-August planning window and work through to January-February 2027 to agree the principles through which future community convenors can receive release, workload allocation or backfill support, including central and faculty contributions, eligibility, duration and review.",
       "dependsOn": [
         "1.4.2-step-2"
       ],
@@ -47,8 +53,11 @@
     {
       "id": "1.4.2-step-4",
       "title": "Establish the Innovation Committee",
-      "period": "jul-dec-2026:b",
-      "summary": "Stand up the Innovation Committee with an agreed remit, membership and authority to govern the communities, convenorship and funded activity within the developing model.",
+      "period": {
+        "start": "jul-dec-2026:b",
+        "end": "jul-dec-2026:b"
+      },
+      "summary": "Stand up the Innovation Committee in the September-October planning window with an agreed remit, membership and authority to govern the communities, convenorship and funded activity within the developing model.",
       "dependsOn": [
         "1.4.2-step-2"
       ],
@@ -62,8 +71,11 @@
     {
       "id": "1.4.2-step-5",
       "title": "Confirm interim convenors and integrate the remaining communities",
-      "period": "jul-dec-2026:bc",
-      "summary": "Identify existing institutional leaders to act as interim, unremitted convenors and use their leadership to bring the AI in Education and Inclusive Education communities into the shared institutional frame by December 2026.",
+      "period": {
+        "start": "jul-dec-2026:b",
+        "end": "jul-dec-2026:c"
+      },
+      "summary": "Across the September-October and November-December planning windows, identify existing institutional leaders to act as interim, unremitted convenors and use their leadership to bring the AI in Education and Inclusive Education communities into the shared institutional frame by December 2026.",
       "dependsOn": [
         "1.4.2-step-4"
       ],
@@ -77,8 +89,11 @@
     {
       "id": "1.4.2-step-6",
       "title": "Launch calls for funded convenors and community projects",
-      "period": "jan-jun-2027:a",
-      "summary": "Launch coordinated February 2027 calls for funded Community Convenors and community-aligned projects, with the project call designed to strengthen participation, collaborative inquiry and shared educational development.",
+      "period": {
+        "start": "jan-jun-2027:a",
+        "end": "jan-jun-2027:a"
+      },
+      "summary": "Use the January-February 2027 planning window to launch coordinated calls for funded Community Convenors and community-aligned projects, with the project call designed to strengthen participation, collaborative inquiry and shared educational development.",
       "dependsOn": [
         "1.4.2-step-3",
         "1.4.2-step-4",
@@ -98,22 +113,25 @@
         "start": "jan-jun-2027:a",
         "end": "jul-dec-2027:a"
       },
-      "summary": "Grow the committed core and wider periphery of all three communities through regular convening, collaborative inquiry, emerging shards, student and partner participation, communication and routes into institutional influence. Funded convenors and projects add capacity and momentum as appointments are made.",
+      "summary": "From January-February through July-August 2027, grow the committed core and wider periphery of all three communities through regular convening, collaborative inquiry, emerging shards, student and partner participation, communication and routes into institutional influence. Funded convenors and projects add capacity and momentum as appointments are made.",
       "dependsOn": [
         "1.4.2-step-5"
       ],
       "outputs": [
         {
           "title": "Active and recognisable communities",
-          "summary": "Three communities with sustained participation, supported leadership, visible identities and credible programmes of shared activity by July 2027."
+          "summary": "Three communities with sustained participation, supported leadership, visible identities and credible programmes of shared activity by the July-August 2027 planning window."
         }
       ]
     },
     {
       "id": "1.4.2-step-8",
       "title": "Appoint funded convenors and select the first project portfolio",
-      "period": "jan-jun-2027:b",
-      "summary": "Run the selection processes, confirm faculty release and backfill arrangements, appoint funded convenors and agree the first portfolio of community-aligned funded projects.",
+      "period": {
+        "start": "jan-jun-2027:b",
+        "end": "jan-jun-2027:b"
+      },
+      "summary": "Use the March-April 2027 planning window to run the selection processes, confirm faculty release and backfill arrangements, appoint funded convenors and agree the first portfolio of community-aligned funded projects.",
       "dependsOn": [
         "1.4.2-step-6"
       ],
