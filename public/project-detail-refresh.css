@@ -1,0 +1,289 @@
+/*
+ * Project detail refresh and small site-wide clean-up.
+ *
+ * This file deliberately changes presentation only. Plan content and planning
+ * status continue to come from the JSON-backed React application.
+ */
+
+html {
+  scroll-padding-top: 7rem;
+}
+
+/* Remove two legacy decorative elements that no longer add information. */
+.landing-hero::after {
+  display: none !important;
+  content: none !important;
+}
+
+.site-footer {
+  display: none !important;
+}
+
+/* Present pre-approval sequencing once through planning-stage context, rather
+   than repeating an "Indicative" warning on every individual card. */
+.indicative-label,
+.ke-timeline-step-status.is-indicative,
+.ke-delivery-status.is-indicative {
+  display: none !important;
+}
+
+.indicative-step-card,
+.timeline-row-indicative .timeline-title,
+.timeline-block-indicative,
+.ke-timeline-step.is-indicative {
+  border-style: solid !important;
+}
+
+.timeline-block-indicative,
+.ke-timeline-step.is-indicative {
+  background: #ffffff !important;
+}
+
+.ke-timeline-step.is-indicative {
+  grid-template-columns: 1fr !important;
+}
+
+/* Project introduction: keep the strategic story together and reduce the
+   oversized, repeated panel treatment. */
+.project-detail-hero {
+  margin-bottom: 0 !important;
+  padding-top: clamp(1.65rem, 2.8vw, 2.5rem) !important;
+  padding-bottom: clamp(1.45rem, 2.4vw, 2.15rem) !important;
+  border-bottom: 0 !important;
+  scroll-margin-top: 7rem;
+}
+
+.project-detail-hero h1 {
+  max-width: 72rem !important;
+  font-size: clamp(2.7rem, 4vw, 4.5rem) !important;
+}
+
+.project-detail-hero > p,
+.project-detail-hero .detail-summary {
+  max-width: 76rem !important;
+}
+
+.project-detail-hero .detail-summary {
+  font-size: clamp(1rem, 1.08vw, 1.1rem) !important;
+  line-height: 1.42 !important;
+}
+
+.project-detail-hero .detail-meta {
+  margin-top: 1rem !important;
+}
+
+.project-detail-hero + .transformation-claim-panel {
+  display: grid !important;
+  grid-template-columns: minmax(9.5rem, auto) minmax(0, 1fr);
+  gap: 1rem 1.4rem !important;
+  align-items: start;
+  margin: 0 0 1.2rem !important;
+  padding: clamp(1.1rem, 1.8vw, 1.45rem) clamp(1.35rem, 3vw, 2.4rem) !important;
+  border-top: 1px solid var(--border) !important;
+  background: #ffffff !important;
+}
+
+.project-detail-hero + .transformation-claim-panel .eyebrow {
+  margin: 0 !important;
+  align-self: start;
+}
+
+.project-detail-hero + .transformation-claim-panel p:last-child {
+  margin: 0 !important;
+  max-width: 72rem !important;
+  font-size: clamp(1rem, 1.08vw, 1.12rem) !important;
+  font-weight: 700 !important;
+  line-height: 1.38 !important;
+}
+
+/* The project resource profile is supporting information, so its closed state
+   should read as a compact control rather than another page title. */
+body:has(.project-detail-hero) #resource-investment-profile {
+  margin: 0 0 1.2rem !important;
+  padding: 0 !important;
+  border: 2px solid var(--ink) !important;
+  background: #ffffff !important;
+}
+
+body:has(.project-detail-hero) #resource-investment-profile .resource-profile-summary {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 0.9rem 1.2rem;
+  align-items: center;
+  min-height: 0 !important;
+  padding: 0.9rem 1rem !important;
+}
+
+body:has(.project-detail-hero) #resource-investment-profile .resource-profile-heading {
+  display: grid !important;
+  gap: 0.2rem !important;
+}
+
+body:has(.project-detail-hero) #resource-investment-profile .resource-profile-heading strong {
+  font-family: var(--font-body) !important;
+  font-size: clamp(1rem, 1.08vw, 1.12rem) !important;
+  font-weight: 850 !important;
+  letter-spacing: -0.01em !important;
+  line-height: 1.15 !important;
+}
+
+body:has(.project-detail-hero) #resource-investment-profile .resource-profile-heading em {
+  color: var(--muted) !important;
+  font-family: var(--font-body) !important;
+  font-size: 0.9rem !important;
+  font-style: normal !important;
+  font-weight: 500 !important;
+  line-height: 1.3 !important;
+}
+
+body:has(.project-detail-hero) #resource-investment-profile .resource-profile-toggle {
+  flex: 0 0 auto;
+}
+
+/* Project deliverables are portfolio propositions. Their detailed routes live
+   on the deliverable pages, so this view uses a concise comparison grid. */
+.project-deliverable-panel {
+  margin: 0 0 1.5rem !important;
+  padding: clamp(1.2rem, 2.2vw, 1.75rem) !important;
+  overflow: visible !important;
+  scroll-margin-top: 7rem;
+}
+
+.project-deliverable-panel > h2 {
+  margin-bottom: 0.45rem !important;
+}
+
+.project-deliverable-panel > .subtle {
+  max-width: 54rem;
+  margin: 0 0 1.15rem !important;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+.project-deliverable-board {
+  overflow: visible !important;
+  padding-bottom: 0 !important;
+}
+
+.project-deliverable-columns {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 1rem !important;
+  width: auto !important;
+  min-width: 0 !important;
+}
+
+.project-deliverable-column {
+  display: block !important;
+  min-width: 0 !important;
+  flex: none !important;
+  border: 0 !important;
+  background: transparent !important;
+}
+
+.project-deliverable-header {
+  display: flex !important;
+  flex-direction: column;
+  min-height: 100% !important;
+  height: 100%;
+  padding: clamp(1.05rem, 1.8vw, 1.35rem) !important;
+  border: 2px solid var(--ink) !important;
+  border-left: 0.65rem solid var(--ink) !important;
+  background: #ffffff !important;
+  color: var(--ink) !important;
+  transition: border-color 150ms ease, background 150ms ease, transform 150ms ease !important;
+}
+
+.project-deliverable-header:hover,
+.project-deliverable-header:focus-visible {
+  border-color: var(--accent) !important;
+  border-left-color: var(--accent) !important;
+  background: var(--accent-soft) !important;
+  color: var(--ink) !important;
+  outline: none;
+  transform: translateY(-2px);
+}
+
+.project-deliverable-header .deliverable-context-line {
+  margin-bottom: 1rem !important;
+}
+
+.project-deliverable-header .reference {
+  background: var(--ink) !important;
+  color: #ffffff !important;
+}
+
+.project-deliverable-header:hover .reference,
+.project-deliverable-header:focus-visible .reference {
+  background: var(--accent) !important;
+  color: #ffffff !important;
+}
+
+.project-deliverable-header h3 {
+  display: block !important;
+  margin: 0 0 0.75rem !important;
+  overflow: visible !important;
+  color: var(--ink) !important;
+  font-size: clamp(1.55rem, 2vw, 2.05rem) !important;
+  line-height: 1.04 !important;
+  -webkit-line-clamp: unset !important;
+}
+
+.project-deliverable-header p:not(.lead) {
+  display: block !important;
+  margin: 0 !important;
+  overflow: visible !important;
+  color: var(--muted) !important;
+  font-size: 0.98rem !important;
+  line-height: 1.42 !important;
+  -webkit-line-clamp: unset !important;
+}
+
+.project-deliverable-header .lead {
+  margin: auto 0 0 !important;
+  padding-top: 1rem !important;
+  color: var(--ink) !important;
+  font-size: 0.9rem;
+  line-height: 1.3;
+}
+
+.project-deliverable-header::after {
+  content: "Open deliverable →";
+  display: block;
+  margin-top: 0.75rem;
+  color: var(--accent-dark);
+  font-size: 0.84rem;
+  font-weight: 850;
+  letter-spacing: 0.02em;
+}
+
+.project-step-stack {
+  display: none !important;
+}
+
+@media (max-width: 900px) {
+  .project-detail-hero + .transformation-claim-panel,
+  .project-deliverable-columns {
+    grid-template-columns: 1fr !important;
+  }
+
+  body:has(.project-detail-hero) #resource-investment-profile .resource-profile-summary {
+    grid-template-columns: 1fr auto !important;
+  }
+}
+
+@media (max-width: 620px) {
+  .project-detail-hero {
+    padding-left: 1.15rem !important;
+    padding-right: 1.15rem !important;
+  }
+
+  .project-detail-hero + .transformation-claim-panel {
+    padding-left: 1.15rem !important;
+    padding-right: 1.15rem !important;
+  }
+
+  body:has(.project-detail-hero) #resource-investment-profile .resource-profile-summary {
+    grid-template-columns: 1fr !important;
+  }
+}
