@@ -373,7 +373,8 @@ allProjects.forEach((project) => {
       if (!validReferenceIds.has(targetId)) errors.push(`${deliverable.id} relatedDeliverables target not found: ${targetId}`);
     });
     deliverable.steps?.forEach((step) => {
-      step.dependsOn?.forEach((targetId) => {
+      const targets = stepDependencies[step.id] || step.dependsOn || [];
+      targets.forEach((targetId) => {
         if (!validReferenceIds.has(targetId)) errors.push(`${step.id} dependsOn target not found: ${targetId}`);
       });
     });
@@ -386,7 +387,7 @@ allProjects.forEach((project) => {
 Object.entries(stepDependencies).forEach(([stepId, targets]) => {
   if (!stepIds.has(stepId)) errors.push(`step-dependencies key is not a known step id: ${stepId}`);
   targets.forEach((targetId) => {
-    if (!stepIds.has(targetId)) errors.push(`${stepId} has unknown step dependency target: ${targetId}`);
+    if (!validReferenceIds.has(targetId)) errors.push(`${stepId} has unknown dependency target: ${targetId}`);
   });
 });
 

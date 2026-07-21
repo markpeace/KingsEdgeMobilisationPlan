@@ -62,13 +62,17 @@ The UI uses this flag to render Edge projects first, then the out of programme p
 
 ```json
 {
-  "id": "single-student-app",
-  "title": "Single Student App / Digital Portal",
-  "owner": "TBC",
+  "id": "4.1",
+  "title": "Student Experience Hub",
+  "owner": "Mark Peace",
   "deliveryContext": "out-of-programme",
-  "summary": "Provides the digital environment through which the King's Edge offer becomes navigable, personal and usable for students.",
-  "edgeRole": "Carries the digital implementation for King's Canvas, opportunity navigation, evidence capture, digital badges, microcredentials and the future enhanced student record.",
-  "deliverables": []
+  "summary": "Creates a coherent and personalised digital student experience through integrated systems, strengthened CRM capability and shared digital enhancements.",
+  "deliverables": [
+    { "id": "4.1.1" },
+    { "id": "4.1.2" },
+    { "id": "4.1.3" },
+    { "id": "4.1.4" }
+  ]
 }
 ```
 
