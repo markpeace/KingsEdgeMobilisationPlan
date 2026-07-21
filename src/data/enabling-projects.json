@@ -90,7 +90,7 @@
       {
         "id": "4.1.1",
         "title": "Student Relationship and CRM Foundation",
-        "lead": "TBC",
+        "lead": "SASD TBC",
         "planningStatus": "proposition-development",
         "decisionLog": [],
         "summary": "Establishes the shared CRM, knowledge, workflow and case-management capability needed to coordinate student interactions across services and channels.",
@@ -103,7 +103,7 @@
         },
         "ownership": {
           "accountableOwner": "Mark Peace",
-          "deliveryLead": "TBC"
+          "deliveryLead": "SASD TBC"
         },
         "benefits": [
           {
@@ -141,7 +141,7 @@
       {
         "id": "4.1.2",
         "title": "Digital Front Door and Journey Integration",
-        "lead": "TBC",
+        "lead": "Faculty TBC",
         "planningStatus": "proposition-development",
         "decisionLog": [],
         "summary": "Creates the evolving digital front door through which students can navigate information, opportunities, actions and support across King’s.",
@@ -154,7 +154,7 @@
         },
         "ownership": {
           "accountableOwner": "Mark Peace",
-          "deliveryLead": "TBC"
+          "deliveryLead": "Faculty TBC"
         },
         "benefits": [
           {
@@ -192,7 +192,7 @@
       {
         "id": "4.1.3",
         "title": "Digital Innovation and Product Development Capability",
-        "lead": "TBC",
+        "lead": "James Costerton",
         "planningStatus": "proposition-development",
         "decisionLog": [],
         "summary": "Creates the multidisciplinary capability to rapidly design, test and mature digital enhancements within the shared Student Experience Hub.",
@@ -205,7 +205,7 @@
         },
         "ownership": {
           "accountableOwner": "Mark Peace",
-          "deliveryLead": "TBC"
+          "deliveryLead": "James Costerton"
         },
         "benefits": [
           {
@@ -243,7 +243,7 @@
       {
         "id": "4.1.4",
         "title": "King’s Edge Digital Experience",
-        "lead": "TBC",
+        "lead": "Zak Evans",
         "planningStatus": "proposition-development",
         "decisionLog": [],
         "summary": "Delivers the digital experience through which students can discover, pursue, evidence and gain recognition for King’s Edge opportunities within the shared Student Experience Hub.",
@@ -256,7 +256,7 @@
         },
         "ownership": {
           "accountableOwner": "Mark Peace",
-          "deliveryLead": "TBC"
+          "deliveryLead": "Zak Evans"
         },
         "benefits": [
           {
