@@ -10,28 +10,23 @@ function storedWidth() {
   return Number.isFinite(value) && value >= MIN_WIDTH && value <= MAX_WIDTH ? value : DEFAULT_WIDTH;
 }
 
-function positionTodayLabel(timeline, width, periodCount) {
-  const header = timeline.querySelector('.ke-timeline-header');
-  const todayLine = timeline.querySelector('.ke-timeline-today-line');
-  if (!header) return;
+function positionTodayLabel(timeline, periodCount) {
+  timeline.querySelector('.ke-timeline-today-label')?.remove();
 
-  let label = header.querySelector('.ke-timeline-today-label');
+  const todayLine = timeline.querySelector('.ke-timeline-today-line');
+  const currentSegment = timeline.querySelector('.ke-timeline-segment.is-current');
+  const label = currentSegment?.querySelector('strong');
   const percentage = Number.parseFloat(todayLine?.style.left || '');
 
-  if (!todayLine || !Number.isFinite(percentage)) {
-    label?.remove();
-    return;
-  }
+  if (!todayLine || !currentSegment || !label || !Number.isFinite(percentage)) return;
 
-  if (!label) {
-    label = document.createElement('span');
-    label.className = 'ke-timeline-today-label';
-    label.textContent = 'Today';
-    header.append(label);
-  }
+  const segments = [...timeline.querySelectorAll('.ke-timeline-segment')];
+  const currentIndex = segments.indexOf(currentSegment);
+  if (currentIndex < 0) return;
 
-  const timelineWidth = periodCount * width;
-  label.style.left = `${ROW_HEADER_WIDTH + timelineWidth * (percentage / 100)}px`;
+  const positionAcrossPeriods = (percentage / 100) * periodCount;
+  const fractionWithinCurrentPeriod = Math.max(0, Math.min(1, positionAcrossPeriods - currentIndex));
+  label.style.left = `${fractionWithinCurrentPeriod * 100}%`;
 }
 
 function setGridWidth(width) {
@@ -54,7 +49,7 @@ function setGridWidth(width) {
     lane.style.setProperty('grid-template-columns', laneColumns, 'important');
   });
 
-  positionTodayLabel(timeline, width, periodCount);
+  positionTodayLabel(timeline, periodCount);
 }
 
 function scaleDescription(width) {
