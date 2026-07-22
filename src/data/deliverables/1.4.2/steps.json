@@ -18,17 +18,21 @@
     },
     {
       "id": "1.4.2-step-2",
-      "title": "Develop the governance and resourcing model",
+      "title": "Develop the governance, resourcing and faculty support model",
       "period": {
         "start": "jul-dec-2026:a",
-        "end": "jul-dec-2026:b"
+        "end": "jul-dec-2026:c"
       },
-      "summary": "Develop the operating model across the July-August and September-October planning windows, including the remit of the Innovation Committee, interim and funded convenorship, community support, funded projects, accountability and the indicative resource envelope.",
+      "summary": "Develop the operating model from July through December 2026, including the remit of the Innovation Committee, interim and funded convenorship, community support, funded projects, accountability and the indicative resource envelope. Work with faculties to agree the principles through which future community convenors can receive release, workload allocation or backfill support, including central and faculty contributions, eligibility, duration and review.",
       "dependsOn": [],
       "outputs": [
         {
           "title": "Governance and resourcing model",
           "summary": "An agreed model ready to support the establishment of the Innovation Committee and the development of the communities."
+        },
+        {
+          "title": "Agreed release and backfill principles",
+          "summary": "A sufficiently clear and equitable institutional offer to support the funded convenor call from January 2027."
         }
       ]
     },
@@ -52,30 +56,12 @@
     },
     {
       "id": "1.4.2-step-4",
-      "title": "Agree faculty principles for release and backfill",
+      "title": "Confirm interim convenors and integrate the remaining communities",
       "period": {
         "start": "jul-dec-2026:c",
         "end": "jul-dec-2026:c"
       },
-      "summary": "Work with faculties in the November-December 2026 planning window to agree the principles through which future community convenors can receive release, workload allocation or backfill support, including central and faculty contributions, eligibility, duration and review.",
-      "dependsOn": [
-        "1.4.2-step-2"
-      ],
-      "outputs": [
-        {
-          "title": "Agreed release and backfill principles",
-          "summary": "A sufficiently clear and equitable institutional offer to support the funded convenor call from January 2027."
-        }
-      ]
-    },
-    {
-      "id": "1.4.2-step-5",
-      "title": "Confirm interim convenors and integrate the remaining communities",
-      "period": {
-        "start": "jul-dec-2026:b",
-        "end": "jul-dec-2026:c"
-      },
-      "summary": "Across the September-October and November-December planning windows, identify existing institutional leaders to act as interim, unremitted convenors and use their leadership to bring the AI in Education and Inclusive Education communities into the shared institutional frame by December 2026.",
+      "summary": "In the November-December planning window, identify existing institutional leaders to act as interim, unremitted convenors and use their leadership to bring the AI in Education and Inclusive Education communities into the shared institutional frame by December 2026.",
       "dependsOn": [],
       "outputs": [
         {
@@ -85,7 +71,7 @@
       ]
     },
     {
-      "id": "1.4.2-step-6",
+      "id": "1.4.2-step-5",
       "title": "Run funded convenor and community project calls",
       "period": {
         "start": "jan-jun-2027:a",
@@ -93,9 +79,9 @@
       },
       "summary": "Launch coordinated calls for funded Community Convenors and community-aligned projects in January-February 2027, then complete selection, confirm faculty release and backfill arrangements, appoint convenors and agree the first funded project portfolio in March-April.",
       "dependsOn": [
+        "1.4.2-step-2",
         "1.4.2-step-3",
-        "1.4.2-step-4",
-        "1.4.2-step-5"
+        "1.4.2-step-4"
       ],
       "outputs": [
         {
@@ -109,7 +95,7 @@
       ]
     },
     {
-      "id": "1.4.2-step-7",
+      "id": "1.4.2-step-6",
       "title": "Build the first three communities and establish their operating conventions",
       "period": {
         "start": "jan-jun-2027:a",
@@ -117,7 +103,7 @@
       },
       "summary": "From January to August 2027, develop the Experiential Learning, AI in Education and Inclusive Education communities into active and recognisable communities of practice. Through their early work, establish and test the shared conventions for convenorship, participation, communication, collaborative inquiry, student and partner involvement, funded activity, decision-making and routes into institutional influence. This will create three functioning communities and a clear basis for how future strategic communities of practice can be established and supported at King's.",
       "dependsOn": [
-        "1.4.2-step-5"
+        "1.4.2-step-4"
       ],
       "outputs": [
         {
