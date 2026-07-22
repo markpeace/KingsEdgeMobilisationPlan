@@ -76,9 +76,7 @@
         "end": "jul-dec-2026:c"
       },
       "summary": "Across the September-October and November-December planning windows, identify existing institutional leaders to act as interim, unremitted convenors and use their leadership to bring the AI in Education and Inclusive Education communities into the shared institutional frame by December 2026.",
-      "dependsOn": [
-        "1.4.2-step-3"
-      ],
+      "dependsOn": [],
       "outputs": [
         {
           "title": "Three communities operating in a common frame",
