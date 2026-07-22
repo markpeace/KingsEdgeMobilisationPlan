@@ -1,0 +1,192 @@
+.ke-timeline-page {
+  --ke-enables: #176b9b;
+  --ke-enables-soft: #eaf5fb;
+  --ke-swimlane-even: #f5f7f8;
+  --ke-swimlane-odd: #ffffff;
+  --ke-swimlane-divider: #b8bdc1;
+}
+
+.ke-timeline-toolbar:has(.ke-timeline-scale-control) {
+  grid-template-columns: minmax(180px, 0.8fr) minmax(260px, 1.4fr) minmax(170px, 0.72fr) minmax(180px, 0.78fr) minmax(240px, 1fr);
+}
+
+.ke-timeline-scale-control {
+  min-width: 0;
+}
+
+.ke-timeline-scale-control > span {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.ke-timeline-scale-output {
+  color: var(--accent-dark);
+  font-weight: 900;
+  text-transform: none;
+}
+
+.ke-timeline-scale-input-row {
+  display: grid;
+  grid-template-columns: auto minmax(110px, 1fr) auto;
+  gap: 0.45rem;
+  align-items: center;
+  min-height: 40px;
+  padding: 0 0.55rem;
+  border: 1px solid var(--border-strong);
+  background: #ffffff;
+}
+
+.ke-timeline-scale-input-row small {
+  color: var(--muted);
+  font-size: 0.66rem;
+  font-weight: 800;
+}
+
+.ke-timeline-toolbar .ke-timeline-scale-input-row input[type="range"] {
+  min-height: auto;
+  padding: 0;
+  border: 0;
+  accent-color: var(--accent);
+  cursor: ew-resize;
+}
+
+.ke-timeline-segment.is-current {
+  padding-top: 0.9rem;
+}
+
+.ke-timeline-segment.is-current > span {
+  transform: translateY(0.22rem);
+}
+
+.ke-timeline-segment strong {
+  display: block;
+  position: absolute;
+  top: 0.18rem;
+  right: auto;
+  bottom: auto;
+  transform: translateX(-50%);
+  color: var(--gold);
+  font-size: 0.52rem;
+  font-weight: 900;
+  letter-spacing: 0.035em;
+  line-height: 1;
+  text-transform: uppercase;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+/*
+ * The deliverable rows already behave as swimlanes. Strengthen that reading
+ * without adding new plan semantics: alternate the lane surface, align the
+ * sticky label with the same surface, and make the lane boundaries clearer.
+ */
+.ke-timeline-table > [role="rowgroup"] > .ke-timeline-row {
+  --ke-swimlane-bg: var(--ke-swimlane-odd);
+  border-bottom: 2px solid var(--ke-swimlane-divider);
+}
+
+.ke-timeline-table > [role="rowgroup"] > .ke-timeline-row:nth-child(even) {
+  --ke-swimlane-bg: var(--ke-swimlane-even);
+}
+
+.ke-timeline-table > [role="rowgroup"] > .ke-timeline-row:last-child {
+  border-bottom: 0;
+}
+
+.ke-timeline-table > [role="rowgroup"] > .ke-timeline-row > .ke-timeline-row-header,
+.ke-timeline-table > [role="rowgroup"] > .ke-timeline-row > .ke-timeline-lane {
+  background-color: var(--ke-swimlane-bg);
+}
+
+.ke-timeline-table > [role="rowgroup"] > .ke-timeline-row > .ke-timeline-row-header {
+  box-shadow: inset 5px 0 0 rgba(214, 169, 58, 0.72), 8px 0 12px rgba(0, 0, 0, 0.04);
+}
+
+.ke-timeline-table > [role="rowgroup"] > .ke-timeline-row > .ke-timeline-row-header:hover,
+.ke-timeline-table > [role="rowgroup"] > .ke-timeline-row > .ke-timeline-row-header:focus-visible {
+  box-shadow: inset 5px 0 0 var(--gold), 8px 0 12px rgba(0, 0, 0, 0.04);
+}
+
+/*
+ * Keep selection and dependency states legible even when a later generic
+ * button rule supplies a white background. The three interaction states use
+ * clearly different visual languages: black for the selected step, red for
+ * prerequisites, and blue for work enabled by the selected step.
+ */
+.ke-timeline-page .ke-timeline-step.is-selected {
+  border: 3px solid var(--ink) !important;
+  background-color: #ffffff !important;
+  color: var(--ink) !important;
+  box-shadow: inset 0 0 0 1px var(--ink) !important;
+}
+
+.ke-timeline-page .ke-timeline-step.is-prerequisite {
+  border: 2px solid var(--accent) !important;
+  background-color: #fff1f1 !important;
+  color: var(--accent-dark) !important;
+  box-shadow: inset 0 0 0 1px var(--accent) !important;
+}
+
+.ke-timeline-page .ke-timeline-step.is-onward {
+  border: 2px solid var(--ke-enables) !important;
+  background-color: var(--ke-enables-soft) !important;
+  color: var(--ke-enables) !important;
+  box-shadow: inset 0 0 0 1px var(--ke-enables) !important;
+}
+
+.ke-timeline-page .ke-timeline-step.is-selected .ke-timeline-step-number,
+.ke-timeline-page .ke-timeline-step.is-selected .ke-timeline-step-title,
+.ke-timeline-page .ke-timeline-step.is-selected .ke-timeline-step-status,
+.ke-timeline-page .ke-timeline-step.is-prerequisite .ke-timeline-step-number,
+.ke-timeline-page .ke-timeline-step.is-prerequisite .ke-timeline-step-title,
+.ke-timeline-page .ke-timeline-step.is-prerequisite .ke-timeline-step-status,
+.ke-timeline-page .ke-timeline-step.is-onward .ke-timeline-step-number,
+.ke-timeline-page .ke-timeline-step.is-onward .ke-timeline-step-title,
+.ke-timeline-page .ke-timeline-step.is-onward .ke-timeline-step-status {
+  color: inherit !important;
+  -webkit-text-fill-color: currentColor;
+}
+
+.ke-timeline-page .ke-key-box.is-selected {
+  border: 3px solid var(--ink) !important;
+  background: #ffffff !important;
+}
+
+.ke-timeline-page .ke-key-box.is-prerequisite {
+  border: 2px solid var(--accent) !important;
+  background: #fff1f1 !important;
+}
+
+.ke-timeline-page .ke-key-box.is-onward {
+  border: 2px solid var(--ke-enables) !important;
+  background: var(--ke-enables-soft) !important;
+}
+
+@media (max-width: 1380px) {
+  .ke-timeline-toolbar:has(.ke-timeline-scale-control) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .ke-timeline-search,
+  .ke-timeline-scale-control {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 1180px) {
+  .ke-timeline-toolbar:has(.ke-timeline-scale-control) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .ke-timeline-search,
+  .ke-timeline-scale-control {
+    grid-column: auto;
+  }
+}
+
+@media (max-width: 760px) {
+  .ke-timeline-scale-control {
+    display: none;
+  }
+}
