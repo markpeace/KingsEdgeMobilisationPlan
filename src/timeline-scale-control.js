@@ -10,6 +10,30 @@ function storedWidth() {
   return Number.isFinite(value) && value >= MIN_WIDTH && value <= MAX_WIDTH ? value : DEFAULT_WIDTH;
 }
 
+function positionTodayLabel(timeline, width, periodCount) {
+  const header = timeline.querySelector('.ke-timeline-header');
+  const todayLine = timeline.querySelector('.ke-timeline-today-line');
+  if (!header) return;
+
+  let label = header.querySelector('.ke-timeline-today-label');
+  const percentage = Number.parseFloat(todayLine?.style.left || '');
+
+  if (!todayLine || !Number.isFinite(percentage)) {
+    label?.remove();
+    return;
+  }
+
+  if (!label) {
+    label = document.createElement('span');
+    label.className = 'ke-timeline-today-label';
+    label.textContent = 'Today';
+    header.append(label);
+  }
+
+  const timelineWidth = periodCount * width;
+  label.style.left = `${ROW_HEADER_WIDTH + timelineWidth * (percentage / 100)}px`;
+}
+
 function setGridWidth(width) {
   const timeline = document.querySelector('.ke-timeline-page');
   if (!timeline) return;
@@ -29,6 +53,8 @@ function setGridWidth(width) {
   timeline.querySelectorAll('.ke-timeline-lane').forEach((lane) => {
     lane.style.setProperty('grid-template-columns', laneColumns, 'important');
   });
+
+  positionTodayLabel(timeline, width, periodCount);
 }
 
 function scaleDescription(width) {
