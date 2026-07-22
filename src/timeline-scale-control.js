@@ -6,6 +6,9 @@ const STEP = 8;
 const ROW_HEADER_WIDTH = 260;
 const TIMELINE_STRUCTURE_SELECTOR = '.ke-timeline-page, .ke-timeline-toolbar, .ke-timeline-header, .ke-timeline-row, .ke-timeline-segment';
 
+let replayingStepClick = false;
+let stepInteractionVersion = 0;
+
 function storedWidth() {
   const value = Number(window.localStorage.getItem(STORAGE_KEY));
   return Number.isFinite(value) && value >= MIN_WIDTH && value <= MAX_WIDTH ? value : DEFAULT_WIDTH;
@@ -101,6 +104,56 @@ function installScaleControl() {
   apply(storedWidth());
 }
 
+function replayStepClick(button) {
+  replayingStepClick = true;
+  button.click();
+  replayingStepClick = false;
+}
+
+function selectStepWithoutModal(button) {
+  const interactionVersion = ++stepInteractionVersion;
+  replayStepClick(button);
+
+  window.requestAnimationFrame(() => {
+    if (interactionVersion !== stepInteractionVersion) return;
+    document.querySelector('.ke-timeline-modal-close')?.click();
+  });
+}
+
+function openStepModal(button) {
+  stepInteractionVersion += 1;
+  replayStepClick(button);
+}
+
+function installStepClickBehaviour() {
+  const timeline = document.querySelector('.ke-timeline-page');
+  if (!timeline || timeline.dataset.stepClickBehaviourBound === 'true') return;
+
+  timeline.dataset.stepClickBehaviourBound = 'true';
+  timeline.addEventListener('click', (event) => {
+    const button = event.target.closest('.ke-timeline-step');
+    if (!button || replayingStepClick) return;
+
+    // Keyboard activation has no click count, so retain the existing accessible modal behaviour.
+    if (event.detail === 0) return;
+
+    event.preventDefault();
+    event.stopPropagation();
+    event.stopImmediatePropagation();
+
+    if (event.detail >= 2) {
+      openStepModal(button);
+      return;
+    }
+
+    selectStepWithoutModal(button);
+  }, true);
+
+  timeline.querySelectorAll('.ke-timeline-step').forEach((button) => {
+    button.title = 'Click to highlight · double-click for details';
+  });
+}
+
 function installEmptySpaceDeselect() {
   const timeline = document.querySelector('.ke-timeline-page');
   if (!timeline || timeline.dataset.emptySpaceDeselectBound === 'true') return;
@@ -122,6 +175,7 @@ function refreshTimelineScale() {
   window.requestAnimationFrame(() => {
     scheduled = false;
     installScaleControl();
+    installStepClickBehaviour();
     installEmptySpaceDeselect();
     setGridWidth(storedWidth());
   });
