@@ -1,6 +1,17 @@
 {
   "deliverables": [
     {
+      "id": "1.4.2",
+      "projectId": "1.4",
+      "parts": [
+        "./1.4.2/core.json",
+        "./1.4.2/overview.json",
+        "./1.4.2/steps.json",
+        "./1.4.2/benefits.json",
+        "./1.4.2/governance.json"
+      ]
+    },
+    {
       "id": "2.1.1",
       "projectId": "2.1",
       "parts": [
