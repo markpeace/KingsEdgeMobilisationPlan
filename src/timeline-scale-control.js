@@ -1,3 +1,5 @@
+import { buildLookups, getStepDependencies, projects } from './plan-utils.js';
+
 const STORAGE_KEY = 'kings-edge-timeline-period-width';
 const DEFAULT_WIDTH = 112;
 const MIN_WIDTH = 64;
@@ -5,6 +7,7 @@ const MAX_WIDTH = 176;
 const STEP = 8;
 const ROW_HEADER_WIDTH = 260;
 const TIMELINE_STRUCTURE_SELECTOR = '.ke-timeline-page, .ke-timeline-toolbar, .ke-timeline-header, .ke-timeline-row, .ke-timeline-segment';
+const { idMap: timelineIdMap } = buildLookups(projects);
 
 let replayingStepClick = false;
 let stepInteractionVersion = 0;
@@ -121,6 +124,48 @@ function updateDependencyLabels() {
   });
 }
 
+function dependencyHistoryFor(stepId) {
+  const history = new Set();
+
+  const visit = (id) => {
+    const entry = timelineIdMap.get(id);
+    if (entry?.type !== 'step') return;
+
+    getStepDependencies(entry.item).forEach((dependencyId) => {
+      if (!dependencyId || dependencyId === stepId || history.has(dependencyId)) return;
+      history.add(dependencyId);
+      visit(dependencyId);
+    });
+  };
+
+  visit(stepId);
+  return history;
+}
+
+function clearTransitiveDependencyHighlight(timeline) {
+  timeline?.querySelectorAll('[data-ke-transitive-dependency="true"]').forEach((button) => {
+    button.classList.remove('is-prerequisite');
+    delete button.dataset.keTransitiveDependency;
+  });
+}
+
+function applyDependencyHistory() {
+  const timeline = document.querySelector('.ke-timeline-page');
+  if (!timeline) return;
+
+  const selectedButton = timeline.querySelector('.ke-timeline-step[aria-pressed="true"], .ke-timeline-step.is-selected');
+  const selectedStepId = selectedButton?.dataset.stepId;
+  if (!selectedStepId) return;
+
+  const history = dependencyHistoryFor(selectedStepId);
+  timeline.querySelectorAll('[data-step-id]').forEach((button) => {
+    if (!history.has(button.dataset.stepId) || button.classList.contains('is-prerequisite')) return;
+    button.classList.remove('is-dimmed');
+    button.classList.add('is-prerequisite');
+    button.dataset.keTransitiveDependency = 'true';
+  });
+}
+
 function replayStepClick(button) {
   replayingStepClick = true;
   button.click();
@@ -128,17 +173,20 @@ function replayStepClick(button) {
 }
 
 function clearHighlight(timeline) {
+  clearTransitiveDependencyHighlight(timeline);
   const clearButton = timeline?.querySelector('.ke-timeline-key .ke-text-button');
   clearButton?.click();
 }
 
-function selectStepWithoutModal(button) {
+function selectStepWithoutModal(button, timeline) {
   const interactionVersion = ++stepInteractionVersion;
+  clearTransitiveDependencyHighlight(timeline);
   replayStepClick(button);
 
   window.requestAnimationFrame(() => {
     if (interactionVersion !== stepInteractionVersion) return;
     document.querySelector('.ke-timeline-modal-close')?.click();
+    applyDependencyHistory();
   });
 }
 
@@ -150,13 +198,17 @@ function toggleStepHighlight(button, timeline) {
     return;
   }
 
-  selectStepWithoutModal(button);
+  selectStepWithoutModal(button, timeline);
 }
 
-function openStepModal(button) {
+function openStepModal(button, timeline) {
   stepInteractionVersion += 1;
+  clearTransitiveDependencyHighlight(timeline);
   replayStepClick(button);
-  window.requestAnimationFrame(updateDependencyLabels);
+  window.requestAnimationFrame(() => {
+    updateDependencyLabels();
+    applyDependencyHistory();
+  });
 }
 
 function installStepClickBehaviour() {
@@ -169,14 +221,20 @@ function installStepClickBehaviour() {
     if (!button || replayingStepClick) return;
 
     // Keyboard activation has no click count, so retain the existing accessible modal behaviour.
-    if (event.detail === 0) return;
+    if (event.detail === 0) {
+      window.requestAnimationFrame(() => {
+        updateDependencyLabels();
+        applyDependencyHistory();
+      });
+      return;
+    }
 
     event.preventDefault();
     event.stopPropagation();
     event.stopImmediatePropagation();
 
     if (event.detail >= 2) {
-      openStepModal(button);
+      openStepModal(button, timeline);
       return;
     }
 
@@ -211,6 +269,7 @@ function refreshTimelineScale() {
     installEmptySpaceDeselect();
     updateDependencyLabels();
     setGridWidth(storedWidth());
+    applyDependencyHistory();
   });
 }
 
