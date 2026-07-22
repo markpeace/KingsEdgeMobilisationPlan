@@ -43,36 +43,29 @@
   cursor: ew-resize;
 }
 
-.ke-timeline-segment strong {
-  display: none;
+.ke-timeline-segment.is-current {
+  padding-top: 0.9rem;
 }
 
-.ke-timeline-today-label {
+.ke-timeline-segment.is-current > span {
+  transform: translateY(0.22rem);
+}
+
+.ke-timeline-segment strong {
+  display: block;
   position: absolute;
-  z-index: 17;
-  bottom: 44px;
+  top: 0.18rem;
+  right: auto;
+  bottom: auto;
   transform: translateX(-50%);
-  padding: 0.14rem 0.28rem;
-  background: var(--ink);
   color: var(--gold);
-  font-size: 0.56rem;
+  font-size: 0.52rem;
   font-weight: 900;
-  letter-spacing: 0.045em;
+  letter-spacing: 0.035em;
   line-height: 1;
   text-transform: uppercase;
   white-space: nowrap;
   pointer-events: none;
-}
-
-.ke-timeline-today-label::after {
-  content: '';
-  position: absolute;
-  top: calc(100% + 2px);
-  left: 50%;
-  width: 2px;
-  height: 8px;
-  transform: translateX(-50%);
-  background: var(--gold);
 }
 
 @media (max-width: 1380px) {
