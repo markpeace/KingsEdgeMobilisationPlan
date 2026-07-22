@@ -13,6 +13,7 @@ const plan = readJson('../src/data/kings-edge-plan.json');
 const outOfProgrammeProjects = readJson('../src/data/enabling-projects.json');
 const manifest = readJson('../src/data/deliverables/manifest.json');
 const errors = [];
+const warnings = [];
 
 function mergeDeliverableParts(...parts) {
   return parts.reduce((merged, part) => {
@@ -80,7 +81,36 @@ function hasDeliverableResourceContent(resources) {
     || resources.investmentAsk?.required === true;
 }
 
-function validateResourceArray(value, path, labelFields) {
+function validateBauLiability(item, path, { allowed = false } = {}) {
+  if (item.bauLiability === undefined) return;
+  if (!allowed) {
+    errors.push(`${path}.bauLiability is only valid on newInvestment or legacy cashCosts asks.`);
+    return;
+  }
+  if (typeof item.bauLiability !== 'boolean') {
+    errors.push(`${path}.bauLiability should be a boolean.`);
+    return;
+  }
+  if (!item.bauLiability) return;
+
+  if (typeof item.amount !== 'number' || item.amount <= 0) {
+    errors.push(`${path}.amount should be a positive annual recurrent amount when bauLiability is true.`);
+  }
+  if (typeof item.currency !== 'string' || !item.currency.trim()) {
+    errors.push(`${path}.currency is required when bauLiability is true.`);
+  }
+  if (typeof item.confidence !== 'string' || !item.confidence.trim()) {
+    errors.push(`${path}.confidence is required when bauLiability is true.`);
+  }
+  const rationale = item.rationale || item.notes || item.contribution;
+  if (typeof rationale !== 'string' || !rationale.trim()) {
+    errors.push(`${path}.rationale is required when bauLiability is true.`);
+  }
+  if (!item.owner) warnings.push(`${path} is a BAU liability without an owner.`);
+  if (!item.fundingRoute) warnings.push(`${path} is a BAU liability without a fundingRoute.`);
+}
+
+function validateResourceArray(value, path, labelFields, { allowBauLiability = false } = {}) {
   if (value === undefined) return;
   if (!Array.isArray(value)) {
     errors.push(`${path} should be an array.`);
@@ -88,19 +118,21 @@ function validateResourceArray(value, path, labelFields) {
   }
 
   value.forEach((item, index) => {
+    const itemPath = `${path}[${index}]`;
     if (!item || typeof item !== 'object' || Array.isArray(item)) {
-      errors.push(`${path}[${index}] should be an object.`);
+      errors.push(`${itemPath} should be an object.`);
       return;
     }
     if (!labelFields.some((field) => item[field])) {
-      errors.push(`${path}[${index}] needs one of: ${labelFields.join(', ')}.`);
+      errors.push(`${itemPath} needs one of: ${labelFields.join(', ')}.`);
     }
     if (item.amount !== undefined && typeof item.amount !== 'number') {
-      errors.push(`${path}[${index}].amount should be a number.`);
+      errors.push(`${itemPath}.amount should be a number.`);
     }
     if (item.fte !== undefined && typeof item.fte !== 'number') {
-      errors.push(`${path}[${index}].fte should be a number.`);
+      errors.push(`${itemPath}.fte should be a number.`);
     }
+    validateBauLiability(item, itemPath, { allowed: allowBauLiability });
   });
 }
 
@@ -113,12 +145,12 @@ function validateStepResources(step, deliverableId, stepIndex) {
   }
 
   validateResourceArray(step.resources.existingCapacity, `${path}.existingCapacity`, ['role', 'item', 'team']);
-  validateResourceArray(step.resources.newInvestment, `${path}.newInvestment`, ['item', 'role']);
+  validateResourceArray(step.resources.newInvestment, `${path}.newInvestment`, ['item', 'role'], { allowBauLiability: true });
   validateResourceArray(step.resources.enablingConditions, `${path}.enablingConditions`, ['condition', 'need', 'item']);
 
   // Backwards-compatible aliases remain valid while data is migrated.
   validateResourceArray(step.resources.people, `${path}.people`, ['role', 'item']);
-  validateResourceArray(step.resources.cashCosts, `${path}.cashCosts`, ['item']);
+  validateResourceArray(step.resources.cashCosts, `${path}.cashCosts`, ['item'], { allowBauLiability: true });
   validateResourceArray(step.resources.dataAndSystems, `${path}.dataAndSystems`, ['condition', 'item', 'need']);
   validateResourceArray(step.resources.governance, `${path}.governance`, ['condition', 'item', 'need']);
   validateResourceArray(step.resources.engagementNeeds, `${path}.engagementNeeds`, ['condition', 'item', 'need']);
@@ -135,6 +167,10 @@ deliverables.forEach((deliverable) => {
   (deliverable.steps || []).forEach((step, stepIndex) => validateStepResources(step, deliverable.id, stepIndex));
 });
 
+if (warnings.length) {
+  console.warn('Resource model validation warnings:');
+  warnings.forEach((warning) => console.warn(`- ${warning}`));
+}
 if (errors.length) {
   console.error('Resource model validation failed:');
   errors.forEach((error) => console.error(`- ${error}`));

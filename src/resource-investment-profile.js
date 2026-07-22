@@ -1,4 +1,5 @@
 import { buildLookups, getStepPeriodSpan, periodLabel, projects } from './plan-utils.js';
+import { isBauLiability, resourceGroups, resourceSummary } from './resource-profile-utils.js';
 
 const { deliverables } = buildLookups(projects);
 const deliverableById = new Map(deliverables.map((deliverable) => [deliverable.id, deliverable]));
@@ -36,26 +37,6 @@ function stepLabel(index) {
   return `Step ${String(index + 1).padStart(2, '0')}`;
 }
 
-function resourceGroups(step) {
-  return [
-    {
-      key: 'existing-capacity',
-      label: 'Existing capacity to align',
-      items: step.resources?.existingCapacity || []
-    },
-    {
-      key: 'new-investment',
-      label: 'New investment',
-      items: step.resources?.newInvestment || []
-    },
-    {
-      key: 'enabling-condition',
-      label: 'Enabling conditions',
-      items: step.resources?.enablingConditions || []
-    }
-  ].filter((group) => group.items.length);
-}
-
 function stepAskCount(step) {
   return resourceGroups(step).reduce((total, group) => total + group.items.length, 0);
 }
@@ -70,18 +51,25 @@ function askDescription(ask) {
 }
 
 function renderAsk(ask, step) {
-  const cost = formatMoney(ask.amount, ask.currency || 'GBP') || ask.estimatedCost || ask.additionalCost || '';
+  const bauLiability = isBauLiability(ask);
+  const formattedCost = formatMoney(ask.amount, ask.currency || 'GBP') || ask.estimatedCost || ask.additionalCost || '';
+  const cost = bauLiability && formattedCost ? `${formattedCost} per year` : formattedCost;
   const meta = [
     cost,
     ask.owner && `Owner: ${ask.owner}`,
     ask.decisionNeededBy && `Decision by: ${ask.decisionNeededBy}`,
-    ask.confidence && `Confidence: ${ask.confidence}`
+    ask.confidence && `Confidence: ${ask.confidence}`,
+    ask.fundingStatus && `Funding status: ${ask.fundingStatus}`,
+    ask.fundingRoute && `Funding route: ${ask.fundingRoute}`
   ].filter(Boolean);
 
   return `
-    <article class="resource-ask-card resource-ask-${escapeHtml(ask.askType || 'item')}">
+    <article class="resource-ask-card resource-ask-${escapeHtml(ask.askType || 'item')}${bauLiability ? ' is-bau-liability' : ''}">
       <div class="resource-ask-heading">
-        <strong>${escapeHtml(ask.label || ask.role || ask.item || ask.condition || 'Resource ask')}</strong>
+        <span class="resource-ask-title-line">
+          <strong>${escapeHtml(ask.label || ask.role || ask.item || ask.condition || 'Resource ask')}</strong>
+          ${bauLiability ? '<em class="resource-bau-badge">BAU liability</em>' : ''}
+        </span>
         <span>${escapeHtml(periodForAsk(ask, step))}</span>
       </div>
       ${askDescription(ask) ? `<p>${escapeHtml(askDescription(ask))}</p>` : ''}
@@ -105,38 +93,22 @@ function renderResourceGroup(group, step) {
 function renderStepResources(step, index, contextLabel = '') {
   const groups = resourceGroups(step);
   const askCount = groups.reduce((total, group) => total + group.items.length, 0);
+  const bauLiabilityCount = groups.find((group) => group.key === 'bau-liability')?.items.length || 0;
   const countLabel = `${askCount} ${askCount === 1 ? 'ask' : 'asks'}`;
   const label = [contextLabel, stepLabel(index)].filter(Boolean).join(' · ');
 
   return `
-    <details class="resource-step-group">
+    <details class="resource-step-group${bauLiabilityCount ? ' has-bau-liability' : ''}">
       <summary>
         <span class="resource-step-period">${escapeHtml(periodLabel(step.period))}</span>
         <span class="resource-step-title"><strong>${escapeHtml(label)}</strong><span>${escapeHtml(step.title)}</span></span>
-        <span class="resource-step-count">${escapeHtml(countLabel)}</span>
+        <span class="resource-step-count">${escapeHtml(countLabel)}${bauLiabilityCount ? ' · BAU' : ''}</span>
       </summary>
       <div class="resource-step-body">
         ${groups.map((group) => renderResourceGroup(group, step)).join('')}
       </div>
     </details>
   `;
-}
-
-function resourceSummary(steps) {
-  const asks = steps.flatMap((step) => resourceGroups(step).flatMap((group) => group.items));
-  const investmentAsks = asks.filter((ask) => ask.askType === 'new-investment');
-  const enablingConditions = asks.filter((ask) => ask.askType === 'enabling-condition');
-  const capacityAsks = asks.filter((ask) => ask.askType === 'existing-capacity');
-  const knownInvestment = investmentAsks.reduce((total, ask) => total + (typeof ask.amount === 'number' ? ask.amount : 0), 0);
-
-  return {
-    total: asks.length,
-    steps: steps.length,
-    investmentAsks: investmentAsks.length,
-    enablingConditions: enablingConditions.length,
-    capacityAsks: capacityAsks.length,
-    knownInvestment
-  };
 }
 
 function signatureForDeliverable(deliverable) {
@@ -157,7 +129,10 @@ function createDeliverableProfile(deliverable) {
   if (!steps.length) return null;
 
   const summary = resourceSummary(steps.map(({ step }) => step));
-  const knownInvestment = summary.knownInvestment ? formatMoney(summary.knownInvestment) : 'No quantified total yet';
+  const knownInvestment = summary.knownInvestment ? formatMoney(summary.knownInvestment) : 'No quantified delivery total yet';
+  const knownAnnualBauLiability = summary.knownAnnualBauLiability
+    ? `${formatMoney(summary.knownAnnualBauLiability)} per year`
+    : 'No quantified BAU total yet';
   const profile = document.createElement('details');
   profile.id = 'resource-investment-profile';
   profile.className = 'panel resource-investment-profile';
@@ -171,12 +146,14 @@ function createDeliverableProfile(deliverable) {
       <span class="resource-profile-toggle" aria-hidden="true"></span>
     </summary>
     <div class="resource-profile-body">
-      <p class="subtle resource-profile-explainer">The timeline remains the source of truth. This roll-up sequences when capacity, investment and enabling conditions are needed, without creating a second resource plan.</p>
+      <p class="subtle resource-profile-explainer">The timeline remains the source of truth. This roll-up sequences when capacity, delivery investment and enabling conditions are needed, while annual BAU liabilities remain separately visible and are never added to one-off delivery totals.</p>
       <div class="resource-profile-summary-grid">
         <article><strong>${escapeHtml(summary.steps)}</strong><span>Steps with asks</span></article>
         <article><strong>${escapeHtml(summary.capacityAsks)}</strong><span>Capacity asks</span></article>
-        <article><strong>${escapeHtml(summary.investmentAsks)}</strong><span>Investment asks</span></article>
-        <article><strong>${escapeHtml(knownInvestment)}</strong><span>Known investment</span></article>
+        <article><strong>${escapeHtml(summary.deliveryInvestmentAsks)}</strong><span>Delivery investment asks</span></article>
+        <article><strong>${escapeHtml(knownInvestment)}</strong><span>Known delivery investment</span></article>
+        <article class="resource-summary-bau"><strong>${escapeHtml(summary.bauLiabilityAsks)}</strong><span>BAU liabilities</span></article>
+        <article class="resource-summary-bau"><strong>${escapeHtml(knownAnnualBauLiability)}</strong><span>Expected annual BAU cost</span></article>
         <article><strong>${escapeHtml(summary.enablingConditions)}</strong><span>Enabling conditions</span></article>
       </div>
       <div class="resource-step-sequence">
@@ -217,7 +194,10 @@ function createProjectProfile(project) {
 
   const steps = deliverableGroups.flatMap(({ steps: deliverableSteps }) => deliverableSteps.map(({ step }) => step));
   const summary = resourceSummary(steps);
-  const knownInvestment = summary.knownInvestment ? formatMoney(summary.knownInvestment) : 'No quantified total yet';
+  const knownInvestment = summary.knownInvestment ? formatMoney(summary.knownInvestment) : 'No quantified delivery total yet';
+  const knownAnnualBauLiability = summary.knownAnnualBauLiability
+    ? `${formatMoney(summary.knownAnnualBauLiability)} per year`
+    : 'No quantified BAU total yet';
   const profile = document.createElement('details');
   profile.id = 'resource-investment-profile';
   profile.className = 'panel resource-investment-profile';
@@ -231,12 +211,14 @@ function createProjectProfile(project) {
       <span class="resource-profile-toggle" aria-hidden="true"></span>
     </summary>
     <div class="resource-profile-body">
-      <p class="subtle resource-profile-explainer">Delivery steps remain the source of truth. This project roll-up brings their capacity, investment and enabling conditions together without creating a second authored resource plan.</p>
+      <p class="subtle resource-profile-explainer">Delivery steps remain the source of truth. This project roll-up brings their capacity, delivery investment, BAU liabilities and enabling conditions together without creating a second authored resource plan.</p>
       <div class="resource-profile-summary-grid">
         <article><strong>${escapeHtml(deliverableGroups.length)}</strong><span>Deliverables with asks</span></article>
         <article><strong>${escapeHtml(summary.capacityAsks)}</strong><span>Capacity asks</span></article>
-        <article><strong>${escapeHtml(summary.investmentAsks)}</strong><span>Investment asks</span></article>
-        <article><strong>${escapeHtml(knownInvestment)}</strong><span>Known investment</span></article>
+        <article><strong>${escapeHtml(summary.deliveryInvestmentAsks)}</strong><span>Delivery investment asks</span></article>
+        <article><strong>${escapeHtml(knownInvestment)}</strong><span>Known delivery investment</span></article>
+        <article class="resource-summary-bau"><strong>${escapeHtml(summary.bauLiabilityAsks)}</strong><span>BAU liabilities</span></article>
+        <article class="resource-summary-bau"><strong>${escapeHtml(knownAnnualBauLiability)}</strong><span>Expected annual BAU cost</span></article>
         <article><strong>${escapeHtml(summary.enablingConditions)}</strong><span>Enabling conditions</span></article>
       </div>
       <div class="resource-step-sequence">

@@ -54,6 +54,7 @@
         {
           "type": "object",
           "required": ["role"],
+          "not": { "required": ["bauLiability"] },
           "properties": {
             "role": { "type": "string" },
             "contribution": { "type": "string" },
@@ -74,8 +75,26 @@
             "amount": { "type": "number", "minimum": 0 },
             "currency": { "type": "string", "default": "GBP" },
             "estimatedCost": { "type": "string" },
-            "fundingRoute": { "type": "string" }
-          }
+            "fundingRoute": { "type": "string" },
+            "fundingStatus": { "type": "string" },
+            "bauLiability": {
+              "type": "boolean",
+              "description": "When true, amount is the expected annual recurrent cost carried into business as usual, not a one-off delivery cost."
+            }
+          },
+          "allOf": [
+            {
+              "if": {
+                "required": ["bauLiability"],
+                "properties": {
+                  "bauLiability": { "const": true }
+                }
+              },
+              "then": {
+                "required": ["amount", "currency", "confidence", "rationale"]
+              }
+            }
+          ]
         }
       ]
     },
@@ -85,6 +104,7 @@
         {
           "type": "object",
           "required": ["condition"],
+          "not": { "required": ["bauLiability"] },
           "properties": {
             "condition": { "type": "string" },
             "whatItUnlocks": { "type": "string" }
@@ -103,7 +123,7 @@
     },
     "newInvestment": {
       "type": "array",
-      "description": "Additional cash or funded capacity required by this step.",
+      "description": "Additional cash or funded capacity required by this step, including any annual recurrent BAU liability created or settled by it.",
       "items": { "$ref": "#/$defs/newInvestmentAsk" }
     },
     "enablingConditions": {
@@ -135,6 +155,17 @@
           "confidence": "estimate",
           "rationale": "Supports data preparation, visualisation development and early testing.",
           "riskIfMissing": "The first pack may not be ready for September testing."
+        },
+        {
+          "id": "example-step-bau-1",
+          "item": "Permanent operating support",
+          "amount": 45000,
+          "currency": "GBP",
+          "bauLiability": true,
+          "owner": "TBC",
+          "fundingRoute": "TBC",
+          "confidence": "indicative",
+          "rationale": "Expected annual recurrent cost once the service transfers into business as usual."
         }
       ],
       "enablingConditions": [
