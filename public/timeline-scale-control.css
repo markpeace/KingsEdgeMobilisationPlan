@@ -1,3 +1,8 @@
+.ke-timeline-page {
+  --ke-enables: #176b9b;
+  --ke-enables-soft: #eaf5fb;
+}
+
 .ke-timeline-toolbar:has(.ke-timeline-scale-control) {
   grid-template-columns: minmax(180px, 0.8fr) minmax(260px, 1.4fr) minmax(170px, 0.72fr) minmax(180px, 0.78fr) minmax(240px, 1fr);
 }
@@ -70,8 +75,9 @@
 
 /*
  * Keep selection and dependency states legible even when a later generic
- * button rule supplies a white background. These states deliberately avoid
- * white-on-solid inversion, so text cannot disappear during interaction.
+ * button rule supplies a white background. The three interaction states use
+ * clearly different visual languages: black for the selected step, red for
+ * prerequisites, and blue for work enabled by the selected step.
  */
 .ke-timeline-page .ke-timeline-step.is-selected {
   border: 3px solid var(--ink) !important;
@@ -88,10 +94,10 @@
 }
 
 .ke-timeline-page .ke-timeline-step.is-onward {
-  border: 2px solid var(--accent) !important;
-  background-color: #ffffff !important;
-  color: var(--accent-dark) !important;
-  box-shadow: inset 0 0 0 1px var(--accent) !important;
+  border: 2px solid var(--ke-enables) !important;
+  background-color: var(--ke-enables-soft) !important;
+  color: var(--ke-enables) !important;
+  box-shadow: inset 0 0 0 1px var(--ke-enables) !important;
 }
 
 .ke-timeline-page .ke-timeline-step.is-selected .ke-timeline-step-number,
@@ -108,13 +114,18 @@
 }
 
 .ke-timeline-page .ke-key-box.is-selected {
-  border: 3px solid var(--ink);
-  background: #ffffff;
+  border: 3px solid var(--ink) !important;
+  background: #ffffff !important;
 }
 
 .ke-timeline-page .ke-key-box.is-prerequisite {
-  border: 2px solid var(--accent);
-  background: #fff1f1;
+  border: 2px solid var(--accent) !important;
+  background: #fff1f1 !important;
+}
+
+.ke-timeline-page .ke-key-box.is-onward {
+  border: 2px solid var(--ke-enables) !important;
+  background: var(--ke-enables-soft) !important;
 }
 
 @media (max-width: 1380px) {
