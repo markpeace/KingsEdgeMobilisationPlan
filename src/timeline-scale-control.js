@@ -101,6 +101,20 @@ function installScaleControl() {
   apply(storedWidth());
 }
 
+function installEmptySpaceDeselect() {
+  const timeline = document.querySelector('.ke-timeline-page');
+  if (!timeline || timeline.dataset.emptySpaceDeselectBound === 'true') return;
+
+  timeline.dataset.emptySpaceDeselectBound = 'true';
+  timeline.addEventListener('click', (event) => {
+    const lane = event.target.closest('.ke-timeline-lane');
+    if (!lane || event.target.closest('.ke-timeline-step')) return;
+
+    const clearButton = timeline.querySelector('.ke-timeline-key .ke-text-button');
+    clearButton?.click();
+  });
+}
+
 let scheduled = false;
 function refreshTimelineScale() {
   if (scheduled) return;
@@ -108,6 +122,7 @@ function refreshTimelineScale() {
   window.requestAnimationFrame(() => {
     scheduled = false;
     installScaleControl();
+    installEmptySpaceDeselect();
     setGridWidth(storedWidth());
   });
 }
