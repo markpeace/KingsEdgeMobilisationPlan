@@ -1,0 +1,61 @@
+#resource-investment-profile {
+  --ke-bau: #176b9b;
+  --ke-bau-dark: #0f4f75;
+  --ke-bau-soft: #eaf5fb;
+}
+
+#resource-investment-profile .resource-profile-summary-grid {
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+}
+
+#resource-investment-profile .resource-summary-bau {
+  border-color: var(--ke-bau);
+  background: var(--ke-bau-soft);
+}
+
+#resource-investment-profile .resource-summary-bau strong,
+#resource-investment-profile .resource-summary-bau span {
+  color: var(--ke-bau-dark);
+}
+
+#resource-investment-profile .resource-step-group.has-bau-liability > summary {
+  box-shadow: inset 0.42rem 0 0 var(--ke-bau);
+}
+
+#resource-investment-profile .resource-ask-group-bau-liability > h4 {
+  color: var(--ke-bau-dark);
+}
+
+#resource-investment-profile .resource-ask-card.is-bau-liability {
+  border-color: var(--ke-bau);
+  border-left: 0.55rem solid var(--ke-bau);
+  background: var(--ke-bau-soft);
+}
+
+#resource-investment-profile .resource-ask-title-line {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  align-items: center;
+}
+
+#resource-investment-profile .resource-bau-badge {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  padding: 0.22rem 0.42rem;
+  background: var(--ke-bau);
+  color: #ffffff;
+  font-size: 0.68rem;
+  font-style: normal;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+@media (max-width: 760px) {
+  #resource-investment-profile .resource-profile-summary-grid {
+    grid-template-columns: 1fr;
+  }
+}
