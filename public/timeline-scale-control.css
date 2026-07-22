@@ -1,6 +1,9 @@
 .ke-timeline-page {
   --ke-enables: #176b9b;
   --ke-enables-soft: #eaf5fb;
+  --ke-swimlane-even: #f5f7f8;
+  --ke-swimlane-odd: #ffffff;
+  --ke-swimlane-divider: #b8bdc1;
 }
 
 .ke-timeline-toolbar:has(.ke-timeline-scale-control) {
@@ -71,6 +74,38 @@
   text-transform: uppercase;
   white-space: nowrap;
   pointer-events: none;
+}
+
+/*
+ * The deliverable rows already behave as swimlanes. Strengthen that reading
+ * without adding new plan semantics: alternate the lane surface, align the
+ * sticky label with the same surface, and make the lane boundaries clearer.
+ */
+.ke-timeline-table > [role="rowgroup"] > .ke-timeline-row {
+  --ke-swimlane-bg: var(--ke-swimlane-odd);
+  border-bottom: 2px solid var(--ke-swimlane-divider);
+}
+
+.ke-timeline-table > [role="rowgroup"] > .ke-timeline-row:nth-child(even) {
+  --ke-swimlane-bg: var(--ke-swimlane-even);
+}
+
+.ke-timeline-table > [role="rowgroup"] > .ke-timeline-row:last-child {
+  border-bottom: 0;
+}
+
+.ke-timeline-table > [role="rowgroup"] > .ke-timeline-row > .ke-timeline-row-header,
+.ke-timeline-table > [role="rowgroup"] > .ke-timeline-row > .ke-timeline-lane {
+  background-color: var(--ke-swimlane-bg);
+}
+
+.ke-timeline-table > [role="rowgroup"] > .ke-timeline-row > .ke-timeline-row-header {
+  box-shadow: inset 5px 0 0 rgba(214, 169, 58, 0.72), 8px 0 12px rgba(0, 0, 0, 0.04);
+}
+
+.ke-timeline-table > [role="rowgroup"] > .ke-timeline-row > .ke-timeline-row-header:hover,
+.ke-timeline-table > [role="rowgroup"] > .ke-timeline-row > .ke-timeline-row-header:focus-visible {
+  box-shadow: inset 5px 0 0 var(--gold), 8px 0 12px rgba(0, 0, 0, 0.04);
 }
 
 /*
