@@ -54,10 +54,10 @@
       "id": "1.4.2-step-4",
       "title": "Establish the Innovation Committee",
       "period": {
-        "start": "jul-dec-2026:b",
-        "end": "jul-dec-2026:b"
+        "start": "jul-dec-2026:c",
+        "end": "jul-dec-2026:c"
       },
-      "summary": "Stand up the Innovation Committee in the September-October planning window with an agreed remit, membership and authority to govern the communities, convenorship and funded activity within the developing model.",
+      "summary": "Stand up the Innovation Committee in the November-December planning window with an agreed remit, membership and authority to govern the communities, convenorship and funded activity within the developing model.",
       "dependsOn": [
         "1.4.2-step-2"
       ],
