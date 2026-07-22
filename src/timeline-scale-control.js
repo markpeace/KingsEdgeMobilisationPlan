@@ -104,10 +104,32 @@ function installScaleControl() {
   apply(storedWidth());
 }
 
+function replaceTrailingLabel(container, label) {
+  if (!container) return;
+  const textNode = [...container.childNodes].find((node) => node.nodeType === Node.TEXT_NODE);
+  if (textNode) textNode.textContent = ` ${label}`;
+  else container.append(` ${label}`);
+}
+
+function updateDependencyLabels() {
+  const timeline = document.querySelector('.ke-timeline-page');
+  const onwardKey = timeline?.querySelector('.ke-key-box.is-onward')?.parentElement;
+  replaceTrailingLabel(onwardKey, 'Enables');
+
+  document.querySelectorAll('.ke-timeline-modal-grid h3').forEach((heading) => {
+    if (heading.textContent.trim() === 'Feeds into') heading.textContent = 'Enables';
+  });
+}
+
 function replayStepClick(button) {
   replayingStepClick = true;
   button.click();
   replayingStepClick = false;
+}
+
+function clearHighlight(timeline) {
+  const clearButton = timeline?.querySelector('.ke-timeline-key .ke-text-button');
+  clearButton?.click();
 }
 
 function selectStepWithoutModal(button) {
@@ -120,9 +142,21 @@ function selectStepWithoutModal(button) {
   });
 }
 
+function toggleStepHighlight(button, timeline) {
+  const isSelected = button.getAttribute('aria-pressed') === 'true' || button.classList.contains('is-selected');
+  if (isSelected) {
+    stepInteractionVersion += 1;
+    clearHighlight(timeline);
+    return;
+  }
+
+  selectStepWithoutModal(button);
+}
+
 function openStepModal(button) {
   stepInteractionVersion += 1;
   replayStepClick(button);
+  window.requestAnimationFrame(updateDependencyLabels);
 }
 
 function installStepClickBehaviour() {
@@ -146,11 +180,11 @@ function installStepClickBehaviour() {
       return;
     }
 
-    selectStepWithoutModal(button);
+    toggleStepHighlight(button, timeline);
   }, true);
 
   timeline.querySelectorAll('.ke-timeline-step').forEach((button) => {
-    button.title = 'Click to highlight · double-click for details';
+    button.title = 'Click to toggle highlight · double-click for details';
   });
 }
 
@@ -162,9 +196,7 @@ function installEmptySpaceDeselect() {
   timeline.addEventListener('click', (event) => {
     const lane = event.target.closest('.ke-timeline-lane');
     if (!lane || event.target.closest('.ke-timeline-step')) return;
-
-    const clearButton = timeline.querySelector('.ke-timeline-key .ke-text-button');
-    clearButton?.click();
+    clearHighlight(timeline);
   });
 }
 
@@ -177,6 +209,7 @@ function refreshTimelineScale() {
     installScaleControl();
     installStepClickBehaviour();
     installEmptySpaceDeselect();
+    updateDependencyLabels();
     setGridWidth(storedWidth());
   });
 }
