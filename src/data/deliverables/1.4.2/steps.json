@@ -34,24 +34,6 @@
     },
     {
       "id": "1.4.2-step-3",
-      "title": "Agree faculty principles for release and backfill",
-      "period": {
-        "start": "jul-dec-2026:b",
-        "end": "jul-dec-2026:c"
-      },
-      "summary": "Work with faculties from September through December 2026 to agree the principles through which future community convenors can receive release, workload allocation or backfill support, including central and faculty contributions, eligibility, duration and review.",
-      "dependsOn": [
-        "1.4.2-step-2"
-      ],
-      "outputs": [
-        {
-          "title": "Agreed release and backfill principles",
-          "summary": "A sufficiently clear and equitable institutional offer to support the funded convenor call from January 2027."
-        }
-      ]
-    },
-    {
-      "id": "1.4.2-step-4",
       "title": "Establish the Innovation Committee",
       "period": {
         "start": "jul-dec-2026:c",
@@ -69,6 +51,24 @@
       ]
     },
     {
+      "id": "1.4.2-step-4",
+      "title": "Agree faculty principles for release and backfill",
+      "period": {
+        "start": "jul-dec-2026:c",
+        "end": "jul-dec-2026:c"
+      },
+      "summary": "Work with faculties in the November-December 2026 planning window to agree the principles through which future community convenors can receive release, workload allocation or backfill support, including central and faculty contributions, eligibility, duration and review.",
+      "dependsOn": [
+        "1.4.2-step-2"
+      ],
+      "outputs": [
+        {
+          "title": "Agreed release and backfill principles",
+          "summary": "A sufficiently clear and equitable institutional offer to support the funded convenor call from January 2027."
+        }
+      ]
+    },
+    {
       "id": "1.4.2-step-5",
       "title": "Confirm interim convenors and integrate the remaining communities",
       "period": {
@@ -77,7 +77,7 @@
       },
       "summary": "Across the September-October and November-December planning windows, identify existing institutional leaders to act as interim, unremitted convenors and use their leadership to bring the AI in Education and Inclusive Education communities into the shared institutional frame by December 2026.",
       "dependsOn": [
-        "1.4.2-step-4"
+        "1.4.2-step-3"
       ],
       "outputs": [
         {
