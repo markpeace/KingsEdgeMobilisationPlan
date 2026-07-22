@@ -110,19 +110,19 @@
     },
     {
       "id": "1.4.2-step-7",
-      "title": "Build the communities and establish a sustainable rhythm",
+      "title": "Build the first three communities and establish their operating conventions",
       "period": {
         "start": "jan-jun-2027:a",
         "end": "jul-dec-2027:a"
       },
-      "summary": "From January-February through July-August 2027, grow the committed core and wider periphery of all three communities through regular convening, collaborative inquiry, emerging shards, student and partner participation, communication and routes into institutional influence. Funded convenors and projects add capacity and momentum as appointments are made.",
+      "summary": "From January to August 2027, develop the Experiential Learning, AI in Education and Inclusive Education communities into active and recognisable communities of practice. Through their early work, establish and test the shared conventions for convenorship, participation, communication, collaborative inquiry, student and partner involvement, funded activity, decision-making and routes into institutional influence. This will create three functioning communities and a clear basis for how future strategic communities of practice can be established and supported at King's.",
       "dependsOn": [
         "1.4.2-step-5"
       ],
       "outputs": [
         {
-          "title": "Active and recognisable communities",
-          "summary": "Three communities with sustained participation, supported leadership, visible identities and credible programmes of shared activity by the July-August 2027 planning window."
+          "title": "Three established communities with shared operating conventions",
+          "summary": "Three communities with supported leadership, sustained participation and credible programmes of activity, alongside an agreed and tested set of conventions to guide future communities of practice."
         }
       ]
     }
