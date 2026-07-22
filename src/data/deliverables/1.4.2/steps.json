@@ -36,17 +36,17 @@
       "id": "1.4.2-step-3",
       "title": "Agree faculty principles for release and backfill",
       "period": {
-        "start": "jul-dec-2026:a",
-        "end": "jan-jun-2027:a"
+        "start": "jul-dec-2026:b",
+        "end": "jul-dec-2026:c"
       },
-      "summary": "Begin faculty engagement in the July-August planning window and work through to January-February 2027 to agree the principles through which future community convenors can receive release, workload allocation or backfill support, including central and faculty contributions, eligibility, duration and review.",
+      "summary": "Work with faculties from September through December 2026 to agree the principles through which future community convenors can receive release, workload allocation or backfill support, including central and faculty contributions, eligibility, duration and review.",
       "dependsOn": [
         "1.4.2-step-2"
       ],
       "outputs": [
         {
           "title": "Agreed release and backfill principles",
-          "summary": "A sufficiently clear and equitable institutional offer to support the February 2027 call for funded convenors."
+          "summary": "A sufficiently clear and equitable institutional offer to support the funded convenor call from January 2027."
         }
       ]
     },
@@ -88,12 +88,12 @@
     },
     {
       "id": "1.4.2-step-6",
-      "title": "Launch calls for funded convenors and community projects",
+      "title": "Run funded convenor and community project calls",
       "period": {
         "start": "jan-jun-2027:a",
-        "end": "jan-jun-2027:a"
+        "end": "jan-jun-2027:b"
       },
-      "summary": "Use the January-February 2027 planning window to launch coordinated calls for funded Community Convenors and community-aligned projects, with the project call designed to strengthen participation, collaborative inquiry and shared educational development.",
+      "summary": "Launch coordinated calls for funded Community Convenors and community-aligned projects in January-February 2027, then complete selection, confirm faculty release and backfill arrangements, appoint convenors and agree the first funded project portfolio in March-April.",
       "dependsOn": [
         "1.4.2-step-3",
         "1.4.2-step-4",
@@ -103,6 +103,10 @@
         {
           "title": "Open institutional calls",
           "summary": "Published calls with clear eligibility, support, selection criteria, expectations and decision routes."
+        },
+        {
+          "title": "Funded leadership and project portfolio",
+          "summary": "Appointed convenors and an approved first set of projects that strengthen the communities and their shared work."
         }
       ]
     },
@@ -121,24 +125,6 @@
         {
           "title": "Active and recognisable communities",
           "summary": "Three communities with sustained participation, supported leadership, visible identities and credible programmes of shared activity by the July-August 2027 planning window."
-        }
-      ]
-    },
-    {
-      "id": "1.4.2-step-8",
-      "title": "Appoint funded convenors and select the first project portfolio",
-      "period": {
-        "start": "jan-jun-2027:b",
-        "end": "jan-jun-2027:b"
-      },
-      "summary": "Use the March-April 2027 planning window to run the selection processes, confirm faculty release and backfill arrangements, appoint funded convenors and agree the first portfolio of community-aligned funded projects.",
-      "dependsOn": [
-        "1.4.2-step-6"
-      ],
-      "outputs": [
-        {
-          "title": "Funded leadership and project portfolio",
-          "summary": "Appointed convenors and an approved first set of projects that strengthen the communities and their shared work."
         }
       ]
     }
