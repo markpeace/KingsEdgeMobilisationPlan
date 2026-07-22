@@ -111,6 +111,148 @@
           "summary": "Three communities with supported leadership, sustained participation and credible programmes of activity, alongside an agreed and tested set of conventions to guide future communities of practice."
         }
       ]
+    },
+    {
+      "id": "1.4.2-step-7",
+      "title": "Review the first three communities and agree the expansion portfolio",
+      "period": {
+        "start": "jul-dec-2027:b",
+        "end": "jul-dec-2027:c"
+      },
+      "summary": "From September to December 2027, produce the first impact report and review participation, activity, governance, convenorship, faculty release and backfill, funding, project mechanisms, shared operating conventions and emerging institutional influence. Use the findings to refine the model and approve three additional strategic communities for the 2028-29 academic year.",
+      "dependsOn": [
+        "1.4.2-step-6"
+      ],
+      "outputs": [
+        {
+          "title": "First impact and operating-model review",
+          "summary": "An evidence-led assessment of the first three communities, with agreed refinements to governance, resourcing and operating arrangements."
+        },
+        {
+          "title": "Approved six-community portfolio",
+          "summary": "Three additional strategic communities agreed for mobilisation and operation in the 2028-29 academic year."
+        }
+      ]
+    },
+    {
+      "id": "1.4.2-step-8",
+      "title": "Confirm convenors, resources and launch the 2028-29 project call",
+      "period": {
+        "start": "jan-jun-2028:a",
+        "end": "jan-jun-2028:a"
+      },
+      "summary": "In January-February 2028, confirm or recruit convenors for all six communities and secure the release, workload allocation, backfill and operational support required for September 2028-August 2029. At the same time, agree the community and project funding envelope, translate the review priorities into a coordinated institutional call, confirm eligibility and assessment arrangements, and launch the 2028-29 call for community-aligned projects by February.",
+      "dependsOn": [
+        "1.4.2-step-7"
+      ],
+      "outputs": [
+        {
+          "title": "Confirmed convenors and resource arrangements",
+          "summary": "Leadership, faculty release or backfill and operational support agreed in time for the 2028-29 workload cycle."
+        },
+        {
+          "title": "Open 2028-29 project call",
+          "summary": "An institutional call for projects aligned to the approved six-community portfolio, supported by an agreed funding envelope and selection process."
+        }
+      ]
+    },
+    {
+      "id": "1.4.2-step-9",
+      "title": "Select projects and mobilise the expanded portfolio",
+      "period": {
+        "start": "jan-jun-2028:b",
+        "end": "jul-dec-2028:a"
+      },
+      "summary": "From March to August 2028, assess and select community-aligned projects, confirm project leads, funding and delivery arrangements, and establish the three additional communities. Build their founding memberships, priorities and first-year plans, and prepare all six communities, convenors and funded projects to operate through a common framework from September 2028.",
+      "dependsOn": [
+        "1.4.2-step-8"
+      ],
+      "outputs": [
+        {
+          "title": "Approved 2028-29 funded project portfolio",
+          "summary": "Selected projects with confirmed leads, funding, expectations and routes into the work of the six communities."
+        },
+        {
+          "title": "Expanded portfolio ready to operate",
+          "summary": "Three additional communities established and all six communities, convenors and projects mobilised for September 2028."
+        }
+      ]
+    },
+    {
+      "id": "1.4.2-step-10",
+      "title": "Operate the expanded six-community portfolio",
+      "period": {
+        "start": "jul-dec-2028:b",
+        "end": "jul-dec-2029:a"
+      },
+      "summary": "Operate all six strategic communities through the September 2028-August 2029 academic year, supporting their programmes of activity, funded projects, institutional influence and cross-community learning while gathering consistent evidence of participation, outcomes and resource requirements.",
+      "dependsOn": [
+        "1.4.2-step-9"
+      ],
+      "outputs": [
+        {
+          "title": "Full academic year of six-community operation",
+          "summary": "A complete cycle of activity and evidence from the expanded portfolio, including the contribution of its funded projects."
+        }
+      ]
+    },
+    {
+      "id": "1.4.2-step-11",
+      "title": "Complete the second impact and operating-model review",
+      "period": {
+        "start": "jul-dec-2029:b",
+        "end": "jul-dec-2029:c"
+      },
+      "summary": "From September to December 2029, review the six-community portfolio after a complete academic year of operation. Assess impact and sustainability, determine which communities should continue and whether the portfolio should evolve, and agree recommendations for recurrent resources, permanent governance and ownership, and the annual process for review, renewal and commissioning.",
+      "dependsOn": [
+        "1.4.2-step-10"
+      ],
+      "outputs": [
+        {
+          "title": "Second impact report",
+          "summary": "An assessment of the impact, effectiveness and sustainability of the six-community portfolio after a full academic-year cycle."
+        },
+        {
+          "title": "Recommended permanent institutional model",
+          "summary": "Agreed recommendations for the continuing portfolio, recurrent resources, governance, ownership and annual commissioning rhythm."
+        }
+      ]
+    },
+    {
+      "id": "1.4.2-step-12",
+      "title": "Confirm the permanent BAU model and resource settlement",
+      "period": {
+        "start": "jan-jun-2030:a",
+        "end": "jan-jun-2030:a"
+      },
+      "summary": "In January-February 2030, approve the continuing community portfolio and confirm convenors, release, backfill, central support and project funding for 2030-31. Agree the permanent institutional owner, governance route, budget holder, recurrent resource settlement and annual planning cycle in time for the following academic year's workload and budget decisions.",
+      "dependsOn": [
+        "1.4.2-step-11"
+      ],
+      "outputs": [
+        {
+          "title": "Approved BAU model and resource settlement",
+          "summary": "A permanently owned, governed and recurrently resourced model, with the 2030-31 portfolio and leadership arrangements confirmed."
+        }
+      ]
+    },
+    {
+      "id": "1.4.2-step-13",
+      "title": "Transition to business as usual",
+      "period": {
+        "start": "jan-jun-2030:b",
+        "end": "jul-dec-2030:b"
+      },
+      "summary": "From March to September 2030, transfer governance, budgets, reporting, operational support and accountability from mobilisation to the permanent institutional owner. Complete the necessary handovers so that the Strategic Communities of Practice operate as an institutionally owned, recurrent programme from the start of the 2030-31 academic year.",
+      "dependsOn": [
+        "1.4.2-step-12"
+      ],
+      "outputs": [
+        {
+          "title": "Business-as-usual transition complete",
+          "summary": "Strategic Communities of Practice operating through permanent ownership, governance, resources and annual planning arrangements from September 2030."
+        }
+      ]
     }
   ]
 }
