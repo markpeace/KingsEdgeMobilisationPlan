@@ -4,6 +4,7 @@ const MIN_WIDTH = 64;
 const MAX_WIDTH = 176;
 const STEP = 8;
 const ROW_HEADER_WIDTH = 260;
+const TIMELINE_STRUCTURE_SELECTOR = '.ke-timeline-page, .ke-timeline-toolbar, .ke-timeline-header, .ke-timeline-row, .ke-timeline-segment';
 
 function storedWidth() {
   const value = Number(window.localStorage.getItem(STORAGE_KEY));
@@ -111,7 +112,19 @@ function refreshTimelineScale() {
   });
 }
 
-const observer = new MutationObserver(refreshTimelineScale);
+function nodeAffectsTimelineStructure(node) {
+  if (!(node instanceof Element)) return false;
+  return node.matches(TIMELINE_STRUCTURE_SELECTOR) || Boolean(node.querySelector(TIMELINE_STRUCTURE_SELECTOR));
+}
+
+const observer = new MutationObserver((mutations) => {
+  const timelineStructureChanged = mutations.some((mutation) => (
+    [...mutation.addedNodes, ...mutation.removedNodes].some(nodeAffectsTimelineStructure)
+  ));
+
+  if (timelineStructureChanged) refreshTimelineScale();
+});
+
 observer.observe(document.documentElement, { childList: true, subtree: true });
 window.addEventListener('hashchange', refreshTimelineScale);
 window.addEventListener('DOMContentLoaded', refreshTimelineScale);
