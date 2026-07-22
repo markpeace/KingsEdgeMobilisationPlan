@@ -6,10 +6,11 @@
   "scripts": {
     "dev": "vite",
     "validate:data": "node scripts/validate-plan.mjs && node scripts/validate-resource-model.mjs && node scripts/validate-governance-model.mjs",
-    "build": "npm run validate:data && npm run test:timeline && npm run test:planning-status && vite build",
+    "build": "npm run validate:data && npm run test:timeline && npm run test:planning-status && npm run test:resources && vite build",
     "preview": "vite preview",
     "test:timeline": "node --test tests/timeline-utils.test.mjs",
-    "test:planning-status": "node --test tests/planning-status.test.mjs"
+    "test:planning-status": "node --test tests/planning-status.test.mjs",
+    "test:resources": "node --test tests/resource-profile-utils.test.mjs"
   },
   "dependencies": {
     "@vitejs/plugin-react": "latest",
