@@ -185,6 +185,34 @@ Resources sit at step level.
 }
 ```
 
+### BAU liability
+
+Expected business-as-usual costs remain attached to the step that creates, confirms or settles the continuing obligation. They are authored as a `newInvestment` ask with `bauLiability: true`.
+
+```json
+{
+  "resources": {
+    "newInvestment": [
+      {
+        "id": "example-step-bau-1",
+        "item": "Permanent operating support",
+        "amount": 45000,
+        "currency": "GBP",
+        "bauLiability": true,
+        "owner": "TBC",
+        "fundingRoute": "TBC",
+        "confidence": "indicative",
+        "rationale": "Expected annual recurrent cost once the service transfers into business as usual."
+      }
+    ]
+  }
+}
+```
+
+When `bauLiability` is true, `amount` is the expected annual recurrent cost. It is shown separately from delivery investment in deliverable and project resource profiles and is never added to the one-off delivery total. The estimate can be entered against a future settlement or transition step as soon as the proposition is sufficiently developed, then refined in place as confidence, ownership and the funding route mature.
+
+The canonical location is `resources.newInvestment`. The legacy `cashCosts` alias remains supported while older data is migrated. The BAU flag is not valid on capacity or enabling-condition asks.
+
 ## Dependencies
 
 There are two dependency levels:
