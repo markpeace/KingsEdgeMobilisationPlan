@@ -109,18 +109,83 @@ export function clipSpanToHorizon(span, horizon) {
   };
 }
 
+function dependencyDepth(entryId, entryById, memo, visiting = new Set()) {
+  if (memo.has(entryId)) return memo.get(entryId);
+  if (visiting.has(entryId)) return 0;
+
+  const entry = entryById.get(entryId);
+  if (!entry) return 0;
+
+  visiting.add(entryId);
+  const depths = (entry.dependencyIds || [])
+    .filter((dependencyId) => entryById.has(dependencyId))
+    .map((dependencyId) => dependencyDepth(dependencyId, entryById, memo, visiting) + 1);
+  visiting.delete(entryId);
+
+  const depth = depths.length ? Math.max(...depths) : 0;
+  memo.set(entryId, depth);
+  return depth;
+}
+
+function preferredDependencyLane(entry, availableLanes, laneById, entryById, depthById) {
+  const available = new Set(availableLanes);
+  const laneScores = new Map();
+
+  (entry.dependencyIds || []).forEach((dependencyId) => {
+    const lane = laneById[dependencyId];
+    if (!available.has(lane)) return;
+
+    const dependency = entryById.get(dependencyId);
+    if (!dependency) return;
+
+    const score = laneScores.get(lane) || {
+      lane,
+      latestEnd: Number.NEGATIVE_INFINITY,
+      deepestDependency: Number.NEGATIVE_INFINITY,
+      dependencyCount: 0
+    };
+    score.latestEnd = Math.max(score.latestEnd, dependency.endIndex);
+    score.deepestDependency = Math.max(score.deepestDependency, depthById.get(dependencyId) || 0);
+    score.dependencyCount += 1;
+    laneScores.set(lane, score);
+  });
+
+  return [...laneScores.values()]
+    .sort((a, b) => (
+      b.latestEnd - a.latestEnd
+      || b.deepestDependency - a.deepestDependency
+      || b.dependencyCount - a.dependencyCount
+      || a.lane - b.lane
+    ))[0]?.lane;
+}
+
 export function allocateStepLanes(entries) {
+  const entryById = new Map(entries.map((entry) => [entry.id, entry]));
+  const depthMemo = new Map();
+  const depthById = new Map(entries.map((entry) => [entry.id, dependencyDepth(entry.id, entryById, depthMemo)]));
   const sorted = [...entries].sort((a, b) => (
     a.startIndex - b.startIndex
     || a.endIndex - b.endIndex
+    || (a.sourceOrder ?? Number.MAX_SAFE_INTEGER) - (b.sourceOrder ?? Number.MAX_SAFE_INTEGER)
     || String(a.id).localeCompare(String(b.id))
   ));
   const laneEnds = [];
   const laneById = {};
 
   sorted.forEach((entry) => {
-    let lane = laneEnds.findIndex((endIndex) => endIndex < entry.startIndex);
-    if (lane === -1) lane = laneEnds.length;
+    const availableLanes = laneEnds
+      .map((endIndex, lane) => ({ endIndex, lane }))
+      .filter(({ endIndex }) => endIndex < entry.startIndex)
+      .map(({ lane }) => lane);
+
+    let lane;
+    if (availableLanes.length) {
+      lane = preferredDependencyLane(entry, availableLanes, laneById, entryById, depthById);
+      if (lane === undefined) lane = availableLanes[0];
+    } else {
+      lane = laneEnds.length;
+    }
+
     laneEnds[lane] = entry.endIndex;
     laneById[entry.id] = lane;
   });
