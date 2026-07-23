@@ -1,4 +1,5 @@
 import { buildLookups, getStepDependencies, projects } from './plan-utils.js';
+import { allocateStepLanes } from './timeline-utils.js';
 
 const STORAGE_KEY = 'kings-edge-timeline-period-width';
 const DEFAULT_WIDTH = 112;
@@ -57,6 +58,54 @@ function setGridWidth(width) {
   });
 
   positionTodayLabel(timeline, periodCount);
+}
+
+function visibleGridSpan(button) {
+  const shorthand = button.style.gridColumn || '';
+  const shorthandMatch = shorthand.match(/^\s*(\d+)\s*\/\s*span\s+(\d+)\s*$/i);
+  if (shorthandMatch) {
+    const startIndex = Number(shorthandMatch[1]);
+    const span = Number(shorthandMatch[2]);
+    return { startIndex, endIndex: startIndex + span - 1 };
+  }
+
+  const startIndex = Number.parseInt(button.style.gridColumnStart, 10);
+  const spanMatch = String(button.style.gridColumnEnd || '').match(/^span\s+(\d+)$/i);
+  const span = spanMatch ? Number(spanMatch[1]) : Number.NaN;
+  if (!Number.isFinite(startIndex) || !Number.isFinite(span)) return null;
+  return { startIndex, endIndex: startIndex + span - 1 };
+}
+
+function applyDependencyAwareLanes() {
+  const timeline = document.querySelector('.ke-timeline-page');
+  if (!timeline) return;
+
+  timeline.querySelectorAll('.ke-timeline-lane').forEach((lane) => {
+    const buttons = [...lane.querySelectorAll('.ke-timeline-step')];
+    const entries = buttons.map((button, sourceOrder) => {
+      const id = button.dataset.stepId;
+      const span = visibleGridSpan(button);
+      const stepEntry = timelineIdMap.get(id);
+      if (!id || !span) return null;
+
+      return {
+        id,
+        ...span,
+        sourceOrder,
+        dependencyIds: stepEntry?.type === 'step' ? getStepDependencies(stepEntry.item) : []
+      };
+    }).filter(Boolean);
+
+    if (!entries.length) return;
+
+    const allocation = allocateStepLanes(entries);
+    buttons.forEach((button) => {
+      const laneIndex = allocation.laneById[button.dataset.stepId];
+      if (laneIndex === undefined) return;
+      button.style.setProperty('grid-row', String(laneIndex + 1), 'important');
+    });
+    lane.style.setProperty('grid-template-rows', `repeat(${allocation.laneCount}, 62px)`, 'important');
+  });
 }
 
 function scaleDescription(width) {
@@ -269,6 +318,7 @@ function refreshTimelineScale() {
     installEmptySpaceDeselect();
     updateDependencyLabels();
     setGridWidth(storedWidth());
+    applyDependencyAwareLanes();
     applyDependencyHistory();
   });
 }
