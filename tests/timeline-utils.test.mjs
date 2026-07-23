@@ -48,6 +48,36 @@ test('allocates overlapping steps to stable lanes', () => {
   assert.equal(result.laneById.c, 0);
 });
 
+test('keeps dependency chains in the same lane when timing allows', () => {
+  const result = allocateStepLanes([
+    { id: 'step-1', startIndex: 1, endIndex: 2, sourceOrder: 0, dependencyIds: [] },
+    { id: 'step-2', startIndex: 1, endIndex: 2, sourceOrder: 1, dependencyIds: [] },
+    { id: 'step-3', startIndex: 3, endIndex: 3, sourceOrder: 2, dependencyIds: ['step-2'] },
+    { id: 'step-4', startIndex: 3, endIndex: 3, sourceOrder: 3, dependencyIds: [] },
+    { id: 'step-5', startIndex: 4, endIndex: 5, sourceOrder: 4, dependencyIds: ['step-2', 'step-3', 'step-4'] },
+    { id: 'step-6', startIndex: 4, endIndex: 6, sourceOrder: 5, dependencyIds: ['step-4'] }
+  ]);
+
+  assert.equal(result.laneCount, 2);
+  assert.equal(result.laneById['step-1'], 0);
+  assert.equal(result.laneById['step-4'], 0);
+  assert.equal(result.laneById['step-6'], 0);
+  assert.equal(result.laneById['step-2'], 1);
+  assert.equal(result.laneById['step-3'], 1);
+  assert.equal(result.laneById['step-5'], 1);
+});
+
+test('uses another lane when a dependency lane is still occupied', () => {
+  const result = allocateStepLanes([
+    { id: 'a', startIndex: 1, endIndex: 4, dependencyIds: [] },
+    { id: 'b', startIndex: 2, endIndex: 2, dependencyIds: ['a'] }
+  ]);
+
+  assert.equal(result.laneCount, 2);
+  assert.equal(result.laneById.a, 0);
+  assert.equal(result.laneById.b, 1);
+});
+
 test('builds semantic half-year header groups', () => {
   const groups = buildBucketGroups(periods);
   assert.deepEqual(groups.map(({ id, count }) => ({ id, count })), [
