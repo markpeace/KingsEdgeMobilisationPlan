@@ -61,6 +61,34 @@ const segmentSpans = {
   abc: ['a', 'c']
 };
 
+const monthNames = [
+  'January',
+  'February',
+  'March',
+  'April',
+  'May',
+  'June',
+  'July',
+  'August',
+  'September',
+  'October',
+  'November',
+  'December'
+];
+
+const segmentMonthBounds = {
+  'jan-jun': {
+    a: [0, 1],
+    b: [2, 3],
+    c: [4, 5]
+  },
+  'jul-dec': {
+    a: [6, 7],
+    b: [8, 9],
+    c: [10, 11]
+  }
+};
+
 function parsePeriod(period) {
   if (period && typeof period === 'object') {
     return {
@@ -81,10 +109,38 @@ function resolveTimelinePoint(point, edge = 'start') {
   return `${bucket}-${third}`;
 }
 
-function labelForTimelinePoint(point) {
-  if (timelinePeriodIndex.has(point)) {
-    const periodEntry = timelinePeriods.find((entry) => entry.id === point);
-    return periodEntry?.bucketLabel || periodEntry?.label || point;
+function timelinePointBounds(point) {
+  const match = String(point || '').match(/^(jan-jun|jul-dec)-(\d{4})-([abc])$/);
+  if (!match) return null;
+  const [, bucketType, yearText, segment] = match;
+  const monthBounds = segmentMonthBounds[bucketType]?.[segment];
+  if (!monthBounds) return null;
+  return {
+    year: Number(yearText),
+    startMonth: monthBounds[0],
+    endMonth: monthBounds[1]
+  };
+}
+
+function preciseTimelineSpanLabel(startPoint, endPoint) {
+  const startBounds = timelinePointBounds(startPoint);
+  const endBounds = timelinePointBounds(endPoint);
+  if (!startBounds || !endBounds) return '';
+
+  const startMonth = monthNames[startBounds.startMonth];
+  const endMonth = monthNames[endBounds.endMonth];
+  if (startBounds.year === endBounds.year) {
+    return `${startMonth} to ${endMonth} ${startBounds.year}`;
+  }
+  return `${startMonth} ${startBounds.year} to ${endMonth} ${endBounds.year}`;
+}
+
+function labelForTimelinePoint(point, edge = 'start') {
+  const resolved = resolveTimelinePoint(point, edge);
+  const bounds = timelinePointBounds(resolved);
+  if (bounds) {
+    const month = edge === 'end' ? monthNames[bounds.endMonth] : monthNames[bounds.startMonth];
+    return `${month} ${bounds.year}`;
   }
   const { bucket } = parsePeriod(point);
   return timelineBucketMap.get(bucket)?.label || timelinePeriods.find((entry) => entry.id === bucket)?.bucketLabel || bucket;
@@ -95,22 +151,21 @@ function resolveTimelineSpan(period) {
   if (period && typeof period === 'object' && period.start && period.end) {
     const start = resolveTimelinePoint(period.start, 'start');
     const end = resolveTimelinePoint(period.end, 'end');
-    const startLabel = labelForTimelinePoint(period.start);
-    const endLabel = labelForTimelinePoint(period.end);
-    return { start, end, label: startLabel === endLabel ? startLabel : `${startLabel} to ${endLabel}` };
+    const label = preciseTimelineSpanLabel(start, end) || `${labelForTimelinePoint(period.start, 'start')} to ${labelForTimelinePoint(period.end, 'end')}`;
+    return { start, end, label };
   }
   const { bucket, segment } = parsePeriod(period);
   if (timelinePeriodIndex.has(bucket)) {
-    const periodEntry = timelinePeriods.find((entry) => entry.id === bucket);
-    return { start: bucket, end: bucket, label: periodEntry?.bucketLabel || periodEntry?.label || bucket };
+    return { start: bucket, end: bucket, label: preciseTimelineSpanLabel(bucket, bucket) || labelForTimelinePoint(bucket) };
   }
   if (!timelineBucketMap.has(bucket)) return { start: bucket, end: bucket, label: bucket };
   const [startThird, endThird] = segmentSpans[String(segment || 'abc').toLowerCase()] || segmentSpans.abc;
-  const bucketEntry = timelineBucketMap.get(bucket);
+  const start = `${bucket}-${startThird}`;
+  const end = `${bucket}-${endThird}`;
   return {
-    start: `${bucket}-${startThird}`,
-    end: `${bucket}-${endThird}`,
-    label: bucketEntry.label,
+    start,
+    end,
+    label: preciseTimelineSpanLabel(start, end) || timelineBucketMap.get(bucket).label,
     bucket,
     segment: String(segment || 'abc').toLowerCase()
   };
