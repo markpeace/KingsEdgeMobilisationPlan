@@ -80,7 +80,7 @@
  * The header and lane use the same fixed-width period columns. Horizontal
  * grid gaps or lane padding add extra width after each period and make cards
  * drift progressively to the right. Keep the period tracks contiguous and
- * put the visual breathing room inside each card instead.
+ * put the visual breathing room on each card instead.
  */
 .ke-timeline-page .ke-timeline-lane {
   column-gap: 0;
