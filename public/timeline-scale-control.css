@@ -77,6 +77,22 @@
 }
 
 /*
+ * The header and lane use the same fixed-width period columns. Horizontal
+ * grid gaps or lane padding add extra width after each period and make cards
+ * drift progressively to the right. Keep the period tracks contiguous and
+ * put the visual breathing room inside each card instead.
+ */
+.ke-timeline-page .ke-timeline-lane {
+  column-gap: 0;
+  row-gap: 0.35rem;
+  padding-inline: 0;
+}
+
+.ke-timeline-page .ke-timeline-step {
+  margin-inline: 0.18rem;
+}
+
+/*
  * The deliverable rows already behave as swimlanes. Strengthen that reading
  * without adding new plan semantics: alternate the lane surface, align the
  * sticky label with the same surface, and make the lane boundaries clearer.
