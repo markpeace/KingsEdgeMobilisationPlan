@@ -1,5 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import { periodLabel } from '../src/plan-utils.js';
 import {
   allocateStepLanes,
   buildBucketGroups,
@@ -92,4 +93,19 @@ test('formats readable segment labels and positions today', () => {
   const position = findTodayPosition(periods, today);
   assert.equal(position.index, 1);
   assert.ok(position.percentage > 0);
+});
+
+test('uses precise month ranges for segmented periods', () => {
+  assert.equal(
+    periodLabel({ start: 'jul-dec-2027:a', end: 'jul-dec-2027:a' }),
+    'July to August 2027'
+  );
+  assert.equal(
+    periodLabel({ start: 'jul-dec-2026:c', end: 'jan-jun-2027:c' }),
+    'November 2026 to June 2027'
+  );
+});
+
+test('retains broad labels for full half-year periods', () => {
+  assert.equal(periodLabel('jul-dec-2027'), 'July to December 2027');
 });
