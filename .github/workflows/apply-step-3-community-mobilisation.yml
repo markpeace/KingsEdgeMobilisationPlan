@@ -1,0 +1,188 @@
+name: Apply Step 3 community mobilisation update
+
+on:
+  push:
+    branches:
+      - content/1-4-2-step-3-community-mobilisation
+    paths:
+      - .github/workflows/apply-step-3-community-mobilisation.yml
+
+permissions:
+  contents: write
+
+jobs:
+  patch-plan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: content/1-4-2-step-3-community-mobilisation
+
+      - name: Replace Step 3 with the full mobilisation model
+        run: |
+          node <<'NODE'
+          const fs = require('fs');
+          const path = 'src/data/deliverables/1.4.2/steps.json';
+          const data = JSON.parse(fs.readFileSync(path, 'utf8'));
+          const index = data.steps.findIndex((step) => step.id === '1.4.2-step-3');
+          if (index < 0) throw new Error('Missing 1.4.2-step-3');
+
+          data.steps[index] = {
+            id: '1.4.2-step-3',
+            title: 'Recognise and mobilise the AI in Education and Inclusive Education communities',
+            period: {
+              start: 'jul-dec-2026:b',
+              end: 'jul-dec-2026:b'
+            },
+            summary: "During September and October 2026, recognise and connect the informal communities of practice already developing around AI in Education and Inclusive Education. Build from the people, networks, activity and informal leadership already in place rather than replacing or rebranding what is working. Identify a small group of informal leads or champions in each area to work alongside Mark Peace and King's Academy, broaden participation, articulate emerging priorities and help mobilise early activity. These will be voluntary, interim mobilisation roles without a central workload-release entitlement. They will not constitute appointment as future funded convenors or confer an automatic advantage in subsequent convenor selection. By the end of October, connect both communities, together with the Experiential Learning Community launched through Step 1, to the emerging common SCoP operating model and the more sustained community-building work in Step 5.",
+            dependsOn: [],
+            outputs: [
+              {
+                id: '1.4.2-step-3-output-1',
+                title: 'Existing AI in Education and Inclusive Education communities recognised',
+                type: 'community-recognition',
+                owner: "Mark Peace with King's Academy",
+                summary: 'A proportionate, relationship-led picture of the people, networks, activity, communication routes and institutional connections already present in each area, providing a basis for mobilisation without imposing a new structure prematurely.',
+                acceptanceCriteria: [
+                  'Existing networks, forums, communication spaces, regular activity and visible areas of interest are identified for both communities.',
+                  'Colleagues already providing informal leadership, coordination or connective work are recognised.',
+                  'Important gaps in faculty, disciplinary, professional-services or other relevant participation are identified.',
+                  'The mobilisation approach builds from existing identities and activity rather than assuming that every network must be absorbed, renamed or replaced.'
+                ]
+              },
+              {
+                id: '1.4.2-step-3-output-2',
+                title: 'Informal mobilisation leadership identified',
+                type: 'interim-community-leadership',
+                owner: "Mark Peace with King's Academy",
+                summary: 'A small group of informal leads or champions for AI in Education and for Inclusive Education, able to connect existing participants, broaden involvement, articulate priorities and help mobilise each community alongside the wider SCoP programme.',
+                acceptanceCriteria: [
+                  'A small group of informal leads or champions is identified for each community rather than relying on a single individual where this can reasonably be avoided.',
+                  'The groups reflect an appropriate breadth of existing activity and institutional participation.',
+                  'The role is described as voluntary, interim and proportionate, without a central workload-release entitlement.',
+                  'The role is clearly distinguished from later funded convenor appointments and does not confer an automatic advantage in an open selection process.',
+                  'The informal leads understand the support available from Mark Peace, the King\'s Academy Portfolio Lead and the Portfolio Coordinator.'
+                ]
+              },
+              {
+                id: '1.4.2-step-3-output-3',
+                title: 'Initial mobilisation plans agreed',
+                type: 'community-mobilisation-plan',
+                owner: "Informal community leads with Mark Peace and King's Academy",
+                summary: 'A light-touch mobilisation route for each community, connecting existing activity to wider participation and defining practical next steps before the sustained development phase.',
+                acceptanceCriteria: [
+                  'Each community has a clear route through which interested colleagues can join or remain connected.',
+                  'An appropriate existing or new communication space is identified, with proportionate administration arrangements.',
+                  'One or more initial priorities, questions or activity strands are agreed for each community.',
+                  'Immediate actions and informal owners are recorded without creating an unfunded programme of work that exceeds the voluntary nature of the roles.',
+                  'The handoff into Step 5 is clear, including what should be developed, broadened or tested during the subsequent community-building phase.'
+                ]
+              },
+              {
+                id: '1.4.2-step-3-output-4',
+                title: 'Three communities connected within the emerging SCoP frame',
+                type: 'portfolio-mobilisation',
+                owner: "King's Academy Portfolio Lead with Mark Peace",
+                summary: 'Experiential Learning, AI in Education and Inclusive Education each have identifiable informal mobilisation leadership and a clear relationship with the emerging common operating model, portfolio support and later funded-convenor process.',
+                acceptanceCriteria: [
+                  'The Experiential Learning informal leads established through Step 1 are recognised alongside the equivalent groups for AI in Education and Inclusive Education.',
+                  'All three communities have a named route into the King\'s Academy Portfolio Lead and Portfolio Coordinator.',
+                  'The emerging operating model, current support arrangements and expectations for the mobilisation period are communicated consistently across the three communities.',
+                  'The temporary status of informal leadership and the later open route to funded convenorship are clear.',
+                  'All three communities are ready to enter the sustained community-building and operating-conventions work in Step 5 by the end of October 2026.'
+                ]
+              }
+            ],
+            resources: {
+              existingCapacity: [
+                {
+                  role: 'Step sponsor and institutional relationship lead',
+                  owner: 'Mark Peace',
+                  contribution: 'Engage existing networks, recognise informal activity and leadership, connect the communities to the wider programme and support agreement of proportionate mobilisation routes.',
+                  confidence: 'confirmed',
+                  riskIfMissing: 'The work could become disconnected from the wider SCoP programme or approach existing communities without sufficient institutional context and trust.'
+                },
+                {
+                  role: 'SCoP portfolio leadership and coordination',
+                  owner: "King's Academy",
+                  contribution: 'Use the Portfolio Lead and Portfolio Coordinator capacity established through Step 2 to support relationships, meetings, contact records, communication spaces, mobilisation planning and connection to the common operating model.',
+                  confidence: 'developing',
+                  riskIfMissing: 'The communities may be recognised but lack a consistent route into portfolio support, coordination and the shared operating model.'
+                },
+                {
+                  role: 'Existing AI in Education and Inclusive Education networks and participants',
+                  owner: 'Existing community participants and network leads',
+                  contribution: 'Share existing activity and connections, help identify the current constituency and gaps, and shape a mobilisation approach that strengthens rather than displaces what already works.',
+                  confidence: 'developing',
+                  riskIfMissing: 'The programme could construct an artificial picture of the communities or duplicate and weaken existing activity.'
+                },
+                {
+                  role: 'Voluntary informal community leads and champions',
+                  owner: 'Informal leads TBC',
+                  contribution: "Connect participants, broaden involvement, articulate early priorities and help mobilise activity within a contained voluntary role alongside Mark Peace and King's Academy.",
+                  confidence: 'developing',
+                  riskIfMissing: 'The communities would lack sufficient distributed leadership and the mobilisation burden would fall back onto the central programme team.'
+                },
+                {
+                  role: 'Temporary mobilisation project management',
+                  owner: 'SCoP Mobilisation Project Manager',
+                  contribution: 'Coordinate contacts, meetings, actions, dependencies and the handoff into Step 5 using the temporary capacity already funded through Step 2.',
+                  confidence: 'developing',
+                  riskIfMissing: 'Relationship-led mobilisation may not translate into a clear, coordinated route across both communities and the wider portfolio.'
+                }
+              ],
+              newInvestment: [],
+              enablingConditions: [
+                {
+                  condition: 'Existing community participants and network leads are willing to engage in a light-touch recognition and mobilisation process.',
+                  owner: "Mark Peace with King's Academy",
+                  decisionNeededBy: 'During September 2026',
+                  confidence: 'developing',
+                  riskIfMissing: 'The programme may lack the legitimacy and knowledge required to build from existing activity.'
+                },
+                {
+                  condition: 'Informal leads accept a proportionate and clearly bounded voluntary role without an expectation of central workload release.',
+                  owner: "Mark Peace with King's Academy",
+                  decisionNeededBy: 'By the end of October 2026',
+                  confidence: 'developing',
+                  riskIfMissing: 'Mobilisation may depend on ambiguous or excessive goodwill and become difficult to sustain.'
+                },
+                {
+                  condition: 'Communications consistently distinguish informal mobilisation leadership from the later open process for funded convenor appointments.',
+                  owner: "King's Academy Portfolio Lead and Portfolio Coordinator",
+                  decisionNeededBy: 'Before informal leads are publicly identified',
+                  confidence: 'developing',
+                  riskIfMissing: 'Informal recognition could be interpreted as pre-selection, discouraging later applicants and undermining the credibility of the funded call.'
+                }
+              ]
+            },
+            risks: [
+              {
+                title: 'Formal recognition disrupts activity that already works',
+                mitigation: 'Begin with listening and recognition, use existing names and networks where appropriate, and avoid imposing a single structure or programme before the communities have helped shape it.'
+              },
+              {
+                title: 'Voluntary informal leadership becomes an excessive or open-ended workload',
+                mitigation: 'Use shared leadership where possible, keep the mobilisation ask contained, provide practical central support and reserve substantive funded accountability for the later convenor appointments.'
+              },
+              {
+                title: 'Informal leads are perceived as pre-selected funded convenors',
+                mitigation: 'State consistently that the roles are interim and voluntary, publish a later open selection route and avoid giving informal leads any automatic status or advantage in that process.'
+              },
+              {
+                title: 'Existing communities are narrower than the intended institutional SCoPs',
+                mitigation: 'Recognise the existing core while identifying gaps in participation, then use the mobilisation plan and Step 5 to broaden the communities without displacing the people who have already built them.'
+              }
+            ]
+          };
+
+          fs.writeFileSync(path, JSON.stringify(data));
+          NODE
+
+      - name: Commit updated Step 3
+        run: |
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add src/data/deliverables/1.4.2/steps.json
+          git commit -m "Recognise and mobilise the AI and Inclusive Education communities"
+          git push origin HEAD:content/1-4-2-step-3-community-mobilisation
