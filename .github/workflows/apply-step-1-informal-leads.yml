@@ -1,0 +1,63 @@
+name: Apply Step 1 informal leads update
+
+on:
+  push:
+    branches:
+      - content/1-4-2-step-1-informal-leads
+    paths:
+      - .github/workflows/apply-step-1-informal-leads.yml
+
+permissions:
+  contents: write
+
+jobs:
+  patch-plan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: content/1-4-2-step-1-informal-leads
+
+      - name: Patch Step 1
+        run: |
+          node <<'NODE'
+          const fs = require('fs');
+          const path = 'src/data/deliverables/1.4.2/steps.json';
+          const data = JSON.parse(fs.readFileSync(path, 'utf8'));
+          const step1 = data.steps.find((entry) => entry.id === '1.4.2-step-1');
+          if (!step1) throw new Error('Missing Step 1');
+
+          step1.summary = "Launch the Experiential Learning Community as the prototype for King's wider Strategic Communities of Practice model. Mobilise growing interest across faculties in developing more experiential and internship-like learning within the curriculum by connecting interested colleagues from faculties and professional services. Hold an informal pre-launch event in July, establish a dedicated Teams space for the emerging community, and formally launch it through an Unconference on 14 September 2026. Use the Unconference to share existing practice, form new connections, surface ideas and potential collaborations, begin a King's Taxonomy of Experiential Learning, agree practical next steps and aspirations for the community's first year, and identify a small group of informal community leads or champions who can help sustain participation and mobilise early activity alongside Mark Peace and King's Academy. These will be voluntary, interim mobilisation roles without a central workload-release entitlement. They will not constitute appointment as a future funded convenor or confer an automatic advantage in a subsequent convenor selection process. Complete this prototype launch phase by the end of September 2026. The experience of forming the community, sustaining participation through Teams and translating the launch into collaborative activity will inform the common model used for subsequent communities.";
+
+          const founding = step1.outputs.find((entry) => entry.id === '1.4.2-step-1-output-1');
+          if (!founding) throw new Error('Missing founding community output');
+          founding.acceptanceCriteria = founding.acceptanceCriteria.filter(
+            (criterion) => criterion !== 'Volunteers or prospective champions are identified to help carry activity forward.'
+          );
+          founding.acceptanceCriteria.push('A small group of prospective informal leads or champions is identified from across the founding community to help sustain participation and carry activity forward after the launch.');
+
+          const priorities = step1.outputs.find((entry) => entry.id === '1.4.2-step-1-output-5');
+          if (!priorities) throw new Error('Missing first-year priorities output');
+          priorities.title = 'First-year priorities and informal mobilisation leadership';
+          priorities.summary = "An initial set of actionable priorities, potential collaborations and aspirations agreed through the Unconference, together with a small group of informal community leads or champions who will work with Mark Peace and King's Academy to sustain participation and mobilise the community's early activity.";
+          priorities.acceptanceCriteria = [
+            'At least three practical priorities or collaboration strands are identified.',
+            'Interested contributors are associated with each strand where possible.',
+            'A small and appropriately diverse group of informal leads or champions is identified.',
+            'The informal group understands its role in connecting participants, progressing early priorities and helping shape the community’s first year.',
+            'The roles are explicitly described as voluntary and interim, without a central workload-release entitlement.',
+            'Informal leadership is clearly distinguished from the later open process for funded convenor appointments.',
+            'Immediate actions and responsibilities are recorded and shared through the Teams space.'
+          ];
+
+          fs.writeFileSync(path, JSON.stringify(data));
+          NODE
+
+      - name: Commit patched plan and remove temporary workflow
+        run: |
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          rm .github/workflows/apply-step-1-informal-leads.yml
+          git add src/data/deliverables/1.4.2/steps.json .github/workflows/apply-step-1-informal-leads.yml
+          git commit -m "Recognise informal Experiential Learning leads"
+          git push origin HEAD:content/1-4-2-step-1-informal-leads
