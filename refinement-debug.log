@@ -1,12 +1,9 @@
-node:assert:150
-  throw new AssertionError(obj);
-  ^
+node:internal/assert/utils:77
+    throw err;
+    ^
 
-AssertionError [ERR_ASSERTION]: Expected mature BAU liability £498,000, found £456,000
-
-456000 !== 498000
-
-    at Object.<anonymous> (/tmp/apply-1-4-2.js:326:18)
+AssertionError [ERR_ASSERTION]: Stale project-scale wording remains: approximately five practice-based projects across the six-community portfolio
+    at Object.<anonymous> (/tmp/apply-1-4-2.js:336:13)
     at Module._compile (node:internal/modules/cjs/loader:1781:14)
     at Object..js (node:internal/modules/cjs/loader:1913:10)
     at Module.load (node:internal/modules/cjs/loader:1505:32)
@@ -16,9 +13,9 @@ AssertionError [ERR_ASSERTION]: Expected mature BAU liability £498,000, found �
     at node:internal/main/run_main_module:36:49 {
   generatedMessage: false,
   code: 'ERR_ASSERTION',
-  actual: 456000,
-  expected: 498000,
-  operator: 'strictEqual',
+  actual: false,
+  expected: true,
+  operator: '==',
   diff: 'simple'
 }
 
