@@ -1,0 +1,646 @@
+name: Develop SCoP Steps 11 to 13
+
+on:
+  push:
+    branches:
+      - content/1-4-2-develop-steps-11-13
+    paths:
+      - .github/workflows/apply-developed-steps-11-13.yml
+
+permissions:
+  contents: write
+
+jobs:
+  update-steps-11-13:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: content/1-4-2-develop-steps-11-13
+
+      - name: Develop Steps 11 to 13
+        run: |
+          node <<'NODE'
+          const fs = require('fs');
+          const path = 'src/data/deliverables/1.4.2/steps.json';
+          const data = JSON.parse(fs.readFileSync(path, 'utf8'));
+          const getStep = (id) => {
+            const step = data.steps.find((item) => item.id === id);
+            if (!step) throw new Error(`${id} not found`);
+            return step;
+          };
+
+          const step11 = getStep('1.4.2-step-11');
+          step11.title = 'Commission the 2029-30 portfolio and prepare institutional handover';
+          step11.period = { start: 'jan-jun-2029:a', end: 'jan-jun-2029:b' };
+          step11.stepType = 'final-mobilisation-commissioning-and-handover-preparation';
+          step11.dependsOn = ['1.4.2-step-9'];
+          step11.summary = `From January to March 2029, commission the Strategic Communities of Practice portfolio for the academic year beginning in September 2029 and prepare the operating model for institutional handover. Appoint one or two funded convenors for the next two-year term of the original Experiential Learning, AI in Education and Inclusive Education communities, covering 2029-30 and 2030-31. The convenors of the three additional communities appointed through Step 8 remain in post for the second year of their 2028-30 terms and are not routinely recommissioned. Commission approximately five practice-based projects across the full six-community portfolio for 2029-30, using available evidence from the live Step 10 cycle without making completion of that cycle a prerequisite. Secure written faculty or organisational commitments and reserve the protected-capacity and direct-cost resources needed from September 2029. Complete the April-August succession, onboarding and readiness route, and assemble the governance, budget, process, records and ownership material required for the permanent model to transfer into King's Academy after the Step 12 decision. This step commissions and prepares the first portfolio that will operate under business-as-usual arrangements; the permanent settlement itself is confirmed through Step 12 and activated through Step 13.`;
+          step11.outputs = [
+            {
+              id: '1.4.2-step-11-output-1',
+              title: '2029-31 convenors commissioned for the original three communities',
+              type: 'funded-community-leadership',
+              owner: 'Innovation Committee on the recommendation of the convenor selection panel',
+              summary: 'One or two convenors commissioned for the next two-year term of each original community, with transparent treatment of incumbents and credible local protected-capacity commitments.',
+              acceptanceCriteria: [
+                'Experiential Learning, AI in Education and Inclusive Education each have one or two approved convenors for September 2029 to August 2031.',
+                'Serving convenors may apply, but continuation is not automatic and the selection process considers both performance evidence and the published criteria for the next term.',
+                'Each community retains a shared protected-capacity envelope equivalent to 0.1 FTE, divided explicitly where two convenors are appointed.',
+                'Selection considers distributed leadership, community-building capability, institutional breadth, strategic judgement, inclusive practice, delivery and evidence of contribution during the first funded term.',
+                'The relevant faculty or organisational area confirms in writing the route through which release, workload allocation or backfill will be enabled from September 2029.',
+                'The three additional convenor teams remain in post for the second year of their Step 8 appointments and are included only where an exceptional vacancy or documented leadership change requires action.',
+                'Incumbent performance review, applicant assessment and formal decision rights are kept distinct and conflicts are managed transparently.'
+              ]
+            },
+            {
+              id: '1.4.2-step-11-output-2',
+              title: '2029-30 practice-based project portfolio commissioned',
+              type: 'funded-project-portfolio',
+              owner: 'Innovation Committee on the recommendation of the project selection panel',
+              summary: 'Approximately five practice-based projects commissioned across all six communities for delivery from September 2029.',
+              acceptanceCriteria: [
+                'Approximately five projects are selected as one quality-led portfolio across all six communities, without guaranteed allocation by theme.',
+                'Each project is connected to one or more communities and to a defined strategic education priority, challenge or opportunity.',
+                'Each project has a named King\'s lead, delivery team, intended beneficiaries, practical outputs, timetable, evidence approach, budget and preparation route.',
+                'Each project is offered an indicative 0.1 FTE protected-capacity envelope for one academic year, divisible across a small team, plus up to £1,000 of eligible direct delivery costs.',
+                'Projects are additional to ordinary business, remain practice-based and do not become disconnected research projects or substitutes for established responsibilities.',
+                'Available Step 10 evidence informs portfolio judgement proportionately while recognising that the six-community year remains in progress.',
+                'The option to retain a reserve list, use a targeted second stage or leave part of the envelope unallocated is preserved where quality or balance is insufficient.'
+              ]
+            },
+            {
+              id: '1.4.2-step-11-output-3',
+              title: '2029-30 operating commitments and readiness route secured',
+              type: 'commissioning-commitment-and-readiness-plan',
+              owner: "King's Academy SCoP Portfolio Lead and Portfolio Coordinator with faculties and Finance",
+              summary: 'The local, financial and operational commitments required for a credible September 2029 start are secured and assigned through an April-August preparation route.',
+              acceptanceCriteria: [
+                'Written faculty or organisational commitment is secured for every commissioned convenor and project requiring release, workload allocation or backfill.',
+                'Resource authority is reserved for 0.6 FTE of convenor capacity, approximately 0.5 FTE of annual project capacity and up to £5,000 of direct project expenditure from September 2029.',
+                'The continuing £24,000 annual community activity allowance and the established Portfolio Lead and Portfolio Coordinator capacity are confirmed for 2029-30 without being recorded again as new investment.',
+                'Conditional offers are issued by the end of March and all remaining HR, workload, finance, onboarding or readiness conditions have named owners and deadlines.',
+                'Each community has a route to an approved September-June plan and each project an approved delivery and evidence plan before September.',
+                'A readiness checkpoint before September can approve activation, require recovery, adjust scope or withhold commencement where conditions remain inadequate.',
+                'The preparation process protects sufficient capacity to complete Step 10 delivery and evidence while the next cycle is mobilised.'
+              ]
+            },
+            {
+              id: '1.4.2-step-11-output-4',
+              title: 'Convenor succession and continuity arrangements completed',
+              type: 'leadership-succession-and-handover',
+              owner: "King's Academy SCoP Portfolio Lead with outgoing and incoming convenors",
+              summary: 'A documented transition between convenor terms for the original communities, while continuity is maintained across the staggered six-community portfolio.',
+              acceptanceCriteria: [
+                'Every original community has a documented handover route covering relationships, current priorities, active work, budgets, evidence, risks, governance commitments and unfinished actions.',
+                'Where an incumbent is reappointed, the next term still begins with an explicit review and refreshed plan rather than automatic continuation of previous activity.',
+                'Where leadership changes, outgoing and incoming convenors have a proportionate overlap and the wider community is informed clearly.',
+                'The additional three communities continue through their second convenor year without unnecessary disruption.',
+                'Cross-community relationships, shared projects and portfolio commitments are included in succession planning.',
+                'No community remains dependent on undocumented personal knowledge held by a single convenor or by Mark Peace.'
+              ]
+            },
+            {
+              id: '1.4.2-step-11-output-5',
+              title: 'Institutional handover pack prepared',
+              type: 'business-as-usual-readiness-pack',
+              owner: "King's Academy SCoP Portfolio Lead and Portfolio Coordinator",
+              summary: 'A complete and usable draft operating pack prepared so that Step 12 can approve the permanent model and Step 13 can execute the transfer without redesigning it.',
+              acceptanceCriteria: [
+                'The pack documents permanent ownership, governance, delegated decisions, escalation, annual review, commissioning, onboarding, financial control, evidence and closure processes.',
+                'The annual rhythm is documented: September-June operation, July-August review and call launch, January-March commissioning, and April-August onboarding and readiness.',
+                'The staggered two-year convenor cycle and annual project cycle are represented clearly, including which community cohort is recruited in each year.',
+                'The pack includes the cumulative resource model, existing recurrent commitments, resource elements still requiring final cash valuation and the proposed budget-holder arrangements.',
+                'Records, templates, data sources, systems, access requirements, risk and issue logs, decision history and open actions are inventoried.',
+                'Responsibilities are clear across the Portfolio Lead, Portfolio Coordinator, convenors, project leads, Innovation Committee, faculties and senior education governance.',
+                'The pack identifies the decisions that Step 12 must settle and the operational actions that Step 13 must complete.'
+              ]
+            }
+          ];
+          step11.resources = {
+            existingCapacity: [
+              {
+                role: 'SCoP Portfolio Lead',
+                owner: "King's Academy",
+                fte: 0.2,
+                contribution: 'Lead the final mobilisation commissioning cycle, maintain coherence across the staggered convenor cohorts, oversee succession and prepare the institutional handover proposition.',
+                periodNeeded: 'January to August 2029',
+                confidence: 'developing',
+                riskIfMissing: 'Commissioning and handover preparation may become disconnected administrative exercises without substantive ownership or strategic coherence.'
+              },
+              {
+                role: 'SCoP Portfolio Coordinator',
+                owner: "King's Academy",
+                fte: 0.4,
+                contribution: 'Administer applications, panels, commitments, conditions, onboarding, succession records, readiness tracking and the institutional handover pack.',
+                periodNeeded: 'January to August 2029',
+                confidence: 'developing',
+                riskIfMissing: 'The final commissioning cycle and transfer documentation may be incomplete, delayed or dependent on personal knowledge.'
+              },
+              {
+                role: 'Selection and decision-making capacity',
+                owner: 'Innovation Committee and independently constituted selection panels',
+                contribution: 'Assess incumbent and new applicants, commission the project portfolio, manage conflicts and make transparent quality and balance judgements.',
+                periodNeeded: 'January to March 2029',
+                confidence: 'developing',
+                riskIfMissing: 'The final mobilisation appointments may lack legitimacy, independence or consistent standards.'
+              },
+              {
+                role: 'Faculty, Finance, HR and organisational implementation input',
+                owner: 'Faculty education leadership, faculty operations, Finance and HR',
+                contribution: 'Confirm protected-capacity routes, validate commitments and support the transition from annual mobilisation arrangements into permanent institutional processes.',
+                periodNeeded: 'January to August 2029',
+                confidence: 'developing',
+                riskIfMissing: 'The portfolio may be commissioned without practicable local arrangements or a sustainable route into ordinary institutional systems.'
+              },
+              {
+                role: 'Serving convenor and project evidence',
+                owner: 'All six convenor teams and the 2028-29 project leads',
+                contribution: 'Provide available delivery, participation, impact, succession and practical implementation evidence to inform commissioning and handover preparation.',
+                periodNeeded: 'January to June 2029',
+                confidence: 'developing',
+                riskIfMissing: 'The next appointments and permanent operating pack may overlook important live-delivery learning.'
+              }
+            ],
+            newInvestment: [],
+            enablingConditions: [
+              {
+                condition: 'The Step 9 convenor and project calls remain current and sufficiently clear to support transparent January-March 2029 decisions.',
+                owner: 'SCoP Portfolio Lead and Portfolio Coordinator',
+                decisionNeededBy: 'Before assessment begins',
+                confidence: 'developing',
+                riskIfMissing: 'The final mobilisation commissioning round may require avoidable redesign or create ambiguity for applicants and panels.'
+              },
+              {
+                condition: 'Protect sufficient central capacity to commission the next cycle while completing the first six-community operating year and its evidence account.',
+                owner: "King's Academy",
+                decisionNeededBy: 'Before January 2029',
+                confidence: 'developing',
+                riskIfMissing: 'Future-cycle preparation may undermine current-cycle delivery or leave the handover pack incomplete.'
+              },
+              {
+                condition: 'King\'s Academy, Finance, HR and senior education governance participate in handover preparation before the permanent-model decision.',
+                owner: 'SCoP Portfolio Lead with the senior education governance sponsor',
+                decisionNeededBy: 'Before the Step 12 review begins',
+                confidence: 'developing',
+                riskIfMissing: 'Step 12 may approve a model whose operational owners, budgets or institutional processes have not been tested.'
+              }
+            ]
+          };
+          step11.decisions = [
+            { title: 'Approve the 2029-31 original-community convenors', summary: 'Approve one or two convenors for each original community, subject to local commitment and completion of succession and readiness conditions.' },
+            { title: 'Approve the 2029-30 project portfolio', summary: 'Approve approximately five projects across the six-community portfolio, including conditions, reserve arrangements and any decision not to allocate the full envelope.' },
+            { title: 'Confirm the 2029-30 operating commitments', summary: 'Confirm that the established community, project, activity and central-support resource model is available for the first cycle operating under BAU arrangements.' },
+            { title: 'Accept the draft institutional handover pack', summary: 'Confirm that the documentation is sufficiently complete for Step 12 to settle the permanent model and Step 13 to execute the transfer.' }
+          ];
+          step11.risks = [
+            { title: 'Incumbent convenors are treated as automatically renewable', mitigation: 'Use an open call, transparent published criteria and separate performance evidence from applicant assessment and formal selection.' },
+            { title: 'Commissioning decisions are made before Step 10 evidence is complete', mitigation: 'Use available evidence proportionately, record uncertainty and preserve conditions or recovery actions that can be informed by the final portfolio account.' },
+            { title: 'Handover preparation becomes document production without operational ownership', mitigation: 'Develop the pack with the named King\'s Academy, Finance, HR and governance owners who will use it and test each process against the live 2029-30 cycle.' },
+            { title: 'Succession disrupts the original communities', mitigation: 'Plan overlap, document active work and relationships, communicate clearly and require refreshed plans even where incumbents continue.' },
+            { title: 'The final mobilisation round creates new resource promises before permanent approval', mitigation: 'Commission within the established model, distinguish reserved 2029-30 commitments from the Step 12 permanent settlement and do not imply unapproved expansion.' },
+            { title: 'Critical knowledge remains dependent on Mark Peace or individual convenors', mitigation: 'Inventory decisions, records, systems, relationships, templates and open actions and require named institutional ownership before Step 13.' }
+          ];
+          step11.assumptions = [
+            { title: 'The staggered convenor model continues', summary: 'The original three communities recruit for 2029-31 while the additional three continue through their second year in 2029-30.' },
+            { title: 'The annual project portfolio remains approximately five projects', summary: 'Projects continue to be selected across all six communities for quality and coherence rather than equal allocation.' },
+            { title: 'The established resource model continues into 2029-30', summary: 'The six-community activity allowance, central support and operating envelopes remain available subject to Step 12 confirmation of the permanent settlement.' },
+            { title: 'Step 11 prepares but does not approve BAU', summary: 'Permanent ownership and recurrent settlement are decided through Step 12 and executed through Step 13.' }
+          ];
+
+          const step12 = getStep('1.4.2-step-12');
+          step12.title = 'Review the six-community cycle and confirm the permanent model';
+          step12.period = 'jul-dec-2029:a';
+          step12.stepType = 'permanent-model-review-and-settlement';
+          step12.dependsOn = ['1.4.2-step-10', '1.4.2-step-11'];
+          step12.summary = `From July to August 2029, complete the formal review of the first full six-community operating cycle and confirm the permanent Strategic Communities of Practice model. Use the Step 10 portfolio account and the Step 11 commissioning and handover-readiness evidence to assess reach, participation, distributed leadership, practice development and spread, institutional influence, student-facing contribution, project delivery, expenditure, workload implementation, governance, support demand and differences in community maturity. Confirm or refine the six-community scale, staggered two-year convenor model, annual portfolio of approximately five practice-based projects, common reach and impact framework, annual operating rhythm and the role of King's Academy and the Innovation Committee. Approve the permanent recurrent resource settlement, including the 0.2 FTE Portfolio Lead, 0.4 FTE Portfolio Coordinator, 0.6 FTE convenor envelope, approximately 0.5 FTE annual project envelope, £24,000 annual community activity allowance and £5,000 annual direct project-cost allowance, with grade-based cash values and budget ownership confirmed before handover. Launch the 2030-31 annual project call across all six communities and the next convenor call for the three additional communities, whose first terms end in August 2030. Approve the institutional handover pack and the conditions through which Step 13 will activate business-as-usual ownership from September 2029.`;
+          step12.outputs = [
+            {
+              id: '1.4.2-step-12-output-1',
+              title: 'Six-community operating-cycle review completed',
+              type: 'operating-cycle-review',
+              owner: "King's Academy SCoP Portfolio Lead with the Innovation Committee",
+              summary: 'A formal evidence-informed assessment of the first complete six-community year and the sustainability of the intended permanent model.',
+              acceptanceCriteria: [
+                'The review uses the Step 10 portfolio account, underlying evidence and relevant local implementation evidence rather than relying principally on narrative or total attendance.',
+                'Performance is considered against all five common measures and any approved theme-specific measures.',
+                'Community activity, project delivery, outputs, adoption and spread, institutional influence, student-facing contribution, expenditure, workload arrangements, governance and support demand are reviewed together.',
+                'Differences in community maturity are recognised, but persistent weak viability, non-delivery or unsupported claims are addressed rather than excused.',
+                'The review identifies material variation, concentration, participation gaps, underspend, overextension, cross-community duplication and opportunities for collaboration.',
+                'Recovery, continuation, re-scope, leadership change or closure decisions are made where evidence requires them.',
+                'The evidence is sufficient to support an institutional decision about the permanent model and its recurrent resources.'
+              ]
+            },
+            {
+              id: '1.4.2-step-12-output-2',
+              title: 'Permanent SCoP operating and governance model approved',
+              type: 'permanent-operating-model',
+              owner: 'Vice President (Education and Student Success) through the agreed senior education governance route',
+              summary: 'The tested operating model approved as the permanent institutional arrangement, with any evidence-based refinements recorded clearly.',
+              acceptanceCriteria: [
+                'The number and strategic purpose of communities are confirmed, with any change from the six-community model explicitly justified.',
+                'The staggered two-year convenor cycle and annual project cycle are approved, including open recruitment, annual review, succession, vacancy and closure arrangements.',
+                'The annual rhythm is confirmed: September-June operation, July-August review and call launch, January-March commissioning, and April-August onboarding and readiness.',
+                'Permanent ownership sits clearly within King\'s Academy, with defined roles for the Portfolio Lead, Portfolio Coordinator, convenors, project leads, Innovation Committee, faculties and senior education governance.',
+                'Decision rights, delegated authority, conflict controls, escalation, annual reporting and routes into the Education Delivery Framework are approved.',
+                'The operating model permits theme-specific variation while retaining common expectations for participation, outputs, evidence, financial control and institutional contribution.',
+                'Closure, replacement or redefinition of a community is possible through evidence and strategic review rather than communities becoming permanent by default.'
+              ]
+            },
+            {
+              id: '1.4.2-step-12-output-3',
+              title: 'Permanent recurrent resource settlement approved',
+              type: 'permanent-resource-settlement',
+              owner: 'Senior education governance sponsor with King\'s Academy and Finance',
+              summary: 'A funded and implementable recurrent settlement for the permanent portfolio, converting the tested model into an institutional commitment without double-counting previously recorded BAU liabilities.',
+              acceptanceCriteria: [
+                'The permanent baseline confirms 0.2 FTE Portfolio Lead capacity and 0.4 FTE Portfolio Coordinator capacity, or an explicitly approved evidence-based alternative.',
+                'The permanent baseline confirms a 0.1 FTE convenor envelope for each retained community and an annual protected-capacity envelope equivalent to approximately five 0.1 FTE practice-based projects.',
+                'The £24,000 annual community activity allowance and £5,000 annual direct project-cost allowance are approved, or any revised amounts are justified by evidence.',
+                'Final cash values for convenor and project release, workload allocation or backfill are calculated using the approved grades and implementation routes rather than remaining as indefinite planning proxies.',
+                'A permanent budget holder, funding source, cost-centre structure, approval route, monitoring process and treatment of underspend are agreed.',
+                'Previously recorded recurrent liabilities for central support and community activity are confirmed rather than entered again as additional costs.',
+                'Any increase or reduction from the established model is recorded explicitly with its recurrent financial effect and delivery consequence.',
+                'The settlement is approved in time for Step 13 to activate budgets and responsibilities from September 2029.'
+              ]
+            },
+            {
+              id: '1.4.2-step-12-output-4',
+              title: 'Permanent reach, impact and review framework approved',
+              type: 'permanent-success-and-assurance-framework',
+              owner: "King's Academy SCoP Portfolio Lead with the Innovation Committee",
+              summary: 'The evidence and review arrangements refined into a sustainable BAU framework that supports learning, accountability and portfolio decisions.',
+              acceptanceCriteria: [
+                'The five common measures remain the core framework unless evidence supports a documented refinement.',
+                'Definitions of active, repeat and contributory participation are stable, usable and proportionate across all communities.',
+                'Evidence continues to distinguish output production from adoption, spread, institutional influence and student-facing contribution.',
+                'Targets or qualitative thresholds are informed by the first six-community year and allow appropriate interpretation by maturity and theme.',
+                'Data sources, owners, termly recording, annual synthesis, case-study expectations and retention arrangements are clear.',
+                'The framework supports decisions about continuation, support, succession, funding, closure and future theme selection rather than becoming a reporting exercise.',
+                'The first formal BAU assurance review and the route for a later strategic review of the community portfolio are scheduled.'
+              ]
+            },
+            {
+              id: '1.4.2-step-12-output-5',
+              title: '2030-31 calls and BAU handover authorised',
+              type: 'next-cycle-call-launch-and-handover-approval',
+              owner: 'Innovation Committee with the Vice President (Education and Student Success)',
+              summary: 'The first calls to proceed fully under the permanent annual rhythm are launched and the institutional handover pack is approved for execution through Step 13.',
+              acceptanceCriteria: [
+                'The 2030-31 annual call seeks approximately five practice-based projects across all retained communities for commissioning between January and March 2030.',
+                'The convenor call covers the three additional communities for terms beginning in September 2030 and ending in August 2032.',
+                'The original three convenor teams commissioned through Step 11 continue into the second year of their terms in 2030-31 and are not routinely asked to reapply.',
+                'Call documentation reflects the permanent operating, resource, evidence, conflict and accountability arrangements approved through this step.',
+                'The institutional handover pack, record inventory, open-action schedule and permanent owner accountabilities are approved.',
+                'Step 13 has explicit authority to activate the permanent governance, budgets, records, systems and annual calendar from September 2029.'
+              ]
+            }
+          ];
+          step12.resources = {
+            existingCapacity: [
+              {
+                role: 'Permanent Portfolio Lead baseline',
+                owner: "King's Academy",
+                fte: 0.2,
+                contribution: 'Provide the tested substantive leadership baseline for the permanent portfolio, subject to formal confirmation or evidence-based adjustment through this review.',
+                periodNeeded: 'From September 2029 onward',
+                confidence: 'developing',
+                riskIfMissing: 'Permanent ownership may remain nominal or depend on unprotected goodwill despite the scale and complexity of the portfolio.'
+              },
+              {
+                role: 'Permanent Portfolio Coordinator baseline',
+                owner: "King's Academy",
+                fte: 0.4,
+                contribution: 'Provide the tested administrative, financial, evidence, governance and annual-cycle coordination baseline for permanent operation.',
+                periodNeeded: 'From September 2029 onward',
+                confidence: 'developing',
+                riskIfMissing: 'The six-community model may be approved without the operational capacity needed to sustain records, calls, budgets, reviews and continuity.'
+              },
+              {
+                role: 'Permanent six-community activity allowance',
+                owner: "King's Academy budget holder",
+                contribution: 'Continue the £24,000 annual portfolio allowance, equivalent to £4,000 for each retained community, using the recurrent commitments already recorded through Steps 4 and 8.',
+                periodNeeded: 'From September 2029 onward',
+                confidence: 'indicative',
+                riskIfMissing: 'Communities may retain convenors but lack practical resource for visible, inclusive and purposeful activity.'
+              },
+              {
+                role: 'Governance and finance decision capacity',
+                owner: 'Innovation Committee, senior education governance, King\'s Academy and Finance',
+                contribution: 'Review the evidence, approve the permanent model and settle ownership, budgets, delegated authority and recurrent funding.',
+                periodNeeded: 'July to August 2029',
+                confidence: 'developing',
+                riskIfMissing: 'The review may produce recommendations without an authoritative and funded institutional settlement.'
+              }
+            ],
+            newInvestment: [
+              {
+                id: '1.4.2-step-12-resource-investment-1',
+                item: 'Permanent funded convenor protected-capacity envelope',
+                category: 'permanent recurrent community leadership release or backfill',
+                estimatedCost: 'Final annual cash value to be calculated through Step 12 against the retained number of communities, appointed convenor grades and approved release, workload-allocation or backfill routes.',
+                fundingRoute: 'Permanent institutional funding route to be approved through the Step 12 resource settlement',
+                fundingStatus: 'to be confirmed as part of the permanent BAU settlement',
+                owner: "King's Academy with the relevant faculties or organisational areas",
+                periodNeeded: 'From September 2029 onward',
+                decisionNeededBy: 'Before Step 13 activates the permanent model',
+                confidence: 'developing',
+                rationale: 'Converts the tested 0.1 FTE per-community model, currently equivalent to 0.6 FTE across six communities, into a permanent recurrent capacity commitment rather than a sequence of temporary mobilisation decisions.',
+                riskIfMissing: 'Community leadership would revert to unprotected goodwill and the approved permanent model would not be implementable.',
+                fte: 0.6
+              },
+              {
+                id: '1.4.2-step-12-resource-investment-2',
+                item: 'Permanent annual practice-based project protected-capacity envelope',
+                category: 'permanent recurrent project release or backfill',
+                estimatedCost: 'Final annual cash value to be calculated through Step 12 against the approved portfolio scale, project-lead grades and release, workload-allocation or backfill routes.',
+                fundingRoute: 'Permanent institutional funding route to be approved through the Step 12 resource settlement',
+                fundingStatus: 'to be confirmed as part of the permanent BAU settlement',
+                owner: "King's Academy with the relevant faculties or organisational areas",
+                periodNeeded: 'From September 2029 onward',
+                decisionNeededBy: 'Before Step 13 activates the permanent model',
+                confidence: 'developing',
+                rationale: 'Converts the tested annual envelope of approximately five 0.1 FTE practice-based projects into a permanent recurrent commissioning capacity.',
+                riskIfMissing: 'The permanent portfolio would retain communities but lose the funded mechanism through which practice is developed, tested and spread.',
+                fte: 0.5
+              },
+              {
+                id: '1.4.2-step-12-resource-investment-3',
+                item: 'Permanent annual direct delivery allowance for practice-based projects',
+                category: 'permanent recurrent project delivery funding',
+                amount: 5000,
+                currency: 'GBP',
+                bauLiability: true,
+                fundingRoute: 'Permanent institutional funding route to be approved through the Step 12 resource settlement',
+                fundingStatus: 'unconfirmed',
+                owner: "King's Academy",
+                periodNeeded: 'From September 2029 onward',
+                decisionNeededBy: 'Before Step 13 activates the permanent model',
+                confidence: 'indicative',
+                rationale: 'Maintains the tested allowance of up to £1,000 for each of approximately five annual projects for materials, engagement, accessibility, small events, specialist input or dissemination.',
+                riskIfMissing: 'Project leads may have protected time but be unable to undertake the practical work needed to test, engage or spread their activity.'
+              }
+            ],
+            enablingConditions: [
+              {
+                condition: 'The Step 10 six-community portfolio account and underlying financial, participation, impact and workload evidence are complete enough to support a permanent decision.',
+                owner: 'SCoP Portfolio Lead and Portfolio Coordinator with convenors and project leads',
+                decisionNeededBy: 'Before the Step 12 review begins',
+                confidence: 'developing',
+                riskIfMissing: 'The permanent settlement may be based on aspiration or incomplete delivery evidence.'
+              },
+              {
+                condition: 'Finance and relevant faculty or organisational owners validate the grade-based cost and implementation routes for permanent convenor and project capacity.',
+                owner: 'Finance, faculty operations, HR and King\'s Academy',
+                decisionNeededBy: 'Before the permanent resource settlement is approved',
+                confidence: 'developing',
+                riskIfMissing: 'The model may be approved with FTE assumptions that have no usable cash, workload or backfill mechanism.'
+              },
+              {
+                condition: 'Senior education governance has authority and meeting capacity to approve the permanent model before September 2029.',
+                owner: 'Vice President (Education and Student Success)',
+                decisionNeededBy: 'August 2029',
+                confidence: 'developing',
+                riskIfMissing: 'The portfolio may enter the next academic year in an extended mobilisation state without settled ownership or funding.'
+              }
+            ]
+          };
+          step12.decisions = [
+            { title: 'Approve the permanent portfolio scale and operating model', summary: 'Confirm the retained communities, staggered convenor cycle, annual project portfolio, governance, evidence and annual rhythm, including any evidence-based changes.' },
+            { title: 'Approve the permanent recurrent resource settlement', summary: 'Confirm the protected capacities, cash values, activity and project allowances, budget ownership and recurrent funding route required from September 2029.' },
+            { title: 'Approve continuation, recovery or closure actions', summary: 'Determine the response to any community or project whose evidence does not support continuation on the current basis.' },
+            { title: 'Authorise the 2030-31 calls and institutional handover', summary: 'Launch the first next-cycle calls under the permanent framework and authorise Step 13 to complete the BAU transfer.' }
+          ];
+          step12.risks = [
+            { title: 'The permanent decision simply ratifies the intended model', mitigation: 'Use the six-community evidence to test scale, support, funding, governance and value and record any variance from the established assumptions explicitly.' },
+            { title: 'Permanent FTE is approved without a workable cash or workload route', mitigation: 'Require grade-based valuation, named funding sources and implementable release, allocation or backfill mechanisms before handover.' },
+            { title: 'Recurrent costs are double-counted', mitigation: 'Confirm previously recorded central-support and community-activity liabilities rather than re-entering them, and record only genuinely new permanent commitments or changes.' },
+            { title: 'Communities become permanent regardless of evidence or strategic relevance', mitigation: 'Retain annual review and a formal route to support, redefine, replace or close a community through evidence and Education Delivery Framework priorities.' },
+            { title: 'The evidence framework becomes burdensome in BAU', mitigation: 'Retain the small common core, remove low-value reporting and focus data collection on decisions, learning and benefit realisation.' },
+            { title: 'The handover is approved while key operational actions remain unresolved', mitigation: 'Use the Step 11 handover pack, assign every open action and make Step 13 activation conditional on budgets, authority, systems and records being ready.' }
+          ];
+          step12.assumptions = [
+            { title: 'The tested six-community model is the starting proposition', summary: 'The review may refine or reduce elements where evidence requires it, but does not invent an unrelated replacement model.' },
+            { title: 'Permanent ownership sits in King\'s Academy', summary: 'King\'s Academy becomes the institutional owner, supported by the Innovation Committee and senior education governance.' },
+            { title: 'The staggered annual rhythm continues', summary: 'One convenor cohort is recruited each year, projects are commissioned annually and the portfolio is reviewed and calls launched each summer.' },
+            { title: 'Permanent costs are confirmed, not guessed', summary: 'Known cash allowances are recorded while protected-capacity cash values are calculated using approved grades and implementation routes through this step.' }
+          ];
+
+          const step13 = getStep('1.4.2-step-13');
+          step13.title = 'Transition to business as usual';
+          step13.period = { start: 'jul-dec-2029:b', end: 'jul-dec-2029:c' };
+          step13.stepType = 'business-as-usual-transition';
+          step13.dependsOn = ['1.4.2-step-12'];
+          step13.summary = `From September to December 2029, execute the transition of the Strategic Communities of Practice portfolio into business as usual using the permanent model and resource settlement approved through Step 12. Activate King's Academy as the accountable institutional owner, put the permanent Portfolio Lead and Portfolio Coordinator arrangements into effect, transfer budgets, records, systems, governance and decision rights, and retire temporary mobilisation dependencies. Begin the 2029-30 operating cycle under the permanent arrangements: the original three communities enter the first year of their Step 11 convenor terms, the additional three communities enter the second year of their Step 8 terms, and the commissioned annual project portfolio begins delivery. Embed the recurring annual calendar, including the 2030-31 calls launched through Step 12 and the first BAU commissioning window from January to March 2030. Complete knowledge transfer from Mark Peace and other mobilisation contributors, close residual mobilisation actions or assign them into ordinary governance, and schedule the first BAU assurance review. Step 13 does not redesign or re-cost the model; it makes the approved settlement operational and closes the mobilisation programme.`;
+          step13.outputs = [
+            {
+              id: '1.4.2-step-13-output-1',
+              title: 'Permanent ownership and governance activated',
+              type: 'business-as-usual-governance',
+              owner: "King's Academy",
+              summary: 'King\'s Academy assumes accountable ownership and the permanent governance and decision arrangements become operational.',
+              acceptanceCriteria: [
+                'A named permanent Portfolio Lead and Portfolio Coordinator are active with the protected capacity approved through Step 12.',
+                'The Innovation Committee, senior reporting route, delegated decisions, escalation, conflict and closure arrangements are operating under approved terms of reference.',
+                'Responsibilities are clear across King\'s Academy, convenors, project leads, faculties, Finance, HR and senior education governance.',
+                'Mark Peace no longer holds operational ownership by default and any continuing contribution is explicitly defined rather than assumed.',
+                'The permanent owner accepts the live risk, issue, decision and open-action records.',
+                'Governance dates and reporting expectations for the 2029-30 year are in calendars and communicated.'
+              ]
+            },
+            {
+              id: '1.4.2-step-13-output-2',
+              title: 'Permanent budgets and resource controls operational',
+              type: 'business-as-usual-resource-activation',
+              owner: "King's Academy with Finance",
+              summary: 'The approved recurrent settlement is translated into usable budgets, protected-capacity arrangements and financial controls for the first BAU year.',
+              acceptanceCriteria: [
+                'The permanent Portfolio Lead, Portfolio Coordinator, convenor and project protected-capacity arrangements are implemented through named local routes.',
+                'The £24,000 annual community activity allowance and £5,000 annual project direct-cost allowance are available through named budget codes and approval processes.',
+                'Budget ownership, delegated limits, eligible uses, monitoring, treatment of underspend and annual reforecasting are documented and in use.',
+                'The cash schedule for grade-based release, workload allocation or backfill is held with the permanent operating record.',
+                'No recurrent cost is dependent on an expired temporary mobilisation budget or an unnamed future decision.',
+                'Financial reporting is integrated into the termly and annual portfolio review process.'
+              ]
+            },
+            {
+              id: '1.4.2-step-13-output-3',
+              title: 'First BAU operating cycle and annual rhythm activated',
+              type: 'business-as-usual-operating-cycle',
+              owner: "King's Academy SCoP Portfolio Lead and Portfolio Coordinator",
+              summary: 'The 2029-30 portfolio begins under permanent arrangements and the recurring commissioning, review and renewal calendar is embedded.',
+              acceptanceCriteria: [
+                'All retained communities have active convenors, approved annual plans, accessible activity budgets and current risk and evidence arrangements for 2029-30.',
+                'The commissioned 2029-30 projects have activated protected capacity, budgets, delivery plans, community connections and evidence expectations.',
+                'The annual rhythm is entered into institutional planning and governance calendars rather than maintained as a one-off mobilisation timetable.',
+                'The 2030-31 convenor and project calls launched through Step 12 have a published process, named owners and a January-March 2030 commissioning window.',
+                'April-August readiness and September operating-start processes are owned as recurring BAU activities.',
+                'Convenor succession across the two staggered cohorts is visible for at least the next two annual cycles.'
+              ]
+            },
+            {
+              id: '1.4.2-step-13-output-4',
+              title: 'Records, systems and knowledge transferred',
+              type: 'institutional-knowledge-transfer',
+              owner: "King's Academy SCoP Portfolio Coordinator",
+              summary: 'The portfolio can operate without reliance on private files, informal memory or mobilisation-only access held by individual contributors.',
+              acceptanceCriteria: [
+                'Authoritative records, decisions, templates, call materials, panel records, conflict declarations, budgets, evidence, risk and issue logs are stored in approved institutional locations.',
+                'Access and ownership for Teams spaces, mailing lists, forms, shared files, reporting tools and relevant finance or governance systems are assigned appropriately.',
+                'The permanent operating handbook and handover pack are current, version-controlled and accessible to the roles that need them.',
+                'Open actions have named BAU owners and due dates; obsolete mobilisation actions and duplicate records are closed or archived.',
+                'Knowledge-transfer sessions are completed with Mark Peace, central support, convenors and relevant operational partners.',
+                'Continuity arrangements exist for changes in the Portfolio Lead, Portfolio Coordinator or convenor roles.'
+              ]
+            },
+            {
+              id: '1.4.2-step-13-output-5',
+              title: 'Mobilisation closed and BAU assurance scheduled',
+              type: 'programme-closure-and-assurance',
+              owner: 'Senior education governance sponsor with King\'s Academy',
+              summary: 'The mobilisation programme is formally closed after the approved model is demonstrably operational, with future assurance and strategic review assigned to ordinary governance.',
+              acceptanceCriteria: [
+                'A closure review confirms that the Step 12 model, resources, ownership, governance, annual rhythm, records and first BAU cycle are operational.',
+                'Residual mobilisation risks, issues or actions are either closed or accepted by a named BAU owner through the ordinary governance route.',
+                'Temporary mobilisation roles, exceptional reporting and project-only arrangements are ended or converted explicitly where still required.',
+                'The first BAU assurance review is scheduled within the 2029-30 cycle and uses the permanent reach and impact framework.',
+                'A later strategic review point is scheduled to test whether the community themes and portfolio scale remain aligned to the Education Delivery Framework.',
+                'The senior education governance sponsor accepts closure and confirms that future operation is accountable through King\'s Academy and the Innovation Committee.'
+              ]
+            }
+          ];
+          step13.resources = {
+            existingCapacity: [
+              {
+                role: 'Permanent SCoP Portfolio Lead',
+                owner: "King's Academy",
+                fte: 0.2,
+                contribution: 'Assume accountable substantive leadership of the permanent portfolio and lead the first BAU operating and commissioning cycles.',
+                periodNeeded: 'From September 2029 onward',
+                confidence: 'developing',
+                riskIfMissing: 'The handover would be nominal and operational ownership could revert to Mark Peace or dispersed goodwill.'
+              },
+              {
+                role: 'Permanent SCoP Portfolio Coordinator',
+                owner: "King's Academy",
+                fte: 0.4,
+                contribution: 'Operate the annual calendar, records, calls, budgets, evidence, governance and continuity processes under the permanent settlement.',
+                periodNeeded: 'From September 2029 onward',
+                confidence: 'developing',
+                riskIfMissing: 'The approved model may not translate into reliable business-as-usual operation.'
+              },
+              {
+                role: 'Permanent convenor protected capacity',
+                owner: "King's Academy with relevant faculties or organisational areas",
+                fte: 0.6,
+                contribution: 'Activate the approved 0.1 FTE per-community leadership model across the retained six-community portfolio.',
+                periodNeeded: 'From September 2029 onward',
+                confidence: 'developing',
+                riskIfMissing: 'Community leadership would remain dependent on unprotected goodwill despite formal BAU approval.'
+              },
+              {
+                role: 'Permanent annual project protected-capacity envelope',
+                owner: "King's Academy with relevant faculties or organisational areas",
+                fte: 0.5,
+                contribution: 'Activate the approved annual protected-capacity envelope for approximately five practice-based projects.',
+                periodNeeded: 'From September 2029 onward',
+                confidence: 'developing',
+                riskIfMissing: 'The permanent portfolio would lose its practical funded-development mechanism.'
+              },
+              {
+                role: 'Permanent community and project direct-cost budgets',
+                owner: "King's Academy budget holder",
+                contribution: 'Operate the approved £24,000 annual community activity allowance and £5,000 annual project direct-cost allowance.',
+                periodNeeded: 'From September 2029 onward',
+                confidence: 'indicative',
+                riskIfMissing: 'Convenors and project leads may have protected time but insufficient resource to deliver inclusive and practical activity.'
+              },
+              {
+                role: 'BAU governance, Finance, HR and faculty support',
+                owner: 'Innovation Committee, Finance, HR, faculty education leadership and faculty operations',
+                contribution: 'Exercise the ordinary decision, financial, employment, workload and implementation responsibilities defined by the permanent model.',
+                periodNeeded: 'From September 2029 onward',
+                confidence: 'developing',
+                riskIfMissing: 'The portfolio may remain treated as a central project rather than an embedded institutional operating model.'
+              }
+            ],
+            newInvestment: [],
+            enablingConditions: [
+              {
+                condition: 'The Step 12 permanent model and recurrent resource settlement are formally approved before transition begins.',
+                owner: 'Vice President (Education and Student Success) through the agreed governance route',
+                decisionNeededBy: 'Before September 2029',
+                confidence: 'developing',
+                riskIfMissing: 'Step 13 cannot truthfully activate BAU ownership, budgets or accountabilities.'
+              },
+              {
+                condition: 'Named King\'s Academy owners, budget holders and system access are in place before temporary mobilisation dependencies are removed.',
+                owner: "King's Academy with Finance and relevant system owners",
+                decisionNeededBy: 'Before operational handover',
+                confidence: 'developing',
+                riskIfMissing: 'Records, budgets or decisions may become inaccessible or responsibilities may fall between teams.'
+              },
+              {
+                condition: 'The commissioned 2029-30 communities and projects have completed readiness checks and can begin under the permanent arrangements.',
+                owner: 'SCoP Portfolio Lead and Portfolio Coordinator',
+                decisionNeededBy: 'Before September 2029 operation begins',
+                confidence: 'developing',
+                riskIfMissing: 'The first BAU year may begin with unresolved workload, budget, succession or delivery conditions.'
+              }
+            ]
+          };
+          step13.decisions = [
+            { title: 'Accept operational handover', summary: 'Confirm that King\'s Academy has the authority, capacity, budgets, records and systems required to own the portfolio.' },
+            { title: 'Activate the first BAU cycle', summary: 'Confirm that the six communities, commissioned projects and recurring annual processes can operate from September 2029 under the permanent model.' },
+            { title: 'Close mobilisation', summary: 'Confirm that temporary mobilisation arrangements can end and that all residual actions and risks have been accepted by named BAU owners.' }
+          ];
+          step13.risks = [
+            { title: 'The handover changes labels but not real ownership', mitigation: 'Require named protected roles, delegated authority, budgets, systems access and acceptance of live records before closure.' },
+            { title: 'Temporary mobilisation support is removed too early', mitigation: 'Use staged handover, retain short defined overlap where necessary and close temporary arrangements only after operational readiness is evidenced.' },
+            { title: 'The first BAU year is disrupted by simultaneous transition and operation', mitigation: 'Commission and prepare the 2029-30 portfolio through Step 11, approve the settlement through Step 12 and use standard readiness checks before September.' },
+            { title: 'Annual processes drift after programme closure', mitigation: 'Enter the full rhythm into institutional calendars, assign recurring owners and schedule the first BAU assurance review before closure.' },
+            { title: 'Knowledge or access remains personal to individuals', mitigation: 'Complete the records and systems inventory, transfer ownership and test access before accepting the handover.' },
+            { title: 'Future strategic relevance is not revisited', mitigation: 'Retain annual evidence review and schedule a later strategic review of themes, scale and alignment with the Education Delivery Framework.' }
+          ];
+          step13.assumptions = [
+            { title: 'Step 12 approval is complete', summary: 'Step 13 executes an approved model and does not reopen the permanent policy or resource settlement.' },
+            { title: 'King\'s Academy is the permanent institutional owner', summary: 'The portfolio is embedded within King\'s Academy with governance through the Innovation Committee and senior education routes.' },
+            { title: 'The 2029-30 portfolio is the first BAU operating cycle', summary: 'The communities and projects commissioned through Step 11 begin under permanent arrangements from September 2029.' },
+            { title: 'No new investment is created by transition', summary: 'Step 13 activates the recurrent commitments approved and recorded through earlier steps rather than adding another layer of cost.' }
+          ];
+
+          const ids = data.steps.map((item) => item.id);
+          const idSet = new Set(ids);
+          if (idSet.size !== ids.length) throw new Error('Duplicate step IDs');
+          for (const candidate of data.steps) {
+            for (const dependency of candidate.dependsOn || []) {
+              if (!idSet.has(dependency)) throw new Error(`Invalid dependency ${dependency} on ${candidate.id}`);
+            }
+          }
+          if (JSON.stringify(step11.dependsOn) !== JSON.stringify(['1.4.2-step-9'])) throw new Error('Step 11 dependencies incorrect');
+          if (JSON.stringify(step12.dependsOn) !== JSON.stringify(['1.4.2-step-10', '1.4.2-step-11'])) throw new Error('Step 12 dependencies incorrect');
+          if (JSON.stringify(step13.dependsOn) !== JSON.stringify(['1.4.2-step-12'])) throw new Error('Step 13 dependencies incorrect');
+          if (![step11, step12, step13].every((step) => step.outputs.length === 5)) throw new Error('Each developed step should have five outputs');
+          if (step11.resources.newInvestment.length !== 0) throw new Error('Step 11 should not duplicate operating investment');
+          if (step12.resources.newInvestment.find((item) => item.id === '1.4.2-step-12-resource-investment-1')?.fte !== 0.6) throw new Error('Step 12 convenor FTE incorrect');
+          if (step12.resources.newInvestment.find((item) => item.id === '1.4.2-step-12-resource-investment-2')?.fte !== 0.5) throw new Error('Step 12 project FTE incorrect');
+          const permanentDirect = step12.resources.newInvestment.find((item) => item.id === '1.4.2-step-12-resource-investment-3');
+          if (permanentDirect?.amount !== 5000 || permanentDirect?.bauLiability !== true) throw new Error('Step 12 permanent project allowance incorrect');
+          if (step13.resources.newInvestment.length !== 0) throw new Error('Step 13 should activate rather than duplicate permanent investment');
+
+          fs.writeFileSync(path, JSON.stringify(data));
+          NODE
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Validate and build
+        run: npm run build
+
+      - name: Commit developed Steps 11 to 13
+        run: |
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add src/data/deliverables/1.4.2/steps.json
+          git commit -m "Complete SCoP permanent model and BAU transition"
+          git push origin HEAD:content/1-4-2-develop-steps-11-13
