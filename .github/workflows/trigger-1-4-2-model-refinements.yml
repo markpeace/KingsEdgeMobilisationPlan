@@ -37,6 +37,20 @@ jobs:
               "if (!items.some(existing => existing.id === item.id || existing.title === item.title)) items.push(item);",
               "if (!items.some(existing => (existing.id || existing.title || existing.item || existing.role) === (item.id || item.title || item.item || item.role))) items.push(item);"
           )
+          scale_fix = r'''
+          const scaleCorrections = [
+            ['approximately five practice-based projects across the planned six-community portfolio', 'approximately thirty practice-based projects—around five connected to each community—across the planned six-community portfolio'],
+            ['approximately five practice-based projects across all six communities', 'approximately thirty practice-based projects—around five connected to each community—across all six communities'],
+            ['approximately five practice-based projects across the six-community portfolio', 'approximately thirty practice-based projects—around five connected to each community—across the six-community portfolio'],
+            ['approximately five funded projects delivered across the six-community portfolio', 'approximately thirty funded projects—around five connected to each community—delivered across the six-community portfolio'],
+            ['£5,000 annual direct project', '£30,000 annual direct project']
+          ];
+          let correctedStepsJson = JSON.stringify(stepsData);
+          for (const [oldText, newText] of scaleCorrections) correctedStepsJson = correctedStepsJson.split(oldText).join(newText);
+          stepsData.steps = JSON.parse(correctedStepsJson).steps;
+
+          const serialized = JSON.stringify(stepsData);'''
+          script = script.replace('const serialized = JSON.stringify(stepsData);', dedent(scale_fix).strip())
           Path('/tmp/apply-1-4-2.js').write_text(script)
           PY
 
