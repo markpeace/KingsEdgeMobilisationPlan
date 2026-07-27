@@ -33,7 +33,7 @@ jobs:
           if [ "$status" -ne 0 ]; then
             git config user.name github-actions[bot]
             git config user.email 41898282+github-actions[bot]@users.noreply.github.com
-            git add refinement-debug.log
+            git add -f refinement-debug.log
             git commit -m "Capture SCoP refinement failure"
             git push origin HEAD:${{ github.head_ref }}
             exit "$status"
@@ -51,6 +51,6 @@ jobs:
           rm -f refinement-debug.log
           git config user.name github-actions[bot]
           git config user.email 41898282+github-actions[bot]@users.noreply.github.com
-          git add src/data/deliverables/1.4.2/overview.json src/data/deliverables/1.4.2/benefits.json src/data/deliverables/1.4.2/measures.json src/data/deliverables/1.4.2/steps.json .github/workflows/apply-1-4-2-model-refinements.yml .github/workflows/trigger-1-4-2-model-refinements.yml refinement-debug.log
+          git add -A
           git commit -m "Refine SCoP model and project scale"
           git push origin HEAD:${{ github.head_ref }}
