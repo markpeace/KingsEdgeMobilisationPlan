@@ -1,0 +1,438 @@
+name: Develop SCoP Step 6
+
+on:
+  push:
+    branches:
+      - content/1-4-2-develop-step-6
+    paths:
+      - .github/workflows/apply-developed-step-6.yml
+
+permissions:
+  contents: write
+
+jobs:
+  update-step-6:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: content/1-4-2-develop-step-6
+
+      - name: Develop Step 6 and reach and impact measures
+        run: |
+          node <<'NODE'
+          const fs = require('fs');
+
+          const stepsPath = 'src/data/deliverables/1.4.2/steps.json';
+          const stepsData = JSON.parse(fs.readFileSync(stepsPath, 'utf8'));
+          const step = stepsData.steps.find((item) => item.id === '1.4.2-step-6');
+          if (!step) throw new Error('Step 6 not found');
+
+          step.title = 'Review the first mobilisation, agree the 2028-29 community portfolio and launch the next calls';
+          step.period = 'jul-dec-2027:a';
+          step.stepType = 'portfolio-review-expansion-and-call-launch';
+          step.dependsOn = ['1.4.2-step-4', '1.4.2-step-5'];
+          step.summary = "From July to August 2027, review the initial mobilisation and pilot operation of the Experiential Learning, AI in Education and Inclusive Education communities together with the first process for commissioning funded convenors and practice-based projects. Use this evidence to refine the operating, governance, commissioning and central-support arrangements before the portfolio expands, while recognising that the first funded operating cycle will not begin until September 2027 and therefore cannot yet be evaluated for delivery impact. Establish a proportionate success framework for reach and impact that can be used from the first funded cycle, drawing on the initial pilots to establish baselines where possible and agreeing portfolio expectations, evidence responsibilities and reporting arrangements. In parallel, look forward to the academic year beginning in September 2028. Review the Education Delivery Framework with the Vice President (Education and Student Success) and the Vice Deans Education to identify and agree the three additional education priorities around which the next Strategic Communities of Practice should be established. Confirm the proposed six-community portfolio for 2028-29, the resource and central-support implications of expansion, and any refinements required to the convenor and practice-based project model. Launch the calls that will be commissioned between January and March 2028, allowing detailed preparation and community formation between April and August ahead of operation from September 2028. The call should seek funded convenors for the three additional communities and the next annual portfolio of approximately five practice-based projects across the planned six-community model. Convenors appointed to the original three communities through Step 5 will normally remain in post for the second year of their two-academic-year term.";
+
+          step.outputs = [
+            {
+              id: '1.4.2-step-6-output-1',
+              title: 'Initial mobilisation and first commissioning review completed',
+              type: 'portfolio-review',
+              owner: "King's Academy SCoP Portfolio Lead with Mark Peace and the Innovation Committee",
+              summary: 'A focused review of the first three community pilots and the first convenor and practice-based project commissioning process, identifying what should be retained, refined or resolved before expansion.',
+              acceptanceCriteria: [
+                'The review distinguishes evidence from the initial mobilisation and pilots from evidence about the funded operating cycle, which has not yet begun.',
+                'The review considers sustained participation, distributed contribution, informal leadership, community activity, governance, budget control, reporting and the transition towards funded convening.',
+                'The first commissioning process is reviewed for application quality and diversity, clarity of the offer, faculty or organisational commitment, workload and backfill practicality, panel operation, conflicts of interest, decision timing and applicant experience.',
+                'The suitability of the 0.1 FTE convenor and project planning assumptions and the up-to-£1,000 direct project-cost offer is considered without duplicating the Step 7 delivery investment.',
+                'Actionable refinements are agreed with named owners and are incorporated into the 2028-29 call and operating arrangements.',
+                'The review records matters that cannot yet be judged and identifies the evidence to be gathered through the first funded cycle.'
+              ]
+            },
+            {
+              id: '1.4.2-step-6-output-2',
+              title: 'Reach and impact success framework established',
+              type: 'success-and-evidence-framework',
+              owner: "King's Academy SCoP Portfolio Lead with the Innovation Committee",
+              summary: 'A common but proportionate framework through which the portfolio, individual communities and funded projects can demonstrate who they are engaging, the depth and breadth of participation, the practice they develop and spread, and their influence on students and institutional education priorities.',
+              acceptanceCriteria: [
+                'A small common core of deliverable-level measures is agreed for active reach and institutional breadth, depth of participation and distributed leadership, practice development and spread, institutional influence, and student-facing impact.',
+                'Definitions distinguish nominal reach, such as mailing-list membership or one-off attendance, from active, repeat and contributory participation.',
+                'Evidence from the first three pilots is used to establish initial baselines where reliable evidence exists, and gaps in the baseline are explicitly recorded.',
+                'Evidence-informed targets or qualitative success thresholds are agreed for the 2027-28 funded cycle and the planned six-community portfolio beginning in September 2028.',
+                'Every community uses the common core measures and may add a small number of theme-specific measures that reflect its intended contribution.',
+                'Every funded project states its intended reach, practical change and proportionate evidence of impact before delivery begins.',
+                'Responsibilities and data sources are clear across convenors, project leads, the Portfolio Coordinator, the Portfolio Lead and the Innovation Committee.',
+                'Evidence requirements remain proportionate, avoid vanity metrics and do not expect every community to demonstrate direct institution-wide or student-outcome effects within a single year.',
+                'The annual review process explains how reach and impact evidence will inform support, continuation, expansion, commissioning and institutional decision-making.'
+              ]
+            },
+            {
+              id: '1.4.2-step-6-output-3',
+              title: 'Three additional strategic community themes agreed',
+              type: 'strategic-portfolio-decision',
+              owner: 'Vice President (Education and Student Success) with the Vice Deans Education',
+              summary: 'Three additional education priorities agreed as the basis for new Strategic Communities of Practice beginning in September 2028, following review of the Education Delivery Framework.',
+              acceptanceCriteria: [
+                'The Education Delivery Framework is reviewed for the cross-cutting priorities that require active institutional development during 2028-29 and beyond.',
+                'The Vice President (Education and Student Success) and the Vice Deans Education consider and agree the proposed three additional themes.',
+                'The rationale for each theme, its intended institutional contribution and its relationship to the Education Delivery Framework are recorded.',
+                'Each theme has a sufficiently clear and distinctive purpose to justify a Strategic Community of Practice rather than another form of project, committee or network.',
+                'Potential overlap with existing groups, programmes, governance structures and professional-service responsibilities is considered and resolved or explicitly managed.',
+                'A preliminary viability assessment identifies likely cross-faculty and professional-service interest and the route through which a founding community can be formed before September 2028.',
+                'The choice of themes is a strategic education-portfolio decision rather than an open popularity contest, while evidence of existing energy and expertise informs viability.'
+              ]
+            },
+            {
+              id: '1.4.2-step-6-output-4',
+              title: 'Six-community expansion proposition approved',
+              type: 'expansion-proposition',
+              owner: 'Vice President (Education and Student Success) and the Innovation Committee with King\'s Academy',
+              summary: 'An approved proposition for the six-community model beginning in September 2028, including refined operating assumptions, annual project commissioning and the central support required to prepare and sustain the larger portfolio.',
+              acceptanceCriteria: [
+                'The six-community portfolio and intended September 2028 start are confirmed, or any justified adjustment to scale or pace is recorded.',
+                'The model continues to allow one or two convenors per community, with a shared 0.1 FTE community allocation and two-academic-year appointments unless the review supports a documented refinement.',
+                'The annual practice-based project model remains a portfolio of approximately five projects across all six communities, each normally supported by a 0.1 FTE protected-capacity allocation and up to £1,000 direct costs, unless the review supports a documented refinement.',
+                'The original three convenors are expected to remain in post for the second year of their Step 5 appointment and are not required to reapply routinely.',
+                'The additional central capacity required to prepare and operate the expanded portfolio is confirmed, including the planning assumption that the Portfolio Lead increases from 0.1 to 0.2 FTE and the Portfolio Coordinator from 0.2 to 0.4 FTE.',
+                'The resource source, timing, budget-holding route and recurrent implications of the additional central capacity are agreed before the expansion calls create commitments.',
+                'The proposition explains how the three additional communities will form founding networks and develop priorities between commissioning and the September 2028 start.'
+              ]
+            },
+            {
+              id: '1.4.2-step-6-output-5',
+              title: '2028-29 convenor and practice-based project calls launched',
+              type: 'commissioning-call-launch',
+              owner: "King's Academy SCoP Portfolio Lead and Portfolio Coordinator",
+              summary: 'Calls launched for convenors of the three additional communities and for the next annual practice-based project portfolio across the planned six-community model, for commissioning through Step 8 between January and March 2028.',
+              acceptanceCriteria: [
+                'The convenor call covers the three additional communities and appointments beginning in September 2028 for two academic years.',
+                'The call only includes the original three communities where an exceptional vacancy or documented leadership change requires action.',
+                'The project call seeks approximately five practice-based projects across the six-community portfolio for delivery during 2028-29, without guaranteeing equal allocation by community.',
+                'The calls incorporate agreed learning from the Step 4 pilots, Step 5 commissioning process and Step 6 review.',
+                'The reach and impact framework is embedded proportionately in the role, application, assessment and reporting expectations for convenors and projects.',
+                'Eligibility, resource offers, assessment criteria, faculty or organisational commitments, conflict controls, timetable and decision rights are clear.',
+                'Applicants and faculties have sufficient time to develop credible proposals before the January-March 2028 commissioning window.',
+                'The calls explain the April-August 2028 preparation and community-formation period and the September 2028 operating start.'
+              ]
+            }
+          ];
+
+          step.resources = {
+            existingCapacity: [
+              {
+                role: 'Strategic education portfolio sponsorship and theme-setting',
+                owner: 'Vice President (Education and Student Success) and Vice Deans Education',
+                contribution: 'Review the Education Delivery Framework, determine the strategic priorities that should underpin the next three communities and approve the intended six-community portfolio.',
+                periodNeeded: 'July to August 2027',
+                confidence: 'developing',
+                riskIfMissing: 'The additional communities could be selected without sufficient connection to institutional education priorities or senior ownership.'
+              },
+              {
+                role: 'SCoP Portfolio Lead',
+                owner: "King's Academy",
+                fte: 0.1,
+                contribution: 'Lead the review, develop the reach and impact framework, prepare the expansion proposition and own the revised call design using the capacity introduced through Step 2.',
+                periodNeeded: 'July to August 2027',
+                confidence: 'developing',
+                riskIfMissing: 'The review, evidence framework and next calls may lack substantive ownership and portfolio coherence.'
+              },
+              {
+                role: 'SCoP Portfolio Coordinator',
+                owner: "King's Academy",
+                fte: 0.2,
+                contribution: 'Coordinate evidence, records, consultation, theme review, call documentation and the implementation route for the next commissioning cycle using the capacity introduced through Step 2.',
+                periodNeeded: 'July to August 2027',
+                confidence: 'developing',
+                riskIfMissing: 'The review and call launch may be delayed or insufficiently documented.'
+              },
+              {
+                role: 'Pilot, commissioning and evidence contributors',
+                owner: 'Community leads, selected convenors, project applicants and leads, faculties, Finance, HR and governance participants',
+                contribution: 'Provide evidence and reflection on the pilot communities, the first commissioning process, workload and backfill arrangements, governance, support and readiness for expansion.',
+                periodNeeded: 'July to August 2027',
+                confidence: 'developing',
+                riskIfMissing: 'The review may be based on central impressions rather than evidence from the people and processes involved.'
+              },
+              {
+                role: 'Reach and impact evidence advice',
+                owner: "King's Academy with relevant planning, evaluation and analytics colleagues",
+                contribution: 'Help define proportionate measures, baselines, data sources, qualitative evidence standards and reporting arrangements that test benefit realisation without creating excessive burden.',
+                periodNeeded: 'July to August 2027',
+                confidence: 'developing',
+                riskIfMissing: 'The success framework may default to easily counted activity, create false precision or be impractical to maintain.'
+              }
+            ],
+            newInvestment: [
+              {
+                id: '1.4.2-step-6-resource-investment-1',
+                item: "Additional King's Academy SCoP Portfolio Lead workload release or backfill",
+                category: 'permanent portfolio leadership',
+                amount: 10000,
+                currency: 'GBP',
+                bauLiability: true,
+                fundingRoute: 'TBC',
+                fundingStatus: 'unconfirmed',
+                owner: "King's Academy",
+                periodNeeded: 'From September 2027 onward',
+                decisionNeededBy: 'Before the 2028-29 calls create commitments for an expanded portfolio',
+                confidence: 'indicative',
+                rationale: 'Adds approximately 0.1 FTE to the initial Portfolio Lead capacity introduced through Step 2, creating an indicative total of 0.2 FTE to prepare and sustain the transition from three to six communities, oversee the evidence framework and support the larger convenor and project portfolio. The £10,000 annual planning envelope should be recalculated against the named colleague\'s grade and the agreed release or backfill route.',
+                riskIfMissing: 'The expanded portfolio may outgrow the protected senior capacity needed to support convenors, maintain strategic coherence and lead review and renewal.',
+                fte: 0.1
+              },
+              {
+                id: '1.4.2-step-6-resource-investment-2',
+                item: "Additional King's Academy SCoP Portfolio Coordinator capacity",
+                category: 'permanent portfolio administration',
+                amount: 11000,
+                currency: 'GBP',
+                bauLiability: true,
+                fundingRoute: 'TBC',
+                fundingStatus: 'unconfirmed',
+                owner: "King's Academy",
+                periodNeeded: 'From September 2027 onward',
+                decisionNeededBy: 'Before the 2028-29 calls create commitments for an expanded portfolio',
+                confidence: 'indicative',
+                rationale: 'Adds approximately 0.2 FTE to the initial Portfolio Coordinator capacity introduced through Step 2, creating an indicative total of 0.4 FTE to administer six communities, annual calls, commissioning, onboarding, records, reach and impact evidence and continuity as convenors and projects change.',
+                riskIfMissing: 'Administrative demand from the expanded portfolio may fall back onto substantive leaders, weaken evidence and records, or make annual commissioning and onboarding unreliable.',
+                fte: 0.2
+              }
+            ],
+            enablingConditions: [
+              {
+                condition: 'The Education Delivery Framework is sufficiently current and specific to support a strategic decision about the next three community themes.',
+                owner: 'Vice President (Education and Student Success) with Vice Deans Education',
+                decisionNeededBy: 'During the July-August 2027 portfolio review',
+                confidence: 'developing',
+                riskIfMissing: 'Theme selection may rely on general preferences rather than a clear institutional education strategy.'
+              },
+              {
+                condition: 'Initial pilot and commissioning evidence is assembled in a form that supports an honest, bounded review.',
+                owner: 'SCoP Portfolio Coordinator',
+                decisionNeededBy: 'Before the Step 6 review begins',
+                confidence: 'developing',
+                riskIfMissing: 'Important learning may be lost, while matters that cannot yet be judged may be mistaken for demonstrated success or failure.'
+              },
+              {
+                condition: 'The Vice President, Vice Deans Education and Innovation Committee have a clear decision route for theme selection, expansion, success measures and recurrent support.',
+                owner: 'Senior education governance sponsor',
+                decisionNeededBy: 'Before the 2028-29 calls are launched',
+                confidence: 'developing',
+                riskIfMissing: 'Calls could be launched without an authoritative portfolio decision or agreed resource basis.'
+              },
+              {
+                condition: 'The first funded convenors and projects are able to adopt the agreed reach and impact framework from September 2027.',
+                owner: 'SCoP Portfolio Lead and Portfolio Coordinator',
+                decisionNeededBy: 'Before the Step 7 funded operating cycle begins',
+                confidence: 'developing',
+                riskIfMissing: 'The first funded cycle may begin without consistent baselines, evidence expectations or a route to judging reach and impact.'
+              }
+            ]
+          };
+
+          step.decisions = [
+            {
+              title: 'Approve the initial review findings and model refinements',
+              summary: 'Agree what the pilot and first commissioning evidence supports changing before expansion, what should be retained and what remains untested until the funded operating cycle has run.'
+            },
+            {
+              title: 'Approve the reach and impact success framework',
+              summary: 'Agree the common measure set, definitions, baselines, initial targets or qualitative thresholds, evidence responsibilities and reporting cadence for the first funded and future six-community cycles.'
+            },
+            {
+              title: 'Agree the next three community themes',
+              summary: 'Following review of the Education Delivery Framework, the Vice President (Education and Student Success) and Vice Deans Education approve the three additional strategic education priorities for communities beginning in September 2028.'
+            },
+            {
+              title: 'Approve expansion and additional central support',
+              summary: 'Confirm the intended six-community portfolio, any refinement to the convenor and project model, and the additional recurrent Portfolio Lead and Portfolio Coordinator capacity required to prepare and sustain expansion.'
+            },
+            {
+              title: 'Authorise the 2028-29 calls',
+              summary: 'Approve launch of the convenor calls for the three additional communities and the annual practice-based project call across the planned six-community portfolio for commissioning through Step 8.'
+            }
+          ];
+
+          step.risks = [
+            {
+              title: 'The review overclaims evidence from the first mobilisation',
+              mitigation: 'Separate pilot and commissioning evidence from the performance of the funded cycle, explicitly record what cannot yet be judged and carry those questions into Step 7 evidence collection.'
+            },
+            {
+              title: 'Success measures reward visibility rather than meaningful reach or impact',
+              mitigation: 'Distinguish mailing-list and one-off attendance from active, repeat and contributory participation, combine quantitative evidence with proportionate qualitative judgement and review measures that create perverse incentives.'
+            },
+            {
+              title: 'Student-facing or institutional impact is claimed without credible attribution',
+              mitigation: 'Use contribution language, evidence chains and bounded case studies; do not require direct causal student-outcome claims where the evidence cannot support them.'
+            },
+            {
+              title: 'Evidence requirements become too burdensome',
+              mitigation: 'Use a small common core, reuse normal community and project records, permit theme-specific evidence and make the Portfolio Coordinator responsible for maintaining the portfolio evidence structure.'
+            },
+            {
+              title: 'The next themes are strategically attractive but cannot form viable communities',
+              mitigation: 'Combine senior strategic selection through the Education Delivery Framework with a preliminary viability assessment of expertise, cross-institutional interest, overlap and a route to founding participation.'
+            },
+            {
+              title: 'Expansion outpaces central support capacity',
+              mitigation: 'Make the recurrent support decision before the calls create commitments and adjust the scale, timetable or support model if the additional capacity cannot be secured.'
+            },
+            {
+              title: 'The original three convenors are inadvertently destabilised by the next call',
+              mitigation: 'State clearly that they remain in the second year of their appointments and include those communities only where an exceptional vacancy or documented change requires action.'
+            },
+            {
+              title: 'Calls are launched too late or without enough clarity for credible proposals',
+              mitigation: 'Complete theme, resource, measure and call decisions within the July-August window and publish a clear timetable leading to Step 8 commissioning between January and March 2028.'
+            }
+          ];
+
+          step.assumptions = [
+            {
+              title: 'Step 6 looks forward to September 2028',
+              summary: 'The principal expansion decision concerns the academic year beginning in September 2028 rather than immediate operation in 2027-28.'
+            },
+            {
+              title: 'The first funded cycle has not yet run',
+              summary: 'Step 6 can review the initial pilots and commissioning process but cannot evaluate the delivery impact of the funded cycle that begins through Step 7 in September 2027.'
+            },
+            {
+              title: 'Original convenors remain in post',
+              summary: 'Convenors appointed through Step 5 normally serve through 2027-28 and 2028-29 and therefore do not routinely reapply in the calls launched through this step.'
+            },
+            {
+              title: 'Projects continue as an annual portfolio',
+              summary: 'Approximately five practice-based projects are commissioned annually across the whole planned six-community portfolio rather than allocated automatically or equally to individual communities.'
+            },
+            {
+              title: 'Common core with theme-specific evidence',
+              summary: 'All communities and projects use a small common reach and impact framework, while additional evidence can reflect the distinct contribution and maturity of each theme.'
+            },
+            {
+              title: 'Baselines precede numerical targets',
+              summary: 'Step 6 uses the initial pilots to establish reliable baselines where possible and then agrees evidence-informed numerical targets or qualitative success thresholds rather than inventing false precision in advance.'
+            }
+          ];
+
+          const manifestPath = 'src/data/deliverables/manifest.json';
+          const manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf8'));
+          const entry = manifest.deliverables.find((item) => item.id === '1.4.2');
+          if (!entry) throw new Error('Manifest entry for 1.4.2 not found');
+          const measuresPart = './1.4.2/measures.json';
+          if (!entry.parts.includes(measuresPart)) {
+            const benefitsIndex = entry.parts.indexOf('./1.4.2/benefits.json');
+            entry.parts.splice(benefitsIndex >= 0 ? benefitsIndex + 1 : entry.parts.length, 0, measuresPart);
+          }
+
+          const measures = {
+            measures: [
+              {
+                id: '1.4.2-M1',
+                title: 'Active reach and institutional breadth',
+                supportsBenefits: ['1.4.2-B1', '1.4.2-B2'],
+                questionAnswered: 'Are the Strategic Communities of Practice engaging an active and institutionally broad population rather than only accumulating nominal membership or one-off attendance?',
+                measure: 'For each community and across the portfolio, report unique active participants, repeat participants and the breadth of participation across faculties, professional-services areas and relevant role or career-stage groups. Report mailing-list membership and one-off attendance separately. Step 6 will define a proportionate threshold for active participation, drawing on attendance, contribution, collaboration, project involvement or other meaningful engagement rather than contact-list presence alone.',
+                measureType: 'reach, participation and institutional breadth',
+                owner: "SCoP Portfolio Coordinator, with convenors responsible for maintaining proportionate community participation records",
+                cadence: 'Termly, with an annual portfolio synthesis',
+                confidence: 'developing',
+                baseline: 'The initial three pilots provide partial evidence of attendance, membership and participation, but a consistent definition and portfolio baseline have not yet been established.',
+                target: 'By the end of Step 6, a baseline and evidence-informed target or qualitative threshold are agreed. Thereafter each community demonstrates sustained active participation and appropriate institutional breadth for its theme, with concentrations, gaps and agreed responses made visible rather than hidden by total membership counts.',
+                dataSource: 'Community membership and attendance records, Teams activity where proportionate, contribution and collaboration logs, project participation records and annual convenor returns.'
+              },
+              {
+                id: '1.4.2-M2',
+                title: 'Depth of participation and distributed leadership',
+                supportsBenefits: ['1.4.2-B1', '1.4.2-B2'],
+                questionAnswered: 'Are educators moving beyond attendance to contribute practice, lead activity, form collaborations and exercise distributed educational leadership through the communities?',
+                measure: 'Report the number and institutional breadth of people making substantive contributions through sharing or developing practice, facilitating or convening activity, leading or contributing to funded projects, producing outputs, mentoring others, forming collaborations or representing community insight in institutional work. Distinguish the small number of funded roles from the wider distribution of voluntary contribution and leadership enabled by them.',
+                measureType: 'depth of engagement, leadership and collaboration',
+                owner: 'Community convenors, synthesised by the SCoP Portfolio Coordinator and reviewed by the Portfolio Lead',
+                cadence: 'Termly light-touch recording, with annual review',
+                confidence: 'developing',
+                baseline: 'The initial pilots provide examples of informal contribution and emerging leadership but no consistent portfolio-wide baseline.',
+                target: 'By the end of Step 6, a baseline and proportionate success threshold are agreed. Each community should demonstrate that leadership, contribution and collaboration extend beyond its funded convenor or convenors and are not concentrated persistently in a single faculty, service or small core without a recorded rationale and response.',
+                dataSource: 'Community activity plans and records, contributor and facilitator records, funded-project documentation, output authorship, collaboration logs and annual convenor reflection.'
+              },
+              {
+                id: '1.4.2-M3',
+                title: 'Practice developed, tested and spread',
+                supportsBenefits: ['1.4.2-B1', '1.4.2-B2'],
+                questionAnswered: 'Are community and funded-project activities producing useful educational practices, resources or approaches that are tested and taken up beyond their original setting?',
+                measure: 'Record the practice-based projects and other substantive community outputs completed; the educational practices, resources, approaches or collaborations developed and tested; and documented instances of adoption, adaptation or use beyond the originating individual, team, programme or faculty. Evidence should distinguish production of an output from credible use or spread.',
+                measureType: 'practice development, adoption and spread',
+                owner: 'Funded project leads and community convenors, synthesised by the SCoP Portfolio Lead',
+                cadence: 'At project completion and annually for each community, with later adoption updates where available',
+                confidence: 'developing',
+                baseline: 'The initial pilots will provide early examples of activity and outputs, but consistent evidence of adoption and spread has not yet been assembled.',
+                target: 'By the end of Step 6, an initial baseline and success standard are agreed. Every funded project produces the agreed practical output or learning, and the annual portfolio demonstrates credible examples of practices, resources or approaches being used, adapted or progressed beyond their original setting rather than treating output production alone as impact.',
+                dataSource: 'Project plans and completion records, produced resources, implementation evidence, user or adopter feedback, community annual reports and short practice-spread case studies.'
+              },
+              {
+                id: '1.4.2-M4',
+                title: 'Influence on institutional education priorities and decisions',
+                supportsBenefits: ['1.4.2-B2'],
+                questionAnswered: 'Is insight from the communities informing the Education Delivery Framework, institutional education policy, guidance, governance, investment or other consequential decisions?',
+                measure: 'Record documented instances in which community evidence, recommendations, developed practice or convenor input is considered through an institutional or faculty decision route and what happened as a result. Distinguish contribution to a decision from sole attribution and record where recommendations are not adopted or require further work.',
+                measureType: 'institutional influence and strategic contribution',
+                owner: 'SCoP Portfolio Lead with the Innovation Committee and relevant decision owners',
+                cadence: 'Recorded as decisions occur and synthesised annually',
+                confidence: 'developing',
+                baseline: 'The initial communities are intended to inform institutional education priorities, but no common influence record or baseline currently exists.',
+                target: 'By the end of Step 6, an initial baseline and qualitative success standard are agreed. Across the annual portfolio there is documented evidence that community insight reaches relevant decision routes and makes a credible contribution to policy, guidance, investment, governance or Education Delivery Framework development, with outcomes and limits recorded transparently.',
+                dataSource: 'Community recommendations, papers and submissions, Education Delivery Framework records, committee and decision records, policy or guidance changes, investment decisions and decision-owner feedback.'
+              },
+              {
+                id: '1.4.2-M5',
+                title: 'Student-facing educational impact',
+                supportsBenefits: ['1.4.2-B2'],
+                questionAnswered: 'Is the work of the communities contributing to meaningful improvements in educational practice, provision, participation, learning, inclusion or student experience?',
+                measure: 'Use proportionate evidence chains and case studies to show how community-supported practice, projects, resources or institutional influence contributed to a student-facing change and what evidence suggests the change was useful. Evidence may include implementation and reach, student participation or feedback, educator judgement, service or curriculum change and relevant existing indicators. Do not require or claim direct causal movement in common student-outcome measures where the timeframe and evidence cannot support it.',
+                measureType: 'student-facing impact and qualitative benefit realisation',
+                owner: 'Funded project leads and relevant local education owners, synthesised by community convenors and the SCoP Portfolio Lead',
+                cadence: 'At project and community review points, with an annual portfolio synthesis and longer-term follow-up where proportionate',
+                confidence: 'developing',
+                baseline: 'The initial pilots may provide early examples of intended or emerging student-facing contribution, but a consistent evidence standard and portfolio baseline have not yet been established.',
+                target: 'By the end of Step 6, a proportionate evidence standard and initial baseline are agreed. The annual portfolio contains credible, bounded examples of community-supported work contributing to student-facing educational change, with the strength of evidence, beneficiaries, limitations and any need for longer-term follow-up made explicit.',
+                dataSource: 'Project and community impact plans, implementation records, student participation and feedback, educator or service-owner evidence, curriculum and service changes, relevant existing institutional indicators and bounded impact case studies.'
+              }
+            ]
+          };
+
+          const stepIds = stepsData.steps.map((item) => item.id);
+          if (new Set(stepIds).size !== stepIds.length) throw new Error('Duplicate step IDs');
+          const stepIdSet = new Set(stepIds);
+          for (const candidate of stepsData.steps) {
+            for (const dependency of candidate.dependsOn || []) {
+              if (!stepIdSet.has(dependency)) throw new Error(`Invalid dependency ${dependency} on ${candidate.id}`);
+            }
+          }
+          if (JSON.stringify(step.dependsOn) !== JSON.stringify(['1.4.2-step-4', '1.4.2-step-5'])) throw new Error('Step 6 dependencies are incorrect');
+          if (step.outputs.length !== 5) throw new Error('Step 6 should have five developed outputs');
+          if (!step.summary.includes('September 2028')) throw new Error('Step 6 forward planning horizon is missing');
+          if (!step.summary.includes('Education Delivery Framework')) throw new Error('Education Delivery Framework review is missing');
+          if (!step.summary.includes('reach and impact')) throw new Error('Reach and impact success framework is missing');
+          if (measures.measures.length !== 5) throw new Error('Expected five reach and impact measures');
+          if (new Set(measures.measures.map((item) => item.id)).size !== measures.measures.length) throw new Error('Duplicate measure IDs');
+
+          fs.writeFileSync(stepsPath, JSON.stringify(stepsData));
+          fs.writeFileSync(manifestPath, JSON.stringify(manifest, null, 2) + '\n');
+          fs.writeFileSync('src/data/deliverables/1.4.2/measures.json', JSON.stringify(measures, null, 2) + '\n');
+          NODE
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Validate and build
+        run: npm run build
+
+      - name: Commit developed Step 6
+        run: |
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add src/data/deliverables/1.4.2/steps.json src/data/deliverables/1.4.2/measures.json src/data/deliverables/manifest.json
+          git commit -m "Develop SCoP portfolio review and measures"
+          git push origin HEAD:content/1-4-2-develop-step-6
