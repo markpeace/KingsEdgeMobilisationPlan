@@ -25,7 +25,19 @@ jobs:
         run: |
           sed -n "/node <<'NODE'/,/^          NODE$/p" .github/workflows/apply-1-4-2-model-refinements.yml \
             | sed '1d;$d;s/^          //' > /tmp/apply-1-4-2.js
-          node /tmp/apply-1-4-2.js
+          set +e
+          node /tmp/apply-1-4-2.js > refinement-debug.log 2>&1
+          status=$?
+          set -e
+          cat refinement-debug.log
+          if [ "$status" -ne 0 ]; then
+            git config user.name github-actions[bot]
+            git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+            git add refinement-debug.log
+            git commit -m "Capture SCoP refinement failure"
+            git push origin HEAD:${{ github.head_ref }}
+            exit "$status"
+          fi
 
       - name: Validate and build
         run: |
@@ -36,8 +48,9 @@ jobs:
         run: |
           rm .github/workflows/apply-1-4-2-model-refinements.yml
           rm .github/workflows/trigger-1-4-2-model-refinements.yml
+          rm -f refinement-debug.log
           git config user.name github-actions[bot]
           git config user.email 41898282+github-actions[bot]@users.noreply.github.com
-          git add src/data/deliverables/1.4.2/overview.json src/data/deliverables/1.4.2/benefits.json src/data/deliverables/1.4.2/measures.json src/data/deliverables/1.4.2/steps.json .github/workflows/apply-1-4-2-model-refinements.yml .github/workflows/trigger-1-4-2-model-refinements.yml
+          git add src/data/deliverables/1.4.2/overview.json src/data/deliverables/1.4.2/benefits.json src/data/deliverables/1.4.2/measures.json src/data/deliverables/1.4.2/steps.json .github/workflows/apply-1-4-2-model-refinements.yml .github/workflows/trigger-1-4-2-model-refinements.yml refinement-debug.log
           git commit -m "Refine SCoP model and project scale"
           git push origin HEAD:${{ github.head_ref }}
