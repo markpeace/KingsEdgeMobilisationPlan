@@ -23,8 +23,18 @@ jobs:
 
       - name: Extract and run refinement script
         run: |
-          sed -n "/node <<'NODE'/,/^          NODE$/p" .github/workflows/apply-1-4-2-model-refinements.yml \
-            | sed '1d;$d;s/^          //' > /tmp/apply-1-4-2.js
+          python - <<'PY'
+          from pathlib import Path
+          from textwrap import dedent
+
+          source = Path('.github/workflows/apply-1-4-2-model-refinements.yml').read_text()
+          start_marker = "          node <<'NODE'\n"
+          end_marker = "\n          NODE"
+          start = source.index(start_marker) + len(start_marker)
+          end = source.index(end_marker, start)
+          Path('/tmp/apply-1-4-2.js').write_text(dedent(source[start:end]) + '\n')
+          PY
+
           set +e
           node /tmp/apply-1-4-2.js > refinement-debug.log 2>&1
           status=$?
