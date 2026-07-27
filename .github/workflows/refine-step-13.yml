@@ -1,0 +1,105 @@
+name: Refine SCoP Step 13
+
+on:
+  push:
+    branches:
+      - content/1-4-2-refine-step-13
+    paths:
+      - .github/workflows/refine-step-13.yml
+
+permissions:
+  contents: write
+
+jobs:
+  refine-step-13:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: content/1-4-2-refine-step-13
+
+      - name: Refine Step 13
+        run: |
+          node <<'NODE'
+          const fs = require('fs');
+          const path = 'src/data/deliverables/1.4.2/steps.json';
+          const data = JSON.parse(fs.readFileSync(path, 'utf8'));
+          const step = data.steps.find((item) => item.id === '1.4.2-step-13');
+          if (!step) throw new Error('Step 13 not found');
+
+          step.summary = "From September to December 2029, execute the transition of the Strategic Communities of Practice portfolio into business as usual using the permanent model and resource settlement approved through Step 12. Activate King's Academy as the accountable institutional owner, put the permanent Portfolio Lead and Portfolio Coordinator arrangements into effect, transfer budgets, records, systems, governance and decision rights, and retire temporary mobilisation dependencies. Begin the 2029-30 operating cycle under the permanent arrangements for the retained community portfolio and commissioned annual projects. Where Step 12 confirms the planned six-community model, the original three communities enter the first year of their Step 11 convenor terms and the additional three communities enter the second year of their Step 8 terms. Embed the recurring annual calendar, including the 2030-31 calls launched through Step 12 and the first BAU commissioning window from January to March 2030. Complete knowledge transfer from Mark Peace and other mobilisation contributors, close residual mobilisation actions or assign them into ordinary governance, complete an initial 90-day BAU assurance check, and schedule the later strategic review. Step 13 does not redesign or re-cost the model; it makes the approved settlement operational and closes the mobilisation programme.";
+
+          const output1 = step.outputs.find((item) => item.id === '1.4.2-step-13-output-1');
+          output1.acceptanceCriteria = output1.acceptanceCriteria.map((criterion) =>
+            criterion.startsWith('The Innovation Committee, senior reporting route')
+              ? 'The Innovation Committee or approved successor governance body, senior reporting route, delegated decisions, escalation, conflict and closure arrangements are operating under approved terms of reference.'
+              : criterion
+          );
+
+          const output3 = step.outputs.find((item) => item.id === '1.4.2-step-13-output-3');
+          output3.acceptanceCriteria = output3.acceptanceCriteria.map((criterion) =>
+            criterion.startsWith('The 2030-31 convenor and project calls')
+              ? 'The 2030-31 convenor and project calls launched through Step 12 have a published process, named owners and a January-March 2030 commissioning window, adjusted where necessary to reflect the retained portfolio and approved governance model.'
+              : criterion
+          );
+
+          const output5 = step.outputs.find((item) => item.id === '1.4.2-step-13-output-5');
+          output5.summary = 'The mobilisation programme is formally closed only after an initial BAU assurance check demonstrates that the approved model is operating in practice, with future annual assurance and strategic review assigned to ordinary governance.';
+          output5.acceptanceCriteria = [
+            'A closure review confirms that the Step 12 model, resources, ownership, governance, annual rhythm, records and first BAU cycle are operational.',
+            'An initial 90-day BAU assurance check is completed before mobilisation is closed and confirms that ownership, budgets, governance, access, records and recurring processes are working in practice.',
+            'Residual mobilisation risks, issues or actions are either closed or accepted by a named BAU owner through the ordinary governance route.',
+            'Temporary mobilisation roles, exceptional reporting and project-only arrangements are ended or converted explicitly where still required.',
+            'The first annual BAU review is scheduled within the 2029-30 cycle and uses the permanent reach and impact framework.',
+            'A strategic review is scheduled after two complete BAU cycles and no later than summer 2031 to test whether the community themes, retained portfolio scale and governance remain aligned to the Education Delivery Framework.',
+            "The senior education governance sponsor accepts closure and confirms that future operation is accountable through King's Academy and the approved permanent governance body."
+          ];
+
+          const convenorResource = step.resources.existingCapacity.find((item) => item.role === 'Permanent convenor protected capacity');
+          if (!convenorResource) throw new Error('Convenor capacity resource not found');
+          convenorResource.role = 'Recurrent convenor protected-capacity envelope';
+          convenorResource.contribution = 'Activate the approved 0.1 FTE per-community leadership model across the retained community portfolio.';
+
+          const projectResource = step.resources.existingCapacity.find((item) => item.role === 'Permanent annual project protected-capacity envelope');
+          if (!projectResource) throw new Error('Project capacity resource not found');
+          projectResource.role = 'Recurrent annual project protected-capacity envelope';
+
+          const readinessCondition = step.resources.enablingConditions.find((item) => item.condition.startsWith('The commissioned 2029-30 communities and projects'));
+          if (!readinessCondition) throw new Error('Readiness condition not found');
+          readinessCondition.condition = 'The retained 2029-30 communities and commissioned projects have completed readiness checks and can begin under the permanent arrangements.';
+
+          const activateDecision = step.decisions.find((item) => item.title === 'Activate the first BAU cycle');
+          if (!activateDecision) throw new Error('Activate BAU decision not found');
+          activateDecision.summary = 'Confirm that the retained communities, commissioned projects and recurring annual processes can operate from September 2029 under the permanent model.';
+
+          const ownershipAssumption = step.assumptions.find((item) => item.title === "King's Academy is the permanent institutional owner");
+          if (!ownershipAssumption) throw new Error('Ownership assumption not found');
+          ownershipAssumption.summary = "The portfolio is embedded within King's Academy with governance through the Innovation Committee or approved successor governance body and the agreed senior education routes.";
+
+          const cycleAssumption = step.assumptions.find((item) => item.title === 'The 2029-30 portfolio is the first BAU operating cycle');
+          if (!cycleAssumption) throw new Error('BAU cycle assumption not found');
+          cycleAssumption.summary = 'The retained communities and projects commissioned through Step 11 begin under permanent arrangements from September 2029.';
+
+          if (!step.summary.includes('initial 90-day BAU assurance check')) throw new Error('Summary assurance refinement missing');
+          if (!output5.acceptanceCriteria.some((criterion) => criterion.includes('summer 2031'))) throw new Error('Strategic review date missing');
+          if (convenorResource.role !== 'Recurrent convenor protected-capacity envelope') throw new Error('Convenor resource title incorrect');
+          if (projectResource.role !== 'Recurrent annual project protected-capacity envelope') throw new Error('Project resource title incorrect');
+          if (step.resources.newInvestment.length !== 0) throw new Error('Step 13 must not introduce new investment');
+          if (JSON.stringify(step.dependsOn) !== JSON.stringify(['1.4.2-step-12'])) throw new Error('Step 13 dependency changed unexpectedly');
+
+          fs.writeFileSync(path, JSON.stringify(data));
+          NODE
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Validate and build
+        run: npm run build
+
+      - name: Commit refined Step 13
+        run: |
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add src/data/deliverables/1.4.2/steps.json
+          git commit -m "Refine SCoP business-as-usual transition"
+          git push origin HEAD:content/1-4-2-refine-step-13
