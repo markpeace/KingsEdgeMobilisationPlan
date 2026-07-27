@@ -1,0 +1,87 @@
+{
+  "measures": [
+    {
+      "id": "1.4.2-M1",
+      "title": "Active reach and institutional breadth",
+      "supportsBenefits": [
+        "1.4.2-B1",
+        "1.4.2-B2"
+      ],
+      "questionAnswered": "Are the Strategic Communities of Practice engaging an active and institutionally broad population rather than only accumulating nominal membership or one-off attendance?",
+      "measure": "For each community and across the portfolio, report unique active participants, repeat participants and the breadth of participation across faculties, professional-services areas and relevant role or career-stage groups. Report mailing-list membership and one-off attendance separately. Step 6 will define a proportionate threshold for active participation, drawing on attendance, contribution, collaboration, project involvement or other meaningful engagement rather than contact-list presence alone.",
+      "measureType": "reach, participation and institutional breadth",
+      "owner": "SCoP Portfolio Coordinator, with convenors responsible for maintaining proportionate community participation records",
+      "cadence": "Termly, with an annual portfolio synthesis",
+      "confidence": "developing",
+      "baseline": "The initial three pilots provide partial evidence of attendance, membership and participation, but a consistent definition and portfolio baseline have not yet been established.",
+      "target": "By the end of Step 6, a baseline and evidence-informed target or qualitative threshold are agreed. Thereafter each community demonstrates sustained active participation and appropriate institutional breadth for its theme, with concentrations, gaps and agreed responses made visible rather than hidden by total membership counts.",
+      "dataSource": "Community membership and attendance records, Teams activity where proportionate, contribution and collaboration logs, project participation records and annual convenor returns."
+    },
+    {
+      "id": "1.4.2-M2",
+      "title": "Depth of participation and distributed leadership",
+      "supportsBenefits": [
+        "1.4.2-B1",
+        "1.4.2-B2"
+      ],
+      "questionAnswered": "Are educators moving beyond attendance to contribute practice, lead activity, form collaborations and exercise distributed educational leadership through the communities?",
+      "measure": "Report the number and institutional breadth of people making substantive contributions through sharing or developing practice, facilitating or convening activity, leading or contributing to funded projects, producing outputs, mentoring others, forming collaborations or representing community insight in institutional work. Distinguish the small number of funded roles from the wider distribution of voluntary contribution and leadership enabled by them.",
+      "measureType": "depth of engagement, leadership and collaboration",
+      "owner": "Community convenors, synthesised by the SCoP Portfolio Coordinator and reviewed by the Portfolio Lead",
+      "cadence": "Termly light-touch recording, with annual review",
+      "confidence": "developing",
+      "baseline": "The initial pilots provide examples of informal contribution and emerging leadership but no consistent portfolio-wide baseline.",
+      "target": "By the end of Step 6, a baseline and proportionate success threshold are agreed. Each community should demonstrate that leadership, contribution and collaboration extend beyond its funded convenor or convenors and are not concentrated persistently in a single faculty, service or small core without a recorded rationale and response.",
+      "dataSource": "Community activity plans and records, contributor and facilitator records, funded-project documentation, output authorship, collaboration logs and annual convenor reflection."
+    },
+    {
+      "id": "1.4.2-M3",
+      "title": "Practice developed, tested and spread",
+      "supportsBenefits": [
+        "1.4.2-B1",
+        "1.4.2-B2"
+      ],
+      "questionAnswered": "Are community and funded-project activities producing useful educational practices, resources or approaches that are tested and taken up beyond their original setting?",
+      "measure": "Record the practice-based projects and other substantive community outputs completed; the educational practices, resources, approaches or collaborations developed and tested; and documented instances of adoption, adaptation or use beyond the originating individual, team, programme or faculty. Evidence should distinguish production of an output from credible use or spread.",
+      "measureType": "practice development, adoption and spread",
+      "owner": "Funded project leads and community convenors, synthesised by the SCoP Portfolio Lead",
+      "cadence": "At project completion and annually for each community, with later adoption updates where available",
+      "confidence": "developing",
+      "baseline": "The initial pilots will provide early examples of activity and outputs, but consistent evidence of adoption and spread has not yet been assembled.",
+      "target": "By the end of Step 6, an initial baseline and success standard are agreed. Every funded project produces the agreed practical output or learning, and the annual portfolio demonstrates credible examples of practices, resources or approaches being used, adapted or progressed beyond their original setting rather than treating output production alone as impact.",
+      "dataSource": "Project plans and completion records, produced resources, implementation evidence, user or adopter feedback, community annual reports and short practice-spread case studies."
+    },
+    {
+      "id": "1.4.2-M4",
+      "title": "Influence on institutional education priorities and decisions",
+      "supportsBenefits": [
+        "1.4.2-B2"
+      ],
+      "questionAnswered": "Is insight from the communities informing the Education Delivery Framework, institutional education policy, guidance, governance, investment or other consequential decisions?",
+      "measure": "Record documented instances in which community evidence, recommendations, developed practice or convenor input is considered through an institutional or faculty decision route and what happened as a result. Distinguish contribution to a decision from sole attribution and record where recommendations are not adopted or require further work.",
+      "measureType": "institutional influence and strategic contribution",
+      "owner": "SCoP Portfolio Lead with the Innovation Committee and relevant decision owners",
+      "cadence": "Recorded as decisions occur and synthesised annually",
+      "confidence": "developing",
+      "baseline": "The initial communities are intended to inform institutional education priorities, but no common influence record or baseline currently exists.",
+      "target": "By the end of Step 6, an initial baseline and qualitative success standard are agreed. Across the annual portfolio there is documented evidence that community insight reaches relevant decision routes and makes a credible contribution to policy, guidance, investment, governance or Education Delivery Framework development, with outcomes and limits recorded transparently.",
+      "dataSource": "Community recommendations, papers and submissions, Education Delivery Framework records, committee and decision records, policy or guidance changes, investment decisions and decision-owner feedback."
+    },
+    {
+      "id": "1.4.2-M5",
+      "title": "Student-facing educational impact",
+      "supportsBenefits": [
+        "1.4.2-B2"
+      ],
+      "questionAnswered": "Is the work of the communities contributing to meaningful improvements in educational practice, provision, participation, learning, inclusion or student experience?",
+      "measure": "Use proportionate evidence chains and case studies to show how community-supported practice, projects, resources or institutional influence contributed to a student-facing change and what evidence suggests the change was useful. Evidence may include implementation and reach, student participation or feedback, educator judgement, service or curriculum change and relevant existing indicators. Do not require or claim direct causal movement in common student-outcome measures where the timeframe and evidence cannot support it.",
+      "measureType": "student-facing impact and qualitative benefit realisation",
+      "owner": "Funded project leads and relevant local education owners, synthesised by community convenors and the SCoP Portfolio Lead",
+      "cadence": "At project and community review points, with an annual portfolio synthesis and longer-term follow-up where proportionate",
+      "confidence": "developing",
+      "baseline": "The initial pilots may provide early examples of intended or emerging student-facing contribution, but a consistent evidence standard and portfolio baseline have not yet been established.",
+      "target": "By the end of Step 6, a proportionate evidence standard and initial baseline are agreed. The annual portfolio contains credible, bounded examples of community-supported work contributing to student-facing educational change, with the strength of evidence, beneficiaries, limitations and any need for longer-term follow-up made explicit.",
+      "dataSource": "Project and community impact plans, implementation records, student participation and feedback, educator or service-owner evidence, curriculum and service changes, relevant existing institutional indicators and bounded impact case studies."
+    }
+  ]
+}
