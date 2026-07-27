@@ -1,0 +1,516 @@
+{
+  "steps": [
+    {
+      "id": "1.4.2-step-4",
+      "title": "Refine the operating model by piloting the first three communities",
+      "period": {
+        "start": "jan-jun-2027:a",
+        "end": "jan-jun-2027:c"
+      },
+      "dependsOn": [
+        "1.4.2-step-2",
+        "1.4.2-step-3"
+      ],
+      "summary": "From January to June 2027, pilot the agreed Strategic Communities of Practice operating model through the Experiential Learning, AI in Education and Inclusive Education communities. Support the three communities to operate under their informal mobilisation leadership, sustain and broaden participation, deliver useful activity and pursue emerging priorities. The pilots will operate from the outset within the governance, accountability, budget-control and escalation arrangements approved through Step 2, with clear decision rights and institutional oversight through King's Academy and the Innovation Committee. Use live operation to test whether the model is practical, proportionate and sufficiently supportive, refining processes, guidance and conventions without reopening the fundamental authority or accountability of the approved governance framework. Capture the evidence and continuity requirements needed to transfer leadership to funded convenors and integrate funded projects from September 2027. Informal leads remain voluntary and interim during this phase and do not assume the full accountability intended for later funded convenors.",
+      "outputs": [
+        {
+          "id": "1.4.2-step-4-output-1",
+          "title": "Three community pilots operating",
+          "type": "community-pilot",
+          "owner": "Informal community leads with King's Academy",
+          "summary": "Experiential Learning, AI in Education and Inclusive Education each operate as an active pilot community with an identifiable constituency, a clear participation route, functioning informal leadership and sustained communication across the pilot period.",
+          "acceptanceCriteria": [
+            "Each community has a short pilot plan setting out its initial priorities, participation route, indicative activity and relationship to the common operating model.",
+            "Each community has an active communication space and a clear route through which interested colleagues can join or remain involved.",
+            "Participation extends beyond the informal leads and shows evidence of broadening across relevant faculties, disciplines, professional-services areas or other constituencies.",
+            "Informal leadership is shared where possible, remains explicitly voluntary and interim, and is supported rather than replaced by central portfolio capacity.",
+            "The three communities remain active throughout the January-June pilot rather than relying on a single launch event or isolated meeting."
+          ]
+        },
+        {
+          "id": "1.4.2-step-4-output-2",
+          "title": "Community-led programmes of activity delivered",
+          "type": "pilot-activity-programme",
+          "owner": "Informal community leads with the King's Academy Portfolio Lead",
+          "summary": "A proportionate programme in each community that responds to its own priorities while demonstrating the practical value of sustained exchange, collaboration and institutionally connected activity.",
+          "acceptanceCriteria": [
+            "Each community delivers at least two purposeful activities during the pilot period rather than being limited to routine coordination meetings.",
+            "Activities may include practice exchange, collaborative inquiry, workshops, resource development, institutional propositions, student involvement, external engagement or connections between related initiatives.",
+            "Each community uses its operating allowance to support at least one event, guest speaker, specialist contributor, student group or external partner where this is relevant to its priorities.",
+            "Each community produces at least one tangible output, collaboration, recommendation or proposition through its pilot activity.",
+            "Activity, participation, expenditure and emerging outputs are recorded proportionately through the shared community and portfolio arrangements."
+          ]
+        },
+        {
+          "id": "1.4.2-step-4-output-3",
+          "title": "Governance and accountability demonstrated in practice",
+          "type": "governance-assurance",
+          "owner": "King's Academy Portfolio Lead with the Innovation Committee",
+          "summary": "The approved governance framework is used consistently across the three pilots, providing visible institutional authority, oversight and financial control while preserving appropriate community autonomy.",
+          "acceptanceCriteria": [
+            "The Innovation Committee or agreed governing forum is operational and understands its delegated authority before the pilots begin.",
+            "Decision rights are clear across informal community leads, the King's Academy Portfolio Lead, the Portfolio Coordinator, Mark Peace and the governing forum.",
+            "Each community has a clear route for advice, approval, escalation and influence on institutional education policy or practice.",
+            "Budget ownership, delegated approval, expenditure records and material commitments are managed consistently across all three communities.",
+            "Each community provides an approved pilot plan and budget, a light-touch midpoint update and an end-of-pilot account covering participation, activity, expenditure, outputs, risks and emerging impact.",
+            "Material decisions, exceptions and unresolved risks are recorded and routed through the agreed governance arrangements.",
+            "The governance arrangements are judged sufficiently robust to support funded convenors and community-aligned projects from September 2027."
+          ]
+        },
+        {
+          "id": "1.4.2-step-4-output-4",
+          "title": "Operating model refined through pilot evidence",
+          "type": "operating-model-refinement",
+          "owner": "King's Academy Portfolio Lead with Mark Peace",
+          "summary": "An evidence-led refinement of the common operating model that confirms the institutional controls that must remain consistent, improves practical processes and identifies where communities should retain flexibility.",
+          "acceptanceCriteria": [
+            "The pilot synthesis distinguishes elements of governance, accountability, delegated authority, budget control, reporting, escalation and review that remain fixed across all communities.",
+            "Practical guidance is refined for participation, onboarding, communication, shared leadership, priority-setting, collaborative activity, evidence collection and routes into institutional influence.",
+            "Differences between the three communities are used to identify where standardisation would be unhelpful or disproportionate.",
+            "The actual demand placed on informal leads, the Portfolio Lead, the Portfolio Coordinator and temporary project-management capacity is assessed.",
+            "The adequacy and eligible use of the base community activity allowance are assessed against actual pilot activity and outcomes.",
+            "The Innovation Committee formally receives the pilot synthesis, approves refinements within its authority and escalates any material governance or resource changes through the agreed senior education route."
+          ]
+        },
+        {
+          "id": "1.4.2-step-4-output-5",
+          "title": "Transition packs for funded convenors and projects",
+          "type": "leadership-transition",
+          "owner": "Informal community leads with the King's Academy Portfolio Coordinator",
+          "summary": "A proportionate handover position for each community so that funded convenors and project teams can inherit and strengthen established relationships and activity rather than restarting the communities in September 2027.",
+          "acceptanceCriteria": [
+            "Each transition pack records the community constituency, participation routes, active relationships, current priorities, work underway and commitments already made.",
+            "The expectations community members have of the funded convenor and the support required from the portfolio team are captured.",
+            "Outputs, propositions or collaborations requiring continuity into the funded cycle are identified.",
+            "Leadership-transition risks and sensitivities are recorded, including how informal leads will remain involved without being treated as pre-selected or displaced.",
+            "The packs are available in time to inform Step 5 appointment, mobilisation and handover arrangements."
+          ]
+        }
+      ],
+      "resources": {
+        "existingCapacity": [
+          {
+            "role": "Programme sponsor and operating-model steward",
+            "owner": "Mark Peace",
+            "contribution": "Maintain strategic coherence, support the informal leads, resolve substantive questions and ensure pilot learning informs the wider SCoP model and funded transition.",
+            "confidence": "confirmed",
+            "riskIfMissing": "The pilots may generate activity without a coherent route into operating-model refinement or wider institutional priorities."
+          },
+          {
+            "role": "SCoP portfolio leadership",
+            "owner": "King's Academy Portfolio Lead",
+            "contribution": "Provide visible institutional ownership, support and challenge the communities, operate the approved governance arrangements and lead the portfolio-level synthesis and refinement.",
+            "confidence": "developing",
+            "riskIfMissing": "Governance confidence and portfolio coherence would depend excessively on Mark Peace and the model would not demonstrate sustainable institutional ownership."
+          },
+          {
+            "role": "Portfolio administration and coordination",
+            "owner": "King's Academy Portfolio Coordinator",
+            "contribution": "Support communications, community spaces, meetings, events, budget records, participation evidence, governance papers and transition packs using the recurrent capacity funded through Step 2.",
+            "confidence": "developing",
+            "riskIfMissing": "Operational and reporting work would fall onto voluntary informal leads or substantive leadership, weakening both participation and control."
+          },
+          {
+            "role": "Temporary pilot project management",
+            "owner": "SCoP Mobilisation Project Manager",
+            "contribution": "Coordinate the three pilots, maintain actions, dependencies and evidence, and support the refinement and handover work using the temporary capacity funded through Step 2.",
+            "confidence": "developing",
+            "riskIfMissing": "The three pilots may proceed inconsistently and fail to produce a coherent evidence base or timely transition."
+          },
+          {
+            "role": "Voluntary informal community leadership",
+            "owner": "Informal community leads and champions",
+            "contribution": "Shape priorities, connect participants, host or enable activity, advise on the operating model and prepare continuity for funded leadership within a shared, bounded and supported voluntary role.",
+            "confidence": "developing",
+            "riskIfMissing": "The pilots would lack community legitimacy and distributed leadership; if the role is insufficiently bounded, informal leads may become unfunded substitutes for later convenors."
+          },
+          {
+            "role": "Community members, students and institutional or external partners",
+            "owner": "Participating colleagues and partners",
+            "contribution": "Contribute practice, expertise, challenge, activity and collaboration so that the model is tested through meaningful community work rather than central process alone.",
+            "confidence": "developing",
+            "riskIfMissing": "The pilots would test administration rather than the ability of communities to create useful exchange, collaboration and institutional influence."
+          }
+        ],
+        "newInvestment": [
+          {
+            "id": "1.4.2-step-4-resource-investment-1",
+            "item": "Base community activity and engagement allowance",
+            "category": "recurrent community operating funding",
+            "amount": 12000,
+            "currency": "GBP",
+            "bauLiability": true,
+            "fundingRoute": "TBC",
+            "fundingStatus": "unconfirmed",
+            "owner": "King's Academy",
+            "periodNeeded": "From January 2027 onward; £6,000 for the January-June 2027 pilot and £12,000 per full academic year thereafter",
+            "decisionNeededBy": "Before January 2027 pilot activity is commissioned",
+            "confidence": "indicative",
+            "rationale": "Establishes a minimum viable recurrent operating allowance of £4,000 per community per full academic year, pro-rated to £2,000 per community for the six-month pilot. It enables guest speakers, modest events and hospitality, facilitation, materials, communications, student participation, accessibility costs and limited specialist or partner contributions. It is separate from convenor workload release, permanent staffing and substantive funded projects, which are added through later steps.",
+            "riskIfMissing": "The communities could still meet, but visible activity would depend on goodwill and uneven local budgets, reducing participation, credibility and the reliability of evidence about the operating model."
+          }
+        ],
+        "enablingConditions": [
+          {
+            "condition": "The SCoP governance and accountability framework is approved, the governing forum is operational and delegated authority is communicated before the pilots begin.",
+            "owner": "King's Academy Portfolio Lead with the senior education governance sponsor",
+            "decisionNeededBy": "Before January 2027",
+            "confidence": "developing",
+            "riskIfMissing": "Pilot language could be interpreted as permission to improvise governance, weakening institutional confidence and financial control."
+          },
+          {
+            "condition": "King's Academy is confirmed as budget holder and implements proportionate approval, recording, monitoring and year-end treatment for community operating allowances.",
+            "owner": "King's Academy with Finance",
+            "decisionNeededBy": "Before the pilot allowances are released",
+            "confidence": "developing",
+            "riskIfMissing": "Communities may have nominal funding without a workable or controlled route to spend it."
+          },
+          {
+            "condition": "Informal leaders agree a bounded voluntary role and central support is available for administration, communications, events, budget records and reporting.",
+            "owner": "King's Academy Portfolio Lead",
+            "decisionNeededBy": "Before pilot plans are agreed",
+            "confidence": "developing",
+            "riskIfMissing": "The pilot may depend on excessive goodwill or turn informal leadership into an unfunded substitute for convenorship."
+          }
+        ]
+      },
+      "risks": [
+        {
+          "title": "Pilot language undermines confidence in institutional governance",
+          "mitigation": "Communicate that the governance and accountability framework has already been approved and that the pilot tests practical operation and proportionality, not whether governance is required. Keep decision rights, reporting, budget control and escalation visible throughout."
+        },
+        {
+          "title": "Informal leads become de facto unfunded convenors",
+          "mitigation": "Keep the role shared, voluntary, interim and bounded; place administration and formal budget control with the portfolio team; and reserve substantive accountability and workload support for the funded appointments."
+        },
+        {
+          "title": "A common operating model over-standardises different communities",
+          "mitigation": "Separate fixed institutional controls from flexible community practices and use evidence from all three pilots to identify where variation is necessary and productive."
+        },
+        {
+          "title": "The recurrent activity allowance becomes an untested entitlement",
+          "mitigation": "Treat £4,000 per community as a planning assumption, review its adequacy and use through the pilot, and base later portfolio scaling on evidence while preserving the initial £12,000 annual BAU liability unless formally revised."
+        },
+        {
+          "title": "Activity is visible but produces weak learning or continuity",
+          "mitigation": "Use agreed pilot plans, midpoint updates, proportionate evidence and transition packs so that activity informs operating-model refinement and the September 2027 funded handover."
+        }
+      ]
+    },
+    {
+      "id": "1.4.2-step-5",
+      "title": "Select, appoint and mobilise the first funded convenors and community projects",
+      "period": {
+        "start": "jan-jun-2027:a",
+        "end": "jul-dec-2027:a"
+      },
+      "dependsOn": [
+        "1.4.2-step-2"
+      ],
+      "summary": "From January to August 2027, run coordinated calls for funded Community Convenors and community-aligned projects, complete assessment and selection, and convert the approved portfolio into appointments and funded activity ready to begin in September. Confirm faculty release, workload allocation or backfill, budgets, project delivery arrangements, governance expectations and onboarding. Draw on relevant pilot learning and community continuity material from Step 4 as it becomes available, without making completion of the community pilots a prerequisite for selection, appointment or mobilisation.",
+      "outputs": [
+        {
+          "title": "Completed institutional calls",
+          "summary": "Convenor and project calls delivered through clear eligibility, applicant support, assessment and decision arrangements."
+        },
+        {
+          "title": "Selected funded leadership and project portfolio",
+          "summary": "Successful convenors and projects approved for the first funded three-community operating cycle."
+        },
+        {
+          "title": "Confirmed funded appointments and projects",
+          "summary": "Convenors, project leads, budgets, faculty release or backfill arrangements, governance expectations and delivery agreements confirmed for September commencement."
+        },
+        {
+          "title": "First funded cycle ready to operate",
+          "summary": "The three communities, their funded convenors and selected projects are onboarded and mobilised for the 2027-28 academic year."
+        }
+      ]
+    },
+    {
+      "id": "1.4.2-step-6",
+      "title": "Review the initial mobilisation, agree the expansion portfolio and launch the 2028-29 calls",
+      "period": {
+        "start": "jul-dec-2027:a",
+        "end": "jul-dec-2027:a"
+      },
+      "dependsOn": [
+        "1.4.2-step-4"
+      ],
+      "summary": "During July and August 2027, review and report on the initial community-building phase as soon as it concludes. Assess establishment, participation, governance, interim convenorship, faculty support, project mechanisms and emerging institutional influence; refine the model; agree the three additional strategic communities to be developed for 2028-29; and launch the associated convenor and community-project calls by the end of August. As part of the review, assess the workload required for King's Academy portfolio leadership and administration and decide whether to release the planned additional capacity for the first funded three-community cycle.",
+      "outputs": [
+        {
+          "title": "Initial mobilisation review",
+          "summary": "An evidence-led assessment of whether the first three communities and their shared operating model have been successfully established."
+        },
+        {
+          "title": "Approved six-community portfolio",
+          "summary": "Three additional strategic communities agreed for development and funded operation in the 2028-29 academic year."
+        },
+        {
+          "title": "Open 2028-29 convenor and project calls",
+          "summary": "Calls launched by the end of August for renewed and new convenors and community-aligned projects across the approved six-community portfolio."
+        },
+        {
+          "id": "1.4.2-step-6-output-4",
+          "title": "Support capacity agreed for the first funded cycle",
+          "type": "resource-review",
+          "owner": "King's Academy with Mark Peace",
+          "summary": "An evidence-based decision on whether to increase permanent portfolio leadership and coordination capacity for the first funded three-community cycle.",
+          "acceptanceCriteria": [
+            "The actual leadership and administrative workload from initial mobilisation is reviewed.",
+            "The need for the planned increase to 0.2 FTE Portfolio Lead and 0.4 FTE Portfolio Coordinator capacity is confirmed, amended or declined.",
+            "Any approved incremental recurrent funding is in place for September 2027."
+          ]
+        }
+      ],
+      "resources": {
+        "existingCapacity": [],
+        "newInvestment": [
+          {
+            "id": "1.4.2-step-6-resource-investment-1",
+            "item": "Additional King's Academy SCoP Portfolio Lead capacity for the three-community cycle",
+            "category": "permanent portfolio leadership",
+            "amount": 10000,
+            "currency": "GBP",
+            "bauLiability": true,
+            "fundingRoute": "TBC",
+            "fundingStatus": "unconfirmed",
+            "owner": "King's Academy",
+            "periodNeeded": "From September 2027 onward",
+            "decisionNeededBy": "By the end of August 2027",
+            "confidence": "indicative",
+            "rationale": "Adds 0.1 FTE of recurrent Portfolio Lead capacity, taking the role from 0.1 to 0.2 FTE if the initial mobilisation review confirms that this is required to own and support the first funded three-community cycle.",
+            "riskIfMissing": "The Portfolio Lead may not have sufficient protected capacity to support convenors, maintain coherence and lead the annual portfolio cycle.",
+            "fte": 0.1
+          },
+          {
+            "id": "1.4.2-step-6-resource-investment-2",
+            "item": "Additional King's Academy SCoP Portfolio Coordinator capacity for the three-community cycle",
+            "category": "permanent portfolio administration",
+            "amount": 11000,
+            "currency": "GBP",
+            "bauLiability": true,
+            "fundingRoute": "TBC",
+            "fundingStatus": "unconfirmed",
+            "owner": "King's Academy",
+            "periodNeeded": "From September 2027 onward",
+            "decisionNeededBy": "By the end of August 2027",
+            "confidence": "indicative",
+            "rationale": "Adds 0.2 FTE of recurrent portfolio coordination, taking the role from 0.2 to 0.4 FTE if the review confirms that this is required to administer the first funded three-community cycle.",
+            "riskIfMissing": "Annual calls, committee support, onboarding, reporting and portfolio records may exceed the capacity established during mobilisation.",
+            "fte": 0.2
+          }
+        ],
+        "enablingConditions": []
+      }
+    },
+    {
+      "id": "1.4.2-step-7",
+      "title": "Operate the first funded three-community cycle",
+      "period": {
+        "start": "jul-dec-2027:b",
+        "end": "jan-jun-2028:c"
+      },
+      "dependsOn": [
+        "1.4.2-step-5"
+      ],
+      "summary": "Operate the Experiential Learning, AI in Education and Inclusive Education communities through the September 2027-June 2028 academic-year cycle. Support their funded convenors, programmes, projects, participation and routes into institutional influence while gathering consistent evidence of activity, outcomes and resource requirements.",
+      "outputs": [
+        {
+          "title": "First funded operating cycle",
+          "summary": "Three communities complete a coherent September-June cycle with funded leadership, visible activity and evidence of their contribution."
+        }
+      ]
+    },
+    {
+      "id": "1.4.2-step-8",
+      "title": "Select, appoint and mobilise the expanded six-community portfolio",
+      "period": {
+        "start": "jul-dec-2027:b",
+        "end": "jul-dec-2028:a"
+      },
+      "dependsOn": [
+        "1.4.2-step-6"
+      ],
+      "summary": "From September 2027 to August 2028, assess the 2028-29 convenor and community-project calls, complete selection, and mobilise the expanded portfolio for September 2028. Confirm renewed and new convenors, faculty release, workload allocation or backfill, budgets and project delivery arrangements; establish the three additional communities and their founding memberships and priorities; and prepare all six communities, convenors and funded projects to begin the next operating cycle together.",
+      "outputs": [
+        {
+          "title": "Selected 2028-29 convenors and projects",
+          "summary": "Renewed and new convenors and a funded project portfolio selected for the six-community operating cycle beginning in September 2028."
+        },
+        {
+          "title": "Expanded portfolio ready to operate",
+          "summary": "All six communities, their funded convenors and their selected projects are established, appointed and mobilised for September 2028."
+        }
+      ]
+    },
+    {
+      "id": "1.4.2-step-9",
+      "title": "Review the first funded operating cycle, refine the model and launch the 2029-30 calls",
+      "period": {
+        "start": "jul-dec-2028:a",
+        "end": "jul-dec-2028:a"
+      },
+      "dependsOn": [
+        "1.4.2-step-7"
+      ],
+      "summary": "During July and August 2028, review and report on the completed September-June operating cycle. Assess participation, activity, impact, governance, convenorship, faculty release and backfill, funding, project mechanisms and institutional influence; refine the model for the expanded portfolio; and launch the 2029-30 convenor and community-project calls by the end of August. As part of the review, assess the workload required for the expanded six-community portfolio and decide whether to release the final planned increments in permanent King's Academy leadership and administration.",
+      "outputs": [
+        {
+          "title": "First funded-cycle impact and operating-model review",
+          "summary": "An assessment of the first funded cycle with agreed refinements to governance, resourcing and operating arrangements for the expanded portfolio."
+        },
+        {
+          "title": "Open 2029-30 convenor and project calls",
+          "summary": "Calls launched by the end of August for the next annual portfolio of convenors and community-aligned projects."
+        },
+        {
+          "id": "1.4.2-step-9-output-3",
+          "title": "Support capacity agreed for the six-community portfolio",
+          "type": "resource-review",
+          "owner": "King's Academy with Mark Peace",
+          "summary": "An evidence-based decision on whether to increase permanent portfolio leadership and coordination capacity for the expanded six-community portfolio.",
+          "acceptanceCriteria": [
+            "The actual workload from the first funded three-community cycle is reviewed.",
+            "The need for the planned increase to 0.3 FTE Portfolio Lead and 0.6 FTE Portfolio Coordinator capacity is confirmed, amended or declined.",
+            "Any approved incremental recurrent funding is in place for September 2028."
+          ]
+        }
+      ],
+      "resources": {
+        "existingCapacity": [],
+        "newInvestment": [
+          {
+            "id": "1.4.2-step-9-resource-investment-1",
+            "item": "Additional King's Academy SCoP Portfolio Lead capacity for the six-community portfolio",
+            "category": "permanent portfolio leadership",
+            "amount": 10000,
+            "currency": "GBP",
+            "bauLiability": true,
+            "fundingRoute": "TBC",
+            "fundingStatus": "unconfirmed",
+            "owner": "King's Academy",
+            "periodNeeded": "From September 2028 onward",
+            "decisionNeededBy": "By the end of August 2028",
+            "confidence": "indicative",
+            "rationale": "Adds a further 0.1 FTE of recurrent Portfolio Lead capacity, taking the role from 0.2 to 0.3 FTE if the funded-cycle review confirms that this is required for the six-community portfolio.",
+            "riskIfMissing": "Strategic oversight, convenor support and cross-community learning may become too thin as the portfolio doubles in size.",
+            "fte": 0.1
+          },
+          {
+            "id": "1.4.2-step-9-resource-investment-2",
+            "item": "Additional King's Academy SCoP Portfolio Coordinator capacity for the six-community portfolio",
+            "category": "permanent portfolio administration",
+            "amount": 11000,
+            "currency": "GBP",
+            "bauLiability": true,
+            "fundingRoute": "TBC",
+            "fundingStatus": "unconfirmed",
+            "owner": "King's Academy",
+            "periodNeeded": "From September 2028 onward",
+            "decisionNeededBy": "By the end of August 2028",
+            "confidence": "indicative",
+            "rationale": "Adds a further 0.2 FTE of recurrent portfolio coordination, taking the role from 0.4 to 0.6 FTE if the review confirms that this is required to administer the six-community portfolio.",
+            "riskIfMissing": "The expanded annual cycle, committee workload, records, reporting and convenor handovers may not be administered reliably.",
+            "fte": 0.2
+          }
+        ],
+        "enablingConditions": []
+      }
+    },
+    {
+      "id": "1.4.2-step-10",
+      "title": "Operate the six-community portfolio",
+      "period": {
+        "start": "jul-dec-2028:b",
+        "end": "jan-jun-2029:c"
+      },
+      "dependsOn": [
+        "1.4.2-step-8"
+      ],
+      "summary": "Operate all six strategic communities through the September 2028-June 2029 academic-year cycle, supporting their funded convenors, programmes, projects, institutional influence and cross-community learning while gathering consistent evidence of participation, outcomes and resource requirements.",
+      "outputs": [
+        {
+          "title": "Full six-community operating cycle",
+          "summary": "Six communities complete a coherent September-June cycle, including the contribution of their funded projects."
+        }
+      ]
+    },
+    {
+      "id": "1.4.2-step-11",
+      "title": "Select, appoint and mobilise the 2029-30 portfolio and prepare institutional handover",
+      "period": {
+        "start": "jul-dec-2028:b",
+        "end": "jul-dec-2029:a"
+      },
+      "dependsOn": [
+        "1.4.2-step-9"
+      ],
+      "summary": "From September 2028 to August 2029, assess the 2029-30 convenor and community-project calls, complete selection, and mobilise the next annual portfolio for September 2029. Confirm appointments, faculty release or backfill, budgets and project delivery arrangements. In parallel, capture the operational, governance, budget-holding, reporting and accountability requirements needed to transfer the portfolio from mobilisation into the permanent institutional model once approved.",
+      "outputs": [
+        {
+          "title": "Selected 2029-30 portfolio",
+          "summary": "Convenors and projects selected for the operating cycle beginning in September 2029."
+        },
+        {
+          "title": "Portfolio mobilised and handover prepared",
+          "summary": "The next annual portfolio is mobilised for September and the practical operational, governance, reporting and resource requirements for institutional handover are documented."
+        }
+      ]
+    },
+    {
+      "id": "1.4.2-step-12",
+      "title": "Review the six-community cycle and confirm the permanent model",
+      "period": {
+        "start": "jul-dec-2029:a",
+        "end": "jul-dec-2029:a"
+      },
+      "dependsOn": [
+        "1.4.2-step-10"
+      ],
+      "summary": "During July and August 2029, review and report on the completed six-community operating cycle. Assess impact and sustainability, determine which communities should continue or evolve, and develop and approve the permanent institutional owner, governance arrangements, budget holding, recurrent resource settlement and annual planning cycle by the end of August. Use evidence from the operating cycles and the practical handover requirements captured through Step 11 to confirm or adjust the cumulative recurrent King's Academy portfolio leadership and administration settlement, without counting investment already introduced through earlier steps a second time.",
+      "outputs": [
+        {
+          "title": "Six-community impact and sustainability review",
+          "summary": "A completed assessment of the expanded portfolio and its contribution after a full operating cycle."
+        },
+        {
+          "title": "Approved permanent institutional model",
+          "summary": "Permanent ownership, governance, budget holding, recurrent resources and the annual commissioning and operating rhythm developed and approved by the end of August 2029."
+        },
+        {
+          "id": "1.4.2-step-12-output-3",
+          "title": "Confirmed permanent SCoP support settlement",
+          "type": "bau-resource-settlement",
+          "owner": "King's Academy with the agreed governance route",
+          "summary": "The final recurrent leadership and administrative capacity for the permanent SCoP portfolio, confirmed or amended using evidence from mobilisation and funded operating cycles.",
+          "acceptanceCriteria": [
+            "The final Portfolio Lead and Portfolio Coordinator workload assumptions are agreed from evidence of actual demand.",
+            "Grades or backfill routes, recurrent costs, institutional owner and budget holder are confirmed.",
+            "The settlement explicitly recognises the recurrent liabilities introduced in Steps 2, 6 and 9 and does not count them again as new investment."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "1.4.2-step-13",
+      "title": "Transition to business as usual",
+      "period": {
+        "start": "jul-dec-2029:b",
+        "end": "jul-dec-2029:b"
+      },
+      "dependsOn": [
+        "1.4.2-step-11",
+        "1.4.2-step-12"
+      ],
+      "summary": "From September 2029, complete the transfer to the permanent institutional owner so that Strategic Communities of Practice continue through the established rhythm of September-June operation, July-August review, reporting and call launch, September-October selection and November-August mobilisation.",
+      "outputs": [
+        {
+          "title": "Business-as-usual transition complete",
+          "summary": "Strategic Communities of Practice operate through permanent ownership, governance, recurrent resources and an established annual planning cycle from September 2029."
+        }
+      ]
+    }
+  ]
+}
