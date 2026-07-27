@@ -1,0 +1,135 @@
+name: Set January-March commissioning windows
+
+on:
+  push:
+    branches:
+      - content/1-4-2-jan-mar-commissioning
+    paths:
+      - .github/workflows/apply-jan-mar-commissioning-windows.yml
+
+permissions:
+  contents: write
+
+jobs:
+  update-commissioning-steps:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: content/1-4-2-jan-mar-commissioning
+
+      - name: Update recurring commissioning windows
+        run: |
+          node <<'NODE'
+          const fs = require('fs');
+          const path = 'src/data/deliverables/1.4.2/steps.json';
+          const data = JSON.parse(fs.readFileSync(path, 'utf8'));
+
+          const getStep = id => {
+            const step = data.steps.find(s => s.id === id);
+            if (!step) throw new Error(`${id} not found`);
+            return step;
+          };
+
+          const step5 = getStep('1.4.2-step-5');
+          step5.title = 'Commission the first funded community and project cycle';
+          step5.period = { start: 'jan-jun-2027:a', end: 'jan-jun-2027:b' };
+          step5.summary = "From January to March 2027, commission the first funded operating cycle for the Experiential Learning, AI in Education and Inclusive Education communities. Run and assess the calls for funded Community Convenors and community-aligned projects, agree the successful portfolio, and establish the institutional arrangements required for activity to begin in September 2027. This includes agreeing convenor workload release, workload allocation or backfill in principle; reserving budgets; confirming governance, reporting and delivery expectations; and agreeing the route through which successful convenors and project teams will be onboarded and prepared during April-August. Draw on relevant learning from the Step 4 pilots as it becomes available, without making completion of the pilots a prerequisite for commissioning the funded cycle.";
+          step5.outputs = [
+            {
+              title: 'Funded convenors commissioned',
+              summary: 'Successful convenors approved, with faculty support and workload-release, workload-allocation or backfill arrangements agreed in principle for a September 2027 start.'
+            },
+            {
+              title: 'Community-project portfolio commissioned',
+              summary: 'Community-aligned projects selected, with leads, intended outputs, delivery periods and indicative budgets agreed.'
+            },
+            {
+              title: 'September operating arrangements agreed',
+              summary: 'Governance, reporting, budget, onboarding and preparation arrangements agreed across convenors, project leads, faculties, King\'s Academy and the governing forum.'
+            },
+            {
+              title: 'First funded cycle commissioned',
+              summary: 'Sufficient institutional commitment and practical planning are in place by the end of March for the three communities and their projects to begin operating in September 2027.'
+            }
+          ];
+
+          const step8 = getStep('1.4.2-step-8');
+          step8.title = 'Commission the expanded six-community portfolio';
+          step8.period = { start: 'jan-jun-2028:a', end: 'jan-jun-2028:b' };
+          step8.summary = "From January to March 2028, commission the expanded six-community operating cycle for September 2028. Assess the convenor and community-project calls launched through Step 6, agree renewed and new convenors and the funded project portfolio, and establish the faculty, workload, budget, governance, reporting and delivery arrangements required for all six communities to operate from September. Agree the preparation route through which the three additional communities will build their founding memberships and priorities and through which all successful convenors and project teams will be ready during April-August.";
+          step8.outputs = [
+            {
+              title: 'Six-community convenor and project portfolio commissioned',
+              summary: 'Renewed and new convenors and community-aligned projects approved for the expanded operating cycle beginning in September 2028.'
+            },
+            {
+              title: 'September 2028 operating arrangements agreed',
+              summary: 'Workload, budgets, governance, reporting, onboarding and community-development arrangements agreed so that all six communities can prepare for the September start.'
+            }
+          ];
+
+          const step11 = getStep('1.4.2-step-11');
+          step11.title = 'Commission the 2029-30 portfolio and prepare institutional handover';
+          step11.period = { start: 'jan-jun-2029:a', end: 'jan-jun-2029:b' };
+          step11.summary = "From January to March 2029, commission the convenors and community-aligned projects for the operating cycle beginning in September 2029. Assess the calls launched through Step 9, agree the successful portfolio, and establish the workload, budget, governance, reporting, delivery and preparation arrangements required for the September start. In parallel, capture the operational, budget-holding, reporting and accountability requirements that must be incorporated into the permanent institutional handover, while allowing detailed onboarding and local preparation to continue during April-August.";
+          step11.outputs = [
+            {
+              title: '2029-30 portfolio commissioned',
+              summary: 'Convenors and projects approved, with the institutional and local arrangements required for the September 2029 operating cycle agreed.'
+            },
+            {
+              title: 'Institutional handover requirements prepared',
+              summary: 'The practical operational, governance, budget-holding, reporting and resource requirements for transfer into the permanent model are documented.'
+            }
+          ];
+
+          const step13 = getStep('1.4.2-step-13');
+          step13.summary = "From September 2029, complete the transfer to the permanent institutional owner so that Strategic Communities of Practice continue through the established rhythm of September-June operation, July-August review, reporting and call launch, January-March commissioning, and April-August preparation for the following September start.";
+
+          const expectedPeriods = {
+            '1.4.2-step-5': { start: 'jan-jun-2027:a', end: 'jan-jun-2027:b' },
+            '1.4.2-step-8': { start: 'jan-jun-2028:a', end: 'jan-jun-2028:b' },
+            '1.4.2-step-11': { start: 'jan-jun-2029:a', end: 'jan-jun-2029:b' }
+          };
+          for (const [id, period] of Object.entries(expectedPeriods)) {
+            const actual = getStep(id).period;
+            if (JSON.stringify(actual) !== JSON.stringify(period)) {
+              throw new Error(`Unexpected period for ${id}: ${JSON.stringify(actual)}`);
+            }
+          }
+
+          const ids = data.steps.map(s => s.id);
+          if (new Set(ids).size !== ids.length) throw new Error('Duplicate step IDs');
+          const idSet = new Set(ids);
+          for (const step of data.steps) {
+            for (const dependency of step.dependsOn || []) {
+              if (!idSet.has(dependency)) throw new Error(`Invalid dependency ${dependency} on ${step.id}`);
+            }
+          }
+
+          fs.writeFileSync(path, JSON.stringify(data));
+          NODE
+
+      - name: Validate JSON
+        run: |
+          node <<'NODE'
+          const d = require('./src/data/deliverables/1.4.2/steps.json');
+          const checks = [
+            ['1.4.2-step-5', 'Commission the first funded community and project cycle'],
+            ['1.4.2-step-8', 'Commission the expanded six-community portfolio'],
+            ['1.4.2-step-11', 'Commission the 2029-30 portfolio and prepare institutional handover']
+          ];
+          for (const [id, title] of checks) {
+            const s = d.steps.find(x => x.id === id);
+            if (!s || s.title !== title) process.exit(1);
+          }
+          NODE
+
+      - name: Commit commissioning windows
+        run: |
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add src/data/deliverables/1.4.2/steps.json
+          git commit -m "Set January-March SCoP commissioning windows"
+          git push origin HEAD:content/1-4-2-jan-mar-commissioning
