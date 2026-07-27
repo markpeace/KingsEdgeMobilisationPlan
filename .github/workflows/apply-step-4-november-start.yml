@@ -1,0 +1,81 @@
+name: Start Step 4 in November
+
+on:
+  push:
+    branches:
+      - content/1-4-2-step-4-november-start
+    paths:
+      - .github/workflows/apply-step-4-november-start.yml
+
+permissions:
+  contents: write
+
+jobs:
+  update-step-4:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: content/1-4-2-step-4-november-start
+
+      - name: Update Step 4 timing and dependency
+        run: |
+          node <<'NODE'
+          const fs = require('fs');
+          const path = 'src/data/deliverables/1.4.2/steps.json';
+          const data = JSON.parse(fs.readFileSync(path, 'utf8'));
+          const step = data.steps.find(s => s.id === '1.4.2-step-4');
+          if (!step) throw new Error('Step 4 not found');
+
+          step.period = { start: 'jul-dec-2026:c', end: 'jan-jun-2027:c' };
+          step.dependsOn = (step.dependsOn || []).filter(id => id !== '1.4.2-step-2');
+          if (!step.dependsOn.includes('1.4.2-step-3')) step.dependsOn.push('1.4.2-step-3');
+
+          step.summary = "From November 2026 to June 2027, pilot the emerging Strategic Communities of Practice operating model through the Experiential Learning, AI in Education and Inclusive Education communities. Begin once the three communities have been mobilised through Step 3, supporting them to operate under their informal mobilisation leadership, sustain and broaden participation, deliver useful activity and pursue emerging priorities. Use the governance, accountability, budget-control and escalation arrangements sufficiently settled through the Step 2 design work, and bring the pilots fully within the approved framework as it is finalised, with clear decision rights and institutional oversight through King's Academy and the Innovation Committee. Use live operation to test whether the model is practical, proportionate and sufficiently supportive, refining processes, guidance and conventions without reopening the fundamental authority or accountability of the governance framework. Capture the evidence and continuity requirements needed to transfer leadership to funded convenors and integrate funded projects from September 2027. Informal leads remain voluntary and interim during this phase and do not assume the full accountability intended for later funded convenors.";
+
+          const output1 = (step.outputs || []).find(o => o.id === '1.4.2-step-4-output-1');
+          if (!output1) throw new Error('Step 4 output 1 not found');
+          output1.acceptanceCriteria = output1.acceptanceCriteria.map(item =>
+            item === 'The three communities remain active throughout the January-June pilot rather than relying on a single launch event or isolated meeting.'
+              ? 'The three communities remain active throughout the November 2026-June 2027 pilot rather than relying on a single launch event or isolated meeting.'
+              : item
+          );
+
+          const output3 = (step.outputs || []).find(o => o.id === '1.4.2-step-4-output-3');
+          if (!output3) throw new Error('Step 4 output 3 not found');
+          output3.acceptanceCriteria = output3.acceptanceCriteria.map(item =>
+            item === 'The Innovation Committee or agreed governing forum is operational and understands its delegated authority before the pilots begin.'
+              ? 'The Innovation Committee or agreed governing forum is operational and understands its delegated authority in time to exercise effective oversight of the pilots.'
+              : item
+          );
+
+          const investment = step.resources?.newInvestment?.find(i => i.id === '1.4.2-step-4-resource-investment-1');
+          if (!investment) throw new Error('Step 4 investment not found');
+          investment.periodNeeded = 'From November 2026 onward; £6,000 for the November 2026-June 2027 pilot and £12,000 per full academic year thereafter';
+          investment.decisionNeededBy = 'Before November 2026 pilot activity is commissioned';
+          investment.rationale = 'Establishes a minimum viable recurrent operating allowance of £4,000 per community per full academic year, with an initial £2,000 per community envelope for the November 2026-June 2027 pilot. It enables guest speakers, modest events and hospitality, facilitation, materials, communications, student participation, accessibility costs and limited specialist or partner contributions. It is separate from convenor workload release, permanent staffing and substantive funded projects, which are added through later steps.';
+
+          const condition = step.resources?.enablingConditions?.find(c => c.condition.startsWith('The SCoP governance and accountability framework is approved'));
+          if (!condition) throw new Error('Step 4 governance enabling condition not found');
+          condition.condition = 'Core SCoP governance, accountability, budget-control and escalation arrangements are sufficiently settled for the pilots to begin in November, with final approval and any refinements incorporated by December 2026.';
+          condition.decisionNeededBy = 'Before November 2026 pilot activity begins';
+          condition.riskIfMissing = 'The pilots could begin without sufficiently clear authority, oversight or financial control, weakening institutional confidence while the full operating model is finalised.';
+
+          const ids = data.steps.map(s => s.id);
+          if (new Set(ids).size !== ids.length) throw new Error('Duplicate step IDs');
+          if (step.dependsOn.includes('1.4.2-step-2')) throw new Error('Step 2 dependency remains');
+          if (JSON.stringify(step.period) !== JSON.stringify({ start: 'jul-dec-2026:c', end: 'jan-jun-2027:c' })) throw new Error('Step 4 period is incorrect');
+
+          fs.writeFileSync(path, JSON.stringify(data));
+          NODE
+
+      - name: Validate JSON
+        run: node -e "const d=require('./src/data/deliverables/1.4.2/steps.json'); const s=d.steps.find(x=>x.id==='1.4.2-step-4'); if(!s || s.dependsOn.includes('1.4.2-step-2') || s.period.start!=='jul-dec-2026:c' || s.period.end!=='jan-jun-2027:c') process.exit(1)"
+
+      - name: Commit Step 4 timing
+        run: |
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add src/data/deliverables/1.4.2/steps.json
+          git commit -m "Start Step 4 in November"
+          git push origin HEAD:content/1-4-2-step-4-november-start
