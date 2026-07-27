@@ -1,0 +1,43 @@
+name: Trigger 1.4.2 model refinements
+
+on:
+  pull_request:
+    branches:
+      - main
+    types:
+      - opened
+      - synchronize
+      - reopened
+
+permissions:
+  contents: write
+
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Extract and run refinement script
+        run: |
+          sed -n "/node <<'NODE'/,/^          NODE$/p" .github/workflows/apply-1-4-2-model-refinements.yml \
+            | sed '1d;$d;s/^          //' > /tmp/apply-1-4-2.js
+          node /tmp/apply-1-4-2.js
+
+      - name: Validate and build
+        run: |
+          npm ci
+          npm run build
+
+      - name: Commit generated refinements
+        run: |
+          rm .github/workflows/apply-1-4-2-model-refinements.yml
+          rm .github/workflows/trigger-1-4-2-model-refinements.yml
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add src/data/deliverables/1.4.2/overview.json src/data/deliverables/1.4.2/benefits.json src/data/deliverables/1.4.2/measures.json src/data/deliverables/1.4.2/steps.json .github/workflows/apply-1-4-2-model-refinements.yml .github/workflows/trigger-1-4-2-model-refinements.yml
+          git commit -m "Refine SCoP model and project scale"
+          git push origin HEAD:${{ github.head_ref }}
