@@ -1,0 +1,51 @@
+name: Inspect 1.4.2 later steps
+
+on:
+  push:
+    branches:
+      - content/1-4-2-combine-commissioning-steps
+    paths:
+      - .github/workflows/inspect-1-4-2-steps.yml
+
+permissions:
+  contents: write
+
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: content/1-4-2-combine-commissioning-steps
+
+      - name: Extract later steps
+        run: |
+          node <<'NODE'
+          const fs = require('fs');
+          const data = JSON.parse(fs.readFileSync('src/data/deliverables/1.4.2/steps.json', 'utf8'));
+          const steps = data.steps
+            .filter(s => Number(s.id.split('-').pop()) >= 5)
+            .map(s => ({
+              id: s.id,
+              title: s.title,
+              period: s.period,
+              dependsOn: s.dependsOn,
+              summary: s.summary,
+              outputs: (s.outputs || []).map(o => ({ id: o.id, title: o.title, type: o.type, owner: o.owner, summary: o.summary, acceptanceCriteria: o.acceptanceCriteria })),
+              resources: s.resources,
+              decisions: s.decisions,
+              risks: s.risks,
+              issues: s.issues,
+              assumptions: s.assumptions
+            }));
+          fs.mkdirSync('tmp', { recursive: true });
+          fs.writeFileSync('tmp/steps-5-16.json', JSON.stringify({steps}, null, 2));
+          NODE
+
+      - name: Commit inspection file
+        run: |
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add tmp/steps-5-16.json
+          git commit -m "Add temporary later-step inspection"
+          git push origin HEAD:content/1-4-2-combine-commissioning-steps
