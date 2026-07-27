@@ -32,7 +32,12 @@ jobs:
           end_marker = "\n          NODE"
           start = source.index(start_marker) + len(start_marker)
           end = source.index(end_marker, start)
-          Path('/tmp/apply-1-4-2.js').write_text(dedent(source[start:end]) + '\n')
+          script = dedent(source[start:end]) + '\n'
+          script = script.replace(
+              "if (!items.some(existing => existing.id === item.id || existing.title === item.title)) items.push(item);",
+              "if (!items.some(existing => (existing.id || existing.title || existing.item || existing.role) === (item.id || item.title || item.item || item.role))) items.push(item);"
+          )
+          Path('/tmp/apply-1-4-2.js').write_text(script)
           PY
 
           set +e
