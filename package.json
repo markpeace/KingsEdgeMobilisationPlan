@@ -10,7 +10,7 @@
     "preview": "vite preview",
     "test:timeline": "node --test tests/timeline-utils.test.mjs",
     "test:planning-status": "node --test tests/planning-status.test.mjs",
-    "test:resources": "node --test tests/resource-profile-utils.test.mjs"
+    "test:resources": "node --test tests/resource-profile-utils.test.mjs tests/resource-profile-json-integration.test.mjs"
   },
   "dependencies": {
     "@vitejs/plugin-react": "latest",
