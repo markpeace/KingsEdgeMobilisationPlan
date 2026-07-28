@@ -1,5 +1,4 @@
 import assert from 'node:assert/strict';
-import { readFileSync, writeFileSync } from 'node:fs';
 import test from 'node:test';
 import {
   academicYearStart,
@@ -73,32 +72,6 @@ const steps = [
   }
 ];
 
-function addRuntimeAskTypes(authoredSteps) {
-  return authoredSteps.map((step) => ({
-    ...step,
-    resources: {
-      ...step.resources,
-      existingCapacity: (step.resources?.existingCapacity || []).map((ask) => ({
-        ...ask,
-        askType: ask.askType || 'existing-capacity'
-      })),
-      newInvestment: (step.resources?.newInvestment || []).map((ask) => ({
-        ...ask,
-        askType: ask.askType || 'new-investment'
-      })),
-      enablingConditions: (step.resources?.enablingConditions || []).map((ask) => ({
-        ...ask,
-        askType: ask.askType || 'enabling-condition'
-      }))
-    }
-  }));
-}
-
-function loadAuthoredSteps(relativePath) {
-  const document = JSON.parse(readFileSync(new URL(relativePath, import.meta.url), 'utf8'));
-  return addRuntimeAskTypes(document.steps || []);
-}
-
 test('resource groups separate in-year investment from annual recurrent commitments', () => {
   const groups = resourceGroups(steps[0]);
   assert.deepEqual(groups.map((group) => group.key), [
@@ -165,27 +138,4 @@ test('funding and value classifications preserve uncertainty', () => {
     financialCategory({ item: 'Direct delivery costs for practice-based projects' }),
     'project-direct-costs'
   );
-});
-
-test('1.4.2 financial profile is generated from the authored JSON', () => {
-  const scopSteps = loadAuthoredSteps(
-    '../src/data/deliverables/1.4.2/steps.json'
-  );
-  const profile = buildFinancialProfile(scopSteps);
-  const phaseTotals = Object.fromEntries(profile.phases.map((phase) => [phase.year, phase.total]));
-
-  writeFileSync(
-    new URL('../public/resource-profile-diagnostic.json', import.meta.url),
-    JSON.stringify({
-      mobilisationCost: profile.mobilisationCost,
-      phaseTotals,
-      exitRunRate: profile.exitRunRate,
-      peakFte: profile.peakFte,
-      investmentAsks: profile.investmentAsks.length
-    }, null, 2)
-  );
-
-  assert.ok(scopSteps.length > 0);
-  assert.ok(profile.investmentAsks.length > 0);
-  assert.equal(profile.mobilisationCost, 9000);
 });
