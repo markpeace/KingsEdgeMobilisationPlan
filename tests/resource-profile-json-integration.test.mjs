@@ -37,4 +37,5 @@ test('1.4.2 financial profile is generated from the authored JSON', () => {
   assert.ok(profile.investmentAsks.length > 0);
   assert.equal(profile.mobilisationCost, 9000);
   assert.equal(profile.phases.find((phase) => phase.year === '2026/27').total, 36000);
+  assert.equal(profile.phases.find((phase) => phase.year === '2027/28').total, 249000);
 });
