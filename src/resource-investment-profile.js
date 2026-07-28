@@ -1,12 +1,11 @@
 import React, { useMemo, useState } from 'react';
 import { createRoot } from 'react-dom/client';
-import { buildLookups, periodLabel, projects } from './plan-utils.js';
+import { buildLookups, projects } from './plan-utils.js';
 import {
   buildFinancialProfile,
   fundingState,
   isBauLiability,
-  resourceGroups,
-  valueKind
+  resourceGroups
 } from './resource-profile-utils.js';
 
 const h = React.createElement;
@@ -45,11 +44,13 @@ function currentRouteContext() {
     const deliverable = deliverableById.get(decodeURIComponent(deliverableMatch[1]));
     return deliverable ? { type: 'deliverable', item: deliverable } : null;
   }
+
   const projectMatch = hash.match(/#\/projects\/([^/?#]+)/);
   if (projectMatch) {
     const project = projectById.get(decodeURIComponent(projectMatch[1]));
     return project ? { type: 'project', item: project } : null;
   }
+
   return null;
 }
 
@@ -61,27 +62,30 @@ function stepsForContext(context) {
       contextTitle: context.item.title
     }));
   }
-  return (context.item.deliverables || []).flatMap((deliverable) => (deliverable.steps || []).map((step) => ({
-    ...step,
-    contextId: deliverable.id,
-    contextTitle: deliverable.title
-  })));
+
+  return (context.item.deliverables || []).flatMap((deliverable) =>
+    (deliverable.steps || []).map((step) => ({
+      ...step,
+      contextId: deliverable.id,
+      contextTitle: deliverable.title
+    }))
+  );
 }
 
 function contextSignature(context, steps) {
   return JSON.stringify({
     type: context.type,
     id: context.item.id,
-    steps: steps.map((step) => ({ id: step.id, period: step.period, resources: step.resources }))
+    steps: steps.map((step) => ({
+      id: step.id,
+      period: step.period,
+      resources: step.resources
+    }))
   });
 }
 
 function askName(ask) {
   return ask.label || ask.item || ask.role || ask.condition || 'Resource ask';
-}
-
-function askDescription(ask) {
-  return ask.rationale || ask.contribution || ask.whatItUnlocks || ask.notes || '';
 }
 
 function amountLabel(ask) {
@@ -106,17 +110,21 @@ function MetricCard({ label, value, note, tone = '' }) {
 }
 
 function FinancialLegend({ phases }) {
-  const used = Object.keys(categoryLabels).filter((category) => phases.some((phase) => phase[category] > 0));
-  return h('div', { className: 'resource-financial-legend', 'aria-label': 'Financial categories' },
-    ...used.map((category) => h('span', { key: category },
-      h('i', { className: `resource-category-swatch resource-category-${category}` }),
-      categoryLabels[category]
-    ))
-  );
+  const used = Object.keys(categoryLabels)
+    .filter((category) => phases.some((phase) => phase[category] > 0));
+
+  return h('div', {
+    className: 'resource-financial-legend',
+    'aria-label': 'Financial categories'
+  }, ...used.map((category) => h('span', { key: category },
+    h('i', { className: `resource-category-swatch resource-category-${category}` }),
+    categoryLabels[category]
+  )));
 }
 
 function FinancialPhasing({ profile }) {
   const maxTotal = Math.max(...profile.phases.map((phase) => phase.total), 1);
+
   return h('section', { className: 'resource-profile-section resource-phasing-section' },
     h('div', { className: 'resource-section-heading' },
       h('div', null,
@@ -136,19 +144,29 @@ function FinancialPhasing({ profile }) {
             style: { width: `${(phase[category] / phase.total) * 100}%` },
             title: `${categoryLabels[category]}: ${formatMoney(phase[category])}`
           }));
+
         return h('article', { className: 'resource-phase-row', key: phase.year },
           h('div', { className: 'resource-phase-label' },
             h('strong', null, phase.year),
             h('span', null, phase.total ? formatMoney(phase.total) : 'No quantified cost'),
             phase.unquantified ? h('em', null, `${phase.unquantified} unquantified`) : null
           ),
-          h('div', { className: 'resource-phase-track', 'aria-label': `${phase.year}: ${formatMoney(phase.total) || 'no quantified cost'}` },
+          h('div', {
+            className: 'resource-phase-track',
+            'aria-label': `${phase.year}: ${formatMoney(phase.total) || 'no quantified cost'}`
+          },
             h('div', { className: 'resource-phase-bar', style: { width: `${barWidth}%` } }, ...segments),
-            phase.total === 0 && phase.unquantified ? h('span', { className: 'resource-phase-unknown' }, 'Unquantified requirement') : null
+            phase.total === 0 && phase.unquantified
+              ? h('span', { className: 'resource-phase-unknown' }, 'Unquantified requirement')
+              : null
           ),
           h('div', { className: 'resource-phase-meta' },
-            phase.fte ? h('span', null, formatFte(phase.fte)) : h('span', null, 'No new FTE quantified'),
-            phase.unresolvedAmount ? h('span', { className: 'resource-funding-warning' }, `${formatMoney(phase.unresolvedAmount)} unresolved`) : h('span', { className: 'resource-funding-confirmed' }, 'No unresolved quantified amount')
+            phase.fte
+              ? h('span', null, formatFte(phase.fte))
+              : h('span', null, 'No new FTE quantified'),
+            phase.unresolvedAmount
+              ? h('span', { className: 'resource-funding-warning' }, `${formatMoney(phase.unresolvedAmount)} unresolved`)
+              : h('span', { className: 'resource-funding-confirmed' }, 'No unresolved quantified amount')
           )
         );
       })
@@ -159,6 +177,7 @@ function FinancialPhasing({ profile }) {
 function CapacityProfile({ profile }) {
   if (!profile.capacityRows.length) return null;
   const maxValue = Math.max(...profile.capacityRows.flatMap((row) => row.values), 1);
+
   return h('section', { className: 'resource-profile-section resource-capacity-section' },
     h('div', { className: 'resource-section-heading' },
       h('div', null,
@@ -171,20 +190,24 @@ function CapacityProfile({ profile }) {
         h('thead', null,
           h('tr', null,
             h('th', { scope: 'col' }, 'Resource'),
-            ...profile.phases.map((phase) => h('th', { scope: 'col', key: phase.year }, phase.year))
+            ...profile.phases.map((phase) =>
+              h('th', { scope: 'col', key: phase.year }, phase.year)
+            )
           )
         ),
         h('tbody', null,
           ...profile.capacityRows.map((row) => h('tr', { key: row.key },
             h('th', { scope: 'row' }, row.label),
             ...row.values.map((value, index) => h('td', { key: `${row.key}-${index}` },
-              value > 0 ? h('span', {
-                className: 'resource-capacity-cell',
-                style: {
-                  backgroundColor: `rgba(23, 107, 155, ${0.18 + (0.72 * (value / maxValue))})`,
-                  color: value / maxValue > 0.42 ? '#ffffff' : '#0f4f75'
-                }
-              }, formatFte(value)) : h('span', { className: 'resource-capacity-empty' }, '—')
+              value > 0
+                ? h('span', {
+                    className: 'resource-capacity-cell',
+                    style: {
+                      backgroundColor: `rgba(23, 107, 155, ${0.18 + (0.72 * (value / maxValue))})`,
+                      color: value / maxValue > 0.42 ? '#ffffff' : '#0f4f75'
+                    }
+                  }, formatFte(value))
+                : h('span', { className: 'resource-capacity-empty' }, '—')
             ))
           ))
         )
@@ -193,11 +216,16 @@ function CapacityProfile({ profile }) {
   );
 }
 
-function FundingPanel({ profile }) {
+function FundingPanel({ profile, contextType }) {
   const exceptions = profile.investmentAsks
     .filter((ask) => fundingState(ask) !== 'confirmed' || typeof ask.amount !== 'number')
     .sort((a, b) => (b.amount || 0) - (a.amount || 0));
+
   if (!exceptions.length) return null;
+
+  const sourceLocation = contextType === 'deliverable'
+    ? 'the Delivery timeline step details above'
+    : 'the relevant deliverable step details';
 
   return h('section', { className: 'resource-profile-section resource-funding-section' },
     h('div', { className: 'resource-section-heading' },
@@ -205,7 +233,9 @@ function FundingPanel({ profile }) {
         h('h3', null, 'Funding and valuation decisions'),
         h('p', null, 'The material asks that remain indicative, unconfirmed or unquantified.')
       ),
-      h('span', { className: 'resource-exception-count' }, `${exceptions.length} open ${exceptions.length === 1 ? 'item' : 'items'}`)
+      h('span', { className: 'resource-exception-count' },
+        `${exceptions.length} open ${exceptions.length === 1 ? 'item' : 'items'}`
+      )
     ),
     h('div', { className: 'resource-funding-list' },
       ...exceptions.slice(0, 8).map((ask) => {
@@ -213,7 +243,9 @@ function FundingPanel({ profile }) {
         return h('article', { className: 'resource-funding-item', key: ask.id },
           h('div', { className: 'resource-funding-item-heading' },
             h('strong', null, askName(ask)),
-            h('span', { className: `resource-status-badge resource-status-${state}` }, statusLabel(state))
+            h('span', { className: `resource-status-badge resource-status-${state}` },
+              statusLabel(state)
+            )
           ),
           h('p', { className: 'resource-funding-value' }, amountLabel(ask)),
           h('p', null, [
@@ -222,85 +254,48 @@ function FundingPanel({ profile }) {
             ask.fundingRoute ? `Route: ${ask.fundingRoute}` : null,
             ask.confidence ? `Confidence: ${ask.confidence}` : null
           ].filter(Boolean).join(' · ')),
-          ask.riskIfMissing ? h('p', { className: 'resource-funding-risk' }, h('strong', null, 'If unresolved: '), ask.riskIfMissing) : null
-        );
-      })
-    ),
-    exceptions.length > 8 ? h('p', { className: 'subtle' }, `${exceptions.length - 8} further items are available in the step-level audit below.`) : null
-  );
-}
-
-function AskCard({ ask, step }) {
-  const kind = valueKind(ask);
-  const state = fundingState(ask);
-  return h('article', { className: `resource-ask-card resource-ask-${ask.askType || 'item'} ${isBauLiability(ask) ? 'is-bau-liability' : ''}`.trim() },
-    h('div', { className: 'resource-ask-heading' },
-      h('span', { className: 'resource-ask-title-line' },
-        h('strong', null, askName(ask)),
-        isBauLiability(ask) ? h('em', { className: 'resource-bau-badge' }, 'Annual recurrent') : null,
-        kind === 'cash-equivalent' ? h('em', { className: 'resource-value-badge' }, 'Cash-equivalent') : null,
-        kind === 'unquantified' ? h('em', { className: 'resource-value-badge resource-value-unquantified' }, 'Unquantified') : null
-      ),
-      h('span', null, periodLabel(ask.periodNeeded || step.period))
-    ),
-    askDescription(ask) ? h('p', null, askDescription(ask)) : null,
-    h('p', { className: 'resource-ask-meta' }, [
-      amountLabel(ask),
-      ask.fte ? formatFte(ask.fte) : null,
-      ask.owner ? `Owner: ${ask.owner}` : null,
-      ask.fundingRoute ? `Funding route: ${ask.fundingRoute}` : null,
-      ask.confidence ? `Confidence: ${ask.confidence}` : null
-    ].filter(Boolean).join(' · ')),
-    ask.askType === 'new-investment' ? h('span', { className: `resource-status-badge resource-status-${state}` }, statusLabel(state)) : null,
-    ask.riskIfMissing ? h('p', { className: 'resource-ask-risk' }, h('strong', null, 'If missing: '), ask.riskIfMissing) : null
-  );
-}
-
-function StepAudit({ steps, contextType }) {
-  const visibleSteps = steps.filter((step) => resourceGroups(step).length > 0);
-  if (!visibleSteps.length) return null;
-  return h('section', { className: 'resource-profile-section resource-audit-section' },
-    h('div', { className: 'resource-section-heading' },
-      h('div', null,
-        h('h3', null, 'Step-level resource audit'),
-        h('p', null, 'Every roll-up remains traceable to the authored ask on its delivery step.')
-      )
-    ),
-    h('div', { className: 'resource-step-sequence' },
-      ...visibleSteps.map((step) => {
-        const groups = resourceGroups(step);
-        const count = groups.reduce((total, group) => total + group.items.length, 0);
-        return h('details', { className: 'resource-step-group', key: step.id },
-          h('summary', null,
-            h('span', { className: 'resource-step-period' }, periodLabel(step.period)),
-            h('span', { className: 'resource-step-title' },
-              h('strong', null, contextType === 'project' ? `${step.contextId} · ${step.title}` : step.title),
-              contextType === 'project' ? h('span', null, step.contextTitle) : null
-            ),
-            h('span', { className: 'resource-step-count' }, `${count} ${count === 1 ? 'ask' : 'asks'}`)
-          ),
-          h('div', { className: 'resource-step-body' },
-            ...groups.map((group) => h('section', { className: `resource-ask-group resource-ask-group-${group.key}`, key: group.key },
-              h('h4', null, group.label),
-              h('div', { className: 'resource-ask-list' },
-                ...group.items.map((ask) => h(AskCard, { ask, step, key: ask.id }))
+          ask.riskIfMissing
+            ? h('p', { className: 'resource-funding-risk' },
+                h('strong', null, 'If unresolved: '),
+                ask.riskIfMissing
               )
-            ))
-          )
+            : null
         );
       })
-    )
+    ),
+    exceptions.length > 8
+      ? h('p', { className: 'subtle' },
+          `${exceptions.length - 8} further items remain in ${sourceLocation}.`
+        )
+      : null
+  );
+}
+
+function SourceStatement({ steps, profile, contextType }) {
+  const sourceSteps = steps.filter((step) => resourceGroups(step).length > 0).length;
+  const location = contextType === 'deliverable'
+    ? 'Open step detail in the Delivery timeline above to inspect the authored records.'
+    : 'Open the relevant deliverable to inspect its authored step records.';
+
+  return h('p', { className: 'subtle resource-profile-source' },
+    `Generated at runtime from ${profile.asks.length} resource asks across ${sourceSteps} delivery ${sourceSteps === 1 ? 'step' : 'steps'} in the JSON. ${location}`
   );
 }
 
 function ResourceInvestmentProfile({ context, steps }) {
   const [expanded, setExpanded] = useState(false);
   const profile = useMemo(() => buildFinancialProfile(steps), [steps]);
-  const summaryTitle = context.type === 'project' ? 'Project resource and investment profile' : 'Resource and investment profile';
+  const summaryTitle = context.type === 'project'
+    ? 'Project resource and investment profile'
+    : 'Resource and investment profile';
   const firstPhase = profile.firstOperatingPhase;
-  const fundingResolvedCount = profile.investmentAsks.filter((ask) => fundingState(ask) === 'confirmed').length;
+  const fundingResolvedCount = profile.investmentAsks
+    .filter((ask) => fundingState(ask) === 'confirmed').length;
 
-  return h('section', { id: 'resource-investment-profile', className: 'panel resource-investment-profile' },
+  return h('section', {
+    id: 'resource-investment-profile',
+    className: 'panel resource-investment-profile'
+  },
     h('button', {
       type: 'button',
       className: 'resource-profile-summary',
@@ -311,10 +306,14 @@ function ResourceInvestmentProfile({ context, steps }) {
         h('strong', null, summaryTitle),
         h('em', null, 'Phased expenditure, recurrent commitment and capacity derived from delivery-step asks.')
       ),
-      h('span', { className: 'resource-profile-toggle', 'aria-hidden': 'true' }, expanded ? '−' : '+')
+      h('span', { className: 'resource-profile-toggle', 'aria-hidden': 'true' },
+        expanded ? '−' : '+'
+      )
     ),
     expanded ? h('div', { className: 'resource-profile-body' },
-      h('p', { className: 'subtle resource-profile-explainer' }, 'The delivery steps remain the source of truth. Figures marked cash-equivalent represent planning valuations of protected capacity and must be replaced by grade-based release, workload-allocation or backfill costs before approval.'),
+      h('p', { className: 'subtle resource-profile-explainer' },
+        'The delivery steps remain the source of truth. Figures marked cash-equivalent represent planning valuations of protected capacity and must be replaced by grade-based release, workload-allocation or backfill costs before approval.'
+      ),
       h('div', { className: 'resource-profile-summary-grid' },
         h(MetricCard, {
           label: 'Mobilisation and establishment',
@@ -322,9 +321,13 @@ function ResourceInvestmentProfile({ context, steps }) {
           note: 'One-off costs only'
         }),
         h(MetricCard, {
-          label: firstPhase ? `First full operating year · ${firstPhase.year}` : 'First operating year',
+          label: firstPhase
+            ? `First full operating year · ${firstPhase.year}`
+            : 'First operating year',
           value: firstPhase?.total ? formatMoney(firstPhase.total) : 'Not quantified',
-          note: firstPhase?.unquantified ? `${firstPhase.unquantified} additional unquantified asks` : 'In-year requirement'
+          note: firstPhase?.unquantified
+            ? `${firstPhase.unquantified} additional unquantified asks`
+            : 'In-year requirement'
         }),
         h(MetricCard, {
           label: 'Exit annual run-rate',
@@ -342,20 +345,26 @@ function ResourceInvestmentProfile({ context, steps }) {
         h('span', null, `${profile.valueKinds.cash} cash asks`),
         h('span', null, `${profile.valueKinds.cashEquivalent} cash-equivalent asks`),
         h('span', null, `${profile.valueKinds.unquantified} unquantified asks`),
-        h('span', null, `${fundingResolvedCount}/${profile.investmentAsks.length} investment asks confirmed or commissioned`)
+        h('span', null,
+          `${fundingResolvedCount}/${profile.investmentAsks.length} investment asks confirmed or commissioned`
+        )
       ),
       h(FinancialPhasing, { profile }),
       h(CapacityProfile, { profile }),
-      h(FundingPanel, { profile }),
-      profile.existingCapacityAsks.length ? h('section', { className: 'resource-profile-section resource-existing-section' },
-        h('div', { className: 'resource-section-heading' },
-          h('div', null,
-            h('h3', null, 'Existing establishment and contribution'),
-            h('p', null, `${profile.existingCapacityAsks.length} existing-capacity asks remain visible but are not treated as new investment or added to funded FTE.`)
+      h(FundingPanel, { profile, contextType: context.type }),
+      profile.existingCapacityAsks.length
+        ? h('section', { className: 'resource-profile-section resource-existing-section' },
+            h('div', { className: 'resource-section-heading' },
+              h('div', null,
+                h('h3', null, 'Existing establishment and contribution'),
+                h('p', null,
+                  `${profile.existingCapacityAsks.length} existing-capacity asks remain in the delivery-step records but are not treated as new investment or added to funded FTE.`
+                )
+              )
+            )
           )
-        )
-      ) : null,
-      h(StepAudit, { steps, contextType: context.type })
+        : null,
+      h(SourceStatement, { steps, profile, contextType: context.type })
     ) : null
   );
 }
@@ -374,8 +383,17 @@ function clearProfile() {
 }
 
 function targetForContext(context) {
-  if (context.type === 'deliverable') return document.getElementById('route-through');
+  if (context.type === 'deliverable') return document.getElementById('governance');
   return document.querySelector('.project-deliverable-panel');
+}
+
+function correctlyPlaced(context, target) {
+  if (!mountNode?.isConnected) return false;
+  if (context.type === 'deliverable') {
+    return mountNode.parentElement === target.parentElement
+      && mountNode.nextElementSibling === target;
+  }
+  return mountNode.previousElementSibling === target;
 }
 
 function placeMount(context, target) {
@@ -383,14 +401,24 @@ function placeMount(context, target) {
     mountNode = document.createElement('div');
     mountNode.id = 'resource-investment-profile-root';
   }
-  if (context.type === 'deliverable') target.append(mountNode);
-  else target.insertAdjacentElement('afterend', mountNode);
+
+  if (context.type === 'deliverable') {
+    const timeline = document.getElementById('route-through');
+    const timelineOrder = timeline ? window.getComputedStyle(timeline).order : '4';
+    mountNode.style.order = timelineOrder === 'auto' ? '4' : timelineOrder;
+    target.insertAdjacentElement('beforebegin', mountNode);
+  } else {
+    mountNode.style.removeProperty('order');
+    target.insertAdjacentElement('afterend', mountNode);
+  }
+
   if (!profileRoot) profileRoot = createRoot(mountNode);
 }
 
 function renderProfile(attempt = 0, token = renderToken) {
   if (token !== renderToken) return;
   const context = currentRouteContext();
+
   if (!context) {
     clearProfile();
     return;
@@ -404,13 +432,14 @@ function renderProfile(attempt = 0, token = renderToken) {
 
   const target = targetForContext(context);
   if (!target) {
-    if (attempt < 6) window.requestAnimationFrame(() => renderProfile(attempt + 1, token));
+    if (attempt < 10) {
+      window.requestAnimationFrame(() => renderProfile(attempt + 1, token));
+    }
     return;
   }
 
   const signature = contextSignature(context, steps);
-  const placementChanged = !mountNode || !mountNode.isConnected || (context.type === 'deliverable' ? mountNode.parentElement !== target : mountNode.previousElementSibling !== target);
-  if (placementChanged) {
+  if (!correctlyPlaced(context, target)) {
     if (profileRoot) profileRoot.unmount();
     profileRoot = null;
     mountNode?.remove();
@@ -426,9 +455,14 @@ function renderProfile(attempt = 0, token = renderToken) {
 function scheduleRender() {
   renderToken += 1;
   const token = renderToken;
-  window.requestAnimationFrame(() => window.requestAnimationFrame(() => renderProfile(0, token)));
+  window.requestAnimationFrame(() =>
+    window.requestAnimationFrame(() => renderProfile(0, token))
+  );
 }
 
 window.addEventListener('hashchange', scheduleRender);
-if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', scheduleRender, { once: true });
-else scheduleRender();
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', scheduleRender, { once: true });
+} else {
+  scheduleRender();
+}
