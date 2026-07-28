@@ -8,7 +8,12 @@
       "benefitType": "educational leadership, innovation and influence",
       "owner": "TBC",
       "realisationPeriod": "From 2026/27 onwards",
-      "successLooksLike": "Educators regard the communities as consequential places in which to contribute and lead. Participation creates meaningful relationships, supported opportunities and funded activity, while educational expertise and innovation gain greater institutional visibility, influence and external reach."
+      "successLooksLike": "Educators regard the communities as consequential places in which to contribute and lead. Participation creates meaningful relationships, supported opportunities and funded activity, while educational expertise and innovation gain greater institutional visibility, influence and external reach. Participation and funded opportunity are accessible across roles, career stages and organisational contexts rather than concentrating among colleagues with the greatest discretionary time or strongest existing networks.",
+      "enabledBy": [
+        "Protected convenor and portfolio capacity",
+        "Accessible and equitable routes into participation and leadership",
+        "Community activity funding and practice-based project investment"
+      ]
     },
     {
       "id": "1.4.2-B2",
@@ -18,7 +23,12 @@
       "benefitType": "distributed institutional leadership and strategic educational change",
       "owner": "TBC",
       "realisationPeriod": "From 2026/27 onwards",
-      "successLooksLike": "Strategic educational priorities generate sustained institution-wide participation and purposeful action. Insight from practice informs strategy, governance and investment, while shared approaches are adopted and adapted across King’s because they have been developed collaboratively and are credible in different educational contexts."
+      "successLooksLike": "Strategic educational priorities generate sustained institution-wide participation and purposeful action. Insight from practice informs strategy, governance and investment, while shared approaches are adopted and adapted across King’s because they have been developed collaboratively and are credible in different educational contexts. The evidence chain remains visible: participation and distributed leadership enable practice and collaboration; developed practice and evidence inform decisions; and those decisions and adoptions contribute to bounded student-facing educational change.",
+      "enabledBy": [
+        "Distributed educator and student contribution through the communities",
+        "Practice developed, tested, evidenced and spread through community activity and projects",
+        "Clear routes through which community insight reaches faculty and institutional decisions"
+      ]
     }
   ]
 }
