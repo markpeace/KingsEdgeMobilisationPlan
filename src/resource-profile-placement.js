@@ -1,28 +1,41 @@
+let placementScheduled = false;
+
+function currentDeliverableId() {
+  const match = String(window.location.hash || '').match(/#\/deliverables\/([^/?#]+)/);
+  return match ? decodeURIComponent(match[1]) : '';
+}
+
 function placeDeliverableResourceProfile() {
+  if (!currentDeliverableId()) return false;
+
   const profileRoot = document.getElementById('resource-investment-profile-root');
-  const deliveryTimeline = document.getElementById('route-through');
+  const governanceSection = document.getElementById('governance');
 
-  if (!profileRoot || !deliveryTimeline) return false;
+  if (!profileRoot || !governanceSection) return false;
 
-  const alreadyPlaced = profileRoot.parentElement === deliveryTimeline.parentElement
-    && profileRoot.previousElementSibling === deliveryTimeline;
+  const alreadyPlaced = profileRoot.parentElement === governanceSection.parentElement
+    && profileRoot.nextElementSibling === governanceSection;
   if (alreadyPlaced) return true;
 
-  deliveryTimeline.insertAdjacentElement('afterend', profileRoot);
+  governanceSection.insertAdjacentElement('beforebegin', profileRoot);
   return true;
 }
 
-function schedulePlacement(attempt = 0) {
+function schedulePlacement() {
+  if (placementScheduled) return;
+  placementScheduled = true;
   window.requestAnimationFrame(() => {
-    if (!placeDeliverableResourceProfile() && attempt < 10) {
-      schedulePlacement(attempt + 1);
-    }
+    placementScheduled = false;
+    placeDeliverableResourceProfile();
   });
 }
 
-window.addEventListener('hashchange', () => schedulePlacement());
+const observer = new MutationObserver(schedulePlacement);
+observer.observe(document.documentElement, { childList: true, subtree: true });
+window.addEventListener('hashchange', schedulePlacement);
+
 if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', () => schedulePlacement(), { once: true });
+  document.addEventListener('DOMContentLoaded', schedulePlacement, { once: true });
 } else {
   schedulePlacement();
 }
