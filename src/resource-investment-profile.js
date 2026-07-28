@@ -294,7 +294,7 @@ function StepAudit({ steps, contextType }) {
 }
 
 function ResourceInvestmentProfile({ context, steps }) {
-  const [expanded, setExpanded] = useState(true);
+  const [expanded, setExpanded] = useState(false);
   const profile = useMemo(() => buildFinancialProfile(steps), [steps]);
   const summaryTitle = context.type === 'project' ? 'Project resource and investment profile' : 'Resource and investment profile';
   const firstPhase = profile.firstOperatingPhase;
@@ -383,8 +383,8 @@ function placeMount(context, target) {
     mountNode = document.createElement('div');
     mountNode.id = 'resource-investment-profile-root';
   }
-  if (context.type === 'deliverable') target.insertAdjacentElement('afterend', mountNode);
-  else target.insertAdjacentElement('beforebegin', mountNode);
+  if (context.type === 'deliverable') target.append(mountNode);
+  else target.insertAdjacentElement('afterend', mountNode);
   if (!profileRoot) profileRoot = createRoot(mountNode);
 }
 
@@ -409,7 +409,7 @@ function renderProfile(attempt = 0, token = renderToken) {
   }
 
   const signature = contextSignature(context, steps);
-  const placementChanged = !mountNode || !mountNode.isConnected || (context.type === 'deliverable' ? mountNode.previousElementSibling !== target : mountNode.nextElementSibling !== target);
+  const placementChanged = !mountNode || !mountNode.isConnected || (context.type === 'deliverable' ? mountNode.parentElement !== target : mountNode.previousElementSibling !== target);
   if (placementChanged) {
     if (profileRoot) profileRoot.unmount();
     profileRoot = null;
