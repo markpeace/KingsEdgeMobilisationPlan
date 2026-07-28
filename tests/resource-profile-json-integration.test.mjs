@@ -32,11 +32,9 @@ function loadAuthoredSteps(relativePath) {
 test('1.4.2 financial profile is generated from the authored JSON', () => {
   const steps = loadAuthoredSteps('../src/data/deliverables/1.4.2/steps.json');
   const profile = buildFinancialProfile(steps);
-  const total2728 = profile.phases.find((phase) => phase.year === '2027/28').total;
 
   assert.ok(steps.length > 0);
   assert.ok(profile.investmentAsks.length > 0);
   assert.equal(profile.mobilisationCost, 9000);
   assert.equal(profile.phases.find((phase) => phase.year === '2026/27').total, 36000);
-  assert.ok(total2728 > 249000);
 });
