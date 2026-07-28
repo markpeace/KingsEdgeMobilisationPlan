@@ -9,22 +9,31 @@ function placeDeliverableResourceProfile() {
   if (!currentDeliverableId()) return false;
 
   const profileRoot = document.getElementById('resource-investment-profile-root');
+  const deliveryTimeline = document.getElementById('route-through');
   const governanceSection = document.getElementById('governance');
 
-  if (!profileRoot || !governanceSection) return false;
+  if (!profileRoot || !deliveryTimeline || !governanceSection) return false;
 
-  // The deliverable page is an ordered CSS grid. Without an explicit order,
-  // this dynamically mounted panel is visually promoted above the authored
-  // sections even when its DOM position is correct. Order 6 places it after
-  // the Delivery timeline (4) and before proposition/governance detail (7+).
-  profileRoot.style.order = '6';
+  /*
+   * The deliverable main flow is an ordered CSS grid and the detailed-plan
+   * wrapper uses display: contents. DOM placement alone is therefore not
+   * enough: an unnumbered dynamic item receives order 0 and is rendered near
+   * the top of the page.
+   *
+   * Give the profile the same order as the Delivery timeline. Because the
+   * profile occurs later in source order, the browser renders it immediately
+   * after the timeline, before decision, proposition and governance sections.
+   */
+  const timelineOrder = window.getComputedStyle(deliveryTimeline).order;
+  profileRoot.style.order = timelineOrder === 'auto' ? '4' : timelineOrder;
 
-  const alreadyPlaced = profileRoot.parentElement === governanceSection.parentElement
+  const correctlyPlaced = profileRoot.parentElement === governanceSection.parentElement
     && profileRoot.nextElementSibling === governanceSection;
-  if (alreadyPlaced) return true;
+  if (!correctlyPlaced) governanceSection.insertAdjacentElement('beforebegin', profileRoot);
 
-  governanceSection.insertAdjacentElement('beforebegin', profileRoot);
-  return true;
+  return profileRoot.parentElement === governanceSection.parentElement
+    && profileRoot.nextElementSibling === governanceSection
+    && window.getComputedStyle(profileRoot).order === profileRoot.style.order;
 }
 
 function schedulePlacement() {
