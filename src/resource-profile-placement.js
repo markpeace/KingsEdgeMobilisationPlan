@@ -13,6 +13,12 @@ function placeDeliverableResourceProfile() {
 
   if (!profileRoot || !governanceSection) return false;
 
+  // The deliverable page is an ordered CSS grid. Without an explicit order,
+  // this dynamically mounted panel is visually promoted above the authored
+  // sections even when its DOM position is correct. Order 6 places it after
+  // the Delivery timeline (4) and before proposition/governance detail (7+).
+  profileRoot.style.order = '6';
+
   const alreadyPlaced = profileRoot.parentElement === governanceSection.parentElement
     && profileRoot.nextElementSibling === governanceSection;
   if (alreadyPlaced) return true;
