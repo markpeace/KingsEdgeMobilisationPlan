@@ -4,13 +4,18 @@ on:
   push:
     branches:
       - agent/refine-2-4-headlines
+  pull_request:
+    branches:
+      - main
+    types:
+      - opened
 
 permissions:
   contents: write
 
 jobs:
   patch:
-    if: github.event.head_commit.message == 'Add one-shot 2.4 headline patch'
+    if: (github.event_name == 'push' && github.event.head_commit.message == 'Add one-shot 2.4 headline patch') || (github.event_name == 'pull_request' && github.event.action == 'opened' && github.head_ref == 'agent/refine-2-4-headlines')
     runs-on: ubuntu-latest
     steps:
       - name: Check out branch
