@@ -23,7 +23,7 @@ The source-of-truth migration has been applied.
 1. `2.1` Curriculum Embedded Graduate Advantage
 2. `2.2` A Co-Curricular Scaffold for Purpose
 3. `2.3` An Extra-Curricular Invitation to Participate
-4. `2.4` Articulating and Evidencing The King's Graduate Premium
+4. `2.4` Defining, Evidencing and Activating the King’s Graduate Premium
 
 `src/plan-utils.js` should not contain hidden project renumbering, title substitution or display-order remapping. It should only do legitimate utility work: schema normalisation, timeline period mapping, lookup construction and dependency indexing.
 

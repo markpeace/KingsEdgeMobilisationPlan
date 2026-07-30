@@ -13,7 +13,7 @@ Applied.
 1. `2.1` Curriculum Embedded Graduate Advantage
 2. `2.2` A Co-Curricular Scaffold for Purpose
 3. `2.3` An Extra-Curricular Invitation to Participate
-4. `2.4` Articulating and Evidencing The King's Graduate Premium
+4. `2.4` Defining, Evidencing and Activating the King’s Graduate Premium
 
 `src/plan-utils.js` no longer performs project display-ID, display-title or display-order remapping. It now renders source IDs and source order.
 

@@ -724,19 +724,19 @@
     },
     {
       "id": "2.4",
-      "title": "Articulating and Evidencing The King's Graduate Premium",
-      "owner": "Andrew Wright",
-      "summary": "Equips programmes and students to surface, evidence and communicate the future-oriented value students build through their course of study and wider King's experience.",
+      "title": "Defining, Evidencing and Activating the King’s Graduate Premium",
+      "owner": "Rachel Kershaw",
+      "summary": "Builds a credible and externally validated account of the value of a King’s education, enables every student to recognise and communicate what they have gained, and ensures that value is understood and used across King’s and beyond.",
       "detailSummary": "This project defines and evidences the King's graduate premium as an integrated account of the advantages students build through their programme, wider experiences, relationships, choices and future ambitions. It brings together data, student stories, alumni insight and employer validation to help programmes make more explicit the broad, future-oriented gains already embedded in their provision, while also identifying strategic opportunities to strengthen those gains where this would make the greatest difference. It helps students connect what they study with what they do and where they want to go, and supports King's to project that value with confidence to applicants, families, partners, markets and wider audiences.",
       "transformationClaim": "King's and its students more assertively lay claim to the advantages a King's education confers, using data, evidence and external validation to make those advantages more explicit, strengthen them where it matters most, and help students recognise, communicate and carry them into their futures.",
       "deliverables": [
         {
           "id": "2.4.1",
-          "title": "Graduate Premium Evidence Packs",
+          "title": "Graduate Premium Evidence and Insight",
           "lead": "Daniel Robson",
           "planningStatus": "proposition-development",
           "decisionLog": [],
-          "summary": "Builds the evidence base for the graduate premium at institutional, departmental, discipline and market level.",
+          "summary": "Creates and maintains the institutional, disciplinary, course and market evidence needed to explain what the King’s graduate premium is, where it is strongest and where it should be strengthened.",
           "problemSolved": "The value of a King's education is too easy to assert in general terms and too hard to evidence in specific, audience-relevant ways.",
           "whatChanges": "King's develops evidence packs that combine outcomes, destinations, stories, employer insight and distinctive King's experiences.",
           "components": [
@@ -811,11 +811,11 @@
         },
         {
           "id": "2.4.2",
-          "title": "Employer, Industry and Alumni Validation System",
+          "title": "External Validation and Future Relevance",
           "lead": "Andrew Wright",
           "planningStatus": "proposition-development",
           "decisionLog": [],
-          "summary": "Creates a systematic approach to employer, industry and alumni validation of the graduate premium, skills priorities and opportunity agenda.",
+          "summary": "Uses employers, industry, alumni and other external voices to test King’s claims, refresh skills and capability priorities, and keep the graduate premium credible and future-facing.",
           "problemSolved": "Employer, industry and alumni insight exists, but is not yet consistently connected to a graduate premium validation model.",
           "whatChanges": "King's builds an external validation system that tests the premium, refreshes skills priorities and informs opportunity growth.",
           "components": [
@@ -888,11 +888,11 @@
         },
         {
           "id": "2.4.4",
-          "title": "Graduate Premium Engagement and Market Activation",
+          "title": "Graduate Premium Adoption and Activation",
           "lead": "Tania Rhodes-Taylor delegate",
           "planningStatus": "proposition-development",
           "decisionLog": [],
-          "summary": "Ensures the graduate premium is understood and valued internally by students and staff, and recognised externally by applicants, families, employers, alumni, partners and markets.",
+          "summary": "Ensures the graduate premium is understood and used by students and staff, and recognised by applicants, families, employers, alumni, partners and markets.",
           "problemSolved": "The graduate premium only matters if students engage with it and external audiences recognise it as credible and distinctive.",
           "whatChanges": "King's builds internal engagement and external recognition of the graduate premium through evidence-led materials, student engagement and market activation.",
           "components": [
