@@ -1,0 +1,44 @@
+name: Apply SCoP resource model
+
+on:
+  push:
+    branches:
+      - agent/rework-scop-resource-model
+
+permissions:
+  contents: write
+
+jobs:
+  apply:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: agent/rework-scop-resource-model
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Apply the revised resource model
+        run: node scripts/apply-scop-resource-model.mjs
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Validate data and resource profile
+        run: |
+          npm run validate:data
+          npm run test:resources
+
+      - name: Commit the canonical data changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git rm scripts/apply-scop-resource-model.mjs .github/workflows/apply-scop-resource-model.yml
+          git add src/data/deliverables/1.4.2/steps.json src/data/deliverables/1.4.2/overview.json tests/resource-profile-json-integration.test.mjs
+          git commit -m "Rework SCoP resource model"
+          git push origin HEAD:agent/rework-scop-resource-model
