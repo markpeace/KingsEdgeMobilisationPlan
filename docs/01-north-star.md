@@ -1,5 +1,29 @@
 # North Star
 
+## Programme North Star
+
+**Makes the King's graduate premium real, visible, navigable and evidenced for every student.**
+
+This is the programme's communicable destination. It is intentionally concise enough to guide senior discussion and to provide a common test for the work developed underneath it.
+
+## How the North Star relates to the theory of change
+
+King's Edge should distinguish between three related but different layers:
+
+**North Star -> Theory of Change -> Mobilisation Plan**
+
+- **North Star:** the destination we can communicate and rally around.
+- **Theory of Change:** the causal argument we need to be able to explain and test: why we believe the programme's interventions will produce the intended change.
+- **Mobilisation Plan:** the projects, deliverables, sequencing, dependencies, resources and measures through which we act on that theory.
+
+A useful shorthand is:
+
+> **The North Star is the thing we sell. The theory of change is the thing we test. The mobilisation plan is the thing we manage.**
+
+The theory of change is being developed as a programme-level causal model. It should not simply reproduce the four-project structure. The projects are useful programme-management containers, while the theory of change should explain the mechanisms and outcomes that connect work across them.
+
+See `docs/08-theory-of-change.md` for the current working hypothesis.
+
 ## What we are producing
 
 We are producing an interactive mobilisation site for the King's Edge programme.
