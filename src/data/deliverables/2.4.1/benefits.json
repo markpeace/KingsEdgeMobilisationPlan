@@ -1,0 +1,20 @@
+{
+  "benefits": [
+    {
+      "id": "2.4.1-B1",
+      "title": "External audiences better understand the distinctive value of a King’s education",
+      "statement": "Applicants, families, employers, partners and other priority audiences encounter a clearer, richer and more persuasive account of what King’s graduates know, can do and contribute.",
+      "beneficiary": "Applicants, families, employers, partners and other priority external audiences",
+      "benefitType": "external recognition and institutional proposition",
+      "successLooksLike": "Graduate premium evidence is routinely used across priority recruitment, market and external-engagement activity, with audiences receiving propositions that are specific, evidence-rich and tailored to what matters to them."
+    },
+    {
+      "id": "2.4.1-B2",
+      "title": "King’s can make better decisions about where its graduate premium is strongest and where it needs strengthening",
+      "statement": "King’s gains an aggregated view of the graduate value created across courses and through the wider student experience, allowing institutional and faculty leaders to identify distinctive strengths, recurring gaps and priorities for further enhancement.",
+      "beneficiary": "King’s, faculties and programme teams",
+      "benefitType": "institutional insight and enhancement",
+      "successLooksLike": "The combined evidence informs decisions about curriculum, graduate-futures activity, opportunity development and institutional investment, with insight feeding back into programmes and faculties."
+    }
+  ]
+}
