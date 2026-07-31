@@ -1,16 +1,15 @@
 name: Validate 2.4.1 proposition
 
 on:
-  pull_request:
+  push:
     branches:
-      - main
+      - agent/2-4-1-proposition-review
 
 permissions:
   contents: read
 
 jobs:
   validate:
-    if: github.head_ref == 'agent/2-4-1-proposition-review'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
