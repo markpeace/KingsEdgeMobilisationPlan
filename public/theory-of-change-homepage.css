@@ -577,6 +577,10 @@ details[open] > summary .toc-toggle::after {
   border-top: 2px solid var(--ink);
 }
 
+.toc-proof-grid .toc-card-number {
+  grid-row: auto;
+}
+
 .toc-proof-copy h4 {
   margin: 0;
   font-family: var(--font-brand);
