@@ -4,61 +4,76 @@
       {
         "eyebrow": "Why now",
         "title": "The graduate premium can no longer be taken for granted.",
-        "statement": "A degree is no longer a guaranteed route to economic security. Students, particularly international students making a substantial investment, need stronger evidence that their King's education will expand what they can know, do and contribute."
+        "statement": "A degree is no longer a guaranteed route to economic security. Students, particularly international students making a substantial investment, need an authentic experience that expands what they can know, do and contribute, together with credible evidence of that value."
       },
       {
         "eyebrow": "The King's ambition",
-        "title": "Lead with an integrated model of graduate value.",
-        "statement": "King's will connect disciplinary education, purposeful experience, student agency and credible evidence into a distinctive institutional model, rather than reducing employability to standalone services or internship volume."
+        "title": "Build a purpose-led model of graduate futures.",
+        "statement": "King's will connect disciplinary education, meaningful experience, student agency and credible evidence into one responsive institutional ecology, rather than reducing employability to standalone services, isolated opportunities or internship volume."
       }
     ]
+  },
+  "leadership": {
+    "eyebrow": "Where King's will lead",
+    "title": "A different organising model for graduate futures.",
+    "intro": "Most universities organise the wider student journey around the course and position careers, skills, experiences and recognition around its edges. King's will retain the course as the academic spine while reorganising the surrounding environment around each student's evolving sense of purpose.",
+    "items": [
+      {
+        "title": "Purpose-led journey",
+        "statement": "Organise the wider student experience around what each student is seeking to understand, become and contribute. Purpose remains evolving and student-owned, with uncertainty treated as a legitimate starting point."
+      },
+      {
+        "title": "Re-engineered graduate-futures ecology",
+        "statement": "Redesign how curriculum, experiential learning, wider opportunities, support, recognition and evidence work together around the student, rather than improving disconnected offers one by one."
+      },
+      {
+        "title": "Living bridge to a changing world",
+        "statement": "Connect disciplinary education and student development with changing skills, occupations and societal needs without reducing education to narrow vocational preparation."
+      },
+      {
+        "title": "Evidence that changes the system",
+        "statement": "Help students build credible accounts of what they can contribute while using responsibly aggregated evidence to improve courses, opportunities and institutional investment."
+      }
+    ],
+    "claim": "The individual components may exist elsewhere. King's intends to integrate them around student purpose, at an institutional depth and scale capable of redefining how a university creates and sustains graduate value."
+  },
+  "mechanismIntro": {
+    "eyebrow": "How change happens",
+    "title": "Four mechanisms turn the ambition into change.",
+    "summary": "Purpose provides the organising logic. These linked mechanisms strengthen the underlying experience, connect its value, support meaningful choices and make development credible and useful for continuous improvement."
   },
   "executiveOutcomes": {
     "eyebrow": "What changes in practice",
     "items": [
       {
         "audience": "For students",
-        "statement": "See relevant opportunities, make purposeful choices and leave with credible evidence of what they know, can do and contribute."
+        "statement": "A journey shaped around evolving purpose, with clearer choices and credible evidence of what they know, can do and contribute."
       },
       {
         "audience": "For faculties",
-        "statement": "Receive course-level insight, shared infrastructure and targeted support to strengthen and articulate distinctive provision."
+        "statement": "Shared intelligence and infrastructure that help strengthen and articulate distinctive disciplinary provision."
       },
       {
         "audience": "For King's",
-        "statement": "Identify where graduate value is strong or uneven, direct investment accordingly and make stronger institutional claims."
+        "statement": "A connected view of where graduate value is being created, where it is uneven and where the institution should act or invest."
       }
     ]
   },
   "proofPoints": {
     "eyebrow": "Early proof",
     "title": "What progress will look like",
-    "intro": "The theory becomes credible through visible changes in practice, capability and evidence.",
+    "intro": "The model becomes tangible through a small number of visible changes in practice, capability and evidence.",
     "items": [
-      "Course teams use graduate futures evidence to make credible claims and agree proportionate enhancements.",
-      "More students access high-quality experiential learning through curriculum and the wider King's experience.",
-      "Every student is invited into a continuing conversation about purpose, direction and development.",
-      "A shared skills language connects courses, opportunities and future possibilities.",
-      "A fuller record of learning connects academic achievement, recognised experience and student evidence.",
-      "Participation and outcomes evidence shows who is benefiting and directs support and investment."
+      "Purpose becomes a continuing conversation through the student journey, helping every student explore and revisit what matters to them.",
+      "Course teams use connected graduate-futures intelligence to make credible claims, identify strengths and agree proportionate enhancements.",
+      "A shared skills and opportunity architecture connects curriculum, experiences, student evidence and possible futures.",
+      "Students build a living account of learning and contribution that develops throughout their time at King's."
     ]
   },
   "deliveryPrinciple": {
     "eyebrow": "Delivery principle",
     "title": "Built progressively, reused institutionally",
-    "summary": "Shared capabilities will be sequenced around demonstrable value, developed once where possible and reused across courses and services.",
-    "detail": "The model does not depend on every element arriving at once. Early deliverables test the mechanisms while building reusable evidence, data, digital, opportunity and recognition capabilities. Benefits, ownership and recurrent operating costs must be explicit before wider scale."
-  },
-  "scopeTest": {
-    "eyebrow": "Decision test",
-    "title": "What belongs in King's Edge?",
-    "summary": "Work belongs when it materially strengthens one or more mechanisms and can show how that contribution will be tested.",
-    "criteria": [
-      "Strengthens the underlying student experience or its equitable reach.",
-      "Helps students understand and connect the value of their learning and experiences.",
-      "Enables purposeful choices, relevant navigation or meaningful participation.",
-      "Creates trusted recognition or evidence that improves the system."
-    ],
-    "exclusion": "Activity that cannot demonstrate a credible contribution to the mechanisms, outcomes or learning loop should remain outside the programme, be redesigned or stop."
+    "summary": "The ecology will be re-engineered through sequenced, reusable capabilities rather than a single launch or an immediate universal service promise.",
+    "detail": "Early deliverables test the mechanisms while building shared evidence, data, digital, opportunity and recognition capabilities. These should be developed once where possible, reused across courses and services, and scaled only when benefits, ownership and recurrent operating costs are explicit."
   }
 }
