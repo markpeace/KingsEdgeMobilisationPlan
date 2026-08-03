@@ -1,0 +1,458 @@
+.landing-main {
+  display: block;
+  min-height: auto;
+}
+
+.landing-hero {
+  margin-bottom: clamp(4rem, 8vw, 8rem);
+}
+
+.toc-home {
+  width: min(1480px, calc(100% - (2 * var(--page-gutter))));
+  margin: 0 auto;
+  padding: clamp(1rem, 2vw, 2rem) 0 clamp(4rem, 8vw, 8rem);
+  border-top: 3px solid var(--ink);
+}
+
+.toc-home-heading {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(260px, 0.42fr);
+  gap: clamp(2rem, 5vw, 6rem);
+  align-items: end;
+  padding: clamp(2rem, 5vw, 5rem) 0 clamp(2rem, 4vw, 4rem);
+}
+
+.toc-home-heading .eyebrow,
+.toc-equity .eyebrow,
+.toc-north-star .eyebrow {
+  color: var(--accent);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.toc-home-heading .eyebrow {
+  position: absolute;
+  top: clamp(1.25rem, 3vw, 2.5rem);
+  left: 0;
+  margin: 0;
+}
+
+.toc-home-heading h2 {
+  grid-column: 1;
+  max-width: 16ch;
+  margin: 1rem 0 0;
+  font-family: var(--font-brand);
+  font-size: clamp(2.9rem, 6.5vw, 6.8rem);
+  font-weight: 400;
+  line-height: 0.91;
+  letter-spacing: -0.055em;
+}
+
+.toc-status {
+  position: absolute;
+  top: clamp(1.15rem, 3vw, 2.4rem);
+  right: 0;
+  margin: 0;
+  padding: 0.34rem 0.55rem;
+  border: 1.5px solid var(--ink);
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.toc-intro {
+  grid-column: 2;
+  margin: 0 0 0.5rem;
+  font-size: clamp(1.05rem, 1.5vw, 1.35rem);
+  line-height: 1.45;
+}
+
+.toc-problem {
+  display: grid;
+  grid-template-columns: minmax(140px, 0.24fr) minmax(0, 1fr);
+  gap: clamp(1.5rem, 4vw, 4rem);
+  padding: clamp(1.5rem, 3.5vw, 3.5rem);
+  background: var(--ink);
+  color: white;
+}
+
+.toc-problem > span {
+  color: var(--accent);
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.toc-problem h3 {
+  max-width: 27ch;
+  margin: 0;
+  font-family: var(--font-brand);
+  font-size: clamp(2rem, 4vw, 4.5rem);
+  font-weight: 400;
+  line-height: 0.98;
+  letter-spacing: -0.045em;
+}
+
+.toc-problem p {
+  max-width: 78ch;
+  margin: 1.5rem 0 0;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 1rem;
+  line-height: 1.55;
+}
+
+.toc-flow {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.9rem;
+  align-items: start;
+  margin: clamp(2rem, 5vw, 5rem) 0;
+}
+
+.toc-mechanism {
+  min-width: 0;
+  border: 2px solid var(--ink);
+  background: white;
+}
+
+.toc-mechanism summary,
+.toc-hypothesis summary {
+  list-style: none;
+  cursor: pointer;
+}
+
+.toc-mechanism summary::-webkit-details-marker,
+.toc-hypothesis summary::-webkit-details-marker {
+  display: none;
+}
+
+.toc-mechanism summary {
+  display: flex;
+  flex-direction: column;
+  min-height: 320px;
+  padding: 1.15rem;
+  transition: background 150ms ease, color 150ms ease;
+}
+
+.toc-mechanism summary:hover {
+  background: var(--accent-soft);
+}
+
+.toc-mechanism[open] > summary {
+  background: var(--ink);
+  color: white;
+}
+
+.toc-step {
+  color: var(--accent);
+  font-family: var(--font-brand);
+  font-size: clamp(2.3rem, 3.5vw, 4rem);
+  line-height: 1;
+}
+
+.toc-quality {
+  width: fit-content;
+  margin-top: 1rem;
+  padding: 0.28rem 0.48rem;
+  background: var(--accent);
+  color: white;
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.toc-card-title {
+  display: block;
+  margin-top: 1.15rem;
+  font-family: var(--font-brand);
+  font-size: clamp(1.65rem, 2.3vw, 2.55rem);
+  font-weight: 400;
+  line-height: 0.98;
+  letter-spacing: -0.04em;
+}
+
+.toc-card-hook {
+  display: block;
+  margin-top: 0.85rem;
+  color: var(--muted);
+  font-size: 0.96rem;
+  line-height: 1.4;
+}
+
+.toc-mechanism[open] .toc-card-hook {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.toc-toggle {
+  display: block;
+  margin-top: auto;
+  padding-top: 1.2rem;
+  color: var(--accent);
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.toc-toggle::before {
+  content: "Explore +";
+}
+
+.toc-mechanism[open] > summary .toc-toggle::before,
+.toc-hypothesis[open] > summary .toc-toggle::before {
+  content: "Close ×";
+}
+
+.toc-mechanism-depth {
+  padding: 1.15rem;
+  border-top: 2px solid var(--ink);
+}
+
+.toc-mechanism-summary {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.toc-levers {
+  display: grid;
+  gap: 0.75rem;
+  margin-top: 1.35rem;
+}
+
+.toc-lever {
+  padding-top: 0.8rem;
+  border-top: 1px solid var(--border);
+}
+
+.toc-lever h4,
+.toc-outcomes h4 {
+  margin: 0;
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.toc-lever p {
+  margin: 0.35rem 0 0;
+  color: var(--muted);
+  font-size: 0.88rem;
+  line-height: 1.45;
+}
+
+.toc-causal-claim {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background: var(--accent-soft);
+}
+
+.toc-causal-claim span {
+  color: var(--accent-dark);
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.toc-causal-claim p {
+  margin: 0.5rem 0 0;
+  font-size: 0.9rem;
+  line-height: 1.48;
+}
+
+.toc-outcomes {
+  margin-top: 1.4rem;
+}
+
+.toc-outcomes ul {
+  margin: 0.65rem 0 0;
+  padding-left: 1.1rem;
+}
+
+.toc-outcomes li {
+  margin-top: 0.45rem;
+  color: var(--muted);
+  font-size: 0.88rem;
+  line-height: 1.4;
+}
+
+.toc-equity {
+  display: grid;
+  grid-template-columns: minmax(220px, 0.36fr) minmax(0, 1fr);
+  gap: clamp(2rem, 5vw, 5rem);
+  padding: clamp(1.5rem, 3.5vw, 3.5rem);
+  border: 3px solid var(--ink);
+  border-top: 12px solid var(--accent);
+}
+
+.toc-equity .eyebrow {
+  margin: 0;
+}
+
+.toc-equity h3 {
+  margin: 0.55rem 0 0;
+  font-family: var(--font-brand);
+  font-size: clamp(2.4rem, 4.5vw, 5rem);
+  font-weight: 400;
+  line-height: 0.95;
+  letter-spacing: -0.045em;
+}
+
+.toc-equity-summary {
+  margin: 0;
+  font-size: clamp(1.2rem, 2vw, 1.65rem);
+  font-weight: 700;
+  line-height: 1.32;
+}
+
+.toc-equity-summary + p {
+  max-width: 78ch;
+  margin: 1rem 0 0;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+.toc-north-star {
+  margin-top: clamp(2rem, 4vw, 4rem);
+  padding: clamp(1.5rem, 4vw, 4rem);
+  background: var(--accent);
+  color: white;
+}
+
+.toc-north-star .eyebrow {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.toc-north-star h3 {
+  max-width: 24ch;
+  margin: 1rem 0 0;
+  font-family: var(--font-brand);
+  font-size: clamp(2.7rem, 5.7vw, 6.2rem);
+  font-weight: 400;
+  line-height: 0.92;
+  letter-spacing: -0.05em;
+}
+
+.toc-hypothesis {
+  margin-top: 1rem;
+  border: 2px solid var(--ink);
+}
+
+.toc-hypothesis summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 1.2rem;
+  font-weight: 800;
+}
+
+.toc-hypothesis summary:hover {
+  background: var(--faint);
+}
+
+.toc-hypothesis .toc-toggle {
+  margin: 0;
+  padding: 0;
+  white-space: nowrap;
+}
+
+.toc-hypothesis-body {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  padding: 1.2rem;
+  border-top: 2px solid var(--ink);
+}
+
+.toc-hypothesis-body > div {
+  padding: 1rem;
+  background: var(--faint);
+}
+
+.toc-hypothesis-body strong {
+  color: var(--accent);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.toc-hypothesis-body p {
+  margin: 0.65rem 0 0;
+  line-height: 1.5;
+}
+
+.toc-feedback {
+  grid-column: 1 / -1;
+  margin: 0 !important;
+  padding: 1rem;
+  background: var(--ink);
+  color: white;
+}
+
+.toc-feedback strong {
+  color: var(--accent);
+}
+
+@media (max-width: 1100px) {
+  .toc-home-heading {
+    grid-template-columns: minmax(0, 1fr) minmax(220px, 0.5fr);
+  }
+
+  .toc-flow {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .toc-hypothesis-body {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 760px) {
+  .landing-hero {
+    margin-bottom: 4rem;
+  }
+
+  .toc-home-heading,
+  .toc-problem,
+  .toc-equity {
+    grid-template-columns: 1fr;
+  }
+
+  .toc-home-heading {
+    gap: 1.5rem;
+    padding-top: 4rem;
+  }
+
+  .toc-home-heading h2,
+  .toc-intro {
+    grid-column: 1;
+  }
+
+  .toc-status {
+    top: 1rem;
+  }
+
+  .toc-flow {
+    grid-template-columns: 1fr;
+  }
+
+  .toc-mechanism summary {
+    min-height: 280px;
+  }
+
+  .toc-north-star h3 {
+    font-size: clamp(2.5rem, 12vw, 4.5rem);
+  }
+
+  .toc-hypothesis summary {
+    align-items: flex-start;
+  }
+}
