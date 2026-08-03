@@ -1,19 +1,21 @@
 {
   "status": "Working theory of change",
-  "eyebrow": "How change happens",
-  "headline": "Strengthen what students experience. Help them see it, shape it and carry it forward.",
-  "intro": "King's Edge brings together improvement of the underlying student experience with the language, choices and evidence students need to realise its value.",
+  "eyebrow": "How King's Edge creates change",
+  "heroPrompt": "How King's Edge creates change",
+  "headline": "Make the King's graduate premium something every student can experience, navigate and carry forward.",
+  "intro": "King's Edge strengthens the experiences that create graduate value, connects curriculum and wider opportunity around student purpose, and gives students credible evidence of what they can contribute.",
   "problem": {
     "label": "The challenge",
-    "summary": "King's creates substantial graduate value, but it is too often implicit, fragmented and uneven across courses and student groups.",
-    "detail": "The nature and strength of the graduate experience can vary across courses and parts of the institution, while students' ability to access, navigate and capitalise on what is available can vary according to their background, circumstances and prior knowledge. King's cannot yet consistently see where its graduate premium is strongest, where it is uneven or where it needs strengthening."
+    "summary": "King's creates substantial graduate value. Our challenge is to make it consistently strong, connected, accessible and demonstrable across courses and student groups.",
+    "detail": "The nature and strength of the graduate experience can vary across courses and parts of the institution, while students' ability to access, navigate and capitalise on what is available can vary according to their background, circumstances and prior knowledge. Some of the work is therefore about identifying, connecting and extending strong existing practice. Some is about making substantive improvements where students have fewer opportunities to develop or where the experience is not yet producing the outcomes King's intends."
   },
   "mechanisms": [
     {
       "id": "01",
       "quality": "Real",
-      "title": "Create and strengthen value",
-      "hook": "Improve what students actually experience.",
+      "title": "Strengthen the experience",
+      "formalTitle": "Create and strengthen graduate value",
+      "hook": "Improve what students actually encounter.",
       "summary": "King's uses evidence, shared educational principles and student insight to strengthen the substance, quality and equitable reach of the curriculum and wider experiences through which graduate value is created.",
       "levers": [
         {
@@ -39,8 +41,9 @@
     {
       "id": "02",
       "quality": "Visible",
-      "title": "Make value legible and connected",
-      "hook": "Turn separate experiences into a coherent developmental journey.",
+      "title": "Connect the value",
+      "formalTitle": "Make graduate value legible and connected",
+      "hook": "Help students see how their learning and experiences fit together.",
       "summary": "King's makes the developmental value of its curriculum and wider student experience more explicit, coherent and understandable, enabling students and staff to recognise how knowledge, capabilities, experiences, relationships and possible futures connect.",
       "levers": [
         {
@@ -66,7 +69,8 @@
     {
       "id": "03",
       "quality": "Navigable",
-      "title": "Enable purposeful student agency",
+      "title": "Support purposeful choices",
+      "formalTitle": "Enable purposeful student agency",
       "hook": "Help students decide what matters and act on it.",
       "summary": "King's supports every student to explore and revisit what matters to them, make informed choices and shape a personally meaningful journey through their course and the wider King's experience.",
       "levers": [
@@ -93,8 +97,9 @@
     {
       "id": "04",
       "quality": "Evidenced",
-      "title": "Recognise, evidence and learn",
-      "hook": "Make development credible, portable and useful for improvement.",
+      "title": "Recognise and learn",
+      "formalTitle": "Recognise, evidence and learn from development",
+      "hook": "Make development credible and use the evidence to improve.",
       "summary": "King's enables students to capture, substantiate and communicate what they have developed, while responsibly aggregated evidence helps courses and the institution improve provision and assert the graduate premium with credibility.",
       "levers": [
         {
@@ -118,20 +123,54 @@
       ]
     }
   ],
+  "executiveOutcomes": {
+    "eyebrow": "What changes",
+    "items": [
+      {
+        "audience": "For students",
+        "statement": "A more purposeful journey and a credible account of what they can contribute."
+      },
+      {
+        "audience": "For faculties",
+        "statement": "Better evidence and shared infrastructure to strengthen distinctive educational provision."
+      },
+      {
+        "audience": "For King's",
+        "statement": "A clearer understanding of where the graduate premium is strong, uneven and in need of investment."
+      }
+    ]
+  },
+  "facultyEnablement": {
+    "eyebrow": "Operating principle",
+    "title": "Faculty-led, centrally enabled",
+    "summary": "The theory provides shared evidence, language and infrastructure while preserving disciplinary difference and faculty ownership.",
+    "detail": "King's Edge is designed to strengthen and connect existing practice, support local ownership of claims and enhancement, target additional help where opportunity or outcomes are weaker, and reduce the burden of rebuilding similar approaches locally. It does not prescribe a uniform student experience."
+  },
   "equity": {
     "eyebrow": "Across every mechanism",
     "title": "For every student",
     "summary": "Course, background, mode of study, confidence, prior networks or discretionary time should not determine who can access, understand and benefit from the King's graduate premium.",
     "detail": "This is a distributional test applied across the whole theory of change. King's must examine who encounters developmental opportunity, who can interpret and navigate it, whose development is recognised and whether different groups realise comparable value."
   },
+  "feedback": {
+    "eyebrow": "Learning loop",
+    "title": "Evidence improves the experience",
+    "summary": "Evidence from students, courses, graduate destinations and external audiences flows back into educational design, opportunity development, support and investment."
+  },
   "northStar": {
     "eyebrow": "North Star",
     "statement": "Makes the King's graduate premium real, visible, navigable and evidenced for every student."
+  },
+  "deliveryCta": {
+    "eyebrow": "From theory to delivery",
+    "title": "See how this becomes delivery",
+    "summary": "Explore the projects and deliverables through which King's Edge will test and mobilise this theory of change.",
+    "href": "#/projects",
+    "label": "Explore the projects"
   },
   "hypothesis": {
     "if": "King's strengthens the substance and equitable reach of the student experience, makes its developmental value explicit and connected, supports students to make purposeful choices, and enables development to be recognised and evidenced,",
     "then": "students will be better able to access meaningful opportunities, develop knowledge and capabilities, shape a coherent journey and articulate what they can contribute,",
     "while": "King's becomes better able to understand where its graduate premium is strong or uneven, improve the experience and assert its value with credibility."
-  },
-  "feedback": "Evidence from students, courses, graduate destinations and external audiences flows back into educational design, opportunity development, support and investment."
+  }
 }
