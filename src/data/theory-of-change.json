@@ -1,0 +1,137 @@
+{
+  "status": "Working theory of change",
+  "eyebrow": "How change happens",
+  "headline": "Strengthen what students experience. Help them see it, shape it and carry it forward.",
+  "intro": "King's Edge brings together improvement of the underlying student experience with the language, choices and evidence students need to realise its value.",
+  "problem": {
+    "label": "The challenge",
+    "summary": "King's creates substantial graduate value, but it is too often implicit, fragmented and uneven across courses and student groups.",
+    "detail": "The nature and strength of the graduate experience can vary across courses and parts of the institution, while students' ability to access, navigate and capitalise on what is available can vary according to their background, circumstances and prior knowledge. King's cannot yet consistently see where its graduate premium is strongest, where it is uneven or where it needs strengthening."
+  },
+  "mechanisms": [
+    {
+      "id": "01",
+      "quality": "Real",
+      "title": "Create and strengthen value",
+      "hook": "Improve what students actually experience.",
+      "summary": "King's uses evidence, shared educational principles and student insight to strengthen the substance, quality and equitable reach of the curriculum and wider experiences through which graduate value is created.",
+      "levers": [
+        {
+          "title": "Evidence-led enhancement",
+          "description": "Course teams and institutional leaders use evidence to identify strengths, gaps and uneven outcomes, then act through normal enhancement and investment processes."
+        },
+        {
+          "title": "Purposeful educational design",
+          "description": "Curriculum and wider experiences create meaningful opportunities to apply knowledge, exercise judgement, build relationships and respond to authentic challenges."
+        },
+        {
+          "title": "Equitable reach",
+          "description": "Strong developmental opportunity becomes less dependent on course, background, networks, confidence or discretionary time."
+        }
+      ],
+      "causalClaim": "High-quality, purposeful and appropriately supported experiences are more likely to produce durable intellectual, personal, social and professional development. Evidence allows King's to strengthen what works and intervene where value is weaker or less equitably realised.",
+      "outcomes": [
+        "More students encounter meaningful developmental experiences.",
+        "Courses and opportunities become more intentional about the development they enable.",
+        "Differences in graduate value between courses and student groups reduce over time."
+      ]
+    },
+    {
+      "id": "02",
+      "quality": "Visible",
+      "title": "Make value legible and connected",
+      "hook": "Turn separate experiences into a coherent developmental journey.",
+      "summary": "King's makes the developmental value of its curriculum and wider student experience more explicit, coherent and understandable, enabling students and staff to recognise how knowledge, capabilities, experiences, relationships and possible futures connect.",
+      "levers": [
+        {
+          "title": "Explicit developmental possibilities",
+          "description": "Courses and opportunities describe what students may encounter, practise and develop without assuming that participation alone proves capability."
+        },
+        {
+          "title": "A shared connecting architecture",
+          "description": "Skills, curriculum, wider experiences, purpose and graduate futures are connected through sufficiently rich common language and information structures."
+        },
+        {
+          "title": "Student sense-making",
+          "description": "Students receive prompts, reflection and dialogue that help them interpret their development while retaining ownership of the meaning and claims they make."
+        }
+      ],
+      "causalClaim": "When developmental possibilities are explicit and connected, students are more likely to notice what they are developing, transfer learning across contexts and understand how separate experiences contribute to a broader trajectory.",
+      "outcomes": [
+        "Students have a richer language for understanding their development.",
+        "Students can connect disciplinary learning, skills, wider experiences and future possibilities.",
+        "The burden of translating fragmented institutional systems reduces."
+      ]
+    },
+    {
+      "id": "03",
+      "quality": "Navigable",
+      "title": "Enable purposeful student agency",
+      "hook": "Help students decide what matters and act on it.",
+      "summary": "King's supports every student to explore and revisit what matters to them, make informed choices and shape a personally meaningful journey through their course and the wider King's experience.",
+      "levers": [
+        {
+          "title": "Purpose as a continuing conversation",
+          "description": "Students are invited to consider their ambitions, needs, contribution and direction throughout their time at King's, with uncertainty treated as a legitimate starting point."
+        },
+        {
+          "title": "Relevant choices and timely support",
+          "description": "Connected information, digital tools and human relationships help students identify realistic next steps and support at the moments when these are useful."
+        },
+        {
+          "title": "Reduced navigation advantage",
+          "description": "Simpler routes, accessible design and more integrated provision reduce the advantage held by students who already understand how to find and combine opportunities."
+        }
+      ],
+      "causalClaim": "When students can relate available choices to an evolving sense of purpose, and have the confidence and support to act, they are more likely to participate intentionally, sustain engagement and build a coherent developmental journey.",
+      "outcomes": [
+        "Students make more intentional choices about their learning and development.",
+        "Participation is better connected to students' purposes, needs and possible futures.",
+        "King's uses insight into student demand to shape provision more responsively."
+      ]
+    },
+    {
+      "id": "04",
+      "quality": "Evidenced",
+      "title": "Recognise, evidence and learn",
+      "hook": "Make development credible, portable and useful for improvement.",
+      "summary": "King's enables students to capture, substantiate and communicate what they have developed, while responsibly aggregated evidence helps courses and the institution improve provision and assert the graduate premium with credibility.",
+      "levers": [
+        {
+          "title": "Trusted recognition",
+          "description": "Academic achievement, skills, recognised experiences, credentials and student evidence are connected while maintaining clear distinctions between what is certified, evidenced and claimed."
+        },
+        {
+          "title": "Credible articulation",
+          "description": "Students can select and translate relevant evidence into accounts of what they know, can do and contribute for different audiences and purposes."
+        },
+        {
+          "title": "Institutional learning",
+          "description": "Responsibly aggregated evidence, graduate destinations and external validation show where value is strong, uneven or insufficiently evidenced and feed back into improvement."
+        }
+      ],
+      "causalClaim": "When students can substantiate and communicate their development, they are better able to carry the value of their education into future settings. When King's can aggregate evidence responsibly, it can improve the underlying experience and make stronger external claims.",
+      "outcomes": [
+        "Students leave with credible evidence of their learning and development.",
+        "Courses and King's understand more clearly what their education enables.",
+        "Evidence continuously informs enhancement, investment and external articulation."
+      ]
+    }
+  ],
+  "equity": {
+    "eyebrow": "Across every mechanism",
+    "title": "For every student",
+    "summary": "Course, background, mode of study, confidence, prior networks or discretionary time should not determine who can access, understand and benefit from the King's graduate premium.",
+    "detail": "This is a distributional test applied across the whole theory of change. King's must examine who encounters developmental opportunity, who can interpret and navigate it, whose development is recognised and whether different groups realise comparable value."
+  },
+  "northStar": {
+    "eyebrow": "North Star",
+    "statement": "Makes the King's graduate premium real, visible, navigable and evidenced for every student."
+  },
+  "hypothesis": {
+    "if": "King's strengthens the substance and equitable reach of the student experience, makes its developmental value explicit and connected, supports students to make purposeful choices, and enables development to be recognised and evidenced,",
+    "then": "students will be better able to access meaningful opportunities, develop knowledge and capabilities, shape a coherent journey and articulate what they can contribute,",
+    "while": "King's becomes better able to understand where its graduate premium is strong or uneven, improve the experience and assert its value with credibility."
+  },
+  "feedback": "Evidence from students, courses, graduate destinations and external audiences flows back into educational design, opportunity development, support and investment."
+}
