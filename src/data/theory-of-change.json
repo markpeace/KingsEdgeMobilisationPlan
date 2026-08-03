@@ -2,12 +2,58 @@
   "status": "Working theory of change",
   "eyebrow": "How King's Edge creates change",
   "heroPrompt": "How King's Edge creates change",
-  "headline": "Put purpose at the centre. Re-engineer the environment around graduate futures.",
-  "intro": "King's Edge will invert the conventional logic of the wider student journey. The course remains the academic spine, while each student's evolving sense of purpose connects disciplinary education, wider experiences, relationships and possible futures.",
+  "headline": {
+    "primary": "Put purpose at the centre.",
+    "secondary": "Re-engineer the environment around graduate futures."
+  },
+  "intro": "King's Edge will invert the conventional logic of the wider student journey. The course remains the academic spine. Around it, each student's evolving sense of purpose connects disciplinary learning, wider experiences, relationships and possible futures.",
+  "strategicPremise": {
+    "items": [
+      {
+        "eyebrow": "Why now",
+        "title": "The graduate premium can no longer be taken for granted.",
+        "statement": "A degree is no longer a guaranteed route to economic security. Students, particularly international students making a substantial investment, need an authentic experience that expands what they can know, do and contribute, together with credible evidence of that value."
+      },
+      {
+        "eyebrow": "The King's ambition",
+        "title": "Build a purpose-led graduate-futures ecology.",
+        "statement": "King's will connect disciplinary education, meaningful experience, student agency, recognition and evidence into one responsive institutional environment, rather than relying on isolated services, disconnected opportunities or internship volume."
+      }
+    ]
+  },
   "problem": {
     "label": "The challenge",
-    "summary": "King's creates substantial graduate value. Our challenge is to make it consistently strong, connected, accessible and demonstrable across courses and student groups.",
-    "detail": "The nature and strength of the graduate experience can vary across courses and parts of the institution, while students' ability to access, navigate and capitalise on what is available can vary according to their background, circumstances and prior knowledge. Some of the work is therefore about identifying, connecting and extending strong existing practice. Some is about making substantive improvements where students have fewer opportunities to develop or where the experience is not yet producing the outcomes King's intends."
+    "summary": "King's creates substantial graduate value, but students do not yet encounter it as one coherent, equitable journey.",
+    "detail": "Strong practice exists across King's, but its strength and visibility vary by course and student group. Opportunities, support and evidence are spread across systems and services, leaving students with unequal burdens of navigation and sense-making. King's Edge will connect and extend what works, while building capacity and making substantive improvements where the experience is weaker."
+  },
+  "leadership": {
+    "eyebrow": "Where King's will lead",
+    "title": "A different organising model for graduate futures.",
+    "intro": "Most universities organise the wider student journey around the course and position careers, skills, experiences and recognition around its edges. King's will retain the course as the academic spine while redesigning the surrounding environment around each student's evolving purpose.",
+    "items": [
+      {
+        "title": "Purpose-led journey",
+        "statement": "The wider experience is organised around what students are seeking to understand, become and contribute. Purpose remains evolving, plural and student-owned."
+      },
+      {
+        "title": "Re-engineered ecology",
+        "statement": "Curriculum, experiences, opportunities, support, recognition and evidence are designed as a connected environment around the student."
+      },
+      {
+        "title": "Living bridge to a changing world",
+        "statement": "Disciplinary learning is connected with changing occupations, social challenges and forms of contribution, without narrowing education to job preparation."
+      },
+      {
+        "title": "Evidence that changes the system",
+        "statement": "Students build credible accounts of development while responsibly aggregated evidence guides course enhancement, opportunity design and investment."
+      }
+    ],
+    "claim": "King's will offer sector leadership through the depth of integration: purpose as the organising logic, the whole ecology as the unit of design, and evidence as the engine of continuous improvement."
+  },
+  "mechanismIntro": {
+    "eyebrow": "How change happens",
+    "title": "Four mechanisms make the model work.",
+    "summary": "Purpose provides the organising logic. The mechanisms strengthen what students encounter, connect its value, support meaningful choices and turn evidence into recognition and continuous improvement."
   },
   "mechanisms": [
     {
@@ -125,52 +171,88 @@
   ],
   "executiveOutcomes": {
     "eyebrow": "What changes",
+    "title": "The model creates value at three levels.",
+    "intro": "A purpose-led ecology should make the student journey more coherent, strengthen distinctive academic provision and give King's a clearer basis for action and credible external claims.",
     "items": [
       {
         "audience": "For students",
-        "statement": "A more purposeful journey and a credible account of what they can contribute."
+        "statement": "A coherent journey shaped around evolving purpose, with fairer access to meaningful experiences and credible evidence of what they can contribute."
       },
       {
         "audience": "For faculties",
-        "statement": "Better evidence and shared infrastructure to strengthen distinctive educational provision."
+        "statement": "Better insight and shared infrastructure to strengthen, connect and articulate distinctive disciplinary provision."
       },
       {
         "audience": "For King's",
-        "statement": "A clearer understanding of where the graduate premium is strong, uneven and in need of investment."
+        "statement": "A clear view of where graduate value is strong, uneven or in need of action, with evidence to support investment and external claims."
       }
     ]
+  },
+  "proofPoints": {
+    "eyebrow": "Early proof",
+    "title": "What progress will look like",
+    "intro": "The model becomes tangible through a small number of visible changes in practice, capability and evidence.",
+    "items": [
+      {
+        "title": "Purpose through the journey",
+        "statement": "Every student is invited to explore and revisit what matters to them, with uncertainty treated as a legitimate starting point."
+      },
+      {
+        "title": "Course-level intelligence",
+        "statement": "Course teams use connected graduate-futures evidence to make credible claims, identify strengths and agree proportionate enhancements."
+      },
+      {
+        "title": "Connected architecture",
+        "statement": "A shared skills and opportunity architecture links curriculum, experiences, student evidence and possible futures."
+      },
+      {
+        "title": "Living evidence",
+        "statement": "Students build a credible account of learning and contribution that develops throughout their time at King's."
+      }
+    ]
+  },
+  "operatingPrinciplesIntro": {
+    "eyebrow": "How King's will work",
+    "title": "Faculty-owned, institutionally connected.",
+    "summary": "The direction is ambitious, but delivery must preserve disciplinary ownership, build common capabilities once and scale only when value and responsibility are clear."
   },
   "facultyEnablement": {
     "eyebrow": "Operating principle",
     "title": "Faculty-led, centrally enabled",
-    "summary": "The theory provides shared evidence, language and infrastructure while preserving disciplinary difference and faculty ownership.",
-    "detail": "King's Edge is designed to strengthen and connect existing practice, support local ownership of claims and enhancement, target additional help where opportunity or outcomes are weaker, and reduce the burden of rebuilding similar approaches locally. It does not prescribe a uniform student experience."
+    "summary": "Faculties own disciplinary interpretation and enhancement. King's provides shared evidence, language, platforms and connective capacity that are stronger when built once.",
+    "detail": "King's Edge strengthens and connects existing practice rather than rebadging it. It supports local ownership of claims and enhancement, targets additional help where capacity or outcomes are weaker, and reduces the need for faculties to recreate common infrastructure."
+  },
+  "deliveryPrinciple": {
+    "eyebrow": "Delivery principle",
+    "title": "Built progressively, reused institutionally",
+    "summary": "The ecology will be re-engineered through sequenced, reusable capabilities rather than a single launch or an immediate universal service promise.",
+    "detail": "Early deliverables test the mechanisms while building shared evidence, data, digital, opportunity and recognition capabilities. These should be developed once where possible, reused across courses and services, and scaled only when benefits, ownership and recurrent operating costs are explicit."
   },
   "equity": {
     "eyebrow": "Across every mechanism",
     "title": "For every student",
-    "summary": "Course, background, mode of study, confidence, prior networks or discretionary time should not determine who can access, understand and benefit from the King's graduate premium.",
-    "detail": "This is a distributional test applied across the whole theory of change. King's must examine who encounters developmental opportunity, who can interpret and navigate it, whose development is recognised and whether different groups realise comparable value."
+    "summary": "The model succeeds only if the ability to benefit becomes less dependent on course, background, mode of study, confidence, prior networks or discretionary time.",
+    "detail": "King's must examine who encounters developmental opportunity, who can interpret and navigate it, whose development is recognised and whether different groups realise comparable value."
   },
   "feedback": {
     "eyebrow": "Learning loop",
-    "title": "Evidence improves the experience",
+    "title": "Evidence closes the loop",
     "summary": "Evidence from students, courses, graduate destinations and external audiences flows back into educational design, opportunity development, support and investment."
   },
   "northStar": {
     "eyebrow": "North Star",
-    "statement": "Makes the King's graduate premium real, visible, navigable and evidenced for every student."
+    "statement": "King's Edge makes the King's graduate premium real, visible, navigable and evidenced for every student."
   },
   "deliveryCta": {
     "eyebrow": "From theory to delivery",
-    "title": "See how this becomes delivery",
-    "summary": "Explore the projects and deliverables through which King's Edge will test and mobilise this theory of change.",
+    "title": "See the model become delivery",
+    "summary": "Explore the projects and deliverables through which King's Edge will test, build and mobilise this purpose-led graduate-futures ecology.",
     "href": "#/projects",
     "label": "Explore the projects"
   },
   "hypothesis": {
-    "if": "King's strengthens the substance and equitable reach of the student experience, makes its developmental value explicit and connected, supports students to make purposeful choices, and enables development to be recognised and evidenced,",
-    "then": "students will be better able to access meaningful opportunities, develop knowledge and capabilities, shape a coherent journey and articulate what they can contribute,",
-    "while": "King's becomes better able to understand where its graduate premium is strong or uneven, improve the experience and assert its value with credibility."
+    "if": "King's organises the wider student journey around evolving purpose, strengthens the substance and equitable reach of the experience, connects its developmental value and enables learning to be recognised and evidenced,",
+    "then": "students will be better able to access meaningful opportunities, make purposeful choices, build a coherent journey and articulate what they can contribute,",
+    "while": "King's becomes better able to understand where graduate value is strong or uneven, improve the ecology and assert the graduate premium with credibility."
   }
 }
