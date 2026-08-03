@@ -34,6 +34,46 @@ function strategicPremiseBlock() {
   return section;
 }
 
+function leadershipBlock() {
+  const section = element('section', 'toc-leadership');
+  section.id = 'toc-leadership';
+
+  const heading = element('div', 'toc-leadership-heading');
+  append(
+    heading,
+    element('p', 'eyebrow', refinement.leadership.eyebrow),
+    element('h3', '', refinement.leadership.title),
+    element('p', '', refinement.leadership.intro)
+  );
+
+  const grid = element('div', 'toc-leadership-grid');
+  refinement.leadership.items.forEach((item, index) => {
+    const card = element('article');
+    append(
+      card,
+      element('span', 'toc-leadership-number', String(index + 1).padStart(2, '0')),
+      element('h4', '', item.title),
+      element('p', '', item.statement)
+    );
+    grid.appendChild(card);
+  });
+
+  const claim = element('p', 'toc-leadership-claim', refinement.leadership.claim);
+  return append(section, heading, grid, claim);
+}
+
+function mechanismIntroBlock() {
+  const section = element('section', 'toc-mechanism-intro');
+  section.id = 'toc-mechanism-intro';
+  append(
+    section,
+    element('p', 'eyebrow', refinement.mechanismIntro.eyebrow),
+    element('h3', '', refinement.mechanismIntro.title),
+    element('p', '', refinement.mechanismIntro.summary)
+  );
+  return section;
+}
+
 function proofPointsBlock() {
   const section = element('section', 'toc-proof-points');
   section.id = 'toc-proof-points';
@@ -82,36 +122,6 @@ function deliveryPrincipleBlock() {
   return details;
 }
 
-function scopeTestBlock() {
-  const section = element('section', 'toc-scope-test');
-  section.id = 'toc-scope-test';
-
-  const heading = element('div', 'toc-section-heading');
-  append(
-    heading,
-    element('p', 'eyebrow', refinement.scopeTest.eyebrow),
-    element('h3', '', refinement.scopeTest.title),
-    element('p', '', refinement.scopeTest.summary)
-  );
-
-  const criteria = element('div', 'toc-scope-criteria');
-  refinement.scopeTest.criteria.forEach((criterion, index) => {
-    const card = element('article');
-    append(
-      card,
-      element('span', '', String(index + 1).padStart(2, '0')),
-      element('p', '', criterion)
-    );
-    criteria.appendChild(card);
-  });
-
-  const exclusion = element('p', 'toc-scope-exclusion');
-  exclusion.appendChild(element('strong', '', 'If it cannot show a contribution: '));
-  exclusion.appendChild(document.createTextNode(refinement.scopeTest.exclusion));
-
-  return append(section, heading, criteria, exclusion);
-}
-
 function updateExecutiveOutcomes(theorySection) {
   const section = theorySection.querySelector('.toc-executive-outcomes');
   if (!section) return;
@@ -133,6 +143,18 @@ function addStrategicPremise(theorySection) {
   if (problem) problem.insertAdjacentElement('beforebegin', strategicPremiseBlock());
 }
 
+function addLeadership(theorySection) {
+  if (document.getElementById('toc-leadership')) return;
+  const premise = document.getElementById('toc-strategic-premise');
+  if (premise) premise.insertAdjacentElement('afterend', leadershipBlock());
+}
+
+function addMechanismIntro(theorySection) {
+  if (document.getElementById('toc-mechanism-intro')) return;
+  const flow = theorySection.querySelector('.toc-flow');
+  if (flow) flow.insertAdjacentElement('beforebegin', mechanismIntroBlock());
+}
+
 function addProofPoints(theorySection) {
   if (document.getElementById('toc-proof-points')) return;
   const outcomes = theorySection.querySelector('.toc-executive-outcomes');
@@ -152,21 +174,21 @@ function addOperatingPrinciples(theorySection) {
   wrapper.appendChild(deliveryPrincipleBlock());
 }
 
-function addScopeTest(theorySection) {
-  if (document.getElementById('toc-scope-test')) return;
-  const principles = document.getElementById('toc-operating-principles');
-  if (principles) principles.insertAdjacentElement('afterend', scopeTestBlock());
+function removeBenchedContent() {
+  document.getElementById('toc-scope-test')?.remove();
 }
 
 function renderExecutiveRefinement() {
   const theorySection = document.getElementById('theory-of-change-home');
   if (!theorySection) return;
 
+  removeBenchedContent();
   updateExecutiveOutcomes(theorySection);
   addStrategicPremise(theorySection);
+  addLeadership(theorySection);
+  addMechanismIntro(theorySection);
   addProofPoints(theorySection);
   addOperatingPrinciples(theorySection);
-  addScopeTest(theorySection);
 }
 
 let refreshScheduled = false;
