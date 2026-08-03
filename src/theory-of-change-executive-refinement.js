@@ -12,6 +12,10 @@ function append(parent, ...children) {
   return parent;
 }
 
+function setText(node, value) {
+  if (node && node.textContent !== value) node.textContent = value;
+}
+
 function strategicPremiseBlock() {
   const section = element('section', 'toc-strategic-premise');
   section.id = 'toc-strategic-premise';
@@ -112,17 +116,14 @@ function updateExecutiveOutcomes(theorySection) {
   const section = theorySection.querySelector('.toc-executive-outcomes');
   if (!section) return;
 
-  const eyebrow = section.querySelector(':scope > .eyebrow');
-  if (eyebrow) eyebrow.textContent = refinement.executiveOutcomes.eyebrow;
+  setText(section.querySelector(':scope > .eyebrow'), refinement.executiveOutcomes.eyebrow);
 
   const cards = section.querySelectorAll('.toc-executive-outcomes-grid article');
   refinement.executiveOutcomes.items.forEach((item, index) => {
     const card = cards[index];
     if (!card) return;
-    const heading = card.querySelector('h3');
-    const statement = card.querySelector('p');
-    if (heading) heading.textContent = item.audience;
-    if (statement) statement.textContent = item.statement;
+    setText(card.querySelector('h3'), item.audience);
+    setText(card.querySelector('p'), item.statement);
   });
 }
 
