@@ -7,7 +7,7 @@
         "start": "jul-dec-2026:c",
         "end": "jan-jun-2027:a"
       },
-      "summary": "Define how the King’s Edge build will create reusable foundations for the wider Student Experience Hub, including the common application shell, identity and permissions, navigation, design system, student-profile foundations, data and integration patterns, analytics, accessibility, privacy, security and the route from the Edge-led product into a broader student app. Begin this work from November 2026 once the multidisciplinary digital product team is in place.",
+      "summary": "Define how the King’s Edge build will create reusable foundations for the wider Student Experience Hub, including the common application shell, identity and permissions, navigation, design system, student-profile foundations, data and integration patterns, analytics, accessibility, privacy, security and the route from the Edge-led product into a broader student app. Begin this work as the core multidisciplinary team becomes available during November 2026 and complete the architectural and transition blueprint by the end of February 2027.",
       "dependsOn": [
         "4.1.3-step-1"
       ]
@@ -22,7 +22,7 @@
       "summary": "Create the shared Azure application shell and core technical patterns through the replatforming of King’s Edge. Establish reusable identity, navigation, interface, telemetry, integration and service-management capabilities, and work with 1.2 Data Foundations and Student Systems so the shopfront is built on appropriate authoritative data rather than creating a new isolated data layer.",
       "dependsOn": [
         "4.1.2-step-1",
-        "4.1.3-step-1",
+        "4.1.3-step-2",
         "4.1.4-step-1",
         "1.2"
       ]
@@ -47,7 +47,7 @@
       "summary": "Consolidate the Edge-focused Hub kernel, confirm which capabilities are ready for wider reuse, select the first priority student journeys beyond King’s Edge, and agree the migration, integration and product sequence for the next phase. The roadmap should explicitly align with 1.2 Data Foundations and Student Systems and the readiness of 4.1.1 Student Relationship and CRM Foundation.",
       "dependsOn": [
         "4.1.2-step-3",
-        "4.1.4-step-4"
+        "4.1.4-step-5"
       ]
     },
     {
