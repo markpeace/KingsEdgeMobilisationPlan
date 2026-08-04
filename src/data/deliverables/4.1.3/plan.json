@@ -1,0 +1,105 @@
+{
+  "summary": "Creates the multidisciplinary capability to rapidly design, test and mature digital enhancements within the shared Student Experience Hub.",
+  "detailSummary": "The Digital Innovation and Product Development Capability will establish a sustained route through which emerging student needs can become working digital enhancements. A multidisciplinary team will combine product management, service design, user research, software development, data, integration and change expertise around the continued evolution of the Student Experience Hub.\n\nThe team will work iteratively: understanding a need, prototyping a response, testing it with students and services, and developing successful approaches into reliable capabilities. Work will take place within the Hub’s shared architecture and standards so that innovation strengthens the common environment rather than generating additional standalone products.\n\nThe deliverable will also establish a deliberate route from experimentation into sustained operation. Capabilities that prove valuable will be hardened, documented and transferred into appropriate enduring ownership, while unsuccessful approaches can be concluded before they generate unnecessary long-term commitments.",
+  "caseForChange": {
+    "problem": "King’s does not currently have a sufficiently dependable route for turning emerging student-experience needs into well-designed digital capabilities.\n\nRequirements are often addressed through conventional system change, local initiatives, temporary projects or standalone products. These routes can be slow, difficult to prioritise and disconnected from one another. Similar functions may be developed more than once, while promising prototypes can struggle to move into secure and supported institutional operation.\n\nThis limits King’s ability to respond rapidly to changing student expectations and new strategic propositions. It also means innovation can expand the digital estate without strengthening a coherent shared environment.",
+    "opportunity": "A dedicated multidisciplinary product-development capability can give King’s a faster and more disciplined route from need to sustainable digital enhancement.\n\nWorking directly within the Student Experience Hub, the team can combine discovery, service design, prototyping, technical development and evaluation. It can test assumptions early, involve students continuously and reuse shared capabilities, data and integrations.\n\nA clear maturation and handover model would allow experimentation without creating unsupported permanent products. Successful enhancements can become part of the institutional service, while evidence from unsuccessful or partial trials can still inform future decisions.",
+    "whyNow": "King’s is at an inflection point in both its digital architecture and its demand for innovation.\n\nThe Student Experience Hub and CRM investments will establish foundations that could support a more agile development model, but only if product practices, standards and delivery capacity are created alongside them. King’s Edge is also generating an immediate pipeline of substantial feature requirements that cannot wait for the completion of a multi-year end-state platform.\n\nWithout a shared development capability, this demand is likely to be channelled into separate procurements, local builds or temporary products. Establishing the capability now allows early requirements to test and strengthen the Hub’s architecture while producing visible student value.",
+    "intendedChange": "King’s has a sustained multidisciplinary capability for continuously developing its digital student experience.\n\nEmerging needs enter a transparent product pipeline, are explored with students and service owners, and are tested through proportionate prototypes before substantial commitment. Successful enhancements are developed within the shared Hub environment and transferred into secure, supported ownership.\n\nDigital innovation becomes faster without becoming fragmented: each development either extends reusable institutional capability or generates evidence that improves future decisions."
+  },
+  "benefits": [
+    {
+      "id": "4.1.3-B1",
+      "title": "King’s responds more quickly to emerging student needs",
+      "statement": "Priority needs can be translated into tested digital responses in shorter cycles, with student feedback shaping development before large commitments are made.",
+      "beneficiary": "Students and student-facing services",
+      "benefitType": "responsiveness and innovation",
+      "owner": "TBC – Digital Innovation Development Team product lead",
+      "realisationPeriod": "From establishment of the first delivery pipeline",
+      "successLooksLike": "Priority needs move predictably from discovery to tested capability, and users can influence solutions while they are still adaptable."
+    },
+    {
+      "id": "4.1.3-B2",
+      "title": "Digital investment creates more reusable institutional value",
+      "statement": "New enhancements are built using common architecture and capabilities, reducing repeated development and allowing value created for one journey to benefit others.",
+      "beneficiary": "King’s, product teams, services and students",
+      "benefitType": "efficiency and institutional capability",
+      "owner": "TBC – Digital product and architecture owner",
+      "realisationPeriod": "Increasing as the shared capability library develops",
+      "successLooksLike": "New work reuses existing components and integrations, and capabilities developed for one proposition are demonstrably adopted elsewhere."
+    },
+    {
+      "id": "4.1.3-B3",
+      "title": "Successful innovation becomes sustainable institutional provision",
+      "statement": "Valuable prototypes have a defined route into secure, supported and appropriately owned operation rather than remaining temporary or becoming unmanaged legacy products.",
+      "beneficiary": "Students, service owners and King’s",
+      "benefitType": "sustainability and risk reduction",
+      "owner": "TBC – Student Experience Hub product owner",
+      "realisationPeriod": "From the first capability-maturation and transfer cycle",
+      "successLooksLike": "Successful enhancements have explicit support, security, maintenance and ownership arrangements, while unsuccessful trials can be closed cleanly."
+    }
+  ],
+  "steps": [
+    {
+      "id": "4.1.3-step-1",
+      "title": "Stand up the multidisciplinary digital product team",
+      "period": "jul-dec-2026:a",
+      "summary": "Establish the team structure, leadership, decision rights and working model needed to move from student and business need through discovery, service design, user research, ideation, prototyping, development, testing, enterprise hardening and supported operation. Define how King’s Edge product owners, students, IT architecture, security, data, integration, accessibility, change and service-management expertise will work together around one prioritised product pipeline.",
+      "dependsOn": []
+    },
+    {
+      "id": "4.1.3-step-2",
+      "title": "Put the Azure delivery foundations into operation",
+      "period": "jul-dec-2026:bc",
+      "summary": "Establish the Azure environments, hosting model, development and deployment pipelines, source-control and release practices, testing and assurance gates, monitoring, logging, recovery, documentation, design and accessibility standards, API and integration conventions, privacy and security controls, and proportionate AI-assurance approach needed to develop student-facing capabilities quickly without creating unsupported or non-compliant prototypes.",
+      "dependsOn": [
+        "4.1.3-step-1"
+      ]
+    },
+    {
+      "id": "4.1.3-step-3",
+      "title": "Prove the route from prototype to supported service",
+      "period": "jan-jun-2027:ab",
+      "summary": "Use the first King’s Edge releases to run repeated end-to-end delivery cycles: understand and prioritise a need with business users and students, prototype and test a response, develop it within the shared architecture, complete security, accessibility, data and operational assurance, release it into controlled live use, evaluate it, and either harden it for continued service or conclude it cleanly before it creates an unmanaged long-term commitment.",
+      "dependsOn": [
+        "4.1.3-step-2",
+        "4.1.4-step-2"
+      ]
+    },
+    {
+      "id": "4.1.3-step-4",
+      "title": "Make the product pipeline and support model routine",
+      "period": "jan-jun-2027:c",
+      "summary": "Confirm the ongoing backlog, prioritisation, discovery, release, support, incident, maintenance, documentation and ownership arrangements for the Student Experience Hub. Establish a reliable delivery cadence, a transparent route for new demand, clear acceptance criteria for moving from experiment to service, and a practical handover or enduring-ownership model for capabilities that have been hardened.",
+      "dependsOn": [
+        "4.1.3-step-3",
+        "4.1.2-step-3"
+      ]
+    },
+    {
+      "id": "4.1.3-step-5",
+      "title": "Scale the product capability across the student app roadmap",
+      "period": {
+        "start": "jul-dec-2027",
+        "end": "jan-jun-2028"
+      },
+      "summary": "Apply the established operating model and reusable technical foundations to a growing portfolio of student journeys. Increase throughput while preserving continuous user involvement, coherent architecture, shared components, appropriate assurance and sustainable ownership, and use evidence from delivery to refine team roles, governance, methods and the balance between rapid product work and enterprise hardening.",
+      "dependsOn": [
+        "4.1.3-step-4",
+        "4.1.2-step-4"
+      ]
+    },
+    {
+      "id": "4.1.3-step-6",
+      "title": "Embed the team as an enduring institutional capability",
+      "period": {
+        "start": "jul-dec-2028",
+        "end": "jan-jun-2029"
+      },
+      "summary": "Establish the multidisciplinary team, its funding and governance, technical platform, service interfaces and product practices as a sustained institutional capability for continuous improvement of the Student Experience Hub. Ensure the team can respond to new priorities without reverting to disconnected local builds, separate procurements or prototypes that cannot be secured, supported and maintained.",
+      "dependsOn": [
+        "4.1.3-step-5"
+      ]
+    }
+  ]
+}
