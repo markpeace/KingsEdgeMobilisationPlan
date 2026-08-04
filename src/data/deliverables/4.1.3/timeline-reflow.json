@@ -3,8 +3,11 @@
     {
       "id": "4.1.3-step-1",
       "title": "Recruit and mobilise the multidisciplinary digital product team",
-      "period": "jul-dec-2026:b",
-      "summary": "Recruit, appoint or assign the multidisciplinary capability during September and October 2026 and establish its leadership, decision rights, working model and initial product pipeline. Define how product management, service design, user research, software development, data, integration, architecture, security, accessibility, change and service management will work with King’s Edge product owners and students. Complete mobilisation so the team is ready to begin full delivery from November 2026.",
+      "period": {
+        "start": "jul-dec-2026:b",
+        "end": "jul-dec-2026:c"
+      },
+      "summary": "Recruit, appoint or assign the multidisciplinary capability from September through November 2026 and establish its leadership, decision rights, working model and initial product pipeline. Define how product management, service design, user research, software development, data, integration, architecture, security, accessibility, change and service management will work with King’s Edge product owners and students. Bring the core team into place during November so initial product-definition work can begin in parallel while mobilisation is completed, with the team ready for full delivery from December 2026.",
       "dependsOn": []
     },
     {
@@ -14,7 +17,7 @@
         "start": "jul-dec-2026:c",
         "end": "jan-jun-2027:a"
       },
-      "summary": "Establish the Azure environments, hosting model, development and deployment pipelines, source-control and release practices, testing and assurance gates, monitoring, logging, recovery, documentation, design and accessibility standards, API and integration conventions, privacy and security controls, and proportionate AI-assurance approach needed to develop student-facing capabilities quickly without creating unsupported or non-compliant prototypes.",
+      "summary": "Establish the Azure environments, hosting model, development and deployment pipelines, source-control and release practices, testing and assurance gates, monitoring, logging, recovery, documentation, design and accessibility standards, API and integration conventions, privacy and security controls, and proportionate AI-assurance approach needed to develop student-facing capabilities quickly without creating unsupported or non-compliant prototypes. Begin this work as the core team becomes available during November and complete the delivery foundations by the end of February 2027.",
       "dependsOn": [
         "4.1.3-step-1"
       ]
