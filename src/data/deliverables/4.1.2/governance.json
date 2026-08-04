@@ -1,0 +1,8 @@
+{
+  "governance": {
+    "decisionForum": "King’s Edge Portfolio Board, with referral to relevant Digital and IT governance where technical authority is required.",
+    "decisionScope": "Material decisions about the Student Experience Hub product direction, priority journeys, sequencing, investment, integration and data dependencies, rationalisation of existing entry points, and enduring product and service ownership.",
+    "businessAsUsualOwner": "TBC – enduring Student Experience Hub product and service owner",
+    "businessAsUsualOwnershipNote": "The enduring ownership model should be agreed during year one, before the wider student app begins to scale beyond King’s Edge. It is expected to combine product ownership with an IT service owner, but the accountable institutional arrangement is not yet confirmed."
+  }
+}
