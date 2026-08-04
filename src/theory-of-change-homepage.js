@@ -1,4 +1,4 @@
-import theoryOfChange from './data/theory-of-change.json';
+import splash from './data/theory-of-change.json';
 
 function element(tag, className, text) {
   const node = document.createElement(tag);
@@ -12,155 +12,96 @@ function append(parent, ...children) {
   return parent;
 }
 
-function list(items = [], className = '') {
-  const node = element('ul', className);
-  items.forEach((item) => node.appendChild(element('li', '', item)));
-  return node;
-}
-
 function eyebrow(text) {
-  return element('p', 'toc-eyebrow', text);
+  return element('p', 'edge-splash-eyebrow', text);
 }
 
-function sectionHeading(content, className = 'toc-section-heading') {
-  const heading = element('div', className);
-  append(
-    heading,
-    eyebrow(content.eyebrow),
-    element('h3', '', content.title),
-    content.intro || content.summary
-      ? element('p', 'toc-section-intro', content.intro || content.summary)
-      : null
-  );
+function headingBlock(eyebrowText, title, intro) {
+  const heading = element('div', 'edge-splash-section-heading');
+  append(heading, eyebrow(eyebrowText), element('h3', '', title));
+  if (intro) heading.appendChild(element('p', 'edge-splash-section-intro', intro));
   return heading;
 }
 
-function makeDetailsToggle(details, closedLabel = 'View details') {
-  const toggle = element('span', 'toc-toggle', closedLabel);
-  details.addEventListener('toggle', () => {
-    toggle.textContent = details.open ? 'Close details' : closedLabel;
-  });
-  return toggle;
+function introBlock() {
+  const section = element('section', 'edge-splash-intro');
+  const title = element('h2', '', splash.headline);
+  title.id = 'edge-splash-title';
+
+  const copy = element('div', 'edge-splash-intro-copy');
+  append(copy, element('p', 'edge-splash-lead', splash.intro), element('p', 'edge-splash-note', splash.purposeNote));
+
+  return append(section, eyebrow(splash.eyebrow), title, copy);
 }
 
-function headingBlock() {
-  const heading = element('header', 'toc-home-heading');
-  const meta = element('div', 'toc-heading-meta');
-  append(meta, eyebrow(theoryOfChange.eyebrow), element('span', 'toc-status', theoryOfChange.status));
+function whyBlock() {
+  const section = element('section', 'edge-splash-why');
+  const heading = element('div');
+  append(heading, eyebrow(splash.why.eyebrow), element('h3', '', splash.why.title));
+  return append(section, heading, element('p', '', splash.why.statement));
+}
 
-  const title = element('h2');
-  title.id = 'theory-of-change-title';
+function comparisonCard(data, className) {
+  const card = element('article', `edge-splash-comparison-card ${className}`);
+  append(card, element('p', 'edge-splash-comparison-label', data.label), element('h4', '', data.title));
+
+  if (data.centre) card.appendChild(element('p', 'edge-splash-centre', data.centre));
+
+  const list = element('ul');
+  data.items.forEach((item) => list.appendChild(element('li', '', item)));
+  card.appendChild(list);
+  return card;
+}
+
+function differenceBlock() {
+  const section = element('section', 'edge-splash-difference');
+  section.id = 'edge-splash-difference';
+
+  const comparison = element('div', 'edge-splash-comparison');
+  const arrow = element('span', 'edge-splash-comparison-arrow', '→');
+  arrow.setAttribute('aria-hidden', 'true');
   append(
-    title,
-    element('span', 'toc-headline-primary', theoryOfChange.headline.primary),
-    element('span', 'toc-headline-secondary', theoryOfChange.headline.secondary)
+    comparison,
+    comparisonCard(splash.difference.conventional, 'edge-splash-comparison-before'),
+    arrow,
+    comparisonCard(splash.difference.kings, 'edge-splash-comparison-after')
   );
 
-  append(heading, meta, title, element('p', 'toc-intro', theoryOfChange.intro));
-  return heading;
+  return append(
+    section,
+    headingBlock(splash.difference.eyebrow, splash.difference.title, splash.difference.intro),
+    comparison
+  );
 }
 
-function strategicPremiseBlock() {
-  const section = element('section', 'toc-strategic-premise');
-  section.setAttribute('aria-label', 'Why now and the King’s ambition');
+function mechanismsBlock() {
+  const section = element('section', 'edge-splash-mechanisms');
+  const grid = element('div', 'edge-splash-mechanism-grid');
 
-  theoryOfChange.strategicPremise.items.forEach((item) => {
-    const card = element('article');
-    append(card, eyebrow(item.eyebrow), element('h3', '', item.title), element('p', '', item.statement));
-    section.appendChild(card);
-  });
-
-  return section;
-}
-
-function problemBlock() {
-  const problem = element('article', 'toc-problem');
-  const label = element('div', 'toc-problem-label');
-  append(label, eyebrow(theoryOfChange.problem.label));
-
-  const body = element('div', 'toc-problem-body');
-  append(body, element('h3', '', theoryOfChange.problem.summary), element('p', '', theoryOfChange.problem.detail));
-  return append(problem, label, body);
-}
-
-function leadershipBlock() {
-  const section = element('section', 'toc-leadership');
-  section.id = 'toc-leadership';
-  section.appendChild(sectionHeading(theoryOfChange.leadership, 'toc-leadership-heading'));
-
-  const grid = element('div', 'toc-leadership-grid');
-  theoryOfChange.leadership.items.forEach((item, index) => {
-    const card = element('article');
+  splash.mechanisms.items.forEach((item) => {
+    const card = element('article', 'edge-splash-mechanism');
     append(
       card,
-      element('span', 'toc-card-number', String(index + 1).padStart(2, '0')),
+      element('span', 'edge-splash-number', item.id),
       element('h4', '', item.title),
       element('p', '', item.statement)
     );
     grid.appendChild(card);
   });
 
-  append(section, grid, element('p', 'toc-leadership-claim', theoryOfChange.leadership.claim));
-  return section;
-}
-
-function mechanismCard(mechanism) {
-  const details = element('details', 'toc-mechanism');
-  const summary = element('summary');
-
-  append(
-    summary,
-    element('span', 'toc-step', mechanism.id),
-    element('span', 'toc-quality', mechanism.quality),
-    element('strong', 'toc-card-title', mechanism.title),
-    element('span', 'toc-card-hook', mechanism.hook),
-    makeDetailsToggle(details, 'View mechanism')
+  return append(
+    section,
+    headingBlock(splash.mechanisms.eyebrow, splash.mechanisms.title, splash.mechanisms.intro),
+    grid
   );
-
-  const depth = element('div', 'toc-mechanism-depth');
-  append(
-    depth,
-    element('p', 'toc-formal-title', mechanism.formalTitle),
-    element('p', 'toc-mechanism-summary', mechanism.summary)
-  );
-
-  const levers = element('div', 'toc-levers');
-  mechanism.levers.forEach((lever) => {
-    const card = element('article', 'toc-lever');
-    append(card, element('h4', '', lever.title), element('p', '', lever.description));
-    levers.appendChild(card);
-  });
-
-  const claim = element('div', 'toc-causal-claim');
-  append(claim, element('span', '', 'Causal claim'), element('p', '', mechanism.causalClaim));
-
-  const outcomes = element('div', 'toc-outcomes');
-  append(outcomes, element('h4', '', 'If this works'), list(mechanism.outcomes));
-
-  append(depth, levers, claim, outcomes);
-  append(details, summary, depth);
-  return details;
 }
 
-function mechanismsBlock() {
-  const section = element('section', 'toc-mechanisms');
-  section.id = 'toc-mechanisms';
-  section.appendChild(sectionHeading(theoryOfChange.mechanismIntro));
+function outcomesBlock() {
+  const section = element('section', 'edge-splash-outcomes');
+  section.appendChild(eyebrow(splash.outcomes.eyebrow));
 
-  const flow = element('div', 'toc-flow');
-  flow.setAttribute('aria-label', "Four mechanisms in the King's Edge theory of change");
-  theoryOfChange.mechanisms.forEach((mechanism) => flow.appendChild(mechanismCard(mechanism)));
-
-  section.appendChild(flow);
-  return section;
-}
-
-function executiveOutcomesBlock() {
-  const section = element('section', 'toc-executive-outcomes');
-  section.appendChild(sectionHeading(theoryOfChange.executiveOutcomes));
-
-  const grid = element('div', 'toc-executive-outcomes-grid');
-  theoryOfChange.executiveOutcomes.items.forEach((item) => {
+  const grid = element('div', 'edge-splash-outcome-grid');
+  splash.outcomes.items.forEach((item) => {
     const card = element('article');
     append(card, element('h4', '', item.audience), element('p', '', item.statement));
     grid.appendChild(card);
@@ -170,170 +111,76 @@ function executiveOutcomesBlock() {
   return section;
 }
 
-function proofPointsBlock() {
-  const section = element('section', 'toc-proof-points');
-  section.appendChild(sectionHeading(theoryOfChange.proofPoints));
+function principlesBlock() {
+  const section = element('section', 'edge-splash-principles');
+  section.appendChild(eyebrow(splash.principles.eyebrow));
 
-  const grid = element('ol', 'toc-proof-grid');
-  theoryOfChange.proofPoints.items.forEach((item, index) => {
-    const card = element('li');
-    const copy = element('div', 'toc-proof-copy');
-    append(copy, element('h4', '', item.title), element('p', '', item.statement));
-    append(card, element('span', 'toc-card-number', String(index + 1).padStart(2, '0')), copy);
-    grid.appendChild(card);
+  const list = element('div', 'edge-splash-principle-list');
+  splash.principles.items.forEach((item, index) => {
+    const row = element('article');
+    append(
+      row,
+      element('span', 'edge-splash-number', String(index + 1).padStart(2, '0')),
+      element('h4', '', item.title),
+      element('p', '', item.statement)
+    );
+    list.appendChild(row);
   });
 
-  section.appendChild(grid);
+  section.appendChild(list);
   return section;
 }
 
-function principleCard(content, className) {
-  const details = element('details', className);
-  const summary = element('summary');
+function closingBlock() {
+  const section = element('section', 'edge-splash-closing');
+
+  const aim = element('article', 'edge-splash-aim');
+  append(aim, eyebrow(splash.aim.eyebrow), element('h3', '', splash.aim.statement));
+
+  const delivery = element('article', 'edge-splash-delivery');
   const copy = element('div');
-  append(copy, eyebrow(content.eyebrow), element('h3', '', content.title), element('p', '', content.summary));
-  append(summary, copy, makeDetailsToggle(details));
-  append(details, summary, element('p', 'toc-principle-detail', content.detail));
-  return details;
-}
-
-function operatingPrinciplesBlock() {
-  const section = element('section', 'toc-operating');
-  section.appendChild(sectionHeading(theoryOfChange.operatingPrinciplesIntro));
-
-  const grid = element('div', 'toc-operating-grid');
   append(
-    grid,
-    principleCard(theoryOfChange.facultyEnablement, 'toc-principle toc-faculty'),
-    principleCard(theoryOfChange.deliveryPrinciple, 'toc-principle toc-delivery-principle')
+    copy,
+    eyebrow(splash.delivery.eyebrow),
+    element('h3', '', splash.delivery.title),
+    element('p', '', splash.delivery.statement)
   );
 
-  section.appendChild(grid);
-  return section;
+  const link = element('a', 'edge-splash-delivery-link', splash.delivery.label);
+  link.href = splash.delivery.href;
+  link.appendChild(element('span', '', '→'));
+  append(delivery, copy, link);
+
+  return append(section, aim, delivery);
 }
 
-function systemConditionsBlock() {
-  const section = element('section', 'toc-system-conditions');
-
-  const equity = element('article', 'toc-equity');
-  append(
-    equity,
-    eyebrow(theoryOfChange.equity.eyebrow),
-    element('h3', '', theoryOfChange.equity.title),
-    element('p', 'toc-condition-lead', theoryOfChange.equity.summary),
-    element('p', '', theoryOfChange.equity.detail)
-  );
-
-  const feedback = element('article', 'toc-feedback-loop');
-  const marker = element('span', 'toc-feedback-marker', '↺');
-  marker.setAttribute('aria-hidden', 'true');
-  const body = element('div');
-  append(
-    body,
-    eyebrow(theoryOfChange.feedback.eyebrow),
-    element('h3', '', theoryOfChange.feedback.title),
-    element('p', '', theoryOfChange.feedback.summary)
-  );
-  append(feedback, marker, body);
-
-  append(section, equity, feedback);
-  return section;
-}
-
-function northStarBlock() {
-  const northStar = element('article', 'toc-north-star');
-  return append(
-    northStar,
-    eyebrow(theoryOfChange.northStar.eyebrow),
-    element('h3', '', theoryOfChange.northStar.statement)
-  );
-}
-
-function deliveryCtaBlock() {
-  const cta = element('article', 'toc-delivery-cta');
-  const body = element('div');
-  append(
-    body,
-    eyebrow(theoryOfChange.deliveryCta.eyebrow),
-    element('h3', '', theoryOfChange.deliveryCta.title),
-    element('p', '', theoryOfChange.deliveryCta.summary)
-  );
-
-  const link = element('a', 'toc-delivery-link');
-  link.href = theoryOfChange.deliveryCta.href;
-  append(link, element('span', '', theoryOfChange.deliveryCta.label), element('strong', '', '→'));
-  return append(cta, body, link);
-}
-
-function hypothesisRow(label, text) {
-  const row = element('div');
-  return append(row, element('strong', '', label), element('p', '', text));
-}
-
-function hypothesisBlock() {
-  const details = element('details', 'toc-hypothesis');
-  const summary = element('summary');
-  append(summary, element('span', '', 'Read the full programme-level causal hypothesis'), makeDetailsToggle(details, 'Open hypothesis'));
-
-  const body = element('div', 'toc-hypothesis-body');
-  append(
-    body,
-    hypothesisRow('If', theoryOfChange.hypothesis.if),
-    hypothesisRow('Then', theoryOfChange.hypothesis.then),
-    hypothesisRow('While', theoryOfChange.hypothesis.while)
-  );
-
-  return append(details, summary, body);
-}
-
-function buildTheorySection() {
-  const section = element('section', 'toc-home');
-  section.id = 'theory-of-change-home';
-  section.setAttribute('aria-labelledby', 'theory-of-change-title');
+function buildSplash() {
+  const section = element('section', 'edge-splash');
+  section.id = 'edge-splash';
+  section.setAttribute('aria-labelledby', 'edge-splash-title');
 
   return append(
     section,
-    headingBlock(),
-    strategicPremiseBlock(),
-    problemBlock(),
-    leadershipBlock(),
+    introBlock(),
+    whyBlock(),
+    differenceBlock(),
     mechanismsBlock(),
-    executiveOutcomesBlock(),
-    proofPointsBlock(),
-    operatingPrinciplesBlock(),
-    systemConditionsBlock(),
-    northStarBlock(),
-    deliveryCtaBlock(),
-    hypothesisBlock()
+    outcomesBlock(),
+    principlesBlock(),
+    closingBlock()
   );
 }
 
-function addHeroPrompt(hero, theorySection) {
-  if (hero.querySelector('.toc-hero-bridge')) return;
-
-  const button = element('button', 'toc-hero-bridge');
-  button.type = 'button';
-  button.setAttribute('aria-controls', theorySection.id);
-  append(button, element('span', '', theoryOfChange.heroPrompt), element('strong', '', '↓'));
-  button.addEventListener('click', () => {
-    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    theorySection.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' });
-  });
-  hero.appendChild(button);
-}
-
-function renderTheoryOfChange() {
+function renderSplash() {
   const landing = document.querySelector('.landing-main');
   const hero = landing?.querySelector('.landing-hero');
   if (!landing || !hero) return;
 
-  let section = document.getElementById('theory-of-change-home');
-  if (!section) {
-    section = buildTheorySection();
-    hero.insertAdjacentElement('afterend', section);
-  }
+  document.querySelector('.toc-home')?.remove();
+  hero.querySelector('.toc-hero-bridge')?.remove();
 
-  addHeroPrompt(hero, section);
+  if (document.getElementById('edge-splash')) return;
+  hero.insertAdjacentElement('afterend', buildSplash());
 }
 
 let refreshScheduled = false;
@@ -342,7 +189,7 @@ function scheduleRefresh() {
   refreshScheduled = true;
   window.requestAnimationFrame(() => {
     refreshScheduled = false;
-    renderTheoryOfChange();
+    renderSplash();
   });
 }
 
