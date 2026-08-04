@@ -74,12 +74,13 @@
             "category": { "type": "string" },
             "amount": { "type": "number", "minimum": 0 },
             "currency": { "type": "string", "default": "GBP" },
+            "fte": { "type": "number", "minimum": 0 },
             "estimatedCost": { "type": "string" },
             "fundingRoute": { "type": "string" },
             "fundingStatus": { "type": "string" },
             "bauLiability": {
               "type": "boolean",
-              "description": "When true, amount is the expected annual recurrent cost carried into business as usual, not a one-off delivery cost."
+              "description": "When true, the ask is an annual recurrent business-as-usual commitment. It may be quantified as cash, FTE, or both."
             }
           },
           "allOf": [
@@ -91,7 +92,11 @@
                 }
               },
               "then": {
-                "required": ["amount", "currency", "confidence", "rationale"]
+                "required": ["confidence", "rationale"],
+                "anyOf": [
+                  { "required": ["amount", "currency"] },
+                  { "required": ["fte"] }
+                ]
               }
             }
           ]
@@ -159,13 +164,12 @@
         {
           "id": "example-step-bau-1",
           "item": "Permanent operating support",
-          "amount": 45000,
-          "currency": "GBP",
+          "fte": 1,
           "bauLiability": true,
           "owner": "TBC",
           "fundingRoute": "TBC",
           "confidence": "indicative",
-          "rationale": "Expected annual recurrent cost once the service transfers into business as usual."
+          "rationale": "Expected annual recurrent staffing capacity once the service transfers into business as usual."
         }
       ],
       "enablingConditions": [
