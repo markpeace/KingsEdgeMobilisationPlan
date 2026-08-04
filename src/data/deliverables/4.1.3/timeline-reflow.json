@@ -1,0 +1,76 @@
+{
+  "steps": [
+    {
+      "id": "4.1.3-step-1",
+      "title": "Recruit and mobilise the multidisciplinary digital product team",
+      "period": {
+        "start": "jul-dec-2026:a",
+        "end": "jul-dec-2026:b"
+      },
+      "summary": "Recruit, appoint or assign the multidisciplinary capability and establish its leadership, decision rights, working model and initial product pipeline. Define how product management, service design, user research, software development, data, integration, architecture, security, accessibility, change and service management will work with King’s Edge product owners and students. Complete mobilisation so the team is ready to begin full delivery by the end of October 2026.",
+      "dependsOn": []
+    },
+    {
+      "id": "4.1.3-step-2",
+      "title": "Put the Azure delivery foundations into operation",
+      "period": {
+        "start": "jul-dec-2026:c",
+        "end": "jan-jun-2027:a"
+      },
+      "summary": "Establish the Azure environments, hosting model, development and deployment pipelines, source-control and release practices, testing and assurance gates, monitoring, logging, recovery, documentation, design and accessibility standards, API and integration conventions, privacy and security controls, and proportionate AI-assurance approach needed to develop student-facing capabilities quickly without creating unsupported or non-compliant prototypes.",
+      "dependsOn": [
+        "4.1.3-step-1"
+      ]
+    },
+    {
+      "id": "4.1.3-step-3",
+      "title": "Prove the route from prototype to supported service",
+      "period": {
+        "start": "jan-jun-2027:b",
+        "end": "jan-jun-2027:c"
+      },
+      "summary": "Use the first King’s Edge releases to run repeated end-to-end delivery cycles: understand and prioritise a need with business users and students, prototype and test a response, develop it within the shared architecture, complete security, accessibility, data and operational assurance, release it into controlled live use, evaluate it, and either harden it for continued service or conclude it cleanly before it creates an unmanaged long-term commitment.",
+      "dependsOn": [
+        "4.1.3-step-2",
+        "4.1.4-step-2"
+      ]
+    },
+    {
+      "id": "4.1.3-step-4",
+      "title": "Make the product pipeline and support model routine",
+      "period": {
+        "start": "jul-dec-2027:a",
+        "end": "jul-dec-2027:b"
+      },
+      "summary": "Confirm the ongoing backlog, prioritisation, discovery, release, support, incident, maintenance, documentation and ownership arrangements for the Student Experience Hub. Establish a reliable delivery cadence, a transparent route for new demand, clear acceptance criteria for moving from experiment to service, and a practical handover or enduring-ownership model for capabilities that have been hardened.",
+      "dependsOn": [
+        "4.1.3-step-3"
+      ]
+    },
+    {
+      "id": "4.1.3-step-5",
+      "title": "Scale the product capability across the student app roadmap",
+      "period": {
+        "start": "jul-dec-2027:c",
+        "end": "jan-jun-2028:c"
+      },
+      "summary": "Apply the established operating model and reusable technical foundations to a growing portfolio of student journeys. Increase throughput while preserving continuous user involvement, coherent architecture, shared components, appropriate assurance and sustainable ownership, and use evidence from delivery to refine team roles, governance, methods and the balance between rapid product work and enterprise hardening.",
+      "dependsOn": [
+        "4.1.3-step-4",
+        "4.1.2-step-3"
+      ]
+    },
+    {
+      "id": "4.1.3-step-6",
+      "title": "Embed the team as an enduring institutional capability",
+      "period": {
+        "start": "jul-dec-2028:a",
+        "end": "jan-jun-2029:a"
+      },
+      "summary": "Establish the multidisciplinary team, its funding and governance, technical platform, service interfaces and product practices as a sustained institutional capability for continuous improvement of the Student Experience Hub. Ensure the team can respond to new priorities without reverting to disconnected local builds, separate procurements or prototypes that cannot be secured, supported and maintained.",
+      "dependsOn": [
+        "4.1.3-step-5"
+      ]
+    }
+  ]
+}
