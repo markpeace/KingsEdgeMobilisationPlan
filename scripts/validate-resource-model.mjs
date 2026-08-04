@@ -93,11 +93,16 @@ function validateBauLiability(item, path, { allowed = false } = {}) {
   }
   if (!item.bauLiability) return;
 
-  if (typeof item.amount !== 'number' || item.amount <= 0) {
-    errors.push(`${path}.amount should be a positive annual recurrent amount when bauLiability is true.`);
+  const hasAmount = typeof item.amount === 'number' && item.amount > 0;
+  const hasFte = typeof item.fte === 'number' && item.fte > 0;
+  if (!hasAmount && !hasFte) {
+    errors.push(`${path} should include a positive annual recurrent amount or FTE when bauLiability is true.`);
   }
-  if (typeof item.currency !== 'string' || !item.currency.trim()) {
-    errors.push(`${path}.currency is required when bauLiability is true.`);
+  if (item.amount !== undefined && !hasAmount) {
+    errors.push(`${path}.amount should be positive when supplied for a BAU liability.`);
+  }
+  if (hasAmount && (typeof item.currency !== 'string' || !item.currency.trim())) {
+    errors.push(`${path}.currency is required when a BAU liability includes an amount.`);
   }
   if (typeof item.confidence !== 'string' || !item.confidence.trim()) {
     errors.push(`${path}.confidence is required when bauLiability is true.`);
