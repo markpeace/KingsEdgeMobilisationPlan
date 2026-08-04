@@ -7,7 +7,7 @@
         "start": "jul-dec-2026:c",
         "end": "jan-jun-2027:a"
       },
-      "summary": "Confirm the year-one product outcomes, prioritised backlog and migration approach for the current King’s Edge platform. Define the minimum live service to preserve, the richer activity model needed for events, self-paced activity, projects and sustained experiences, the priority management and evidence workflows, the in-house digital-badging scope, the bounded King’s Canvas prototype, and the data, operational and content responsibilities that Edge must supply to the development team. Begin this work from November 2026 once the multidisciplinary digital product team is in place.",
+      "summary": "Confirm the year-one product outcomes, prioritised backlog and migration approach for the current King’s Edge platform. Define the minimum live service to preserve, the richer activity model needed for events, self-paced activity, projects and sustained experiences, the priority management and evidence workflows, the in-house digital-badging scope, the bounded King’s Canvas prototype, and the data, operational and content responsibilities that Edge must supply to the development team. Begin this work as the core multidisciplinary team becomes available during November 2026 and complete the product and migration definition by the end of February 2027.",
       "dependsOn": [
         "4.1.3-step-1"
       ]
@@ -22,62 +22,76 @@
       "summary": "Move the current Edge platform onto the shared Azure stack while maintaining continuity for live delivery. Rebuild and migrate the essential opportunity catalogue, search and discovery, registration, attendance and participation records, cohort restrictions and targeted curation, activity-owner administration, communications, reporting, audit trails and relevant historical data. Establish the flexible opportunity and experience model that later releases will use, and align the shopfront with 1.2 Data Foundations and Student Systems.",
       "dependsOn": [
         "4.1.4-step-1",
-        "4.1.3-step-1",
+        "4.1.3-step-2",
         "4.1.2-step-1",
         "1.2"
       ]
     },
     {
       "id": "4.1.4-step-3",
-      "title": "Put projects, digital badging and Canvas into controlled use",
+      "title": "Deliver in-house digital badging and retire Accredible",
+      "period": {
+        "start": "jan-jun-2027:b",
+        "end": "jul-dec-2027:a"
+      },
+      "summary": "Run digital badging as a dedicated deadline-led workstream in parallel with the wider Edge replatform. Deliver badge definition and metadata, issuer and administrator roles, automatic and manual issuance, verified self-claim and off-platform recognition routes, student display, public verification, audit, revocation, reporting and support arrangements. Migrate the required issuers, badge definitions and credential records from Accredible, validate service continuity and complete cutover by the end of August 2027 so the existing subscription can be stood down before the September renewal point.",
+      "dependsOn": [
+        "4.1.4-step-1",
+        "4.1.3-step-2"
+      ]
+    },
+    {
+      "id": "4.1.4-step-4",
+      "title": "Put projects and King’s Canvas into controlled use",
       "period": {
         "start": "jul-dec-2027:a",
         "end": "jul-dec-2027:b"
       },
-      "summary": "Release the priority capabilities that extend Edge beyond event booking into projects and wider experiences, drawing from milestones, progress tracking, resource hosting, groups, submissions, outputs, collections, pathways, provider curation, self-paced experiences and participant communications according to backlog priority. Introduce student self-claim and evidence upload, staff verification and off-platform recognition workflows. Pilot the in-house badge creation, issuing, revocation, student display and public-verification service, including automatic, staff-awarded and verified-claim routes. Test a saved and revisitable King’s Canvas prototype that lets students map needs and aspirations, receive bounded AI coaching and connect their thinking to relevant opportunities.",
+      "summary": "Release the priority capabilities that extend Edge beyond event booking into projects and wider experiences, drawing from milestones, progress tracking, resource hosting, groups, submissions, outputs, collections, pathways, provider curation, self-paced experiences and participant communications according to backlog priority. Introduce student self-claim and evidence upload and staff verification workflows where these are not already delivered through the badging workstream. Test a saved and revisitable King’s Canvas prototype that lets students map needs and aspirations, receive bounded AI coaching and connect their thinking to relevant opportunities.",
       "dependsOn": [
         "4.1.4-step-2",
         "4.1.3-step-2"
       ]
     },
     {
-      "id": "4.1.4-step-4",
-      "title": "Launch the Edge-led Hub kernel and complete the Accredible exit",
+      "id": "4.1.4-step-5",
+      "title": "Launch the connected Edge-led Hub kernel",
       "period": "jul-dec-2027:c",
-      "summary": "Complete the migration of the core Edge service and bring opportunity discovery, participation, project and experience management, evidence, recognition and the agreed Canvas prototype into one coherent student experience. Move the in-house digital-badging service into supported operation, migrate the required issuers, badge definitions and records, preserve verification and audit continuity, and stand down Accredible at the earliest contractually and operationally viable point, including any bridge or renewal arrangement needed to maintain continuity. Complete accessibility, security, performance, analytics, support, documentation and operational ownership for the live Edge-led kernel of the Student Experience Hub.",
+      "summary": "Bring the migrated core Edge service, project and experience management, evidence, the in-house digital-badging service and the agreed Canvas prototype into one coherent student experience. Complete accessibility, security, performance, analytics, documentation, support and operational ownership for the live Edge-led kernel of the Student Experience Hub, while retaining the separate August 2027 deadline for Accredible exit.",
       "dependsOn": [
         "4.1.4-step-3",
+        "4.1.4-step-4",
         "4.1.3-step-3"
       ]
     },
     {
-      "id": "4.1.4-step-5",
+      "id": "4.1.4-step-6",
       "title": "Connect planning, opportunity, participation, evidence and recognition",
       "period": "jan-jun-2028",
       "summary": "Use evidence from year-one operation to strengthen the connected Edge journey. Improve movement from Canvas needs and aspirations into relevant opportunities, connect activity progress and completion to evidence and recognition, introduce proportionate post-activity reflection, and mature collections or pathways where they help students progress from lighter-touch to deeper experiences. Develop recognition in response to the proposition led by 2.4.3 Enhanced Academic Transcript, with 2.1.3 and 2.2.3 supplying the skills, governance and assurance inputs it requires.",
       "dependsOn": [
-        "4.1.4-step-4",
+        "4.1.4-step-5",
         "2.2.1",
         "2.4.3"
       ]
     },
     {
-      "id": "4.1.4-step-6",
+      "id": "4.1.4-step-7",
       "title": "Move Edge fully into the shared student app",
       "period": "jul-dec-2028",
       "summary": "Integrate the Edge experience into the shared app home, navigation, profile, search, communications and interaction patterns. Replace Edge-specific platform functions with common Hub capabilities where these meet the need, while retaining Edge ownership of its proposition, opportunity content, curation, developmental journeys and recognition rules. Continue selective improvement of Canvas, project management, evidence and badging where live use shows clear student or operational value.",
       "dependsOn": [
-        "4.1.4-step-5",
+        "4.1.4-step-6",
         "4.1.2-step-4"
       ]
     },
     {
-      "id": "4.1.4-step-7",
+      "id": "4.1.4-step-8",
       "title": "Complete the transition of Edge into a mature Hub domain",
       "period": "jan-jun-2029",
       "summary": "Operate and improve King’s Edge as one mature product domain within the Student Experience Hub. Draw primarily on shared app, data, integration, profile, communication and service capabilities, and concentrate Edge-specific development on the quality of opportunity discovery, connected developmental journeys, evidence and recognition. Progress portfolio, articulation and enhanced-record functions only where the propositions led by 2.4.3 and the necessary data foundations are sufficiently mature.",
       "dependsOn": [
-        "4.1.4-step-6"
+        "4.1.4-step-7"
       ]
     }
   ]
