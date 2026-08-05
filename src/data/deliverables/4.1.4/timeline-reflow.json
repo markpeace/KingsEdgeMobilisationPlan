@@ -5,266 +5,155 @@
       "title": "King’s Edge product and migration foundation",
       "period": "jul-dec-2026:c",
       "summary": "Define the product foundation needed to begin delivery. Agree the first release, the flexible activity model, the migration and cutover route, the minimum King’s Canvas proposition, the Accredible exit requirements and the responsibilities for accepting each capability into live service. Complete this definition during November and December 2026 as the core multidisciplinary team becomes available.",
-      "dependsOn": [
-        "4.1.3-step-1"
-      ],
+      "dependsOn": ["4.1.3-step-1"],
       "outputs": [
-        {
-          "title": "Year-one product scope and release sequence",
-          "summary": "A prioritised release plan covering opportunity discovery, participation, projects and experiences, King’s Canvas, evidence and digital recognition."
-        },
-        {
-          "title": "Flexible activity model",
-          "summary": "An agreed model for events, self-paced activities, projects and sustained experiences, including the core information, participation rules and completion states required for each."
-        },
-        {
-          "title": "Migration and service-continuity plan",
-          "summary": "A clear route for migrating the current opportunity catalogue, required historical records, content and operational processes without disrupting the live Edge service."
-        },
-        {
-          "title": "Digital-badging exit specification",
-          "summary": "The badge, issuer, credential, verification, migration and cutover requirements needed to replace Accredible before renewal."
-        },
-        {
-          "title": "King’s Canvas minimum proposition",
-          "summary": "The first bounded scope for a saved and revisitable student plan covering needs, aspirations, guided reflection, AI-supported coaching and links into opportunities."
-        },
-        {
-          "title": "Product ownership and acceptance model",
-          "summary": "Named responsibilities for product decisions, operational readiness, testing, acceptance, service ownership and ongoing support."
-        }
+        {"title": "Year-one product scope and release sequence", "summary": "A prioritised release plan covering opportunity discovery, participation, projects and experiences, King’s Canvas, evidence and digital recognition."},
+        {"title": "Flexible activity model", "summary": "An agreed model for events, self-paced activities, projects and sustained experiences, including the core information, participation rules and completion states required for each."},
+        {"title": "Migration and service-continuity plan", "summary": "A clear route for migrating the current opportunity catalogue, required historical records, content and operational processes without disrupting the live Edge service."},
+        {"title": "Digital-recognition delivery plan", "summary": "The sequence for building badge infrastructure, delivering the first King’s Edge badges in parallel and completing migration and cutover before Accredible renewal."},
+        {"title": "King’s Canvas minimum proposition", "summary": "The bounded scope for an April prototype covering needs, aspirations, guided reflection, AI-supported coaching and links into opportunities."},
+        {"title": "Product ownership and acceptance model", "summary": "Named responsibilities for product decisions, operational readiness, testing, acceptance, service ownership and ongoing support."}
       ]
     },
     {
       "id": "4.1.4-step-2",
-      "title": "Opportunity discovery and participation",
-      "period": {
-        "start": "jan-jun-2027:a",
-        "end": "jan-jun-2027:b"
-      },
-      "summary": "Build the production core of King’s Edge in Azure so students can find and participate in a much wider range of opportunities and staff can manage them through one flexible service. Begin in January 2027 in parallel with completion of the wider Azure delivery foundations, using jointly agreed interim standards and aligning them as the shared patterns mature.",
-      "dependsOn": [
-        "4.1.4-step-1",
-        "4.1.3-step-1",
-        "1.2"
-      ],
+      "title": "Opportunity discovery, participation and evidence",
+      "period": {"start": "jan-jun-2027:a", "end": "jan-jun-2027:b"},
+      "summary": "Build the production core of King’s Edge in Azure so students can find and participate in a much wider range of opportunities, record appropriate evidence and staff can manage the offer through one flexible service. Begin in January 2027 in parallel with completion of the wider Azure delivery foundations.",
+      "dependsOn": ["4.1.4-step-1", "4.1.3-step-1", "1.2"],
       "outputs": [
-        {
-          "title": "Azure-hosted King’s Edge service",
-          "summary": "A production-ready version of the core Edge service operating in the agreed institutional Azure environment."
-        },
-        {
-          "title": "Opportunity catalogue and activity records",
-          "summary": "A flexible catalogue supporting events, self-paced activities, projects and sustained experiences without forcing every opportunity into the same format."
-        },
-        {
-          "title": "Search and discovery",
-          "summary": "Student-facing search, filtering, browsing and curated collections that make relevant opportunities easier to find."
-        },
-        {
-          "title": "Registration and participation journeys",
-          "summary": "Registration, attendance, progress and completion journeys appropriate to different activity types."
-        },
-        {
-          "title": "Targeting and access controls",
-          "summary": "Cohort restrictions, invitation routes and targeted curation for opportunities intended for particular student groups."
-        },
-        {
-          "title": "Activity-owner administration",
-          "summary": "Staff tools for creating, updating, publishing and managing activities, participants and communications."
-        },
-        {
-          "title": "Migration, reporting and audit",
-          "summary": "Migration of the required catalogue and historical records, with operational reporting, audit trails and a tested cutover and continuity plan."
-        }
+        {"title": "Azure-hosted King’s Edge service", "summary": "A production-ready version of the core Edge service operating in the agreed institutional Azure environment."},
+        {"title": "Opportunity catalogue and activity records", "summary": "A flexible catalogue supporting events, self-paced activities, projects and sustained experiences without forcing every opportunity into the same format."},
+        {"title": "Search, discovery and curation", "summary": "Student-facing search, filtering, browsing, collections and targeted curation that make relevant opportunities easier to find."},
+        {"title": "Registration and participation journeys", "summary": "Registration, attendance, progress and completion journeys appropriate to different activity types."},
+        {"title": "Targeting and access controls", "summary": "Cohort restrictions, invitation routes and access rules for opportunities intended for particular student groups."},
+        {"title": "Activity-owner administration", "summary": "Staff tools for creating, updating, publishing and managing activities, participants and communications."},
+        {"title": "Independent activity and evidence capture", "summary": "A proportionate route for students to record eligible activity and supporting evidence beyond activity directly managed through the platform."},
+        {"title": "Migration, reporting and audit", "summary": "Migration of the required catalogue and historical records, with operational reporting, audit trails and a tested cutover and continuity plan."}
       ]
     },
     {
       "id": "4.1.4-step-3",
-      "title": "Digital badges and recognition",
-      "period": {
-        "start": "jan-jun-2027:a",
-        "end": "jul-dec-2027:a"
-      },
-      "summary": "Deliver an in-house digital-recognition service as a parallel deadline-led epic. Complete migration and production cutover by the end of August 2027 so the Accredible subscription can be stood down before renewal rather than waiting for the wider Edge launch.",
-      "dependsOn": [
-        "4.1.4-step-1",
-        "4.1.3-step-1"
-      ],
+      "title": "Digital badge infrastructure",
+      "period": {"start": "jan-jun-2027:a", "end": "jan-jun-2027:c"},
+      "summary": "Build the reusable in-house infrastructure needed to define, issue, display, verify and govern digital badges. Deliver the service incrementally so the first King’s Edge badges can be configured and tested alongside the infrastructure build rather than waiting for the whole service to be finished.",
+      "dependsOn": ["4.1.4-step-1", "4.1.3-step-1"],
       "outputs": [
-        {
-          "title": "Badge and issuer administration",
-          "summary": "Tools for creating, governing and managing badge definitions, criteria, evidence requirements and authorised issuers."
-        },
-        {
-          "title": "Automatic and staff-awarded badges",
-          "summary": "Recognition issued automatically from verified activity completion or directly by authorised staff."
-        },
-        {
-          "title": "Verified claims for external activity",
-          "summary": "A controlled route for students to claim recognition for eligible activity completed outside the Edge platform."
-        },
-        {
-          "title": "Student badge display",
-          "summary": "A student-facing record of earned badges and the evidence or criteria associated with them."
-        },
-        {
-          "title": "Public verification",
-          "summary": "A secure public verification page for confirming that a credential is valid and has not been revoked."
-        },
-        {
-          "title": "Revocation, audit and reporting",
-          "summary": "Administrative controls and records for correcting, revoking, auditing and reporting recognition activity."
-        },
-        {
-          "title": "Accredible migration and cutover",
-          "summary": "Migration of the required issuers, badge definitions and credential records, with continuity, support and service ownership validated before renewal."
-        }
+        {"title": "Badge-definition service", "summary": "Tools and data structures for defining badge metadata, criteria, evidence requirements and validity."},
+        {"title": "Issuer and administrator controls", "summary": "Roles, permissions and workflows for authorised issuers and central administrators."},
+        {"title": "Issuance engine", "summary": "Infrastructure supporting automatic, staff-awarded and approved claim-based issuance."},
+        {"title": "Student badge record", "summary": "A student-facing record of earned badges and the evidence or criteria associated with them."},
+        {"title": "Public verification", "summary": "A secure public verification page for confirming that a credential is valid and has not been revoked."},
+        {"title": "Revocation, audit and reporting", "summary": "Administrative controls and records for correcting, revoking, auditing and reporting recognition activity."},
+        {"title": "Supported production service", "summary": "Monitoring, security, accessibility, documentation, support and service ownership sufficient for live institutional use."}
       ]
     },
     {
       "id": "4.1.4-step-4",
-      "title": "Projects, experiences and King’s Canvas",
-      "period": {
-        "start": "jan-jun-2027:c",
-        "end": "jul-dec-2027:b"
-      },
-      "summary": "Extend King’s Edge beyond event administration into deeper projects, sustained experiences, self-paced participation and personal planning. Put the new capabilities into controlled use, gather evidence from students and staff, and resolve the most important issues before the connected launch.",
-      "dependsOn": [
-        "4.1.4-step-2",
-        "4.1.3-step-2"
-      ],
+      "title": "King’s Canvas prototype",
+      "period": {"start": "jan-jun-2027:b", "end": "jan-jun-2027:c"},
+      "summary": "Begin active prototyping in April 2027, once the opportunity-service and badge-infrastructure work is established. Create and test a bounded working version of King’s Canvas that helps students articulate needs and aspirations, form a revisitable plan and move towards relevant opportunities without committing prematurely to a full production service.",
+      "dependsOn": ["4.1.4-step-1", "4.1.3-step-2"],
       "outputs": [
-        {
-          "title": "Project and sustained-experience spaces",
-          "summary": "Structured spaces for longer activities with defined participants, purpose, duration, responsibilities and completion requirements."
-        },
-        {
-          "title": "Milestones and progress tracking",
-          "summary": "Progress states, milestones and completion tracking suited to projects and experiences that unfold over time."
-        },
-        {
-          "title": "Resources, groups and communications",
-          "summary": "Resource hosting, participant groups and communications that support activity delivery rather than only registration."
-        },
-        {
-          "title": "Submissions, outputs and showcases",
-          "summary": "Routes for participants to submit work, record outputs and make selected achievements visible."
-        },
-        {
-          "title": "Collections, pathways and provider curation",
-          "summary": "Curated groupings of activities and branded provider spaces that help students navigate coherent sets of opportunities."
-        },
-        {
-          "title": "Evidence capture and verification",
-          "summary": "Student evidence upload and proportionate staff verification for activity undertaken on or beyond the platform."
-        },
-        {
-          "title": "Saved King’s Canvas",
-          "summary": "A revisitable plan in which students can record needs, aspirations, priorities and intended next steps."
-        },
-        {
-          "title": "Bounded AI coaching and opportunity links",
-          "summary": "Carefully constrained AI-supported prompts that help students articulate priorities and move from their Canvas into the live opportunity catalogue."
-        }
+        {"title": "Visual planning interface", "summary": "A clear interface through which students can explore and organise their needs, aspirations, priorities and intended next steps."},
+        {"title": "Saved and revisitable plan", "summary": "A persistent personal plan that students can return to and update rather than completing as a one-off exercise."},
+        {"title": "Structured planning prompts", "summary": "Guided questions and prompts that help students move from broad aspirations towards practical priorities."},
+        {"title": "Bounded AI coaching", "summary": "Carefully constrained AI-supported dialogue that helps students articulate options without presenting itself as authoritative advice."},
+        {"title": "Prototype opportunity links", "summary": "Early connections from the Canvas into relevant parts of the live opportunity catalogue, initially using controlled rules and curated routes."},
+        {"title": "Closed student testing", "summary": "Structured testing with a limited group of students, including accessibility and trust testing."},
+        {"title": "Prototype evidence and beta decision", "summary": "Findings, design changes, assurance requirements and a clear decision on the scope of the subsequent beta."}
+      ]
+    },
+    {
+      "id": "4.1.4-step-3b",
+      "title": "Core King’s Edge badges and Accredible migration",
+      "period": {"start": "jan-jun-2027:b", "end": "jul-dec-2027:a"},
+      "summary": "Configure, test and release the first King’s Edge recognition products alongside the badge-infrastructure build. Complete migration and production cutover by the end of August 2027 so the Accredible subscription can be stood down before renewal.",
+      "dependsOn": ["4.1.4-step-1", "4.1.3-step-1"],
+      "outputs": [
+        {"title": "Core King’s Edge badge set", "summary": "The first agreed badge definitions, criteria and evidence rules required for King’s Edge recognition."},
+        {"title": "Automatic completion badges", "summary": "Badges issued from verified completion data where the activity and recognition rules allow automation."},
+        {"title": "Staff-awarded recognition", "summary": "A controlled route for authorised staff to award badges for eligible activity and achievement."},
+        {"title": "Verified claims for external activity", "summary": "A controlled route for students to claim recognition for eligible activity completed outside the Edge platform."},
+        {"title": "Issuer and badge migration", "summary": "Migration of the required issuers, badge definitions and associated administration from Accredible."},
+        {"title": "Credential-record migration", "summary": "Migration or preservation of the credential records required to maintain continuity and verification."},
+        {"title": "Accredible cutover and exit", "summary": "Validated production cutover, support arrangements and continuity completed before the September 2027 renewal point."}
+      ]
+    },
+    {
+      "id": "4.1.4-step-4b",
+      "title": "Projects, experiences and curated pathways",
+      "period": {"start": "jan-jun-2027:c", "end": "jul-dec-2027:b"},
+      "summary": "Extend King’s Edge beyond event administration into deeper projects, sustained experiences, self-paced participation and curated developmental routes. Put these capabilities into controlled use and resolve the most important issues before wider live operation.",
+      "dependsOn": ["4.1.4-step-2", "4.1.3-step-2"],
+      "outputs": [
+        {"title": "Project and sustained-experience spaces", "summary": "Structured spaces for longer activities with defined participants, purpose, duration, responsibilities and completion requirements."},
+        {"title": "Milestones and progress tracking", "summary": "Progress states, milestones and completion tracking suited to projects and experiences that unfold over time."},
+        {"title": "Resources, groups and communications", "summary": "Resource hosting, participant groups and communications that support activity delivery rather than only registration."},
+        {"title": "Submissions, outputs and showcases", "summary": "Routes for participants to submit work, record outputs and make selected achievements visible."},
+        {"title": "Self-paced and on-demand participation", "summary": "Activity journeys that support participation without a fixed event date while remaining inside the common activity model."},
+        {"title": "Collections and progression pathways", "summary": "Curated groupings that help students move through coherent sets of opportunities from lighter-touch to deeper experiences."},
+        {"title": "Provider-curated spaces", "summary": "Branded and managed spaces through which faculties, services and approved providers can curate their offer."},
+        {"title": "Controlled-use evidence", "summary": "Student and staff findings, prioritised fixes and hardening requirements for live operation."}
+      ]
+    },
+    {
+      "id": "4.1.4-step-4c",
+      "title": "King’s Canvas beta and opportunity matching",
+      "period": {"start": "jul-dec-2027:a", "end": "jul-dec-2027:b"},
+      "summary": "Develop the April prototype into a broader controlled beta. Test how students move from their plans into relevant opportunities, how the Canvas remains useful over time and how aggregated needs and aspirations can inform curation and commissioning without overclaiming the maturity of recommendation technology.",
+      "dependsOn": ["4.1.4-step-4", "4.1.4-step-2"],
+      "outputs": [
+        {"title": "Controlled King’s Canvas beta", "summary": "A more robust version available to a wider but still bounded student cohort."},
+        {"title": "Plan-to-opportunity matching", "summary": "Tested rules and curated recommendations connecting needs, aspirations and priorities to relevant live opportunities."},
+        {"title": "Progress and next-step prompts", "summary": "Revisitable prompts that help students update their plan and identify practical next steps over time."},
+        {"title": "Connections to projects and pathways", "summary": "Routes from Canvas priorities into projects, sustained experiences and curated progression pathways."},
+        {"title": "Needs and provision insight", "summary": "Aggregated, privacy-aware insight into recurring student needs, aspiration patterns and potential gaps in the opportunity offer."},
+        {"title": "Beta evaluation and launch requirements", "summary": "Evidence on usefulness, trust, accessibility and operational implications, with a prioritised list of changes required for supported live use."}
       ]
     },
     {
       "id": "4.1.4-step-5",
-      "title": "Connected King’s Edge launch",
+      "title": "Live King’s Edge service and product operations",
       "period": "jul-dec-2027:c",
-      "summary": "Launch one coherent live King’s Edge experience that joins the capabilities delivered through the earlier epics. The Accredible exit remains an earlier August 2027 deadline and is not held back by this wider launch.",
-      "dependsOn": [
-        "4.1.4-step-3",
-        "4.1.4-step-4",
-        "4.1.3-step-3"
-      ],
+      "summary": "Bring the separately developed capabilities into one supported live King’s Edge service. Establish the product, operational and assurance arrangements needed to run and improve the service beyond individual delivery epics. The Accredible exit remains an earlier August 2027 deadline.",
+      "dependsOn": ["4.1.4-step-3", "4.1.4-step-3b", "4.1.4-step-4b", "4.1.4-step-4c", "4.1.3-step-3"],
       "outputs": [
-        {
-          "title": "Connected student journey",
-          "summary": "A coherent route through opportunity discovery, registration, participation, projects and experiences, Canvas, evidence and digital recognition."
-        },
-        {
-          "title": "Production assurance",
-          "summary": "Completed accessibility, security, privacy, performance and operational-readiness assurance for the connected service."
-        },
-        {
-          "title": "Live product analytics",
-          "summary": "Operational and product analytics showing how students and providers move through the service and where journeys need improvement."
-        },
-        {
-          "title": "Support and maintenance model",
-          "summary": "Documented support, incident, release, maintenance and recovery arrangements with named product and service ownership."
-        },
-        {
-          "title": "Adoption and transition",
-          "summary": "A clear transition plan, guidance and communications for students, activity providers and operational teams."
-        }
+        {"title": "Coherent student experience", "summary": "Joined-up navigation and interaction across opportunity discovery, participation, projects and experiences, King’s Canvas, evidence and digital recognition."},
+        {"title": "Production assurance", "summary": "Completed accessibility, security, privacy, performance and operational-readiness assurance for the live service."},
+        {"title": "Live product analytics", "summary": "Operational and product analytics showing how students and providers use the service and where journeys need improvement."},
+        {"title": "Product and service ownership", "summary": "Named decision rights and responsibilities for the roadmap, content, service operation, data, support and ongoing improvement."},
+        {"title": "Support and release operations", "summary": "Documented support, incident, release, maintenance, monitoring and recovery arrangements."},
+        {"title": "Adoption and transition", "summary": "Guidance, communications and transition support for students, activity providers and operational teams."}
       ]
     },
     {
       "id": "4.1.4-step-6",
-      "title": "Personalised planning and progression",
+      "title": "Personalised planning, progression and reflection",
       "period": "jan-jun-2028",
-      "summary": "Use evidence from the first live year to strengthen the developmental journey through King’s Edge. Help students move from planning into relevant activity, from lighter-touch participation into deeper experiences, and from completed activity into reflection, evidence and recognition.",
-      "dependsOn": [
-        "4.1.4-step-5",
-        "2.2.1",
-        "2.4.3"
-      ],
+      "summary": "Use evidence from live operation to strengthen the developmental journey through King’s Edge. Help students move from planning into relevant activity, from lighter-touch participation into deeper experiences, and from completed activity into reflection, evidence and recognition.",
+      "dependsOn": ["4.1.4-step-5", "2.2.1", "2.4.3"],
       "outputs": [
-        {
-          "title": "Planning-to-opportunity links",
-          "summary": "Stronger connections from Canvas needs, aspirations and priorities into relevant opportunities and next steps."
-        },
-        {
-          "title": "Progression pathways",
-          "summary": "Collections and pathways that help students move from short or introductory activity into deeper projects and sustained experiences."
-        },
-        {
-          "title": "Evidence and recognition connections",
-          "summary": "Clear movement from activity progress and completion into verified evidence and the recognition routes led through 2.4.3."
-        },
-        {
-          "title": "Post-activity reflection",
-          "summary": "Proportionate prompts that help students reflect on what they did, what changed and what they may do next."
-        },
-        {
-          "title": "Recognition rules and records",
-          "summary": "The Edge product changes needed to apply the recognition proposition led through 2.4.3, using the skills language, governance and assurance supplied through 2.1.3 and 2.2.3."
-        }
+        {"title": "Improved planning-to-opportunity matching", "summary": "Stronger connections from Canvas needs, aspirations and priorities into relevant opportunities and next steps."},
+        {"title": "Progression pathways", "summary": "Collections and pathways that help students move from short or introductory activity into deeper projects and sustained experiences."},
+        {"title": "Evidence and recognition connections", "summary": "Clear movement from activity progress and completion into verified evidence and the recognition routes led through 2.4.3."},
+        {"title": "Post-activity reflection", "summary": "Proportionate prompts that help students reflect on what they did, what changed and what they may do next."},
+        {"title": "Recognition rules and records", "summary": "The Edge product changes needed to apply the recognition proposition led through 2.4.3, using the skills language, governance and assurance supplied through 2.1.3 and 2.2.3."},
+        {"title": "Offer insight and continuous curation", "summary": "Use participation and Canvas evidence to improve the opportunity offer and identify areas requiring stronger provision."}
       ]
     },
     {
       "id": "4.1.4-step-7",
-      "title": "King’s Edge in the student app",
+      "title": "King’s Edge in the shared student app",
       "period": "jul-dec-2028",
       "summary": "Move King’s Edge into the shared student-app environment while retaining clear ownership of the Edge proposition, content, curation, developmental journeys and recognition rules.",
-      "dependsOn": [
-        "4.1.4-step-6",
-        "4.1.2-step-4"
-      ],
+      "dependsOn": ["4.1.4-step-6", "4.1.2-step-4"],
       "outputs": [
-        {
-          "title": "Shared home and navigation",
-          "summary": "King’s Edge available through the common student-app home, navigation and interaction patterns."
-        },
-        {
-          "title": "Shared profile, search and communications",
-          "summary": "Edge journeys using the common profile, search, communications and personalisation capabilities where they meet the need."
-        },
-        {
-          "title": "Continuity of records and journeys",
-          "summary": "Student activity, evidence, recognition and planning records preserved through the transition into the shared environment."
-        },
-        {
-          "title": "Retirement of duplicated functions",
-          "summary": "Edge-specific functions replaced by common Hub capabilities where those capabilities are ready, appropriate and supportable."
-        },
-        {
-          "title": "Focused Edge roadmap",
-          "summary": "A selective continuing roadmap centred on opportunity quality, King’s Canvas, projects and experiences, evidence and recognition."
-        }
+        {"title": "Shared home and navigation", "summary": "King’s Edge available through the common student-app home, navigation and interaction patterns."},
+        {"title": "Shared profile, search and communications", "summary": "Edge journeys using the common profile, search, communications and personalisation capabilities where they meet the need."},
+        {"title": "Continuity of records and journeys", "summary": "Student activity, evidence, recognition and planning records preserved through the transition into the shared environment."},
+        {"title": "Retirement of duplicated functions", "summary": "Edge-specific functions replaced by common Hub capabilities where those capabilities are ready, appropriate and supportable."},
+        {"title": "Focused Edge roadmap", "summary": "A selective continuing roadmap centred on opportunity quality, King’s Canvas, projects and experiences, evidence and recognition."}
       ]
     },
     {
@@ -272,30 +161,13 @@
       "title": "Mature King’s Edge product domain",
       "period": "jan-jun-2029",
       "summary": "Complete the transition from a separately evolving Edge platform into a stable product domain within the Student Experience Hub, with clear ownership and a routine continuous-improvement cycle.",
-      "dependsOn": [
-        "4.1.4-step-7"
-      ],
+      "dependsOn": ["4.1.4-step-7"],
       "outputs": [
-        {
-          "title": "Stable shared product domain",
-          "summary": "King’s Edge operating through shared app, data, integration, profile, communication and service capabilities."
-        },
-        {
-          "title": "Enduring ownership",
-          "summary": "Named product, service and operational ownership with clear decision rights and support responsibilities."
-        },
-        {
-          "title": "Analytics and continuous improvement",
-          "summary": "A routine cycle for monitoring reach, participation, depth, progression, service quality and product performance and prioritising improvements."
-        },
-        {
-          "title": "Controlled rationalisation",
-          "summary": "Redundant Edge-specific components retired where continuity, data integrity and support are assured."
-        },
-        {
-          "title": "Route to later capabilities",
-          "summary": "A controlled path for later portfolio, articulation and enhanced-record features when the propositions led through 2.4.3 and the required data foundations are mature."
-        }
+        {"title": "Stable shared product domain", "summary": "King’s Edge operating through shared app, data, integration, profile, communication and service capabilities."},
+        {"title": "Enduring ownership", "summary": "Named product, service and operational ownership with clear decision rights and support responsibilities."},
+        {"title": "Analytics and continuous improvement", "summary": "A routine cycle for monitoring reach, participation, depth, progression, service quality and product performance and prioritising improvements."},
+        {"title": "Controlled rationalisation", "summary": "Redundant Edge-specific components retired where continuity, data integrity and support are assured."},
+        {"title": "Route to later capabilities", "summary": "A controlled path for later portfolio, articulation and enhanced-record features when the propositions led through 2.4.3 and the required data foundations are mature."}
       ]
     }
   ]
