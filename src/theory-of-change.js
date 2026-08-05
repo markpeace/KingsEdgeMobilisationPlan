@@ -10,76 +10,190 @@ function appendParagraphs(parent, paragraphs = []) {
   });
 }
 
-function createSection({ title, paragraphs }, className = '') {
-  const section = document.createElement('section');
-  section.className = ['theory-copy-section', className].filter(Boolean).join(' ');
-
-  const heading = document.createElement('h3');
-  heading.textContent = title;
-  section.append(heading);
-  appendParagraphs(section, paragraphs);
-
-  return section;
+function createCue(text = 'Read more') {
+  const cue = document.createElement('span');
+  cue.className = 'theory-disclosure-cue';
+  cue.textContent = text;
+  return cue;
 }
 
-function createInnovationAnchors() {
-  const section = document.createElement('section');
-  section.className = 'theory-copy-section theory-anchors';
+function createDisclosure({ label, title, tldr, paragraphs }, className = '') {
+  const details = document.createElement('details');
+  details.className = ['theory-disclosure', className].filter(Boolean).join(' ');
 
-  const heading = document.createElement('h3');
-  heading.textContent = theory.innovationAnchors.title;
-  section.append(heading);
+  const summary = document.createElement('summary');
+  const summaryCopy = document.createElement('span');
+  summaryCopy.className = 'theory-disclosure-summary-copy';
 
-  const introduction = document.createElement('p');
-  introduction.className = 'theory-section-introduction';
-  introduction.textContent = theory.innovationAnchors.introduction;
-  section.append(introduction);
+  if (label) {
+    const eyebrow = document.createElement('span');
+    eyebrow.className = 'theory-card-label';
+    eyebrow.textContent = label;
+    summaryCopy.append(eyebrow);
+  }
 
-  const list = document.createElement('div');
-  list.className = 'theory-anchor-list';
+  const heading = document.createElement('span');
+  heading.className = 'theory-card-title';
+  heading.textContent = title;
 
-  theory.innovationAnchors.items.forEach((item, index) => {
-    const article = document.createElement('article');
-    article.className = 'theory-anchor';
+  const tldrCopy = document.createElement('span');
+  tldrCopy.className = 'theory-card-tldr';
+  tldrCopy.textContent = tldr;
 
-    const itemHeading = document.createElement('h4');
-    const number = document.createElement('span');
-    number.textContent = String(index + 1).padStart(2, '0');
-    itemHeading.append(number, document.createTextNode(item.title));
-    article.append(itemHeading);
-    appendParagraphs(article, item.paragraphs);
-    list.append(article);
-  });
+  summaryCopy.append(heading, tldrCopy);
+  summary.append(summaryCopy, createCue('Explore'));
+  details.append(summary);
 
-  section.append(list);
-  return section;
+  const body = document.createElement('div');
+  body.className = 'theory-disclosure-body';
+  appendParagraphs(body, paragraphs);
+  details.append(body);
+
+  return details;
+}
+
+function createTransformationCard(item, index) {
+  const details = document.createElement('details');
+  details.className = 'theory-transformation-card';
+  details.id = `theory-transformation-${item.verb.toLowerCase()}`;
+
+  const summary = document.createElement('summary');
+
+  const number = document.createElement('span');
+  number.className = 'theory-transformation-number';
+  number.textContent = String(index + 1).padStart(2, '0');
+
+  const copy = document.createElement('span');
+  copy.className = 'theory-transformation-summary-copy';
+
+  const verb = document.createElement('strong');
+  verb.className = 'theory-transformation-verb';
+  verb.textContent = item.verb;
+
+  const title = document.createElement('span');
+  title.className = 'theory-transformation-title';
+  title.textContent = item.title;
+
+  const tldr = document.createElement('span');
+  tldr.className = 'theory-transformation-tldr';
+  tldr.textContent = item.tldr;
+
+  copy.append(verb, title, tldr);
+  summary.append(number, copy, createCue('Open'));
+  details.append(summary);
+
+  const body = document.createElement('div');
+  body.className = 'theory-transformation-body';
+  appendParagraphs(body, item.paragraphs);
+  details.append(body);
+
+  return details;
 }
 
 function createTransformations() {
   const section = document.createElement('section');
-  section.className = 'theory-copy-section theory-transformations';
+  section.className = 'theory-scan-section theory-transformations';
+  section.setAttribute('aria-labelledby', 'theory-transformations-title');
 
-  const heading = document.createElement('h3');
-  heading.textContent = theory.transformations.title;
-  section.append(heading);
+  const header = document.createElement('header');
+  header.className = 'theory-section-header';
 
-  const list = document.createElement('div');
-  list.className = 'theory-transformation-list';
+  const label = document.createElement('p');
+  label.className = 'eyebrow';
+  label.textContent = theory.transformations.label;
 
-  theory.transformations.items.forEach((item) => {
-    const article = document.createElement('article');
-    article.className = 'theory-transformation';
+  const title = document.createElement('h3');
+  title.id = 'theory-transformations-title';
+  title.textContent = theory.transformations.title;
 
-    const itemHeading = document.createElement('h4');
-    const verb = document.createElement('strong');
-    verb.textContent = item.verb;
-    itemHeading.append(verb, document.createTextNode(` - ${item.title}`));
-    article.append(itemHeading);
-    appendParagraphs(article, item.paragraphs);
-    list.append(article);
+  const introduction = document.createElement('p');
+  introduction.className = 'theory-section-introduction';
+  introduction.textContent = theory.transformations.introduction;
+
+  const guidance = document.createElement('p');
+  guidance.className = 'theory-open-guidance';
+  guidance.textContent = 'The headlines give the whole story. Open any card to dig deeper.';
+
+  header.append(label, title, introduction, guidance);
+
+  const grid = document.createElement('div');
+  grid.className = 'theory-transformation-grid';
+  theory.transformations.items.forEach((item, index) => {
+    grid.append(createTransformationCard(item, index));
   });
 
-  section.append(list);
+  section.append(header, grid);
+  return section;
+}
+
+function createCaseInOneMinute() {
+  const section = document.createElement('section');
+  section.className = 'theory-scan-section theory-case';
+  section.setAttribute('aria-labelledby', 'theory-case-title');
+
+  const header = document.createElement('header');
+  header.className = 'theory-section-header theory-section-header-compact';
+
+  const label = document.createElement('p');
+  label.className = 'eyebrow';
+  label.textContent = 'The case in one minute';
+
+  const title = document.createElement('h3');
+  title.id = 'theory-case-title';
+  title.textContent = 'Why King’s Edge, why now, and why it should work';
+
+  header.append(label, title);
+
+  const grid = document.createElement('div');
+  grid.className = 'theory-case-grid';
+  grid.append(
+    createDisclosure(theory.strategicChallenge, 'theory-case-card theory-case-challenge'),
+    createDisclosure(theory.strategicProposition, 'theory-case-card theory-case-proposition'),
+    createDisclosure(theory.causalHypothesis, 'theory-case-card theory-case-hypothesis')
+  );
+
+  section.append(header, grid);
+  return section;
+}
+
+function createInnovationAnchor(item, index) {
+  return createDisclosure({
+    label: String(index + 1).padStart(2, '0'),
+    title: item.title,
+    tldr: item.tldr,
+    paragraphs: item.paragraphs
+  }, 'theory-anchor-card');
+}
+
+function createInnovationAnchors() {
+  const section = document.createElement('section');
+  section.className = 'theory-scan-section theory-anchors';
+  section.setAttribute('aria-labelledby', 'theory-anchors-title');
+
+  const header = document.createElement('header');
+  header.className = 'theory-section-header';
+
+  const label = document.createElement('p');
+  label.className = 'eyebrow';
+  label.textContent = theory.innovationAnchors.label;
+
+  const title = document.createElement('h3');
+  title.id = 'theory-anchors-title';
+  title.textContent = theory.innovationAnchors.title;
+
+  const introduction = document.createElement('p');
+  introduction.className = 'theory-section-introduction';
+  introduction.textContent = theory.innovationAnchors.introduction;
+
+  header.append(label, title, introduction);
+
+  const grid = document.createElement('div');
+  grid.className = 'theory-anchor-grid';
+  theory.innovationAnchors.items.forEach((item, index) => {
+    grid.append(createInnovationAnchor(item, index));
+  });
+
+  section.append(header, grid);
   return section;
 }
 
@@ -92,6 +206,9 @@ function createTheoryOfChange() {
   const header = document.createElement('header');
   header.className = 'theory-header';
 
+  const copy = document.createElement('div');
+  copy.className = 'theory-header-copy';
+
   const eyebrow = document.createElement('p');
   eyebrow.className = 'eyebrow';
   eyebrow.textContent = `Theory of change · ${theory.status} ${theory.approvedDate}`;
@@ -100,14 +217,23 @@ function createTheoryOfChange() {
   title.id = `${SECTION_ID}-title`;
   title.textContent = theory.title;
 
-  header.append(eyebrow, title);
+  const standfirst = document.createElement('p');
+  standfirst.className = 'theory-standfirst';
+  standfirst.textContent = theory.standfirst;
+
+  copy.append(eyebrow, title, standfirst);
+
+  const motif = document.createElement('div');
+  motif.className = 'theory-header-motif';
+  motif.setAttribute('aria-hidden', 'true');
+  motif.innerHTML = '<span>Build</span><span>Shape</span><span>Claim</span><span>Learn</span><span>Carry</span>';
+
+  header.append(copy, motif);
   section.append(
     header,
-    createSection(theory.strategicChallenge, 'theory-strategic-challenge'),
-    createSection(theory.strategicProposition, 'theory-strategic-proposition'),
-    createInnovationAnchors(),
-    createSection(theory.causalHypothesis, 'theory-causal-hypothesis'),
-    createTransformations()
+    createTransformations(),
+    createCaseInOneMinute(),
+    createInnovationAnchors()
   );
 
   return section;
