@@ -1,0 +1,132 @@
+.landing-main--with-theory {
+  display: block;
+  min-height: auto;
+}
+
+.landing-main--with-theory .landing-hero {
+  min-height: min(560px, calc(100vh - 190px));
+}
+
+.theory-of-change {
+  width: min(1180px, calc(100% - 2rem));
+  margin: 0 auto;
+  padding: clamp(3rem, 7vw, 6rem) 0;
+  border-top: 3px solid var(--ink, #090909);
+  color: var(--ink, #090909);
+}
+
+.theory-header {
+  max-width: 900px;
+  margin-bottom: clamp(2.5rem, 5vw, 4rem);
+}
+
+.theory-header h2 {
+  max-width: 850px;
+  margin: 0.5rem 0 0;
+  font-family: var(--font-brand, Georgia, serif);
+  font-size: clamp(2.4rem, 6vw, 5.5rem);
+  font-weight: 400;
+  line-height: 0.95;
+  letter-spacing: -0.045em;
+}
+
+.theory-copy-section {
+  max-width: 900px;
+  padding: clamp(2rem, 4vw, 3.5rem) 0;
+  border-top: 1px solid var(--border, #d8d8d8);
+}
+
+.theory-copy-section > h3 {
+  margin: 0 0 1.25rem;
+  font-family: var(--font-brand, Georgia, serif);
+  font-size: clamp(1.8rem, 3.2vw, 3rem);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.035em;
+}
+
+.theory-copy-section p {
+  max-width: 78ch;
+  margin: 0 0 1rem;
+  font-size: clamp(1rem, 1.4vw, 1.15rem);
+  line-height: 1.62;
+}
+
+.theory-copy-section p:last-child {
+  margin-bottom: 0;
+}
+
+.theory-section-introduction {
+  margin-bottom: 2rem !important;
+  font-size: clamp(1.08rem, 1.6vw, 1.28rem) !important;
+}
+
+.theory-anchor-list,
+.theory-transformation-list {
+  display: grid;
+  gap: 0;
+  border-top: 2px solid var(--ink, #090909);
+}
+
+.theory-anchor,
+.theory-transformation {
+  padding: 1.5rem 0;
+  border-bottom: 1px solid var(--border, #d8d8d8);
+}
+
+.theory-anchor h4,
+.theory-transformation h4 {
+  margin: 0 0 0.8rem;
+  font-size: clamp(1.15rem, 2vw, 1.55rem);
+  line-height: 1.18;
+  letter-spacing: -0.02em;
+}
+
+.theory-anchor h4 span {
+  display: inline-block;
+  min-width: 2.4rem;
+  margin-right: 0.75rem;
+  color: var(--accent, #ed1c24);
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  vertical-align: 0.18em;
+}
+
+.theory-transformation h4 strong {
+  color: var(--accent, #ed1c24);
+}
+
+.theory-causal-hypothesis {
+  max-width: 980px;
+}
+
+.theory-causal-hypothesis p {
+  font-size: clamp(1.1rem, 1.8vw, 1.35rem);
+  line-height: 1.52;
+}
+
+@media (min-width: 900px) {
+  .theory-anchor-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .theory-anchor {
+    padding: 1.75rem 2rem 1.75rem 0;
+  }
+
+  .theory-anchor:nth-child(even) {
+    padding-right: 0;
+    padding-left: 2rem;
+    border-left: 1px solid var(--border, #d8d8d8);
+  }
+}
+
+@media (max-width: 760px) {
+  .landing-main--with-theory .landing-hero {
+    min-height: auto;
+  }
+
+  .theory-of-change {
+    width: min(100% - 1.25rem, 1180px);
+  }
+}
