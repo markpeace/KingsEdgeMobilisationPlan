@@ -2,10 +2,11 @@
   "status": "Approved",
   "approvedDate": "5 August 2026",
   "title": "How King's Edge creates lasting graduate value",
-  "standfirst": "King's Edge reshapes how King's creates, supports, recognises and learns from graduate value.",
+  "standfirst": "King’s Edge connects the course, purpose and opportunity so every student can build, recognise and use the full value of their King’s education.",
   "strategicChallenge": {
     "label": "Why change",
     "title": "The strategic challenge",
+    "displayTitle": "The graduate premium is becoming less secure",
     "tldr": "The graduate premium is under pressure, and King's needs a more distinctive account of the lasting value of its education.",
     "paragraphs": [
       "The traditional graduate premium is becoming less secure. Graduate employment is under pressure, artificial intelligence is reshaping early-career work, and students are asking more exacting questions about the value and return on investment of higher education.",
@@ -16,8 +17,9 @@
     ]
   },
   "strategicProposition": {
-    "label": "Our proposition",
+    "label": "What King’s will do",
     "title": "The strategic proposition",
+    "displayTitle": "Organise the whole experience around graduate futures",
     "tldr": "King’s will organise the whole student experience more intentionally around disciplinary learning, purpose and graduate futures.",
     "paragraphs": [
       "King’s will establish a more ambitious model of university education, organised around the graduate futures of its students.",
@@ -30,8 +32,8 @@
   },
   "innovationAnchors": {
     "label": "What makes it different",
-    "title": "Our innovation anchors",
-    "introduction": "Across the sector, universities are making increasingly prominent commitments around employability, skills and graduate outcomes. King’s Edge goes further. It builds on the distinctive intellectual value of disciplinary education by creating a second, connected dimension of educational gain around purpose, experience and future contribution.",
+    "title": "Four choices set King’s Edge apart",
+    "introduction": "King’s Edge builds on the distinctive intellectual value of disciplinary education by creating a second, connected dimension of educational gain around purpose, experience and future contribution.",
     "items": [
       {
         "title": "Purpose as architecture",
@@ -75,6 +77,13 @@
     "label": "Why it should work",
     "title": "Our causal hypothesis",
     "tldr": "Better-designed opportunity, shaped around purpose and made visible through evidence, should improve student futures and help King’s keep strengthening its offer.",
+    "chain": [
+      "Connect learning, purpose and opportunity",
+      "Students make stronger choices and build richer capabilities",
+      "Learning gains become visible, recognised and usable",
+      "Graduate futures improve",
+      "King’s strengthens its education, market position and reputation"
+    ],
     "paragraphs": [
       "If King’s treats disciplinary learning and individual purpose as connected organising principles, designs experiences around the development they produce, creates a rich and inclusive ecology of opportunity, and gives students an external language through which to recognise and evidence their capabilities, then every student will be better able to accrue and use the learning, experience and connections needed to move towards their ambitions.",
       "Because King’s will understand those individual journeys more clearly, it will also be able to identify where graduate value is strong or uneven, respond more intelligently to student needs, strengthen its educational offer and make a more credible claim about the lasting value of a King’s education.",
@@ -82,8 +91,8 @@
     ]
   },
   "transformations": {
-    "label": "The five moves",
-    "title": "The transformations we will deliver",
+    "label": "What King’s Edge does",
+    "title": "Five moves. One connected system.",
     "introduction": "Build the opportunity. Shape it around the student. Help students claim the gain. Learn from what happens. Carry that value into the world.",
     "items": [
       {
@@ -132,5 +141,9 @@
         ]
       }
     ]
+  },
+  "closing": {
+    "title": "Stronger student development. Better graduate futures. A clearer King’s graduate premium.",
+    "text": "King’s Edge turns a richer education into value students can use and King’s can credibly claim."
   }
 }
