@@ -2,8 +2,11 @@
   "status": "Approved",
   "approvedDate": "5 August 2026",
   "title": "How King's Edge creates lasting graduate value",
+  "standfirst": "King's Edge reshapes how King's creates, supports, recognises and learns from graduate value.",
   "strategicChallenge": {
+    "label": "Why change",
     "title": "The strategic challenge",
+    "tldr": "The graduate premium is under pressure, and King's needs a more distinctive account of the lasting value of its education.",
     "paragraphs": [
       "The traditional graduate premium is becoming less secure. Graduate employment is under pressure, artificial intelligence is reshaping early-career work, and students are asking more exacting questions about the value and return on investment of higher education.",
       "These pressures are unfolding in an increasingly competitive market. King’s faces more ambitious global competitors, while a shrinking domestic demographic will make competition for UK students more intense over time. Universities will need to make a clearer and more distinctive case for why students should choose them, and for the lasting value their education will provide.",
@@ -13,7 +16,9 @@
     ]
   },
   "strategicProposition": {
+    "label": "Our proposition",
     "title": "The strategic proposition",
+    "tldr": "King’s will organise the whole student experience more intentionally around disciplinary learning, purpose and graduate futures.",
     "paragraphs": [
       "King’s will establish a more ambitious model of university education, organised around the graduate futures of its students.",
       "Disciplinary study will remain the academic core of a King’s education. Around that core, every student will be actively supported to develop a clearer sense of purpose, explore their ambitions and build the learning, experiences, relationships and capabilities they need to take meaningful steps towards them.",
@@ -24,11 +29,13 @@
     ]
   },
   "innovationAnchors": {
+    "label": "What makes it different",
     "title": "Our innovation anchors",
     "introduction": "Across the sector, universities are making increasingly prominent commitments around employability, skills and graduate outcomes. King’s Edge goes further. It builds on the distinctive intellectual value of disciplinary education by creating a second, connected dimension of educational gain around purpose, experience and future contribution.",
     "items": [
       {
         "title": "Purpose as architecture",
+        "tldr": "Purpose becomes a second organising dimension alongside the course.",
         "paragraphs": [
           "Most universities organise the student journey primarily around the course. Individual purpose, ambition and future direction are then addressed around it through careers support, optional opportunities and student initiative.",
           "King’s will treat purpose as an organising principle alongside the disciplinary journey. Every student will be actively supported to explore what matters to them and to accrue the learning, experiences and connections needed to move towards it.",
@@ -37,6 +44,7 @@
       },
       {
         "title": "Learning design over activity guarantees",
+        "tldr": "King’s will lead on what experiences help students learn, not simply whether they completed one.",
         "paragraphs": [
           "Across the sector, universities are making easily communicated promises about placements, projects and quantities of employer-informed learning.",
           "King’s will lead through the quality and sophistication of its learning design. Students will encounter experiences that allow them to apply, test and extend their disciplinary learning through meaningful challenge, agency, relationships, reflection and work in unfamiliar settings.",
@@ -45,6 +53,7 @@
       },
       {
         "title": "A developmental ecology engineered around every student",
+        "tldr": "King’s will deliberately connect and grow opportunity within and beyond the course, with access designed for every student.",
         "paragraphs": [
           "Universities often offer extensive opportunities around the course, but leave students to find, navigate and combine them for themselves.",
           "King’s will build an intentional ecology of curricular, co-curricular and extra-curricular learning, world-leading in its quality, extent and inclusivity. It will increase the availability of innovative developmental experiences while making access to them more consistent.",
@@ -53,17 +62,19 @@
       },
       {
         "title": "An external skills language grounded in individual evidence",
+        "tldr": "Students will use a language understood beyond King’s to claim what they can actually evidence.",
         "paragraphs": [
-          "Graduate attributes frameworks usually describe a small set of qualities the university wants associated with its graduates. They are often too reductive to capture the breadth and specificity of what students develop, particularly as the capabilities needed in a changing world continue to evolve.",
-          "They also tend to map what a course is intended to provide, rather than what an individual student has actually developed through their particular combination of study, experience and participation. This weakens both relevance and assurance.",
-          "Most fundamentally, graduate attributes are usually an internal language: an account of how a university wants to describe its educational product.",
-          "King’s will instead use a rich, external skills language designed to broker a connection between disciplinary learning, individual experience and the wider world. It will allow students to build a more precise account of their own development, enable King’s to evidence that development more credibly, and connect the education more directly with changing forms of work and contribution."
+          "Graduate attributes frameworks typically reduce complex development to a short list of broad qualities. They tend to map programme intent rather than individual learning and primarily describe how the institution wants to present its educational offer.",
+          "King’s will use a rich external skills language designed to make the capabilities developed through disciplinary study and wider experience more visible and more meaningfully connected with the world beyond the university.",
+          "Students will build precise, living accounts of the capabilities they have developed, grounded in evidence from their own course and wider experience. This will strengthen relevance and assurance without reducing academic education to preparation for a particular occupation."
         ]
       }
     ]
   },
   "causalHypothesis": {
+    "label": "Why it should work",
     "title": "Our causal hypothesis",
+    "tldr": "Better-designed opportunity, shaped around purpose and made visible through evidence, should improve student futures and help King’s keep strengthening its offer.",
     "paragraphs": [
       "If King’s treats disciplinary learning and individual purpose as connected organising principles, designs experiences around the development they produce, creates a rich and inclusive ecology of opportunity, and gives students an external language through which to recognise and evidence their capabilities, then every student will be better able to accrue and use the learning, experience and connections needed to move towards their ambitions.",
       "Because King’s will understand those individual journeys more clearly, it will also be able to identify where graduate value is strong or uneven, respond more intelligently to student needs, strengthen its educational offer and make a more credible claim about the lasting value of a King’s education.",
@@ -71,11 +82,14 @@
     ]
   },
   "transformations": {
+    "label": "The five moves",
     "title": "The transformations we will deliver",
+    "introduction": "Build the opportunity. Shape it around the student. Help students claim the gain. Learn from what happens. Carry that value into the world.",
     "items": [
       {
         "verb": "Build",
         "title": "more and better opportunities within and beyond the course",
+        "tldr": "Connect, strengthen and grow the opportunities through which students apply learning, develop skills and explore their futures.",
         "paragraphs": [
           "King’s will connect and strengthen what already exists, while substantially increasing the range of experiences through which students can apply their learning, develop skills, build relationships and explore their futures.",
           "Every student will be supported to find and take part in opportunities relevant to their ambitions, circumstances and stage of development."
@@ -84,6 +98,7 @@
       {
         "verb": "Shape",
         "title": "every student’s education is shaped by purpose as well as discipline",
+        "tldr": "Use students’ evolving purposes to connect them with relevant learning, experience, relationships and support.",
         "paragraphs": [
           "Alongside their disciplinary journey, every student will be supported to explore what matters to them and how their ambitions are developing.",
           "King’s will use that understanding to connect students with relevant learning, experiences, relationships and support, helping them take meaningful steps towards futures that matter to them."
@@ -92,6 +107,7 @@
       {
         "verb": "Claim",
         "title": "every student can recognise and explain what they have gained",
+        "tldr": "Help every student recognise and confidently explain their individual learning gains, including those developed beyond the course.",
         "paragraphs": [
           "A skills language understood beyond King’s, together with a richer record of learning, will help students talk confidently about the knowledge and capabilities they have developed through their course and wider experience.",
           "Learning gained beyond the course will become more visible and, where appropriate, formally recognised. King’s will empower students to claim their individual learning gains rather than presuming that everyone develops in the same way."
@@ -100,6 +116,7 @@
       {
         "verb": "Learn",
         "title": "King’s uses evidence to understand students and keep improving",
+        "tldr": "Combine student voice, behaviour, course and outcomes data, and external insight to keep improving the offer.",
         "paragraphs": [
           "King’s will connect what students tell us about their ambitions, needs and confidence; what they choose to take part in; what enrolment, course and graduate outcomes data reveals; and what employers, alumni, professions and wider society tell us about changing futures.",
           "This will show where graduate value is strong, uneven or needs to change. King’s will use that insight to improve its courses, opportunities and support, and respond more closely to what students need."
@@ -108,6 +125,7 @@
       {
         "verb": "Carry",
         "title": "stronger graduate futures strengthen King’s",
+        "tldr": "Turn stronger graduate futures into stronger market position, recruitment and reputation for King’s.",
         "paragraphs": [
           "Students are better equipped to move into positive graduate destinations and make confident next steps.",
           "As those gains become visible in outcomes, evidence and external recognition, King’s will be able to make a stronger claim for the value of its education. This will sharpen its market position, support recruitment and conversion, strengthen relationships with employers and partners, and build its reputation as a leader in graduate futures."
