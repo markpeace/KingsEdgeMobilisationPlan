@@ -1,13 +1,1 @@
-{
-  "id": "4.1.3",
-  "title": "Digital Innovation and Product Development Capability",
-  "lead": "James Costerton",
-  "planningStatus": "delivery-design",
-  "problemSolved": "King’s does not yet have a dependable route for turning emerging student-experience needs into well-designed digital capabilities that can move from prototype into secure, supported institutional operation.",
-  "whatChanges": "King’s establishes a sustained multidisciplinary product-development capability that can discover, prototype, test, harden and operationalise new student-facing digital capabilities within the shared Student Experience Hub.",
-  "decisionLog": [],
-  "ownership": {
-    "accountableOwner": "Mark Peace",
-    "deliveryLead": "James Costerton"
-  }
-}
+{"id":"4.1.3","title":"Digital Innovation and Product Development Capability","lead":"James Costerton","planningStatus":"delivery-design","problemSolved":"King’s does not yet have a sustained multidisciplinary team or consistent product practices for moving emerging student-experience needs from discovery and prototype into secure, supported institutional operation.","whatChanges":"King’s establishes an enduring multidisciplinary digital product team with clear decision rights, a transparent demand pipeline and repeatable practices for discovery, user research, design, engineering, quality, assurance, release and continuous improvement.","decisionLog":[],"ownership":{"accountableOwner":"Mark Peace","deliveryLead":"James Costerton"}}
