@@ -75,7 +75,7 @@
   },
   {
     "id": "4.1",
-    "title": "Single Digital Front Door",
+    "title": "Digital Student Experience Hub",
     "owner": "Mark Peace",
     "deliveryContext": "out-of-programme",
     "summary": "Creates a coherent and personalised digital student experience by progressively integrating existing systems and platforms, strengthening the CRM capability that connects services behind them, and developing digital enhancements within a shared institutional environment.",
@@ -141,7 +141,7 @@
       {
         "id": "4.1.2",
         "title": "Student App and Journey Integration",
-        "lead": "Faculty TBC",
+        "lead": "Joe Moore",
         "planningStatus": "proposition-development",
         "decisionLog": [],
         "summary": "Creates the evolving digital front door through which students can navigate information, opportunities, actions and support across King’s.",
@@ -154,7 +154,7 @@
         },
         "ownership": {
           "accountableOwner": "Mark Peace",
-          "deliveryLead": "Faculty TBC"
+          "deliveryLead": "Joe Moore"
         },
         "benefits": [
           {
