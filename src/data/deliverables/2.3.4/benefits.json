@@ -1,0 +1,20 @@
+{
+  "benefits": [
+    {
+      "id": "2.3.4-B1",
+      "title": "Students can navigate and engage with the beyond-course offer more easily",
+      "statement": "Students encounter a beyond-course learning offer that is sequenced around the rhythms of their wider academic journey, with clearer invitations at moments when they are more likely to have the need, capacity or motivation to engage. Opportunities become easier to find, understand and act on, with repeated points of entry across the student journey rather than disproportionate reliance on Welcome.",
+      "beneficiary": "Students",
+      "benefitType": "navigability and participation",
+      "successLooksLike": "Students can identify relevant opportunities at different stages of their studies, participation is distributed more evenly across the year, and students report that the wider King’s offer feels easier to navigate and better aligned with the demands of their course."
+    },
+    {
+      "id": "2.3.4-B2",
+      "title": "King’s gets more value from its beyond-course offer through better coordination and timing",
+      "statement": "Faculties, services, KCLSU and student groups coordinate activity around a shared understanding of student journeys and capacity to engage, reducing competition for attention and making better use of existing provision. Gaps and quieter points in the rhythm become visible, enabling King’s Edge to commission selectively where new activity would add most value.",
+      "beneficiary": "Students, faculties, services, KCLSU and King’s",
+      "benefitType": "coordinated provision and increased value from investment",
+      "successLooksLike": "Activity is distributed more intentionally across the student journey, duplication and competing demands reduce, existing opportunities reach students at more useful moments, and new commissioning is targeted at evidenced gaps in the wider offer."
+    }
+  ]
+}
