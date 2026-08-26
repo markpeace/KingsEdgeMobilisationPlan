@@ -54,12 +54,11 @@
       "id": "4.1.4-step-2",
       "title": "Replatform the core Edge service into Azure",
       "period": "jul-dec-2026:bc",
-      "summary": "Move the current Edge platform onto the shared Azure stack while maintaining continuity for live delivery. Rebuild and migrate the essential opportunity catalogue, search and discovery, registration, attendance and participation records, cohort restrictions and targeted curation, activity-owner administration, communications, reporting, audit trails and relevant historical data. Establish the flexible opportunity and experience model that later releases will use, and align the shopfront with 1.2 Data Foundations and Student Systems.",
+      "summary": "Move the current Edge platform onto the shared Azure stack while maintaining continuity for live delivery. Rebuild and migrate the essential opportunity catalogue, search and discovery, registration, attendance and participation records, cohort restrictions and targeted curation, activity-owner administration, communications, reporting, audit trails and relevant historical data. Establish the flexible opportunity and experience model that later releases will use, while aligning the specific authoritative-data and interface requirements with Student Systems and Data without waiting for the wider 1.2 programme to complete.",
       "dependsOn": [
         "4.1.4-step-1",
         "4.1.3-step-2",
-        "4.1.2-step-2",
-        "1.2"
+        "4.1.2-step-2"
       ]
     },
     {
