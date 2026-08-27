@@ -63,6 +63,15 @@
       ]
     },
     {
+      "id": "2.2.4",
+      "projectId": "2.2",
+      "parts": [
+        "./2.2.4/core.json",
+        "./2.2.4/overview.json",
+        "./2.2.4/benefits.json"
+      ]
+    },
+    {
       "id": "2.3.2",
       "projectId": "2.3",
       "parts": [
