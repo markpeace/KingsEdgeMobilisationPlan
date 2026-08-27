@@ -1,0 +1,177 @@
+{
+  "steps": [
+    {
+      "id": "2.2.4-step-1",
+      "title": "Confirm the Year 1 commissioning briefs and delivery rhythm",
+      "period": "jul-dec-2026:b",
+      "summary": "Turn the agreed Year 1 portfolio into four clear commissioning briefs, confirm named ownership where still TBC, and establish the shared annual rhythm. All four packages run across the academic year: autumn emphasises scalable and low-friction entry, spring increases active and sustained engagement, and post-exam and summer periods create more space for intensive provision where appropriate. The Belonging and Connection package remains predominantly short and active throughout.",
+      "dependsOn": [],
+      "outputs": [
+        {
+          "title": "Year 1 commissioning briefs and shared delivery rhythm",
+          "summary": "Four distinct briefs for the Final-Year Graduate Futures Programme, Service and Community-Engaged Experience Programme, Belonging and Connection Programme, and Responsive Opportunity Commissioning. Each brief preserves the common commissioning principle that investment should create substantive skills or experiential value rather than awareness alone."
+        }
+      ],
+      "decisions": [
+        {
+          "title": "Confirm named Careers owner for the Final-Year Graduate Futures Programme",
+          "summary": "Confirm the accountable programme owner within Careers and Employability before substantive commissioning begins."
+        },
+        {
+          "title": "Confirm owner for Responsive Opportunity Commissioning",
+          "summary": "Confirm who will hold the responsive commissioning envelope and make or escalate commissioning decisions during the year."
+        }
+      ]
+    },
+    {
+      "id": "2.2.4-step-2",
+      "title": "Run the Final-Year Graduate Futures Programme",
+      "period": {
+        "start": "jul-dec-2026:b",
+        "end": "jul-dec-2027:a"
+      },
+      "summary": "Run a year-round package of substantive skills and employment-enhancing experience for students approaching graduation. Prioritise programmes and student groups where additional intervention is most likely to add value, drawing on course-level graduate outcomes, demographic intersections, career-readiness self-report and evidence of prior employability engagement. Use scalable and short active provision throughout the year, with greater access to sustained projects, placements, mentoring and other intensive experiences towards the post-exam and summer period.",
+      "dependsOn": [
+        "2.2.4-step-1"
+      ],
+      "outputs": [
+        {
+          "title": "Final-Year Graduate Futures Programme",
+          "owner": "Careers and Employability Service, named owner TBC",
+          "summary": "A commissioned programme engaging around 10% of the graduating undergraduate population, circa 700 unique students, through approximately 15,000 student-hours of activity. Around 150 students access sustained high-intensity provision. The offer focuses on skills and experiences students can practise, demonstrate or carry forward rather than awareness-raising alone."
+        }
+      ],
+      "resources": {
+        "newInvestment": [
+          {
+            "item": "Final-Year Graduate Futures Programme commissioning envelope",
+            "amount": 65000,
+            "currency": "GBP",
+            "fundingRoute": "King's Edge mobilisation funding request",
+            "fundingStatus": "requested",
+            "confidence": "indicative",
+            "rationale": "Funds a balanced year-round portfolio of scalable, active and sustained opportunities for priority final-year undergraduates, including intensive provision for around 150 students.",
+            "riskIfMissing": "The programme cannot create the intended scale and depth of additional skills and experiential provision for students approaching graduation."
+          }
+        ]
+      }
+    },
+    {
+      "id": "2.2.4-step-3",
+      "title": "Run the Service and Community-Engaged Experience Programme",
+      "period": {
+        "start": "jul-dec-2026:b",
+        "end": "jul-dec-2027:a"
+      },
+      "summary": "Run a year-round programme that mobilises King's service and external engagement agenda through meaningful community-engaged activity. Commission opportunities in which service and contribution are also deliberate routes to skills development, experience, networks and graduate advantage. Use a mix of shorter active opportunities and more sustained project-based experiences, with intensive activity concentrated where the academic calendar and partner capacity make deeper engagement possible.",
+      "dependsOn": [
+        "2.2.4-step-1"
+      ],
+      "outputs": [
+        {
+          "title": "Service and Community-Engaged Experience Programme",
+          "owner": "Naureen Abubacker",
+          "summary": "A commissioned year-round programme aiming to engage approximately 650 to 700 unique students in substantive community-engaged experiences with an explicit skills and employment-enhancing spine."
+        }
+      ],
+      "resources": {
+        "newInvestment": [
+          {
+            "item": "Service and Community-Engaged Experience Programme commissioning envelope",
+            "amount": 40000,
+            "currency": "GBP",
+            "fundingRoute": "King's Edge mobilisation funding request",
+            "fundingStatus": "requested",
+            "confidence": "indicative",
+            "rationale": "Funds community-engaged opportunities that combine service and contribution with substantive skills and employment-enhancing experience.",
+            "riskIfMissing": "King's will have less capacity to turn its service agenda into accessible developmental experience beyond the course."
+          }
+        ]
+      }
+    },
+    {
+      "id": "2.2.4-step-4",
+      "title": "Run the Belonging and Connection Programme",
+      "period": {
+        "start": "jul-dec-2026:b",
+        "end": "jul-dec-2027:a"
+      },
+      "summary": "Run a high-volume, year-round programme of frequent, low-friction opportunities for connection, participation and wellbeing, responding directly to 2.3.2 Belonging and Participation: Physical and Digital and 2.3.4 Rhythms of the Academic Year and Student Experience. The programme is predominantly made up of active one- and two-hour experiences, punctuated by a smaller number of larger sandpit-style events. Repeat participation is encouraged where it strengthens connection and belonging.",
+      "dependsOn": [
+        "2.2.4-step-1"
+      ],
+      "outputs": [
+        {
+          "title": "Belonging and Connection Programme",
+          "owner": "Steph White",
+          "summary": "A high-reach programme working towards approximately 1,500 unique students through a broad scatter of short active opportunities and a smaller number of larger participatory events across the academic year."
+        }
+      ],
+      "resources": {
+        "newInvestment": [
+          {
+            "item": "Belonging and Connection Programme commissioning envelope",
+            "amount": 25000,
+            "currency": "GBP",
+            "fundingRoute": "King's Edge mobilisation funding request",
+            "fundingStatus": "requested",
+            "confidence": "indicative",
+            "rationale": "Funds a lean, high-volume programme of active participation opportunities and selected sandpit-style events, using existing spaces and infrastructure wherever possible to maximise reach.",
+            "riskIfMissing": "The concrete opportunity asks generated through the belonging, participation and academic-year-rhythm work will have limited commissioning capacity behind them."
+          }
+        ]
+      }
+    },
+    {
+      "id": "2.2.4-step-5",
+      "title": "Operate Responsive Opportunity Commissioning",
+      "period": {
+        "start": "jul-dec-2026:b",
+        "end": "jul-dec-2027:a"
+      },
+      "summary": "Maintain a year-round commissioning envelope that can respond to emerging strategic priorities, identified gaps and new intelligence without requiring the full annual portfolio to be predicted in advance. Use the fund for substantive skills and experiential opportunities, including sandpits, hackathons, intensives, projects or other formats justified by the need. As the wider King's Edge evidence base matures, use emerging external and future-facing insight, experiential-learning design expectations and later student-purpose intelligence to sharpen commissioning choices.",
+      "dependsOn": [
+        "2.2.4-step-1"
+      ],
+      "outputs": [
+        {
+          "title": "Responsive Opportunity Commissioning portfolio",
+          "owner": "TBC",
+          "summary": "A flexible set of commissioned opportunities responding to needs and priorities that emerge during the year. No fixed reach or delivery-format target is set in advance; each commission should have a clear rationale and fit the substantive skills and experiential purpose of 2.2.4."
+        }
+      ],
+      "resources": {
+        "newInvestment": [
+          {
+            "item": "Responsive Opportunity Commissioning envelope",
+            "amount": 20000,
+            "currency": "GBP",
+            "fundingRoute": "King's Edge mobilisation funding request",
+            "fundingStatus": "requested",
+            "confidence": "indicative",
+            "rationale": "Preserves sufficient uncommitted capacity to respond to needs, strategic priorities and intelligence that cannot be specified confidently at the start of the year.",
+            "riskIfMissing": "The commissioning portfolio becomes over-fixed at the start of the year and cannot respond meaningfully as new demand signals and strategic requirements emerge."
+          }
+        ]
+      }
+    },
+    {
+      "id": "2.2.4-step-6",
+      "title": "Review Year 1 and set the next commissioning portfolio",
+      "period": "jul-dec-2027:ab",
+      "summary": "Review the first year as a portfolio rather than as four isolated programmes. Deduplicate overall reach, examine student-hours and repeat engagement where relevant, review the balance of scalable, active and intensive provision, assess delivery quality and access, and identify where demand or strategic need remains unmet. Use this evidence alongside the maturing feeder projects to decide what should grow, reshape, stop or be newly commissioned in Year 2.",
+      "dependsOn": [
+        "2.2.4-step-2",
+        "2.2.4-step-3",
+        "2.2.4-step-4",
+        "2.2.4-step-5"
+      ],
+      "outputs": [
+        {
+          "title": "Year 1 portfolio review and Year 2 commissioning plan",
+          "summary": "A concise evidence-led review of reach, engagement, delivery mix and unmet demand, with recommendations for the next annual commissioning portfolio."
+        }
+      ]
+    }
+  ]
+}
