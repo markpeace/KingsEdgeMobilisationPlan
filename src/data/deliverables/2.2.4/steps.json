@@ -157,9 +157,9 @@
     },
     {
       "id": "2.2.4-step-6",
-      "title": "Review Year 1 and set the next commissioning portfolio",
+      "title": "Complete and review the Year 1 commissioning portfolio",
       "period": "jul-dec-2027:ab",
-      "summary": "Review the first year as a portfolio rather than as four isolated programmes. Deduplicate overall reach, examine student-hours and repeat engagement where relevant, review the balance of scalable, active and intensive provision, assess delivery quality and access, and identify where demand or strategic need remains unmet. Use this evidence alongside the maturing feeder projects to decide what should grow, reshape, stop or be newly commissioned in Year 2.",
+      "summary": "Close the first annual commissioning cycle against a clear portfolio-level reach commitment, then review the year as a portfolio rather than as four isolated programmes. Deduplicate reach across packages, examine student-hours and repeat engagement where relevant, review the balance of scalable, active and intensive provision, assess delivery quality and access, and identify where demand or strategic need remains unmet. Use this evidence alongside the maturing feeder projects to decide what should grow, reshape, stop or be newly commissioned in Year 2.",
       "dependsOn": [
         "2.2.4-step-2",
         "2.2.4-step-3",
@@ -168,8 +168,15 @@
       ],
       "outputs": [
         {
+          "title": "Year 1 portfolio reach",
+          "summary": "At least 2,500 unique students engage in substantive beyond-course opportunities through the Year 1 commissioning portfolio, counted once at portfolio level even where they participate in more than one package.",
+          "acceptanceCriteria": [
+            "At least 2,500 unique students are recorded across the Year 1 portfolio after deduplication between packages."
+          ]
+        },
+        {
           "title": "Year 1 portfolio review and Year 2 commissioning plan",
-          "summary": "A concise evidence-led review of reach, engagement, delivery mix and unmet demand, with recommendations for the next annual commissioning portfolio."
+          "summary": "A concise evidence-led review of reach, repeat participation, student-hours, delivery mix, access and unmet demand, with recommendations for what should grow, reshape, stop or be newly commissioned in the next annual portfolio."
         }
       ]
     }
