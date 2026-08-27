@@ -99,6 +99,13 @@
       ]
     },
     {
+      "id": "4.1.1",
+      "projectId": "4.1",
+      "parts": [
+        "./4.1.1/core.json"
+      ]
+    },
+    {
       "id": "4.1.2",
       "projectId": "4.1",
       "parts": [
