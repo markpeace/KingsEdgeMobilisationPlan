@@ -2,13 +2,19 @@
   "id": "2.2.4",
   "title": "Beyond-Course Opportunity Commissioning and Growth",
   "lead": "TBC, Experiential Learning Community of Practice",
-  "planningStatus": "proposition-development",
+  "planningStatus": "proposition-review",
   "decisionLog": [
     {
       "date": "2026-08-27",
       "type": "decision",
       "forum": "King's Edge mobilisation planning",
       "outcome": "Established the working Year 1 commissioning model for 2.2.4 as four distinct year-round packages within a £150,000 investment request: Final-Year Graduate Futures Programme (£65,000), Service and Community-Engaged Experience Programme (£40,000), Belonging and Connection Programme (£25,000), and Responsive Opportunity Commissioning (£20,000). The packages share an annual delivery rhythm, with lighter and more scalable provision earlier in the cycle and greater use of sustained or intensive opportunities where the academic calendar permits, while Belonging and Connection remains predominantly short and active. The model is recorded as working delivery design while the deliverable remains at proposition-development pending stakeholder proposition review."
+    },
+    {
+      "date": "2026-08-27",
+      "type": "decision",
+      "forum": "King's Edge mobilisation planning",
+      "outcome": "Confirmed that the 2.2.4 proposition is sufficiently clear and developed to move into informal stakeholder sense-check. Advance planningStatus from proposition-development to proposition-review; open ownership questions and stakeholder feedback will be resolved and recorded during Proposition Review before any move into Delivery Design."
     }
   ]
 }
