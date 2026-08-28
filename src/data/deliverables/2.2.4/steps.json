@@ -2,14 +2,14 @@
   "steps": [
     {
       "id": "2.2.4-step-1",
-      "title": "Establish the annual commissioning model and Year 1 portfolio",
+      "title": "Translate strategic priorities into the Year 1 opportunity portfolio",
       "period": "jul-dec-2026:b",
-      "summary": "Establish the annual commissioning model for 2.2.4 and translate the Year 1 portfolio ambition into four thematic workpackages. Set the portfolio-level investment, deduplicated reach, student-hours and depth ambition, then give each workpackage a defined investment envelope and devolved responsibility for contributing to those targets. Confirm named ownership where still TBC and establish the shared delivery rhythm and common planning frame of scalable evergreen, short active and sustained intensive provision.",
+      "summary": "Bring together the strongest requirements for additional beyond-course learning emerging from across King’s Edge and wider strategic priorities, translate them into a coherent Year 1 opportunity portfolio, and devolve delivery through four thematic workpackages. Set the £150,000 investment envelope and the overall reach, student-hours and depth ambition, while giving each workpackage clear responsibility for its contribution. Confirm named ownership where still TBC and use the common planning frame of scalable evergreen, short active and sustained intensive provision.",
       "dependsOn": [],
       "outputs": [
         {
-          "title": "Annual commissioning model",
-          "summary": "A repeatable annual model in which 2.2.4 holds the overall investment envelope, deduplicated student reach, student-hours and portfolio balance, while a small number of thematic workpackages receive devolved responsibility for defined contributions. The thematic mix can change each year as need and evidence evolve."
+          "title": "Year 1 opportunity portfolio and annual commissioning model",
+          "summary": "A £150,000 portfolio that converts identified strategic priorities and gaps into substantive beyond-course learning opportunities. 2.2.4 holds the overall investment envelope, deduplicated student reach, student-hours and portfolio balance, while four thematic workpackages receive devolved responsibility for defined contributions. The same annual model can support a different thematic mix in later years as priorities and evidence evolve."
         },
         {
           "title": "Final-Year Career Enhancement workpackage",
@@ -51,52 +51,52 @@
             "fundingRoute": "King's Edge mobilisation funding request",
             "fundingStatus": "requested",
             "confidence": "indicative",
-            "rationale": "Funds the first annual portfolio, devolved across four thematic workpackages: £50,000 Final-Year Career Enhancement, £40,000 Entrepreneurship and Enterprise Experience, £30,000 Belonging and Connection, and £30,000 Service and Community-Engaged Experience. The portfolio is designed to establish both substantive annual provision and the first reusable evergreen assets needed for later growth.",
-            "riskIfMissing": "King's Edge cannot establish the first annual commissioning portfolio or create the reusable opportunity base required for the planned three-year growth trajectory."
+            "rationale": "Funds the first annual portfolio, devolved across four thematic workpackages: £50,000 Final-Year Career Enhancement, £40,000 Entrepreneurship and Enterprise Experience, £30,000 Belonging and Connection, and £30,000 Service and Community-Engaged Experience. The portfolio is designed to create substantive annual learning opportunities and the first reusable evergreen assets needed for later growth.",
+            "riskIfMissing": "King's Edge cannot establish the first annual opportunity portfolio or create the reusable opportunity base required for the planned three-year growth trajectory."
           }
         ]
       }
     },
     {
       "id": "2.2.4-step-2",
-      "title": "Deliver and learn from the Year 1 portfolio",
+      "title": "Deliver and learn from the Year 1 opportunity portfolio",
       "period": {
         "start": "jul-dec-2026:c",
         "end": "jul-dec-2027:ab"
       },
-      "summary": "Deliver the four Year 1 thematic workpackages against a single portfolio-level ambition. Workpackage owners hold devolved responsibility for their agreed contribution, while 2.2.4 tracks deduplicated reach across the portfolio, student-hours, repeat participation, the balance of scalable evergreen, short active and sustained intensive provision, delivery quality and access. Use Year 1 to establish the first reusable asset base and to identify what should grow, reshape, stop or be newly commissioned in Year 2.",
+      "summary": "Deliver the four Year 1 thematic workpackages against a single portfolio-level ambition, creating new learning opportunities for students while building the first reusable evergreen asset base. Workpackage owners hold devolved responsibility for their agreed contribution, while 2.2.4 tracks deduplicated reach, student-hours, repeat participation, delivery quality, access and the balance of scalable evergreen, short active and sustained intensive provision. Use what is learned about participation, demand and strategic need to shape the next annual portfolio.",
       "dependsOn": [
         "2.2.4-step-1"
       ],
       "outputs": [
         {
           "title": "Year 1 portfolio reach and engagement",
-          "summary": "At least 2,500 distinct students, around 6% of the current King's student population, engage in substantive beyond-course opportunities across the Year 1 portfolio. Package-level planning anticipates approximately 26,500 to 33,500 student-hours overall and around 350 sustained high-intensity places, with package-level reach intentionally summing above the deduplicated portfolio target because students may participate in more than one workpackage.",
+          "summary": "At least 2,500 distinct students, around 6% of the current King's student population, engage in substantive beyond-course learning opportunities across the Year 1 portfolio. Workpackage-level planning anticipates approximately 26,500 to 33,500 student-hours overall and around 350 sustained high-intensity places, with workpackage-level reach intentionally summing above the deduplicated portfolio target because students may participate in more than one workpackage.",
           "acceptanceCriteria": [
             "At least 2,500 distinct students are recorded across the Year 1 portfolio after deduplication between workpackages."
           ]
         },
         {
-          "title": "Year 1 portfolio review and Year 2 thematic commissioning plan",
-          "summary": "A concise evidence-led review of reach, repeat participation, student-hours, delivery mix, access, evergreen asset creation and unmet demand, followed by a Year 2 portfolio that sets the £200,000 envelope and devolves its contributions through the thematic workpackages best suited to the next year’s priorities."
+          "title": "Year 1 portfolio review and Year 2 opportunity plan",
+          "summary": "A concise evidence-led review of reach, repeat participation, student-hours, delivery mix, access, evergreen asset creation, strategic demand and unmet need, followed by a Year 2 portfolio that directs the £200,000 envelope towards the thematic workpackages best suited to the next year’s priorities."
         }
       ]
     },
     {
       "id": "2.2.4-step-3",
-      "title": "Grow the Year 2 commissioning portfolio",
+      "title": "Refresh and grow the opportunity portfolio in Year 2",
       "period": {
         "start": "jul-dec-2027:c",
         "end": "jul-dec-2028:b"
       },
-      "summary": "Grow the second annual portfolio using evidence from Year 1 while reusing and improving the evergreen courses, projects and other scalable assets already created. Set a new annual thematic workpackage mix and devolve responsibility for contributions to the overall £200,000 investment, reach, student-hours and depth ambition. Increase the breadth of low-friction entry points, use short active experiences to convert more initial engagement into substantive participation, and expand sustained intensive capacity where evidence and partner capacity support it.",
+      "summary": "Use Year 1 evidence and new strategic drivers from across King’s Edge to refresh the thematic portfolio and grow the supply of beyond-course learning. Reuse and improve the evergreen courses, projects and other scalable assets already created, commission new provision where priorities or gaps require it, and devolve responsibility for contributions to the overall £200,000 investment, reach, student-hours and depth ambition. Increase low-friction entry points and short active participation while expanding sustained intensive capacity where evidence and partner capacity support it.",
       "dependsOn": [
         "2.2.4-step-2"
       ],
       "outputs": [
         {
-          "title": "Year 2 thematic commissioning portfolio",
-          "summary": "A small set of thematic workpackages with defined envelopes and devolved contributions to a portfolio ambition of at least 4,000 distinct students, around 9% of the current King's student population, approximately 55,000 to 65,000 student-hours and around 500 sustained high-intensity places. The thematic mix is informed by Year 1 evidence rather than assumed to remain identical to Year 1."
+          "title": "Year 2 opportunity portfolio",
+          "summary": "A responsive set of thematic workpackages with defined envelopes and devolved contributions to a portfolio ambition of at least 4,000 distinct students, around 9% of the current King's student population, approximately 55,000 to 65,000 student-hours and around 500 sustained high-intensity places. The portfolio is shaped by Year 1 learning and emerging strategic demand rather than assumed to repeat the Year 1 thematic mix."
         }
       ],
       "resources": {
@@ -116,19 +116,19 @@
     },
     {
       "id": "2.2.4-step-4",
-      "title": "Scale the Year 3 commissioning portfolio",
+      "title": "Scale the opportunity portfolio in Year 3",
       "period": {
         "start": "jul-dec-2028:c",
         "end": "jul-dec-2029:b"
       },
-      "summary": "Scale the third annual portfolio on top of two years of accumulated evergreen provision and delivery learning. Refresh the annual thematic workpackage mix against evolving student need and future-facing evidence, while driving substantially greater enrolment into reusable skills courses, self-directed programmes and repeatable projects. Grow short active provision where it creates effective progression into deeper activity, while sustained intensive capacity reaches a planned plateau.",
+      "summary": "Scale the supply of beyond-course learning on top of two years of accumulated evergreen provision and delivery learning. Refresh the thematic workpackage mix against evolving student need, strategic priorities and future-facing evidence, while driving substantially greater enrolment into reusable skills courses, self-directed programmes and repeatable projects. Commission new provision where gaps remain, grow short active participation where it creates effective progression into deeper activity, and bring sustained intensive capacity to its planned plateau.",
       "dependsOn": [
         "2.2.4-step-3"
       ],
       "outputs": [
         {
-          "title": "Year 3 portfolio at institutional scale",
-          "summary": "A £250,000 annual portfolio, devolved through the thematic workpackages most relevant to Year 3 need, reaches at least 6,500 distinct students, around 15% of the current King's student population, generates approximately 100,000 to 115,000 student-hours and supports around 600 sustained high-intensity places. Growth is increasingly generated by the accumulated evergreen asset base as well as new annual commissioning."
+          "title": "Year 3 opportunity portfolio at institutional scale",
+          "summary": "A £250,000 annual portfolio, devolved through the thematic workpackages most relevant to Year 3 need, reaches at least 6,500 distinct students, around 15% of the current King's student population, generates approximately 100,000 to 115,000 student-hours and supports around 600 sustained high-intensity places. Growth is increasingly generated by the accumulated evergreen opportunity base as well as new annual commissioning."
         }
       ],
       "resources": {
@@ -140,7 +140,7 @@
             "fundingRoute": "King's Edge Year 3 mobilisation investment request",
             "fundingStatus": "requested",
             "confidence": "indicative",
-            "rationale": "Funds the final mobilisation-year expansion of the commissioned portfolio, combining new opportunity creation with large-scale reuse of evergreen assets and a mature sustained high-intensity layer.",
+            "rationale": "Funds the final mobilisation-year expansion of the opportunity portfolio, combining new opportunity creation with large-scale reuse of evergreen assets and a mature sustained high-intensity layer.",
             "riskIfMissing": "The portfolio will not reach the intended institutional scale or build the mature reusable asset base required for a lower-cost business-as-usual model."
           }
         ]
@@ -148,19 +148,19 @@
     },
     {
       "id": "2.2.4-step-5",
-      "title": "Transition to steady-state opportunity commissioning",
+      "title": "Establish the enduring opportunity portfolio",
       "period": {
         "start": "jul-dec-2029:c",
         "end": "jul-dec-2030:c"
       },
-      "summary": "Transition from mobilisation investment to an enduring annual commissioning model that sustains and refreshes the accumulated opportunity portfolio rather than recreating it from scratch. Continue to set portfolio-level ambitions and devolve delivery through a responsive annual mix of thematic workpackages. Grow enrolment through mature evergreen entry points and short active opportunities while protecting the high-touch sustained intensive layer at around 600 places. Recurring investment focuses on refresh, facilitation, responsive new commissioning and the people-intensive provision that cannot be scaled through reuse alone.",
+      "summary": "Move from mobilisation investment to an enduring portfolio of beyond-course learning opportunities that can continue responding to strategic priorities and student need. Sustain and refresh the accumulated evergreen opportunity base, continue to commission new provision where evidence identifies gaps, use a responsive annual mix of thematic workpackages, and protect the high-touch sustained intensive layer at around 600 places. Recurring investment focuses on refresh, facilitation, responsive growth and the people-intensive provision that cannot be scaled through reuse alone.",
       "dependsOn": [
         "2.2.4-step-4"
       ],
       "outputs": [
         {
-          "title": "Steady-state commissioning model",
-          "summary": "An enduring portfolio supported by an indicative £175,000 annual business-as-usual investment, reaching around 9,000 distinct students, approximately 20% of the current King's student population, generating approximately 145,000 to 165,000 student-hours and maintaining around 600 sustained high-intensity places. The annual thematic mix remains responsive, while the model explicitly relies on the reusable opportunity assets built during the three mobilisation years."
+          "title": "Enduring beyond-course opportunity portfolio",
+          "summary": "An enduring portfolio supported by an indicative £175,000 annual business-as-usual investment, reaching around 9,000 distinct students, approximately 20% of the current King's student population, generating approximately 145,000 to 165,000 student-hours and maintaining around 600 sustained high-intensity places. The thematic mix remains responsive to strategic demand, while the model relies on the reusable opportunity assets built during the three mobilisation years."
         }
       ],
       "resources": {
@@ -172,7 +172,7 @@
             "fundingRoute": "King's Edge business-as-usual funding requirement",
             "fundingStatus": "requested",
             "confidence": "indicative",
-            "rationale": "Provides the recurring annual funding needed to sustain and refresh the mature portfolio, protect around 600 sustained high-intensity places, facilitate active provision and selectively commission new opportunities while continuing to exploit the reusable evergreen asset base created during mobilisation.",
+            "rationale": "Provides the recurring annual funding needed to sustain and refresh the mature opportunity portfolio, protect around 600 sustained high-intensity places, facilitate active provision and selectively commission new opportunities while continuing to exploit the reusable evergreen asset base created during mobilisation.",
             "riskIfMissing": "The accumulated evergreen portfolio will lose currency and delivery support, while the people-intensive layer will contract, undermining the intended steady-state reach and depth."
           }
         ]
