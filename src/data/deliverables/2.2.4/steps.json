@@ -169,9 +169,9 @@
       "outputs": [
         {
           "title": "Year 1 portfolio reach and engagement",
-          "summary": "At least 2,500 unique students engage in substantive beyond-course opportunities through the Year 1 commissioning portfolio, counted once at portfolio level even where they participate in more than one package. Package-level planning anticipates approximately 26,500 to 33,500 student-hours overall; this depth measure is reviewed alongside repeat participation and delivery mix rather than used to inflate unique reach.",
+          "summary": "At least 2,500 distinct students, around 6% of the current King's student population, engage in substantive beyond-course opportunities through the Year 1 commissioning portfolio, counted once at portfolio level even where they participate in more than one package. Package-level planning anticipates approximately 26,500 to 33,500 student-hours overall; this depth measure is reviewed alongside repeat participation and delivery mix rather than used to inflate distinct reach.",
           "acceptanceCriteria": [
-            "At least 2,500 unique students are recorded across the Year 1 portfolio after deduplication between packages."
+            "At least 2,500 distinct students are recorded across the Year 1 portfolio after deduplication between packages."
           ]
         },
         {
@@ -179,6 +179,102 @@
           "summary": "A concise evidence-led review of reach, repeat participation, student-hours, delivery mix, access and unmet demand, with recommendations for what should grow, reshape, stop or be newly commissioned in the next annual portfolio."
         }
       ]
+    },
+    {
+      "id": "2.2.4-step-7",
+      "title": "Grow the Year 2 commissioning portfolio",
+      "period": {
+        "start": "jul-dec-2027:c",
+        "end": "jul-dec-2028:b"
+      },
+      "summary": "Grow the second annual portfolio using evidence from Year 1 while reusing and improving the evergreen courses, projects and other scalable assets already created. Increase the breadth of low-friction entry points, use short active experiences to convert more initial engagement into substantive participation, and expand sustained intensive capacity where evidence and partner capacity support it. The working ambition is to reach at least 4,000 distinct students, around 9% of the current King's student population, generate approximately 55,000 to 65,000 student-hours and provide around 500 sustained high-intensity places.",
+      "dependsOn": [
+        "2.2.4-step-6"
+      ],
+      "outputs": [
+        {
+          "title": "Year 2 portfolio growth",
+          "summary": "A £200,000 annual commissioning portfolio builds on the reusable Year 1 asset base to reach at least 4,000 distinct students, around 9% of the current King's student population, generate approximately 55,000 to 65,000 student-hours and grow sustained high-intensity provision to around 500 places."
+        }
+      ],
+      "resources": {
+        "newInvestment": [
+          {
+            "item": "Year 2 beyond-course opportunity commissioning portfolio",
+            "amount": 200000,
+            "currency": "GBP",
+            "fundingRoute": "King's Edge Year 2 mobilisation investment request",
+            "fundingStatus": "requested",
+            "confidence": "indicative",
+            "rationale": "Builds on the Year 1 portfolio by commissioning additional provision, increasing enrolment into reusable evergreen opportunities and expanding active and sustained capacity. The model expects reach and student-hours to grow faster than annual expenditure as the reusable asset base matures.",
+            "riskIfMissing": "The portfolio will be unable to convert its Year 1 foundations into the planned step-change in reach, depth and reusable opportunity supply."
+          }
+        ]
+      }
+    },
+    {
+      "id": "2.2.4-step-8",
+      "title": "Scale the Year 3 commissioning portfolio",
+      "period": {
+        "start": "jul-dec-2028:c",
+        "end": "jul-dec-2029:b"
+      },
+      "summary": "Scale the third annual portfolio on top of two years of accumulated evergreen provision and delivery learning. Continue to commission against evolving student need and future-facing evidence while driving substantially greater enrolment into reusable skills courses, self-directed programmes and repeatable projects. Grow short active provision where it creates effective progression into deeper activity, while sustained intensive capacity reaches a planned plateau. The working ambition is to reach at least 6,500 distinct students, around 15% of the current King's student population, generate approximately 100,000 to 115,000 student-hours and provide around 600 sustained high-intensity places.",
+      "dependsOn": [
+        "2.2.4-step-7"
+      ],
+      "outputs": [
+        {
+          "title": "Year 3 portfolio at institutional scale",
+          "summary": "A £250,000 annual commissioning portfolio reaches at least 6,500 distinct students, around 15% of the current King's student population, generates approximately 100,000 to 115,000 student-hours and supports around 600 sustained high-intensity places. Growth is increasingly generated by the accumulated evergreen asset base as well as new annual commissioning."
+        }
+      ],
+      "resources": {
+        "newInvestment": [
+          {
+            "item": "Year 3 beyond-course opportunity commissioning portfolio",
+            "amount": 250000,
+            "currency": "GBP",
+            "fundingRoute": "King's Edge Year 3 mobilisation investment request",
+            "fundingStatus": "requested",
+            "confidence": "indicative",
+            "rationale": "Funds the final mobilisation-year expansion of the commissioned portfolio, combining new opportunity creation with large-scale reuse of evergreen assets and a mature sustained high-intensity layer.",
+            "riskIfMissing": "The portfolio will not reach the intended institutional scale or build the mature reusable asset base required for a lower-cost business-as-usual model."
+          }
+        ]
+      }
+    },
+    {
+      "id": "2.2.4-step-9",
+      "title": "Transition to steady-state opportunity commissioning",
+      "period": {
+        "start": "jul-dec-2029:c",
+        "end": "jul-dec-2030:c"
+      },
+      "summary": "Transition from mobilisation investment to an enduring annual commissioning model that sustains and refreshes the accumulated opportunity portfolio rather than recreating it from scratch. Continue to grow enrolment through mature evergreen entry points and short active opportunities while protecting the high-touch sustained intensive layer at around 600 places. The working steady-state ambition is to reach around 9,000 distinct students each year, approximately 20% of the current King's student population, and generate approximately 145,000 to 165,000 student-hours. Recurring investment is focused on refresh, facilitation, responsive new commissioning and the people-intensive provision that cannot be scaled through reuse alone.",
+      "dependsOn": [
+        "2.2.4-step-8"
+      ],
+      "outputs": [
+        {
+          "title": "Steady-state commissioning model",
+          "summary": "An enduring portfolio supported by an indicative £175,000 annual business-as-usual investment, reaching around 9,000 distinct students, approximately 20% of the current King's student population, generating approximately 145,000 to 165,000 student-hours and maintaining around 600 sustained high-intensity places. The model explicitly relies on the reusable opportunity assets built during the three mobilisation years."
+        }
+      ],
+      "resources": {
+        "newInvestment": [
+          {
+            "item": "Annual business-as-usual beyond-course opportunity commissioning requirement",
+            "amount": 175000,
+            "currency": "GBP",
+            "fundingRoute": "King's Edge business-as-usual funding requirement",
+            "fundingStatus": "requested",
+            "confidence": "indicative",
+            "rationale": "Provides the recurring annual funding needed to sustain and refresh the mature portfolio, protect around 600 sustained high-intensity places, facilitate active provision and selectively commission new opportunities while continuing to exploit the reusable evergreen asset base created during mobilisation.",
+            "riskIfMissing": "The accumulated evergreen portfolio will lose currency and delivery support, while the people-intensive layer will contract, undermining the intended steady-state reach and depth."
+          }
+        ]
+      }
     }
   ]
 }
