@@ -4,8 +4,6 @@ import './styles/workstreams.css';
 
 const { deliverables } = buildLookups();
 const deliverableById = new Map(deliverables.map((deliverable) => [deliverable.id, deliverable]));
-const MAX_ROUTE_STEPS = 4;
-const MAX_STEP_TAGS = 2;
 
 function currentDeliverable() {
   const match = window.location.hash.match(/^#\/deliverables\/([^/?#]+)/);
@@ -25,7 +23,7 @@ function buildWorkstreamPanel(deliverable) {
   panel.dataset.deliverableId = deliverable.id;
   panel.setAttribute('aria-label', 'Workstreams');
   panel.append(element('h2', '', 'Workstreams'));
-  panel.append(element('p', 'subtle workstreams-intro', 'Parallel strands that organise this deliverable. They cut across the chronological delivery steps rather than creating a second timeline.'));
+  panel.append(element('p', 'subtle workstreams-intro', 'The parallel strands through which responsibility for this deliverable is organised. Workstreams cut across the chronological delivery steps rather than creating a second timeline.'));
 
   const grid = element('div', 'workstreams-grid');
   workstreamsOf(deliverable).forEach((workstream) => {
@@ -40,10 +38,10 @@ function buildWorkstreamPanel(deliverable) {
     const stepTitles = stepTitlesForWorkstream(deliverable, workstream);
     if (stepTitles.length) {
       const route = element('div', 'workstream-route');
-      route.append(element('strong', '', `Delivery route · ${stepTitles.length} linked ${stepTitles.length === 1 ? 'step' : 'steps'}`));
+      route.append(element('strong', '', `Touches ${stepTitles.length} ${stepTitles.length === 1 ? 'delivery step' : 'delivery steps'}`));
       const list = element('ol', 'workstream-step-list');
-      stepTitles.slice(0, MAX_ROUTE_STEPS).forEach((title) => list.append(element('li', '', title)));
-      if (stepTitles.length > MAX_ROUTE_STEPS) list.append(element('li', 'workstream-more', `+ ${stepTitles.length - MAX_ROUTE_STEPS} later linked ${stepTitles.length - MAX_ROUTE_STEPS === 1 ? 'step' : 'steps'}`));
+      stepTitles.slice(0, 3).forEach((title) => list.append(element('li', '', title)));
+      if (stepTitles.length > 3) list.append(element('li', 'workstream-step-more', `+${stepTitles.length - 3} more`));
       route.append(list);
       card.append(route);
     }
@@ -71,12 +69,8 @@ function renderStepTags(deliverable) {
     const row = element('div', 'workstream-tag-row');
     row.dataset.workstreamKey = key;
     row.setAttribute('aria-label', 'Workstreams for this step');
-    linked.slice(0, MAX_STEP_TAGS).forEach((workstream) => row.append(element('span', 'workstream-tag', workstream.title)));
-    if (linked.length > MAX_STEP_TAGS) {
-      const more = element('span', 'workstream-tag workstream-tag-more', `+${linked.length - MAX_STEP_TAGS} more`);
-      more.title = linked.slice(MAX_STEP_TAGS).map((workstream) => workstream.title).join(', ');
-      row.append(more);
-    }
+    linked.slice(0, 2).forEach((workstream) => row.append(element('span', 'workstream-tag', workstream.title)));
+    if (linked.length > 2) row.append(element('span', 'workstream-tag workstream-tag-more', `+${linked.length - 2} more`));
     const heading = card.querySelector('h3');
     if (heading) card.insertBefore(row, heading);
     else card.prepend(row);
@@ -88,6 +82,26 @@ function clearWorkstreamUi() {
   document.querySelectorAll('.workstream-tag-row').forEach((node) => node.remove());
 }
 
+function positionValueWorkstreamsAndTimeline(deliverable) {
+  const flow = document.querySelector('.deliverable-main-flow');
+  const route = document.getElementById('route-through');
+  if (!flow || !route) return false;
+
+  const valueEvidence = document.getElementById('value-evidence');
+  if (valueEvidence && valueEvidence.parentElement !== flow) flow.insertBefore(valueEvidence, route);
+  else if (valueEvidence && valueEvidence.nextElementSibling !== route && !document.getElementById('workstreams')) flow.insertBefore(valueEvidence, route);
+
+  let panel = document.getElementById('workstreams');
+  if (panel?.dataset.deliverableId !== deliverable.id) {
+    panel.remove();
+    panel = null;
+  }
+  if (!panel) panel = buildWorkstreamPanel(deliverable);
+
+  flow.insertBefore(panel, route);
+  return true;
+}
+
 function renderWorkstreams() {
   const deliverable = currentDeliverable();
   const workstreams = workstreamsOf(deliverable);
@@ -96,13 +110,7 @@ function renderWorkstreams() {
     return;
   }
 
-  const flow = document.querySelector('.deliverable-main-flow');
-  const route = document.getElementById('route-through');
-  if (!flow || !route) return;
-
-  const existing = document.getElementById('workstreams');
-  if (existing?.dataset.deliverableId !== deliverable.id) existing?.remove();
-  if (!document.getElementById('workstreams')) flow.insertBefore(buildWorkstreamPanel(deliverable), route);
+  if (!positionValueWorkstreamsAndTimeline(deliverable)) return;
   renderStepTags(deliverable);
 }
 
