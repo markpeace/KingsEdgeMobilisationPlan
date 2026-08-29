@@ -3,80 +3,24 @@
     {
       "id": "4.1.3-step-1",
       "title": "Recruit and mobilise the core multidisciplinary digital product team",
-      "period": {
-        "start": "jul-dec-2026:b",
-        "end": "jul-dec-2026:c"
-      },
-      "summary": "Secure funding and recruit or assign the four core posts through Digital and IT from September through November 2026: 1.0 FTE Senior Backend & Integration Engineer, 1.0 FTE Middleweight Full-Stack Engineer, 1.0 FTE Product & Service Designer and 1.0 FTE QA Engineer. All four posts are required throughout the three-year mobilisation, with pro-rata Year One costs for November 2026 to June 2027 and full-year costs in Years Two and Three. Mark Peace is Product Owner. Confirm approximately 0.2 FTE protected Business Analysis and approximately 0.2 FTE DevOps/platform support, with up to approximately 0.2 FTE solution architecture only if the senior engineering post cannot carry that function. Establish ring-fenced agentic software-development tooling as a three-year engineering capability, currently profiled at £90,000 in each mobilisation year pending commercial validation.",
+      "period": {"start": "jul-dec-2026:b", "end": "jul-dec-2026:c"},
+      "summary": "Secure funding and recruit or assign the four core posts through Digital and IT from September through November 2026: 1.0 FTE Senior Backend & Integration Engineer, 1.0 FTE Middleweight Full-Stack Engineer, 1.0 FTE Product & Service Designer and 1.0 FTE QA Engineer. All four posts are required throughout the three-year mobilisation and are intended to transition into Digital and IT business-as-usual establishment from July 2029. Mobilisation costs are pro-rata in Year One and full-year in Years Two and Three. Mark Peace is Product Owner. Confirm approximately 0.2 FTE protected Business Analysis and approximately 0.2 FTE DevOps/platform support, with up to approximately 0.2 FTE solution architecture only if the senior engineering post cannot carry that function. Establish ring-fenced agentic software-development tooling as a three-year engineering capability, currently profiled at £90,000 in each mobilisation year pending commercial validation.",
       "dependsOn": [],
       "outputs": [
-        {
-          "title": "Senior Backend & Integration Engineer mobilised",
-          "summary": "1.0 FTE senior engineer responsible for backend services, domain/API integration, technical integration with King’s systems and senior engineering judgement. Planning grade assumption: King’s Grade 8. Confirm separately whether this post also fulfils solution architecture."
-        },
-        {
-          "title": "Middleweight Full-Stack Engineer mobilised",
-          "summary": "1.0 FTE hands-on engineer delivering student-facing Hub and King’s Edge features and the supporting application services, working under the technical direction of the senior engineer. Planning grade assumption: King’s Grade 7."
-        },
-        {
-          "title": "Product & Service Designer mobilised",
-          "summary": "1.0 FTE designer combining UX and interaction design, UI design, service and journey design, prototyping, student/user research and usability testing across the shared Hub and King’s Edge experience. Planning grade assumption: King’s Grade 7."
-        },
-        {
-          "title": "QA Engineer mobilised",
-          "summary": "1.0 FTE quality engineer responsible for product test strategy, automated and manual QA, regression and release quality. Planning grade assumption: King’s Grade 6. The start date may be offset until code production is established, which would reduce actual Year One spend against the eight-month planning estimate."
-        },
-        {
-          "title": "Lean shared-capacity model confirmed",
-          "summary": "Confirm approximately 0.2 FTE protected Business Analysis and approximately 0.2 FTE DevOps/platform support. Add up to approximately 0.2 FTE solution architecture only if the Senior Backend & Integration Engineer cannot carry it. Draw specialist security, privacy, accessibility, data, architecture assurance and service-management input from existing institutional functions as required rather than creating standing fractional posts."
-        },
-        {
-          "title": "Agentic-development capability established",
-          "summary": "Confirm the commercial route for ring-fenced agentic software-development tooling across the three-year mobilisation. The planning allowance is £90,000 in each year, with actual spend reduced if Digital and IT can provide equivalent reliable shared capacity more economically."
-        },
-        {
-          "title": "KAI technical-asset assessment",
-          "summary": "Inventory reusable KAI technical components, including Azure AI Foundry capability, and make explicit adopt, adapt or retire decisions against the target Hub architecture rather than transferring the existing team or product model wholesale."
-        }
+        {"title": "Senior Backend & Integration Engineer mobilised", "summary": "1.0 FTE senior engineer responsible for backend services, domain/API integration, technical integration with King’s systems and senior engineering judgement. Planning grade assumption: King’s Grade 8. Confirm separately whether this post also fulfils solution architecture."},
+        {"title": "Middleweight Full-Stack Engineer mobilised", "summary": "1.0 FTE hands-on engineer delivering student-facing Hub and King’s Edge features and the supporting application services, working under the technical direction of the senior engineer. Planning grade assumption: King’s Grade 7."},
+        {"title": "Product & Service Designer mobilised", "summary": "1.0 FTE designer combining UX and interaction design, UI design, service and journey design, prototyping, student/user research and usability testing across the shared Hub and King’s Edge experience. Planning grade assumption: King’s Grade 7."},
+        {"title": "QA Engineer mobilised", "summary": "1.0 FTE quality engineer responsible for product test strategy, automated and manual QA, regression and release quality. Planning grade assumption: King’s Grade 6. The start date may be offset until code production is established, which would reduce actual Year One spend against the eight-month planning estimate."},
+        {"title": "Lean shared-capacity model confirmed", "summary": "Confirm approximately 0.2 FTE protected Business Analysis and approximately 0.2 FTE DevOps/platform support. Add up to approximately 0.2 FTE solution architecture only if the Senior Backend & Integration Engineer cannot carry it. Draw specialist security, privacy, accessibility, data, architecture assurance and service-management input from existing institutional functions as required rather than creating standing fractional posts."},
+        {"title": "Agentic-development capability established", "summary": "Confirm the commercial route for ring-fenced agentic software-development tooling across the three-year mobilisation. The planning allowance is £90,000 in each year, with actual spend reduced if Digital and IT can provide equivalent reliable shared capacity more economically."},
+        {"title": "KAI technical-asset assessment", "summary": "Inventory reusable KAI technical components, including Azure AI Foundry capability, and make explicit adopt, adapt or retire decisions against the target Hub architecture rather than transferring the existing team or product model wholesale."}
       ],
       "resources": {
         "existingCapacity": [
-          {
-            "role": "Business Analyst",
-            "owner": "Existing or seconded institutional capability, organisational home to be confirmed",
-            "contribution": "Map systems, information flows, ownership, dependencies, operational implications and readiness across priority journeys. Working protected allocation: approximately 0.2 FTE during the main discovery period.",
-            "fte": 0.2,
-            "periodNeeded": "November 2026 to June 2027",
-            "confidence": "working deployment hypothesis",
-            "riskIfMissing": "Critical estate, ownership and dependency evidence may remain incomplete or be absorbed unsustainably by the Product & Service Designer."
-          },
-          {
-            "role": "DevOps and platform support",
-            "owner": "Digital and IT",
-            "contribution": "Provide Azure, environments, deployment pipeline, observability and related platform support without assuming a full-time DevOps post in the core. Working protected allocation: approximately 0.2 FTE.",
-            "fte": 0.2,
-            "periodNeeded": "November 2026 onward",
-            "confidence": "working deployment hypothesis",
-            "riskIfMissing": "Engineering delivery and release may be blocked or create unsupported operational arrangements."
-          },
-          {
-            "role": "Solution architecture",
-            "owner": "Digital and IT / James Costerton to confirm",
-            "contribution": "Provide solution-architecture authority only where this cannot credibly be carried within the Senior Backend & Integration Engineer post. Working allocation if separately required: up to approximately 0.2 FTE.",
-            "fte": 0.2,
-            "conditional": true,
-            "periodNeeded": "Before architecture is locked and thereafter at material design points",
-            "confidence": "conditional working deployment hypothesis",
-            "riskIfMissing": "The programme may create avoidable coupling, unsupported design decisions or an architecture gap between the Hub and wider institutional platforms."
-          },
-          {
-            "role": "Specialist institutional assurance",
-            "owner": "Digital and IT and other relevant institutional specialists",
-            "contribution": "Provide time-bound security, privacy, accessibility, data, architecture-assurance and service-management input when required. Product testing and release-quality ownership remains with the QA Engineer.",
-            "periodNeeded": "At relevant design, assurance and release points",
-            "confidence": "existing specialist capacity to be scheduled",
-            "riskIfMissing": "The product may reach release points without the specialist institutional assurance required for safe operation."
-          }
+          {"role": "Business Analyst", "owner": "Existing or seconded institutional capability, organisational home to be confirmed", "contribution": "Map systems, information flows, ownership, dependencies, operational implications and readiness across priority journeys. Working protected allocation: approximately 0.2 FTE during the main discovery period.", "fte": 0.2, "periodNeeded": "November 2026 to June 2027", "confidence": "working deployment hypothesis", "riskIfMissing": "Critical estate, ownership and dependency evidence may remain incomplete or be absorbed unsustainably by the Product & Service Designer."},
+          {"role": "DevOps and platform support", "owner": "Digital and IT", "contribution": "Provide Azure, environments, deployment pipeline, observability and related platform support without assuming a full-time DevOps post in the core. Working protected allocation: approximately 0.2 FTE.", "fte": 0.2, "periodNeeded": "November 2026 onward", "confidence": "working deployment hypothesis", "riskIfMissing": "Engineering delivery and release may be blocked or create unsupported operational arrangements."},
+          {"role": "Solution architecture", "owner": "Digital and IT / James Costerton to confirm", "contribution": "Provide solution-architecture authority only where this cannot credibly be carried within the Senior Backend & Integration Engineer post. Working allocation if separately required: up to approximately 0.2 FTE.", "fte": 0.2, "conditional": true, "periodNeeded": "Before architecture is locked and thereafter at material design points", "confidence": "conditional working deployment hypothesis", "riskIfMissing": "The programme may create avoidable coupling, unsupported design decisions or an architecture gap between the Hub and wider institutional platforms."},
+          {"role": "Specialist institutional assurance", "owner": "Digital and IT and other relevant institutional specialists", "contribution": "Provide time-bound security, privacy, accessibility, data, architecture-assurance and service-management input when required. Product testing and release-quality ownership remains with the QA Engineer.", "periodNeeded": "At relevant design, assurance and release points", "confidence": "existing specialist capacity to be scheduled", "riskIfMissing": "The product may reach release points without the specialist institutional assurance required for safe operation."}
         ],
         "newInvestment": [
           {
@@ -190,34 +134,10 @@
           }
         ],
         "enablingConditions": [
-          {
-            "condition": "Approve the four core posts and Digital and IT recruitment route in time for mobilisation, with three-year mobilisation funding profiled rather than a Year One-only staffing assumption. The planning grade assumptions are Grade 8 for Senior Backend & Integration Engineer, Grade 7 for Middleweight Full-Stack Engineer, Grade 7 for Product & Service Designer and Grade 6 for QA Engineer; Digital and IT / HR should validate these before final business-case submission.",
-            "owner": "Digital Student Experience Hub mobilisation leadership with Digital and IT",
-            "decisionNeededBy": "September 2026",
-            "confidence": "developing",
-            "riskIfMissing": "The core team will not be available for planned November mobilisation or the business case may fail to fund the delivery capability through the full mobilisation period."
-          },
-          {
-            "condition": "Confirm Mark Peace as Product Owner and validate the lean shared-capacity model: approximately 0.2 FTE Business Analysis, approximately 0.2 FTE DevOps/platform support, and up to approximately 0.2 FTE solution architecture only if not carried by the Senior Backend & Integration Engineer. Specialist institutional assurance is scheduled on demand rather than represented as standing FTE.",
-            "owner": "James Costerton / Digital and IT with Digital Student Experience Hub mobilisation lead",
-            "decisionNeededBy": "Before mobilisation and resource commitments are finalised",
-            "confidence": "working planning hypothesis",
-            "riskIfMissing": "The business case may fund the core team without securing the small amount of additional institutional capacity needed to make it effective."
-          },
-          {
-            "condition": "Validate the commercial structure for the £90,000 annual agentic-development planning allowance, including whether existing Digital and IT shared capacity can reduce actual incremental cost while preserving reliable project access across all three mobilisation years.",
-            "owner": "James Costerton / Digital and IT",
-            "decisionNeededBy": "Before initial tooling commitment and at annual renewal points",
-            "confidence": "planning allowance pending validation",
-            "riskIfMissing": "The business case may reserve more cash than ultimately required or the team may mobilise without the sustained agentic-development capability assumed in the delivery model."
-          },
-          {
-            "condition": "Confirm whether permanent Digital and IT roles can be established despite mobilisation funding, with the three-year staffing profile and any recurrent post-mobilisation BAU implications made explicit rather than hidden.",
-            "owner": "Digital and IT with Education, Finance and strategic investment governance",
-            "decisionNeededBy": "Before recruitment route is fixed",
-            "confidence": "developing",
-            "riskIfMissing": "Fixed-term recruitment constraints may reduce the quality or speed of hiring and defer a recurrent-cost decision that is likely to exist in any case."
-          }
+          {"condition": "Approve the four core posts and Digital and IT recruitment route in time for mobilisation, with three-year mobilisation funding profiled and an explicit commitment to transition the four experienced posts into recurrent BAU establishment from July 2029. The planning grade assumptions are Grade 8 for Senior Backend & Integration Engineer, Grade 7 for Middleweight Full-Stack Engineer, Grade 7 for Product & Service Designer and Grade 6 for QA Engineer; Digital and IT / HR should validate these before final business-case submission.", "owner": "Digital Student Experience Hub mobilisation leadership with Digital and IT", "decisionNeededBy": "September 2026", "confidence": "developing", "riskIfMissing": "The core team may be treated as temporary project capacity, weakening recruitment and creating an avoidable cliff edge at the end of mobilisation."},
+          {"condition": "Confirm Mark Peace as Product Owner and validate the lean shared-capacity model: approximately 0.2 FTE Business Analysis, approximately 0.2 FTE DevOps/platform support, and up to approximately 0.2 FTE solution architecture only if not carried by the Senior Backend & Integration Engineer. Specialist institutional assurance is scheduled on demand rather than represented as standing FTE.", "owner": "James Costerton / Digital and IT with Digital Student Experience Hub mobilisation lead", "decisionNeededBy": "Before mobilisation and resource commitments are finalised", "confidence": "working planning hypothesis", "riskIfMissing": "The business case may fund the core team without securing the small amount of additional institutional capacity needed to make it effective."},
+          {"condition": "Validate the commercial structure for the £90,000 annual agentic-development planning allowance, including whether existing Digital and IT shared capacity can reduce actual incremental cost while preserving reliable project access across all three mobilisation years.", "owner": "James Costerton / Digital and IT", "decisionNeededBy": "Before initial tooling commitment and at annual renewal points", "confidence": "planning allowance pending validation", "riskIfMissing": "The business case may reserve more cash than ultimately required or the team may mobilise without the sustained agentic-development capability assumed in the delivery model."},
+          {"condition": "Confirm the workforce route for establishing the four core Digital and IT roles on terms compatible with their planned transition into BAU after June 2029, while keeping mobilisation funding and recurrent funding visibly distinct.", "owner": "Digital and IT with Education, Finance and strategic investment governance", "decisionNeededBy": "Before recruitment route is fixed", "confidence": "developing", "riskIfMissing": "Fixed-term recruitment constraints may reduce hiring quality and leave a recurrent capability with an unnecessary end-of-programme staffing cliff edge."}
         ]
       }
     },
@@ -250,13 +170,7 @@
       ],
       "resources": {
         "enablingConditions": [
-          {
-            "condition": "Before Year Two, define the supervision, backlog boundaries, learning objectives and recruitment route needed for a sandwich-year Junior Full-Stack Engineer to add capacity without carrying critical delivery responsibility.",
-            "owner": "James Costerton / Digital and IT with the Senior Backend & Integration Engineer",
-            "decisionNeededBy": "Before 2027/28 placement recruitment",
-            "confidence": "planned capability test",
-            "riskIfMissing": "The placement may either fail to add useful capacity or place inappropriate delivery responsibility on a student."
-          }
+          {"condition": "Before Year Two, define the supervision, backlog boundaries, learning objectives and recruitment route needed for a sandwich-year Junior Full-Stack Engineer to add capacity without carrying critical delivery responsibility.", "owner": "James Costerton / Digital and IT with the Senior Backend & Integration Engineer", "decisionNeededBy": "Before 2027/28 placement recruitment", "confidence": "planned capability test", "riskIfMissing": "The placement may either fail to add useful capacity or place inappropriate delivery responsibility on a student."}
         ]
       }
     },
@@ -298,13 +212,7 @@
           }
         ],
         "enablingConditions": [
-          {
-            "condition": "Agree a formal paid sandwich-year placement route, meaningful learning objectives, supervision capacity and a bounded lower-risk backlog before recruiting the first student.",
-            "owner": "Digital and IT with the relevant King’s placement and HR functions",
-            "decisionNeededBy": "Before 2027/28 placement recruitment",
-            "confidence": "planned capability test",
-            "riskIfMissing": "The placement may not meet either delivery or student-learning expectations."
-          }
+          {"condition": "Agree a formal paid sandwich-year placement route, meaningful learning objectives, supervision capacity and a bounded lower-risk backlog before recruiting the first student.", "owner": "Digital and IT with the relevant King’s placement and HR functions", "decisionNeededBy": "Before 2027/28 placement recruitment", "confidence": "planned capability test", "riskIfMissing": "The placement may not meet either delivery or student-learning expectations."}
         ]
       }
     },
@@ -321,38 +229,48 @@
       ],
       "resources": {
         "enablingConditions": [
-          {
-            "condition": "Any staffing above the already profiled four-post core and one annual junior placement, or any further specialist requirement, must be approved from evidence and a costed roadmap within the strategic mobilisation envelope.",
-            "owner": "Digital Student Experience Hub governance with Digital and IT and Finance",
-            "decisionNeededBy": "Before additional staffing plans are fixed",
-            "confidence": "developing",
-            "riskIfMissing": "Future capacity may be treated as predetermined rather than evidence-led."
-          }
+          {"condition": "Any staffing above the already profiled four-post core and one annual junior placement, or any further specialist requirement, must be approved from evidence and a costed roadmap within the strategic mobilisation envelope.", "owner": "Digital Student Experience Hub governance with Digital and IT and Finance", "decisionNeededBy": "Before additional staffing plans are fixed", "confidence": "developing", "riskIfMissing": "Future capacity may be treated as predetermined rather than evidence-led."}
         ]
       }
     },
     {
       "id": "4.1.3-step-6",
-      "title": "Embed an enduring institutional product-development capability",
+      "title": "Transition the core capability into business as usual",
       "period": {"start": "jul-dec-2028:c", "end": "jan-jun-2029:c"},
-      "summary": "By the end of the three-year mobilisation, establish the sustainable multidisciplinary capability, professional leadership, governance, product practices and interfaces with SED product ownership and Digital and IT specialist/platform services. Confirm which elements of the four-post core, agentic tooling and junior-placement model should continue as recurrent business-as-usual capability after June 2029.",
+      "summary": "By the end of the three-year mobilisation, transition the original four experienced posts into enduring Digital and IT business-as-usual establishment, with an indicative recurrent staffing run-rate of approximately £304,000 per year in constant 2026 prices. Complete the sustainable professional leadership, governance, product practices and interfaces with SED product ownership and Digital and IT specialist/platform services. Use mobilisation evidence to decide separately whether agentic tooling and the junior-placement model should also continue beyond June 2029.",
       "dependsOn": ["4.1.3-step-5"],
       "outputs": [
-        {"title": "Evidence-based recurrent capability model", "summary": "Confirm the sustainable staffing, specialist access, tooling and funding route required beyond mobilisation from actual product and live-service demand."},
+        {"title": "Four-post core transitioned to BAU", "summary": "Move the Senior Backend & Integration Engineer, Middleweight Full-Stack Engineer, Product & Service Designer and QA Engineer from mobilisation funding into recurrent Digital and IT establishment without a staffing cliff edge."},
+        {"title": "Recurrent funding route confirmed", "summary": "Secure the recurrent budget and workforce arrangements needed to sustain the 4.0 FTE core from July 2029, currently estimated at approximately £304,000 per year before future pay awards."},
         {"title": "Enduring governance and decision rights", "summary": "Confirm authority over the pipeline, capacity, methods and escalation routes."},
         {"title": "Professional leadership and career routes", "summary": "Embed role development, professional standards, mentoring, progression and learning from the sandwich-year placement model."},
         {"title": "Stable specialist and service interfaces", "summary": "Confirm how the team works with architecture, data, integration, assurance, service management, SED product owners and other contributing teams."},
-        {"title": "Continuous-improvement operating model", "summary": "Maintain regular discovery, delivery, evaluation and practice improvement after mobilisation ends."}
+        {"title": "Mobilisation experiments reviewed for BAU", "summary": "Decide from evidence whether agentic tooling, the annual sandwich-year placement model and any additional specialist capacity should join the four-post core in the recurrent operating model."}
       ],
       "resources": {
-        "enablingConditions": [
+        "newInvestment": [
           {
-            "condition": "Confirm the recurrent product capability staffing, agentic tooling, placement model and costs required after June 2029 from live evidence. Mobilisation assumptions are not automatically carried into post-mobilisation recurrent budgets.",
-            "owner": "SED with Digital and IT, Finance and institutional investment governance",
-            "decisionNeededBy": "Before post-mobilisation recurrent budgets are fixed",
-            "confidence": "developing",
-            "riskIfMissing": "The enduring capability may be underfunded or inherit unsupported historic cost assumptions."
+            "id": "4.1.3-bau-four-post-core",
+            "item": "BAU transition: four-post digital product core",
+            "category": "digital product staffing capacity",
+            "fte": 4.0,
+            "amount": 304000,
+            "currency": "GBP",
+            "bauLiability": true,
+            "estimatedCost": "Approximately £304,000 annual recurrent staffing run-rate in constant 2026 planning prices for the four experienced core posts: Senior Backend & Integration Engineer, Middleweight Full-Stack Engineer, Product & Service Designer and QA Engineer. Future pay awards and final appointment points will change the cash requirement.",
+            "owner": "Digital and IT",
+            "periodNeeded": "July 2029 onward",
+            "decisionNeededBy": "Before 2029/30 recurrent budgets and workforce plans are fixed",
+            "fundingRoute": "Digital and IT recurrent business-as-usual establishment / institutional operating budget",
+            "fundingStatus": "Planned BAU transition; recurrent budget route to confirm",
+            "confidence": "strategic commitment; planning cost estimate",
+            "rationale": "The original four experienced mobilisation posts are intended to become the enduring institutional digital product capability after the three-year mobilisation. This recurrent run-rate is deliberately separated from the three-year mobilisation investment so it is visible without being double-counted.",
+            "riskIfMissing": "King’s would build a functioning product capability and then create an avoidable staffing and service-continuity cliff edge just as the Hub moves into mature live operation."
           }
+        ],
+        "enablingConditions": [
+          {"condition": "Secure recurrent Digital and IT establishment and budget for the original four experienced posts from July 2029. The strategic direction is continuation into BAU; the remaining work is to confirm the recurrent funding route, final role grading and organisational arrangements, not whether the core capability survives.", "owner": "Digital and IT with Education, Finance and institutional investment governance", "decisionNeededBy": "Before 2029/30 recurrent budgets and workforce plans are fixed", "confidence": "planned BAU transition", "riskIfMissing": "The programme reaches the end of mobilisation without the recurrent funding needed to retain its core institutional capability."},
+          {"condition": "Use live evidence to decide whether agentic tooling, the sandwich-year placement model and any capability above the four-post core should also be funded recurrently after June 2029.", "owner": "Digital and IT with Digital Student Experience Hub governance and Finance", "decisionNeededBy": "Before post-mobilisation recurrent budgets are fixed", "confidence": "evidence-led", "riskIfMissing": "Temporary mobilisation experiments may either disappear despite proven value or become recurrent commitments without sufficient evidence."}
         ]
       }
     }
