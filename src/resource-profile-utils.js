@@ -68,6 +68,20 @@ function fteOf(ask) {
   return typeof ask?.fte === 'number' && Number.isFinite(ask.fte) ? ask.fte : null;
 }
 
+function yearlyProfileOf(ask) {
+  return Array.isArray(ask?.yearlyProfile)
+    ? ask.yearlyProfile.filter((entry) => entry && typeof entry === 'object')
+    : [];
+}
+
+function yearlyEntryYear(entry) {
+  return academicYearStart(entry?.academicYear || entry?.year || entry?.period || entry?.periodNeeded || '');
+}
+
+function yearlyEntryFor(ask, year) {
+  return yearlyProfileOf(ask).find((entry) => yearlyEntryYear(entry) === year) || null;
+}
+
 function initialPeriodAmountOf(ask) {
   if (typeof ask?.initialPeriodAmount === 'number' && Number.isFinite(ask.initialPeriodAmount)) return ask.initialPeriodAmount;
   const text = [ask?.periodNeeded, ask?.rationale, ask?.estimatedCost]
@@ -84,15 +98,60 @@ function initialPeriodAmountOf(ask) {
   return null;
 }
 
-function amountForYear(ask, year) {
+export function amountForAcademicYear(ask, year) {
+  const yearlyProfile = yearlyProfileOf(ask);
+  if (yearlyProfile.length) {
+    const entry = yearlyEntryFor(ask, year);
+    return typeof entry?.amount === 'number' && Number.isFinite(entry.amount) ? entry.amount : null;
+  }
+
   const annualAmount = amountOf(ask);
   if (annualAmount === null) return null;
   const start = academicYearStart(ask.periodNeeded);
+  if (!Number.isFinite(start)) return null;
+  const active = isBauLiability(ask) ? year >= start : year === start;
+  if (!active) return null;
   if (isBauLiability(ask) && year === start) {
     const initialAmount = initialPeriodAmountOf(ask);
     if (typeof initialAmount === 'number' && Number.isFinite(initialAmount)) return initialAmount;
   }
   return annualAmount;
+}
+
+export function fteForAcademicYear(ask, year) {
+  const yearlyProfile = yearlyProfileOf(ask);
+  if (yearlyProfile.length) {
+    const entry = yearlyEntryFor(ask, year);
+    if (!entry) return 0;
+    if (typeof entry.fte === 'number' && Number.isFinite(entry.fte)) return entry.fte;
+    return fteOf(ask) || 0;
+  }
+
+  const start = academicYearStart(ask.periodNeeded);
+  if (!Number.isFinite(start)) return 0;
+  const active = isBauLiability(ask) ? year >= start : year === start;
+  return active ? (fteOf(ask) || 0) : 0;
+}
+
+function askIsActiveInYear(ask, year) {
+  const yearlyProfile = yearlyProfileOf(ask);
+  if (yearlyProfile.length) return Boolean(yearlyEntryFor(ask, year));
+  const start = academicYearStart(ask.periodNeeded);
+  return Number.isFinite(start) && (isBauLiability(ask) ? year >= start : year === start);
+}
+
+function totalProfiledAmountOf(ask) {
+  const yearlyProfile = yearlyProfileOf(ask);
+  if (yearlyProfile.length) {
+    return yearlyProfile.reduce((total, entry) =>
+      total + (typeof entry.amount === 'number' && Number.isFinite(entry.amount) ? entry.amount : 0), 0);
+  }
+  return amountOf(ask) || 0;
+}
+
+function hasQuantifiedAmount(ask) {
+  if (amountOf(ask) !== null) return true;
+  return yearlyProfileOf(ask).some((entry) => typeof entry.amount === 'number' && Number.isFinite(entry.amount));
 }
 
 export function fundingState(ask) {
@@ -111,7 +170,7 @@ export function valueKind(ask) {
   if (fteOf(ask) !== null && /cash-equivalent|release|backfill|workload|protected capacity|capacity envelope/.test(text)) {
     return 'cash-equivalent';
   }
-  return amountOf(ask) !== null ? 'cash' : 'unquantified';
+  return hasQuantifiedAmount(ask) ? 'cash' : 'unquantified';
 }
 
 export function financialCategory(ask) {
@@ -213,10 +272,16 @@ export function academicYearLabel(startYear) {
   return `${startYear}/${String(startYear + 1).slice(-2)}`;
 }
 
+function programmeYearsFromAsk(ask) {
+  const yearlyYears = yearlyProfileOf(ask).map(yearlyEntryYear).filter(Number.isFinite);
+  const start = academicYearStart(ask.periodNeeded);
+  return Number.isFinite(start) ? [start, ...yearlyYears] : yearlyYears;
+}
+
 function maximumProgrammeYear(steps, asks) {
   const values = [
     ...steps.map((step) => academicYearStart(step.period)),
-    ...asks.map((ask) => academicYearStart(ask.periodNeeded))
+    ...asks.flatMap(programmeYearsFromAsk)
   ].filter(Number.isFinite);
   return values.length ? Math.max(...values) : new Date().getFullYear();
 }
@@ -224,7 +289,7 @@ function maximumProgrammeYear(steps, asks) {
 function minimumProgrammeYear(steps, asks) {
   const values = [
     ...steps.map((step) => academicYearStart(step.period)),
-    ...asks.map((ask) => academicYearStart(ask.periodNeeded))
+    ...asks.flatMap(programmeYearsFromAsk)
   ].filter(Number.isFinite);
   return values.length ? Math.min(...values) : new Date().getFullYear();
 }
@@ -257,12 +322,9 @@ export function buildFinancialProfile(steps = []) {
     FINANCIAL_CATEGORIES.forEach((category) => { phase[category] = 0; });
 
     investmentAsks.forEach((ask) => {
-      const start = academicYearStart(ask.periodNeeded);
-      if (!Number.isFinite(start)) return;
-      const active = isBauLiability(ask) ? year >= start : year === start;
-      if (!active) return;
+      if (!askIsActiveInYear(ask, year)) return;
 
-      const amount = amountForYear(ask, year);
+      const amount = amountForAcademicYear(ask, year);
       const category = financialCategory(ask);
       if (amount === null) phase.unquantified += 1;
       else {
@@ -271,8 +333,7 @@ export function buildFinancialProfile(steps = []) {
         if (fundingState(ask) !== 'confirmed') phase.unresolvedAmount += amount;
       }
 
-      const fte = fteOf(ask);
-      if (fte !== null) phase.fte += fte;
+      phase.fte += fteForAcademicYear(ask, year);
     });
 
     return phase;
@@ -284,26 +345,23 @@ export function buildFinancialProfile(steps = []) {
     return {
       key,
       label: resourceLabel(key, matching),
-      values: years.map((year) => matching.reduce((total, ask) => {
-        const start = academicYearStart(ask.periodNeeded);
-        const active = Number.isFinite(start) && (isBauLiability(ask) ? year >= start : year === start);
-        return total + (active ? (fteOf(ask) || 0) : 0);
-      }, 0))
+      values: years.map((year) => matching.reduce((total, ask) => total + fteForAcademicYear(ask, year), 0))
     };
   }).filter((row) => row.values.some((value) => value > 0));
 
   const deliveryInvestmentAsks = investmentAsks.filter((ask) => !isBauLiability(ask));
   const bauLiabilityAsks = investmentAsks.filter(isBauLiability);
-  const knownInvestment = deliveryInvestmentAsks.reduce((total, ask) => total + (amountOf(ask) || 0), 0);
+  const knownInvestment = deliveryInvestmentAsks.reduce((total, ask) => total + totalProfiledAmountOf(ask), 0);
   const knownAnnualBauLiability = bauLiabilityAsks.reduce((total, ask) => total + (amountOf(ask) || 0), 0);
   const mobilisationCost = investmentAsks
     .filter((ask) => financialCategory(ask) === 'mobilisation' && !isBauLiability(ask))
-    .reduce((total, ask) => total + (amountOf(ask) || 0), 0);
-  const firstOperatingPhase = phases.find((phase) => phase.total > mobilisationCost && (phase['convenor-capacity'] > 0 || phase['project-capacity'] > 0)) || phases.find((phase) => phase.total > mobilisationCost) || phases[0];
+    .reduce((total, ask) => total + totalProfiledAmountOf(ask), 0);
+  const firstOperatingPhase = phases.find((phase) => phase.total > mobilisationCost && (phase['convenor-capacity'] > 0 || phase['project-capacity'] > 0)) || phases.find((phase) => phase.total > 0) || phases[0];
   const exitRunRate = Math.max(knownAnnualBauLiability, phases.at(-1)?.total || 0);
   const peakFte = phases.reduce((max, phase) => Math.max(max, phase.fte), 0);
   const unresolvedAsks = investmentAsks.filter((ask) => fundingState(ask) !== 'confirmed');
-  const unquantifiedInvestmentAsks = investmentAsks.filter((ask) => amountOf(ask) === null);
+  const unquantifiedInvestmentAsks = investmentAsks.filter((ask) => !hasQuantifiedAmount(ask));
+  const activeInvestmentPhases = phases.filter((phase) => phase.total > 0 || phase.fte > 0 || phase.unquantified > 0);
 
   return {
     asks,
@@ -320,6 +378,7 @@ export function buildFinancialProfile(steps = []) {
     deliveryInvestmentAsks,
     bauLiabilityAsks,
     phases,
+    activeInvestmentPhases,
     capacityRows,
     mobilisationCost,
     firstOperatingPhase,
