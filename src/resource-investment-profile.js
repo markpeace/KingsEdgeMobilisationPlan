@@ -181,8 +181,8 @@ function CapacityProfile({ profile }) {
   return h('section', { className: 'resource-profile-section resource-capacity-section' },
     h('div', { className: 'resource-section-heading' },
       h('div', null,
-        h('h3', null, 'New capacity profile'),
-        h('p', null, 'Repeated step references are consolidated into continuing resource families. Existing establishment is listed separately and is not added to new funded FTE.')
+        h('h3', null, 'New funded capacity'),
+        h('p', null, 'New FTE created or funded by the plan. Existing staff capacity that must be committed is surfaced separately below and is not added to this total.')
       )
     ),
     h('div', { className: 'resource-capacity-table-wrap' },
@@ -213,6 +213,77 @@ function CapacityProfile({ profile }) {
         )
       )
     )
+  );
+}
+
+function ExistingCapacityItem({ ask, conditional = false }) {
+  const fte = formatFte(ask.fte);
+  const metadata = [
+    ask.owner ? `Owner: ${ask.owner}` : null,
+    ask.periodNeeded ? `Period: ${ask.periodNeeded}` : null,
+    ask.confidence ? `Confidence: ${ask.confidence}` : null
+  ].filter(Boolean).join(' · ');
+
+  return h('article', {
+    className: 'resource-funding-item',
+    key: `${ask.sourceStep?.contextId || ''}-${ask.id || askName(ask)}`
+  },
+    h('div', { className: 'resource-funding-item-heading' },
+      h('strong', null, askName(ask)),
+      h('span', {
+        className: `resource-status-badge ${conditional ? 'resource-status-unresolved' : 'resource-status-confirmed'}`
+      }, conditional ? 'Conditional capacity' : 'Existing capacity')
+    ),
+    h('p', { className: 'resource-funding-value' }, fte || 'FTE not yet quantified'),
+    metadata ? h('p', null, metadata) : null,
+    ask.rationale ? h('p', null, ask.rationale) : null
+  );
+}
+
+function ExistingCapacityPanel({ profile }) {
+  const required = profile.committedExistingCapacityAsks || [];
+  const conditional = profile.conditionalExistingCapacityAsks || [];
+  const unquantified = profile.unquantifiedExistingCapacityAsks || [];
+  if (!required.length && !conditional.length && !unquantified.length) return null;
+
+  return h('section', { className: 'resource-profile-section resource-existing-section' },
+    h('div', { className: 'resource-section-heading' },
+      h('div', null,
+        h('h3', null, 'Existing capacity to commit'),
+        h('p', null, 'Existing roles and specialist capacity that the plan relies on. Quantified allocations are surfaced as FTE but are not counted as new funded posts or cash investment.')
+      )
+    ),
+    required.length
+      ? h('div', { className: 'resource-funding-list' },
+          ...required.map((ask) => h(ExistingCapacityItem, { ask, key: ask.id || askName(ask) }))
+        )
+      : null,
+    conditional.length
+      ? h('div', null,
+          h('div', { className: 'resource-section-heading' },
+            h('div', null,
+              h('h3', null, 'Conditional existing capacity'),
+              h('p', null, 'Capacity required only if the stated delivery or role assumption cannot be met. It is shown separately and is not added to the committed existing-capacity baseline.')
+            )
+          ),
+          h('div', { className: 'resource-funding-list' },
+            ...conditional.map((ask) => h(ExistingCapacityItem, { ask, conditional: true, key: ask.id || askName(ask) }))
+          )
+        )
+      : null,
+    unquantified.length
+      ? h('div', null,
+          h('div', { className: 'resource-section-heading' },
+            h('div', null,
+              h('h3', null, 'Existing contributions not yet quantified'),
+              h('p', null, 'These existing-capacity dependencies remain visible until an FTE, workload allocation or other explicit commitment is agreed.')
+            )
+          ),
+          h('div', { className: 'resource-funding-list' },
+            ...unquantified.map((ask) => h(ExistingCapacityItem, { ask, key: ask.id || askName(ask) }))
+          )
+        )
+      : null
   );
 }
 
@@ -291,6 +362,16 @@ function ResourceInvestmentProfile({ context, steps }) {
   const firstPhase = profile.firstOperatingPhase;
   const fundingResolvedCount = profile.investmentAsks
     .filter((ask) => fundingState(ask) === 'confirmed').length;
+  const existingCapacityValue = profile.existingCapacityFte > 0
+    ? formatFte(profile.existingCapacityFte)
+    : profile.distinctExistingCapacityAsks.length
+      ? 'Not quantified'
+      : 'None recorded';
+  const existingCapacityNote = profile.conditionalExistingCapacityFte > 0
+    ? `Plus up to ${formatFte(profile.conditionalExistingCapacityFte)} conditional`
+    : profile.unquantifiedExistingCapacityAsks.length
+      ? `${profile.unquantifiedExistingCapacityAsks.length} further unquantified ${profile.unquantifiedExistingCapacityAsks.length === 1 ? 'ask' : 'asks'}`
+      : 'Existing roles to be committed';
 
   return h('section', {
     id: 'resource-investment-profile',
@@ -304,7 +385,7 @@ function ResourceInvestmentProfile({ context, steps }) {
     },
       h('span', { className: 'resource-profile-heading' },
         h('strong', null, summaryTitle),
-        h('em', null, 'Phased expenditure, recurrent commitment and capacity derived from delivery-step asks.')
+        h('em', null, 'Phased expenditure, new funded capacity and existing institutional capacity derived from delivery-step asks.')
       ),
       h('span', { className: 'resource-profile-toggle', 'aria-hidden': 'true' },
         expanded ? '−' : '+'
@@ -312,7 +393,7 @@ function ResourceInvestmentProfile({ context, steps }) {
     ),
     expanded ? h('div', { className: 'resource-profile-body' },
       h('p', { className: 'subtle resource-profile-explainer' },
-        'The delivery steps remain the source of truth. Figures marked cash-equivalent represent planning valuations of protected capacity and must be replaced by grade-based release, workload-allocation or backfill costs before approval.'
+        'The delivery steps remain the source of truth. New funded FTE and existing institutional capacity are shown separately so an existing-role commitment cannot disappear inside the delivery narrative or be mistaken for new investment. Conditional capacity is excluded from the committed baseline until its trigger applies.'
       ),
       h('div', { className: 'resource-profile-summary-grid' },
         h(MetricCard, {
@@ -339,31 +420,27 @@ function ResourceInvestmentProfile({ context, steps }) {
           label: 'Peak new funded capacity',
           value: formatFte(profile.peakFte) || 'Not quantified',
           note: 'Maximum concurrent new FTE'
+        }),
+        h(MetricCard, {
+          label: 'Existing capacity required',
+          value: existingCapacityValue,
+          note: existingCapacityNote,
+          tone: 'resource-summary-existing'
         })
       ),
       h('div', { className: 'resource-profile-quality-line' },
         h('span', null, `${profile.valueKinds.cash} cash asks`),
         h('span', null, `${profile.valueKinds.cashEquivalent} cash-equivalent asks`),
-        h('span', null, `${profile.valueKinds.unquantified} unquantified asks`),
+        h('span', null, `${profile.valueKinds.unquantified} unquantified investment asks`),
+        h('span', null, `${profile.distinctExistingCapacityAsks.length} existing-capacity ${profile.distinctExistingCapacityAsks.length === 1 ? 'ask' : 'asks'}`),
         h('span', null,
           `${fundingResolvedCount}/${profile.investmentAsks.length} investment asks confirmed or commissioned`
         )
       ),
       h(FinancialPhasing, { profile }),
       h(CapacityProfile, { profile }),
+      h(ExistingCapacityPanel, { profile }),
       h(FundingPanel, { profile, contextType: context.type }),
-      profile.existingCapacityAsks.length
-        ? h('section', { className: 'resource-profile-section resource-existing-section' },
-            h('div', { className: 'resource-section-heading' },
-              h('div', null,
-                h('h3', null, 'Existing establishment and contribution'),
-                h('p', null,
-                  `${profile.existingCapacityAsks.length} existing-capacity asks remain in the delivery-step records but are not treated as new investment or added to funded FTE.`
-                )
-              )
-            )
-          )
-        : null,
       h(SourceStatement, { steps, profile, contextType: context.type })
     ) : null
   );
