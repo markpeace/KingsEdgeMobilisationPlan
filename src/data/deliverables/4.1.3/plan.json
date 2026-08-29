@@ -1,11 +1,11 @@
 {
-  "summary": "Establishes the four-post experienced digital product core across the three-year mobilisation, sustained agentic-development capability and a supervised junior-engineering placement in Years Two and Three to deliver King’s Edge and the Digital Student Experience Hub and build an enduring product-development capability.",
-  "detailSummary": "Digital Innovation and Product Development Capability establishes the team and working practices through which King’s Edge and the Digital Student Experience Hub are delivered. The current planning assumption is that the same four-post experienced core is required throughout the three-year mobilisation to June 2029. From Year Two, that core is deliberately augmented by one paid sandwich-year Junior Full-Stack Engineer per year as a supervised capability and talent-pipeline test. Evidence still determines whether further capacity is needed and which elements should continue beyond mobilisation.\n\nThe experienced core is 4.0 FTE across four explicit posts. The planning profile is: Senior Backend & Integration Engineer, £61,000 in 2026/27 and £91,000 in each full year thereafter; Middleweight Full-Stack Engineer, £50,000 then £75,000 per full year; Product & Service Designer, £50,000 then £75,000 per full year; and QA Engineer, £42,000 then £63,000 per full year. Together the experienced core profiles at approximately £203,000 in 2026/27, £304,000 in 2027/28 and £304,000 in 2028/29, or approximately £811,000 across mobilisation in constant 2026 planning prices. Digital and IT / HR must validate final grades, appointment points, start dates and future pay awards.\n\nIn 2027/28 and again in 2028/29, the team adds one 1.0 FTE Junior Full-Stack Engineer through a paid sandwich-year placement. A £35,000 annual employment envelope is used for planning in each year, giving £70,000 across the two placement cycles. The placement student works on a supervised, bounded and lower-risk backlog and is explicitly additional to the four experienced posts. The purpose is both productive delivery and institutional learning: to test useful junior contribution, supervision cost, learning value, use of agentic tooling and the potential for a repeatable student-to-digital-talent pipeline. Total planned staffing is therefore approximately £203,000 in Year One and £339,000 in each of Years Two and Three, or approximately £881,000 across mobilisation.\n\nMark Peace is the Product Owner during mobilisation. The funded team is supported by approximately 0.2 FTE Business Analysis during the main discovery period, approximately 0.2 FTE DevOps/platform support, and up to approximately 0.2 FTE solution architecture only if the Senior Backend & Integration Engineer cannot credibly carry that function. Specialist assurance is drawn from existing institutional functions when required.\n\nRing-fenced agentic software-development tooling is treated as part of the engineering model throughout all three mobilisation years, currently profiled at £90,000 per year or £270,000 in total. The amount remains subject to commercial validation, including whether existing shared capacity can reduce actual spend. The directly quantified 4.1.3 profile is approximately £293,000 in Year One and £429,000 in each of Years Two and Three, or approximately £1.151m across the three-year mobilisation before valuing existing shared capacity.",
+  "summary": "Establishes the four-post experienced digital product core across the three-year mobilisation, sustained agentic-development capability and a supervised junior-engineering placement in Years Two and Three, with the four experienced posts transitioning into enduring Digital and IT business-as-usual capability from July 2029.",
+  "detailSummary": "Digital Innovation and Product Development Capability establishes the team and working practices through which King’s Edge and the Digital Student Experience Hub are delivered. The four-post experienced core is required throughout the three-year mobilisation to June 2029 and is intended to transition into recurrent Digital and IT business-as-usual establishment from July 2029. From Year Two, that core is deliberately augmented by one paid sandwich-year Junior Full-Stack Engineer per year as a supervised capability and talent-pipeline test. Evidence still determines whether further capacity is needed and whether the agentic-tooling and placement models should also continue beyond mobilisation.\n\nThe experienced core is 4.0 FTE across four explicit posts. The planning profile is: Senior Backend & Integration Engineer, £61,000 in 2026/27 and £91,000 in each full year thereafter; Middleweight Full-Stack Engineer, £50,000 then £75,000 per full year; Product & Service Designer, £50,000 then £75,000 per full year; and QA Engineer, £42,000 then £63,000 per full year. Together the experienced core profiles at approximately £203,000 in 2026/27, £304,000 in 2027/28 and £304,000 in 2028/29, or approximately £811,000 across mobilisation in constant 2026 planning prices. Digital and IT / HR must validate final grades, appointment points, start dates and future pay awards.\n\nIn 2027/28 and again in 2028/29, the team adds one 1.0 FTE Junior Full-Stack Engineer through a paid sandwich-year placement. A £35,000 annual employment envelope is used for planning in each year, giving £70,000 across the two placement cycles. The placement student works on a supervised, bounded and lower-risk backlog and is explicitly additional to the four experienced posts. The purpose is both productive delivery and institutional learning: to test useful junior contribution, supervision cost, learning value, use of agentic tooling and the potential for a repeatable student-to-digital-talent pipeline. Total planned staffing is therefore approximately £203,000 in Year One and £339,000 in each of Years Two and Three, or approximately £881,000 across mobilisation.\n\nMark Peace is the Product Owner during mobilisation. The funded team is supported by approximately 0.2 FTE Business Analysis during the main discovery period, approximately 0.2 FTE DevOps/platform support, and up to approximately 0.2 FTE solution architecture only if the Senior Backend & Integration Engineer cannot credibly carry that function. Specialist assurance is drawn from existing institutional functions when required.\n\nRing-fenced agentic software-development tooling is treated as part of the engineering model throughout all three mobilisation years, currently profiled at £90,000 per year or £270,000 in total. The amount remains subject to commercial validation, including whether existing shared capacity can reduce actual spend. The directly quantified 4.1.3 profile is approximately £293,000 in Year One and £429,000 in each of Years Two and Three, or approximately £1.151m across the three-year mobilisation before valuing existing shared capacity.\n\nThe BAU anchor is the original four experienced posts. From July 2029 they are intended to transfer from mobilisation funding into recurrent Digital and IT establishment, with an indicative constant-price staffing run-rate of approximately £304,000 per year. This recurrent liability is deliberately kept separate from the three-year mobilisation total so the investment case can distinguish the cost of building the capability from the cost of sustaining it. The end-of-mobilisation work is therefore to secure the recurrent funding and workforce route for the core, while using evidence to decide whether agentic tooling, the annual placement model and any additional capacity should also become recurrent commitments.",
   "caseForChange": {
     "problem": "King’s does not currently have a sufficiently dependable multidisciplinary product capability for turning emerging student-experience needs into working, supported digital services at pace. King’s needs sustained in-house capability to deliver the King’s Edge roadmap, establish and evolve the Digital Student Experience Hub, and support broader discovery and integration across the student digital estate.",
-    "opportunity": "A four-post experienced product core across the three-year mobilisation, combined with lean shared Business Analysis, DevOps/platform and conditional solution-architecture support, gives King’s a disciplined route from need to supported change. Sustained agentic software-development tooling allows agentic delivery to become part of normal engineering practice rather than a short pilot. Once the experienced team and practices are established, a supervised sandwich-year Junior Full-Stack Engineer in Years Two and Three creates a low-risk way to test additional delivery capacity and a potential internal digital-talent pipeline.",
-    "whyNow": "King’s Edge is moving into rapid replatforming and substantial product development, while the Digital Student Experience Hub needs a focused September 2027 first release and then sustained development across the remainder of mobilisation. 2026/27 is the right point to recruit the experienced core and establish the tooling and shared capacity; from 2027/28 the team should be mature enough to host a sandwich-year engineer safely and productively.",
-    "intendedChange": "Across the three-year mobilisation, the funded 4.0 FTE experienced core delivers the King’s Edge roadmap and the Digital Student Experience Hub, supported by sustained agentic tooling. In Years Two and Three, one paid sandwich-year Junior Full-Stack Engineer per year augments the core on a supervised, bounded backlog and provides evidence about junior contribution, supervision, learning and future talent-pipeline potential. By June 2029, King’s should have enough evidence to decide which elements of the experienced core, agentic tooling and placement model should continue as recurrent business-as-usual capability."
+    "opportunity": "A four-post experienced product core across the three-year mobilisation, combined with lean shared Business Analysis, DevOps/platform and conditional solution-architecture support, gives King’s a disciplined route from need to supported change and establishes an enduring product capability rather than a temporary project team. Sustained agentic software-development tooling allows agentic delivery to become part of normal engineering practice rather than a short pilot. Once the experienced team and practices are established, a supervised sandwich-year Junior Full-Stack Engineer in Years Two and Three creates a low-risk way to test additional delivery capacity and a potential internal digital-talent pipeline.",
+    "whyNow": "King’s Edge is moving into rapid replatforming and substantial product development, while the Digital Student Experience Hub needs a focused September 2027 first release and then sustained development across the remainder of mobilisation. 2026/27 is the right point to recruit the experienced core and establish the tooling and shared capacity; from 2027/28 the team should be mature enough to host a sandwich-year engineer safely and productively. Making the BAU destination explicit from the outset also avoids recruiting a capability that appears artificially temporary despite an enduring institutional need.",
+    "intendedChange": "Across the three-year mobilisation, the funded 4.0 FTE experienced core delivers the King’s Edge roadmap and the Digital Student Experience Hub, supported by sustained agentic tooling. In Years Two and Three, one paid sandwich-year Junior Full-Stack Engineer per year augments the core on a supervised, bounded backlog and provides evidence about junior contribution, supervision, learning and future talent-pipeline potential. From July 2029, the original four experienced posts transition into recurrent Digital and IT business-as-usual establishment. The current planning run-rate for that enduring 4.0 FTE core is approximately £304,000 per year in constant 2026 prices. Evidence determines whether agentic tooling, the placement model or capacity above the four-post core also joins the recurrent operating model."
   },
   "benefits": [
     {
@@ -36,83 +36,51 @@
       "benefitType": "sustainability and risk reduction",
       "owner": "TBC – Digital product capability owner",
       "realisationPeriod": "As supported live operation matures",
-      "successLooksLike": "Successful capabilities have explicit ownership and support arrangements, unsuccessful trials close cleanly, and the product capability has an evidence-based route into business as usual."
+      "successLooksLike": "Successful capabilities have explicit ownership and support arrangements, the four-post product core has a funded BAU landing, and time-limited experiments either transition on evidence or close cleanly."
     }
   ],
   "steps": [
     {
       "id": "4.1.3-step-1",
       "title": "Recruit and mobilise the core multidisciplinary digital product team",
-      "period": {
-        "start": "jul-dec-2026:b",
-        "end": "jul-dec-2026:c"
-      },
-      "summary": "From September through November 2026, secure three-year mobilisation funding and recruit or assign the four experienced core posts through Digital and IT. Confirm Mark Peace as Product Owner, lean shared Business Analysis and DevOps/platform capacity, conditional solution architecture, and the commercial route for the £90,000 annual agentic software-development tooling allowance across all three mobilisation years.",
+      "period": {"start": "jul-dec-2026:b", "end": "jul-dec-2026:c"},
+      "summary": "From September through November 2026, secure three-year mobilisation funding and recruit or assign the four experienced core posts through Digital and IT on a route compatible with their planned transition into BAU after June 2029. Confirm Mark Peace as Product Owner, lean shared Business Analysis and DevOps/platform capacity, conditional solution architecture, and the commercial route for the £90,000 annual agentic software-development tooling allowance across all three mobilisation years.",
       "dependsOn": []
     },
     {
       "id": "4.1.3-step-2",
       "title": "Establish the product operating model and delivery practices",
-      "period": {
-        "start": "jul-dec-2026:c",
-        "end": "jan-jun-2027:a"
-      },
+      "period": {"start": "jul-dec-2026:c", "end": "jan-jun-2027:a"},
       "summary": "From November 2026 to February 2027, establish one transparent pipeline, prioritisation and capacity cadence, proportionate discovery and user involvement, engineering and quality expectations, sustained agentic-development practices, embedded assurance and release practices across King’s Edge and the Digital Student Experience Hub.",
-      "dependsOn": [
-        "4.1.3-step-1"
-      ]
+      "dependsOn": ["4.1.3-step-1"]
     },
     {
       "id": "4.1.3-step-3",
       "title": "Prove the capability through King’s Edge, broad discovery and the focused Hub release",
-      "period": {
-        "start": "jan-jun-2027:a",
-        "end": "jul-dec-2027:b"
-      },
+      "period": {"start": "jan-jun-2027:a", "end": "jul-dec-2027:b"},
       "summary": "From January to October 2027, prove that the four-post experienced core and lean shared-capacity model can deliver the substantive King’s Edge roadmap and focused Digital Student Experience Hub release. Use the evidence to refine the operating model and prepare a safe, supervised Year Two sandwich-year engineering placement.",
-      "dependsOn": [
-        "4.1.3-step-2",
-        "4.1.2-step-1",
-        "4.1.2-step-1c",
-        "4.1.4-step-2"
-      ]
+      "dependsOn": ["4.1.3-step-2", "4.1.2-step-1", "4.1.2-step-1c", "4.1.4-step-2"]
     },
     {
       "id": "4.1.3-step-4",
       "title": "Make product operations and live-service collaboration routine",
-      "period": {
-        "start": "jul-dec-2027:c",
-        "end": "jan-jun-2028:a"
-      },
+      "period": {"start": "jul-dec-2027:c", "end": "jan-jun-2028:a"},
       "summary": "From November 2027 to February 2028, make operating practices routine across the live Digital Student Experience Hub and King’s Edge product domain and add one supervised sandwich-year Junior Full-Stack Engineer as additional Year Two delivery and learning capacity alongside the four-post experienced core.",
-      "dependsOn": [
-        "4.1.3-step-3"
-      ]
+      "dependsOn": ["4.1.3-step-3"]
     },
     {
       "id": "4.1.3-step-5",
       "title": "Scale the team and its practices where the wider roadmap justifies it",
-      "period": {
-        "start": "jan-jun-2028:b",
-        "end": "jul-dec-2028:b"
-      },
+      "period": {"start": "jan-jun-2028:b", "end": "jul-dec-2028:b"},
       "summary": "From March to October 2028, use live-service and first-placement evidence to refine the capability model, continue the planned sandwich-year Junior Full-Stack placement for a second year in 2028/29, and approve any further expansion only where roadmap demand and evidence justify it.",
-      "dependsOn": [
-        "4.1.3-step-4",
-        "4.1.2-step-3"
-      ]
+      "dependsOn": ["4.1.3-step-4", "4.1.2-step-3"]
     },
     {
       "id": "4.1.3-step-6",
-      "title": "Embed an enduring institutional product-development capability",
-      "period": {
-        "start": "jul-dec-2028:c",
-        "end": "jan-jun-2029:c"
-      },
-      "summary": "By the end of the three-year mobilisation, establish the sustainable multidisciplinary capability, professional leadership, governance, product practices and interfaces with SED product ownership and Digital and IT specialist/platform services. Decide which elements of the four-post experienced core, agentic tooling and junior-placement model should continue after June 2029 and confirm recurrent staffing, tooling and costs from live evidence before business-as-usual transition.",
-      "dependsOn": [
-        "4.1.3-step-5"
-      ]
+      "title": "Transition the core capability into business as usual",
+      "period": {"start": "jul-dec-2028:c", "end": "jan-jun-2029:c"},
+      "summary": "By the end of the three-year mobilisation, transition the original four experienced posts into recurrent Digital and IT establishment from July 2029, currently estimated at approximately £304,000 per year in constant 2026 prices. Complete the enduring professional leadership, governance and interfaces with SED product ownership and specialist Digital and IT services. Use mobilisation evidence to decide separately whether agentic tooling, the annual sandwich-year placement model or capacity above the four-post core should also continue in BAU.",
+      "dependsOn": ["4.1.3-step-5"]
     }
   ]
 }
