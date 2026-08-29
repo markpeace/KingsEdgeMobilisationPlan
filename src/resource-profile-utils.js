@@ -12,6 +12,12 @@ export function isBauLiability(ask) {
   return ask?.bauLiability === true;
 }
 
+export function isConditionalCapacity(ask) {
+  if (ask?.conditional === true) return true;
+  const confidence = String(ask?.confidence || '').trim().toLowerCase();
+  return confidence.includes('conditional');
+}
+
 export function resourceGroups(step) {
   const existingCapacity = step.resources?.existingCapacity || [];
   const newInvestment = step.resources?.newInvestment || [];
@@ -150,6 +156,27 @@ export function resourceLabel(key, asks = []) {
   return labels[key] || asks[0]?.label || asks[0]?.item || asks[0]?.role || 'Resource';
 }
 
+function existingCapacityIdentity(ask) {
+  const contextId = ask?.sourceStep?.contextId || '';
+  return `${contextId}:${resourceKey(ask)}`;
+}
+
+function distinctExistingCapacity(asks = []) {
+  const byIdentity = new Map();
+  asks.forEach((ask) => {
+    const key = existingCapacityIdentity(ask);
+    const current = byIdentity.get(key);
+    if (!current) {
+      byIdentity.set(key, ask);
+      return;
+    }
+    const currentFte = fteOf(current);
+    const nextFte = fteOf(ask);
+    if (nextFte !== null && (currentFte === null || nextFte > currentFte)) byIdentity.set(key, ask);
+  });
+  return [...byIdentity.values()];
+}
+
 function academicYearStartFromString(value) {
   const text = String(value || '').trim();
   if (!text) return null;
@@ -207,6 +234,13 @@ export function buildFinancialProfile(steps = []) {
   const investmentAsks = asks.filter((ask) => ask.askType === 'new-investment');
   const existingCapacityAsks = asks.filter((ask) => ask.askType === 'existing-capacity');
   const enablingConditionAsks = asks.filter((ask) => ask.askType === 'enabling-condition');
+  const distinctExistingCapacityAsks = distinctExistingCapacity(existingCapacityAsks);
+  const quantifiedExistingCapacityAsks = distinctExistingCapacityAsks.filter((ask) => fteOf(ask) !== null);
+  const committedExistingCapacityAsks = quantifiedExistingCapacityAsks.filter((ask) => !isConditionalCapacity(ask));
+  const conditionalExistingCapacityAsks = quantifiedExistingCapacityAsks.filter(isConditionalCapacity);
+  const unquantifiedExistingCapacityAsks = distinctExistingCapacityAsks.filter((ask) => fteOf(ask) === null);
+  const existingCapacityFte = committedExistingCapacityAsks.reduce((total, ask) => total + (fteOf(ask) || 0), 0);
+  const conditionalExistingCapacityFte = conditionalExistingCapacityAsks.reduce((total, ask) => total + (fteOf(ask) || 0), 0);
   const minYear = minimumProgrammeYear(steps, asks);
   const maxYear = maximumProgrammeYear(steps, asks);
   const years = Array.from({ length: Math.max(1, maxYear - minYear + 1) }, (_, index) => minYear + index);
@@ -275,6 +309,13 @@ export function buildFinancialProfile(steps = []) {
     asks,
     investmentAsks,
     existingCapacityAsks,
+    distinctExistingCapacityAsks,
+    quantifiedExistingCapacityAsks,
+    committedExistingCapacityAsks,
+    conditionalExistingCapacityAsks,
+    unquantifiedExistingCapacityAsks,
+    existingCapacityFte,
+    conditionalExistingCapacityFte,
     enablingConditionAsks,
     deliveryInvestmentAsks,
     bauLiabilityAsks,
@@ -305,7 +346,10 @@ export function resourceSummary(steps = []) {
     deliveryInvestmentAsks: profile.deliveryInvestmentAsks.length,
     bauLiabilityAsks: profile.bauLiabilityAsks.length,
     enablingConditions: profile.enablingConditionAsks.length,
-    capacityAsks: profile.existingCapacityAsks.length,
+    capacityAsks: profile.distinctExistingCapacityAsks.length,
+    quantifiedExistingCapacityAsks: profile.quantifiedExistingCapacityAsks.length,
+    existingCapacityFte: profile.existingCapacityFte,
+    conditionalExistingCapacityFte: profile.conditionalExistingCapacityFte,
     knownInvestment: profile.knownInvestment,
     knownAnnualBauLiability: profile.knownAnnualBauLiability,
     unquantifiedInvestmentAsks: profile.unquantifiedInvestmentAsks.length,
