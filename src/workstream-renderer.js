@@ -4,6 +4,8 @@ import './styles/workstreams.css';
 
 const { deliverables } = buildLookups();
 const deliverableById = new Map(deliverables.map((deliverable) => [deliverable.id, deliverable]));
+const MAX_ROUTE_STEPS = 4;
+const MAX_STEP_TAGS = 2;
 
 function currentDeliverable() {
   const match = window.location.hash.match(/^#\/deliverables\/([^/?#]+)/);
@@ -38,9 +40,10 @@ function buildWorkstreamPanel(deliverable) {
     const stepTitles = stepTitlesForWorkstream(deliverable, workstream);
     if (stepTitles.length) {
       const route = element('div', 'workstream-route');
-      route.append(element('strong', '', 'Delivery route'));
+      route.append(element('strong', '', `Delivery route · ${stepTitles.length} linked ${stepTitles.length === 1 ? 'step' : 'steps'}`));
       const list = element('ol', 'workstream-step-list');
-      stepTitles.forEach((title) => list.append(element('li', '', title)));
+      stepTitles.slice(0, MAX_ROUTE_STEPS).forEach((title) => list.append(element('li', '', title)));
+      if (stepTitles.length > MAX_ROUTE_STEPS) list.append(element('li', 'workstream-more', `+ ${stepTitles.length - MAX_ROUTE_STEPS} later linked ${stepTitles.length - MAX_ROUTE_STEPS === 1 ? 'step' : 'steps'}`));
       route.append(list);
       card.append(route);
     }
@@ -68,7 +71,12 @@ function renderStepTags(deliverable) {
     const row = element('div', 'workstream-tag-row');
     row.dataset.workstreamKey = key;
     row.setAttribute('aria-label', 'Workstreams for this step');
-    linked.forEach((workstream) => row.append(element('span', 'workstream-tag', workstream.title)));
+    linked.slice(0, MAX_STEP_TAGS).forEach((workstream) => row.append(element('span', 'workstream-tag', workstream.title)));
+    if (linked.length > MAX_STEP_TAGS) {
+      const more = element('span', 'workstream-tag workstream-tag-more', `+${linked.length - MAX_STEP_TAGS} more`);
+      more.title = linked.slice(MAX_STEP_TAGS).map((workstream) => workstream.title).join(', ');
+      row.append(more);
+    }
     const heading = card.querySelector('h3');
     if (heading) card.insertBefore(row, heading);
     else card.prepend(row);
