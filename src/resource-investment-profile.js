@@ -10,6 +10,7 @@ import {
   resourceGroups
 } from './resource-profile-utils.js';
 import './styles/resource-profile.css';
+import './styles/resource-profile-fit.css';
 
 const h = React.createElement;
 const { deliverables } = buildLookups(projects);
@@ -56,19 +57,22 @@ function stepsForContext(context) {
     }));
   }
 
-  return (context.item.deliverables || []).flatMap((deliverable) =>
-    (deliverable.steps || []).map((step) => ({
+  return (context.item.deliverables || []).flatMap((deliverable) => {
+    const fullDeliverable = deliverableById.get(deliverable.id) || deliverable;
+    return (fullDeliverable.steps || []).map((step) => ({
       ...step,
-      contextId: deliverable.id,
-      contextTitle: deliverable.title
-    }))
-  );
+      contextId: fullDeliverable.id,
+      contextTitle: fullDeliverable.title
+    }));
+  });
 }
 
 function contextSignature(context, steps) {
+  const workforceModels = workforceModelsForContext(context);
   return JSON.stringify({
     type: context.type,
     id: context.item.id,
+    workforceModels,
     steps: steps.map((step) => ({
       id: step.id,
       period: step.period,
@@ -111,6 +115,50 @@ function StatusBadge({ ask }) {
   return h('span', { className: `resource-status-badge resource-status-${state}` }, conciseStatus(state));
 }
 
+function workforceModelsForContext(context) {
+  if (context.type === 'deliverable') {
+    return context.item.workforceModel ? [context.item.workforceModel] : [];
+  }
+  return (context.item.deliverables || [])
+    .map((deliverable) => deliverableById.get(deliverable.id) || deliverable)
+    .map((deliverable) => deliverable.workforceModel)
+    .filter(Boolean);
+}
+
+function appointmentsForContext(context) {
+  return workforceModelsForContext(context).flatMap((model) => model.appointments || []);
+}
+
+function appointmentForAsk(ask) {
+  const deliverable = deliverableById.get(ask.sourceStep?.contextId);
+  const appointments = deliverable?.workforceModel?.appointments || [];
+  const byId = ask.id ? appointments.find((appointment) => appointment.resourceId === ask.id) : null;
+  if (byId) return byId;
+  const name = askName(ask).trim().toLowerCase();
+  return appointments.find((appointment) => String(appointment.role || '').trim().toLowerCase() === name) || null;
+}
+
+function appointmentBasisLabel(appointment) {
+  if (!appointment) return 'Not recorded';
+  if (appointment.appointmentBasis === 'permanent') return 'Permanent';
+  if (appointment.appointmentBasis === 'placement') return 'Placement';
+  if (appointment.appointmentBasis === 'fixed-term') return 'Fixed-term';
+  if (appointment.appointmentBasis === 'secondment') return 'Secondment';
+  return appointment.appointmentLabel || appointment.appointmentBasis || 'Recorded';
+}
+
+function AppointmentCell({ appointment }) {
+  const basis = appointment?.appointmentBasis || 'unspecified';
+  return h('div', { className: 'resource-appointment-cell' },
+    h('span', { className: `resource-appointment-badge is-${basis}` }, appointmentBasisLabel(appointment)),
+    appointment?.appointmentLabel && appointment.appointmentLabel !== appointmentBasisLabel(appointment)
+      ? h('small', null, appointment.appointmentLabel)
+      : null,
+    appointment?.fundingBasis ? h('small', null, appointment.fundingBasis) : null,
+    appointment?.endState ? h('small', null, appointment.endState) : null
+  );
+}
+
 function allActiveYears(profile) {
   return profile.activeInvestmentPhases?.length ? profile.activeInvestmentPhases : profile.phases;
 }
@@ -124,6 +172,29 @@ function deliveryYears(profile) {
   }));
 }
 
+function peakDeliveryFte(profile) {
+  const asks = profile.deliveryInvestmentAsks || [];
+  const years = deliveryYears(profile);
+  return years.reduce((peak, year) => Math.max(
+    peak,
+    asks.reduce((total, ask) => total + fteForAcademicYear(ask, year.startYear), 0)
+  ), 0);
+}
+
+function permanentAppointments(context) {
+  return appointmentsForContext(context).filter((appointment) => appointment.appointmentBasis === 'permanent');
+}
+
+function permanentFte(context) {
+  return permanentAppointments(context).reduce((total, appointment) => total + (appointment.fte || 0), 0);
+}
+
+function permanentAnnualRunRate(context, profile) {
+  const appointments = permanentAppointments(context);
+  const total = appointments.reduce((sum, appointment) => sum + (appointment.annualBauAmount || 0), 0);
+  return total || profile.knownAnnualBauLiability || 0;
+}
+
 function YearCell({ ask, year, showFte = false }) {
   const amount = amountForAcademicYear(ask, year.startYear);
   const fte = fteForAcademicYear(ask, year.startYear);
@@ -135,7 +206,7 @@ function YearCell({ ask, year, showFte = false }) {
   );
 }
 
-function FundedPeopleTable({ profile, asks }) {
+function FundedPeopleTable({ profile, asks, title, description, tone = '', showAppointment = false }) {
   if (!asks.length) return null;
   const years = deliveryYears(profile);
   const totalFte = Math.max(...years.map((year) => asks.reduce((total, ask) => total + fteForAcademicYear(ask, year.startYear), 0)), 0);
@@ -144,21 +215,22 @@ function FundedPeopleTable({ profile, asks }) {
     return yearTotal + (typeof amount === 'number' ? amount : 0);
   }, 0), 0);
 
-  return h('div', { className: 'resource-table-block' },
+  return h('div', { className: `resource-table-block ${tone}`.trim() },
     h('div', { className: 'resource-subheading' },
       h('div', null,
-        h('h4', null, 'New funded roles'),
-        h('p', null, 'Each academic-year column shows the FTE and cash requirement during mobilisation. Any intended recurrent BAU landing is shown separately below.')
+        h('h4', null, title),
+        description ? h('p', null, description) : null
       ),
       h('strong', null, `${formatFte(totalFte) || 'FTE TBC'} · ${formatMoney(totalCost) || 'cost TBC'} profiled`)
     ),
     h('div', { className: 'resource-readable-table-wrap' },
-      h('table', { className: 'resource-readable-table resource-multiyear-table' },
+      h('table', { className: 'resource-readable-table resource-multiyear-table resource-workforce-table' },
         h('thead', null,
           h('tr', null,
             h('th', { scope: 'col' }, 'Role'),
+            showAppointment ? h('th', { scope: 'col' }, 'Appointment / end-state') : null,
             ...years.map((year) => h('th', { scope: 'col', key: year.year }, year.year)),
-            h('th', { scope: 'col' }, 'Status')
+            h('th', { scope: 'col' }, 'Funding status')
           )
         ),
         h('tbody', null,
@@ -168,6 +240,7 @@ function FundedPeopleTable({ profile, asks }) {
               ask.owner ? h('small', null, ask.owner) : null,
               ask.periodNeeded ? h('small', null, ask.periodNeeded) : null
             ),
+            showAppointment ? h('td', null, h(AppointmentCell, { appointment: appointmentForAsk(ask) })) : null,
             ...years.map((year) => h('td', { key: `${ask.id || askName(ask)}-${year.year}` },
               h(YearCell, { ask, year, showFte: true })
             )),
@@ -176,14 +249,15 @@ function FundedPeopleTable({ profile, asks }) {
         ),
         h('tfoot', null,
           h('tr', null,
-            h('th', { scope: 'row' }, 'Funded team total'),
+            h('th', { scope: 'row' }, 'Subtotal'),
+            showAppointment ? h('td', null, '') : null,
             ...years.map((year) => {
               const yearAmount = asks.reduce((total, ask) => {
                 const amount = amountForAcademicYear(ask, year.startYear);
                 return total + (typeof amount === 'number' ? amount : 0);
               }, 0);
               const yearFte = asks.reduce((total, ask) => total + fteForAcademicYear(ask, year.startYear), 0);
-              return h('td', { key: `total-${year.year}` },
+              return h('td', { key: `total-${title}-${year.year}` },
                 yearAmount || yearFte
                   ? h('span', { className: 'resource-year-value' },
                       h('strong', null, yearAmount ? formatMoney(yearAmount) : 'Cost TBC'),
@@ -203,15 +277,15 @@ function FundedPeopleTable({ profile, asks }) {
 function ExistingPeopleTable({ asks, conditional = false, unquantified = false }) {
   if (!asks.length) return null;
   const title = conditional
-    ? 'Conditional existing capacity'
+    ? 'Conditional capacity'
     : unquantified
-      ? 'Existing contributions not yet quantified'
-      : 'Existing roles to commit';
+      ? 'On-demand specialist contribution'
+      : 'Existing capacity to protect';
   const description = conditional
     ? 'Only required if the stated trigger applies. This is not included in the committed baseline.'
     : unquantified
-      ? 'Important existing-team contributions that still need an explicit workload or FTE agreement.'
-      : 'Protected time from existing teams. This is a real delivery commitment, but not new funded headcount.';
+      ? 'Existing specialist input that is important, but does not warrant a standing FTE allocation.'
+      : 'Protected time from existing teams. This is a delivery commitment, not a new appointment.';
 
   return h('div', { className: `resource-table-block ${conditional ? 'is-conditional' : ''}`.trim() },
     h('div', { className: 'resource-subheading' },
@@ -247,8 +321,46 @@ function ExistingPeopleTable({ asks, conditional = false, unquantified = false }
   );
 }
 
+function WorkforceModelCallout({ context }) {
+  const models = workforceModelsForContext(context).filter((model) => model.summary);
+  if (!models.length) return null;
+  return h('aside', { className: 'resource-workforce-callout' },
+    h('strong', null, context.type === 'deliverable' ? 'Appointment model' : 'Workforce model'),
+    ...models.map((model, index) => h('p', { key: `workforce-model-${index}` }, model.summary))
+  );
+}
+
+function CapacitySummary({ profile }) {
+  const committed = profile.existingCapacityFte || 0;
+  const conditional = profile.conditionalExistingCapacityFte || 0;
+  const onDemand = profile.unquantifiedExistingCapacityAsks?.length || 0;
+  if (!committed && !conditional && !onDemand) return null;
+
+  return h('div', { className: 'resource-capacity-strip', 'aria-label': 'Existing institutional capacity' },
+    committed ? h('span', null,
+      h('strong', null, formatFte(committed)),
+      ' existing capacity to protect'
+    ) : null,
+    conditional ? h('span', null,
+      h('strong', null, formatFte(conditional, 'Up to ')),
+      ' conditional capacity'
+    ) : null,
+    onDemand ? h('span', null,
+      h('strong', null, String(onDemand)),
+      ` on-demand specialist ${onDemand === 1 ? 'contribution' : 'contributions'}`
+    ) : null
+  );
+}
+
 function PeopleAndCapacityPanel({ profile }) {
   const fundedPeople = (profile.deliveryInvestmentAsks || []).filter((ask) => typeof ask.fte === 'number');
+  const permanent = fundedPeople.filter((ask) => appointmentForAsk(ask)?.appointmentBasis === 'permanent');
+  const timeLimited = fundedPeople.filter((ask) => {
+    const basis = appointmentForAsk(ask)?.appointmentBasis;
+    return basis && basis !== 'permanent';
+  });
+  const unspecified = fundedPeople.filter((ask) => !appointmentForAsk(ask));
+  const hasAppointmentModel = permanent.length || timeLimited.length;
   const required = profile.committedExistingCapacityAsks || [];
   const conditional = profile.conditionalExistingCapacityAsks || [];
   const unquantified = profile.unquantifiedExistingCapacityAsks || [];
@@ -257,9 +369,39 @@ function PeopleAndCapacityPanel({ profile }) {
   return h('section', { className: 'resource-profile-section resource-people-section' },
     h(SectionHeading, {
       title: 'People and capacity',
-      description: 'The funded mobilisation team, plus the existing staff time the institution must genuinely commit.'
+      description: 'Who needs appointing, which roles are enduring or time-limited, and what existing institutional capacity must be protected.'
     }),
-    h(FundedPeopleTable, { profile, asks: fundedPeople }),
+    hasAppointmentModel ? h(React.Fragment, null,
+      h(FundedPeopleTable, {
+        profile,
+        asks: permanent,
+        title: 'Permanent core to appoint',
+        description: 'These roles are intended to be permanent appointments from the outset. Mobilisation funds the initial period; recurrent BAU funding takes over at the stated transition point.',
+        tone: 'is-permanent',
+        showAppointment: true
+      }),
+      h(FundedPeopleTable, {
+        profile,
+        asks: timeLimited,
+        title: 'Time-limited / developmental appointments',
+        description: 'Additional capacity used for a defined mobilisation purpose. These roles do not automatically transfer into BAU.',
+        tone: 'is-time-limited',
+        showAppointment: true
+      }),
+      h(FundedPeopleTable, {
+        profile,
+        asks: unspecified,
+        title: 'Appointment basis still to define',
+        description: 'Funded roles whose permanent, fixed-term or other appointment basis has not yet been recorded.',
+        tone: 'is-unspecified',
+        showAppointment: true
+      })
+    ) : h(FundedPeopleTable, {
+      profile,
+      asks: fundedPeople,
+      title: 'New funded roles',
+      description: 'Each academic-year column shows the FTE and cash requirement during mobilisation. Appointment basis has not yet been modelled for this deliverable.'
+    }),
     h(ExistingPeopleTable, { asks: required }),
     h(ExistingPeopleTable, { asks: conditional, conditional: true }),
     h(ExistingPeopleTable, { asks: unquantified, unquantified: true })
@@ -278,7 +420,7 @@ function OtherInvestmentPanel({ profile }) {
   return h('section', { className: 'resource-profile-section resource-other-investment-section' },
     h(SectionHeading, {
       title: 'Other investment',
-      description: 'Mobilisation cash requirements that are not new posts, such as platforms, tooling, student employment or direct delivery costs.',
+      description: 'Mobilisation cash requirements that are not appointments, such as platforms, tooling, student employment or direct delivery costs.',
       aside: total ? formatMoney(total) : null
     }),
     h('div', { className: 'resource-readable-table-wrap' },
@@ -287,7 +429,7 @@ function OtherInvestmentPanel({ profile }) {
           h('tr', null,
             h('th', { scope: 'col' }, 'Investment'),
             ...years.map((year) => h('th', { scope: 'col', key: year.year }, year.year)),
-            h('th', { scope: 'col' }, 'Status')
+            h('th', { scope: 'col' }, 'Funding status')
           )
         ),
         h('tbody', null,
@@ -308,76 +450,122 @@ function OtherInvestmentPanel({ profile }) {
   );
 }
 
-function YearlyInvestmentStrip({ profile }) {
+function YearlyInvestmentStrip({ profile, context }) {
   const years = deliveryYears(profile).filter((phase) => phase.total > 0 || phase.unquantified > 0);
   if (!years.length) return null;
+  const deliveryAsks = profile.deliveryInvestmentAsks || [];
+  const permanentIds = new Set(permanentAppointments(context).map((appointment) => appointment.resourceId));
 
   return h('div', { className: 'resource-year-strip', 'aria-label': 'Mobilisation investment by academic year' },
     ...years.map((phase) => {
-      const deliveryAsks = profile.deliveryInvestmentAsks || [];
       const amount = deliveryAsks.reduce((total, ask) => {
         const value = amountForAcademicYear(ask, phase.startYear);
         return total + (typeof value === 'number' ? value : 0);
       }, 0);
       const fte = deliveryAsks.reduce((total, ask) => total + fteForAcademicYear(ask, phase.startYear), 0);
+      const permanent = deliveryAsks.reduce((total, ask) => permanentIds.has(ask.id)
+        ? total + fteForAcademicYear(ask, phase.startYear)
+        : total, 0);
+      const temporary = Math.max(0, fte - permanent);
+      const capacityNote = permanentIds.size
+        ? `${formatFte(fte)} funded · ${formatFte(permanent)} permanent${temporary ? ` + ${formatFte(temporary)} time-limited` : ''}`
+        : fte ? `${formatFte(fte)} new funded` : null;
+
       return h('div', { className: 'resource-year-summary', key: phase.year },
         h('span', null, phase.year),
         h('strong', null, amount ? formatMoney(amount) : 'Cost TBC'),
-        fte ? h('small', null, `${formatFte(fte)} new funded`) : null
+        capacityNote ? h('small', null, capacityNote) : null
       );
     })
   );
 }
 
-function BauAnchor({ profile }) {
-  const asks = profile.bauLiabilityAsks || [];
-  if (!asks.length) return null;
-  const totalFte = asks.reduce((total, ask) => total + (typeof ask.fte === 'number' ? ask.fte : 0), 0);
-  const totalAnnual = profile.knownAnnualBauLiability || asks.reduce((total, ask) => total + (typeof ask.amount === 'number' ? ask.amount : 0), 0);
+function BauAnchor({ profile, context }) {
+  const bauAsks = profile.bauLiabilityAsks || [];
+  const permanent = permanentAppointments(context);
+  if (!bauAsks.length && !permanent.length) return null;
+
+  const totalFte = permanent.length
+    ? permanent.reduce((total, appointment) => total + (appointment.fte || 0), 0)
+    : bauAsks.reduce((total, ask) => total + (typeof ask.fte === 'number' ? ask.fte : 0), 0);
+  const totalAnnual = permanentAnnualRunRate(context, profile);
+  const aggregateBauAsk = bauAsks[0] || null;
 
   return h('section', { className: 'resource-profile-section resource-bau-section' },
     h(SectionHeading, {
       title: 'BAU destination',
-      description: 'The recurrent capability the mobilisation is intended to hand into normal institutional operation. BAU run-rate is shown separately and is not added to the mobilisation investment total.',
+      description: permanent.length
+        ? 'The permanent establishment this mobilisation is designed to leave behind. These posts are intended to be permanent from initial appointment; only the funding source changes at BAU transition.'
+        : 'The recurrent capability the mobilisation is intended to hand into normal institutional operation. BAU run-rate is shown separately and is not added to mobilisation investment.',
       aside: totalAnnual ? `${formatMoney(totalAnnual)} / year` : null
     }),
-    h('div', { className: 'resource-readable-table-wrap' },
-      h('table', { className: 'resource-readable-table resource-existing-table' },
+    permanent.length ? h('div', { className: 'resource-readable-table-wrap' },
+      h('table', { className: 'resource-readable-table resource-bau-table' },
+        h('thead', null,
+          h('tr', null,
+            h('th', { scope: 'col' }, 'Permanent role'),
+            h('th', { scope: 'col' }, 'FTE'),
+            h('th', { scope: 'col' }, 'Annual BAU run-rate'),
+            h('th', { scope: 'col' }, 'BAU from'),
+            h('th', { scope: 'col' }, 'BAU owner')
+          )
+        ),
+        h('tbody', null,
+          ...permanent.map((appointment) => h('tr', { key: appointment.resourceId || appointment.role },
+            h('th', { scope: 'row' },
+              h('strong', null, appointment.role),
+              h('small', null, appointment.appointmentLabel || 'Permanent post')
+            ),
+            h('td', { className: 'resource-cell-number' }, formatFte(appointment.fte || 0)),
+            h('td', { className: 'resource-cell-money' }, appointment.annualBauAmount
+              ? `${formatMoney(appointment.annualBauAmount, appointment.currency || 'GBP')} / year`
+              : 'TBC'),
+            h('td', null, appointment.bauFrom || 'TBC'),
+            h('td', null, appointment.bauOwner || 'TBC')
+          ))
+        ),
+        h('tfoot', null,
+          h('tr', null,
+            h('th', { scope: 'row' }, 'Permanent BAU core'),
+            h('td', null, totalFte ? formatFte(totalFte) : 'TBC'),
+            h('td', null, totalAnnual ? `${formatMoney(totalAnnual)} / year` : 'TBC'),
+            h('td', null, permanent[0]?.bauFrom || 'TBC'),
+            h('td', null, permanent[0]?.bauOwner || aggregateBauAsk?.owner || 'TBC')
+          )
+        )
+      )
+    ) : h('div', { className: 'resource-readable-table-wrap' },
+      h('table', { className: 'resource-readable-table resource-bau-table' },
         h('thead', null,
           h('tr', null,
             h('th', { scope: 'col' }, 'Recurrent commitment'),
             h('th', { scope: 'col' }, 'FTE'),
             h('th', { scope: 'col' }, 'Annual run-rate'),
             h('th', { scope: 'col' }, 'From'),
-            h('th', { scope: 'col' }, 'Owner / status')
+            h('th', { scope: 'col' }, 'Owner')
           )
         ),
         h('tbody', null,
-          ...asks.map((ask) => h('tr', { key: ask.id || `${ask.sourceStep?.id}-${askName(ask)}` },
-            h('th', { scope: 'row' },
-              h('strong', null, askName(ask)),
-              ask.rationale ? h('small', null, ask.rationale) : null
-            ),
+          ...bauAsks.map((ask) => h('tr', { key: ask.id || `${ask.sourceStep?.id}-${askName(ask)}` },
+            h('th', { scope: 'row' }, askName(ask)),
             h('td', { className: 'resource-cell-number' }, typeof ask.fte === 'number' ? formatFte(ask.fte) : 'TBC'),
             h('td', { className: 'resource-cell-money' }, typeof ask.amount === 'number' ? `${formatMoney(ask.amount, ask.currency || 'GBP')} / year` : 'TBC'),
             h('td', null, ask.periodNeeded || 'TBC'),
-            h('td', null,
-              ask.owner ? h('span', null, ask.owner) : null,
-              h('div', null, h(StatusBadge, { ask }))
-            )
+            h('td', null, ask.owner || 'TBC')
           ))
-        ),
-        asks.length > 1 ? h('tfoot', null,
-          h('tr', null,
-            h('th', { scope: 'row' }, 'BAU total'),
-            h('td', null, totalFte ? formatFte(totalFte) : 'TBC'),
-            h('td', null, totalAnnual ? `${formatMoney(totalAnnual)} / year` : 'TBC'),
-            h('td', null, ''),
-            h('td', null, '')
-          )
-        ) : null
+        )
       )
-    )
+    ),
+    aggregateBauAsk ? h('div', { className: 'resource-bau-funding-note' },
+      h('div', null,
+        h('strong', null, 'Recurrent funding'),
+        h(StatusBadge, { ask: aggregateBauAsk })
+      ),
+      h('p', null, [
+        aggregateBauAsk.fundingRoute || null,
+        aggregateBauAsk.decisionNeededBy ? `Decision by ${aggregateBauAsk.decisionNeededBy}` : null
+      ].filter(Boolean).join(' · '))
+    ) : null
   );
 }
 
@@ -393,7 +581,7 @@ function FinancialPhasing({ profile }) {
           h('tr', null,
             h('th', { scope: 'col' }, 'Academic year'),
             h('th', { scope: 'col' }, 'Quantified spend'),
-            h('th', { scope: 'col' }, 'New funded FTE'),
+            h('th', { scope: 'col' }, 'Funded FTE'),
             h('th', { scope: 'col' }, 'Unresolved value')
           )
         ),
@@ -428,7 +616,7 @@ function FundingPanel({ profile }) {
   if (!exceptions.length) return null;
 
   return h('section', { className: 'resource-secondary-section' },
-    h('h4', null, 'Funding and valuation decisions still open'),
+    h('h4', null, 'Decisions still to close'),
     h('div', { className: 'resource-decision-list' },
       ...exceptions.map((ask) => h('article', { className: 'resource-decision-item', key: ask.id || askName(ask) },
         h('div', null,
@@ -436,9 +624,10 @@ function FundingPanel({ profile }) {
           h(StatusBadge, { ask })
         ),
         h('p', null, [
-          isBauLiability(ask) ? 'BAU recurrent commitment' : null,
+          isBauLiability(ask) ? 'BAU recurrent funding' : 'Mobilisation investment',
           ask.decisionNeededBy ? `Decision by ${ask.decisionNeededBy}` : null,
-          ask.confidence ? ask.confidence : null
+          ask.fundingRoute || null,
+          ask.confidence || null
         ].filter(Boolean).join(' · '))
       ))
     )
@@ -448,8 +637,8 @@ function FundingPanel({ profile }) {
 function SourceStatement({ steps, profile, contextType }) {
   const sourceSteps = steps.filter((step) => resourceGroups(step).length > 0).length;
   const location = contextType === 'deliverable'
-    ? 'Open the delivery-step detail above for the authored records.'
-    : 'Open the relevant deliverable for the authored records.';
+    ? 'Open the delivery-step detail above for the authored resource records.'
+    : 'Open the relevant deliverable for the authored resource records.';
   return h('p', { className: 'subtle resource-profile-source' },
     `Derived from ${profile.asks.length} resource asks across ${sourceSteps} delivery ${sourceSteps === 1 ? 'step' : 'steps'}. ${location}`
   );
@@ -460,20 +649,80 @@ function ResourceInvestmentProfile({ context, steps }) {
   const summaryTitle = context.type === 'project'
     ? 'Project resources and investment'
     : 'Resources and investment';
-  const unresolvedCount = (profile.deliveryInvestmentAsks || []).filter((ask) => fundingState(ask) !== 'confirmed').length;
+  const mobilisationUnresolved = (profile.deliveryInvestmentAsks || []).filter((ask) => fundingState(ask) !== 'confirmed').length;
+  const bauUnresolved = (profile.bauLiabilityAsks || []).filter((ask) => fundingState(ask) !== 'confirmed').length;
   const years = deliveryYears(profile);
   const cashValue = profile.knownInvestment > 0 ? formatMoney(profile.knownInvestment) : 'Not quantified';
   const cashNote = years.length > 1
     ? `Quantified mobilisation investment across ${years.length} academic years`
     : 'Quantified mobilisation investment';
-  const existingValue = profile.existingCapacityFte > 0
-    ? formatFte(profile.existingCapacityFte)
-    : profile.distinctExistingCapacityAsks.length
-      ? 'Not quantified'
-      : 'None recorded';
-  const conditionalValue = profile.conditionalExistingCapacityFte > 0
-    ? formatFte(profile.conditionalExistingCapacityFte, 'Up to ')
-    : 'None quantified';
+  const permanent = permanentFte(context);
+  const peakFte = peakDeliveryFte(profile);
+  const bauRunRate = permanentAnnualRunRate(context, profile);
+  const hasWorkforceModel = workforceModelsForContext(context).length > 0;
+  const temporaryPeak = Math.max(0, peakFte - permanent);
+
+  const summaryCards = hasWorkforceModel ? [
+    h(MetricCard, {
+      key: 'cash',
+      label: 'Mobilisation investment',
+      value: cashValue,
+      note: cashNote,
+      tone: 'resource-summary-cash'
+    }),
+    h(MetricCard, {
+      key: 'permanent',
+      label: 'Permanent posts to establish',
+      value: permanent ? formatFte(permanent) : 'None recorded',
+      note: permanent ? 'Appoint as enduring institutional posts' : 'No permanent appointment model recorded',
+      tone: 'resource-summary-permanent'
+    }),
+    h(MetricCard, {
+      key: 'peak',
+      label: 'Peak mobilisation team',
+      value: peakFte ? formatFte(peakFte) : 'Not quantified',
+      note: permanent && temporaryPeak
+        ? `${formatFte(permanent)} permanent + ${formatFte(temporaryPeak)} time-limited`
+        : 'Peak concurrent funded FTE',
+      tone: 'resource-summary-new'
+    }),
+    h(MetricCard, {
+      key: 'bau',
+      label: 'BAU staffing run-rate',
+      value: bauRunRate ? `${formatMoney(bauRunRate)} / year` : 'Not quantified',
+      note: permanent ? `${formatFte(permanent)} recurrent staffing` : 'Recurrent liability where planned',
+      tone: 'resource-summary-bau'
+    })
+  ] : [
+    h(MetricCard, {
+      key: 'cash',
+      label: 'Mobilisation investment',
+      value: cashValue,
+      note: cashNote,
+      tone: 'resource-summary-cash'
+    }),
+    h(MetricCard, {
+      key: 'funded',
+      label: 'New funded capacity',
+      value: peakFte ? formatFte(peakFte) : 'Not quantified',
+      note: 'Peak concurrent funded FTE during the plan',
+      tone: 'resource-summary-new'
+    }),
+    h(MetricCard, {
+      key: 'existing',
+      label: 'Existing capacity to commit',
+      value: profile.existingCapacityFte > 0 ? formatFte(profile.existingCapacityFte) : 'Not quantified',
+      note: 'Protected time from current establishment',
+      tone: 'resource-summary-existing'
+    }),
+    h(MetricCard, {
+      key: 'bau',
+      label: 'BAU run-rate',
+      value: bauRunRate ? `${formatMoney(bauRunRate)} / year` : 'Not recorded',
+      note: 'Recurrent commitment where one is planned',
+      tone: 'resource-summary-bau'
+    })
+  ];
 
   return h('section', {
     id: 'resource-investment-profile',
@@ -481,49 +730,30 @@ function ResourceInvestmentProfile({ context, steps }) {
   },
     h('header', { className: 'resource-profile-titlebar' },
       h('h2', null, summaryTitle),
-      h('p', null, 'People, institutional capacity and cash required through mobilisation, with the intended recurrent BAU landing shown separately where one is planned.')
+      h('p', null, 'A decision-ready view of mobilisation spend, appointments, existing institutional capacity and the intended business-as-usual landing.')
     ),
     h('div', { className: 'resource-profile-body resource-readable-body' },
-      h('div', { className: 'resource-profile-summary-grid resource-readable-summary' },
-        h(MetricCard, {
-          label: 'Mobilisation investment',
-          value: cashValue,
-          note: cashNote,
-          tone: 'resource-summary-cash'
-        }),
-        h(MetricCard, {
-          label: 'New funded capacity',
-          value: formatFte(profile.peakFte) || 'Not quantified',
-          note: 'Peak concurrent funded FTE during the plan',
-          tone: 'resource-summary-new'
-        }),
-        h(MetricCard, {
-          label: 'Existing capacity to commit',
-          value: existingValue,
-          note: 'Protected time from current establishment',
-          tone: 'resource-summary-existing'
-        }),
-        h(MetricCard, {
-          label: 'Conditional capacity',
-          value: conditionalValue,
-          note: 'Only if the stated trigger applies',
-          tone: 'resource-summary-conditional'
-        })
-      ),
-      h(YearlyInvestmentStrip, { profile }),
-      h(BauAnchor, { profile }),
-      unresolvedCount
+      h('div', { className: 'resource-profile-summary-grid resource-readable-summary' }, ...summaryCards),
+      h(WorkforceModelCallout, { context }),
+      h(CapacitySummary, { profile }),
+      h(YearlyInvestmentStrip, { profile, context }),
+      mobilisationUnresolved || bauUnresolved
         ? h('p', { className: 'resource-attention-line' },
-            h('strong', null, `${unresolvedCount} mobilisation investment ${unresolvedCount === 1 ? 'item still needs' : 'items still need'} approval or validation.`),
-            ' The tables below show which commitments are still provisional.'
+            mobilisationUnresolved
+              ? h('strong', null, `${mobilisationUnresolved} mobilisation ${mobilisationUnresolved === 1 ? 'item needs' : 'items need'} approval or validation. `)
+              : null,
+            bauUnresolved
+              ? h('span', null, `${bauUnresolved} BAU recurrent ${bauUnresolved === 1 ? 'commitment still needs' : 'commitments still need'} its funding route closed.`)
+              : null
           )
         : null,
       h(PeopleAndCapacityPanel, { profile }),
+      h(BauAnchor, { profile, context }),
       h(OtherInvestmentPanel, { profile }),
       h('details', { className: 'resource-secondary-detail' },
         h('summary', null,
           h('strong', null, 'Planning detail'),
-          h('span', null, 'Annual totals, open assumptions and source records')
+          h('span', null, 'Annual totals, open decisions and source records')
         ),
         h('div', { className: 'resource-secondary-detail-body' },
           h(FinancialPhasing, { profile }),

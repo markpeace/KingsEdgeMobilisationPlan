@@ -162,6 +162,67 @@ function validateStepResources(step, deliverableId, stepIndex) {
   validateResourceArray(step.resources.nonCashNeeds, `${path}.nonCashNeeds`, ['condition', 'item', 'need']);
 }
 
+const APPOINTMENT_BASES = new Set(['permanent', 'placement', 'fixed-term', 'secondment', 'other']);
+
+function validateWorkforceModel(deliverable) {
+  const model = deliverable.workforceModel;
+  if (model === undefined) return;
+  const path = `${deliverable.id}.workforceModel`;
+  if (!model || typeof model !== 'object' || Array.isArray(model)) {
+    errors.push(`${path} should be an object.`);
+    return;
+  }
+  if (model.summary !== undefined && (typeof model.summary !== 'string' || !model.summary.trim())) {
+    errors.push(`${path}.summary should be a non-empty string when supplied.`);
+  }
+  if (!Array.isArray(model.appointments) || !model.appointments.length) {
+    errors.push(`${path}.appointments should be a non-empty array.`);
+    return;
+  }
+
+  const resourceIds = new Set((deliverable.steps || []).flatMap((step) =>
+    (step.resources?.newInvestment || []).map((ask) => ask.id).filter(Boolean)
+  ));
+  const seen = new Set();
+
+  model.appointments.forEach((appointment, index) => {
+    const appointmentPath = `${path}.appointments[${index}]`;
+    if (!appointment || typeof appointment !== 'object' || Array.isArray(appointment)) {
+      errors.push(`${appointmentPath} should be an object.`);
+      return;
+    }
+    if (!appointment.resourceId || typeof appointment.resourceId !== 'string') {
+      errors.push(`${appointmentPath}.resourceId is required.`);
+    } else {
+      if (seen.has(appointment.resourceId)) errors.push(`${appointmentPath}.resourceId duplicates ${appointment.resourceId}.`);
+      seen.add(appointment.resourceId);
+      if (!resourceIds.has(appointment.resourceId)) {
+        errors.push(`${appointmentPath}.resourceId ${appointment.resourceId} does not match a newInvestment ask in this deliverable.`);
+      }
+    }
+    if (!appointment.role || typeof appointment.role !== 'string') {
+      errors.push(`${appointmentPath}.role is required.`);
+    }
+    if (!APPOINTMENT_BASES.has(appointment.appointmentBasis)) {
+      errors.push(`${appointmentPath}.appointmentBasis should be one of: ${[...APPOINTMENT_BASES].join(', ')}.`);
+    }
+    if (appointment.fte !== undefined && (typeof appointment.fte !== 'number' || appointment.fte <= 0)) {
+      errors.push(`${appointmentPath}.fte should be a positive number when supplied.`);
+    }
+    if (appointment.appointmentBasis === 'permanent') {
+      if (!appointment.bauFrom) errors.push(`${appointmentPath}.bauFrom is required for a permanent appointment.`);
+      if (!appointment.bauOwner) errors.push(`${appointmentPath}.bauOwner is required for a permanent appointment.`);
+      if (!(typeof appointment.annualBauAmount === 'number' && appointment.annualBauAmount > 0)) {
+        errors.push(`${appointmentPath}.annualBauAmount should be a positive number for a permanent appointment.`);
+      }
+      if (!appointment.fundingBasis) warnings.push(`${appointmentPath} is permanent but has no fundingBasis.`);
+    }
+    if (appointment.appointmentBasis !== 'permanent' && !appointment.endState) {
+      warnings.push(`${appointmentPath} is time-limited but has no endState.`);
+    }
+  });
+}
+
 deliverables.forEach((deliverable) => {
   const planningStatus = deliverable.planningStatus || DEFAULT_PLANNING_STATUS;
   const hasDeliveryPlan = hasDeliveryDesign(planningStatus);
@@ -170,6 +231,7 @@ deliverables.forEach((deliverable) => {
   }
 
   (deliverable.steps || []).forEach((step, stepIndex) => validateStepResources(step, deliverable.id, stepIndex));
+  validateWorkforceModel(deliverable);
 });
 
 if (warnings.length) {

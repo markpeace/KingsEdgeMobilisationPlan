@@ -48,3 +48,24 @@ test('1.4.2 financial profile is generated from the revised authored JSON', () =
   assert.equal(document.resourceModel.replacementCapacity.convenorHoursPerCommunityTeam, 120);
   assert.equal(document.resourceModel.replacementCapacity.standardProjectHours, 80);
 });
+
+test('4.1.3 separates permanent workforce intent, mobilisation spend and BAU run-rate', () => {
+  const timeline = loadDocument('../src/data/deliverables/4.1.3/timeline-reflow.json');
+  const workforce = loadDocument('../src/data/deliverables/4.1.3/workforce.json').workforceModel;
+  const steps = addRuntimeAskTypes(timeline.steps || []);
+  const profile = buildFinancialProfile(steps);
+  const permanent = workforce.appointments.filter((appointment) => appointment.appointmentBasis === 'permanent');
+  const placements = workforce.appointments.filter((appointment) => appointment.appointmentBasis === 'placement');
+
+  assert.equal(permanent.length, 4);
+  assert.equal(permanent.reduce((total, appointment) => total + appointment.fte, 0), 4);
+  assert.equal(permanent.reduce((total, appointment) => total + appointment.annualBauAmount, 0), 304000);
+  assert.equal(placements.length, 1);
+  assert.equal(placements[0].resourceId, '4.1.3-y2-y3-junior-fullstack-placement');
+
+  assert.equal(profile.knownInvestment, 1151000);
+  assert.equal(profile.knownAnnualBauLiability, 304000);
+  assert.equal(profile.phases.find((phase) => phase.year === '2026/27').total, 293000);
+  assert.equal(profile.phases.find((phase) => phase.year === '2027/28').total, 429000);
+  assert.equal(profile.phases.find((phase) => phase.year === '2028/29').total, 429000);
+});

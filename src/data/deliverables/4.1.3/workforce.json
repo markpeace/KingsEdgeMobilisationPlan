@@ -1,0 +1,64 @@
+{
+  "workforceModel": {
+    "summary": "Appoint the four experienced core roles as permanent Digital and IT posts from the outset. Mobilisation funding carries them through June 2029; recurrent Digital and IT BAU funding takes over from July 2029. The sandwich-year Junior Full-Stack Engineer is deliberately time-limited and does not create a fifth permanent post.",
+    "appointments": [
+      {
+        "resourceId": "4.1.3-y1-role-senior-integration",
+        "role": "Senior Backend & Integration Engineer",
+        "appointmentBasis": "permanent",
+        "appointmentLabel": "Permanent Digital and IT post",
+        "fundingBasis": "Mobilisation-funded to June 2029; recurrent BAU from July 2029",
+        "bauFrom": "July 2029",
+        "bauOwner": "Digital and IT",
+        "annualBauAmount": 91000,
+        "currency": "GBP",
+        "fte": 1.0
+      },
+      {
+        "resourceId": "4.1.3-y1-role-fullstack",
+        "role": "Middleweight Full-Stack Engineer",
+        "appointmentBasis": "permanent",
+        "appointmentLabel": "Permanent Digital and IT post",
+        "fundingBasis": "Mobilisation-funded to June 2029; recurrent BAU from July 2029",
+        "bauFrom": "July 2029",
+        "bauOwner": "Digital and IT",
+        "annualBauAmount": 75000,
+        "currency": "GBP",
+        "fte": 1.0
+      },
+      {
+        "resourceId": "4.1.3-y1-role-product-service-design",
+        "role": "Product & Service Designer",
+        "appointmentBasis": "permanent",
+        "appointmentLabel": "Permanent Digital and IT post",
+        "fundingBasis": "Mobilisation-funded to June 2029; recurrent BAU from July 2029",
+        "bauFrom": "July 2029",
+        "bauOwner": "Digital and IT",
+        "annualBauAmount": 75000,
+        "currency": "GBP",
+        "fte": 1.0
+      },
+      {
+        "resourceId": "4.1.3-y1-role-qa",
+        "role": "QA Engineer",
+        "appointmentBasis": "permanent",
+        "appointmentLabel": "Permanent Digital and IT post",
+        "fundingBasis": "Mobilisation-funded to June 2029; recurrent BAU from July 2029",
+        "bauFrom": "July 2029",
+        "bauOwner": "Digital and IT",
+        "annualBauAmount": 63000,
+        "currency": "GBP",
+        "fte": 1.0
+      },
+      {
+        "resourceId": "4.1.3-y2-y3-junior-fullstack-placement",
+        "role": "Junior Full-Stack Engineer (sandwich-year placement)",
+        "appointmentBasis": "placement",
+        "appointmentLabel": "Paid sandwich-year placement",
+        "fundingBasis": "Time-limited mobilisation investment in Years Two and Three",
+        "endState": "No automatic BAU continuation; evaluate the placement model from evidence",
+        "fte": 1.0
+      }
+    ]
+  }
+}
