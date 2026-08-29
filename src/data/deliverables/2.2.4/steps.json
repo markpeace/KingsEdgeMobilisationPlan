@@ -169,6 +169,8 @@
             "item": "Annual business-as-usual beyond-course opportunity commissioning requirement",
             "amount": 175000,
             "currency": "GBP",
+            "bauLiability": true,
+            "periodNeeded": "July 2029 onward",
             "fundingRoute": "King's Edge business-as-usual funding requirement",
             "fundingStatus": "requested",
             "confidence": "indicative",
