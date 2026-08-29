@@ -1,6 +1,21 @@
+/* Main deliverable hierarchy. Explicit visual order prevents older DOM helpers
+   from moving Why this matters ahead of, or behind, the new optional sections. */
+.deliverable-main-flow {
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+.deliverable-main-flow > .planning-notice { order: 0; }
+.deliverable-main-flow > .case-panel { order: 10; }
+.deliverable-main-flow > #benefits-evidence-main { order: 20; }
+.deliverable-main-flow > #workstreams { order: 30; }
+.deliverable-main-flow > #route-through { order: 40; }
+.deliverable-main-flow > .detailed-plan-control { order: 50; }
+.deliverable-main-flow > .detailed-plan-reveal { order: 60; }
+
 .main-flow-benefits-panel,
 .workstreams-panel {
-  margin: 0 !important;
+  margin: 1.15rem 0 0 !important;
   padding: clamp(1.15rem, 2vw, 1.65rem) !important;
   border: 2px solid var(--ink) !important;
   background: #ffffff !important;
@@ -142,8 +157,6 @@
   color: var(--muted);
 }
 
-/* The old accordion remains the canonical React source, but the reader-facing
-   benefits panel is rendered in the main flow above the workstreams. */
 #value-evidence[hidden] {
   display: none !important;
 }
