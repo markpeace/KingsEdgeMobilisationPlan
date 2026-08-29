@@ -1,23 +1,15 @@
-import { buildLookups } from './plan-utils.js';
 import { registeredDeliverableMap } from './data/deliverables/index.js';
 import { workstreamsForStep, stepTitlesForWorkstream, workstreamsOf } from './workstream-utils.js';
 import './styles/workstreams.css';
 
-const { deliverables } = buildLookups();
-const normalisedDeliverableById = new Map(deliverables.map((deliverable) => [deliverable.id, deliverable]));
-
 function currentDeliverableId() {
-  const match = window.location.hash.match(/^#\/deliverables\/([^/?#]+)/);
+  const match = String(window.location.hash || '').match(/^#\/deliverables\/([^/?#]+)/);
   return match ? decodeURIComponent(match[1]) : '';
 }
 
 function currentDeliverable() {
   const id = currentDeliverableId();
-  if (!id) return null;
-  // Workstreams are a canonical deliverable facility, so prefer the registered
-  // source directly. Fall back to the normalised page object for any future
-  // deliverable that declares workstreams outside the registry.
-  return registeredDeliverableMap.get(id) || normalisedDeliverableById.get(id) || null;
+  return id ? registeredDeliverableMap.get(id) || null : null;
 }
 
 function element(tag, className, text) {
@@ -27,32 +19,78 @@ function element(tag, className, text) {
   return node;
 }
 
+function benefitMeasures(deliverable, benefit) {
+  return (deliverable.measures || []).filter((measure) => {
+    const linked = measure.supportsBenefits || measure.relatedBenefitIds || [];
+    return linked.includes(benefit.id);
+  });
+}
+
+function buildBenefitsPanel(deliverable) {
+  const benefits = deliverable.benefits || [];
+  if (!benefits.length) return null;
+
+  const panel = element('section', 'panel main-flow-benefits-panel');
+  panel.id = 'benefits-evidence-main';
+  panel.dataset.deliverableId = deliverable.id;
+  panel.append(element('h2', '', 'Benefits and evidence'));
+  panel.append(element('p', 'subtle', 'The value this deliverable is intended to create, with the evidence that will ultimately tell us whether it is being realised.'));
+
+  const grid = element('div', 'main-flow-benefits-grid');
+  benefits.forEach((benefit) => {
+    const card = element('article', 'main-flow-benefit-card');
+    const label = element('span', 'reference', benefit.id || 'Benefit');
+    card.append(label);
+    card.append(element('h3', '', benefit.title || 'Benefit'));
+    if (benefit.statement) card.append(element('p', 'main-flow-benefit-statement', benefit.statement));
+    if (benefit.successLooksLike) {
+      const success = element('div', 'main-flow-benefit-success');
+      success.append(element('strong', '', 'Success means'));
+      success.append(element('p', '', benefit.successLooksLike));
+      card.append(success);
+    }
+
+    const measures = benefitMeasures(deliverable, benefit);
+    if (measures.length) {
+      const evidence = element('div', 'main-flow-benefit-evidence');
+      evidence.append(element('strong', '', `Evidence · ${measures.length} ${measures.length === 1 ? 'measure' : 'measures'}`));
+      const list = element('ul');
+      measures.forEach((measure) => list.append(element('li', '', measure.title || measure.measure || 'Measure')));
+      evidence.append(list);
+      card.append(evidence);
+    }
+    grid.append(card);
+  });
+
+  panel.append(grid);
+  return panel;
+}
+
 function buildWorkstreamPanel(deliverable) {
+  const workstreams = workstreamsOf(deliverable);
+  if (!workstreams.length) return null;
+
   const panel = element('section', 'panel workstreams-panel');
   panel.id = 'workstreams';
   panel.dataset.deliverableId = deliverable.id;
   panel.setAttribute('aria-label', 'Workstreams');
-
-  const heading = element('div', 'workstreams-heading', 'Workstreams');
-  heading.setAttribute('role', 'heading');
-  heading.setAttribute('aria-level', '2');
-  panel.append(heading);
+  panel.append(element('h2', '', 'Workstreams'));
   panel.append(element('p', 'subtle workstreams-intro', 'The parallel strands through which responsibility for this deliverable is organised. They cut across the chronological delivery steps rather than creating a second timeline.'));
 
   const grid = element('div', 'workstreams-grid');
-  workstreamsOf(deliverable).forEach((workstream) => {
+  workstreams.forEach((workstream) => {
     const card = element('article', 'workstream-card');
-    const cardHeading = element('div', 'workstream-card-heading');
-    cardHeading.append(element('span', 'reference', workstream.id));
-    cardHeading.append(element('h3', '', workstream.title));
-    card.append(cardHeading);
+    const heading = element('div', 'workstream-card-heading');
+    heading.append(element('span', 'reference', workstream.id));
+    heading.append(element('h3', '', workstream.title));
+    card.append(heading);
     if (workstream.owner) card.append(element('p', 'workstream-owner', `Owner: ${workstream.owner}`));
     card.append(element('p', '', workstream.summary));
 
     const stepTitles = stepTitlesForWorkstream(deliverable, workstream);
     if (stepTitles.length) {
       const route = element('div', 'workstream-route');
-      route.append(element('strong', '', `Touches ${stepTitles.length} ${stepTitles.length === 1 ? 'delivery step' : 'delivery steps'}`));
+      route.append(element('strong', '', `Across ${stepTitles.length} ${stepTitles.length === 1 ? 'delivery stage' : 'delivery stages'}`));
       const list = element('ol', 'workstream-step-list');
       stepTitles.slice(0, 3).forEach((title) => list.append(element('li', '', title)));
       if (stepTitles.length > 3) list.append(element('li', 'workstream-step-more', `+${stepTitles.length - 3} more`));
@@ -65,55 +103,60 @@ function buildWorkstreamPanel(deliverable) {
   return panel;
 }
 
-function ensureBenefitsOpen(benefits) {
-  const toggle = benefits?.querySelector('.detail-accordion-header');
-  if (toggle?.getAttribute('aria-expanded') === 'false') toggle.click();
-}
+function ensureTimelineShell(route, deliverable) {
+  let shell = route.querySelector(':scope > .delivery-timeline-shell');
+  if (!shell) {
+    shell = element('section', 'panel delivery-timeline-shell timeline-collapsed');
+    shell.dataset.deliverableId = deliverable.id;
 
-function positionNarrativeFlow(deliverable) {
-  const flow = document.querySelector('.deliverable-main-flow');
-  const why = flow?.querySelector('.case-panel');
-  const benefits = document.getElementById('value-evidence');
-  const route = document.getElementById('route-through');
-  if (!flow || !why || !benefits || !route) return false;
+    const toggle = element('button', 'delivery-timeline-toggle');
+    toggle.type = 'button';
+    toggle.setAttribute('aria-expanded', 'false');
+    const titleGroup = element('span', 'delivery-timeline-toggle-copy');
+    titleGroup.append(element('strong', '', 'Delivery timeline'));
+    titleGroup.append(element('em', '', `${deliverable.steps?.length || 0} chronological stages · open to see the route through this deliverable`));
+    toggle.append(titleGroup);
+    toggle.append(element('span', 'delivery-timeline-toggle-action', 'Show'));
+    toggle.addEventListener('click', () => {
+      const collapsed = shell.classList.toggle('timeline-collapsed');
+      toggle.setAttribute('aria-expanded', String(!collapsed));
+      const action = toggle.querySelector('.delivery-timeline-toggle-action');
+      if (action) action.textContent = collapsed ? 'Show' : 'Hide';
+    });
 
-  benefits.classList.add('main-flow-benefits');
-  ensureBenefitsOpen(benefits);
-
-  // One renderer owns this sequence. Keep the strategic case first, then value,
-  // optional workstreams, then chronology.
-  if (why.nextElementSibling !== benefits) why.insertAdjacentElement('afterend', benefits);
-
-  let panel = document.getElementById('workstreams');
-  if (panel?.dataset.deliverableId !== deliverable.id) {
-    panel.remove();
-    panel = null;
+    const body = element('div', 'delivery-timeline-body');
+    shell.append(toggle, body);
+    route.append(shell);
   }
-  if (!panel) panel = buildWorkstreamPanel(deliverable);
 
-  if (benefits.nextElementSibling !== panel) benefits.insertAdjacentElement('afterend', panel);
-  if (panel.nextElementSibling !== route) panel.insertAdjacentElement('afterend', route);
-  return true;
+  const body = shell.querySelector('.delivery-timeline-body');
+  const heading = [...route.children].find((child) => child.matches?.('h2'));
+  const intro = [...route.children].find((child) => child.matches?.('p.subtle'));
+  const steps = [...route.children].find((child) => child.matches?.('.steps-list'));
+  if (heading) heading.remove();
+  if (intro && intro.parentElement === route) body.append(intro);
+  if (steps && steps.parentElement === route) body.append(steps);
+
+  return shell;
 }
 
-function renderStepTags(deliverable) {
-  const cards = [...document.querySelectorAll('#route-through .steps-list > .step-card')];
+function renderStepTags(deliverable, route) {
+  const cards = [...route.querySelectorAll('.steps-list > .step-card')];
   cards.forEach((card, index) => {
     const step = deliverable.steps?.[index];
     const linked = workstreamsForStep(deliverable, step);
-    const key = linked.map((workstream) => workstream.id).join('|');
     const existing = card.querySelector('.workstream-tag-row');
-
     if (!linked.length) {
       existing?.remove();
       return;
     }
+
+    const key = linked.map((workstream) => workstream.id).join('|');
     if (existing?.dataset.workstreamKey === key) return;
     existing?.remove();
 
     const row = element('div', 'workstream-tag-row');
     row.dataset.workstreamKey = key;
-    row.setAttribute('aria-label', 'Workstreams for this step');
     linked.slice(0, 2).forEach((workstream) => row.append(element('span', 'workstream-tag', workstream.title)));
     if (linked.length > 2) row.append(element('span', 'workstream-tag workstream-tag-more', `+${linked.length - 2} more`));
     const heading = card.querySelector('h3');
@@ -122,21 +165,48 @@ function renderStepTags(deliverable) {
   });
 }
 
-function clearWorkstreamUi() {
+function clearPrototypeUi() {
+  document.getElementById('benefits-evidence-main')?.remove();
   document.getElementById('workstreams')?.remove();
   document.querySelectorAll('.workstream-tag-row').forEach((node) => node.remove());
 }
 
-function renderWorkstreams() {
+function renderDeliverableFlow() {
   const deliverable = currentDeliverable();
-  const workstreams = workstreamsOf(deliverable);
-  if (!deliverable || !workstreams.length) {
-    clearWorkstreamUi();
+  const route = document.getElementById('route-through');
+  if (!deliverable || !route) {
+    clearPrototypeUi();
     return;
   }
 
-  if (!positionNarrativeFlow(deliverable)) return;
-  renderStepTags(deliverable);
+  route.classList.add('route-composite-flow');
+
+  const sourceValue = document.getElementById('value-evidence');
+  if (sourceValue) sourceValue.hidden = true;
+
+  let benefits = document.getElementById('benefits-evidence-main');
+  if (benefits?.dataset.deliverableId !== deliverable.id) {
+    benefits.remove();
+    benefits = null;
+  }
+  if (!benefits) benefits = buildBenefitsPanel(deliverable);
+
+  let workstreams = document.getElementById('workstreams');
+  if (workstreams?.dataset.deliverableId !== deliverable.id) {
+    workstreams.remove();
+    workstreams = null;
+  }
+  if (!workstreams) workstreams = buildWorkstreamPanel(deliverable);
+
+  const shell = ensureTimelineShell(route, deliverable);
+
+  if (benefits && benefits.parentElement !== route) route.insertBefore(benefits, shell);
+  if (workstreams && workstreams.parentElement !== route) route.insertBefore(workstreams, shell);
+  if (benefits && workstreams && benefits.nextElementSibling !== workstreams) route.insertBefore(benefits, workstreams);
+  if (workstreams && workstreams.nextElementSibling !== shell) route.insertBefore(workstreams, shell);
+  if (!workstreams && benefits && benefits.nextElementSibling !== shell) route.insertBefore(benefits, shell);
+
+  renderStepTags(deliverable, route);
 }
 
 let scheduled = false;
@@ -145,7 +215,7 @@ function scheduleRender() {
   scheduled = true;
   window.requestAnimationFrame(() => {
     scheduled = false;
-    renderWorkstreams();
+    renderDeliverableFlow();
   });
 }
 
