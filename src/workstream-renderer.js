@@ -22,16 +22,20 @@ function buildWorkstreamPanel(deliverable) {
   panel.id = 'workstreams';
   panel.dataset.deliverableId = deliverable.id;
   panel.setAttribute('aria-label', 'Workstreams');
-  panel.append(element('h2', '', 'Workstreams'));
-  panel.append(element('p', 'subtle workstreams-intro', 'The parallel strands through which responsibility for this deliverable is organised. Workstreams cut across the chronological delivery steps rather than creating a second timeline.'));
+
+  const heading = element('div', 'workstreams-heading', 'Workstreams');
+  heading.setAttribute('role', 'heading');
+  heading.setAttribute('aria-level', '2');
+  panel.append(heading);
+  panel.append(element('p', 'subtle workstreams-intro', 'The parallel strands through which responsibility for this deliverable is organised. They cut across the chronological delivery steps rather than creating a second timeline.'));
 
   const grid = element('div', 'workstreams-grid');
   workstreamsOf(deliverable).forEach((workstream) => {
     const card = element('article', 'workstream-card');
-    const heading = element('div', 'workstream-card-heading');
-    heading.append(element('span', 'reference', workstream.id));
-    heading.append(element('h3', '', workstream.title));
-    card.append(heading);
+    const cardHeading = element('div', 'workstream-card-heading');
+    cardHeading.append(element('span', 'reference', workstream.id));
+    cardHeading.append(element('h3', '', workstream.title));
+    card.append(cardHeading);
     if (workstream.owner) card.append(element('p', 'workstream-owner', `Owner: ${workstream.owner}`));
     card.append(element('p', '', workstream.summary));
 
@@ -49,6 +53,33 @@ function buildWorkstreamPanel(deliverable) {
   });
   panel.append(grid);
   return panel;
+}
+
+function positionWorkstreamPanel(deliverable) {
+  const route = document.getElementById('route-through');
+  if (!route) return false;
+
+  const benefits = document.getElementById('value-evidence');
+  const timelineHeading = route.querySelector(':scope > h2');
+
+  let panel = document.getElementById('workstreams');
+  if (panel?.dataset.deliverableId !== deliverable.id) {
+    panel.remove();
+    panel = null;
+  }
+  if (!panel) panel = buildWorkstreamPanel(deliverable);
+
+  if (benefits?.parentElement === route) {
+    if (panel.parentElement !== route || panel.previousElementSibling !== benefits) {
+      benefits.insertAdjacentElement('afterend', panel);
+    }
+  } else if (timelineHeading) {
+    route.insertBefore(panel, timelineHeading);
+  } else {
+    route.prepend(panel);
+  }
+
+  return true;
 }
 
 function renderStepTags(deliverable) {
@@ -82,26 +113,6 @@ function clearWorkstreamUi() {
   document.querySelectorAll('.workstream-tag-row').forEach((node) => node.remove());
 }
 
-function positionValueWorkstreamsAndTimeline(deliverable) {
-  const flow = document.querySelector('.deliverable-main-flow');
-  const route = document.getElementById('route-through');
-  if (!flow || !route) return false;
-
-  const valueEvidence = document.getElementById('value-evidence');
-  if (valueEvidence && valueEvidence.parentElement !== flow) flow.insertBefore(valueEvidence, route);
-  else if (valueEvidence && valueEvidence.nextElementSibling !== route && !document.getElementById('workstreams')) flow.insertBefore(valueEvidence, route);
-
-  let panel = document.getElementById('workstreams');
-  if (panel?.dataset.deliverableId !== deliverable.id) {
-    panel.remove();
-    panel = null;
-  }
-  if (!panel) panel = buildWorkstreamPanel(deliverable);
-
-  flow.insertBefore(panel, route);
-  return true;
-}
-
 function renderWorkstreams() {
   const deliverable = currentDeliverable();
   const workstreams = workstreamsOf(deliverable);
@@ -110,7 +121,7 @@ function renderWorkstreams() {
     return;
   }
 
-  if (!positionValueWorkstreamsAndTimeline(deliverable)) return;
+  if (!positionWorkstreamPanel(deliverable)) return;
   renderStepTags(deliverable);
 }
 
