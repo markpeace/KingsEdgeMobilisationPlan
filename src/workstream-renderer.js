@@ -20,6 +20,7 @@ function element(tag, className, text) {
 function buildWorkstreamPanel(deliverable) {
   const panel = element('section', 'panel workstreams-panel');
   panel.id = 'workstreams';
+  panel.dataset.deliverableId = deliverable.id;
   panel.setAttribute('aria-label', 'Workstreams');
   panel.append(element('h2', '', 'Workstreams'));
   panel.append(element('p', 'subtle workstreams-intro', 'Parallel strands that organise this deliverable. They cut across the chronological delivery steps rather than creating a second timeline.'));
@@ -52,11 +53,20 @@ function buildWorkstreamPanel(deliverable) {
 function renderStepTags(deliverable) {
   const cards = [...document.querySelectorAll('#route-through .steps-list > .step-card')];
   cards.forEach((card, index) => {
-    card.querySelector('.workstream-tag-row')?.remove();
     const step = deliverable.steps?.[index];
     const linked = workstreamsForStep(deliverable, step);
-    if (!linked.length) return;
+    const key = linked.map((workstream) => workstream.id).join('|');
+    const existing = card.querySelector('.workstream-tag-row');
+
+    if (!linked.length) {
+      existing?.remove();
+      return;
+    }
+    if (existing?.dataset.workstreamKey === key) return;
+    existing?.remove();
+
     const row = element('div', 'workstream-tag-row');
+    row.dataset.workstreamKey = key;
     row.setAttribute('aria-label', 'Workstreams for this step');
     linked.forEach((workstream) => row.append(element('span', 'workstream-tag', workstream.title)));
     const heading = card.querySelector('h3');
@@ -83,7 +93,8 @@ function renderWorkstreams() {
   if (!flow || !route) return;
 
   const existing = document.getElementById('workstreams');
-  if (!existing) flow.insertBefore(buildWorkstreamPanel(deliverable), route);
+  if (existing?.dataset.deliverableId !== deliverable.id) existing?.remove();
+  if (!document.getElementById('workstreams')) flow.insertBefore(buildWorkstreamPanel(deliverable), route);
   renderStepTags(deliverable);
 }
 
