@@ -7,21 +7,12 @@ import {
   isBauLiability,
   resourceGroups
 } from './resource-profile-utils.js';
+import './styles/resource-profile.css';
 
 const h = React.createElement;
 const { deliverables } = buildLookups(projects);
 const deliverableById = new Map(deliverables.map((deliverable) => [deliverable.id, deliverable]));
 const projectById = new Map(projects.map((project) => [project.id, project]));
-
-const categoryLabels = {
-  mobilisation: 'Mobilisation and establishment',
-  'central-support': 'Portfolio leadership and coordination',
-  'convenor-capacity': 'Convenor capacity',
-  'project-capacity': 'Project capacity',
-  'community-activity': 'Community activity',
-  'project-direct-costs': 'Project direct costs',
-  other: 'Other investment'
-};
 
 function formatMoney(amount, currency = 'GBP') {
   if (typeof amount !== 'number' || !Number.isFinite(amount)) return null;
@@ -32,9 +23,9 @@ function formatMoney(amount, currency = 'GBP') {
   }).format(amount);
 }
 
-function formatFte(value) {
+function formatFte(value, prefix = '') {
   if (typeof value !== 'number' || !Number.isFinite(value)) return null;
-  return `${new Intl.NumberFormat('en-GB', { maximumFractionDigits: 2 }).format(value)} FTE`;
+  return `${prefix}${new Intl.NumberFormat('en-GB', { maximumFractionDigits: 2 }).format(value)} FTE`;
 }
 
 function currentRouteContext() {
@@ -88,17 +79,11 @@ function askName(ask) {
   return ask.label || ask.item || ask.role || ask.condition || 'Resource ask';
 }
 
-function amountLabel(ask) {
-  const money = formatMoney(ask.amount, ask.currency || 'GBP');
-  if (money) return isBauLiability(ask) ? `${money} annual recurrent` : money;
-  return ask.estimatedCost || ask.additionalCost || 'Value not yet quantified';
-}
-
-function statusLabel(state) {
-  if (state === 'confirmed') return 'Confirmed or commissioned';
-  if (state === 'unresolved') return 'Funding unresolved';
-  if (state === 'not-recorded') return 'Funding status not recorded';
-  return 'Funding status recorded';
+function conciseStatus(state) {
+  if (state === 'confirmed') return 'Confirmed';
+  if (state === 'unresolved') return 'Needs approval';
+  if (state === 'not-recorded') return 'Status not set';
+  return 'Status recorded';
 }
 
 function MetricCard({ label, value, note, tone = '' }) {
@@ -109,106 +94,55 @@ function MetricCard({ label, value, note, tone = '' }) {
   );
 }
 
-function FinancialLegend({ phases }) {
-  const used = Object.keys(categoryLabels)
-    .filter((category) => phases.some((phase) => phase[category] > 0));
-
-  return h('div', {
-    className: 'resource-financial-legend',
-    'aria-label': 'Financial categories'
-  }, ...used.map((category) => h('span', { key: category },
-    h('i', { className: `resource-category-swatch resource-category-${category}` }),
-    categoryLabels[category]
-  )));
-}
-
-function FinancialPhasing({ profile }) {
-  const maxTotal = Math.max(...profile.phases.map((phase) => phase.total), 1);
-
-  return h('section', { className: 'resource-profile-section resource-phasing-section' },
-    h('div', { className: 'resource-section-heading' },
-      h('div', null,
-        h('h3', null, 'Annual expenditure profile'),
-        h('p', null, 'In-year investment is shown once. Annual recurrent commitments continue from their start year. Unknown values remain visible rather than becoming zero.')
-      )
+function SectionHeading({ title, description, aside = null }) {
+  return h('div', { className: 'resource-readable-heading' },
+    h('div', null,
+      h('h3', null, title),
+      description ? h('p', null, description) : null
     ),
-    h(FinancialLegend, { phases: profile.phases }),
-    h('div', { className: 'resource-phase-chart' },
-      ...profile.phases.map((phase) => {
-        const barWidth = phase.total > 0 ? Math.max(4, (phase.total / maxTotal) * 100) : 0;
-        const segments = Object.keys(categoryLabels)
-          .filter((category) => phase[category] > 0)
-          .map((category) => h('span', {
-            key: category,
-            className: `resource-phase-segment resource-category-${category}`,
-            style: { width: `${(phase[category] / phase.total) * 100}%` },
-            title: `${categoryLabels[category]}: ${formatMoney(phase[category])}`
-          }));
-
-        return h('article', { className: 'resource-phase-row', key: phase.year },
-          h('div', { className: 'resource-phase-label' },
-            h('strong', null, phase.year),
-            h('span', null, phase.total ? formatMoney(phase.total) : 'No quantified cost'),
-            phase.unquantified ? h('em', null, `${phase.unquantified} unquantified`) : null
-          ),
-          h('div', {
-            className: 'resource-phase-track',
-            'aria-label': `${phase.year}: ${formatMoney(phase.total) || 'no quantified cost'}`
-          },
-            h('div', { className: 'resource-phase-bar', style: { width: `${barWidth}%` } }, ...segments),
-            phase.total === 0 && phase.unquantified
-              ? h('span', { className: 'resource-phase-unknown' }, 'Unquantified requirement')
-              : null
-          ),
-          h('div', { className: 'resource-phase-meta' },
-            phase.fte
-              ? h('span', null, formatFte(phase.fte))
-              : h('span', null, 'No new FTE quantified'),
-            phase.unresolvedAmount
-              ? h('span', { className: 'resource-funding-warning' }, `${formatMoney(phase.unresolvedAmount)} unresolved`)
-              : h('span', { className: 'resource-funding-confirmed' }, 'No unresolved quantified amount')
-          )
-        );
-      })
-    )
+    aside ? h('strong', { className: 'resource-heading-aside' }, aside) : null
   );
 }
 
-function CapacityProfile({ profile }) {
-  if (!profile.capacityRows.length) return null;
-  const maxValue = Math.max(...profile.capacityRows.flatMap((row) => row.values), 1);
+function StatusBadge({ ask }) {
+  const state = fundingState(ask);
+  return h('span', { className: `resource-status-badge resource-status-${state}` }, conciseStatus(state));
+}
 
-  return h('section', { className: 'resource-profile-section resource-capacity-section' },
-    h('div', { className: 'resource-section-heading' },
+function FundedPeopleTable({ asks }) {
+  if (!asks.length) return null;
+  const totalCost = asks.reduce((total, ask) => total + (typeof ask.amount === 'number' ? ask.amount : 0), 0);
+  const totalFte = asks.reduce((total, ask) => total + (typeof ask.fte === 'number' ? ask.fte : 0), 0);
+
+  return h('div', { className: 'resource-table-block' },
+    h('div', { className: 'resource-subheading' },
       h('div', null,
-        h('h3', null, 'New funded capacity'),
-        h('p', null, 'New FTE created or funded by the plan. Existing staff capacity that must be committed is surfaced separately below and is not added to this total.')
-      )
+        h('h4', null, 'New or funded roles'),
+        h('p', null, 'Posts created or funded through the plan.')
+      ),
+      h('strong', null, `${formatFte(totalFte) || 'FTE TBC'} · ${formatMoney(totalCost) || 'cost TBC'}`)
     ),
-    h('div', { className: 'resource-capacity-table-wrap' },
-      h('table', { className: 'resource-capacity-table' },
+    h('div', { className: 'resource-readable-table-wrap' },
+      h('table', { className: 'resource-readable-table' },
         h('thead', null,
           h('tr', null,
-            h('th', { scope: 'col' }, 'Resource'),
-            ...profile.phases.map((phase) =>
-              h('th', { scope: 'col', key: phase.year }, phase.year)
-            )
+            h('th', { scope: 'col' }, 'Role'),
+            h('th', { scope: 'col' }, 'FTE'),
+            h('th', { scope: 'col' }, 'Planning cost'),
+            h('th', { scope: 'col' }, 'When needed'),
+            h('th', { scope: 'col' }, 'Status')
           )
         ),
         h('tbody', null,
-          ...profile.capacityRows.map((row) => h('tr', { key: row.key },
-            h('th', { scope: 'row' }, row.label),
-            ...row.values.map((value, index) => h('td', { key: `${row.key}-${index}` },
-              value > 0
-                ? h('span', {
-                    className: 'resource-capacity-cell',
-                    style: {
-                      backgroundColor: `rgba(23, 107, 155, ${0.18 + (0.72 * (value / maxValue))})`,
-                      color: value / maxValue > 0.42 ? '#ffffff' : '#0f4f75'
-                    }
-                  }, formatFte(value))
-                : h('span', { className: 'resource-capacity-empty' }, '—')
-            ))
+          ...asks.map((ask) => h('tr', { key: ask.id || `${ask.sourceStep?.id}-${askName(ask)}` },
+            h('th', { scope: 'row' },
+              h('strong', null, askName(ask)),
+              ask.owner ? h('small', null, ask.owner) : null
+            ),
+            h('td', { className: 'resource-cell-number' }, formatFte(ask.fte) || 'TBC'),
+            h('td', { className: 'resource-cell-money' }, formatMoney(ask.amount, ask.currency || 'GBP') || 'TBC'),
+            h('td', null, ask.periodNeeded || 'TBC'),
+            h('td', null, h(StatusBadge, { ask }))
           ))
         )
       )
@@ -216,140 +150,170 @@ function CapacityProfile({ profile }) {
   );
 }
 
-function ExistingCapacityItem({ ask, conditional = false }) {
-  const fte = formatFte(ask.fte);
-  const metadata = [
-    ask.owner ? `Owner: ${ask.owner}` : null,
-    ask.periodNeeded ? `Period: ${ask.periodNeeded}` : null,
-    ask.confidence ? `Confidence: ${ask.confidence}` : null
-  ].filter(Boolean).join(' · ');
+function ExistingPeopleTable({ asks, conditional = false, unquantified = false }) {
+  if (!asks.length) return null;
+  const title = conditional
+    ? 'Conditional existing capacity'
+    : unquantified
+      ? 'Existing contributions not yet quantified'
+      : 'Existing roles to commit';
+  const description = conditional
+    ? 'Only required if the stated trigger applies. This is not included in the committed baseline.'
+    : unquantified
+      ? 'Important existing-team contributions that still need an explicit workload or FTE agreement.'
+      : 'Protected time from existing teams. This is a real delivery commitment, but not new funded headcount.';
 
-  return h('article', {
-    className: 'resource-funding-item',
-    key: `${ask.sourceStep?.contextId || ''}-${ask.id || askName(ask)}`
-  },
-    h('div', { className: 'resource-funding-item-heading' },
-      h('strong', null, askName(ask)),
-      h('span', {
-        className: `resource-status-badge ${conditional ? 'resource-status-unresolved' : 'resource-status-confirmed'}`
-      }, conditional ? 'Conditional capacity' : 'Existing capacity')
+  return h('div', { className: `resource-table-block ${conditional ? 'is-conditional' : ''}`.trim() },
+    h('div', { className: 'resource-subheading' },
+      h('div', null,
+        h('h4', null, title),
+        h('p', null, description)
+      )
     ),
-    h('p', { className: 'resource-funding-value' }, fte || 'FTE not yet quantified'),
-    metadata ? h('p', null, metadata) : null,
-    ask.rationale ? h('p', null, ask.rationale) : null
+    h('div', { className: 'resource-readable-table-wrap' },
+      h('table', { className: 'resource-readable-table resource-existing-table' },
+        h('thead', null,
+          h('tr', null,
+            h('th', { scope: 'col' }, 'Role / contribution'),
+            h('th', { scope: 'col' }, conditional ? 'Maximum' : 'Commitment'),
+            h('th', { scope: 'col' }, 'When needed'),
+            h('th', { scope: 'col' }, 'Owner')
+          )
+        ),
+        h('tbody', null,
+          ...asks.map((ask) => h('tr', { key: `${ask.sourceStep?.contextId || ''}-${ask.id || askName(ask)}` },
+            h('th', { scope: 'row' }, askName(ask)),
+            h('td', { className: 'resource-cell-number' },
+              typeof ask.fte === 'number'
+                ? formatFte(ask.fte, conditional ? 'Up to ' : '')
+                : 'As required'
+            ),
+            h('td', null, ask.periodNeeded || 'TBC'),
+            h('td', null, ask.owner || 'TBC')
+          ))
+        )
+      )
+    )
   );
 }
 
-function ExistingCapacityPanel({ profile }) {
+function PeopleAndCapacityPanel({ profile }) {
+  const fundedPeople = profile.investmentAsks.filter((ask) => typeof ask.fte === 'number');
   const required = profile.committedExistingCapacityAsks || [];
   const conditional = profile.conditionalExistingCapacityAsks || [];
   const unquantified = profile.unquantifiedExistingCapacityAsks || [];
-  if (!required.length && !conditional.length && !unquantified.length) return null;
+  if (!fundedPeople.length && !required.length && !conditional.length && !unquantified.length) return null;
 
-  return h('section', { className: 'resource-profile-section resource-existing-section' },
-    h('div', { className: 'resource-section-heading' },
-      h('div', null,
-        h('h3', null, 'Existing capacity to commit'),
-        h('p', null, 'Existing roles and specialist capacity that the plan relies on. Quantified allocations are surfaced as FTE but are not counted as new funded posts or cash investment.')
-      )
-    ),
-    required.length
-      ? h('div', { className: 'resource-funding-list' },
-          ...required.map((ask) => h(ExistingCapacityItem, { ask, key: ask.id || askName(ask) }))
-        )
-      : null,
-    conditional.length
-      ? h('div', null,
-          h('div', { className: 'resource-section-heading' },
-            h('div', null,
-              h('h3', null, 'Conditional existing capacity'),
-              h('p', null, 'Capacity required only if the stated delivery or role assumption cannot be met. It is shown separately and is not added to the committed existing-capacity baseline.')
-            )
-          ),
-          h('div', { className: 'resource-funding-list' },
-            ...conditional.map((ask) => h(ExistingCapacityItem, { ask, conditional: true, key: ask.id || askName(ask) }))
-          )
-        )
-      : null,
-    unquantified.length
-      ? h('div', null,
-          h('div', { className: 'resource-section-heading' },
-            h('div', null,
-              h('h3', null, 'Existing contributions not yet quantified'),
-              h('p', null, 'These existing-capacity dependencies remain visible until an FTE, workload allocation or other explicit commitment is agreed.')
-            )
-          ),
-          h('div', { className: 'resource-funding-list' },
-            ...unquantified.map((ask) => h(ExistingCapacityItem, { ask, key: ask.id || askName(ask) }))
-          )
-        )
-      : null
+  return h('section', { className: 'resource-profile-section resource-people-section' },
+    h(SectionHeading, {
+      title: 'People and capacity',
+      description: 'The team the plan funds, plus the existing staff time the institution must genuinely commit.'
+    }),
+    h(FundedPeopleTable, { asks: fundedPeople }),
+    h(ExistingPeopleTable, { asks: required }),
+    h(ExistingPeopleTable, { asks: conditional, conditional: true }),
+    h(ExistingPeopleTable, { asks: unquantified, unquantified: true })
   );
 }
 
-function FundingPanel({ profile, contextType }) {
-  const exceptions = profile.investmentAsks
-    .filter((ask) => fundingState(ask) !== 'confirmed' || typeof ask.amount !== 'number')
-    .sort((a, b) => (b.amount || 0) - (a.amount || 0));
+function OtherInvestmentPanel({ profile }) {
+  const asks = profile.investmentAsks.filter((ask) => typeof ask.fte !== 'number');
+  if (!asks.length) return null;
+  const total = asks.reduce((sum, ask) => sum + (typeof ask.amount === 'number' ? ask.amount : 0), 0);
 
+  return h('section', { className: 'resource-profile-section resource-other-investment-section' },
+    h(SectionHeading, {
+      title: 'Other investment',
+      description: 'Cash requirements that are not new posts, such as platforms, tooling, student employment or direct delivery costs.',
+      aside: total ? formatMoney(total) : null
+    }),
+    h('div', { className: 'resource-readable-table-wrap' },
+      h('table', { className: 'resource-readable-table' },
+        h('thead', null,
+          h('tr', null,
+            h('th', { scope: 'col' }, 'Investment'),
+            h('th', { scope: 'col' }, 'Amount'),
+            h('th', { scope: 'col' }, 'When needed'),
+            h('th', { scope: 'col' }, 'Status')
+          )
+        ),
+        h('tbody', null,
+          ...asks.map((ask) => h('tr', { key: ask.id || `${ask.sourceStep?.id}-${askName(ask)}` },
+            h('th', { scope: 'row' },
+              h('strong', null, askName(ask)),
+              ask.owner ? h('small', null, ask.owner) : null
+            ),
+            h('td', { className: 'resource-cell-money' },
+              typeof ask.amount === 'number'
+                ? `${formatMoney(ask.amount, ask.currency || 'GBP')}${isBauLiability(ask) ? ' / year' : ''}`
+                : 'TBC'
+            ),
+            h('td', null, ask.periodNeeded || 'TBC'),
+            h('td', null, h(StatusBadge, { ask }))
+          ))
+        )
+      )
+    )
+  );
+}
+
+function FinancialPhasing({ profile }) {
+  if (!profile.phases.length) return null;
+  return h('section', { className: 'resource-secondary-section' },
+    h('h4', null, 'Cost by academic year'),
+    h('div', { className: 'resource-readable-table-wrap' },
+      h('table', { className: 'resource-readable-table resource-phasing-table' },
+        h('thead', null,
+          h('tr', null,
+            h('th', { scope: 'col' }, 'Academic year'),
+            h('th', { scope: 'col' }, 'Quantified spend'),
+            h('th', { scope: 'col' }, 'New funded FTE'),
+            h('th', { scope: 'col' }, 'Unresolved value')
+          )
+        ),
+        h('tbody', null,
+          ...profile.phases.map((phase) => h('tr', { key: phase.year },
+            h('th', { scope: 'row' }, phase.year),
+            h('td', { className: 'resource-cell-money' }, phase.total ? formatMoney(phase.total) : '—'),
+            h('td', { className: 'resource-cell-number' }, phase.fte ? formatFte(phase.fte) : '—'),
+            h('td', null, phase.unresolvedAmount ? formatMoney(phase.unresolvedAmount) : '—')
+          ))
+        )
+      )
+    )
+  );
+}
+
+function FundingPanel({ profile }) {
+  const exceptions = profile.investmentAsks
+    .filter((ask) => fundingState(ask) !== 'confirmed' || typeof ask.amount !== 'number');
   if (!exceptions.length) return null;
 
-  const sourceLocation = contextType === 'deliverable'
-    ? 'the Delivery timeline step details above'
-    : 'the relevant deliverable step details';
-
-  return h('section', { className: 'resource-profile-section resource-funding-section' },
-    h('div', { className: 'resource-section-heading' },
-      h('div', null,
-        h('h3', null, 'Funding and valuation decisions'),
-        h('p', null, 'The material asks that remain indicative, unconfirmed or unquantified.')
-      ),
-      h('span', { className: 'resource-exception-count' },
-        `${exceptions.length} open ${exceptions.length === 1 ? 'item' : 'items'}`
-      )
-    ),
-    h('div', { className: 'resource-funding-list' },
-      ...exceptions.slice(0, 8).map((ask) => {
-        const state = fundingState(ask);
-        return h('article', { className: 'resource-funding-item', key: ask.id },
-          h('div', { className: 'resource-funding-item-heading' },
-            h('strong', null, askName(ask)),
-            h('span', { className: `resource-status-badge resource-status-${state}` },
-              statusLabel(state)
-            )
-          ),
-          h('p', { className: 'resource-funding-value' }, amountLabel(ask)),
-          h('p', null, [
-            ask.owner ? `Owner: ${ask.owner}` : null,
-            ask.decisionNeededBy ? `Decision by: ${ask.decisionNeededBy}` : null,
-            ask.fundingRoute ? `Route: ${ask.fundingRoute}` : null,
-            ask.confidence ? `Confidence: ${ask.confidence}` : null
-          ].filter(Boolean).join(' · ')),
-          ask.riskIfMissing
-            ? h('p', { className: 'resource-funding-risk' },
-                h('strong', null, 'If unresolved: '),
-                ask.riskIfMissing
-              )
-            : null
-        );
-      })
-    ),
-    exceptions.length > 8
-      ? h('p', { className: 'subtle' },
-          `${exceptions.length - 8} further items remain in ${sourceLocation}.`
-        )
-      : null
+  return h('section', { className: 'resource-secondary-section' },
+    h('h4', null, 'Funding and valuation decisions still open'),
+    h('div', { className: 'resource-decision-list' },
+      ...exceptions.map((ask) => h('article', { className: 'resource-decision-item', key: ask.id || askName(ask) },
+        h('div', null,
+          h('strong', null, askName(ask)),
+          h(StatusBadge, { ask })
+        ),
+        h('p', null, [
+          typeof ask.amount === 'number' ? formatMoney(ask.amount, ask.currency || 'GBP') : 'Value TBC',
+          ask.decisionNeededBy ? `Decision by ${ask.decisionNeededBy}` : null,
+          ask.confidence ? ask.confidence : null
+        ].filter(Boolean).join(' · '))
+      ))
+    )
   );
 }
 
 function SourceStatement({ steps, profile, contextType }) {
   const sourceSteps = steps.filter((step) => resourceGroups(step).length > 0).length;
   const location = contextType === 'deliverable'
-    ? 'Open step detail in the Delivery timeline above to inspect the authored records.'
-    : 'Open the relevant deliverable to inspect its authored step records.';
-
+    ? 'Open the delivery-step detail above for the authored records.'
+    : 'Open the relevant deliverable for the authored records.';
   return h('p', { className: 'subtle resource-profile-source' },
-    `Generated at runtime from ${profile.asks.length} resource asks across ${sourceSteps} delivery ${sourceSteps === 1 ? 'step' : 'steps'} in the JSON. ${location}`
+    `Derived from ${profile.asks.length} resource asks across ${sourceSteps} delivery ${sourceSteps === 1 ? 'step' : 'steps'}. ${location}`
   );
 }
 
@@ -357,21 +321,21 @@ function ResourceInvestmentProfile({ context, steps }) {
   const [expanded, setExpanded] = useState(false);
   const profile = useMemo(() => buildFinancialProfile(steps), [steps]);
   const summaryTitle = context.type === 'project'
-    ? 'Project resource and investment profile'
-    : 'Resource and investment profile';
-  const firstPhase = profile.firstOperatingPhase;
-  const fundingResolvedCount = profile.investmentAsks
-    .filter((ask) => fundingState(ask) === 'confirmed').length;
-  const existingCapacityValue = profile.existingCapacityFte > 0
+    ? 'Project resources and investment'
+    : 'Resources and investment';
+  const unresolvedCount = profile.investmentAsks.filter((ask) => fundingState(ask) !== 'confirmed').length;
+  const cashValue = profile.knownInvestment > 0 ? formatMoney(profile.knownInvestment) : 'Not quantified';
+  const cashNote = profile.knownAnnualBauLiability > 0
+    ? `Plus ${formatMoney(profile.knownAnnualBauLiability)} annual recurrent`
+    : 'Quantified time-limited and in-year spend';
+  const existingValue = profile.existingCapacityFte > 0
     ? formatFte(profile.existingCapacityFte)
     : profile.distinctExistingCapacityAsks.length
       ? 'Not quantified'
       : 'None recorded';
-  const existingCapacityNote = profile.conditionalExistingCapacityFte > 0
-    ? `Plus up to ${formatFte(profile.conditionalExistingCapacityFte)} conditional`
-    : profile.unquantifiedExistingCapacityAsks.length
-      ? `${profile.unquantifiedExistingCapacityAsks.length} further unquantified ${profile.unquantifiedExistingCapacityAsks.length === 1 ? 'ask' : 'asks'}`
-      : 'Existing roles to be committed';
+  const conditionalValue = profile.conditionalExistingCapacityFte > 0
+    ? formatFte(profile.conditionalExistingCapacityFte, 'Up to ')
+    : 'None quantified';
 
   return h('section', {
     id: 'resource-investment-profile',
@@ -385,63 +349,59 @@ function ResourceInvestmentProfile({ context, steps }) {
     },
       h('span', { className: 'resource-profile-heading' },
         h('strong', null, summaryTitle),
-        h('em', null, 'Phased expenditure, new funded capacity and existing institutional capacity derived from delivery-step asks.')
+        h('em', null, 'People, existing capacity and cash needed to deliver the plan.')
       ),
-      h('span', { className: 'resource-profile-toggle', 'aria-hidden': 'true' },
-        expanded ? '−' : '+'
-      )
+      h('span', { className: 'resource-profile-toggle', 'aria-hidden': 'true' }, expanded ? '−' : '+')
     ),
-    expanded ? h('div', { className: 'resource-profile-body' },
-      h('p', { className: 'subtle resource-profile-explainer' },
-        'The delivery steps remain the source of truth. New funded FTE and existing institutional capacity are shown separately so an existing-role commitment cannot disappear inside the delivery narrative or be mistaken for new investment. Conditional capacity is excluded from the committed baseline until its trigger applies.'
+    expanded ? h('div', { className: 'resource-profile-body resource-readable-body' },
+      h('p', { className: 'resource-profile-intro' },
+        'Read the plan as three separate commitments: new funded roles, protected capacity from existing teams, and cash or non-staff investment. Conditional capacity is shown separately and is not counted in the baseline.'
       ),
-      h('div', { className: 'resource-profile-summary-grid' },
+      h('div', { className: 'resource-profile-summary-grid resource-readable-summary' },
         h(MetricCard, {
-          label: 'Mobilisation and establishment',
-          value: formatMoney(profile.mobilisationCost) || 'Not quantified',
-          note: 'One-off costs only'
+          label: 'Known cash investment',
+          value: cashValue,
+          note: cashNote,
+          tone: 'resource-summary-cash'
         }),
         h(MetricCard, {
-          label: firstPhase
-            ? `First full operating year · ${firstPhase.year}`
-            : 'First operating year',
-          value: firstPhase?.total ? formatMoney(firstPhase.total) : 'Not quantified',
-          note: firstPhase?.unquantified
-            ? `${firstPhase.unquantified} additional unquantified asks`
-            : 'In-year requirement'
-        }),
-        h(MetricCard, {
-          label: 'Exit annual run-rate',
-          value: formatMoney(profile.exitRunRate) || 'Not quantified',
-          note: 'Annual recurrent commitment at the end-state',
-          tone: 'resource-summary-bau'
-        }),
-        h(MetricCard, {
-          label: 'Peak new funded capacity',
+          label: 'New funded capacity',
           value: formatFte(profile.peakFte) || 'Not quantified',
-          note: 'Maximum concurrent new FTE'
+          note: 'Maximum concurrent new FTE',
+          tone: 'resource-summary-new'
         }),
         h(MetricCard, {
-          label: 'Existing capacity required',
-          value: existingCapacityValue,
-          note: existingCapacityNote,
+          label: 'Existing capacity to commit',
+          value: existingValue,
+          note: 'Protected time from current establishment',
           tone: 'resource-summary-existing'
+        }),
+        h(MetricCard, {
+          label: 'Conditional capacity',
+          value: conditionalValue,
+          note: 'Only if the stated trigger applies',
+          tone: 'resource-summary-conditional'
         })
       ),
-      h('div', { className: 'resource-profile-quality-line' },
-        h('span', null, `${profile.valueKinds.cash} cash asks`),
-        h('span', null, `${profile.valueKinds.cashEquivalent} cash-equivalent asks`),
-        h('span', null, `${profile.valueKinds.unquantified} unquantified investment asks`),
-        h('span', null, `${profile.distinctExistingCapacityAsks.length} existing-capacity ${profile.distinctExistingCapacityAsks.length === 1 ? 'ask' : 'asks'}`),
-        h('span', null,
-          `${fundingResolvedCount}/${profile.investmentAsks.length} investment asks confirmed or commissioned`
+      unresolvedCount
+        ? h('p', { className: 'resource-attention-line' },
+            h('strong', null, `${unresolvedCount} investment ${unresolvedCount === 1 ? 'item still needs' : 'items still need'} approval or validation.`),
+            ' The role and investment tables below show exactly which ones.'
+          )
+        : null,
+      h(PeopleAndCapacityPanel, { profile }),
+      h(OtherInvestmentPanel, { profile }),
+      h('details', { className: 'resource-secondary-detail' },
+        h('summary', null,
+          h('strong', null, 'More detail'),
+          h('span', null, 'Cost phasing, open funding assumptions and source records')
+        ),
+        h('div', { className: 'resource-secondary-detail-body' },
+          h(FinancialPhasing, { profile }),
+          h(FundingPanel, { profile }),
+          h(SourceStatement, { steps, profile, contextType: context.type })
         )
-      ),
-      h(FinancialPhasing, { profile }),
-      h(CapacityProfile, { profile }),
-      h(ExistingCapacityPanel, { profile }),
-      h(FundingPanel, { profile, contextType: context.type }),
-      h(SourceStatement, { steps, profile, contextType: context.type })
+      )
     ) : null
   );
 }
