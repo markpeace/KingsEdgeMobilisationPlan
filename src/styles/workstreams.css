@@ -1,0 +1,79 @@
+.workstreams-panel {
+  border-left: 0.55rem solid var(--accent);
+}
+
+.workstreams-intro {
+  max-width: 850px;
+}
+
+.workstreams-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.workstream-card {
+  border: 2px solid var(--ink);
+  padding: 1rem;
+  background: var(--paper);
+}
+
+.workstream-card-heading {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  margin-bottom: 0.7rem;
+}
+
+.workstream-card-heading h3 {
+  margin: 0;
+  font-family: var(--font-brand);
+  font-size: 1.45rem;
+  font-weight: 400;
+  line-height: 1.05;
+}
+
+.workstream-owner {
+  margin: 0 0 0.65rem;
+  font-weight: 700;
+}
+
+.workstream-route {
+  margin-top: 0.9rem;
+  padding-top: 0.8rem;
+  border-top: 1px solid var(--border);
+}
+
+.workstream-step-list {
+  margin: 0.45rem 0 0;
+  padding-left: 1.25rem;
+}
+
+.workstream-step-list li + li {
+  margin-top: 0.25rem;
+}
+
+.workstream-tag-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin: 0.55rem 0 0.8rem;
+}
+
+.workstream-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.28rem 0.5rem;
+  border: 1px solid var(--ink);
+  background: var(--faint);
+  font-size: 0.78rem;
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+@media (max-width: 720px) {
+  .workstreams-grid {
+    grid-template-columns: 1fr;
+  }
+}
