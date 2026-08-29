@@ -93,6 +93,11 @@ test('the shared resource profile recognises materially different deliverable re
   const digital = loadDocument('../src/data/deliverables/4.1.3/timeline-reflow.json');
   const workforce = loadDocument('../src/data/deliverables/4.1.3/workforce.json').workforceModel;
 
+  const opportunityProfile = buildFinancialProfile(addRuntimeAskTypes(opportunities.steps || []));
+  assert.equal(opportunityProfile.knownInvestment, 600000);
+  assert.equal(opportunityProfile.knownAnnualBauLiability, 175000);
+  assert.equal(opportunityProfile.bauLiabilityAsks.length, 1);
+
   const contexts = [
     deliverableContext('1.4.2', 'Community infrastructure', community.steps || []),
     deliverableContext('2.2.4', 'Beyond-course opportunity commissioning and growth', opportunities.steps || []),
