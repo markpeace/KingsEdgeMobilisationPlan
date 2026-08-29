@@ -1,0 +1,352 @@
+/* Human-readable resource and investment profile.
+   The underlying delivery-step resource asks remain authoritative. */
+
+#resource-investment-profile .resource-readable-body {
+  gap: 1.25rem;
+}
+
+#resource-investment-profile .resource-profile-intro {
+  max-width: 92ch;
+  margin: 0;
+  padding: 0.8rem 0.95rem;
+  border-left: 4px solid var(--ink);
+  background: var(--faint);
+  color: var(--ink);
+  font-size: 0.94rem;
+  line-height: 1.45;
+}
+
+#resource-investment-profile .resource-readable-summary {
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  gap: 0.7rem;
+}
+
+#resource-investment-profile .resource-readable-summary article {
+  min-height: 6.2rem;
+  align-content: start;
+  gap: 0.32rem;
+  padding: 0.85rem;
+  background: #ffffff;
+}
+
+#resource-investment-profile .resource-readable-summary strong {
+  margin-bottom: 0.16rem;
+  font-family: var(--font-brand);
+  font-size: clamp(1.35rem, 2.2vw, 1.9rem);
+  font-weight: 400;
+  letter-spacing: -0.025em;
+}
+
+#resource-investment-profile .resource-readable-summary span {
+  color: var(--ink);
+  font-size: 0.72rem;
+}
+
+#resource-investment-profile .resource-readable-summary small {
+  color: var(--muted);
+  font-size: 0.78rem;
+  line-height: 1.3;
+}
+
+#resource-investment-profile .resource-summary-cash {
+  border-top-color: var(--accent) !important;
+}
+
+#resource-investment-profile .resource-summary-new {
+  border-top-color: var(--ink) !important;
+}
+
+#resource-investment-profile .resource-summary-existing {
+  border-top-color: var(--green) !important;
+}
+
+#resource-investment-profile .resource-summary-conditional {
+  border-top-style: dashed !important;
+  border-top-color: var(--gold) !important;
+}
+
+#resource-investment-profile .resource-attention-line {
+  margin: -0.2rem 0 0;
+  padding: 0.65rem 0.8rem;
+  border: 1px solid var(--border);
+  background: var(--accent-soft);
+  color: var(--ink);
+  font-size: 0.86rem;
+}
+
+#resource-investment-profile .resource-profile-section {
+  display: grid;
+  gap: 0.72rem;
+  margin: 0;
+  padding-top: 0;
+  border-top: 0;
+}
+
+#resource-investment-profile .resource-readable-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-bottom: 0.55rem;
+  border-bottom: 2px solid var(--ink);
+}
+
+#resource-investment-profile .resource-readable-heading h3 {
+  margin: 0;
+  font-family: var(--font-brand);
+  font-size: clamp(1.3rem, 2vw, 1.7rem);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+}
+
+#resource-investment-profile .resource-readable-heading p {
+  max-width: 80ch;
+  margin: 0.2rem 0 0;
+  color: var(--muted);
+  font-size: 0.84rem;
+  line-height: 1.35;
+}
+
+#resource-investment-profile .resource-heading-aside {
+  flex: 0 0 auto;
+  font-family: var(--font-brand);
+  font-size: 1.5rem;
+  font-weight: 400;
+  white-space: nowrap;
+}
+
+#resource-investment-profile .resource-table-block {
+  display: grid;
+  gap: 0.45rem;
+  padding: 0.72rem;
+  border: 1px solid var(--border);
+  background: #ffffff;
+}
+
+#resource-investment-profile .resource-table-block.is-conditional {
+  border-style: dashed;
+  border-color: #a98223;
+  background: #fffaf0;
+}
+
+#resource-investment-profile .resource-subheading {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+#resource-investment-profile .resource-subheading h4 {
+  margin: 0;
+  font-size: 0.92rem;
+  line-height: 1.2;
+}
+
+#resource-investment-profile .resource-subheading p {
+  margin: 0.15rem 0 0;
+  color: var(--muted);
+  font-size: 0.78rem;
+  line-height: 1.3;
+}
+
+#resource-investment-profile .resource-subheading > strong {
+  flex: 0 0 auto;
+  font-size: 0.84rem;
+  white-space: nowrap;
+}
+
+#resource-investment-profile .resource-readable-table-wrap {
+  width: 100%;
+  overflow-x: auto;
+}
+
+#resource-investment-profile .resource-readable-table {
+  width: 100%;
+  min-width: 720px;
+  border-collapse: collapse;
+  font-size: 0.82rem;
+  line-height: 1.3;
+}
+
+#resource-investment-profile .resource-existing-table {
+  min-width: 650px;
+}
+
+#resource-investment-profile .resource-readable-table thead th {
+  padding: 0.5rem 0.55rem;
+  border-bottom: 1px solid var(--ink);
+  background: var(--faint);
+  color: var(--muted);
+  font-size: 0.66rem;
+  font-weight: 850;
+  letter-spacing: 0.045em;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+#resource-investment-profile .resource-readable-table tbody th,
+#resource-investment-profile .resource-readable-table tbody td {
+  padding: 0.62rem 0.55rem;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+  text-align: left;
+}
+
+#resource-investment-profile .resource-readable-table tbody tr:last-child th,
+#resource-investment-profile .resource-readable-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+#resource-investment-profile .resource-readable-table tbody th {
+  width: 33%;
+  color: var(--ink);
+  font-weight: 700;
+}
+
+#resource-investment-profile .resource-readable-table tbody th small {
+  display: block;
+  margin-top: 0.18rem;
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 400;
+}
+
+#resource-investment-profile .resource-cell-number,
+#resource-investment-profile .resource-cell-money {
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+#resource-investment-profile .resource-status-badge {
+  white-space: nowrap;
+}
+
+#resource-investment-profile .resource-secondary-detail {
+  border: 1px solid var(--border);
+  background: var(--faint);
+}
+
+#resource-investment-profile .resource-secondary-detail > summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.75rem 0.85rem;
+  cursor: pointer;
+  list-style: none;
+}
+
+#resource-investment-profile .resource-secondary-detail > summary::-webkit-details-marker {
+  display: none;
+}
+
+#resource-investment-profile .resource-secondary-detail > summary::after {
+  content: '+';
+  flex: 0 0 auto;
+  font-size: 1.15rem;
+  font-weight: 800;
+}
+
+#resource-investment-profile .resource-secondary-detail[open] > summary::after {
+  content: '−';
+}
+
+#resource-investment-profile .resource-secondary-detail > summary strong {
+  font-size: 0.88rem;
+}
+
+#resource-investment-profile .resource-secondary-detail > summary span {
+  margin-left: auto;
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+
+#resource-investment-profile .resource-secondary-detail-body {
+  display: grid;
+  gap: 1rem;
+  padding: 0 0.85rem 0.85rem;
+  border-top: 1px solid var(--border);
+}
+
+#resource-investment-profile .resource-secondary-section {
+  display: grid;
+  gap: 0.55rem;
+  padding-top: 0.8rem;
+}
+
+#resource-investment-profile .resource-secondary-section h4 {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+#resource-investment-profile .resource-phasing-table {
+  min-width: 620px;
+}
+
+#resource-investment-profile .resource-decision-list {
+  display: grid;
+  gap: 0.45rem;
+}
+
+#resource-investment-profile .resource-decision-item {
+  display: grid;
+  gap: 0.2rem;
+  padding: 0.6rem 0.7rem;
+  border: 1px solid var(--border);
+  background: #ffffff;
+}
+
+#resource-investment-profile .resource-decision-item > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+#resource-investment-profile .resource-decision-item p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.76rem;
+}
+
+#resource-investment-profile .resource-profile-source {
+  margin: 0;
+  padding-top: 0.2rem;
+  font-size: 0.72rem;
+}
+
+@media (max-width: 1050px) {
+  #resource-investment-profile .resource-readable-summary {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+@media (max-width: 680px) {
+  #resource-investment-profile .resource-readable-summary {
+    grid-template-columns: 1fr !important;
+  }
+
+  #resource-investment-profile .resource-readable-heading,
+  #resource-investment-profile .resource-subheading,
+  #resource-investment-profile .resource-secondary-detail > summary {
+    align-items: start;
+    flex-direction: column;
+  }
+
+  #resource-investment-profile .resource-heading-aside,
+  #resource-investment-profile .resource-subheading > strong,
+  #resource-investment-profile .resource-secondary-detail > summary span {
+    margin-left: 0;
+    white-space: normal;
+  }
+
+  #resource-investment-profile .resource-secondary-detail > summary::after {
+    position: absolute;
+    right: 0.8rem;
+  }
+
+  #resource-investment-profile .resource-secondary-detail > summary {
+    position: relative;
+    padding-right: 2.5rem;
+  }
+}
