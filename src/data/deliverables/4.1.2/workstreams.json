@@ -1,0 +1,69 @@
+{
+  "workstreams": [
+    {
+      "id": "4.1.2-ws-first-release",
+      "title": "Focused first release",
+      "owner": "Mark Peace",
+      "summary": "Keeps the September 2027 first live Hub release bounded, useful and launchable, taking the release hypothesis through scope decisions, build, readiness, launch and early live learning.",
+      "stepIds": [
+        "4.1.2-step-1a",
+        "4.1.2-step-1",
+        "4.1.2-step-1b",
+        "4.1.2-step-2",
+        "4.1.2-step-2a",
+        "4.1.2-step-2b",
+        "4.1.2-step-2c",
+        "4.1.2-step-2d",
+        "4.1.2-step-3"
+      ]
+    },
+    {
+      "id": "4.1.2-ws-discovery-roadmap",
+      "title": "Wider journey discovery and roadmap",
+      "owner": "Mark Peace",
+      "summary": "Builds the evidence base for what the Hub should deepen after the first release by mapping the wider student-facing estate, priority journeys, ownership, integration readiness and later rationalisation opportunities.",
+      "stepIds": [
+        "4.1.2-step-1c",
+        "4.1.2-step-2b",
+        "4.1.2-step-3",
+        "4.1.2-step-4",
+        "4.1.2-step-5",
+        "4.1.2-step-6",
+        "4.1.2-step-7",
+        "4.1.2-step-8"
+      ]
+    },
+    {
+      "id": "4.1.2-ws-platform",
+      "title": "Shared Hub platform foundations",
+      "owner": "Digital product capability",
+      "summary": "Establishes and progressively matures the shared application foundations, integration patterns and common Hub capabilities that allow multiple student journeys to reuse one supported product layer.",
+      "stepIds": [
+        "4.1.2-step-1",
+        "4.1.2-step-2",
+        "4.1.2-step-2c",
+        "4.1.2-step-2d",
+        "4.1.2-step-3",
+        "4.1.2-step-5",
+        "4.1.2-step-6",
+        "4.1.2-step-7",
+        "4.1.2-step-8"
+      ]
+    },
+    {
+      "id": "4.1.2-ws-experience",
+      "title": "Student experience, co-design and validation",
+      "owner": "Product & Service Designer with Product Owner",
+      "summary": "Keeps student evidence and experience design threaded through discovery and delivery, using sustained co-design, wider research and product testing to shape the common home, access patterns and later priorities.",
+      "stepIds": [
+        "4.1.2-step-1a",
+        "4.1.2-step-1b",
+        "4.1.2-step-1c",
+        "4.1.2-step-2a",
+        "4.1.2-step-2b",
+        "4.1.2-step-3",
+        "4.1.2-step-4"
+      ]
+    }
+  ]
+}
