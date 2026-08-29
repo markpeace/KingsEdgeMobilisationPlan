@@ -108,6 +108,9 @@ export function amountForAcademicYear(ask, year) {
   const annualAmount = amountOf(ask);
   if (annualAmount === null) return null;
   const start = academicYearStart(ask.periodNeeded);
+  if (!Number.isFinite(start)) return null;
+  const active = isBauLiability(ask) ? year >= start : year === start;
+  if (!active) return null;
   if (isBauLiability(ask) && year === start) {
     const initialAmount = initialPeriodAmountOf(ask);
     if (typeof initialAmount === 'number' && Number.isFinite(initialAmount)) return initialAmount;
