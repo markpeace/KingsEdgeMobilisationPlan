@@ -1,8 +1,10 @@
-import React, { useMemo, useState } from 'react';
+import React, { useMemo } from 'react';
 import { createRoot } from 'react-dom/client';
 import { buildLookups, projects } from './plan-utils.js';
 import {
+  amountForAcademicYear,
   buildFinancialProfile,
+  fteForAcademicYear,
   fundingState,
   isBauLiability,
   resourceGroups
@@ -109,27 +111,44 @@ function StatusBadge({ ask }) {
   return h('span', { className: `resource-status-badge resource-status-${state}` }, conciseStatus(state));
 }
 
-function FundedPeopleTable({ asks }) {
+function activeYears(profile) {
+  return profile.activeInvestmentPhases?.length ? profile.activeInvestmentPhases : profile.phases;
+}
+
+function YearCell({ ask, year, showFte = false }) {
+  const amount = amountForAcademicYear(ask, year.startYear);
+  const fte = fteForAcademicYear(ask, year.startYear);
+  if (amount === null && !fte) return h('span', { className: 'resource-year-empty' }, '—');
+
+  return h('span', { className: 'resource-year-value' },
+    amount !== null ? h('strong', null, formatMoney(amount, ask.currency || 'GBP')) : h('strong', null, 'Cost TBC'),
+    showFte && fte ? h('small', null, formatFte(fte)) : null
+  );
+}
+
+function FundedPeopleTable({ profile, asks }) {
   if (!asks.length) return null;
-  const totalCost = asks.reduce((total, ask) => total + (typeof ask.amount === 'number' ? ask.amount : 0), 0);
-  const totalFte = asks.reduce((total, ask) => total + (typeof ask.fte === 'number' ? ask.fte : 0), 0);
+  const years = activeYears(profile);
+  const totalFte = Math.max(...years.map((year) => asks.reduce((total, ask) => total + fteForAcademicYear(ask, year.startYear), 0)), 0);
+  const totalCost = years.reduce((grandTotal, year) => grandTotal + asks.reduce((yearTotal, ask) => {
+    const amount = amountForAcademicYear(ask, year.startYear);
+    return yearTotal + (typeof amount === 'number' ? amount : 0);
+  }, 0), 0);
 
   return h('div', { className: 'resource-table-block' },
     h('div', { className: 'resource-subheading' },
       h('div', null,
-        h('h4', null, 'New or funded roles'),
-        h('p', null, 'Posts created or funded through the plan.')
+        h('h4', null, 'New funded roles'),
+        h('p', null, 'Each academic-year column shows the FTE and cash requirement for that year. This makes pro-rata mobilisation and later full-year costs explicit.')
       ),
-      h('strong', null, `${formatFte(totalFte) || 'FTE TBC'} · ${formatMoney(totalCost) || 'cost TBC'}`)
+      h('strong', null, `${formatFte(totalFte) || 'FTE TBC'} · ${formatMoney(totalCost) || 'cost TBC'} profiled`)
     ),
     h('div', { className: 'resource-readable-table-wrap' },
-      h('table', { className: 'resource-readable-table' },
+      h('table', { className: 'resource-readable-table resource-multiyear-table' },
         h('thead', null,
           h('tr', null,
             h('th', { scope: 'col' }, 'Role'),
-            h('th', { scope: 'col' }, 'FTE'),
-            h('th', { scope: 'col' }, 'Planning cost'),
-            h('th', { scope: 'col' }, 'When needed'),
+            ...years.map((year) => h('th', { scope: 'col', key: year.year }, year.year)),
             h('th', { scope: 'col' }, 'Status')
           )
         ),
@@ -137,13 +156,35 @@ function FundedPeopleTable({ asks }) {
           ...asks.map((ask) => h('tr', { key: ask.id || `${ask.sourceStep?.id}-${askName(ask)}` },
             h('th', { scope: 'row' },
               h('strong', null, askName(ask)),
-              ask.owner ? h('small', null, ask.owner) : null
+              ask.owner ? h('small', null, ask.owner) : null,
+              ask.periodNeeded ? h('small', null, ask.periodNeeded) : null
             ),
-            h('td', { className: 'resource-cell-number' }, formatFte(ask.fte) || 'TBC'),
-            h('td', { className: 'resource-cell-money' }, formatMoney(ask.amount, ask.currency || 'GBP') || 'TBC'),
-            h('td', null, ask.periodNeeded || 'TBC'),
+            ...years.map((year) => h('td', { key: `${ask.id || askName(ask)}-${year.year}` },
+              h(YearCell, { ask, year, showFte: true })
+            )),
             h('td', null, h(StatusBadge, { ask }))
           ))
+        ),
+        h('tfoot', null,
+          h('tr', null,
+            h('th', { scope: 'row' }, 'Funded team total'),
+            ...years.map((year) => {
+              const yearAmount = asks.reduce((total, ask) => {
+                const amount = amountForAcademicYear(ask, year.startYear);
+                return total + (typeof amount === 'number' ? amount : 0);
+              }, 0);
+              const yearFte = asks.reduce((total, ask) => total + fteForAcademicYear(ask, year.startYear), 0);
+              return h('td', { key: `total-${year.year}` },
+                yearAmount || yearFte
+                  ? h('span', { className: 'resource-year-value' },
+                      h('strong', null, yearAmount ? formatMoney(yearAmount) : 'Cost TBC'),
+                      yearFte ? h('small', null, formatFte(yearFte)) : null
+                    )
+                  : '—'
+              );
+            }),
+            h('td', null, '')
+          )
         )
       )
     )
@@ -207,9 +248,9 @@ function PeopleAndCapacityPanel({ profile }) {
   return h('section', { className: 'resource-profile-section resource-people-section' },
     h(SectionHeading, {
       title: 'People and capacity',
-      description: 'The team the plan funds, plus the existing staff time the institution must genuinely commit.'
+      description: 'The funded team across the life of the plan, plus the existing staff time the institution must genuinely commit.'
     }),
-    h(FundedPeopleTable, { asks: fundedPeople }),
+    h(FundedPeopleTable, { profile, asks: fundedPeople }),
     h(ExistingPeopleTable, { asks: required }),
     h(ExistingPeopleTable, { asks: conditional, conditional: true }),
     h(ExistingPeopleTable, { asks: unquantified, unquantified: true })
@@ -219,7 +260,11 @@ function PeopleAndCapacityPanel({ profile }) {
 function OtherInvestmentPanel({ profile }) {
   const asks = profile.investmentAsks.filter((ask) => typeof ask.fte !== 'number');
   if (!asks.length) return null;
-  const total = asks.reduce((sum, ask) => sum + (typeof ask.amount === 'number' ? ask.amount : 0), 0);
+  const years = activeYears(profile);
+  const total = years.reduce((grandTotal, year) => grandTotal + asks.reduce((yearTotal, ask) => {
+    const amount = amountForAcademicYear(ask, year.startYear);
+    return yearTotal + (typeof amount === 'number' ? amount : 0);
+  }, 0), 0);
 
   return h('section', { className: 'resource-profile-section resource-other-investment-section' },
     h(SectionHeading, {
@@ -228,12 +273,11 @@ function OtherInvestmentPanel({ profile }) {
       aside: total ? formatMoney(total) : null
     }),
     h('div', { className: 'resource-readable-table-wrap' },
-      h('table', { className: 'resource-readable-table' },
+      h('table', { className: 'resource-readable-table resource-multiyear-table' },
         h('thead', null,
           h('tr', null,
             h('th', { scope: 'col' }, 'Investment'),
-            h('th', { scope: 'col' }, 'Amount'),
-            h('th', { scope: 'col' }, 'When needed'),
+            ...years.map((year) => h('th', { scope: 'col', key: year.year }, year.year)),
             h('th', { scope: 'col' }, 'Status')
           )
         ),
@@ -241,14 +285,12 @@ function OtherInvestmentPanel({ profile }) {
           ...asks.map((ask) => h('tr', { key: ask.id || `${ask.sourceStep?.id}-${askName(ask)}` },
             h('th', { scope: 'row' },
               h('strong', null, askName(ask)),
-              ask.owner ? h('small', null, ask.owner) : null
+              ask.owner ? h('small', null, ask.owner) : null,
+              ask.periodNeeded ? h('small', null, ask.periodNeeded) : null
             ),
-            h('td', { className: 'resource-cell-money' },
-              typeof ask.amount === 'number'
-                ? `${formatMoney(ask.amount, ask.currency || 'GBP')}${isBauLiability(ask) ? ' / year' : ''}`
-                : 'TBC'
-            ),
-            h('td', null, ask.periodNeeded || 'TBC'),
+            ...years.map((year) => h('td', { key: `${ask.id || askName(ask)}-${year.year}` },
+              h(YearCell, { ask, year })
+            )),
             h('td', null, h(StatusBadge, { ask }))
           ))
         )
@@ -257,8 +299,22 @@ function OtherInvestmentPanel({ profile }) {
   );
 }
 
+function YearlyInvestmentStrip({ profile }) {
+  const years = activeYears(profile).filter((phase) => phase.total > 0 || phase.unquantified > 0);
+  if (!years.length) return null;
+
+  return h('div', { className: 'resource-year-strip', 'aria-label': 'Investment by academic year' },
+    ...years.map((phase) => h('div', { className: 'resource-year-summary', key: phase.year },
+      h('span', null, phase.year),
+      h('strong', null, phase.total ? formatMoney(phase.total) : 'Cost TBC'),
+      phase.fte ? h('small', null, `${formatFte(phase.fte)} new funded`) : null
+    ))
+  );
+}
+
 function FinancialPhasing({ profile }) {
-  if (!profile.phases.length) return null;
+  const phases = activeYears(profile);
+  if (!phases.length) return null;
   return h('section', { className: 'resource-secondary-section' },
     h('h4', null, 'Cost by academic year'),
     h('div', { className: 'resource-readable-table-wrap' },
@@ -272,7 +328,7 @@ function FinancialPhasing({ profile }) {
           )
         ),
         h('tbody', null,
-          ...profile.phases.map((phase) => h('tr', { key: phase.year },
+          ...phases.map((phase) => h('tr', { key: phase.year },
             h('th', { scope: 'row' }, phase.year),
             h('td', { className: 'resource-cell-money' }, phase.total ? formatMoney(phase.total) : '—'),
             h('td', { className: 'resource-cell-number' }, phase.fte ? formatFte(phase.fte) : '—'),
@@ -285,8 +341,9 @@ function FinancialPhasing({ profile }) {
 }
 
 function FundingPanel({ profile }) {
+  const unquantified = new Set(profile.unquantifiedInvestmentAsks || []);
   const exceptions = profile.investmentAsks
-    .filter((ask) => fundingState(ask) !== 'confirmed' || typeof ask.amount !== 'number');
+    .filter((ask) => fundingState(ask) !== 'confirmed' || unquantified.has(ask));
   if (!exceptions.length) return null;
 
   return h('section', { className: 'resource-secondary-section' },
@@ -298,7 +355,6 @@ function FundingPanel({ profile }) {
           h(StatusBadge, { ask })
         ),
         h('p', null, [
-          typeof ask.amount === 'number' ? formatMoney(ask.amount, ask.currency || 'GBP') : 'Value TBC',
           ask.decisionNeededBy ? `Decision by ${ask.decisionNeededBy}` : null,
           ask.confidence ? ask.confidence : null
         ].filter(Boolean).join(' · '))
@@ -318,16 +374,16 @@ function SourceStatement({ steps, profile, contextType }) {
 }
 
 function ResourceInvestmentProfile({ context, steps }) {
-  const [expanded, setExpanded] = useState(false);
   const profile = useMemo(() => buildFinancialProfile(steps), [steps]);
   const summaryTitle = context.type === 'project'
     ? 'Project resources and investment'
     : 'Resources and investment';
   const unresolvedCount = profile.investmentAsks.filter((ask) => fundingState(ask) !== 'confirmed').length;
+  const years = activeYears(profile);
   const cashValue = profile.knownInvestment > 0 ? formatMoney(profile.knownInvestment) : 'Not quantified';
-  const cashNote = profile.knownAnnualBauLiability > 0
-    ? `Plus ${formatMoney(profile.knownAnnualBauLiability)} annual recurrent`
-    : 'Quantified time-limited and in-year spend';
+  const cashNote = years.length > 1
+    ? `Quantified across ${years.length} academic years in the current profile`
+    : 'Quantified cash requirement in the current profile';
   const existingValue = profile.existingCapacityFte > 0
     ? formatFte(profile.existingCapacityFte)
     : profile.distinctExistingCapacityAsks.length
@@ -341,22 +397,11 @@ function ResourceInvestmentProfile({ context, steps }) {
     id: 'resource-investment-profile',
     className: 'panel resource-investment-profile'
   },
-    h('button', {
-      type: 'button',
-      className: 'resource-profile-summary',
-      'aria-expanded': expanded,
-      onClick: () => setExpanded((value) => !value)
-    },
-      h('span', { className: 'resource-profile-heading' },
-        h('strong', null, summaryTitle),
-        h('em', null, 'People, existing capacity and cash needed to deliver the plan.')
-      ),
-      h('span', { className: 'resource-profile-toggle', 'aria-hidden': 'true' }, expanded ? '−' : '+')
+    h('header', { className: 'resource-profile-titlebar' },
+      h('h2', null, summaryTitle),
+      h('p', null, 'People, existing institutional capacity and cash required across the life of the plan. Conditional capacity is kept outside the committed baseline.')
     ),
-    expanded ? h('div', { className: 'resource-profile-body resource-readable-body' },
-      h('p', { className: 'resource-profile-intro' },
-        'Read the plan as three separate commitments: new funded roles, protected capacity from existing teams, and cash or non-staff investment. Conditional capacity is shown separately and is not counted in the baseline.'
-      ),
+    h('div', { className: 'resource-profile-body resource-readable-body' },
       h('div', { className: 'resource-profile-summary-grid resource-readable-summary' },
         h(MetricCard, {
           label: 'Known cash investment',
@@ -367,7 +412,7 @@ function ResourceInvestmentProfile({ context, steps }) {
         h(MetricCard, {
           label: 'New funded capacity',
           value: formatFte(profile.peakFte) || 'Not quantified',
-          note: 'Maximum concurrent new FTE',
+          note: 'Peak concurrent funded FTE',
           tone: 'resource-summary-new'
         }),
         h(MetricCard, {
@@ -383,18 +428,19 @@ function ResourceInvestmentProfile({ context, steps }) {
           tone: 'resource-summary-conditional'
         })
       ),
+      h(YearlyInvestmentStrip, { profile }),
       unresolvedCount
         ? h('p', { className: 'resource-attention-line' },
             h('strong', null, `${unresolvedCount} investment ${unresolvedCount === 1 ? 'item still needs' : 'items still need'} approval or validation.`),
-            ' The role and investment tables below show exactly which ones.'
+            ' The tables below show which commitments are still provisional.'
           )
         : null,
       h(PeopleAndCapacityPanel, { profile }),
       h(OtherInvestmentPanel, { profile }),
       h('details', { className: 'resource-secondary-detail' },
         h('summary', null,
-          h('strong', null, 'More detail'),
-          h('span', null, 'Cost phasing, open funding assumptions and source records')
+          h('strong', null, 'Planning detail'),
+          h('span', null, 'Annual totals, open assumptions and source records')
         ),
         h('div', { className: 'resource-secondary-detail-body' },
           h(FinancialPhasing, { profile }),
@@ -402,7 +448,7 @@ function ResourceInvestmentProfile({ context, steps }) {
           h(SourceStatement, { steps, profile, contextType: context.type })
         )
       )
-    ) : null
+    )
   );
 }
 
