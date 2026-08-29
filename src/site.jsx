@@ -24,6 +24,7 @@ import {
   usesStepDeliveryTracking
 } from './planning-status.js';
 import { allocateStepLanes, buildBucketGroups, calculateVisibleHorizon, clipSpanToHorizon, findTodayPosition, formatSegmentLabel } from './timeline-utils.js';
+import ResourceInvestmentProfile from './resource-investment-panel.jsx';
 import './design-system.css';
 import './styles.css';
 import './styles/legacy-public.css';
@@ -113,7 +114,7 @@ function ProjectColumn({ project }) {
 function ProjectDetail({ project }) {
   if (!project) return <main><section className="section-heading"><h1>Project not found</h1><p><a href="#/projects">Return to Projects View</a></p></section></main>;
   const isOut = project.deliveryContext === 'out-of-programme';
-  return <main><a className="back-link" href="#/projects">Back to Projects View</a><section className={`detail-hero project-detail-hero ${isOut ? 'related-project-detail-hero' : ''}`}><div className="project-context-line hero-context-line"><span className="reference hero-reference">{displayId(project)}</span><span className="project-context">{isOut ? 'Out of programme' : 'Edge programme'}</span></div><h1><span className="hero-title-text">{project.title}</span></h1><p>{project.summary}</p><DetailSummary item={project} />{project.edgeRole && <p>{project.edgeRole}</p>}<div className="detail-meta"><span>Project owner: {project.owner}</span><span>{project.deliverables.length} deliverables</span></div></section><ProjectTransformationClaim project={project} /><section className="panel project-deliverable-panel"><h2>Deliverables</h2><p className="subtle">Each column shows a deliverable and its indicative delivery steps. Detailed planning is available inside each deliverable.</p><div className="project-deliverable-board"><div className="project-deliverable-columns">{project.deliverables.map((deliverable) => <ProjectDeliverableColumn key={deliverable.id} deliverable={deliverable} />)}</div></div></section></main>;
+  return <main><a className="back-link" href="#/projects">Back to Projects View</a><section className={`detail-hero project-detail-hero ${isOut ? 'related-project-detail-hero' : ''}`}><div className="project-context-line hero-context-line"><span className="reference hero-reference">{displayId(project)}</span><span className="project-context">{isOut ? 'Out of programme' : 'Edge programme'}</span></div><h1><span className="hero-title-text">{project.title}</span></h1><p>{project.summary}</p><DetailSummary item={project} />{project.edgeRole && <p>{project.edgeRole}</p>}<div className="detail-meta"><span>Project owner: {project.owner}</span><span>{project.deliverables.length} deliverables</span></div></section><ProjectTransformationClaim project={project} /><section className="panel project-deliverable-panel"><h2>Deliverables</h2><p className="subtle">Each column shows a deliverable and its indicative delivery steps. Detailed planning is available inside each deliverable.</p><div className="project-deliverable-board"><div className="project-deliverable-columns">{project.deliverables.map((deliverable) => <ProjectDeliverableColumn key={deliverable.id} deliverable={deliverable} />)}</div></div></section><ResourceInvestmentProfile context={{ type: 'project', item: project }} /></main>;
 }
 
 function ProjectDeliverableColumn({ deliverable }) {
@@ -247,7 +248,6 @@ function DependenciesPanel({ stepDeps, onward, idMap }) {
   return <div className="detail-grid dependency-detail-grid"><section className="panel"><h2>Step dependencies</h2>{stepDeps.length ? <div className="link-list">{stepDeps.map((id) => <SmartLink key={id} id={id} idMap={idMap} />)}</div> : <p>No step-level dependencies captured yet.</p>}</section><section className="panel"><h2>Feeds into</h2>{onward.length ? <ul className="compact-list">{onward.map((entry, index) => <li key={`${entry.parent.id}-${entry.step.id}-${index}`}><SmartLink id={entry.step.id} idMap={idMap} /></li>)}</ul> : <p>No onward step dependencies captured yet.</p>}</section></div>;
 }
 
-
 function PrintableItemList({ items, emptyText = 'None captured yet.' }) {
   return hasItems(items) ? <ul>{items.slice(0, 5).map((item, index) => <li key={index}><strong>{asText(item)}</strong>{desc(item) && <span> — {desc(item)}</span>}</li>)}</ul> : <p>{emptyText}</p>;
 }
@@ -280,7 +280,7 @@ function DeliverableDetail({ deliverable, idMap, dependencyIndex }) {
   const toggleSection = (id) => setOpenSections((sections) => sections.includes(id) ? sections.filter((section) => section !== id) : [...sections, id]);
   const isOpen = (id) => openSections.includes(id);
 
-  return <main className="deliverable-detail-page"><div className="deliverable-actions"><a className="back-link" href="#/deliverables">Back to deliverables</a><button type="button" className="print-a3-button" onClick={() => window.print()}>Download A3 printable PDF</button></div><PrintableDeliverableSheet deliverable={deliverable} stepDeps={stepDeps} onward={onward} idMap={idMap} /><section className="detail-hero"><div className="deliverable-context-line hero-context-line"><span className="reference hero-reference">{displayId(deliverable)}</span><span className="project-context">Project {displayId(deliverable.project)} {deliverable.project.title}</span><PlanningStatusTag item={deliverable} /></div><h1><span className="hero-title-text">{deliverable.title}</span></h1><p>{deliverable.summary}</p><DetailSummary item={deliverable} /><div className="detail-meta"><span>Accountable owner: {deliverable.ownership?.accountableOwner || deliverable.project.owner}</span><span>Delivery lead: {deliverable.ownership?.deliveryLead || deliverable.lead}</span></div></section><div className="deliverable-main-flow"><PlanningNotice deliverable={deliverable} /><CaseForChangePanel deliverable={deliverable} /><DeliveryStepsPanel deliverable={deliverable} idMap={idMap} /><DecisionsDependenciesPanel deliverable={deliverable} stepDeps={stepDeps} onward={onward} idMap={idMap} /><section className="panel detailed-plan-control"><h2>Planning detail</h2><p>Use the concertina sections below for cross-cutting planning detail. Step-specific outputs, decisions, resources, risks, issues and assumptions are available inside the Delivery timeline cards above.</p></section><div className="detailed-plan-reveal">{isDevelopingProposition(deliverable) && <section className="panel proposition-stage-note"><h2>Proposition in development</h2><p>Detailed planning fields are working assumptions until the proposition has passed its informal stakeholder sense-check.</p></section>}<DetailAccordion id="governance" title="Governance and contributors" summary="Benefit ownership, decision route and contributor base." open={isOpen('governance')} onToggle={toggleSection}><GovernancePanel deliverable={deliverable} /></DetailAccordion><DetailAccordion id="decision-log" title="Decisions and consultation log" summary="Where this deliverable has been considered, who saw it and the recorded outcome." open={isOpen('decision-log')} onToggle={toggleSection}><DecisionLogPanel deliverable={deliverable} /></DetailAccordion><DetailAccordion id="value-evidence" title="Value, products and evidence" summary="Benefits to realise, outputs to produce and measures to test whether the benefit is happening." open={isOpen('value-evidence')} onToggle={toggleSection}><DeliveryModelPanel deliverable={deliverable} /></DetailAccordion><DetailAccordion id="definition-of-done" title="Definition of done" summary="What needs to be true before this deliverable can be treated as delivered or ready for handover." open={isOpen('definition-of-done')} onToggle={toggleSection}><DefinitionPanel deliverable={deliverable} /></DetailAccordion>{hasResources(deliverable.resources) && <DetailAccordion id="resources" title="Resources" summary="Existing capacity, new investment and enabling conditions." open={isOpen('resources')} onToggle={toggleSection}><ResourcesBlock resources={deliverable.resources} /></DetailAccordion>}<DetailAccordion id="components" title="Components" summary="The main building blocks of the deliverable." open={isOpen('components')} onToggle={toggleSection}><ComponentPanel deliverable={deliverable} /></DetailAccordion><DetailAccordion id="risks-decisions" title="Planning risks and decisions" summary="Risks, issues, assumptions and decisions captured for planning scrutiny." open={isOpen('risks-decisions')} onToggle={toggleSection}><RaidPanel deliverable={deliverable} /></DetailAccordion><DetailAccordion id="dependencies" title="Dependencies and handoffs" summary="Step-level dependencies and onward feeds." open={isOpen('dependencies')} onToggle={toggleSection}><DependenciesPanel stepDeps={stepDeps} onward={onward} idMap={idMap} /></DetailAccordion></div></div></main>;
+  return <main className="deliverable-detail-page"><div className="deliverable-actions"><a className="back-link" href="#/deliverables">Back to deliverables</a><button type="button" className="print-a3-button" onClick={() => window.print()}>Download A3 printable PDF</button></div><PrintableDeliverableSheet deliverable={deliverable} stepDeps={stepDeps} onward={onward} idMap={idMap} /><section className="detail-hero"><div className="deliverable-context-line hero-context-line"><span className="reference hero-reference">{displayId(deliverable)}</span><span className="project-context">Project {displayId(deliverable.project)} {deliverable.project.title}</span><PlanningStatusTag item={deliverable} /></div><h1><span className="hero-title-text">{deliverable.title}</span></h1><p>{deliverable.summary}</p><DetailSummary item={deliverable} /><div className="detail-meta"><span>Accountable owner: {deliverable.ownership?.accountableOwner || deliverable.project.owner}</span><span>Delivery lead: {deliverable.ownership?.deliveryLead || deliverable.lead}</span></div></section><div className="deliverable-main-flow"><PlanningNotice deliverable={deliverable} /><CaseForChangePanel deliverable={deliverable} /><DeliveryStepsPanel deliverable={deliverable} idMap={idMap} /><ResourceInvestmentProfile context={{ type: 'deliverable', item: deliverable }} /><DecisionsDependenciesPanel deliverable={deliverable} stepDeps={stepDeps} onward={onward} idMap={idMap} /><section className="panel detailed-plan-control"><h2>Planning detail</h2><p>Use the concertina sections below for cross-cutting planning detail. Step-specific outputs, decisions, resources, risks, issues and assumptions are available inside the Delivery timeline cards above.</p></section><div className="detailed-plan-reveal">{isDevelopingProposition(deliverable) && <section className="panel proposition-stage-note"><h2>Proposition in development</h2><p>Detailed planning fields are working assumptions until the proposition has passed its informal stakeholder sense-check.</p></section>}<DetailAccordion id="governance" title="Governance and contributors" summary="Benefit ownership, decision route and contributor base." open={isOpen('governance')} onToggle={toggleSection}><GovernancePanel deliverable={deliverable} /></DetailAccordion><DetailAccordion id="decision-log" title="Decisions and consultation log" summary="Where this deliverable has been considered, who saw it and the recorded outcome." open={isOpen('decision-log')} onToggle={toggleSection}><DecisionLogPanel deliverable={deliverable} /></DetailAccordion><DetailAccordion id="value-evidence" title="Value, products and evidence" summary="Benefits to realise, outputs to produce and measures to test whether the benefit is happening." open={isOpen('value-evidence')} onToggle={toggleSection}><DeliveryModelPanel deliverable={deliverable} /></DetailAccordion><DetailAccordion id="definition-of-done" title="Definition of done" summary="What needs to be true before this deliverable can be treated as delivered or ready for handover." open={isOpen('definition-of-done')} onToggle={toggleSection}><DefinitionPanel deliverable={deliverable} /></DetailAccordion>{hasResources(deliverable.resources) && <DetailAccordion id="resources" title="Resources" summary="Existing capacity, new investment and enabling conditions." open={isOpen('resources')} onToggle={toggleSection}><ResourcesBlock resources={deliverable.resources} /></DetailAccordion>}<DetailAccordion id="components" title="Components" summary="The main building blocks of the deliverable." open={isOpen('components')} onToggle={toggleSection}><ComponentPanel deliverable={deliverable} /></DetailAccordion><DetailAccordion id="risks-decisions" title="Planning risks and decisions" summary="Risks, issues, assumptions and decisions captured for planning scrutiny." open={isOpen('risks-decisions')} onToggle={toggleSection}><RaidPanel deliverable={deliverable} /></DetailAccordion><DetailAccordion id="dependencies" title="Dependencies and handoffs" summary="Step-level dependencies and onward feeds." open={isOpen('dependencies')} onToggle={toggleSection}><DependenciesPanel stepDeps={stepDeps} onward={onward} idMap={idMap} /></DetailAccordion></div></div></main>;
 }
 
 function timelineSearchText(item, step) {
@@ -310,23 +310,11 @@ function TimelineHeader({ periods, gridStyle, todayPosition }) {
   return <div className="ke-timeline-header" role="rowgroup">
     <div className="ke-timeline-header-row ke-timeline-bucket-row" role="row" style={gridStyle}>
       <div className="ke-timeline-corner" role="columnheader">Project / deliverable</div>
-      {buckets.map((bucket) => <div
-        className="ke-timeline-bucket"
-        role="columnheader"
-        key={bucket.id}
-        style={{ gridColumn: (bucket.start + 1) + ' / span ' + bucket.count }}
-      >{bucket.label}</div>)}
+      {buckets.map((bucket) => <div className="ke-timeline-bucket" role="columnheader" key={bucket.id} style={{ gridColumn: (bucket.start + 1) + ' / span ' + bucket.count }}>{bucket.label}</div>)}
     </div>
     <div className="ke-timeline-header-row ke-timeline-segment-row" role="row" style={gridStyle}>
       <div className="ke-timeline-corner ke-timeline-corner-secondary" aria-hidden="true" />
-      {periods.map((period, index) => <div
-        className={'ke-timeline-segment ' + (todayPosition?.index === index + 1 ? 'is-current' : '')}
-        role="columnheader"
-        key={period.id}
-      >
-        <span>{formatSegmentLabel(period)}</span>
-        {todayPosition?.index === index + 1 && <strong>Today</strong>}
-      </div>)}
+      {periods.map((period, index) => <div className={'ke-timeline-segment ' + (todayPosition?.index === index + 1 ? 'is-current' : '')} role="columnheader" key={period.id}><span>{formatSegmentLabel(period)}</span>{todayPosition?.index === index + 1 && <strong>Today</strong>}</div>)}
     </div>
   </div>;
 }
@@ -335,30 +323,9 @@ function TimelineStepButton({ item, step, stepNumber, span, lane, dependencyStat
   const tracksDelivery = usesStepDeliveryTracking(item);
   const status = tracksDelivery ? getStatus(step.id) : null;
   const statusLabel = tracksDelivery ? labelStatus(status.status) : 'Indicative plan';
-  const className = [
-    'ke-timeline-step',
-    tracksDelivery ? statusClass(status.status) : 'is-indicative',
-    dependencyState,
-    searchMatch ? 'is-search-match' : ''
-  ].filter(Boolean).join(' ');
+  const className = ['ke-timeline-step', tracksDelivery ? statusClass(status.status) : 'is-indicative', dependencyState, searchMatch ? 'is-search-match' : ''].filter(Boolean).join(' ');
 
-  return <button
-    type="button"
-    className={className}
-    style={{ gridColumn: span.relativeStart + ' / span ' + span.span, gridRow: lane + 1 }}
-    aria-pressed={dependencyState === 'is-selected'}
-    aria-label={'Step ' + String(stepNumber).padStart(2, '0') + ': ' + step.title + '. ' + periodLabel(step.period) + '. ' + statusLabel + '.'}
-    data-step-id={step.id}
-    title={step.title + ' · ' + statusLabel}
-    onClick={onSelect}
-  >
-    <span className="ke-timeline-step-number">Step {String(stepNumber).padStart(2, '0')}</span>
-    <span className="ke-timeline-step-title">{step.title}</span>
-    <span className={'ke-timeline-step-status ' + (tracksDelivery ? statusClass(status.status) : 'is-indicative')}>
-      <span aria-hidden="true">{tracksDelivery ? timelineStatusIcon(status.status) : '◇'}</span>
-      <span className="ke-timeline-step-status-label">{statusLabel}</span>
-    </span>
-  </button>;
+  return <button type="button" className={className} style={{ gridColumn: span.relativeStart + ' / span ' + span.span, gridRow: lane + 1 }} aria-pressed={dependencyState === 'is-selected'} aria-label={'Step ' + String(stepNumber).padStart(2, '0') + ': ' + step.title + '. ' + periodLabel(step.period) + '. ' + statusLabel + '.'} data-step-id={step.id} title={step.title + ' · ' + statusLabel} onClick={onSelect}><span className="ke-timeline-step-number">Step {String(stepNumber).padStart(2, '0')}</span><span className="ke-timeline-step-title">{step.title}</span><span className={'ke-timeline-step-status ' + (tracksDelivery ? statusClass(status.status) : 'is-indicative')}><span aria-hidden="true">{tracksDelivery ? timelineStatusIcon(status.status) : '◇'}</span><span className="ke-timeline-step-status-label">{statusLabel}</span></span></button>;
 }
 
 function TimelineRow({ item, steps, periods, horizon, gridStyle, selectedStepId, selectedDeps, onwardIds, query, todayPosition, onSelect }) {
@@ -366,18 +333,10 @@ function TimelineRow({ item, steps, periods, horizon, gridStyle, selectedStepId,
     const fullSpan = getStepPeriodSpan(step.period);
     return { id: step.id, step, fullSpan, clipped: clipSpanToHorizon(fullSpan, horizon) };
   }).filter((entry) => entry.clipped);
-  const allocation = allocateStepLanes(entries.map((entry) => ({
-    id: entry.id,
-    startIndex: entry.fullSpan.startIndex,
-    endIndex: entry.fullSpan.endIndex
-  })));
+  const allocation = allocateStepLanes(entries.map((entry) => ({ id: entry.id, startIndex: entry.fullSpan.startIndex, endIndex: entry.fullSpan.endIndex })));
   const tracksDelivery = usesStepDeliveryTracking(item);
   const delivery = tracksDelivery ? deriveDeliverySummary(item.steps.map((step) => step.id)) : null;
-  const laneStyle = {
-    gridTemplateColumns: 'repeat(' + periods.length + ', minmax(64px, 1fr))',
-    gridTemplateRows: 'repeat(' + allocation.laneCount + ', 62px)',
-    '--ke-period-count': periods.length
-  };
+  const laneStyle = { gridTemplateColumns: 'repeat(' + periods.length + ', minmax(64px, 1fr))', gridTemplateRows: 'repeat(' + allocation.laneCount + ', 62px)', '--ke-period-count': periods.length };
   const normalizedQuery = query.trim().toLowerCase();
 
   const dependencyState = (step) => {
@@ -388,50 +347,15 @@ function TimelineRow({ item, steps, periods, horizon, gridStyle, selectedStepId,
     return '';
   };
 
-  return <div className="ke-timeline-row" role="row" style={gridStyle}>
-    <a className="ke-timeline-row-header" role="rowheader" href={'#/deliverables/' + item.id}>
-      <div className="ke-timeline-row-kicker">
-        <span className="reference">{displayId(item)}</span>
-        <PlanningStatusTag item={item} />
-      </div>
-      <strong>{item.title}</strong>
-      <span className="ke-timeline-row-meta">
-        <span>{item.ownerLabel}</span>
-        <span aria-hidden="true">·</span>
-        <span>{tracksDelivery ? `${delivery.counts.complete}/${delivery.total} complete${delivery.counts.blocked > 0 ? ` · ${delivery.counts.blocked} blocked` : ''}` : 'Indicative plan · step tracking starts after approval'}</span>
-      </span>
-    </a>
-    <div className="ke-timeline-lane" role="cell" style={laneStyle}>
-      {todayPosition && <span className="ke-timeline-today-line" aria-hidden="true" style={{ left: todayPosition.percentage + '%' }} />}
-      {entries.map((entry) => {
-        const stepNumber = item.steps.findIndex((step) => step.id === entry.step.id) + 1;
-        const searchMatch = normalizedQuery && timelineSearchText(item, entry.step).includes(normalizedQuery);
-        return <TimelineStepButton
-          key={entry.id}
-          item={item}
-          step={entry.step}
-          stepNumber={stepNumber}
-          span={entry.clipped}
-          lane={allocation.laneById[entry.id]}
-          dependencyState={dependencyState(entry.step)}
-          searchMatch={searchMatch}
-          onSelect={(event) => onSelect(entry.step.id, event)}
-        />;
-      })}
-    </div>
-  </div>;
+  return <div className="ke-timeline-row" role="row" style={gridStyle}><a className="ke-timeline-row-header" role="rowheader" href={'#/deliverables/' + item.id}><div className="ke-timeline-row-kicker"><span className="reference">{displayId(item)}</span><PlanningStatusTag item={item} /></div><strong>{item.title}</strong><span className="ke-timeline-row-meta"><span>{item.ownerLabel}</span><span aria-hidden="true">·</span><span>{tracksDelivery ? `${delivery.counts.complete}/${delivery.total} complete${delivery.counts.blocked > 0 ? ` · ${delivery.counts.blocked} blocked` : ''}` : 'Indicative plan · step tracking starts after approval'}</span></span></a><div className="ke-timeline-lane" role="cell" style={laneStyle}>{todayPosition && <span className="ke-timeline-today-line" aria-hidden="true" style={{ left: todayPosition.percentage + '%' }} />}{entries.map((entry) => {
+    const stepNumber = item.steps.findIndex((step) => step.id === entry.step.id) + 1;
+    const searchMatch = normalizedQuery && timelineSearchText(item, entry.step).includes(normalizedQuery);
+    return <TimelineStepButton key={entry.id} item={item} step={entry.step} stepNumber={stepNumber} span={entry.clipped} lane={allocation.laneById[entry.id]} dependencyState={dependencyState(entry.step)} searchMatch={searchMatch} onSelect={(event) => onSelect(entry.step.id, event)} />;
+  })}</div></div>;
 }
 
 function TimelineMobileList({ rows, selectedStepId, selectedDeps, onwardIds, onSelect }) {
-  const entries = rows.flatMap(({ item, visibleSteps }) => visibleSteps.map((step) => ({
-    item,
-    step,
-    stepNumber: item.steps.findIndex((candidate) => candidate.id === step.id) + 1,
-    span: getStepPeriodSpan(step.period)
-  }))).map((entry) => ({
-    ...entry,
-    groupLabel: timelinePeriods[entry.span.startIndex - 1]?.bucketLabel || periodLabel(entry.step.period)
-  })).sort((a, b) => a.span.startIndex - b.span.startIndex || a.stepNumber - b.stepNumber);
+  const entries = rows.flatMap(({ item, visibleSteps }) => visibleSteps.map((step) => ({ item, step, stepNumber: item.steps.findIndex((candidate) => candidate.id === step.id) + 1, span: getStepPeriodSpan(step.period) }))).map((entry) => ({ ...entry, groupLabel: timelinePeriods[entry.span.startIndex - 1]?.bucketLabel || periodLabel(entry.step.period) })).sort((a, b) => a.span.startIndex - b.span.startIndex || a.stepNumber - b.stepNumber);
 
   const groups = entries.reduce((result, entry) => {
     const label = entry.groupLabel;
@@ -449,30 +373,11 @@ function TimelineMobileList({ rows, selectedStepId, selectedDeps, onwardIds, onS
     return '';
   };
 
-  return <div className="ke-timeline-mobile">
-    {groups.map((group) => <section key={group.label}>
-      <h2>{group.label}</h2>
-      <div className="ke-timeline-mobile-list">
-        {group.entries.map(({ item, step, stepNumber }) => {
-          const tracksDelivery = usesStepDeliveryTracking(item);
-          const status = tracksDelivery ? getStatus(step.id) : null;
-          return <button
-            type="button"
-            className={'ke-timeline-mobile-step ' + stateClass(step)}
-            key={step.id}
-            data-step-id={step.id}
-            aria-pressed={selectedStepId === step.id}
-            onClick={(event) => onSelect(step.id, event)}
-          >
-            <span className="ke-timeline-mobile-context">{displayId(item)} · Step {String(stepNumber).padStart(2, '0')}</span>
-            <strong>{step.title}</strong>
-            <span>{item.title}</span>
-            <span className={'ke-delivery-status ' + (tracksDelivery ? statusClass(status.status) : 'is-indicative')}>{tracksDelivery ? `${timelineStatusIcon(status.status)} ${labelStatus(status.status)}` : '◇ Indicative plan'}</span>
-          </button>;
-        })}
-      </div>
-    </section>)}
-  </div>;
+  return <div className="ke-timeline-mobile">{groups.map((group) => <section key={group.label}><h2>{group.label}</h2><div className="ke-timeline-mobile-list">{group.entries.map(({ item, step, stepNumber }) => {
+    const tracksDelivery = usesStepDeliveryTracking(item);
+    const status = tracksDelivery ? getStatus(step.id) : null;
+    return <button type="button" className={'ke-timeline-mobile-step ' + stateClass(step)} key={step.id} data-step-id={step.id} aria-pressed={selectedStepId === step.id} onClick={(event) => onSelect(step.id, event)}><span className="ke-timeline-mobile-context">{displayId(item)} · Step {String(stepNumber).padStart(2, '0')}</span><strong>{step.title}</strong><span>{item.title}</span><span className={'ke-delivery-status ' + (tracksDelivery ? statusClass(status.status) : 'is-indicative')}>{tracksDelivery ? `${timelineStatusIcon(status.status)} ${labelStatus(status.status)}` : '◇ Indicative plan'}</span></button>;
+  })}</div></section>)}</div>;
 }
 
 function TimelineView({ timelineItems, idMap, dependencyIndex }) {
@@ -490,30 +395,19 @@ function TimelineView({ timelineItems, idMap, dependencyIndex }) {
   const projectOptions = projects.filter((project) => availableProjectIds.has(project.id));
   const normalizedQuery = query.trim().toLowerCase();
 
-  const rows = eligible
-    .filter((item) => projectFilter === 'all' || item.project?.id === projectFilter)
-    .map((item) => {
-      const matchesDeliverable = !normalizedQuery || timelineSearchText(item).includes(normalizedQuery);
-      const matchesStep = item.steps.some((step) => timelineSearchText(item, step).includes(normalizedQuery));
-      const visibleSteps = item.steps.filter((step) => statusFilter === 'all' || (usesStepDeliveryTracking(item) && getStatus(step.id).status === statusFilter));
-      return { item, visibleSteps, matchesQuery: matchesDeliverable || matchesStep };
-    })
-    .filter((row) => row.visibleSteps.length > 0 && row.matchesQuery);
+  const rows = eligible.filter((item) => projectFilter === 'all' || item.project?.id === projectFilter).map((item) => {
+    const matchesDeliverable = !normalizedQuery || timelineSearchText(item).includes(normalizedQuery);
+    const matchesStep = item.steps.some((step) => timelineSearchText(item, step).includes(normalizedQuery));
+    const visibleSteps = item.steps.filter((step) => statusFilter === 'all' || (usesStepDeliveryTracking(item) && getStatus(step.id).status === statusFilter));
+    return { item, visibleSteps, matchesQuery: matchesDeliverable || matchesStep };
+  }).filter((row) => row.visibleSteps.length > 0 && row.matchesQuery);
 
   const spans = rows.flatMap((row) => row.visibleSteps.map((step) => getStepPeriodSpan(step.period)));
   const horizon = calculateVisibleHorizon(periods, spans, horizonMode);
   const visiblePeriods = horizon.periods;
-  const visibleRows = rows
-    .map((row) => ({
-      ...row,
-      visibleSteps: row.visibleSteps.filter((step) => Boolean(clipSpanToHorizon(getStepPeriodSpan(step.period), horizon)))
-    }))
-    .filter((row) => row.visibleSteps.length > 0);
+  const visibleRows = rows.map((row) => ({ ...row, visibleSteps: row.visibleSteps.filter((step) => Boolean(clipSpanToHorizon(getStepPeriodSpan(step.period), horizon))) })).filter((row) => row.visibleSteps.length > 0);
   const todayPosition = findTodayPosition(visiblePeriods);
-  const gridStyle = {
-    gridTemplateColumns: '260px repeat(' + visiblePeriods.length + ', minmax(64px, 1fr))',
-    minWidth: (260 + visiblePeriods.length * 64) + 'px'
-  };
+  const gridStyle = { gridTemplateColumns: '260px repeat(' + visiblePeriods.length + ', minmax(64px, 1fr))', minWidth: (260 + visiblePeriods.length * 64) + 'px' };
 
   const selectedEntry = selectedStepId ? idMap.get(selectedStepId) : null;
   const selectedStep = selectedEntry?.type === 'step' ? selectedEntry.item : null;
@@ -547,81 +441,7 @@ function TimelineView({ timelineItems, idMap, dependencyIndex }) {
     if (selectedStepId && !idMap.has(selectedStepId)) setSelectedStepId(null);
   }, [selectedStepId, idMap]);
 
-  return <main className="timeline-page ke-timeline-page">
-    <section className="section-heading">
-      <h1>Timeline</h1>
-      <p>Explore planned timing and dependencies. Operational status appears on steps once a deliverable is approved to mobilise.</p>
-    </section>
-
-    <div className="ke-timeline-toolbar" aria-label="Timeline controls">
-      <label>
-        <span>Project</span>
-        <select value={projectFilter} onChange={(event) => setProjectFilter(event.target.value)}>
-          <option value="all">All projects</option>
-          {projectOptions.map((project) => <option key={project.id} value={project.id}>{displayId(project)} {project.title}</option>)}
-        </select>
-      </label>
-      <label className="ke-timeline-search">
-        <span>Search</span>
-        <input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Deliverable, step, owner or period" />
-      </label>
-      <label>
-        <span>Step status</span>
-        <select value={statusFilter} onChange={(event) => setStatusFilter(event.target.value)}>
-          <option value="all">All statuses</option>
-          <option value="not-started">Not started</option>
-          <option value="in-progress">In progress</option>
-          <option value="blocked">Blocked</option>
-          <option value="complete">Complete</option>
-        </select>
-      </label>
-      <label>
-        <span>Date range</span>
-        <select value={horizonMode} onChange={(event) => setHorizonMode(event.target.value)}>
-          <option value="fit">Fit visible work</option>
-          <option value="next-18-months">Next 18 months</option>
-          <option value="full">Full programme horizon</option>
-        </select>
-      </label>
-    </div>
-
-    <div className="ke-timeline-key" aria-label="Timeline key">
-      <div className="ke-timeline-key-items">
-        <span><i className="ke-key-box is-selected" /> Selected</span>
-        <span><i className="ke-key-box is-prerequisite" /> Depends on</span>
-        <span><i className="ke-key-box is-onward" /> Feeds into</span>
-      </div>
-      {selectedStepId && <button type="button" className="ke-text-button" onClick={clearSelection}>Clear highlight</button>}
-    </div>
-
-    {visibleRows.length === 0 ? <EmptyState title="No timeline items match the current view">
-      <p>{eligible.length === 0 ? 'Timeline items will appear once deliverables reach Delivery design.' : 'Change the project, search, status or date-range filters to see more work.'}</p>
-      <button type="button" className="secondary-button" onClick={() => { setProjectFilter('all'); setQuery(''); setStatusFilter('all'); setHorizonMode('fit'); }}>Reset timeline</button>
-    </EmptyState> : <>
-      <div className="ke-timeline-table" role="table" aria-label="King's Edge delivery timeline">
-        <TimelineHeader periods={visiblePeriods} gridStyle={gridStyle} todayPosition={todayPosition} />
-        <div role="rowgroup">
-          {visibleRows.map(({ item, visibleSteps }) => <TimelineRow
-            key={item.id}
-            item={item}
-            steps={visibleSteps}
-            periods={visiblePeriods}
-            horizon={horizon}
-            gridStyle={gridStyle}
-            selectedStepId={selectedStepId}
-            selectedDeps={selectedDeps}
-            onwardIds={onwardIds}
-            query={query}
-            todayPosition={todayPosition}
-            onSelect={selectStep}
-          />)}
-        </div>
-      </div>
-      <TimelineMobileList rows={visibleRows} selectedStepId={selectedStepId} selectedDeps={selectedDeps} onwardIds={onwardIds} onSelect={selectStep} />
-    </>}
-
-    <TimelineStepModal step={modalStep} parent={modalParent} deps={modalDeps} onward={modalOnward} idMap={idMap} onClose={closeModal} returnFocusRef={modalTriggerRef} />
-  </main>;
+  return <main className="timeline-page ke-timeline-page"><section className="section-heading"><h1>Timeline</h1><p>Explore planned timing and dependencies. Operational status appears on steps once a deliverable is approved to mobilise.</p></section><div className="ke-timeline-toolbar" aria-label="Timeline controls"><label><span>Project</span><select value={projectFilter} onChange={(event) => setProjectFilter(event.target.value)}><option value="all">All projects</option>{projectOptions.map((project) => <option key={project.id} value={project.id}>{displayId(project)} {project.title}</option>)}</select></label><label className="ke-timeline-search"><span>Search</span><input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Deliverable, step, owner or period" /></label><label><span>Step status</span><select value={statusFilter} onChange={(event) => setStatusFilter(event.target.value)}><option value="all">All statuses</option><option value="not-started">Not started</option><option value="in-progress">In progress</option><option value="blocked">Blocked</option><option value="complete">Complete</option></select></label><label><span>Date range</span><select value={horizonMode} onChange={(event) => setHorizonMode(event.target.value)}><option value="fit">Fit visible work</option><option value="next-18-months">Next 18 months</option><option value="full">Full programme horizon</option></select></label></div><div className="ke-timeline-key" aria-label="Timeline key"><div className="ke-timeline-key-items"><span><i className="ke-key-box is-selected" /> Selected</span><span><i className="ke-key-box is-prerequisite" /> Depends on</span><span><i className="ke-key-box is-onward" /> Feeds into</span></div>{selectedStepId && <button type="button" className="ke-text-button" onClick={clearSelection}>Clear highlight</button>}</div>{visibleRows.length === 0 ? <EmptyState title="No timeline items match the current view"><p>{eligible.length === 0 ? 'Timeline items will appear once deliverables reach Delivery design.' : 'Change the project, search, status or date-range filters to see more work.'}</p><button type="button" className="secondary-button" onClick={() => { setProjectFilter('all'); setQuery(''); setStatusFilter('all'); setHorizonMode('fit'); }}>Reset timeline</button></EmptyState> : <><div className="ke-timeline-table" role="table" aria-label="King's Edge delivery timeline"><TimelineHeader periods={visiblePeriods} gridStyle={gridStyle} todayPosition={todayPosition} /><div role="rowgroup">{visibleRows.map(({ item, visibleSteps }) => <TimelineRow key={item.id} item={item} steps={visibleSteps} periods={visiblePeriods} horizon={horizon} gridStyle={gridStyle} selectedStepId={selectedStepId} selectedDeps={selectedDeps} onwardIds={onwardIds} query={query} todayPosition={todayPosition} onSelect={selectStep} />)}</div></div><TimelineMobileList rows={visibleRows} selectedStepId={selectedStepId} selectedDeps={selectedDeps} onwardIds={onwardIds} onSelect={selectStep} /></>}<TimelineStepModal step={modalStep} parent={modalParent} deps={modalDeps} onward={modalOnward} idMap={idMap} onClose={closeModal} returnFocusRef={modalTriggerRef} /></main>;
 }
 
 function TimelineStepModal({ step, parent, deps, onward, idMap, onClose, returnFocusRef }) {
@@ -642,8 +462,7 @@ function TimelineStepModal({ step, parent, deps, onward, idMap, onClose, returnF
         return;
       }
       if (event.key !== 'Tab' || !dialogRef.current) return;
-      const focusable = [...dialogRef.current.querySelectorAll('a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])')]
-        .filter((element) => element.offsetParent !== null);
+      const focusable = [...dialogRef.current.querySelectorAll('a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])')].filter((element) => element.offsetParent !== null);
       if (!focusable.length) return;
       const first = focusable[0];
       const last = focusable[focusable.length - 1];
@@ -668,34 +487,7 @@ function TimelineStepModal({ step, parent, deps, onward, idMap, onClose, returnF
   const tracksDelivery = usesStepDeliveryTracking(parent);
   const status = tracksDelivery ? getStatus(step.id) : null;
   const stepNumber = parent.steps.findIndex((candidate) => candidate.id === step.id) + 1;
-  return <div className="ke-timeline-modal-backdrop" role="presentation" onClick={onClose}>
-    <section className="ke-timeline-modal" ref={dialogRef} role="dialog" aria-modal="true" aria-labelledby="ke-timeline-modal-title" aria-describedby="ke-timeline-modal-summary" onClick={(event) => event.stopPropagation()}>
-      <button ref={closeRef} type="button" className="ke-timeline-modal-close" aria-label="Close step details" onClick={onClose}><span aria-hidden="true">×</span></button>
-      <div className="ke-timeline-modal-main">
-        <span className="eyebrow">{displayId(parent)} · Step {String(stepNumber).padStart(2, '0')}</span>
-        <h2 id="ke-timeline-modal-title">{step.title}</h2>
-        <div className="ke-timeline-modal-meta">
-          <span className={'ke-delivery-status ' + (tracksDelivery ? statusClass(status.status) : 'is-indicative')}>{tracksDelivery ? `${timelineStatusIcon(status.status)} ${labelStatus(status.status)}` : '◇ Indicative plan'}</span>
-          <span className="period-pill">{periodLabel(step.period)}</span>
-        </div>
-        <p id="ke-timeline-modal-summary">{step.summary}</p>
-      </div>
-      <div className="ke-timeline-modal-grid">
-        <section>
-          <h3>Depends on</h3>
-          {deps.length ? <div className="link-list">{deps.map((id) => <SmartLink key={id} id={id} idMap={idMap} />)}</div> : <p>No prerequisites captured.</p>}
-        </section>
-        <section>
-          <h3>Feeds into</h3>
-          {onward.length ? <ul className="compact-list">{onward.map((entry, index) => <li key={entry.parent.id + '-' + entry.step.id + '-' + index}><SmartLink id={entry.step.id} idMap={idMap} /></li>)}</ul> : <p>No onward handoffs captured.</p>}
-        </section>
-      </div>
-      <footer className="ke-timeline-modal-actions">
-        <a className="secondary-button ke-timeline-open-deliverable" href={'#/deliverables/' + parent.id}>Open full deliverable</a>
-        <button type="button" className="ke-text-button" onClick={onClose}>Close and view timeline</button>
-      </footer>
-    </section>
-  </div>;
+  return <div className="ke-timeline-modal-backdrop" role="presentation" onClick={onClose}><section className="ke-timeline-modal" ref={dialogRef} role="dialog" aria-modal="true" aria-labelledby="ke-timeline-modal-title" aria-describedby="ke-timeline-modal-summary" onClick={(event) => event.stopPropagation()}><button ref={closeRef} type="button" className="ke-timeline-modal-close" aria-label="Close step details" onClick={onClose}><span aria-hidden="true">×</span></button><div className="ke-timeline-modal-main"><span className="eyebrow">{displayId(parent)} · Step {String(stepNumber).padStart(2, '0')}</span><h2 id="ke-timeline-modal-title">{step.title}</h2><div className="ke-timeline-modal-meta"><span className={'ke-delivery-status ' + (tracksDelivery ? statusClass(status.status) : 'is-indicative')}>{tracksDelivery ? `${timelineStatusIcon(status.status)} ${labelStatus(status.status)}` : '◇ Indicative plan'}</span><span className="period-pill">{periodLabel(step.period)}</span></div><p id="ke-timeline-modal-summary">{step.summary}</p></div><div className="ke-timeline-modal-grid"><section><h3>Depends on</h3>{deps.length ? <div className="link-list">{deps.map((id) => <SmartLink key={id} id={id} idMap={idMap} />)}</div> : <p>No prerequisites captured.</p>}</section><section><h3>Feeds into</h3>{onward.length ? <ul className="compact-list">{onward.map((entry, index) => <li key={entry.parent.id + '-' + entry.step.id + '-' + index}><SmartLink id={entry.step.id} idMap={idMap} /></li>)}</ul> : <p>No onward handoffs captured.</p>}</section></div><footer className="ke-timeline-modal-actions"><a className="secondary-button ke-timeline-open-deliverable" href={'#/deliverables/' + parent.id}>Open full deliverable</a><button type="button" className="ke-text-button" onClick={onClose}>Close and view timeline</button></footer></section></div>;
 }
 
 function Site() {
