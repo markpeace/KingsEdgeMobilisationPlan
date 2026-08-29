@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import test from 'node:test';
+import { hasResourceProfileForContext, stepsForResourceContext } from '../src/resource-profile-context.js';
 import { buildFinancialProfile } from '../src/resource-profile-utils.js';
 
 function addRuntimeAskTypes(authoredSteps) {
@@ -26,6 +27,18 @@ function addRuntimeAskTypes(authoredSteps) {
 
 function loadDocument(relativePath) {
   return JSON.parse(readFileSync(new URL(relativePath, import.meta.url), 'utf8'));
+}
+
+function deliverableContext(id, title, steps, workforceModel = null) {
+  return {
+    type: 'deliverable',
+    item: {
+      id,
+      title,
+      steps: addRuntimeAskTypes(steps),
+      ...(workforceModel ? { workforceModel } : {})
+    }
+  };
 }
 
 test('1.4.2 financial profile is generated from the revised authored JSON', () => {
@@ -72,4 +85,42 @@ test('4.1.3 separates permanent workforce intent, mobilisation spend and BAU ope
   assert.equal(profile.phases.find((phase) => phase.year === '2026/27').total, 293000);
   assert.equal(profile.phases.find((phase) => phase.year === '2027/28').total, 429000);
   assert.equal(profile.phases.find((phase) => phase.year === '2028/29').total, 429000);
+});
+
+test('the shared resource profile recognises materially different deliverable resource models', () => {
+  const community = loadDocument('../src/data/deliverables/1.4.2/steps.json');
+  const opportunities = loadDocument('../src/data/deliverables/2.2.4/steps.json');
+  const digital = loadDocument('../src/data/deliverables/4.1.3/timeline-reflow.json');
+  const workforce = loadDocument('../src/data/deliverables/4.1.3/workforce.json').workforceModel;
+
+  const contexts = [
+    deliverableContext('1.4.2', 'Community infrastructure', community.steps || []),
+    deliverableContext('2.2.4', 'Beyond-course opportunity commissioning and growth', opportunities.steps || []),
+    deliverableContext('4.1.3', 'Digital product team and platform capability', digital.steps || [], workforce)
+  ];
+
+  contexts.forEach((context) => {
+    assert.equal(hasResourceProfileForContext(context), true, `${context.item.id} should render the shared resource profile`);
+    assert.ok(stepsForResourceContext(context).some((step) =>
+      (step.resources?.newInvestment?.length || 0) +
+      (step.resources?.existingCapacity?.length || 0) +
+      (step.resources?.enablingConditions?.length || 0) > 0
+    ));
+  });
+
+  const projectContext = {
+    type: 'project',
+    item: {
+      id: 'test-project',
+      title: 'Shared project context',
+      deliverables: contexts.map((context) => context.item)
+    }
+  };
+  assert.equal(hasResourceProfileForContext(projectContext), true);
+  assert.ok(stepsForResourceContext(projectContext).length > contexts[0].item.steps.length);
+});
+
+test('the shared resource profile stays absent when a deliverable has no resource asks', () => {
+  const context = deliverableContext('test-empty', 'No resources', [{ id: 'step-1', title: 'Do something', period: 'jul-dec-2026:a' }]);
+  assert.equal(hasResourceProfileForContext(context), false);
 });
