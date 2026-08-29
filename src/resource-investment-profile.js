@@ -195,6 +195,21 @@ function permanentAnnualRunRate(context, profile) {
   return total || profile.knownAnnualBauLiability || 0;
 }
 
+function nonStaffBauAsks(profile) {
+  return (profile.bauLiabilityAsks || []).filter((ask) => !(typeof ask.fte === 'number' && ask.fte > 0));
+}
+
+function nonStaffBauAnnual(profile) {
+  return nonStaffBauAsks(profile).reduce((total, ask) =>
+    total + (typeof ask.amount === 'number' && Number.isFinite(ask.amount) ? ask.amount : 0), 0);
+}
+
+function bauOperatingBudget(context, profile) {
+  const permanent = permanentAppointments(context);
+  if (!permanent.length) return profile.knownAnnualBauLiability || 0;
+  return permanentAnnualRunRate(context, profile) + nonStaffBauAnnual(profile);
+}
+
 function YearCell({ ask, year, showFte = false }) {
   const amount = amountForAcademicYear(ask, year.startYear);
   const fte = fteForAcademicYear(ask, year.startYear);
@@ -485,54 +500,111 @@ function BauAnchor({ profile, context }) {
   const permanent = permanentAppointments(context);
   if (!bauAsks.length && !permanent.length) return null;
 
+  const staffingAnnual = permanentAnnualRunRate(context, profile);
+  const operatingAsks = permanent.length ? nonStaffBauAsks(profile) : [];
+  const operatingAnnual = operatingAsks.reduce((total, ask) =>
+    total + (typeof ask.amount === 'number' && Number.isFinite(ask.amount) ? ask.amount : 0), 0);
+  const totalAnnual = bauOperatingBudget(context, profile);
   const totalFte = permanent.length
     ? permanent.reduce((total, appointment) => total + (appointment.fte || 0), 0)
     : bauAsks.reduce((total, ask) => total + (typeof ask.fte === 'number' ? ask.fte : 0), 0);
-  const totalAnnual = permanentAnnualRunRate(context, profile);
-  const aggregateBauAsk = bauAsks[0] || null;
 
   return h('section', { className: 'resource-profile-section resource-bau-section' },
     h(SectionHeading, {
       title: 'BAU destination',
       description: permanent.length
-        ? 'The permanent establishment this mobilisation is designed to leave behind. These posts are intended to be permanent from initial appointment; only the funding source changes at BAU transition.'
+        ? 'The enduring people and operating budget this mobilisation is designed to leave behind. Permanent posts are intended to be permanent from initial appointment; recurrent non-staff capabilities are shown separately so the full BAU budget is visible.'
         : 'The recurrent capability the mobilisation is intended to hand into normal institutional operation. BAU run-rate is shown separately and is not added to mobilisation investment.',
-      aside: totalAnnual ? `${formatMoney(totalAnnual)} / year` : null
+      aside: totalAnnual ? `${formatMoney(totalAnnual)} / year total` : null
     }),
-    permanent.length ? h('div', { className: 'resource-readable-table-wrap' },
-      h('table', { className: 'resource-readable-table resource-bau-table' },
-        h('thead', null,
-          h('tr', null,
-            h('th', { scope: 'col' }, 'Permanent role'),
-            h('th', { scope: 'col' }, 'FTE'),
-            h('th', { scope: 'col' }, 'Annual BAU run-rate'),
-            h('th', { scope: 'col' }, 'BAU from'),
-            h('th', { scope: 'col' }, 'BAU owner')
-          )
+    permanent.length ? h(React.Fragment, null,
+      h('div', { className: 'resource-table-block is-permanent' },
+        h('div', { className: 'resource-subheading' },
+          h('div', null,
+            h('h4', null, 'Permanent staffing'),
+            h('p', null, 'The enduring establishment carried into BAU. This subtotal is staffing only.')
+          ),
+          h('strong', null, staffingAnnual ? `${formatMoney(staffingAnnual)} / year` : 'Cost TBC')
         ),
-        h('tbody', null,
-          ...permanent.map((appointment) => h('tr', { key: appointment.resourceId || appointment.role },
-            h('th', { scope: 'row' },
-              h('strong', null, appointment.role),
-              h('small', null, appointment.appointmentLabel || 'Permanent post')
+        h('div', { className: 'resource-readable-table-wrap' },
+          h('table', { className: 'resource-readable-table resource-bau-table' },
+            h('thead', null,
+              h('tr', null,
+                h('th', { scope: 'col' }, 'Permanent role'),
+                h('th', { scope: 'col' }, 'FTE'),
+                h('th', { scope: 'col' }, 'Annual BAU run-rate'),
+                h('th', { scope: 'col' }, 'BAU from'),
+                h('th', { scope: 'col' }, 'BAU owner')
+              )
             ),
-            h('td', { className: 'resource-cell-number' }, formatFte(appointment.fte || 0)),
-            h('td', { className: 'resource-cell-money' }, appointment.annualBauAmount
-              ? `${formatMoney(appointment.annualBauAmount, appointment.currency || 'GBP')} / year`
-              : 'TBC'),
-            h('td', null, appointment.bauFrom || 'TBC'),
-            h('td', null, appointment.bauOwner || 'TBC')
-          ))
-        ),
-        h('tfoot', null,
-          h('tr', null,
-            h('th', { scope: 'row' }, 'Permanent BAU core'),
-            h('td', null, totalFte ? formatFte(totalFte) : 'TBC'),
-            h('td', null, totalAnnual ? `${formatMoney(totalAnnual)} / year` : 'TBC'),
-            h('td', null, permanent[0]?.bauFrom || 'TBC'),
-            h('td', null, permanent[0]?.bauOwner || aggregateBauAsk?.owner || 'TBC')
+            h('tbody', null,
+              ...permanent.map((appointment) => h('tr', { key: appointment.resourceId || appointment.role },
+                h('th', { scope: 'row' },
+                  h('strong', null, appointment.role),
+                  h('small', null, appointment.appointmentLabel || 'Permanent post')
+                ),
+                h('td', { className: 'resource-cell-number' }, formatFte(appointment.fte || 0)),
+                h('td', { className: 'resource-cell-money' }, appointment.annualBauAmount
+                  ? `${formatMoney(appointment.annualBauAmount, appointment.currency || 'GBP')} / year`
+                  : 'TBC'),
+                h('td', null, appointment.bauFrom || 'TBC'),
+                h('td', null, appointment.bauOwner || 'TBC')
+              ))
+            ),
+            h('tfoot', null,
+              h('tr', null,
+                h('th', { scope: 'row' }, 'Permanent staffing subtotal'),
+                h('td', null, totalFte ? formatFte(totalFte) : 'TBC'),
+                h('td', null, staffingAnnual ? `${formatMoney(staffingAnnual)} / year` : 'TBC'),
+                h('td', null, permanent[0]?.bauFrom || 'TBC'),
+                h('td', null, permanent[0]?.bauOwner || 'TBC')
+              )
+            )
           )
         )
+      ),
+      operatingAsks.length ? h('div', { className: 'resource-table-block resource-bau-operating-block' },
+        h('div', { className: 'resource-subheading' },
+          h('div', null,
+            h('h4', null, 'Recurrent operating budget'),
+            h('p', null, 'Non-staff capabilities that are part of the intended BAU operating model rather than temporary mobilisation costs.')
+          ),
+          h('strong', null, operatingAnnual ? `${formatMoney(operatingAnnual)} / year` : 'Cost TBC')
+        ),
+        h('div', { className: 'resource-readable-table-wrap' },
+          h('table', { className: 'resource-readable-table resource-bau-operating-table' },
+            h('thead', null,
+              h('tr', null,
+                h('th', { scope: 'col' }, 'Recurrent capability / budget'),
+                h('th', { scope: 'col' }, 'Annual budget'),
+                h('th', { scope: 'col' }, 'From'),
+                h('th', { scope: 'col' }, 'Owner'),
+                h('th', { scope: 'col' }, 'Funding status')
+              )
+            ),
+            h('tbody', null,
+              ...operatingAsks.map((ask) => h('tr', { key: ask.id || askName(ask) },
+                h('th', { scope: 'row' },
+                  h('strong', null, askName(ask)),
+                  ask.rationale ? h('small', null, ask.rationale) : null
+                ),
+                h('td', { className: 'resource-cell-money' }, typeof ask.amount === 'number'
+                  ? `${formatMoney(ask.amount, ask.currency || 'GBP')} / year`
+                  : 'TBC'),
+                h('td', null, ask.periodNeeded || 'TBC'),
+                h('td', null, ask.owner || 'TBC'),
+                h('td', null, h(StatusBadge, { ask }))
+              ))
+            )
+          )
+        )
+      ) : null,
+      h('div', { className: 'resource-bau-total' },
+        h('span', null, 'Total BAU operating budget'),
+        h('strong', null, totalAnnual ? `${formatMoney(totalAnnual)} / year` : 'Not quantified'),
+        operatingAnnual
+          ? h('small', null, `${formatMoney(staffingAnnual)} staffing + ${formatMoney(operatingAnnual)} recurrent non-staff budget`)
+          : h('small', null, 'Current recurrent baseline')
       )
     ) : h('div', { className: 'resource-readable-table-wrap' },
       h('table', { className: 'resource-readable-table resource-bau-table' },
@@ -548,7 +620,7 @@ function BauAnchor({ profile, context }) {
         h('tbody', null,
           ...bauAsks.map((ask) => h('tr', { key: ask.id || `${ask.sourceStep?.id}-${askName(ask)}` },
             h('th', { scope: 'row' }, askName(ask)),
-            h('td', { className: 'resource-cell-number' }, typeof ask.fte === 'number' ? formatFte(ask.fte) : 'TBC'),
+            h('td', { className: 'resource-cell-number' }, typeof ask.fte === 'number' ? formatFte(ask.fte) : '—'),
             h('td', { className: 'resource-cell-money' }, typeof ask.amount === 'number' ? `${formatMoney(ask.amount, ask.currency || 'GBP')} / year` : 'TBC'),
             h('td', null, ask.periodNeeded || 'TBC'),
             h('td', null, ask.owner || 'TBC')
@@ -556,15 +628,17 @@ function BauAnchor({ profile, context }) {
         )
       )
     ),
-    aggregateBauAsk ? h('div', { className: 'resource-bau-funding-note' },
-      h('div', null,
-        h('strong', null, 'Recurrent funding'),
-        h(StatusBadge, { ask: aggregateBauAsk })
-      ),
-      h('p', null, [
-        aggregateBauAsk.fundingRoute || null,
-        aggregateBauAsk.decisionNeededBy ? `Decision by ${aggregateBauAsk.decisionNeededBy}` : null
-      ].filter(Boolean).join(' · '))
+    bauAsks.length ? h('div', { className: 'resource-bau-funding-list' },
+      ...bauAsks.map((ask) => h('div', { className: 'resource-bau-funding-note', key: `funding-${ask.id || askName(ask)}` },
+        h('div', null,
+          h('strong', null, askName(ask)),
+          h(StatusBadge, { ask })
+        ),
+        h('p', null, [
+          ask.fundingRoute || null,
+          ask.decisionNeededBy ? `Decision by ${ask.decisionNeededBy}` : null
+        ].filter(Boolean).join(' · '))
+      ))
     ) : null
   );
 }
@@ -658,7 +732,9 @@ function ResourceInvestmentProfile({ context, steps }) {
     : 'Quantified mobilisation investment';
   const permanent = permanentFte(context);
   const peakFte = peakDeliveryFte(profile);
-  const bauRunRate = permanentAnnualRunRate(context, profile);
+  const staffingRunRate = permanentAnnualRunRate(context, profile);
+  const recurrentNonStaff = nonStaffBauAnnual(profile);
+  const bauBudget = bauOperatingBudget(context, profile);
   const hasWorkforceModel = workforceModelsForContext(context).length > 0;
   const temporaryPeak = Math.max(0, peakFte - permanent);
 
@@ -688,9 +764,13 @@ function ResourceInvestmentProfile({ context, steps }) {
     }),
     h(MetricCard, {
       key: 'bau',
-      label: 'BAU staffing run-rate',
-      value: bauRunRate ? `${formatMoney(bauRunRate)} / year` : 'Not quantified',
-      note: permanent ? `${formatFte(permanent)} recurrent staffing` : 'Recurrent liability where planned',
+      label: 'BAU operating budget',
+      value: bauBudget ? `${formatMoney(bauBudget)} / year` : 'Not quantified',
+      note: permanent && recurrentNonStaff
+        ? `${formatMoney(staffingRunRate)} staffing + ${formatMoney(recurrentNonStaff)} recurrent non-staff`
+        : permanent
+          ? `${formatFte(permanent)} recurrent staffing`
+          : 'Recurrent liability where planned',
       tone: 'resource-summary-bau'
     })
   ] : [
@@ -717,8 +797,8 @@ function ResourceInvestmentProfile({ context, steps }) {
     }),
     h(MetricCard, {
       key: 'bau',
-      label: 'BAU run-rate',
-      value: bauRunRate ? `${formatMoney(bauRunRate)} / year` : 'Not recorded',
+      label: 'BAU operating budget',
+      value: bauBudget ? `${formatMoney(bauBudget)} / year` : 'Not recorded',
       note: 'Recurrent commitment where one is planned',
       tone: 'resource-summary-bau'
     })
