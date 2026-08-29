@@ -1,0 +1,62 @@
+{
+  "workstreams": [
+    {
+      "id": "1.4.2-ws-community-operation",
+      "title": "Community mobilisation and operation",
+      "owner": "King's Academy with community convenors",
+      "summary": "Builds, broadens and sustains the Strategic Communities of Practice themselves, from initial mobilisation through funded operating cycles and into business as usual.",
+      "stepIds": [
+        "1.4.2-step-1",
+        "1.4.2-step-3",
+        "1.4.2-step-4",
+        "1.4.2-step-7",
+        "1.4.2-step-10",
+        "1.4.2-step-13"
+      ]
+    },
+    {
+      "id": "1.4.2-ws-operating-model",
+      "title": "Operating model, governance and support",
+      "owner": "King's Academy",
+      "summary": "Creates and tests the common operating, governance, support and resource model that allows different communities to operate with proportionate institutional assurance and sustainable central support.",
+      "stepIds": [
+        "1.4.2-step-2",
+        "1.4.2-step-4",
+        "1.4.2-step-6",
+        "1.4.2-step-9",
+        "1.4.2-step-12",
+        "1.4.2-step-13"
+      ]
+    },
+    {
+      "id": "1.4.2-ws-commissioning",
+      "title": "Convenor and practice-project commissioning",
+      "owner": "King's Academy with the Innovation Committee",
+      "summary": "Runs the recurring route through which convenors and practice-based projects are selected, resourced, onboarded and renewed as the community portfolio grows and matures.",
+      "stepIds": [
+        "1.4.2-step-5",
+        "1.4.2-step-6",
+        "1.4.2-step-8",
+        "1.4.2-step-9",
+        "1.4.2-step-11",
+        "1.4.2-step-12",
+        "1.4.2-step-13"
+      ]
+    },
+    {
+      "id": "1.4.2-ws-evidence-evolution",
+      "title": "Evidence, review and portfolio evolution",
+      "owner": "King's Academy with the Innovation Committee",
+      "summary": "Builds the evidence and review rhythm through which participation, practice development, institutional influence, resource demand and portfolio relevance inform support, expansion, refinement and the permanent settlement.",
+      "stepIds": [
+        "1.4.2-step-4",
+        "1.4.2-step-6",
+        "1.4.2-step-7",
+        "1.4.2-step-9",
+        "1.4.2-step-10",
+        "1.4.2-step-12",
+        "1.4.2-step-13"
+      ]
+    }
+  ]
+}
