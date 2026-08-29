@@ -6,6 +6,7 @@
       "parts": [
         "./1.4.2/core.json",
         "./1.4.2/overview.json",
+        "./1.4.2/workstreams.json",
         "./1.4.2/steps.json",
         "./1.4.2/benefits.json",
         "./1.4.2/measures.json",
@@ -68,6 +69,7 @@
       "parts": [
         "./2.2.4/core.json",
         "./2.2.4/overview.json",
+        "./2.2.4/workstreams.json",
         "./2.2.4/steps.json",
         "./2.2.4/benefits.json"
       ]
@@ -121,6 +123,7 @@
       "parts": [
         "./4.1.2/core.json",
         "./4.1.2/plan.json",
+        "./4.1.2/workstreams.json",
         "./4.1.2/timeline-reflow.json",
         "./4.1.2/governance.json"
       ]
