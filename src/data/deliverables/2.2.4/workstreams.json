@@ -1,0 +1,44 @@
+{
+  "workstreams": [
+    {
+      "id": "2.2.4-ws-career",
+      "title": "Final-Year Career Enhancement",
+      "owner": "Careers and Employability Service, named owner TBC",
+      "summary": "Year 1 thematic workpackage with a £50,000 envelope, planned to reach approximately 700 distinct final-year students, generate approximately 10,000 to 12,000 student-hours and provide around 150 sustained high-intensity places.",
+      "stepIds": [
+        "2.2.4-step-1",
+        "2.2.4-step-2"
+      ]
+    },
+    {
+      "id": "2.2.4-ws-enterprise",
+      "title": "Entrepreneurship and Enterprise Experience",
+      "owner": "TBC",
+      "summary": "Year 1 thematic workpackage with a £40,000 envelope, planned to reach approximately 800 distinct students, generate approximately 7,000 to 9,000 student-hours and provide around 100 sustained high-intensity places.",
+      "stepIds": [
+        "2.2.4-step-1",
+        "2.2.4-step-2"
+      ]
+    },
+    {
+      "id": "2.2.4-ws-belonging",
+      "title": "Belonging and Connection",
+      "owner": "Steph White",
+      "summary": "Year 1 thematic workpackage with a £30,000 envelope, planned to reach approximately 1,500 distinct students through predominantly short-active participation and generate approximately 3,500 to 4,500 student-hours.",
+      "stepIds": [
+        "2.2.4-step-1",
+        "2.2.4-step-2"
+      ]
+    },
+    {
+      "id": "2.2.4-ws-community",
+      "title": "Service and Community-Engaged Experience",
+      "owner": "Naureen Abubacker",
+      "summary": "Year 1 thematic workpackage with a £30,000 envelope, planned to reach approximately 600 distinct students, generate approximately 6,000 to 8,000 student-hours and provide around 100 sustained high-intensity places.",
+      "stepIds": [
+        "2.2.4-step-1",
+        "2.2.4-step-2"
+      ]
+    }
+  ]
+}
