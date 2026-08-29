@@ -1,13 +1,23 @@
 import { buildLookups } from './plan-utils.js';
+import { registeredDeliverableMap } from './data/deliverables/index.js';
 import { workstreamsForStep, stepTitlesForWorkstream, workstreamsOf } from './workstream-utils.js';
 import './styles/workstreams.css';
 
 const { deliverables } = buildLookups();
-const deliverableById = new Map(deliverables.map((deliverable) => [deliverable.id, deliverable]));
+const normalisedDeliverableById = new Map(deliverables.map((deliverable) => [deliverable.id, deliverable]));
+
+function currentDeliverableId() {
+  const match = window.location.hash.match(/^#\/deliverables\/([^/?#]+)/);
+  return match ? decodeURIComponent(match[1]) : '';
+}
 
 function currentDeliverable() {
-  const match = window.location.hash.match(/^#\/deliverables\/([^/?#]+)/);
-  return match ? deliverableById.get(decodeURIComponent(match[1])) : null;
+  const id = currentDeliverableId();
+  if (!id) return null;
+  // Workstreams are a canonical deliverable facility, so prefer the registered
+  // source directly. Fall back to the normalised page object for any future
+  // deliverable that declares workstreams outside the registry.
+  return registeredDeliverableMap.get(id) || normalisedDeliverableById.get(id) || null;
 }
 
 function element(tag, className, text) {
@@ -55,12 +65,24 @@ function buildWorkstreamPanel(deliverable) {
   return panel;
 }
 
-function positionWorkstreamPanel(deliverable) {
-  const route = document.getElementById('route-through');
-  if (!route) return false;
+function ensureBenefitsOpen(benefits) {
+  const toggle = benefits?.querySelector('.detail-accordion-header');
+  if (toggle?.getAttribute('aria-expanded') === 'false') toggle.click();
+}
 
+function positionNarrativeFlow(deliverable) {
+  const flow = document.querySelector('.deliverable-main-flow');
+  const why = flow?.querySelector('.case-panel');
   const benefits = document.getElementById('value-evidence');
-  const timelineHeading = route.querySelector(':scope > h2');
+  const route = document.getElementById('route-through');
+  if (!flow || !why || !benefits || !route) return false;
+
+  benefits.classList.add('main-flow-benefits');
+  ensureBenefitsOpen(benefits);
+
+  // One renderer owns this sequence. Keep the strategic case first, then value,
+  // optional workstreams, then chronology.
+  if (why.nextElementSibling !== benefits) why.insertAdjacentElement('afterend', benefits);
 
   let panel = document.getElementById('workstreams');
   if (panel?.dataset.deliverableId !== deliverable.id) {
@@ -69,16 +91,8 @@ function positionWorkstreamPanel(deliverable) {
   }
   if (!panel) panel = buildWorkstreamPanel(deliverable);
 
-  if (benefits?.parentElement === route) {
-    if (panel.parentElement !== route || panel.previousElementSibling !== benefits) {
-      benefits.insertAdjacentElement('afterend', panel);
-    }
-  } else if (timelineHeading) {
-    route.insertBefore(panel, timelineHeading);
-  } else {
-    route.prepend(panel);
-  }
-
+  if (benefits.nextElementSibling !== panel) benefits.insertAdjacentElement('afterend', panel);
+  if (panel.nextElementSibling !== route) panel.insertAdjacentElement('afterend', route);
   return true;
 }
 
@@ -121,7 +135,7 @@ function renderWorkstreams() {
     return;
   }
 
-  if (!positionWorkstreamPanel(deliverable)) return;
+  if (!positionNarrativeFlow(deliverable)) return;
   renderStepTags(deliverable);
 }
 
