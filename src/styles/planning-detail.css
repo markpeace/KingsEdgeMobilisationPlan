@@ -1,0 +1,297 @@
+/*
+ * Canonical cross-cutting planning detail.
+ *
+ * Governance, consultation history and RAID share a restrained ruled treatment
+ * inside the common disclosure primitive. They use hierarchy and whitespace
+ * rather than another generation of nested boxed cards.
+ */
+
+/* Governance */
+.governance-refined {
+  display: grid;
+  gap: var(--space-5);
+}
+
+.governance-explainer {
+  max-width: 88ch;
+  margin: 0;
+  color: var(--color-muted);
+  font-size: 0.94rem;
+  line-height: 1.45;
+}
+
+.governance-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(1rem, 1.6vw, 1.45rem);
+}
+
+.governance-block {
+  display: grid;
+  align-content: start;
+  gap: var(--space-2);
+  min-width: 0;
+  padding: var(--space-3) 0 var(--space-4);
+  border: 0;
+  border-top: var(--border-width-strong) solid var(--color-ink);
+  background: transparent;
+}
+
+.governance-block > h3,
+.governance-section-heading > h3 {
+  margin: 0;
+  color: var(--color-accent-dark);
+  font-family: var(--font-body);
+  font-size: 0.68rem;
+  font-weight: 900;
+  letter-spacing: 0.075em;
+  line-height: 1.05;
+  text-transform: uppercase;
+}
+
+.governance-block > p,
+.governance-section-heading > p,
+.governance-partner-card > p {
+  margin: 0;
+  color: var(--color-muted);
+  font-size: 0.9rem;
+  line-height: 1.42;
+}
+
+.governance-primary-value {
+  color: var(--color-ink);
+  font-size: 1.06rem;
+  font-weight: 800;
+  line-height: 1.22;
+}
+
+.governance-value-tbc {
+  color: var(--color-accent-dark);
+}
+
+.governance-benefit-owner-list {
+  display: grid;
+  gap: 0;
+  margin: var(--space-1) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.governance-benefit-owner-list li {
+  display: grid;
+  gap: 0.18rem;
+  padding: 0.52rem 0;
+  border-top: 1px solid var(--color-border);
+}
+
+.governance-benefit-owner-list span {
+  color: var(--color-muted);
+  font-size: 0.78rem;
+  line-height: 1.3;
+}
+
+.governance-benefit-owner-list strong {
+  color: var(--color-ink);
+  font-size: 0.92rem;
+  line-height: 1.28;
+}
+
+.governance-empty-row span {
+  font-style: italic;
+}
+
+.governance-partners {
+  display: grid;
+  gap: var(--space-3);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--color-border);
+  background: transparent;
+}
+
+.governance-section-heading {
+  display: grid;
+  gap: var(--space-1);
+}
+
+.governance-partner-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-3);
+}
+
+.governance-partner-card {
+  display: grid;
+  align-content: start;
+  gap: 0.4rem;
+  min-width: 0;
+  padding: 0.72rem 0.78rem;
+  border: 0;
+  border-left: 3px solid var(--color-accent);
+  background: var(--color-surface-subtle);
+}
+
+.governance-partner-card > span {
+  color: var(--color-accent-dark);
+  font-size: 0.66rem;
+  font-weight: 900;
+  letter-spacing: 0.065em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.governance-partner-card > strong {
+  color: var(--color-ink);
+  font-size: 0.88rem;
+  line-height: 1.3;
+}
+
+/* Consultation and decision history */
+.decision-log-list {
+  display: grid;
+  gap: 0;
+}
+
+.decision-log-entry {
+  display: grid;
+  gap: var(--space-2);
+  padding: var(--space-4) 0;
+  border: 0;
+  border-top: 1px solid var(--color-border);
+  background: transparent;
+}
+
+.decision-log-entry:first-child {
+  border-top: var(--border-width-strong) solid var(--color-ink);
+}
+
+.decision-log-heading {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  align-items: center;
+  justify-content: space-between;
+  margin: 0;
+}
+
+.decision-log-heading time {
+  color: var(--color-muted);
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.decision-log-type {
+  display: inline-flex;
+  width: fit-content;
+  padding: 0.28rem 0.42rem;
+  border: 1px solid var(--color-ink);
+  background: var(--color-surface);
+  color: var(--color-ink);
+  font-size: 0.66rem;
+  font-weight: 850;
+  letter-spacing: 0.06em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.decision-log-type-decision {
+  background: var(--color-ink);
+  color: var(--color-paper);
+}
+
+.decision-log-entry h3 {
+  margin: 0;
+  color: var(--color-ink);
+  font-size: 1rem;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.decision-log-entry p {
+  max-width: 88ch;
+  margin: 0;
+  color: var(--color-muted);
+  font-size: 0.9rem;
+  line-height: 1.42;
+}
+
+.decision-log-entry p strong {
+  color: var(--color-ink);
+}
+
+/* Risks, issues and assumptions */
+.raid-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: clamp(1rem, 1.7vw, 1.5rem);
+}
+
+.raid-column {
+  display: grid;
+  align-content: start;
+  gap: 0;
+  min-width: 0;
+}
+
+.raid-column > h3 {
+  margin: 0;
+  padding: 0.58rem 0 0.7rem;
+  border-top: var(--border-width-strong) solid var(--color-accent);
+  color: var(--color-ink);
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.075em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+#risks-decisions .schema-card {
+  display: grid;
+  gap: 0.42rem;
+  padding: 0.78rem 0;
+  border: 0;
+  border-top: 1px solid var(--color-border);
+  background: transparent;
+  box-shadow: none;
+}
+
+#risks-decisions .schema-card h4 {
+  margin: 0;
+  color: var(--color-ink);
+  font-size: 0.96rem;
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+#risks-decisions .schema-card p {
+  margin: 0;
+  color: var(--color-muted);
+  font-size: 0.88rem;
+  line-height: 1.42;
+}
+
+#risks-decisions .schema-card .schema-meta {
+  margin-top: var(--space-1);
+  padding-top: var(--space-2);
+  border-top: 1px solid var(--color-border);
+  color: var(--color-accent-dark);
+  font-size: 0.76rem;
+  font-weight: 750;
+  line-height: 1.35;
+}
+
+@media (max-width: 1100px) {
+  .governance-summary-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 760px) {
+  .governance-partner-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .raid-grid {
+    grid-template-columns: 1fr;
+  }
+}

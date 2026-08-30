@@ -32,7 +32,12 @@ const explicitlyRetiredSelectorTokens = [
   '.benefit-',
   '.unmapped-evidence-block',
   '.site-header',
-  '.planning-notice'
+  '.planning-notice',
+  '.governance-',
+  '.decision-log-',
+  '.raid-grid',
+  '.raid-column',
+  '#risks-decisions .schema-card'
 ];
 
 /* These generic selectors conflict with migrated consumers but must not retire
