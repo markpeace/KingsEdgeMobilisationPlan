@@ -20,10 +20,26 @@ const retiredProjectSelectorTokens = [
 
 const explicitlyRetiredSelectorTokens = [
   '.detail-hero:not(.project-detail-hero)',
-  '.detail-summary'
+  '.detail-summary',
+  '.case-grid',
+  '.detail-accordion',
+  '.route-through-panel',
+  '.step-card',
+  '.step-card-story',
+  '.step-story-block',
+  '.step-detail-toggle',
+  '.value-evidence-refined',
+  '.benefit-',
+  '.unmapped-evidence-block'
 ];
 
-const retiredSelectors = [
+/* These generic selectors conflict with migrated consumers but must not retire
+   more-specific schema-card variants that still belong to legacy features. */
+const exactlyRetiredSelectors = [
+  '.schema-card h3'
+];
+
+const retiredSelectorTokens = [
   ...retiredProjectSelectorTokens,
   ...explicitlyRetiredSelectorTokens
 ];
@@ -187,9 +203,9 @@ function containsRetiredProjectSelector(selector) {
 }
 
 function isRetiredSelector(selector) {
-  if (explicitlyRetiredSelectorTokens.some((token) => selector.includes(token))) {
-    return true;
-  }
+  const normalized = selector.trim();
+  if (exactlyRetiredSelectors.includes(normalized)) return true;
+  if (explicitlyRetiredSelectorTokens.some((token) => selector.includes(token))) return true;
   return containsRetiredProjectSelector(selector);
 }
 
@@ -226,9 +242,7 @@ function filterCss(source) {
         const nested = filterCss(body);
         removedSelectors += nested.removedSelectors;
         removedRules += nested.removedRules;
-        if (nested.css.trim()) {
-          output += `${rawPrelude}{${nested.css}}`;
-        }
+        if (nested.css.trim()) output += `${rawPrelude}{${nested.css}}`;
       } else {
         output += source.slice(cursor, closeIndex + 1);
       }
@@ -258,10 +272,15 @@ const result = filterCss(source);
 const banner = `/* GENERATED FILE. Do not edit directly.\n   Source: src/styles/legacy-public-source.css\n   Removed selector occurrences: ${result.removedSelectors}; fully removed rules: ${result.removedRules}. */\n`;
 const generated = `${banner}${result.css}`;
 
-const surviving = retiredSelectors.filter((selector) => result.css.includes(selector));
-if (surviving.length) {
-  throw new Error(`Retired selectors survived legacy generation: ${surviving.join(', ')}`);
+const survivingTokens = retiredSelectorTokens.filter((selector) => result.css.includes(selector));
+if (survivingTokens.length) {
+  throw new Error(`Retired selector tokens survived legacy generation: ${survivingTokens.join(', ')}`);
 }
+
+if (/(^|\})\s*\.schema-card h3\s*\{/m.test(result.css)) {
+  throw new Error('Exact retired selector .schema-card h3 survived legacy generation');
+}
+
 if (result.removedSelectors < 102) {
   throw new Error(`Legacy retirement removed only ${result.removedSelectors} selector occurrences; expected at least 102. Check source drift.`);
 }

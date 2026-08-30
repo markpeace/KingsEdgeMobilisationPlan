@@ -4,7 +4,7 @@
 
 The mobilisation plan should feel like one product. Styling is therefore organised around a small shared visual grammar rather than page-specific reinvention.
 
-The canonical implementation lives in `src/design-system.css`.
+The canonical foundations live in `src/design-system.css`. Reusable detail-page recipes that must currently follow the generated legacy bundle live in `src/styles/detail-primitives.css` until the compatibility layer is retired.
 
 ## Design grammar
 
@@ -24,13 +24,13 @@ King's Edge uses:
 
 ### `src/design-system.css`
 
-Owns shared tokens and primitives:
+Owns shared foundations:
 
 - colour and typography tokens;
 - spacing and geometry;
 - page container;
 - stack, cluster and responsive grid layouts;
-- panels and cards;
+- foundational panels and cards;
 - display and section headings;
 - eyebrows and reference labels;
 - controls and buttons;
@@ -39,7 +39,15 @@ Owns shared tokens and primitives:
 - metric cards;
 - table grammar.
 
-Existing selectors are temporarily aliased into these primitives where doing so lets current pages adopt the shared grammar without a large JSX rewrite.
+### `src/styles/detail-primitives.css`
+
+Owns reusable detail-surface recipes that currently need to follow the generated legacy compatibility bundle:
+
+- editorial cards for conceptual statements;
+- sequence cards for ordered delivery stages;
+- disclosure/concertina surfaces.
+
+The `.ds-*` selectors are the reusable contract. Existing deliverable selectors are temporarily aliased into those recipes so current markup can consume the same grammar without a JSX rewrite or page-specific override file. These aliases should disappear as markup is progressively moved onto explicit primitive classes.
 
 ### `src/styles.css`
 
@@ -57,16 +65,16 @@ It should not redefine tokens or duplicate the base styling of panels, controls,
 
 ### Feature stylesheets
 
-Feature stylesheets define layouts or states that are unique to a feature and consume shared tokens rather than establish a parallel visual system.
+Feature stylesheets define layouts or states that are unique to a feature and consume shared tokens and primitives rather than establish a parallel visual system.
 
 Current owned feature styles include:
 
 - `src/styles/resource-profile.css` for Resources & Investment;
-- `src/styles/deliverable-detail.css` for the deliverable-detail page foundation and hero;
+- `src/styles/deliverable-detail.css` for deliverable-detail composition and feature-specific internals;
 - `src/styles/project-overview.css` for project overview/detail presentation;
 - `src/styles/timeline.css` for the operational timeline.
 
-`src/site-entry.jsx` loads the normal application first, then the small set of source-owned styles that still need to follow the legacy compatibility bundle while historical declarations are retired. This is an explicit migration boundary, not a general override mechanism.
+`src/site-entry.jsx` loads the normal application first, then the shared detail recipes and source-owned feature styles that still need to follow the legacy compatibility bundle while historical declarations are retired. This is an explicit migration boundary, not a general override mechanism.
 
 `src/styles/post-legacy-cleanup.css` is deliberately narrow. It contains only cross-site presentation clean-ups that still need to follow the legacy bundle. Build validation caps both its size and its use of `!important`.
 
@@ -74,30 +82,30 @@ Current owned feature styles include:
 
 `src/styles/legacy-public-source.css` preserves the historical stylesheet while migration is in progress. It is not imported by the application.
 
-`src/styles/legacy-public.css` is a stable wrapper around a gitignored compatibility bundle generated before development and production builds by `scripts/prepare-legacy-styles.mjs`. The generator removes selector families that have moved to canonical feature styles before the compatibility bundle enters the runtime cascade.
+`src/styles/legacy-public.css` is a stable wrapper around a gitignored compatibility bundle generated before development and production builds by `scripts/prepare-legacy-styles.mjs`. The generator removes selector families that have moved to canonical primitives or feature styles before the compatibility bundle enters the runtime cascade.
 
-The generator currently retires project overview, project deliverable-board, deliverable hero and generic detail-summary selector families. Build validation checks that these selectors cannot reappear in the generated compatibility CSS.
+The generator now retires project overview, project deliverable-board, deliverable hero, case-for-change, benefit/evidence, delivery-sequence and disclosure selector families. Build validation checks that these selectors cannot reappear in the generated compatibility CSS.
 
 This generated-bundle approach is transitional. Each migrated feature should reduce the preserved source until the compatibility layer can be removed completely.
 
 ## Rules for new work
 
 1. Start by composing an existing primitive.
-2. If a treatment is genuinely reusable, add a primitive or a documented variant in `design-system.css`.
-3. Keep page selectors concerned with composition and placement, not restating shared appearance.
+2. If a treatment is genuinely reusable, add or extend a documented shared primitive rather than creating a page-only lookalike.
+3. Keep page selectors concerned with composition and feature-specific structure, not restating shared appearance.
 4. Avoid raw colour values outside the design system unless the value is intrinsic to a visualisation or print requirement.
 5. Avoid `!important`. Where it is currently required to defeat generic legacy cascade rules, treat it as migration debt and retire the conflicting legacy rule rather than adding another override.
 6. Do not add new late-loaded override stylesheets to `index.html`.
 7. Prefer one content gutter, one border rule and one hierarchy per section. Avoid nested boxes unless the information architecture genuinely requires them.
 8. A new visual treatment should normally be a shared primitive or a legitimate variant, not a one-off selector chain.
-9. Source-owned feature styles may temporarily follow `legacy-public.css` only through the documented `site-entry.jsx` migration boundary and must remain within the validator budgets.
+9. Source-owned styles may temporarily follow `legacy-public.css` only through the documented `site-entry.jsx` migration boundary and must remain within validator guardrails.
 10. Do not edit generated legacy compatibility CSS as the source of truth. Historical migration work belongs in `legacy-public-source.css` and the generator retirement list.
 
 ## Migration status and priority
 
 Completed:
 
-1. canonical tokens and shared primitives established;
+1. canonical tokens and shared foundations established;
 2. duplicated base declarations removed from `src/styles.css`;
 3. Resources & Investment moved into its canonical component stylesheet, with the former spacing bridge deleted;
 4. project overview presentation moved out of `public/project-detail-refresh.css` and into source-owned feature styling;
@@ -105,14 +113,17 @@ Completed:
 6. project overview and deliverable-board selector families removed from the runtime legacy bundle before build;
 7. project overview `!important` debt reduced to zero;
 8. deliverable page foundation, hero and summary grammar moved into `src/styles/deliverable-detail.css` and onto shared design-system tokens;
-9. deliverable hero and generic detail-summary selectors retired from the runtime legacy bundle.
+9. deliverable hero and generic detail-summary selectors retired from the runtime legacy bundle;
+10. shared editorial-card, sequence-card and disclosure recipes established;
+11. case for change, benefits/evidence, delivery sequence and detailed-plan disclosures moved away from historical styling and onto the shared grammar.
 
 Next:
 
-1. migrate the deliverable direct-section and accordion grammar out of the compatibility bundle;
+1. migrate remaining deliverable internals such as governance and RAID onto shared card/table primitives where appropriate;
 2. delete `src/styles/post-legacy-cleanup.css` once its small compatibility responsibilities have moved into their owning stylesheets;
 3. repeat the generated-retirement process for timeline and Theory of Change presentation;
 4. progressively shrink `legacy-public-source.css` as each retired feature family becomes safe to delete permanently;
-5. delete the legacy compatibility system once no live feature depends on it.
+5. delete the legacy compatibility system once no live feature depends on it;
+6. move temporary selector aliases onto explicit `.ds-*` classes as the React markup is decomposed.
 
 The aim is progressive retirement of legacy CSS rather than a risky whole-site rewrite.
