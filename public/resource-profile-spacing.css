@@ -1,45 +1,280 @@
-/* Keep the shared Resources & Investment panel on the same content gutter as the surrounding page. */
+/*
+ * Resource profile cascade bridge.
+ *
+ * The shared React resource component replaced an older collapsed resource widget,
+ * but legacy-public.css still contains some of that widget's padding and body rules.
+ * These selectors deliberately outrank those legacy rules and make the shared panel
+ * follow the same visual grammar as the rest of the deliverable page.
+ */
 
-#resource-investment-profile {
+body #resource-investment-profile {
+  width: 100%;
   min-width: 0;
-  padding: 1.25rem !important;
+  margin: 0 !important;
+  padding: var(--deliverable-section-padding, 1.25rem) !important;
+  overflow: visible !important;
+  border: 2px solid var(--ink) !important;
+  background: #ffffff !important;
+  box-shadow: none !important;
 }
 
-#resource-investment-profile .resource-profile-titlebar,
-#resource-investment-profile .resource-profile-body,
-#resource-investment-profile .resource-readable-body,
-#resource-investment-profile .resource-readable-summary {
+body #resource-investment-profile .resource-profile-titlebar,
+body #resource-investment-profile .resource-profile-body,
+body #resource-investment-profile .resource-readable-body,
+body #resource-investment-profile .resource-readable-summary {
   width: 100%;
   min-width: 0;
   margin-left: 0 !important;
   margin-right: 0 !important;
 }
 
-#resource-investment-profile .resource-profile-body,
-#resource-investment-profile .resource-readable-body {
+body #resource-investment-profile .resource-profile-body,
+body #resource-investment-profile .resource-readable-body {
+  padding: 0 !important;
+}
+
+body #resource-investment-profile .resource-readable-body {
+  gap: var(--deliverable-section-gap, 1rem) !important;
+}
+
+/* Match the main deliverable section-title scale and spacing. */
+body #resource-investment-profile .resource-profile-titlebar {
+  margin: 0 0 1rem !important;
+  padding: 0 !important;
+}
+
+body #resource-investment-profile .resource-profile-titlebar h2 {
+  margin: 0 0 0.4rem !important;
+  font-family: var(--font-brand) !important;
+  font-size: clamp(1.95rem, 2.55vw, 2.8rem) !important;
+  font-weight: 400 !important;
+  line-height: 0.98 !important;
+  letter-spacing: -0.03em !important;
+}
+
+body #resource-investment-profile .resource-profile-titlebar p {
+  max-width: 78rem !important;
+  margin: 0 !important;
+  color: var(--muted) !important;
+  font-size: clamp(0.92rem, 0.96vw, 1rem) !important;
+  line-height: 1.38 !important;
+}
+
+/* Headline metrics use the same card grammar as 'Why this matters'. */
+body #resource-investment-profile .resource-readable-summary {
+  display: grid !important;
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  gap: 0.7rem !important;
+  padding: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+}
+
+body #resource-investment-profile .resource-metric-card,
+body #resource-investment-profile .resource-metric-card:first-child,
+body #resource-investment-profile .resource-metric-card:last-child {
+  min-height: 0 !important;
+  padding: var(--deliverable-card-padding, 0.95rem) !important;
+  border: 1px solid var(--border) !important;
+  border-top: 3px solid var(--accent) !important;
+  background: var(--deliverable-soft, #f7f7f7) !important;
+}
+
+body #resource-investment-profile .resource-metric-card strong,
+body #resource-investment-profile .resource-summary-cash strong {
+  color: var(--ink) !important;
+  font-family: var(--font-brand) !important;
+  font-size: clamp(1.55rem, 2vw, 2rem) !important;
+  font-weight: 400 !important;
+  line-height: 1 !important;
+  letter-spacing: -0.025em !important;
+}
+
+body #resource-investment-profile .resource-metric-card span {
+  margin-top: 0.18rem;
+  color: var(--accent-dark) !important;
+  font-size: 0.7rem !important;
+  font-weight: 900 !important;
+  line-height: 1.05 !important;
+  letter-spacing: 0.07em !important;
+  text-transform: uppercase !important;
+}
+
+body #resource-investment-profile .resource-metric-card small {
+  color: var(--ink) !important;
+  font-size: 0.82rem !important;
+  line-height: 1.35 !important;
+}
+
+/* Appointment model is contextual information, not a separate visual system. */
+body #resource-investment-profile .resource-workforce-callout {
+  display: grid !important;
+  gap: 0.45rem !important;
+  margin: 0 !important;
+  padding: var(--deliverable-card-padding, 0.95rem) !important;
+  border: 1px solid var(--border) !important;
+  border-top: 3px solid var(--accent) !important;
+  border-left: 1px solid var(--border) !important;
+  background: var(--deliverable-soft, #f7f7f7) !important;
+}
+
+body #resource-investment-profile .resource-workforce-callout > strong {
+  color: var(--accent-dark) !important;
+  font-size: 0.7rem !important;
+  font-weight: 900 !important;
+  letter-spacing: 0.07em !important;
+  line-height: 1.05 !important;
+  text-transform: uppercase !important;
+}
+
+body #resource-investment-profile .resource-workforce-callout p {
+  max-width: 100ch !important;
+  margin: 0 !important;
+  color: var(--ink) !important;
+  font-size: 0.94rem !important;
+  line-height: 1.45 !important;
+}
+
+body #resource-investment-profile .resource-capacity-strip {
+  margin: 0 !important;
+  padding: 0 !important;
+  color: var(--muted) !important;
+  font-size: 0.86rem !important;
+  line-height: 1.35 !important;
+}
+
+/* Annual mobilisation profile reads as a quiet sibling-card row. */
+body #resource-investment-profile .resource-year-strip {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)) !important;
+  gap: 0.7rem !important;
+  padding: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+}
+
+body #resource-investment-profile .resource-year-summary,
+body #resource-investment-profile .resource-year-summary:last-child {
+  padding: var(--deliverable-card-padding, 0.95rem) !important;
+  border: 1px solid var(--border) !important;
+  background: var(--deliverable-soft, #f7f7f7) !important;
+}
+
+body #resource-investment-profile .resource-year-summary span {
+  color: var(--accent-dark) !important;
+  font-size: 0.7rem !important;
+  font-weight: 900 !important;
+  letter-spacing: 0.07em !important;
+  line-height: 1.05 !important;
+  text-transform: uppercase !important;
+}
+
+body #resource-investment-profile .resource-year-summary strong {
+  margin-top: 0.12rem;
+  color: var(--ink) !important;
+  font-size: 1rem !important;
+  line-height: 1.2 !important;
+}
+
+body #resource-investment-profile .resource-year-summary small {
+  color: var(--muted) !important;
+  font-size: 0.78rem !important;
+  line-height: 1.3 !important;
+}
+
+body #resource-investment-profile .resource-attention-line {
+  margin: 0 !important;
+  padding: 0.75rem 0.9rem !important;
+  border: 1px solid var(--border) !important;
+  border-left: 0.42rem solid var(--accent) !important;
+  background: var(--accent-soft) !important;
+  color: var(--ink) !important;
+  font-size: 0.88rem !important;
+  line-height: 1.38 !important;
+}
+
+/* Internal sections are page subsections, not nested panels. */
+body #resource-investment-profile .resource-profile-section {
+  gap: 0.8rem !important;
+  margin: 0 !important;
+  padding: 1.15rem 0 0 !important;
+  border: 0 !important;
+  border-top: 2px solid var(--ink) !important;
+  background: transparent !important;
+}
+
+body #resource-investment-profile .resource-readable-heading h3 {
+  margin: 0 !important;
+  font-family: var(--font-brand) !important;
+  font-size: clamp(1.35rem, 1.75vw, 1.75rem) !important;
+  font-weight: 400 !important;
+  line-height: 1 !important;
+  letter-spacing: -0.02em !important;
+}
+
+body #resource-investment-profile .resource-readable-heading p {
+  margin: 0.25rem 0 0 !important;
+  color: var(--muted) !important;
+  font-size: 0.86rem !important;
+  line-height: 1.38 !important;
+}
+
+body #resource-investment-profile .resource-table-block.is-permanent,
+body #resource-investment-profile .resource-table-block.is-time-limited,
+body #resource-investment-profile .resource-table-block.is-unspecified,
+body #resource-investment-profile .resource-table-block.is-conditional {
   padding-left: 0 !important;
-  padding-right: 0 !important;
+  border-left: 0 !important;
 }
 
-#resource-investment-profile .resource-profile-titlebar p {
-  max-width: 100%;
+/* Keep tables restrained and aligned to the same content gutter. */
+body #resource-investment-profile .resource-readable-table-wrap {
+  margin: 0 !important;
+  border-top: 1px solid var(--border) !important;
+  border-bottom: 1px solid var(--border) !important;
 }
 
-#resource-investment-profile .resource-readable-summary {
-  padding-left: 0 !important;
-  padding-right: 0 !important;
+body #resource-investment-profile .resource-readable-table thead th {
+  background: var(--deliverable-soft, #f7f7f7) !important;
 }
 
-#resource-investment-profile .resource-metric-card:first-child {
-  padding-left: 0;
+body #resource-investment-profile .resource-bau-section {
+  padding-top: 1.2rem !important;
+  border-top: 3px solid var(--accent) !important;
 }
 
-#resource-investment-profile .resource-metric-card:last-child {
-  padding-right: 0;
+body #resource-investment-profile .resource-bau-total {
+  padding: 0.8rem 0 !important;
+  border-top: 2px solid var(--ink) !important;
+  border-bottom: 1px solid var(--ink) !important;
+  background: transparent !important;
+}
+
+/* The disclosure follows the square, rule-led page controls. */
+body #resource-investment-profile .resource-secondary-detail {
+  margin-top: 0.1rem !important;
+  border-top: 2px solid var(--ink) !important;
+  border-bottom: 0 !important;
+  background: transparent !important;
+}
+
+body #resource-investment-profile .resource-secondary-detail > summary {
+  padding: 0.8rem 0 !important;
+}
+
+@media (max-width: 1050px) {
+  body #resource-investment-profile .resource-readable-summary {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
 }
 
 @media (max-width: 680px) {
-  #resource-investment-profile {
-    padding: 1rem !important;
+  body #resource-investment-profile {
+    padding: var(--deliverable-section-padding, 1rem) !important;
+  }
+
+  body #resource-investment-profile .resource-readable-summary,
+  body #resource-investment-profile .resource-year-strip {
+    grid-template-columns: 1fr !important;
   }
 }
