@@ -3,7 +3,7 @@ import path from 'node:path';
 
 const root = process.cwd();
 const sourcePath = path.join(root, 'src/styles/legacy-public-source.css');
-const outputPath = path.join(root, 'src/styles/legacy-public.css');
+const outputPath = path.join(root, 'src/styles/legacy-public.generated.css');
 
 const retiredProjectSelectors = [
   '.project-detail-hero',
@@ -223,7 +223,7 @@ function filterCss(source) {
 
 const source = fs.readFileSync(sourcePath, 'utf8');
 const result = filterCss(source);
-const banner = `/* GENERATED FILE. Do not edit directly.\n   Source: src/styles/legacy-public-source.css\n   Retired project selectors: ${retiredProjectSelectors.join(', ')}\n   Removed selector occurrences: ${result.removedSelectors}; fully removed rules: ${result.removedRules}. */\n`;
+const banner = `/* GENERATED FILE. Do not edit directly.\n   Source: src/styles/legacy-public-source.css\n   Removed selector occurrences: ${result.removedSelectors}; fully removed rules: ${result.removedRules}. */\n`;
 const generated = `${banner}${result.css}`;
 
 const surviving = retiredProjectSelectors.filter((selector) => result.css.includes(selector));
