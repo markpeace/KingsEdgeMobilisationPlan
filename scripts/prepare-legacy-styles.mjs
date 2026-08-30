@@ -226,7 +226,7 @@ const result = filterCss(source);
 const banner = `/* GENERATED FILE. Do not edit directly.\n   Source: src/styles/legacy-public-source.css\n   Retired project selectors: ${retiredProjectSelectors.join(', ')}\n   Removed selector occurrences: ${result.removedSelectors}; fully removed rules: ${result.removedRules}. */\n`;
 const generated = `${banner}${result.css}`;
 
-const surviving = retiredProjectSelectors.filter((selector) => generated.includes(selector));
+const surviving = retiredProjectSelectors.filter((selector) => result.css.includes(selector));
 if (surviving.length) {
   throw new Error(`Retired project selectors survived legacy generation: ${surviving.join(', ')}`);
 }
