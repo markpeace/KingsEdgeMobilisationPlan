@@ -44,7 +44,7 @@ const allowedLateStylesheets = new Set([
   '/project-detail-refresh.css',
   '/timeline-scale-control.css',
   '/theory-of-change.css',
-  '/resource-profile-spacing.css'
+  '/resource-profile-legacy-shim.css'
 ]);
 
 const linkedStylesheets = [...index.matchAll(/<link[^>]+rel=["']stylesheet["'][^>]+href=["']([^"']+)["']/g)]
