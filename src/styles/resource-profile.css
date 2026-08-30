@@ -1,98 +1,135 @@
-/* Shared Resources & Investment panel.
-   Use the same restrained visual language as the surrounding deliverable page:
-   strong outer panel, standard headings, thin rules, square labels and quiet tables. */
+/*
+ * Shared Resources & Investment component.
+ *
+ * This stylesheet owns only resource-specific composition and typography.
+ * It consumes the shared King's Edge design grammar from design-system.css
+ * and deliberately avoids cascade-fighting overrides.
+ */
 
 #resource-investment-profile {
+  --resource-section-gap: var(--deliverable-section-gap, var(--panel-gap));
+  --resource-section-padding: var(--deliverable-section-padding, var(--panel-padding));
+  --resource-card-padding: var(--deliverable-card-padding, 0.95rem);
+  --resource-soft: var(--deliverable-soft, var(--color-surface-subtle));
+  width: 100%;
+  min-width: 0;
+  margin: 0;
   overflow: visible;
 }
 
+#resource-investment-profile .resource-profile-titlebar,
+#resource-investment-profile .resource-profile-body,
+#resource-investment-profile .resource-readable-body,
+#resource-investment-profile .resource-readable-summary {
+  width: 100%;
+  min-width: 0;
+  margin-inline: 0;
+}
+
+#resource-investment-profile .resource-profile-body,
+#resource-investment-profile .resource-readable-body {
+  padding: 0;
+}
+
+#resource-investment-profile .resource-readable-body {
+  display: grid;
+  gap: var(--resource-section-gap);
+}
+
+/* Section introduction */
 #resource-investment-profile .resource-profile-titlebar {
-  margin: 0 0 1.1rem;
+  margin: 0 0 var(--space-4);
+  padding: 0;
 }
 
 #resource-investment-profile .resource-profile-titlebar h2 {
   margin: 0 0 0.4rem;
+  font-family: var(--font-brand);
+  font-size: clamp(1.95rem, 2.55vw, 2.8rem);
+  font-weight: 400;
+  line-height: 0.98;
+  letter-spacing: -0.03em;
 }
 
 #resource-investment-profile .resource-profile-titlebar p {
   max-width: 78rem;
   margin: 0;
   color: var(--muted);
-  font-size: 0.96rem;
-  line-height: 1.42;
+  font-size: clamp(0.92rem, 0.96vw, 1rem);
+  line-height: 1.38;
 }
 
-#resource-investment-profile .resource-readable-body {
-  display: grid;
-  gap: 1.25rem;
+/* Shared card grammar within the component. */
+#resource-investment-profile .resource-metric-card,
+#resource-investment-profile .resource-workforce-callout,
+#resource-investment-profile .resource-year-summary {
+  min-width: 0;
+  padding: var(--resource-card-padding);
+  border: var(--card-border-width) solid var(--border);
+  background: var(--resource-soft);
 }
 
-/* Headline summary: a data strip, not a separate dashboard. */
+#resource-investment-profile .resource-metric-card,
+#resource-investment-profile .resource-workforce-callout {
+  border-top: var(--card-accent-width) solid var(--accent);
+}
+
+/* Headline metrics */
 #resource-investment-profile .resource-readable-summary {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 0;
-  border-top: 1px solid var(--ink);
-  border-bottom: 1px solid var(--ink);
+  gap: var(--metric-gap);
+  padding: 0;
+  border: 0;
+  background: transparent;
 }
 
 #resource-investment-profile .resource-metric-card {
   display: grid;
   align-content: start;
   gap: 0.22rem;
-  min-width: 0;
-  padding: 0.8rem 0.9rem;
-  border: 0;
-  border-right: 1px solid var(--border);
-  background: transparent;
+  min-height: 0;
 }
 
-#resource-investment-profile .resource-metric-card:last-child {
-  border-right: 0;
-}
-
-#resource-investment-profile .resource-metric-card strong {
+#resource-investment-profile .resource-metric-card strong,
+#resource-investment-profile .resource-summary-cash strong {
   color: var(--ink);
   font-family: var(--font-brand);
-  font-size: clamp(1.25rem, 1.8vw, 1.65rem);
+  font-size: clamp(1.55rem, 2vw, 2rem);
   font-weight: 400;
-  line-height: 1.02;
-  letter-spacing: -0.02em;
+  line-height: 1;
+  letter-spacing: -0.025em;
 }
 
 #resource-investment-profile .resource-metric-card span {
-  color: var(--ink);
-  font-size: 0.68rem;
-  font-weight: 800;
-  line-height: 1.2;
-  letter-spacing: 0.04em;
+  margin-top: 0.18rem;
+  color: var(--accent-dark);
+  font-size: 0.7rem;
+  font-weight: 900;
+  line-height: 1.05;
+  letter-spacing: 0.07em;
   text-transform: uppercase;
 }
 
 #resource-investment-profile .resource-metric-card small {
-  color: var(--muted);
-  font-size: 0.74rem;
-  line-height: 1.28;
+  color: var(--ink);
+  font-size: 0.82rem;
+  line-height: 1.35;
 }
 
-#resource-investment-profile .resource-summary-cash strong {
-  color: var(--accent-dark);
-}
-
-/* Context and capacity statements sit as ordinary page content. */
+/* Workforce and existing capacity */
 #resource-investment-profile .resource-workforce-callout {
   display: grid;
-  gap: 0.25rem;
+  gap: 0.45rem;
   margin: 0;
-  padding: 0.1rem 0 0.1rem 0.85rem;
-  border-left: 0.42rem solid var(--ink);
 }
 
 #resource-investment-profile .resource-workforce-callout > strong {
-  color: var(--ink);
+  color: var(--accent-dark);
   font-size: 0.7rem;
-  font-weight: 800;
-  letter-spacing: 0.045em;
+  font-weight: 900;
+  line-height: 1.05;
+  letter-spacing: 0.07em;
   text-transform: uppercase;
 }
 
@@ -100,18 +137,19 @@
   max-width: 100ch;
   margin: 0;
   color: var(--ink);
-  font-size: 0.88rem;
-  line-height: 1.42;
+  font-size: 0.94rem;
+  line-height: 1.45;
 }
 
 #resource-investment-profile .resource-capacity-strip {
   display: flex;
   flex-wrap: wrap;
   gap: 0.35rem 1.15rem;
-  margin: -0.15rem 0 0;
+  margin: 0;
+  padding: 0;
   color: var(--muted);
-  font-size: 0.79rem;
-  line-height: 1.3;
+  font-size: 0.86rem;
+  line-height: 1.35;
 }
 
 #resource-investment-profile .resource-capacity-strip span {
@@ -129,87 +167,87 @@
   color: var(--ink);
 }
 
-/* Academic-year phasing is deliberately quieter than the headline strip. */
+/* Academic-year mobilisation profile */
 #resource-investment-profile .resource-year-strip {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 0;
-  border: 1px solid var(--border);
-  background: var(--faint);
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: var(--metric-gap);
+  padding: 0;
+  border: 0;
+  background: transparent;
 }
 
 #resource-investment-profile .resource-year-summary {
   display: grid;
   gap: 0.1rem;
-  min-width: 0;
-  padding: 0.65rem 0.75rem;
-  border-right: 1px solid var(--border);
-}
-
-#resource-investment-profile .resource-year-summary:last-child {
-  border-right: 0;
 }
 
 #resource-investment-profile .resource-year-summary span {
-  color: var(--muted);
-  font-size: 0.68rem;
-  font-weight: 800;
-  letter-spacing: 0.035em;
+  color: var(--accent-dark);
+  font-size: 0.7rem;
+  font-weight: 900;
+  line-height: 1.05;
+  letter-spacing: 0.07em;
   text-transform: uppercase;
 }
 
 #resource-investment-profile .resource-year-summary strong {
+  margin-top: 0.12rem;
   color: var(--ink);
-  font-size: 0.94rem;
+  font-size: 1rem;
   line-height: 1.2;
 }
 
 #resource-investment-profile .resource-year-summary small {
   color: var(--muted);
-  font-size: 0.72rem;
-  line-height: 1.25;
+  font-size: 0.78rem;
+  line-height: 1.3;
 }
 
 #resource-investment-profile .resource-attention-line {
   margin: 0;
-  padding: 0.65rem 0 0.65rem 0.8rem;
+  padding: 0.75rem 0.9rem;
+  border: var(--card-border-width) solid var(--border);
   border-left: 0.42rem solid var(--accent);
+  background: var(--accent-soft);
   color: var(--ink);
-  font-size: 0.84rem;
+  font-size: 0.88rem;
   line-height: 1.38;
 }
 
-/* Sections use rules and whitespace rather than nested cards. */
+/* Internal sections are subsections, not nested panels. */
 #resource-investment-profile .resource-profile-section {
   display: grid;
   gap: 0.8rem;
   margin: 0;
-  padding: 1.05rem 0 0;
-  border-top: 1px solid var(--ink);
+  padding: 1.15rem 0 0;
+  border: 0;
+  border-top: var(--border-width) solid var(--ink);
+  background: transparent;
 }
 
 #resource-investment-profile .resource-readable-heading {
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
-  gap: 1rem;
+  gap: var(--space-4);
 }
 
 #resource-investment-profile .resource-readable-heading h3 {
   margin: 0;
   color: var(--ink);
-  font-family: var(--font-body);
-  font-size: 1.02rem;
-  font-weight: 800;
-  line-height: 1.2;
-  letter-spacing: -0.01em;
+  font-family: var(--font-brand);
+  font-size: clamp(1.35rem, 1.75vw, 1.75rem);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.02em;
 }
 
 #resource-investment-profile .resource-readable-heading p {
   max-width: 82ch;
-  margin: 0.2rem 0 0;
+  margin: var(--space-1) 0 0;
   color: var(--muted);
-  font-size: 0.82rem;
+  font-size: 0.86rem;
   line-height: 1.38;
 }
 
@@ -223,41 +261,29 @@
 
 #resource-investment-profile .resource-table-block {
   display: grid;
-  gap: 0.5rem;
+  gap: var(--space-2);
   min-width: 0;
 }
 
 #resource-investment-profile .resource-table-block + .resource-table-block {
-  margin-top: 0.25rem;
+  margin-top: var(--space-1);
   padding-top: 0.8rem;
-  border-top: 1px solid var(--border);
+  border-top: var(--card-border-width) solid var(--border);
 }
 
 #resource-investment-profile .resource-table-block.is-permanent,
 #resource-investment-profile .resource-table-block.is-time-limited,
 #resource-investment-profile .resource-table-block.is-unspecified,
 #resource-investment-profile .resource-table-block.is-conditional {
-  padding-left: 0.75rem;
-}
-
-#resource-investment-profile .resource-table-block.is-permanent {
-  border-left: 0.32rem solid var(--ink);
-}
-
-#resource-investment-profile .resource-table-block.is-time-limited,
-#resource-investment-profile .resource-table-block.is-conditional {
-  border-left: 0.25rem dashed var(--muted);
-}
-
-#resource-investment-profile .resource-table-block.is-unspecified {
-  border-left: 0.32rem solid var(--accent);
+  padding-left: 0;
+  border-left: 0;
 }
 
 #resource-investment-profile .resource-subheading {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  gap: 1rem;
+  gap: var(--space-4);
 }
 
 #resource-investment-profile .resource-subheading h4 {
@@ -282,13 +308,14 @@
   white-space: nowrap;
 }
 
-/* Tables follow the same black-rule visual system as the rest of the site. */
+/* Tables use the shared black-rule grammar, with resource-specific widths. */
 #resource-investment-profile .resource-readable-table-wrap {
   width: 100%;
   min-width: 0;
+  margin: 0;
   overflow-x: auto;
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
+  border-top: var(--card-border-width) solid var(--border);
+  border-bottom: var(--card-border-width) solid var(--border);
 }
 
 #resource-investment-profile .resource-readable-table {
@@ -324,8 +351,8 @@
 
 #resource-investment-profile .resource-readable-table thead th {
   padding: 0.48rem 0.52rem;
-  border-bottom: 1px solid var(--ink);
-  background: transparent;
+  border-bottom: var(--card-border-width) solid var(--ink);
+  background: var(--resource-soft);
   color: var(--muted);
   font-size: 0.64rem;
   font-weight: 800;
@@ -339,7 +366,7 @@
 #resource-investment-profile .resource-readable-table tfoot th,
 #resource-investment-profile .resource-readable-table tfoot td {
   padding: 0.56rem 0.52rem;
-  border-bottom: 1px solid var(--border);
+  border-bottom: var(--card-border-width) solid var(--border);
   vertical-align: top;
   text-align: left;
 }
@@ -377,7 +404,7 @@
 
 #resource-investment-profile .resource-readable-table tfoot th,
 #resource-investment-profile .resource-readable-table tfoot td {
-  border-top: 1px solid var(--ink);
+  border-top: var(--card-border-width) solid var(--ink);
   border-bottom: 0;
   background: transparent;
   font-weight: 700;
@@ -416,16 +443,16 @@
   white-space: nowrap;
 }
 
-/* Square labels reuse the site's tag/button language. */
+/* Compact square labels */
 #resource-investment-profile .resource-appointment-badge,
 #resource-investment-profile .resource-status-badge {
   display: inline-flex;
   align-items: center;
   width: fit-content;
   padding: 0.22rem 0.38rem;
-  border: 1px solid var(--ink);
-  border-radius: 0;
-  background: #ffffff;
+  border: var(--card-border-width) solid var(--ink);
+  border-radius: var(--radius-none);
+  background: var(--paper);
   color: var(--ink);
   font-size: 0.63rem;
   font-weight: 800;
@@ -451,7 +478,7 @@
 
 #resource-investment-profile .resource-status-confirmed {
   border-color: var(--ink);
-  background: #ffffff;
+  background: var(--paper);
   color: var(--ink);
 }
 
@@ -460,25 +487,26 @@
   color: var(--muted);
 }
 
-/* BAU is the end-state anchor, emphasised with hierarchy rather than colour. */
+/* BAU is the end-state anchor. */
 #resource-investment-profile .resource-bau-section {
-  padding-top: 1.15rem;
-  border-top-width: 2px;
+  padding-top: 1.2rem;
+  border-top: var(--card-accent-width) solid var(--accent);
 }
 
 #resource-investment-profile .resource-bau-operating-block {
   padding-top: 0.8rem;
-  border-top: 1px solid var(--border);
+  border-top: var(--card-border-width) solid var(--border);
 }
 
 #resource-investment-profile .resource-bau-total {
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
-  gap: 0.15rem 1rem;
+  gap: 0.15rem var(--space-4);
   align-items: end;
-  padding: 0.75rem 0;
-  border-top: 2px solid var(--ink);
-  border-bottom: 1px solid var(--ink);
+  padding: 0.8rem 0;
+  border-top: var(--border-width) solid var(--ink);
+  border-bottom: var(--card-border-width) solid var(--ink);
+  background: transparent;
 }
 
 #resource-investment-profile .resource-bau-total span {
@@ -505,10 +533,12 @@
   line-height: 1.3;
 }
 
-/* Secondary detail behaves like the page's other square disclosure controls. */
+/* Secondary planning detail */
 #resource-investment-profile .resource-secondary-detail {
-  border-top: 1px solid var(--ink);
-  border-bottom: 1px solid var(--ink);
+  margin-top: 0.1rem;
+  border-top: var(--border-width) solid var(--ink);
+  border-bottom: 0;
+  background: transparent;
 }
 
 #resource-investment-profile .resource-secondary-detail > summary {
@@ -516,7 +546,7 @@
   grid-template-columns: minmax(0, 1fr) auto auto;
   gap: 0.3rem 0.8rem;
   align-items: center;
-  padding: 0.72rem 0;
+  padding: 0.8rem 0;
   cursor: pointer;
   list-style: none;
 }
@@ -528,8 +558,8 @@
 #resource-investment-profile .resource-secondary-detail > summary::after {
   content: 'Show';
   padding: 0.38rem 0.55rem;
-  border: 2px solid var(--ink);
-  background: #ffffff;
+  border: var(--border-width) solid var(--ink);
+  background: var(--paper);
   color: var(--ink);
   font-size: 0.7rem;
   font-weight: 800;
@@ -552,9 +582,9 @@
 
 #resource-investment-profile .resource-secondary-detail-body {
   display: grid;
-  gap: 1rem;
+  gap: var(--space-4);
   padding: 0.9rem 0 0.15rem;
-  border-top: 1px solid var(--border);
+  border-top: var(--card-border-width) solid var(--border);
 }
 
 #resource-investment-profile .resource-secondary-section {
@@ -569,7 +599,7 @@
 
 #resource-investment-profile .resource-decision-list {
   display: grid;
-  gap: 0.5rem;
+  gap: var(--space-2);
 }
 
 #resource-investment-profile .resource-decision-item {
@@ -583,7 +613,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 0.75rem;
+  gap: var(--space-3);
 }
 
 #resource-investment-profile .resource-decision-item p {
@@ -603,42 +633,12 @@
   #resource-investment-profile .resource-readable-summary {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
-
-  #resource-investment-profile .resource-metric-card:nth-child(2) {
-    border-right: 0;
-  }
-
-  #resource-investment-profile .resource-metric-card:nth-child(-n + 2) {
-    border-bottom: 1px solid var(--border);
-  }
 }
 
 @media (max-width: 680px) {
-  #resource-investment-profile .resource-readable-summary {
-    grid-template-columns: 1fr;
-  }
-
-  #resource-investment-profile .resource-metric-card,
-  #resource-investment-profile .resource-metric-card:nth-child(2) {
-    border-right: 0;
-    border-bottom: 1px solid var(--border);
-  }
-
-  #resource-investment-profile .resource-metric-card:last-child {
-    border-bottom: 0;
-  }
-
+  #resource-investment-profile .resource-readable-summary,
   #resource-investment-profile .resource-year-strip {
     grid-template-columns: 1fr;
-  }
-
-  #resource-investment-profile .resource-year-summary {
-    border-right: 0;
-    border-bottom: 1px solid var(--border);
-  }
-
-  #resource-investment-profile .resource-year-summary:last-child {
-    border-bottom: 0;
   }
 
   #resource-investment-profile .resource-capacity-strip {
