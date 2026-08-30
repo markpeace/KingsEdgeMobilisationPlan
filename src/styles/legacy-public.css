@@ -1,3 +1,3 @@
-/* Generated legacy compatibility bundle.
-   scripts/prepare-legacy-styles.mjs overwrites this file before dev/build.
-   The preserved migration source lives in legacy-public-source.css. */
+/* Stable legacy compatibility entrypoint.
+   The generated runtime bundle is prepared before dev/build and is gitignored. */
+@import './legacy-public.generated.css';
