@@ -65,9 +65,19 @@ Current owned feature styles include:
 - `src/styles/project-overview.css` for project overview/detail presentation;
 - `src/styles/timeline.css` for the operational timeline.
 
-`src/site-entry.jsx` loads the normal application first, then the small set of source-owned styles that still need to follow `legacy-public.css` while historical declarations are retired. This is an explicit migration boundary, not a general override mechanism.
+`src/site-entry.jsx` loads the normal application first, then the small set of source-owned styles that still need to follow the legacy compatibility bundle while historical declarations are retired. This is an explicit migration boundary, not a general override mechanism.
 
 `src/styles/post-legacy-cleanup.css` is deliberately narrow. It contains only cross-site presentation clean-ups that still need to follow the legacy bundle. Build validation caps both its size and its use of `!important`.
+
+### Legacy compatibility
+
+`src/styles/legacy-public-source.css` preserves the historical stylesheet while migration is in progress. It is not imported by the application.
+
+`src/styles/legacy-public.css` is generated before development and production builds by `scripts/prepare-legacy-styles.mjs`. The generator removes selector families that have moved to canonical feature styles before the compatibility bundle enters the runtime cascade.
+
+Project overview migration currently removes 101 historical project selector occurrences across 83 fully retired rules. Build validation checks that the retired project selectors cannot reappear in the generated compatibility CSS.
+
+This generated-bundle approach is transitional. Each migrated feature should reduce the preserved source until the compatibility layer can be removed completely.
 
 ## Rules for new work
 
@@ -75,11 +85,12 @@ Current owned feature styles include:
 2. If a treatment is genuinely reusable, add a primitive or a documented variant in `design-system.css`.
 3. Keep page selectors concerned with composition and placement, not restating shared appearance.
 4. Avoid raw colour values outside the design system unless the value is intrinsic to a visualisation or print requirement.
-5. Avoid `!important`. Where it is currently required to defeat legacy cascade rules, treat it as migration debt and remove the conflicting legacy rule rather than adding another override.
+5. Avoid `!important`. Where it is currently required to defeat generic legacy cascade rules, treat it as migration debt and retire the conflicting legacy rule rather than adding another override.
 6. Do not add new late-loaded override stylesheets to `index.html`.
 7. Prefer one content gutter, one border rule and one hierarchy per section. Avoid nested boxes unless the information architecture genuinely requires them.
 8. A new visual treatment should normally be a shared primitive or a legitimate variant, not a one-off selector chain.
 9. Source-owned feature styles may temporarily follow `legacy-public.css` only through the documented `site-entry.jsx` migration boundary and must remain within the validator budgets.
+10. Do not edit generated `legacy-public.css` as the source of truth. Historical migration work belongs in `legacy-public-source.css` and the generator retirement list.
 
 ## Migration status and priority
 
@@ -88,14 +99,17 @@ Completed:
 1. canonical tokens and shared primitives established;
 2. duplicated base declarations removed from `src/styles.css`;
 3. Resources & Investment moved into its canonical component stylesheet, with the former spacing bridge deleted;
-4. project overview presentation moved out of `public/project-detail-refresh.css` and into source-owned feature styling; the late public refresh file has been deleted.
+4. project overview presentation moved out of `public/project-detail-refresh.css` and into source-owned feature styling;
+5. the late public project refresh file deleted;
+6. project overview and deliverable-board selector families removed from the runtime legacy bundle before build;
+7. project overview `!important` debt reduced to two declarations, both caused by the still-generic deliverable `.detail-summary` legacy rule.
 
 Next:
 
-1. retire the now-shadowed project overview and deliverable-board declarations from `src/styles/legacy-public.css`;
-2. reduce the remaining `!important` budget in `src/styles/project-overview.css` as those conflicts disappear;
-3. delete `src/styles/post-legacy-cleanup.css` once its small compatibility responsibilities have moved into their owning stylesheets;
-4. repeat the same process for the remaining timeline and Theory of Change late-loaded presentation layers;
-5. delete `legacy-public.css` once no live feature depends on it.
+1. migrate the deliverable-detail grammar so the remaining generic `.detail-summary` conflict can be retired and the project overview `!important` count can reach zero;
+2. delete `src/styles/post-legacy-cleanup.css` once its small compatibility responsibilities have moved into their owning stylesheets;
+3. repeat the generated-retirement process for timeline and Theory of Change presentation;
+4. progressively shrink `legacy-public-source.css` as each retired feature family becomes safe to delete permanently;
+5. delete the legacy compatibility system once no live feature depends on it.
 
 The aim is progressive retirement of legacy CSS rather than a risky whole-site rewrite.
