@@ -286,6 +286,10 @@ body #resource-investment-profile .resource-secondary-detail > summary {
   body #resource-investment-profile .resource-readable-summary {
     grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
   }
+
+  body #resource-investment-profile .resource-summary-y1 {
+    grid-column: 1 / -1;
+  }
 }
 
 @media (max-width: 680px) {
@@ -296,5 +300,9 @@ body #resource-investment-profile .resource-secondary-detail > summary {
   body #resource-investment-profile .resource-readable-summary,
   body #resource-investment-profile .resource-year-strip {
     grid-template-columns: 1fr !important;
+  }
+
+  body #resource-investment-profile .resource-summary-y1 {
+    grid-column: auto;
   }
 }
