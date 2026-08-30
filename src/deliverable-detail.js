@@ -3,6 +3,7 @@ import { buildLookups, projects } from './plan-utils.js';
 const { deliverables } = buildLookups(projects);
 const deliverableById = new Map(deliverables.map((deliverable) => [deliverable.id, deliverable]));
 const obsoleteSectionIds = ['decisions-dependencies', 'definition-of-done', 'components', 'dependencies', 'resources'];
+const secondaryDisclosureIds = ['governance', 'decision-log', 'risks-decisions'];
 
 let refreshScheduled = false;
 let activeObserver = null;
@@ -75,6 +76,18 @@ function enhanceBreadcrumbs(page, deliverable) {
   setText(printButton, 'Print / save A3');
 }
 
+function normaliseCoreSection(section, legacyClasses = []) {
+  if (!section) return;
+  section.classList.remove('panel', 'detail-accordion', 'dd-disclosure', ...legacyClasses);
+  section.classList.add('dd-section');
+}
+
+function normaliseDisclosure(section) {
+  if (!section) return;
+  section.classList.remove('panel', 'detail-accordion');
+  section.classList.add('dd-disclosure');
+}
+
 function simplifyPage(page) {
   obsoleteSectionIds.forEach((id) => {
     const section = page.querySelector(`#${CSS.escape(id)}`);
@@ -98,10 +111,15 @@ function simplifyPage(page) {
     'Whole-route risks, issues and assumptions that need planning scrutiny.'
   );
 
-  page.querySelectorAll('.detail-accordion').forEach((section) => section.classList.add('dd-disclosure'));
-  page.querySelector('.case-panel')?.classList.add('dd-section');
-  page.querySelector('.route-through-panel')?.classList.add('dd-section');
-  page.querySelector('#resource-investment-profile')?.classList.add('dd-section');
+  normaliseCoreSection(page.querySelector('#why-this-matters'), ['case-panel']);
+  normaliseCoreSection(page.querySelector('#value-evidence'));
+  normaliseCoreSection(page.querySelector('#route-through'), ['route-through-panel']);
+  normaliseCoreSection(page.querySelector('#resource-investment-profile'));
+
+  page.querySelectorAll('#why-this-matters .schema-card').forEach((card) => card.classList.add('dd-card'));
+  page.querySelector('#resource-investment-profile .resource-profile-titlebar')?.classList.add('dd-section-heading');
+
+  secondaryDisclosureIds.forEach((id) => normaliseDisclosure(page.querySelector(`#${CSS.escape(id)}`)));
   page.querySelector('.planning-notice')?.classList.add('dd-planning-stage');
 }
 
@@ -229,7 +247,6 @@ function renderBenefits(page, deliverable) {
   const unmapped = measures.filter((measure) => !mapped.has(measure.id));
 
   setHtml(panel, `
-    <p class="subtle value-evidence-explainer">Each benefit connects the intended outcome to evidence and the delivery outputs that make it possible.</p>
     <div class="benefit-realisation-list">${cards.join('') || '<p>No benefits captured yet.</p>'}</div>
     ${unmapped.length ? `<section class="unmapped-evidence-block"><h4>Cross-cutting or unmapped evidence</h4><p>These measures are not yet linked to a specific benefit.</p><div class="benefit-measure-list">${unmapped.map(renderMeasure).join('')}</div></section>` : ''}
   `);
@@ -349,7 +366,7 @@ function enhanceStepCard(card, index) {
 }
 
 function enhanceTimeline(page) {
-  const panel = page.querySelector('.route-through-panel');
+  const panel = page.querySelector('#route-through');
   if (!panel) return;
   setText(panel.querySelector(':scope > h2'), 'Delivery timeline');
   setText(panel.querySelector(':scope > .subtle'), 'The route from mobilisation to handover. Each step shows its purpose and principal outputs; open step detail for resources, decisions, risks, issues and assumptions.');
