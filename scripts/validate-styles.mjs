@@ -14,8 +14,9 @@ const siteStyles = read('src/styles.css');
 const resourceStyles = read('src/styles/resource-profile.css');
 const projectStyles = read('src/styles/project-overview.css');
 const postLegacyStyles = read('src/styles/post-legacy-cleanup.css');
-const generatedLegacyStyles = read('src/styles/legacy-public.css');
+const generatedLegacyStyles = read('src/styles/legacy-public.generated.css');
 const legacySourceStyles = read('src/styles/legacy-public-source.css');
+const legacyEntry = read('src/styles/legacy-public.css');
 const resourceShim = read('public/resource-profile-legacy-shim.css');
 const siteEntry = read('src/site-entry.jsx');
 const index = read('index.html');
@@ -87,8 +88,12 @@ if (legacySourceStyles.length < 50000) {
   fail('legacy-public-source.css no longer looks like the preserved migration source; do not edit the generated bundle as the source of truth');
 }
 
+if (!legacyEntry.includes("@import './legacy-public.generated.css';")) {
+  fail('legacy-public.css must remain a stable wrapper around the generated compatibility bundle');
+}
+
 if (!generatedLegacyStyles.includes('GENERATED FILE')) {
-  fail('legacy-public.css was not prepared from the preserved migration source; run npm run prepare:styles');
+  fail('legacy-public.generated.css was not prepared from the preserved migration source; run npm run prepare:styles');
 }
 
 if (generatedLegacyStyles.length >= legacySourceStyles.length) {
