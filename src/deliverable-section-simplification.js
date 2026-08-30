@@ -25,6 +25,13 @@ function simplifyDeliverableSections() {
   // planning-detail disclosure model first.
   ensureCoreSectionOpen('value-evidence');
 
+  const planningDetail = document.querySelector('.detailed-plan-control');
+  setText(planningDetail?.querySelector('h2'), 'Governance and planning detail');
+  setText(
+    planningDetail?.querySelector('p'),
+    'Open the sections below for governance, consultation history and whole-route planning risks. Step-specific delivery detail stays with the Delivery timeline above.'
+  );
+
   const planningRiskSection = document.getElementById('risks-decisions');
   if (!planningRiskSection) return;
 
