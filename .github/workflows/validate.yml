@@ -26,4 +26,14 @@ jobs:
         run: npm ci
 
       - name: Validate, test and build
-        run: npm run build
+        run: |
+          set -o pipefail
+          npm run build 2>&1 | tee validation.log
+
+      - name: Upload validation log on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: validation-log
+          path: validation.log
+          retention-days: 7
