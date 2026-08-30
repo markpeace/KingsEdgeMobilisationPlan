@@ -1,41 +1,3 @@
-:root {
-  color-scheme: light;
-  color: #090909;
-  background: #ffffff;
-  --font-brand: "KingsBureauGrot", "Bureau Grot", Arial, Helvetica, sans-serif;
-  --font-body: Arial, Helvetica, sans-serif;
-  --ink: #090909;
-  --muted: #555555;
-  --faint: #f7f7f7;
-  --paper: #ffffff;
-  --border: #d7d7d7;
-  --border-strong: #090909;
-  --accent: #ed1c24;
-  --accent-dark: #b51218;
-  --accent-soft: #fff3f3;
-  --gold: #d6a93a;
-  --green: #2f7d62;
-  --shadow: 0 10px 24px rgba(0, 0, 0, 0.06);
-}
-
-* {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  min-width: 320px;
-  background: var(--paper);
-  color: var(--ink);
-  font-family: var(--font-body);
-  font-size: 16px;
-  line-height: 1.45;
-}
-
-a {
-  color: inherit;
-}
-
 .site-header {
   position: sticky;
   top: 0;
@@ -76,47 +38,6 @@ a {
   align-items: center;
   justify-content: flex-end;
   padding: 0.72rem 0;
-}
-
-.site-header nav a,
-.chip,
-.back-link {
-  border: 2px solid var(--ink);
-  border-radius: 0;
-  padding: 0.52rem 0.78rem;
-  text-decoration: none;
-  color: var(--ink);
-  background: #ffffff;
-  font-family: var(--font-body);
-  font-size: 0.9rem;
-  font-weight: 700;
-  line-height: 1.1;
-  transition: background 150ms ease, color 150ms ease, border-color 150ms ease;
-}
-
-.site-header nav a:hover,
-.chip:hover,
-.back-link:hover {
-  border-color: var(--accent);
-  background: var(--accent);
-  color: #ffffff;
-}
-
-main {
-  width: min(1480px, calc(100% - 2rem));
-  margin: 0 auto;
-  padding: 2rem 0 4rem;
-}
-
-.hero,
-.detail-hero,
-.section-heading,
-.panel,
-.project-column,
-.dependency-card {
-  background: #ffffff;
-  border: 2px solid var(--ink);
-  box-shadow: none;
 }
 
 .hero,
@@ -171,22 +92,6 @@ main {
   color: var(--muted);
   font-size: clamp(1rem, 1.2vw, 1.18rem);
   line-height: 1.45;
-}
-
-.eyebrow,
-.reference {
-  display: inline-flex;
-  align-items: center;
-  width: fit-content;
-  color: #ffffff;
-  background: var(--accent);
-  border-radius: 0;
-  padding: 0.32rem 0.6rem;
-  font-family: var(--font-body);
-  font-size: 0.73rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.055em;
 }
 
 .section-heading {
@@ -494,7 +399,6 @@ main {
 }
 
 .back-link {
-  display: inline-flex;
   margin-bottom: 1rem;
 }
 
@@ -505,30 +409,10 @@ main {
   margin-top: 1rem;
 }
 
-.detail-meta span,
-.period-pill,
-.dependency-type {
-  display: inline-flex;
-  width: fit-content;
-  border-radius: 0;
-  padding: 0.36rem 0.62rem;
-  background: #ffffff;
-  border: 2px solid var(--ink);
-  color: var(--ink);
-  font-size: 0.82rem;
-  font-weight: 700;
-}
-
 .detail-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1rem;
-  margin: 1rem 0;
-}
-
-.panel {
-  border-radius: 0;
-  padding: 1.25rem;
   margin: 1rem 0;
 }
 

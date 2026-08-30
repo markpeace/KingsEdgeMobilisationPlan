@@ -6,11 +6,30 @@
   font-display: swap;
 }
 
+/*
+ * King's Edge design system
+ *
+ * This file owns the visual grammar shared across the mobilisation plan.
+ * Page and feature styles should compose these tokens and primitives rather
+ * than restating their own versions of surfaces, controls, labels or cards.
+ */
 :root {
   color-scheme: light;
+
+  /* Typography */
   --font-brand: "KingsBureauGrot", "Bureau Grot", Arial, Helvetica, sans-serif;
   --font-body: Arial, Helvetica, sans-serif;
+  --text-xs: 0.73rem;
+  --text-sm: 0.88rem;
+  --text-md: 1rem;
+  --text-lg: clamp(1rem, 1.2vw, 1.18rem);
+  --display-lg: clamp(3rem, 6.7vw, 6.4rem);
+  --display-md: clamp(2.45rem, 4.5vw, 4.8rem);
+  --heading-lg: clamp(1.5rem, 2.5vw, 2.45rem);
+  --line-body: 1.45;
+  --line-tight: 1.05;
 
+  /* Palette */
   --color-ink: #090909;
   --color-text: var(--color-ink);
   --color-muted: #555555;
@@ -18,6 +37,7 @@
   --color-paper: #ffffff;
   --color-surface: #ffffff;
   --color-surface-subtle: #f7f7f7;
+  --color-surface-softest: #fbfbf9;
   --color-border: #d7d7d7;
   --color-accent: #ed1c24;
   --color-accent-dark: #b51218;
@@ -25,6 +45,8 @@
   --color-gold: #d6a93a;
   --color-green: #2f7d62;
 
+  /* Compatibility aliases. Keep feature CSS on these until legacy-public.css
+     has been fully retired, but define them in one place only. */
   --ink: var(--color-ink);
   --muted: var(--color-muted);
   --faint: var(--color-surface-subtle);
@@ -37,6 +59,7 @@
   --gold: var(--color-gold);
   --green: var(--color-green);
 
+  /* Spacing */
   --space-1: 0.25rem;
   --space-2: 0.5rem;
   --space-3: 0.75rem;
@@ -47,6 +70,7 @@
   --space-10: 2.5rem;
   --space-12: 3rem;
 
+  /* Geometry and motion */
   --container: 1480px;
   --page-gutter: clamp(1rem, 2.4vw, 2rem);
   --border-width: 2px;
@@ -57,20 +81,28 @@
   --focus-ring: 0 0 0 3px rgba(237, 28, 36, 0.28);
   --transition-fast: 150ms ease;
 
-  --text-xs: 0.73rem;
-  --text-sm: 0.88rem;
-  --text-md: 1rem;
-  --text-lg: clamp(1rem, 1.2vw, 1.18rem);
-  --display-lg: clamp(3rem, 6.7vw, 6.4rem);
-  --display-md: clamp(2.45rem, 4.5vw, 4.8rem);
-  --heading-lg: clamp(1.5rem, 2.5vw, 2.45rem);
+  /* Shared component grammar */
+  --panel-padding: var(--space-5);
+  --panel-gap: var(--space-4);
+  --card-padding: var(--space-4);
+  --card-border-width: 1px;
+  --card-accent-width: 3px;
+  --control-padding-block: 0.52rem;
+  --control-padding-inline: 0.78rem;
+  --tag-padding-block: 0.36rem;
+  --tag-padding-inline: 0.62rem;
+  --metric-gap: 0.7rem;
 
   --shadow: var(--shadow-raised);
 }
 
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
 
-html { background: var(--color-paper); }
+html {
+  background: var(--color-paper);
+}
 
 body {
   margin: 0;
@@ -79,10 +111,19 @@ body {
   color: var(--color-text);
   font-family: var(--font-body);
   font-size: 16px;
-  line-height: 1.45;
+  line-height: var(--line-body);
 }
 
-a { color: inherit; }
+a {
+  color: inherit;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
 
 :focus-visible {
   outline: 2px solid var(--color-accent);
@@ -90,6 +131,36 @@ a { color: inherit; }
   box-shadow: var(--focus-ring);
 }
 
+main,
+.ds-container {
+  width: min(var(--container), calc(100% - 2rem));
+  margin-inline: auto;
+}
+
+main {
+  padding: 2rem 0 4rem;
+}
+
+/* Layout primitives */
+.ds-stack {
+  display: grid;
+  gap: var(--stack-gap, var(--space-4));
+}
+
+.ds-cluster {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--cluster-gap, var(--space-2));
+}
+
+.ds-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--grid-min, 18rem)), 1fr));
+  gap: var(--grid-gap, var(--space-4));
+}
+
+/* Surface primitives */
 .ds-panel,
 .panel,
 .hero,
@@ -103,13 +174,177 @@ a { color: inherit; }
   box-shadow: var(--shadow-none);
 }
 
-.ds-chip,
-.chip,
-.back-link,
+.ds-panel,
+.panel {
+  padding: var(--panel-padding);
+  margin-block: var(--space-4);
+}
+
+.ds-card {
+  min-width: 0;
+  padding: var(--card-padding);
+  border: var(--card-border-width) solid var(--color-border);
+  border-radius: var(--radius-none);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-none);
+}
+
+.ds-card-accent {
+  border-top: var(--card-accent-width) solid var(--color-accent);
+  background: var(--color-surface-subtle);
+}
+
+/* Typography primitives */
+.ds-display-heading {
+  margin: 0;
+  font-family: var(--font-brand);
+  font-size: var(--display-lg);
+  font-weight: 400;
+  line-height: 0.95;
+  letter-spacing: -0.035em;
+}
+
+.ds-section-heading {
+  margin: 0;
+  font-family: var(--font-brand);
+  font-size: var(--heading-lg);
+  font-weight: 400;
+  line-height: 1.02;
+  letter-spacing: -0.025em;
+}
+
+.ds-subtle {
+  color: var(--color-muted);
+}
+
+/* Eyebrows and reference labels */
+.ds-eyebrow,
+.eyebrow,
+.reference {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  padding: 0.32rem 0.6rem;
+  border-radius: var(--radius-none);
+  background: var(--color-accent);
+  color: var(--color-paper);
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: 0.055em;
+  text-transform: uppercase;
+}
+
+/* Interactive controls */
+.ds-control,
+.ds-button,
 .site-header nav a,
+.chip,
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  padding: var(--control-padding-block) var(--control-padding-inline);
+  border: var(--border-width) solid var(--color-ink);
+  border-radius: var(--radius-none);
+  background: var(--color-surface);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1.1;
+  text-decoration: none;
+  transition: background var(--transition-fast), color var(--transition-fast), border-color var(--transition-fast);
+}
+
+.ds-button,
+button.ds-control {
+  cursor: pointer;
+}
+
+.ds-control:hover,
+.ds-button:hover,
+.site-header nav a:hover,
+.chip:hover,
+.back-link:hover {
+  border-color: var(--color-accent);
+  background: var(--color-accent);
+  color: var(--color-paper);
+}
+
+/* Compact tags */
+.ds-tag,
 .detail-meta span,
 .period-pill,
 .dependency-type {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  padding: var(--tag-padding-block) var(--tag-padding-inline);
+  border: var(--border-width) solid var(--color-ink);
   border-radius: var(--radius-none);
+  background: var(--color-surface);
+  color: var(--color-ink);
+  font-size: 0.82rem;
   font-weight: 700;
+}
+
+/* Reusable callout and metric grammar */
+.ds-callout {
+  padding: var(--card-padding);
+  border: var(--card-border-width) solid var(--color-border);
+  border-left: 0.42rem solid var(--color-accent);
+  background: var(--color-accent-soft);
+}
+
+.ds-metric-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  gap: var(--metric-gap);
+}
+
+.ds-metric-card {
+  min-width: 0;
+  padding: var(--card-padding);
+  border: var(--card-border-width) solid var(--color-border);
+  border-top: var(--card-accent-width) solid var(--color-accent);
+  background: var(--color-surface-subtle);
+}
+
+/* Tables */
+.ds-table-wrap {
+  width: 100%;
+  min-width: 0;
+  overflow-x: auto;
+  border-block: 1px solid var(--color-border);
+}
+
+.ds-table {
+  width: 100%;
+  border-collapse: collapse;
+  color: var(--color-ink);
+}
+
+.ds-table th,
+.ds-table td {
+  padding: 0.56rem 0.52rem;
+  border-bottom: 1px solid var(--color-border);
+  vertical-align: top;
+  text-align: left;
+}
+
+.ds-table thead th {
+  border-bottom-color: var(--color-ink);
+  background: var(--color-surface-subtle);
+  color: var(--color-muted);
+  font-size: 0.64rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 680px) {
+  .ds-metric-grid {
+    grid-template-columns: 1fr;
+  }
 }
