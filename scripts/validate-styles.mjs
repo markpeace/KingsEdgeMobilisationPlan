@@ -12,6 +12,7 @@ const fail = (message) => {
 const designSystem = read('src/design-system.css');
 const siteStyles = read('src/styles.css');
 const resourceStyles = read('src/styles/resource-profile.css');
+const globalChromeStyles = read('src/styles/global-chrome.css');
 const detailPrimitiveStyles = read('src/styles/detail-primitives.css');
 const deliverableStyles = read('src/styles/deliverable-detail.css');
 const projectStyles = read('src/styles/project-overview.css');
@@ -46,12 +47,23 @@ if (/:root\s*\{/.test(siteStyles)) {
 for (const [file, styles] of [
   ['src/design-system.css', designSystem],
   ['src/styles/resource-profile.css', resourceStyles],
+  ['src/styles/global-chrome.css', globalChromeStyles],
   ['src/styles/detail-primitives.css', detailPrimitiveStyles],
   ['src/styles/deliverable-detail.css', deliverableStyles],
   ['src/styles/project-overview.css', projectStyles]
 ]) {
   if (/\b!important\b/.test(styles)) {
     fail(`${file} must not use !important; retire the conflicting legacy selector instead`);
+  }
+}
+
+const requiredChromePrimitives = [
+  '.ds-page-actions',
+  '.ds-context-strip'
+];
+for (const selector of requiredChromePrimitives) {
+  if (!globalChromeStyles.includes(selector)) {
+    fail(`src/styles/global-chrome.css is missing shared chrome primitive ${selector}`);
   }
 }
 
@@ -131,7 +143,9 @@ const retiredSelectorTokens = [
   '.step-detail-toggle',
   '.value-evidence-refined',
   '.benefit-',
-  '.unmapped-evidence-block'
+  '.unmapped-evidence-block',
+  '.site-header',
+  '.planning-notice'
 ];
 const generatedLegacyBody = generatedLegacyStyles.replace(/^\/\*[\s\S]*?\*\//, '');
 for (const selector of retiredSelectorTokens) {
@@ -145,18 +159,20 @@ if (/(^|\})\s*\.schema-card h3\s*\{/m.test(generatedLegacyBody)) {
 }
 
 const siteImport = siteEntry.indexOf("import './site.jsx';");
+const chromeImport = siteEntry.indexOf("import './styles/global-chrome.css';");
 const primitiveImport = siteEntry.indexOf("import './styles/detail-primitives.css';");
 const deliverableImport = siteEntry.indexOf("import './styles/deliverable-detail.css';");
 const projectImport = siteEntry.indexOf("import './styles/project-overview.css';");
 const cleanupImport = siteEntry.indexOf("import './styles/post-legacy-cleanup.css';");
 if (
   siteImport < 0 ||
-  primitiveImport < siteImport ||
+  chromeImport < siteImport ||
+  primitiveImport < chromeImport ||
   deliverableImport < primitiveImport ||
   projectImport < deliverableImport ||
   cleanupImport < projectImport
 ) {
-  fail('src/site-entry.jsx must load shared detail primitives, deliverable, project and cleanup styles after src/site.jsx in the documented order');
+  fail('src/site-entry.jsx must load global chrome, detail primitives and owned feature styles after src/site.jsx in the documented order');
 }
 
 const allowedLateStylesheets = new Set([
