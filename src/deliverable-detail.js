@@ -52,8 +52,7 @@ function enhanceBreadcrumbs(page, deliverable) {
   const actions = page.querySelector('.deliverable-actions');
   if (!actions) return;
 
-  const existingBack = actions.querySelector('.back-link');
-  existingBack?.setAttribute('hidden', '');
+  actions.querySelector('.back-link')?.setAttribute('hidden', '');
 
   let breadcrumbs = actions.querySelector('.deliverable-breadcrumbs');
   if (!breadcrumbs) {
@@ -72,8 +71,33 @@ function enhanceBreadcrumbs(page, deliverable) {
     </ol>
   `);
 
-  const printButton = actions.querySelector('.print-a3-button');
-  setText(printButton, 'Print / save A3');
+  setText(actions.querySelector('.print-a3-button'), 'Print / save A3');
+}
+
+function normaliseHero(page) {
+  const hero = page.querySelector(':scope > .detail-hero, :scope > .dd-hero');
+  if (!hero) return;
+  hero.classList.remove('detail-hero');
+  hero.classList.add('dd-hero');
+}
+
+function normalisePlanningStage(page) {
+  const stage = page.querySelector('.planning-notice, .dd-planning-stage');
+  if (!stage) return;
+  stage.classList.remove('planning-notice', 'planning-notice-early-stage');
+  stage.classList.add('dd-planning-stage');
+
+  const main = stage.querySelector('.planning-notice-main, .dd-planning-main');
+  main?.classList.remove('planning-notice-main');
+  main?.classList.add('dd-planning-main');
+
+  const label = stage.querySelector('.planning-notice-label, .dd-planning-label');
+  label?.classList.remove('planning-notice-label');
+  label?.classList.add('dd-planning-label');
+
+  const next = stage.querySelector('.planning-notice-next, .dd-planning-next');
+  next?.classList.remove('planning-notice-next');
+  next?.classList.add('dd-planning-next');
 }
 
 function normaliseCoreSection(section, legacyClasses = []) {
@@ -86,6 +110,18 @@ function normaliseDisclosure(section) {
   if (!section) return;
   section.classList.remove('panel', 'detail-accordion');
   section.classList.add('dd-disclosure');
+
+  const toggle = section.querySelector(':scope > .detail-accordion-header, :scope > .dd-disclosure-toggle');
+  if (toggle) {
+    toggle.classList.remove('detail-accordion-header');
+    toggle.classList.add('dd-disclosure-toggle');
+  }
+
+  const body = section.querySelector(':scope > .detail-accordion-body, :scope > .dd-disclosure-body');
+  if (body) {
+    body.classList.remove('detail-accordion-body');
+    body.classList.add('dd-disclosure-body');
+  }
 }
 
 function simplifyPage(page) {
@@ -94,20 +130,31 @@ function simplifyPage(page) {
     if (section) section.hidden = true;
   });
 
-  const planningDetail = page.querySelector('.detailed-plan-control');
+  normaliseHero(page);
+  normalisePlanningStage(page);
+
+  const planningDetail = page.querySelector('.detailed-plan-control, .dd-planning-heading');
   if (planningDetail) {
+    planningDetail.classList.remove('panel', 'detailed-plan-control');
     planningDetail.classList.add('dd-planning-heading');
     setText(planningDetail.querySelector('h2'), 'Governance and planning detail');
     setText(
       planningDetail.querySelector('p'),
-      'Open these sections for governance, consultation history and whole-route planning risks. Step-specific detail stays with the Delivery timeline.'
+      'Governance, consultation history and whole-route planning risks sit here. Step-specific detail stays with the Delivery timeline.'
     );
   }
 
+  const propositionNote = page.querySelector('.proposition-stage-note, .dd-stage-note');
+  if (propositionNote) {
+    propositionNote.classList.remove('panel', 'proposition-stage-note');
+    propositionNote.classList.add('dd-stage-note');
+  }
+
   const riskSection = page.querySelector('#risks-decisions');
-  setText(riskSection?.querySelector('.detail-accordion-header span'), 'Planning risks, issues and assumptions');
+  const riskToggle = riskSection?.querySelector('.detail-accordion-header, .dd-disclosure-toggle');
+  setText(riskToggle?.querySelector('span'), 'Planning risks, issues and assumptions');
   setText(
-    riskSection?.querySelector('.detail-accordion-header em'),
+    riskToggle?.querySelector('em'),
     'Whole-route risks, issues and assumptions that need planning scrutiny.'
   );
 
@@ -116,16 +163,18 @@ function simplifyPage(page) {
   normaliseCoreSection(page.querySelector('#route-through'), ['route-through-panel']);
   normaliseCoreSection(page.querySelector('#resource-investment-profile'));
 
-  page.querySelectorAll('#why-this-matters .schema-card').forEach((card) => card.classList.add('dd-card'));
-  page.querySelector('#resource-investment-profile .resource-profile-titlebar')?.classList.add('dd-section-heading');
+  page.querySelectorAll('#why-this-matters .schema-card, #why-this-matters .dd-field-card').forEach((card) => {
+    card.classList.remove('schema-card');
+    card.classList.add('dd-card', 'dd-field-card');
+  });
 
+  page.querySelector('#resource-investment-profile .resource-profile-titlebar')?.classList.add('dd-section-heading');
   secondaryDisclosureIds.forEach((id) => normaliseDisclosure(page.querySelector(`#${CSS.escape(id)}`)));
-  page.querySelector('.planning-notice')?.classList.add('dd-planning-stage');
 }
 
 function ensureCoreBenefitsOpen(page) {
   const section = page.querySelector('#value-evidence');
-  const button = section?.querySelector('.detail-accordion-header');
+  const button = section?.querySelector(':scope > .detail-accordion-header, :scope > .dd-benefits-source-toggle');
   if (!section || !button) return;
 
   section.classList.add('dd-section', 'dd-benefits-section');
@@ -134,7 +183,16 @@ function ensureCoreBenefitsOpen(page) {
     return;
   }
 
+  button.classList.remove('detail-accordion-header');
+  button.classList.add('dd-benefits-source-toggle');
   button.hidden = true;
+
+  const body = section.querySelector(':scope > .detail-accordion-body, :scope > .dd-section-body');
+  if (body) {
+    body.classList.remove('detail-accordion-body');
+    body.classList.add('dd-section-body');
+  }
+
   let heading = section.querySelector(':scope > .dd-section-heading');
   if (!heading) {
     heading = document.createElement('header');
@@ -145,6 +203,12 @@ function ensureCoreBenefitsOpen(page) {
     <h2>Benefits and evidence</h2>
     <p>The outcomes this deliverable should create, how we will know, and which delivery outputs enable them.</p>
   `);
+
+  const benefitsBody = section.querySelector('.delivery-model-panel, .dd-benefits-body');
+  if (benefitsBody) {
+    benefitsBody.classList.remove('delivery-model-panel');
+    benefitsBody.classList.add('dd-benefits-body');
+  }
 }
 
 function linkedBenefitIds(measure) {
@@ -230,8 +294,11 @@ function renderBenefit(benefit, measures, deliverable) {
 
 function renderBenefits(page, deliverable) {
   const section = page.querySelector('#value-evidence');
-  const panel = section?.querySelector('.delivery-model-panel');
+  const panel = section?.querySelector('.dd-benefits-body, .delivery-model-panel');
   if (!section || !panel) return;
+
+  panel.classList.remove('delivery-model-panel');
+  panel.classList.add('dd-benefits-body');
 
   const signature = JSON.stringify({ benefits: deliverable.benefits, measures: deliverable.measures, steps: (deliverable.steps || []).map(({ id, title }) => ({ id, title })) });
   if (section.dataset.ddBenefitsSignature === signature) return;
@@ -263,11 +330,15 @@ function renderGovernance(page, deliverable) {
   const section = page.querySelector('#governance');
   if (!section) return;
 
-  setText(section.querySelector('.detail-accordion-header span'), 'How this is governed');
-  setText(section.querySelector('.detail-accordion-header em'), 'Decision route, benefit ownership, BAU ownership and essential delivery partners.');
+  const toggle = section.querySelector('.dd-disclosure-toggle, .detail-accordion-header');
+  setText(toggle?.querySelector('span'), 'How this is governed');
+  setText(toggle?.querySelector('em'), 'Decision route, benefit ownership, BAU ownership and essential delivery partners.');
 
-  const body = section.querySelector('.detail-accordion-body');
+  const body = section.querySelector('.dd-disclosure-body, .detail-accordion-body');
   if (!body) return;
+  body.classList.remove('detail-accordion-body');
+  body.classList.add('dd-disclosure-body');
+
   const signature = JSON.stringify({ ownership: deliverable.ownership, governance: deliverable.governance, benefits: (deliverable.benefits || []).map(({ id, title, owner }) => ({ id, title, owner })) });
   if (section.dataset.ddGovernanceSignature === signature) return;
 
@@ -312,47 +383,44 @@ function outputItems(card) {
 }
 
 function enhanceStepCard(card, index) {
-  const period = card.querySelector(':scope > .period-pill')?.textContent?.trim() || 'Period TBC';
+  if (card.classList.contains('dd-step')) return;
+
+  const periodNode = card.querySelector(':scope > .period-pill');
+  const period = periodNode?.textContent?.trim() || 'Period TBC';
   const title = card.querySelector(':scope > h3');
   const summary = card.querySelector(':scope > p:not(.depends)');
   const depends = card.querySelector(':scope > .depends');
   const extras = card.querySelector(':scope > .step-extras');
   const outputs = outputItems(card);
 
-  card.classList.add('dd-step');
-  card.querySelector(':scope > .period-pill')?.classList.add('dd-source-hidden');
-  summary?.classList.add('dd-source-hidden');
-  depends?.classList.add('dd-source-hidden');
+  periodNode?.setAttribute('hidden', '');
+  summary?.setAttribute('hidden', '');
+  depends?.setAttribute('hidden', '');
 
-  let header = card.querySelector(':scope > .dd-step-meta');
-  if (!header) {
-    header = document.createElement('div');
-    header.className = 'dd-step-meta';
-    card.insertAdjacentElement('afterbegin', header);
-  }
+  const header = document.createElement('div');
+  header.className = 'dd-step-meta';
   setHtml(header, `<span>${stepLabel(index)}</span><strong>${escapeHtml(period)}</strong>`);
+  card.insertAdjacentElement('afterbegin', header);
 
-  let story = card.querySelector(':scope > .dd-step-story');
-  if (!story) {
-    story = document.createElement('div');
-    story.className = 'dd-step-story';
-    (extras || card).insertAdjacentElement(extras ? 'beforebegin' : 'beforeend', story);
-  }
+  const story = document.createElement('div');
+  story.className = 'dd-step-story';
   setHtml(story, `
     <div><span>Purpose</span><p>${escapeHtml(summary?.textContent?.trim() || 'Purpose not yet captured.')}</p></div>
     <div><span>Produces</span>${outputs.length ? `<ul>${outputs.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</ul>` : '<p>No outputs captured yet.</p>'}</div>
   `);
+  (extras || card).insertAdjacentElement(extras ? 'beforebegin' : 'beforeend', story);
 
-  if (!extras) return;
-  extras.classList.add('dd-step-detail');
-  if (!extras.id) extras.id = `dd-step-${index + 1}-detail`;
+  if (extras) {
+    extras.classList.remove('step-extras');
+    extras.classList.add('dd-step-detail');
+    if (!extras.id) extras.id = `dd-step-${index + 1}-detail`;
 
-  let toggle = card.querySelector(':scope > .dd-step-toggle');
-  if (!toggle) {
-    toggle = document.createElement('button');
+    const toggle = document.createElement('button');
     toggle.type = 'button';
     toggle.className = 'dd-step-toggle';
     toggle.setAttribute('aria-controls', extras.id);
+    toggle.setAttribute('aria-expanded', 'false');
+    setText(toggle, 'Show step detail');
     story.insertAdjacentElement('afterend', toggle);
     toggle.addEventListener('click', () => {
       const open = card.classList.toggle('dd-step-open');
@@ -360,9 +428,9 @@ function enhanceStepCard(card, index) {
       setText(toggle, open ? 'Hide step detail' : 'Show step detail');
     });
   }
-  const open = card.classList.contains('dd-step-open');
-  toggle.setAttribute('aria-expanded', String(open));
-  setText(toggle, open ? 'Hide step detail' : 'Show step detail');
+
+  card.classList.remove('step-card', 'indicative-step-card');
+  card.classList.add('dd-step');
 }
 
 function enhanceTimeline(page) {
@@ -370,12 +438,17 @@ function enhanceTimeline(page) {
   if (!panel) return;
   setText(panel.querySelector(':scope > h2'), 'Delivery timeline');
   setText(panel.querySelector(':scope > .subtle'), 'The route from mobilisation to handover. Each step shows its purpose and principal outputs; open step detail for resources, decisions, risks, issues and assumptions.');
-  panel.querySelectorAll('.step-card').forEach(enhanceStepCard);
+
+  const list = panel.querySelector('.steps-list, .dd-step-list');
+  if (!list) return;
+  list.classList.remove('steps-list');
+  list.classList.add('dd-step-list');
+  list.querySelectorAll(':scope > .step-card, :scope > .dd-step').forEach(enhanceStepCard);
 }
 
 function navigationItems(page) {
   return [
-    ['Overview', page.querySelector(':scope > .detail-hero')],
+    ['Overview', page.querySelector(':scope > .dd-hero')],
     ['Why it matters', page.querySelector('#why-this-matters')],
     ['Benefits', page.querySelector('#value-evidence')],
     ['Delivery', page.querySelector('#route-through')],
@@ -386,7 +459,7 @@ function navigationItems(page) {
 
 function ensureNavigation(page) {
   const flow = page.querySelector('.deliverable-main-flow');
-  const planning = flow?.querySelector('.planning-notice');
+  const planning = flow?.querySelector('.dd-planning-stage');
   if (!flow || !planning) return;
 
   let nav = flow.querySelector(':scope > .deliverable-section-nav');
@@ -407,7 +480,7 @@ function ensureNavigation(page) {
         const [, target] = items[Number(button.dataset.ddNavIndex)] || [];
         if (!target) return;
         if (target.id === 'governance') {
-          const disclosure = target.querySelector('.detail-accordion-header');
+          const disclosure = target.querySelector('.dd-disclosure-toggle, .detail-accordion-header');
           if (disclosure?.getAttribute('aria-expanded') !== 'true') disclosure.click();
           window.requestAnimationFrame(() => smoothScrollTo(target));
           return;
@@ -467,8 +540,10 @@ function scheduleEnhancement() {
   window.requestAnimationFrame(enhancePage);
 }
 
+const root = document.getElementById('root');
 const observer = new MutationObserver(scheduleEnhancement);
-observer.observe(document.documentElement, { childList: true, subtree: true });
+if (root) observer.observe(root, { childList: true, subtree: true });
+
 window.addEventListener('hashchange', () => {
   activeObserver?.disconnect();
   activeObserver = null;
