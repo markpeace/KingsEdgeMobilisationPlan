@@ -1,0 +1,612 @@
+/*
+ * Deliverable detail visual system.
+ *
+ * This file is intentionally loaded after the legacy/detail override layers.
+ * It does not change plan content. Its job is to give every deliverable detail
+ * page one predictable reading hierarchy and one shared set of spacing, card,
+ * section and disclosure primitives.
+ */
+
+@media screen {
+  main.deliverable-detail-page {
+    --deliverable-content-width: 1320px;
+    --deliverable-section-padding: clamp(1.15rem, 2vw, 1.7rem);
+    --deliverable-section-gap: clamp(0.9rem, 1.35vw, 1.2rem);
+    --deliverable-card-padding: clamp(0.9rem, 1.2vw, 1.05rem);
+    --deliverable-soft: #f7f7f5;
+    --deliverable-section-title: clamp(2.15rem, 3vw, 3.2rem);
+    --deliverable-subsection-title: clamp(1.45rem, 1.9vw, 1.85rem);
+    --deliverable-reading-width: 78rem;
+
+    display: grid;
+    width: min(var(--deliverable-content-width), calc(100% - 2rem));
+    gap: 1rem;
+  }
+
+  /* The primary reading order should begin with identity, then planning stage. */
+  .deliverable-detail-page > .deliverable-actions { order: 1; }
+  .deliverable-detail-page > .detail-hero:not(.project-detail-hero) { order: 2; }
+  .deliverable-detail-page > .planning-notice-clone { order: 3; }
+  .deliverable-detail-page > .deliverable-main-flow { order: 4; }
+
+  .deliverable-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.65rem;
+    margin: 0;
+  }
+
+  .deliverable-actions .back-link,
+  .deliverable-actions .print-a3-button {
+    min-height: 2.5rem;
+    border: 0;
+    border-bottom: 2px solid var(--ink);
+    padding: 0.45rem 0;
+    background: transparent;
+    color: var(--ink);
+    font: inherit;
+    font-size: 0.86rem;
+    font-weight: 800;
+    line-height: 1.1;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .deliverable-actions .back-link:hover,
+  .deliverable-actions .back-link:focus-visible,
+  .deliverable-actions .print-a3-button:hover,
+  .deliverable-actions .print-a3-button:focus-visible {
+    border-color: var(--accent);
+    color: var(--accent-dark);
+    background: transparent;
+  }
+
+  /* Hero: identify the proposition quickly without turning the heading into a poster. */
+  .deliverable-detail-page > .detail-hero:not(.project-detail-hero) {
+    margin: 0 !important;
+    padding: clamp(1.65rem, 3vw, 2.6rem) clamp(1.35rem, 3.7vw, 3rem) clamp(1.45rem, 2.6vw, 2.2rem) !important;
+    border: 2px solid var(--ink) !important;
+    border-left: clamp(0.8rem, 1.45vw, 1.1rem) solid var(--accent) !important;
+    background: #ffffff !important;
+  }
+
+  .deliverable-detail-page > .detail-hero:not(.project-detail-hero) .hero-context-line {
+    gap: 0.55rem 0.75rem;
+    margin: 0 0 1rem;
+  }
+
+  .deliverable-detail-page > .detail-hero:not(.project-detail-hero) .hero-reference {
+    padding: 0.35rem 0.62rem 0.3rem;
+    background: var(--accent);
+    color: #ffffff;
+    font-size: 0.82rem;
+    font-weight: 900;
+    letter-spacing: 0.075em;
+  }
+
+  .deliverable-detail-page > .detail-hero:not(.project-detail-hero) .project-context {
+    max-width: none;
+    color: var(--muted);
+    font-size: clamp(0.86rem, 0.95vw, 0.96rem);
+    font-weight: 800;
+  }
+
+  .deliverable-detail-page > .detail-hero:not(.project-detail-hero) h1 {
+    max-width: 72rem !important;
+    margin: 0 0 0.9rem !important;
+    font-size: clamp(3.15rem, 5.7vw, 5.9rem) !important;
+    line-height: 0.92 !important;
+    letter-spacing: -0.043em !important;
+  }
+
+  .deliverable-detail-page > .detail-hero:not(.project-detail-hero) > p,
+  .deliverable-detail-page > .detail-hero:not(.project-detail-hero) .detail-summary {
+    max-width: 74rem !important;
+    margin: 0 !important;
+    color: var(--muted) !important;
+    font-size: clamp(1.02rem, 1.25vw, 1.22rem) !important;
+    line-height: 1.42 !important;
+  }
+
+  .deliverable-detail-page > .detail-hero:not(.project-detail-hero) .detail-summary {
+    margin-top: 0.6rem !important;
+  }
+
+  .deliverable-detail-page > .detail-hero:not(.project-detail-hero) .detail-meta {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem;
+    max-width: 72rem;
+    margin-top: 1.35rem;
+  }
+
+  .deliverable-detail-page > .detail-hero:not(.project-detail-hero) .detail-meta span {
+    min-height: 0;
+    padding: 0.65rem 0 0;
+    border: 0 !important;
+    border-top: 2px solid var(--ink) !important;
+    background: transparent !important;
+    color: var(--ink);
+    font-size: 0.86rem;
+    font-weight: 800;
+    line-height: 1.3;
+  }
+
+  /* Planning stage is a compact orientation strip, not a competing panel. */
+  .deliverable-detail-page > .planning-notice-clone {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.45rem;
+    margin: 0 !important;
+    padding: 0.8rem 0 0.9rem !important;
+    border: 0 !important;
+    border-bottom: 2px solid var(--ink) !important;
+    background: transparent !important;
+  }
+
+  .deliverable-detail-page > .planning-notice-clone .planning-notice-main {
+    align-items: center;
+  }
+
+  .deliverable-detail-page > .planning-notice-clone .planning-notice-label {
+    color: var(--accent-dark);
+  }
+
+  .deliverable-detail-page > .planning-notice-clone .planning-notice-main p {
+    color: var(--ink);
+    font-size: 0.92rem;
+  }
+
+  .deliverable-detail-page > .planning-notice-clone .planning-notice-next {
+    padding-top: 0.45rem;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 0.86rem;
+  }
+
+  /* Shared section primitive. */
+  .deliverable-main-flow {
+    display: grid !important;
+    gap: 1.35rem !important;
+    margin-top: 0.15rem;
+  }
+
+  .deliverable-main-flow > .panel,
+  .detailed-plan-reveal > .detail-accordion,
+  .deliverable-main-flow > #resource-investment-profile {
+    width: 100%;
+    min-width: 0;
+    margin: 0 !important;
+  }
+
+  .deliverable-main-flow > .case-panel,
+  .detailed-plan-reveal > #value-evidence,
+  .deliverable-main-flow > .route-through-panel,
+  .deliverable-main-flow > #resource-investment-profile {
+    padding: var(--deliverable-section-padding) !important;
+    border: 2px solid var(--ink) !important;
+    border-top: 0.38rem solid var(--accent) !important;
+    background: #ffffff !important;
+  }
+
+  .deliverable-main-flow > .case-panel > h2,
+  .deliverable-main-flow > .route-through-panel > h2,
+  .deliverable-main-flow > #resource-investment-profile .resource-profile-titlebar h2 {
+    margin: 0 0 0.45rem !important;
+    font-family: var(--font-brand) !important;
+    font-size: var(--deliverable-section-title) !important;
+    font-weight: 400 !important;
+    line-height: 0.98 !important;
+    letter-spacing: -0.03em !important;
+  }
+
+  .deliverable-main-flow > .route-through-panel > .subtle,
+  .deliverable-main-flow > #resource-investment-profile .resource-profile-titlebar p {
+    max-width: var(--deliverable-reading-width) !important;
+    margin: 0 0 1rem !important;
+    color: var(--muted) !important;
+    font-size: clamp(0.94rem, 1vw, 1.02rem) !important;
+    line-height: 1.42 !important;
+  }
+
+  /* Make the intended public reading order explicit instead of relying on source order. */
+  .deliverable-main-flow > .planning-notice-inline-hidden { order: 0; }
+  .deliverable-main-flow > .case-panel { order: 1; }
+  .detailed-plan-reveal > #value-evidence { order: 2; }
+  .deliverable-main-flow > .route-through-panel { order: 3; }
+  .deliverable-main-flow > #resource-investment-profile { order: 4; }
+  .deliverable-main-flow > .detailed-plan-control { order: 5; }
+  .detailed-plan-reveal > .proposition-stage-note { order: 6; }
+  .detailed-plan-reveal > #governance { order: 7; }
+  .detailed-plan-reveal > #decision-log { order: 8; }
+  .detailed-plan-reveal > #risks-decisions { order: 9; }
+
+  /* Why this matters and resource metrics now use one shared card grammar. */
+  .deliverable-detail-page .case-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem;
+    margin-top: 1rem;
+  }
+
+  .deliverable-detail-page .case-grid > .schema-card {
+    min-height: 0;
+    padding: var(--deliverable-card-padding) !important;
+    border: 1px solid var(--border) !important;
+    border-top: 3px solid var(--accent) !important;
+    background: var(--deliverable-soft) !important;
+  }
+
+  .deliverable-detail-page .case-grid > .schema-card h3 {
+    margin: 0 0 0.45rem !important;
+    color: var(--accent-dark);
+    font-size: 0.72rem !important;
+    font-weight: 900;
+    line-height: 1.05;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+  }
+
+  .deliverable-detail-page .case-grid > .schema-card p {
+    margin: 0;
+    color: var(--ink);
+    font-size: clamp(0.94rem, 0.98vw, 1.02rem);
+    line-height: 1.42;
+  }
+
+  /* Benefits and evidence is core programme meaning, so its disclosure looks primary. */
+  .detailed-plan-reveal > #value-evidence {
+    overflow: visible;
+  }
+
+  .detailed-plan-reveal > #value-evidence .detail-accordion-header {
+    padding: 0 0 1rem !important;
+    border-bottom: 1px solid var(--border);
+    background: transparent !important;
+  }
+
+  .detailed-plan-reveal > #value-evidence .detail-accordion-header:hover,
+  .detailed-plan-reveal > #value-evidence .detail-accordion-header:focus-visible {
+    background: transparent !important;
+  }
+
+  .detailed-plan-reveal > #value-evidence .detail-accordion-header span {
+    font-size: var(--deliverable-section-title) !important;
+  }
+
+  .detailed-plan-reveal > #value-evidence .detail-accordion-header em {
+    max-width: var(--deliverable-reading-width);
+    color: var(--muted);
+    font-size: clamp(0.94rem, 1vw, 1.02rem) !important;
+    font-weight: 500;
+    line-height: 1.42;
+  }
+
+  .detailed-plan-reveal > #value-evidence .detail-accordion-header strong {
+    border: 0;
+    border-bottom: 2px solid var(--ink);
+    padding: 0.38rem 0;
+    background: transparent;
+    color: var(--ink);
+  }
+
+  .detailed-plan-reveal > #value-evidence .detail-accordion-body {
+    padding: 1rem 0 0 !important;
+  }
+
+  .deliverable-detail-page .benefit-realisation-list {
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)) !important;
+    gap: 0.85rem !important;
+  }
+
+  .deliverable-detail-page .benefit-realisation-card {
+    border: 1px solid var(--border) !important;
+    border-top: 3px solid var(--accent) !important;
+    border-left: 1px solid var(--border) !important;
+    background: var(--deliverable-soft) !important;
+  }
+
+  .deliverable-detail-page .benefit-success-look {
+    background: #ffffff;
+  }
+
+  /* Delivery timeline: a vertical route is easier to read than a four-card carousel. */
+  .deliverable-detail-page .route-through-panel > .steps-list,
+  .deliverable-detail-page main .route-through-panel > .steps-list,
+  .deliverable-detail-page .detailed-plan-reveal .route-through-panel > .steps-list {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 0 !important;
+    overflow: visible !important;
+    padding: 0 !important;
+    scroll-snap-type: none !important;
+  }
+
+  .deliverable-detail-page .route-through-panel .step-card,
+  .deliverable-detail-page main .route-through-panel .step-card {
+    display: grid !important;
+    grid-template-columns: minmax(7.5rem, 10rem) minmax(0, 1fr) auto;
+    grid-template-areas:
+      "meta title toggle"
+      "meta story toggle"
+      "meta extras extras";
+    gap: 0.55rem 1rem;
+    align-items: start;
+    min-height: 0 !important;
+    padding: 1rem 0 !important;
+    border: 0 !important;
+    border-top: 1px solid var(--border) !important;
+    background: #ffffff !important;
+  }
+
+  .deliverable-detail-page .route-through-panel .step-card:first-child {
+    border-top: 2px solid var(--ink) !important;
+  }
+
+  .deliverable-detail-page .route-through-panel .step-card:last-child {
+    padding-bottom: 0 !important;
+  }
+
+  .deliverable-detail-page .route-through-panel .step-card-header {
+    grid-area: meta;
+    display: block !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+    background: transparent !important;
+    color: var(--ink) !important;
+  }
+
+  .deliverable-detail-page .route-through-panel .step-card-header-meta {
+    display: grid;
+    gap: 0.3rem;
+    align-items: start;
+  }
+
+  .deliverable-detail-page .route-through-panel .step-card-header-meta span,
+  .deliverable-detail-page .route-through-panel .step-card-header-meta strong {
+    font-size: 0.72rem !important;
+    line-height: 1.15;
+    letter-spacing: 0.065em;
+    text-transform: uppercase;
+  }
+
+  .deliverable-detail-page .route-through-panel .step-card-header-meta span {
+    color: var(--accent-dark) !important;
+    font-weight: 950;
+  }
+
+  .deliverable-detail-page .route-through-panel .step-card-header-meta span::after {
+    display: none;
+    content: none;
+  }
+
+  .deliverable-detail-page .route-through-panel .step-card-header-meta strong {
+    color: var(--muted) !important;
+    font-weight: 800;
+  }
+
+  .deliverable-detail-page .route-through-panel .step-card > h3 {
+    grid-area: title;
+    margin: 0 !important;
+    color: var(--ink);
+    font-family: var(--font-brand);
+    font-size: clamp(1.35rem, 1.8vw, 1.85rem) !important;
+    font-weight: 400;
+    line-height: 1.02;
+    letter-spacing: -0.02em;
+  }
+
+  .deliverable-detail-page .route-through-panel .step-card-story {
+    grid-area: story;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem;
+    margin: 0 !important;
+  }
+
+  .deliverable-detail-page .route-through-panel .step-story-block {
+    gap: 0.3rem;
+    padding: 0.65rem 0 0 !important;
+    border-top: 1px solid var(--border) !important;
+  }
+
+  .deliverable-detail-page .route-through-panel .step-story-block:first-child {
+    padding-top: 0.65rem !important;
+    border-top: 1px solid var(--border) !important;
+  }
+
+  .deliverable-detail-page .route-through-panel .step-card .step-story-block > span {
+    color: var(--accent-dark);
+    font-size: 0.68rem !important;
+  }
+
+  .deliverable-detail-page .route-through-panel .step-card .step-story-block p,
+  .deliverable-detail-page .route-through-panel .step-card .step-story-block li {
+    font-size: 0.9rem !important;
+    line-height: 1.38 !important;
+  }
+
+  .deliverable-detail-page .route-through-panel .step-detail-toggle {
+    grid-area: toggle;
+    align-self: start;
+    margin: 0;
+    border: 0;
+    border-bottom: 2px solid var(--ink);
+    padding: 0.36rem 0;
+    background: transparent;
+    color: var(--ink);
+    font-size: 0.72rem !important;
+    font-weight: 900;
+    white-space: nowrap;
+  }
+
+  .deliverable-detail-page .route-through-panel .step-detail-toggle:hover,
+  .deliverable-detail-page .route-through-panel .step-detail-toggle:focus-visible {
+    border-color: var(--accent);
+    background: transparent;
+    color: var(--accent-dark);
+  }
+
+  .deliverable-detail-page .route-through-panel .step-extras {
+    grid-area: extras;
+    margin: 0.5rem 0 0 !important;
+    padding: 0.8rem 0 0 !important;
+    border-top: 1px dashed var(--border) !important;
+  }
+
+  .deliverable-detail-page .route-through-panel .step-extras .mini-block,
+  .deliverable-detail-page .route-through-panel .step-extras .resources-panel {
+    padding: var(--deliverable-card-padding) !important;
+    border: 1px solid var(--border) !important;
+    background: var(--deliverable-soft) !important;
+  }
+
+  /* Resource panel participates in the same top-level section hierarchy. */
+  .deliverable-main-flow > #resource-investment-profile .resource-profile-titlebar {
+    margin-bottom: 1rem !important;
+  }
+
+  .deliverable-main-flow > #resource-investment-profile .resource-readable-summary,
+  .deliverable-detail-page .case-grid {
+    gap: 0.75rem !important;
+  }
+
+  /* A visible transition tells broad audiences that the rest is planning depth. */
+  .deliverable-main-flow > .detailed-plan-control {
+    display: block !important;
+    padding: 1.1rem 0 0 !important;
+    border: 0 !important;
+    border-top: 4px solid var(--ink) !important;
+    background: transparent !important;
+  }
+
+  .deliverable-main-flow > .detailed-plan-control h2 {
+    margin: 0 0 0.35rem !important;
+    font-family: var(--font-brand);
+    font-size: clamp(1.85rem, 2.5vw, 2.55rem) !important;
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: -0.025em;
+  }
+
+  .deliverable-main-flow > .detailed-plan-control p {
+    max-width: var(--deliverable-reading-width);
+    margin: 0 !important;
+    color: var(--muted);
+    font-size: 0.92rem;
+    line-height: 1.4;
+  }
+
+  /* Secondary disclosures use one quiet, shared accordion primitive. */
+  .detailed-plan-reveal > .detail-accordion:not(#value-evidence) {
+    padding: 0 !important;
+    border: 0 !important;
+    border-top: 2px solid var(--ink) !important;
+    background: transparent !important;
+  }
+
+  .detailed-plan-reveal > .detail-accordion:not(#value-evidence) .detail-accordion-header {
+    padding: 0.9rem 0 !important;
+    background: transparent !important;
+  }
+
+  .detailed-plan-reveal > .detail-accordion:not(#value-evidence) .detail-accordion-header:hover,
+  .detailed-plan-reveal > .detail-accordion:not(#value-evidence) .detail-accordion-header:focus-visible {
+    background: var(--deliverable-soft) !important;
+  }
+
+  .detailed-plan-reveal > .detail-accordion:not(#value-evidence) .detail-accordion-header span {
+    font-size: var(--deliverable-subsection-title) !important;
+  }
+
+  .detailed-plan-reveal > .detail-accordion:not(#value-evidence) .detail-accordion-header em {
+    max-width: var(--deliverable-reading-width);
+    font-size: 0.9rem !important;
+    font-weight: 500;
+    line-height: 1.38;
+  }
+
+  .detailed-plan-reveal > .detail-accordion:not(#value-evidence) .detail-accordion-header strong {
+    border: 0;
+    border-bottom: 2px solid var(--ink);
+    padding: 0.35rem 0;
+    background: transparent;
+    color: var(--ink);
+  }
+
+  .detailed-plan-reveal > .detail-accordion:not(#value-evidence) .detail-accordion-body {
+    padding: 0 0 1rem !important;
+  }
+
+  .deliverable-detail-page .proposition-stage-note {
+    margin: 0 !important;
+    padding: 0.85rem 1rem !important;
+    border: 1px dashed var(--accent) !important;
+    background: var(--accent-soft) !important;
+  }
+
+  /* Responsive behaviour keeps the same hierarchy rather than switching visual systems. */
+  @media (max-width: 900px) {
+    .deliverable-detail-page > .detail-hero:not(.project-detail-hero) .detail-meta,
+    .deliverable-detail-page .case-grid,
+    .deliverable-detail-page .route-through-panel .step-card-story {
+      grid-template-columns: 1fr;
+    }
+
+    .deliverable-detail-page .route-through-panel .step-card {
+      grid-template-columns: 7rem minmax(0, 1fr);
+      grid-template-areas:
+        "meta title"
+        "meta story"
+        "meta toggle"
+        "meta extras";
+    }
+
+    .deliverable-detail-page .route-through-panel .step-detail-toggle {
+      justify-self: start;
+    }
+  }
+
+  @media (max-width: 620px) {
+    main.deliverable-detail-page {
+      width: min(100% - 1rem, var(--deliverable-content-width));
+      gap: 0.8rem;
+    }
+
+    .deliverable-detail-page > .detail-hero:not(.project-detail-hero) {
+      padding-left: 1rem !important;
+      padding-right: 1rem !important;
+    }
+
+    .deliverable-detail-page > .detail-hero:not(.project-detail-hero) h1 {
+      font-size: clamp(2.75rem, 14vw, 4.25rem) !important;
+    }
+
+    .deliverable-main-flow > .case-panel,
+    .detailed-plan-reveal > #value-evidence,
+    .deliverable-main-flow > .route-through-panel,
+    .deliverable-main-flow > #resource-investment-profile {
+      padding: 1rem !important;
+    }
+
+    .deliverable-detail-page .route-through-panel .step-card {
+      grid-template-columns: 1fr;
+      grid-template-areas:
+        "meta"
+        "title"
+        "story"
+        "toggle"
+        "extras";
+      gap: 0.55rem;
+    }
+
+    .deliverable-detail-page .route-through-panel .step-card-header-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem 0.75rem;
+    }
+  }
+}
