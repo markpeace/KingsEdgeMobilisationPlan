@@ -57,7 +57,17 @@ It should not redefine tokens or duplicate the base styling of panels, controls,
 
 ### Feature stylesheets
 
-Feature stylesheets may define layout or states that are unique to the feature. They should consume the shared tokens and primitives rather than establish a parallel visual system.
+Feature stylesheets define layouts or states that are unique to a feature and consume shared tokens rather than establish a parallel visual system.
+
+Current owned feature styles include:
+
+- `src/styles/resource-profile.css` for Resources & Investment;
+- `src/styles/project-overview.css` for project overview/detail presentation;
+- `src/styles/timeline.css` for the operational timeline.
+
+`src/site-entry.jsx` loads the normal application first, then the small set of source-owned styles that still need to follow `legacy-public.css` while historical declarations are retired. This is an explicit migration boundary, not a general override mechanism.
+
+`src/styles/post-legacy-cleanup.css` is deliberately narrow. It contains only cross-site presentation clean-ups that still need to follow the legacy bundle. Build validation caps both its size and its use of `!important`.
 
 ## Rules for new work
 
@@ -69,16 +79,23 @@ Feature stylesheets may define layout or states that are unique to the feature. 
 6. Do not add new late-loaded override stylesheets to `index.html`.
 7. Prefer one content gutter, one border rule and one hierarchy per section. Avoid nested boxes unless the information architecture genuinely requires them.
 8. A new visual treatment should normally be a shared primitive or a legitimate variant, not a one-off selector chain.
+9. Source-owned feature styles may temporarily follow `legacy-public.css` only through the documented `site-entry.jsx` migration boundary and must remain within the validator budgets.
 
-## Migration priority
+## Migration status and priority
 
-The current migration order is:
+Completed:
 
-1. establish canonical tokens and shared primitives;
-2. remove duplicated base declarations from `src/styles.css`;
-3. migrate the deliverable and project detail grammar onto shared primitives;
-4. absorb the Resources & Investment cascade bridge into the canonical component styling and remove the bridge;
-5. retire obsolete rules from `src/styles/legacy-public.css` feature by feature;
-6. remove remaining late-loaded presentation overrides once their owning stylesheets are clean.
+1. canonical tokens and shared primitives established;
+2. duplicated base declarations removed from `src/styles.css`;
+3. Resources & Investment moved into its canonical component stylesheet, with the former spacing bridge deleted;
+4. project overview presentation moved out of `public/project-detail-refresh.css` and into source-owned feature styling; the late public refresh file has been deleted.
+
+Next:
+
+1. retire the now-shadowed project overview and deliverable-board declarations from `src/styles/legacy-public.css`;
+2. reduce the remaining `!important` budget in `src/styles/project-overview.css` as those conflicts disappear;
+3. delete `src/styles/post-legacy-cleanup.css` once its small compatibility responsibilities have moved into their owning stylesheets;
+4. repeat the same process for the remaining timeline and Theory of Change late-loaded presentation layers;
+5. delete `legacy-public.css` once no live feature depends on it.
 
 The aim is progressive retirement of legacy CSS rather than a risky whole-site rewrite.
