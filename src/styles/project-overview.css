@@ -1,0 +1,191 @@
+/* Canonical project-overview presentation.
+   Loaded after legacy-public.css while historical selectors are retired. */
+
+.project-detail-hero {
+  margin-bottom: 0;
+  padding-top: clamp(1.65rem, 2.8vw, 2.5rem) !important;
+  padding-bottom: clamp(1.45rem, 2.4vw, 2.15rem) !important;
+  border-bottom: 0;
+  scroll-margin-top: 7rem;
+}
+
+.project-detail-hero h1 {
+  max-width: 72rem;
+  font-size: clamp(2.7rem, 4vw, 4.5rem) !important;
+}
+
+.project-detail-hero > p,
+.project-detail-hero .detail-summary {
+  max-width: 76rem !important;
+}
+
+.project-detail-hero .detail-summary {
+  font-size: clamp(1rem, 1.08vw, 1.1rem) !important;
+  line-height: 1.42 !important;
+}
+
+.project-detail-hero .detail-meta {
+  margin-top: 1rem;
+}
+
+.project-detail-hero + .transformation-claim-panel {
+  display: grid;
+  grid-template-columns: minmax(9.5rem, auto) minmax(0, 1fr);
+  gap: 1rem 1.4rem !important;
+  align-items: start;
+  margin: 0 0 1.2rem !important;
+  padding: clamp(1.1rem, 1.8vw, 1.45rem) clamp(1.35rem, 3vw, 2.4rem) !important;
+  border-top: 1px solid var(--border);
+  background: var(--color-surface);
+}
+
+.project-detail-hero + .transformation-claim-panel .eyebrow {
+  margin: 0;
+  align-self: start;
+}
+
+.project-detail-hero + .transformation-claim-panel p:last-child {
+  margin: 0;
+  max-width: 72rem !important;
+  font-size: clamp(1rem, 1.08vw, 1.12rem) !important;
+  font-weight: 700 !important;
+  line-height: 1.38 !important;
+}
+
+.project-deliverable-panel {
+  margin: 0 0 1.5rem;
+  padding: clamp(1.2rem, 2.2vw, 1.75rem);
+  overflow: visible;
+  scroll-margin-top: 7rem;
+}
+
+.project-deliverable-panel > h2 {
+  margin-bottom: 0.45rem;
+}
+
+.project-deliverable-panel > .subtle {
+  max-width: 54rem;
+  margin: 0 0 1.15rem;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+.project-deliverable-board {
+  overflow: visible;
+  padding-bottom: 0;
+}
+
+.project-deliverable-columns {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-4);
+  width: auto;
+  min-width: 0;
+}
+
+.project-deliverable-column {
+  display: block;
+  min-width: 0;
+  flex: none;
+  border: 0;
+  background: transparent;
+}
+
+.project-deliverable-header {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  height: 100%;
+  padding: clamp(1.05rem, 1.8vw, 1.35rem);
+  border: var(--border-width) solid var(--color-ink);
+  border-left: 0.65rem solid var(--color-ink);
+  background: var(--color-surface);
+  color: var(--color-ink);
+  transition: border-color var(--transition-fast), background var(--transition-fast), transform var(--transition-fast);
+}
+
+.project-deliverable-header:hover,
+.project-deliverable-header:focus-visible {
+  border-color: var(--color-accent);
+  border-left-color: var(--color-accent);
+  background: var(--color-accent-soft);
+  color: var(--color-ink);
+  outline: none;
+  transform: translateY(-2px);
+}
+
+.project-deliverable-header .deliverable-context-line {
+  margin-bottom: var(--space-4);
+}
+
+.project-deliverable-header .reference {
+  background: var(--color-ink);
+  color: var(--color-paper);
+}
+
+.project-deliverable-header:hover .reference,
+.project-deliverable-header:focus-visible .reference {
+  background: var(--color-accent);
+  color: var(--color-paper);
+}
+
+.project-deliverable-header h3 {
+  display: block;
+  margin: 0 0 var(--space-3);
+  overflow: visible;
+  color: var(--color-ink);
+  font-size: clamp(1.55rem, 2vw, 2.05rem);
+  line-height: 1.04;
+  -webkit-line-clamp: unset;
+}
+
+.project-deliverable-header p:not(.lead) {
+  display: block;
+  margin: 0;
+  overflow: visible;
+  color: var(--color-muted);
+  font-size: 0.98rem;
+  line-height: 1.42;
+  -webkit-line-clamp: unset;
+}
+
+.project-deliverable-header .lead {
+  margin: auto 0 0;
+  padding-top: var(--space-4);
+  color: var(--color-ink) !important;
+  font-size: 0.9rem;
+  line-height: 1.3;
+}
+
+.project-deliverable-header::after {
+  content: "Open deliverable →";
+  display: block;
+  margin-top: var(--space-3);
+  color: var(--color-accent-dark);
+  font-size: 0.84rem;
+  font-weight: 850;
+  letter-spacing: 0.02em;
+}
+
+.project-step-stack {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .project-detail-hero + .transformation-claim-panel,
+  .project-deliverable-columns {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 620px) {
+  .project-detail-hero {
+    padding-left: 1.15rem !important;
+    padding-right: 1.15rem !important;
+  }
+
+  .project-detail-hero + .transformation-claim-panel {
+    padding-left: 1.15rem !important;
+    padding-right: 1.15rem !important;
+  }
+}
