@@ -14,6 +14,8 @@ const siteStyles = read('src/styles.css');
 const resourceStyles = read('src/styles/resource-profile.css');
 const projectStyles = read('src/styles/project-overview.css');
 const postLegacyStyles = read('src/styles/post-legacy-cleanup.css');
+const generatedLegacyStyles = read('src/styles/legacy-public.css');
+const legacySourceStyles = read('src/styles/legacy-public-source.css');
 const resourceShim = read('public/resource-profile-legacy-shim.css');
 const siteEntry = read('src/site-entry.jsx');
 const index = read('index.html');
@@ -68,8 +70,8 @@ if (resourceShim.length > 1200) {
 }
 
 const projectImportantCount = (projectStyles.match(/!important/g) || []).length;
-if (projectImportantCount > 22) {
-  fail(`project overview has grown to ${projectImportantCount} !important declarations; retire conflicting legacy-public.css rules instead`);
+if (projectImportantCount > 2) {
+  fail(`project overview has grown to ${projectImportantCount} !important declarations; current migration budget is 2`);
 }
 
 const postLegacyImportantCount = (postLegacyStyles.match(/!important/g) || []).length;
@@ -79,6 +81,37 @@ if (postLegacyImportantCount > 3) {
 
 if (postLegacyStyles.length > 1800) {
   fail('post-legacy cleanup has grown beyond its narrow compatibility budget');
+}
+
+if (legacySourceStyles.length < 50000) {
+  fail('legacy-public-source.css no longer looks like the preserved migration source; do not edit the generated bundle as the source of truth');
+}
+
+if (!generatedLegacyStyles.includes('GENERATED FILE')) {
+  fail('legacy-public.css was not prepared from the preserved migration source; run npm run prepare:styles');
+}
+
+if (generatedLegacyStyles.length >= legacySourceStyles.length) {
+  fail('generated legacy bundle is not smaller than the preserved legacy source');
+}
+
+const retiredProjectSelectors = [
+  '.project-detail-hero',
+  '.related-project-detail-hero',
+  '.transformation-claim-panel',
+  '.project-deliverable-panel',
+  '.project-deliverable-board',
+  '.project-deliverable-columns',
+  '.project-deliverable-column',
+  '.project-deliverable-header',
+  '.project-step-stack',
+  '.project-step-card'
+];
+const generatedLegacyBody = generatedLegacyStyles.replace(/^\/\*[\s\S]*?\*\//, '');
+for (const selector of retiredProjectSelectors) {
+  if (generatedLegacyBody.includes(selector)) {
+    fail(`generated legacy bundle still contains retired project selector ${selector}`);
+  }
 }
 
 const siteImport = siteEntry.indexOf("import './site.jsx';");
