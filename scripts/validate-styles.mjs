@@ -12,6 +12,7 @@ const fail = (message) => {
 const designSystem = read('src/design-system.css');
 const siteStyles = read('src/styles.css');
 const resourceStyles = read('src/styles/resource-profile.css');
+const deliverableStyles = read('src/styles/deliverable-detail.css');
 const projectStyles = read('src/styles/project-overview.css');
 const postLegacyStyles = read('src/styles/post-legacy-cleanup.css');
 const generatedLegacyStyles = read('src/styles/legacy-public.generated.css');
@@ -53,6 +54,14 @@ if (/\b!important\b/.test(resourceStyles)) {
   fail('src/styles/resource-profile.css must not use !important; fix the owning rule instead');
 }
 
+if (/\b!important\b/.test(deliverableStyles)) {
+  fail('src/styles/deliverable-detail.css must not use !important; retire the conflicting legacy selector instead');
+}
+
+if (/\b!important\b/.test(projectStyles)) {
+  fail('src/styles/project-overview.css must not use !important; its legacy selector families are retired');
+}
+
 if (fs.existsSync(filePath('public/resource-profile-spacing.css'))) {
   fail('obsolete public/resource-profile-spacing.css must not be restored');
 }
@@ -68,11 +77,6 @@ if (resourceShimImportantCount > 3) {
 
 if (resourceShim.length > 1200) {
   fail('resource legacy shim has grown beyond its compatibility-only budget');
-}
-
-const projectImportantCount = (projectStyles.match(/!important/g) || []).length;
-if (projectImportantCount > 2) {
-  fail(`project overview has grown to ${projectImportantCount} !important declarations; current migration budget is 2`);
 }
 
 const postLegacyImportantCount = (postLegacyStyles.match(/!important/g) || []).length;
@@ -100,7 +104,7 @@ if (generatedLegacyStyles.length >= legacySourceStyles.length) {
   fail('generated legacy bundle is not smaller than the preserved legacy source');
 }
 
-const retiredProjectSelectors = [
+const retiredSelectors = [
   '.project-detail-hero',
   '.related-project-detail-hero',
   '.transformation-claim-panel',
@@ -110,20 +114,28 @@ const retiredProjectSelectors = [
   '.project-deliverable-column',
   '.project-deliverable-header',
   '.project-step-stack',
-  '.project-step-card'
+  '.project-step-card',
+  '.detail-hero:not(.project-detail-hero)',
+  '.detail-summary'
 ];
 const generatedLegacyBody = generatedLegacyStyles.replace(/^\/\*[\s\S]*?\*\//, '');
-for (const selector of retiredProjectSelectors) {
+for (const selector of retiredSelectors) {
   if (generatedLegacyBody.includes(selector)) {
-    fail(`generated legacy bundle still contains retired project selector ${selector}`);
+    fail(`generated legacy bundle still contains retired selector ${selector}`);
   }
 }
 
 const siteImport = siteEntry.indexOf("import './site.jsx';");
+const deliverableImport = siteEntry.indexOf("import './styles/deliverable-detail.css';");
 const projectImport = siteEntry.indexOf("import './styles/project-overview.css';");
 const cleanupImport = siteEntry.indexOf("import './styles/post-legacy-cleanup.css';");
-if (siteImport < 0 || projectImport < siteImport || cleanupImport < projectImport) {
-  fail('src/site-entry.jsx must load owned post-legacy styles after src/site.jsx in the documented order');
+if (
+  siteImport < 0 ||
+  deliverableImport < siteImport ||
+  projectImport < deliverableImport ||
+  cleanupImport < projectImport
+) {
+  fail('src/site-entry.jsx must load deliverable, project and cleanup styles after src/site.jsx in the documented order');
 }
 
 const allowedLateStylesheets = new Set([
