@@ -1,0 +1,118 @@
+/* Canonical deliverable-detail page foundation and hero.
+   Section internals remain in the generated legacy compatibility bundle for now. */
+
+main:has(> .detail-hero:not(.project-detail-hero)) {
+  --deliverable-section-gap: clamp(0.75rem, 1.2vw, 1rem);
+  --deliverable-section-padding: clamp(1rem, 1.65vw, 1.4rem);
+  --deliverable-card-padding: clamp(0.75rem, 1vw, 0.95rem);
+  --deliverable-soft: var(--color-surface-subtle);
+  --deliverable-softer: var(--color-surface-softest);
+  width: min(1360px, calc(100% - 2rem));
+  padding-top: 1.35rem;
+}
+
+main:has(> .detail-hero:not(.project-detail-hero)) > .back-link {
+  margin-bottom: 0.75rem;
+  padding: 0.42rem 0.62rem;
+  font-size: 0.82rem;
+}
+
+.detail-hero:not(.project-detail-hero) {
+  margin: 0 0 var(--deliverable-section-gap);
+  padding: clamp(1.7rem, 3.2vw, 2.8rem) clamp(1.35rem, 3.7vw, 3.35rem);
+  border: var(--border-width) solid var(--color-ink);
+  border-left: clamp(0.7rem, 1.35vw, 1rem) solid var(--color-accent);
+}
+
+.detail-hero:not(.project-detail-hero)::after {
+  display: none;
+  content: none;
+}
+
+.detail-hero:not(.project-detail-hero) .hero-context-line {
+  width: 100%;
+  max-width: none;
+  gap: 0.45rem 0.7rem;
+  margin-bottom: 0.85rem;
+  color: var(--color-muted);
+  font-size: 0.88rem;
+  font-weight: 700;
+}
+
+.detail-hero:not(.project-detail-hero) .hero-context-line .reference {
+  padding: 0.28rem 0.48rem;
+  font-size: 0.68rem;
+}
+
+.detail-hero:not(.project-detail-hero) h1 {
+  width: 100%;
+  max-width: none;
+  margin: 0 0 0.85rem;
+  font-size: clamp(3.3rem, 5.6vw, 6rem);
+  line-height: 0.94;
+  letter-spacing: -0.043em;
+}
+
+.detail-hero:not(.project-detail-hero) > p:not(.detail-summary) {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  color: var(--color-ink);
+  font-size: clamp(1.08rem, 1.3vw, 1.3rem);
+  font-weight: 650;
+  line-height: 1.38;
+}
+
+.detail-hero:not(.project-detail-hero) .detail-summary {
+  width: 100%;
+  max-width: none;
+  margin: 1rem 0 0;
+  padding-top: 0.9rem;
+  border-top: 1px solid var(--color-border);
+  color: var(--color-muted);
+  font-size: clamp(0.96rem, 1vw, 1.05rem);
+  font-weight: 500;
+  line-height: 1.52;
+  white-space: pre-line;
+}
+
+.detail-hero:not(.project-detail-hero) .detail-meta {
+  width: 100%;
+  max-width: none;
+  gap: 0.45rem;
+  margin-top: 1rem;
+}
+
+.detail-hero:not(.project-detail-hero) .detail-meta span {
+  padding: 0.4rem 0.58rem;
+  border: 1px solid var(--color-ink);
+  background: var(--deliverable-softer);
+  font-size: 0.8rem;
+  font-weight: 750;
+}
+
+@media (max-width: 760px) {
+  main:has(> .detail-hero:not(.project-detail-hero)) {
+    width: min(100% - 1rem, 1360px);
+    padding-top: 0.8rem;
+  }
+
+  .detail-hero:not(.project-detail-hero) {
+    padding: 1.25rem 1rem;
+    border-left-width: 0.5rem;
+  }
+
+  .detail-hero:not(.project-detail-hero) h1 {
+    font-size: clamp(2.55rem, 13vw, 4rem);
+  }
+}
+
+@media (max-width: 480px) {
+  .detail-hero:not(.project-detail-hero) .detail-meta {
+    display: grid;
+  }
+
+  .detail-hero:not(.project-detail-hero) .detail-meta span {
+    width: 100%;
+  }
+}

@@ -5,7 +5,7 @@ const root = process.cwd();
 const sourcePath = path.join(root, 'src/styles/legacy-public-source.css');
 const outputPath = path.join(root, 'src/styles/legacy-public.generated.css');
 
-const retiredProjectSelectors = [
+const retiredProjectSelectorTokens = [
   '.project-detail-hero',
   '.related-project-detail-hero',
   '.transformation-claim-panel',
@@ -16,6 +16,16 @@ const retiredProjectSelectors = [
   '.project-deliverable-header',
   '.project-step-stack',
   '.project-step-card'
+];
+
+const explicitlyRetiredSelectorTokens = [
+  '.detail-hero:not(.project-detail-hero)',
+  '.detail-summary'
+];
+
+const retiredSelectors = [
+  ...retiredProjectSelectorTokens,
+  ...explicitlyRetiredSelectorTokens
 ];
 
 function semanticPrelude(value) {
@@ -161,8 +171,30 @@ function shouldRecurseAtRule(prelude) {
   return /^@(media|supports|container|layer|document)\b/i.test(prelude);
 }
 
+function removeNegationArguments(selector) {
+  let result = selector;
+  let previous;
+  do {
+    previous = result;
+    result = result.replace(/:not\([^()]*\)/g, ':not()');
+  } while (result !== previous && /:not\([^()]+\)/.test(result));
+  return result;
+}
+
+function containsRetiredProjectSelector(selector) {
+  const positiveSelector = removeNegationArguments(selector);
+  return retiredProjectSelectorTokens.some((token) => positiveSelector.includes(token));
+}
+
 function isRetiredSelector(selector) {
-  return retiredProjectSelectors.some((token) => selector.includes(token));
+  if (explicitlyRetiredSelectorTokens.some((token) => selector.includes(token))) {
+    return true;
+  }
+  return containsRetiredProjectSelector(selector);
+}
+
+if (containsRetiredProjectSelector('.detail-hero:not(.project-detail-hero)')) {
+  throw new Error('Project selector matcher must ignore project classes used only inside :not(...)');
 }
 
 function filterCss(source) {
@@ -226,13 +258,13 @@ const result = filterCss(source);
 const banner = `/* GENERATED FILE. Do not edit directly.\n   Source: src/styles/legacy-public-source.css\n   Removed selector occurrences: ${result.removedSelectors}; fully removed rules: ${result.removedRules}. */\n`;
 const generated = `${banner}${result.css}`;
 
-const surviving = retiredProjectSelectors.filter((selector) => result.css.includes(selector));
+const surviving = retiredSelectors.filter((selector) => result.css.includes(selector));
 if (surviving.length) {
-  throw new Error(`Retired project selectors survived legacy generation: ${surviving.join(', ')}`);
+  throw new Error(`Retired selectors survived legacy generation: ${surviving.join(', ')}`);
 }
-if (result.removedSelectors < 25) {
-  throw new Error(`Legacy project retirement removed only ${result.removedSelectors} selector occurrences; expected at least 25. Check source drift.`);
+if (result.removedSelectors < 102) {
+  throw new Error(`Legacy retirement removed only ${result.removedSelectors} selector occurrences; expected at least 102. Check source drift.`);
 }
 
 fs.writeFileSync(outputPath, generated);
-console.log(`Prepared legacy CSS: removed ${result.removedSelectors} project selector occurrences across ${result.removedRules} fully retired rules.`);
+console.log(`Prepared legacy CSS: removed ${result.removedSelectors} retired selector occurrences across ${result.removedRules} fully retired rules.`);
