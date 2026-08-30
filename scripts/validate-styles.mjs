@@ -12,7 +12,10 @@ const fail = (message) => {
 const designSystem = read('src/design-system.css');
 const siteStyles = read('src/styles.css');
 const resourceStyles = read('src/styles/resource-profile.css');
+const projectStyles = read('src/styles/project-overview.css');
+const postLegacyStyles = read('src/styles/post-legacy-cleanup.css');
 const resourceShim = read('public/resource-profile-legacy-shim.css');
+const siteEntry = read('src/site-entry.jsx');
 const index = read('index.html');
 
 const canonicalTokens = [
@@ -51,6 +54,10 @@ if (fs.existsSync(filePath('public/resource-profile-spacing.css'))) {
   fail('obsolete public/resource-profile-spacing.css must not be restored');
 }
 
+if (fs.existsSync(filePath('public/project-detail-refresh.css'))) {
+  fail('obsolete public/project-detail-refresh.css must not be restored; project presentation belongs in src/styles/project-overview.css');
+}
+
 const resourceShimImportantCount = (resourceShim.match(/!important/g) || []).length;
 if (resourceShimImportantCount > 3) {
   fail(`resource legacy shim has grown to ${resourceShimImportantCount} !important declarations; retire legacy rules instead`);
@@ -60,8 +67,28 @@ if (resourceShim.length > 1200) {
   fail('resource legacy shim has grown beyond its compatibility-only budget');
 }
 
+const projectImportantCount = (projectStyles.match(/!important/g) || []).length;
+if (projectImportantCount > 22) {
+  fail(`project overview has grown to ${projectImportantCount} !important declarations; retire conflicting legacy-public.css rules instead`);
+}
+
+const postLegacyImportantCount = (postLegacyStyles.match(/!important/g) || []).length;
+if (postLegacyImportantCount > 3) {
+  fail(`post-legacy cleanup has grown to ${postLegacyImportantCount} !important declarations; move presentation into its owning stylesheet`);
+}
+
+if (postLegacyStyles.length > 1800) {
+  fail('post-legacy cleanup has grown beyond its narrow compatibility budget');
+}
+
+const siteImport = siteEntry.indexOf("import './site.jsx';");
+const projectImport = siteEntry.indexOf("import './styles/project-overview.css';");
+const cleanupImport = siteEntry.indexOf("import './styles/post-legacy-cleanup.css';");
+if (siteImport < 0 || projectImport < siteImport || cleanupImport < projectImport) {
+  fail('src/site-entry.jsx must load owned post-legacy styles after src/site.jsx in the documented order');
+}
+
 const allowedLateStylesheets = new Set([
-  '/project-detail-refresh.css',
   '/timeline-scale-control.css',
   '/theory-of-change.css',
   '/resource-profile-legacy-shim.css'
