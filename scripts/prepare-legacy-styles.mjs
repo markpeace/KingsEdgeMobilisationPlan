@@ -5,7 +5,7 @@ const root = process.cwd();
 const sourcePath = path.join(root, 'src/styles/legacy-public-source.css');
 const outputPath = path.join(root, 'src/styles/legacy-public.generated.css');
 
-const retiredSelectors = [
+const retiredProjectSelectorTokens = [
   '.project-detail-hero',
   '.related-project-detail-hero',
   '.transformation-claim-panel',
@@ -15,9 +15,17 @@ const retiredSelectors = [
   '.project-deliverable-column',
   '.project-deliverable-header',
   '.project-step-stack',
-  '.project-step-card',
+  '.project-step-card'
+];
+
+const explicitlyRetiredSelectorTokens = [
   '.detail-hero:not(.project-detail-hero)',
   '.detail-summary'
+];
+
+const retiredSelectors = [
+  ...retiredProjectSelectorTokens,
+  ...explicitlyRetiredSelectorTokens
 ];
 
 function semanticPrelude(value) {
@@ -163,8 +171,30 @@ function shouldRecurseAtRule(prelude) {
   return /^@(media|supports|container|layer|document)\b/i.test(prelude);
 }
 
+function removeNegationArguments(selector) {
+  let result = selector;
+  let previous;
+  do {
+    previous = result;
+    result = result.replace(/:not\([^()]*\)/g, ':not()');
+  } while (result !== previous && /:not\([^()]+\)/.test(result));
+  return result;
+}
+
+function containsRetiredProjectSelector(selector) {
+  const positiveSelector = removeNegationArguments(selector);
+  return retiredProjectSelectorTokens.some((token) => positiveSelector.includes(token));
+}
+
 function isRetiredSelector(selector) {
-  return retiredSelectors.some((token) => selector.includes(token));
+  if (explicitlyRetiredSelectorTokens.some((token) => selector.includes(token))) {
+    return true;
+  }
+  return containsRetiredProjectSelector(selector);
+}
+
+if (containsRetiredProjectSelector('.detail-hero:not(.project-detail-hero)')) {
+  throw new Error('Project selector matcher must ignore project classes used only inside :not(...)');
 }
 
 function filterCss(source) {
@@ -232,8 +262,8 @@ const surviving = retiredSelectors.filter((selector) => result.css.includes(sele
 if (surviving.length) {
   throw new Error(`Retired selectors survived legacy generation: ${surviving.join(', ')}`);
 }
-if (result.removedSelectors < 110) {
-  throw new Error(`Legacy retirement removed only ${result.removedSelectors} selector occurrences; expected at least 110. Check source drift.`);
+if (result.removedSelectors < 102) {
+  throw new Error(`Legacy retirement removed only ${result.removedSelectors} selector occurrences; expected at least 102. Check source drift.`);
 }
 
 fs.writeFileSync(outputPath, generated);
