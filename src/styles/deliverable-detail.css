@@ -5,8 +5,8 @@ main:has(> .detail-hero:not(.project-detail-hero)) {
   --deliverable-section-gap: clamp(0.75rem, 1.2vw, 1rem);
   --deliverable-section-padding: clamp(1rem, 1.65vw, 1.4rem);
   --deliverable-card-padding: clamp(0.75rem, 1vw, 0.95rem);
-  --deliverable-soft: #f7f7f5;
-  --deliverable-softer: #fbfbf9;
+  --deliverable-soft: var(--color-surface-subtle);
+  --deliverable-softer: var(--color-surface-softest);
   width: min(1360px, calc(100% - 2rem));
   padding-top: 1.35rem;
 }
