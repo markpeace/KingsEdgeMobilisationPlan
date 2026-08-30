@@ -1,0 +1,45 @@
+/* Keep the shared Resources & Investment panel on the same content gutter as the surrounding page. */
+
+#resource-investment-profile {
+  min-width: 0;
+  padding: 1.25rem !important;
+}
+
+#resource-investment-profile .resource-profile-titlebar,
+#resource-investment-profile .resource-profile-body,
+#resource-investment-profile .resource-readable-body,
+#resource-investment-profile .resource-readable-summary {
+  width: 100%;
+  min-width: 0;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+#resource-investment-profile .resource-profile-body,
+#resource-investment-profile .resource-readable-body {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+#resource-investment-profile .resource-profile-titlebar p {
+  max-width: 100%;
+}
+
+#resource-investment-profile .resource-readable-summary {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+#resource-investment-profile .resource-metric-card:first-child {
+  padding-left: 0;
+}
+
+#resource-investment-profile .resource-metric-card:last-child {
+  padding-right: 0;
+}
+
+@media (max-width: 680px) {
+  #resource-investment-profile {
+    padding: 1rem !important;
+  }
+}
