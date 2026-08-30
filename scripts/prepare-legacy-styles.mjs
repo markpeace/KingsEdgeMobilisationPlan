@@ -30,7 +30,9 @@ const explicitlyRetiredSelectorTokens = [
   '.step-detail-toggle',
   '.value-evidence-refined',
   '.benefit-',
-  '.unmapped-evidence-block'
+  '.unmapped-evidence-block',
+  '.site-header',
+  '.planning-notice'
 ];
 
 /* These generic selectors conflict with migrated consumers but must not retire

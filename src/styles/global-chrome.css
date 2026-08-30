@@ -1,0 +1,210 @@
+/*
+ * Shared site chrome.
+ *
+ * This layer owns application navigation, page-level utility actions and slim
+ * planning-context strips. The split KING'S EDGE / MOBILISATION PLAN brand is
+ * intentionally left with the existing brand treatment until its own migration.
+ */
+
+/* Navigation is a quiet text-led control, not a row of miniature boxed cards. */
+.site-header nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(0.15rem, 0.45vw, 0.45rem);
+  align-items: center;
+  justify-content: flex-end;
+  padding: var(--space-3) 0;
+}
+
+.site-header nav a {
+  position: relative;
+  padding: 0.6rem 0.42rem 0.5rem;
+  border: 0;
+  border-bottom: 3px solid transparent;
+  background: transparent;
+  color: var(--color-ink);
+  font-size: 0.88rem;
+  font-weight: 800;
+  line-height: 1;
+  text-decoration: none;
+  transition: border-color var(--transition-fast), color var(--transition-fast), background var(--transition-fast);
+}
+
+.site-header nav a:hover,
+.site-header nav a:focus-visible {
+  border-bottom-color: var(--color-accent);
+  background: transparent;
+  color: var(--color-accent-dark);
+}
+
+/* Page actions form one utility row with hierarchy rather than competing buttons. */
+.ds-page-actions,
+.deliverable-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 0 var(--space-3);
+  padding-bottom: var(--space-2);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.deliverable-actions .back-link {
+  margin: 0;
+  padding: 0.44rem 0;
+  border: 0;
+  background: transparent;
+  color: var(--color-muted);
+  font-size: 0.84rem;
+}
+
+.deliverable-actions .back-link:hover,
+.deliverable-actions .back-link:focus-visible {
+  background: transparent;
+  color: var(--color-accent-dark);
+}
+
+.print-a3-button {
+  width: fit-content;
+  padding: 0.5rem 0.7rem;
+  border: 1px solid var(--color-ink);
+  background: var(--color-surface);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 800;
+  line-height: 1;
+  cursor: pointer;
+  transition: border-color var(--transition-fast), background var(--transition-fast), color var(--transition-fast);
+}
+
+.print-a3-button:hover,
+.print-a3-button:focus-visible {
+  border-color: var(--color-accent);
+  background: var(--color-accent);
+  color: var(--color-paper);
+}
+
+/* Context strips surface state without introducing another boxed panel. */
+.ds-context-strip,
+.planning-notice {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: var(--space-2) var(--space-4);
+  align-items: center;
+  margin: 0 0 var(--space-3);
+  padding: 0.72rem 0 0.68rem;
+  border: 0;
+  border-top: var(--border-width-strong) solid var(--color-accent);
+  border-bottom: 1px solid var(--color-border);
+  background: transparent;
+}
+
+.planning-notice-main {
+  display: grid;
+  grid-template-columns: auto auto minmax(14rem, 1fr);
+  gap: var(--space-2) var(--space-3);
+  align-items: center;
+  min-width: 0;
+}
+
+.planning-notice-label {
+  color: var(--color-accent-dark);
+  font-size: 0.68rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.planning-notice .planning-status {
+  margin: 0;
+}
+
+.planning-notice p {
+  margin: 0;
+  color: var(--color-muted);
+  font-size: 0.88rem;
+  line-height: 1.4;
+}
+
+.planning-notice-main p {
+  min-width: 0;
+}
+
+.planning-notice-next {
+  max-width: 24rem;
+  padding: 0;
+  border: 0;
+  color: var(--color-muted);
+  font-size: 0.82rem;
+  line-height: 1.35;
+  text-align: right;
+}
+
+.planning-notice-next strong {
+  color: var(--color-ink);
+}
+
+.planning-notice-early-stage {
+  border-top-color: var(--color-accent);
+}
+
+.planning-notice-clone {
+  margin: 0 0 var(--space-3);
+}
+
+/* Preserve reader-mode behaviour when the historical styling family is retired. */
+.planning-notice-inline-hidden {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .site-header nav {
+    gap: var(--space-1);
+  }
+
+  .site-header nav a {
+    padding-inline: 0.32rem;
+    font-size: 0.82rem;
+  }
+
+  .planning-notice {
+    grid-template-columns: 1fr;
+  }
+
+  .planning-notice-next {
+    max-width: none;
+    text-align: left;
+  }
+}
+
+@media (max-width: 760px) {
+  .site-header nav {
+    width: 100%;
+    justify-content: center;
+    padding: var(--space-2) var(--space-2) var(--space-3);
+  }
+
+  .site-header nav a {
+    padding: 0.5rem 0.34rem 0.42rem;
+  }
+
+  .ds-page-actions,
+  .deliverable-actions {
+    align-items: flex-start;
+  }
+
+  .planning-notice {
+    padding-top: var(--space-3);
+  }
+
+  .planning-notice-main {
+    grid-template-columns: auto 1fr;
+  }
+
+  .planning-notice-main p {
+    grid-column: 1 / -1;
+  }
+}
