@@ -19,10 +19,11 @@
   max-width: 76rem;
 }
 
-/* Generic legacy .detail-summary rules remain until deliverable-detail migration. */
 .project-detail-hero .detail-summary {
-  font-size: clamp(1rem, 1.08vw, 1.1rem) !important;
-  line-height: 1.42 !important;
+  margin-top: 0.6rem;
+  color: var(--color-muted);
+  font-size: clamp(1rem, 1.08vw, 1.1rem);
+  line-height: 1.42;
 }
 
 .project-detail-hero .detail-meta {
