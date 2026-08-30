@@ -45,8 +45,8 @@ function StatusBadge({ ask }) {
   return <span className={`resource-status-badge resource-status-${state}`}>{statusLabel(ask)}</span>;
 }
 
-function MetricCard({ label, value, note, tone = '' }) {
-  return <article className={`resource-metric-card ${tone}`.trim()}><strong>{value}</strong><span>{label}</span>{note ? <small>{note}</small> : null}</article>;
+function MetricCard({ label, value, suffix = null, note, tone = '' }) {
+  return <article className={`resource-metric-card ${tone}`.trim()}><strong>{value}{suffix ? <small className="resource-metric-unit">{suffix}</small> : null}</strong><span>{label}</span>{note ? <small>{note}</small> : null}</article>;
 }
 
 function SectionHeading({ title, description, aside = null }) {
@@ -61,6 +61,22 @@ function deliveryYears(profile) {
     const fte = fteForAcademicYear(ask, phase.startYear);
     return amount !== null || fte > 0;
   }));
+}
+
+function investmentForYear(profile, year) {
+  const asks = profile.deliveryInvestmentAsks || [];
+  if (!year) return { total: 0, staffing: 0, other: 0, fte: 0 };
+  return asks.reduce((summary, ask) => {
+    const amount = amountForAcademicYear(ask, year.startYear);
+    const fte = fteForAcademicYear(ask, year.startYear);
+    if (typeof amount === 'number') {
+      summary.total += amount;
+      if (typeof ask.fte === 'number') summary.staffing += amount;
+      else summary.other += amount;
+    }
+    summary.fte += fte;
+    return summary;
+  }, { total: 0, staffing: 0, other: 0, fte: 0 });
 }
 
 function appointmentsForContext(context) {
@@ -123,6 +139,22 @@ function bauOperatingBudget(context, profile) {
   return permanentAnnualRunRate(context, profile) + nonStaffBauAnnual(profile);
 }
 
+function bauFteForContext(context, profile) {
+  const permanent = permanentFte(context);
+  if (permanent > 0) return permanent;
+  return (profile.bauLiabilityAsks || []).reduce((total, ask) => total + (typeof ask.fte === 'number' ? ask.fte : 0), 0);
+}
+
+function bauStartForContext(context, profile) {
+  const rawStarts = [
+    ...permanentAppointments(context).map((appointment) => appointment.bauFrom),
+    ...(profile.bauLiabilityAsks || []).map((ask) => ask.bauFrom || ask.periodNeeded)
+  ].filter(Boolean);
+  const starts = rawStarts.map((value) => String(value).replace(/\s+onward$/i, '').trim());
+  const unique = [...new Set(starts)];
+  return unique.length === 1 ? unique[0] : null;
+}
+
 function YearCell({ ask, year, showFte = false }) {
   const amount = amountForAcademicYear(ask, year.startYear);
   const fte = fteForAcademicYear(ask, year.startYear);
@@ -149,7 +181,7 @@ function YearStrip({ profile, context }) {
   if (!years.length) return null;
   const asks = profile.deliveryInvestmentAsks || [];
   const permanentIds = new Set(permanentAppointments(context).map((appointment) => appointment.resourceId));
-  return <div className="resource-year-strip" aria-label="Mobilisation investment by academic year">{years.map((phase) => {
+  return <div className="resource-year-strip" aria-label="Mobilisation investment by academic year">{years.map((phase, index) => {
     const amount = asks.reduce((total, ask) => {
       const value = amountForAcademicYear(ask, phase.startYear);
       return total + (typeof value === 'number' ? value : 0);
@@ -158,7 +190,7 @@ function YearStrip({ profile, context }) {
     const permanent = asks.reduce((total, ask) => permanentIds.has(ask.id) ? total + fteForAcademicYear(ask, phase.startYear) : total, 0);
     const temporary = Math.max(0, fte - permanent);
     const note = permanentIds.size ? `${formatFte(fte)} funded · ${formatFte(permanent)} permanent${temporary ? ` + ${formatFte(temporary)} time-limited` : ''}` : fte ? `${formatFte(fte)} new funded` : null;
-    return <div className="resource-year-summary" key={phase.year}><span>{phase.year}</span><strong>{amount ? formatMoney(amount) : 'Cost TBC'}</strong>{note ? <small>{note}</small> : null}</div>;
+    return <div className={`resource-year-summary ${index === 0 ? 'resource-year-summary-first' : ''}`} key={phase.year}><span>Year {index + 1} · {phase.year}</span><strong>{amount ? formatMoney(amount) : 'Cost TBC'}</strong>{note ? <small>{note}</small> : null}</div>;
   })}</div>;
 }
 
@@ -209,7 +241,8 @@ function BauSection({ profile, context }) {
   const operating = permanent.length ? nonStaffBauAsks(profile) : [];
   const operatingAnnual = operating.reduce((total, ask) => total + (ask.amount || 0), 0);
   const totalAnnual = bauOperatingBudget(context, profile);
-  return <section className="resource-profile-section resource-bau-section"><SectionHeading title="BAU destination" description="The enduring people and operating budget the mobilisation is designed to leave behind. Recurrent BAU is shown separately from mobilisation investment." aside={totalAnnual ? `${formatMoney(totalAnnual)} / year total` : null} />{permanent.length ? <><div className="resource-table-block is-permanent"><div className="resource-subheading"><div><h4>Permanent staffing</h4><p>The enduring establishment carried into BAU.</p></div><strong>{staffing ? `${formatMoney(staffing)} / year` : 'Cost TBC'}</strong></div><div className="resource-readable-table-wrap"><table className="resource-readable-table resource-bau-table"><thead><tr><th scope="col">Permanent role</th><th scope="col">FTE</th><th scope="col">Annual BAU run-rate</th><th scope="col">BAU from</th><th scope="col">BAU owner</th></tr></thead><tbody>{permanent.map((appointment) => <tr key={appointment.resourceId || appointment.role}><th scope="row"><strong>{appointment.role}</strong><small>{appointment.appointmentLabel || 'Permanent post'}</small></th><td>{formatFte(appointment.fte || 0)}</td><td>{appointment.annualBauAmount ? `${formatMoney(appointment.annualBauAmount, appointment.currency || 'GBP')} / year` : 'TBC'}</td><td>{appointment.bauFrom || 'TBC'}</td><td>{appointment.bauOwner || 'TBC'}</td></tr>)}</tbody></table></div></div>{operating.length ? <div className="resource-table-block resource-bau-operating-block"><div className="resource-subheading"><div><h4>Recurrent operating budget</h4><p>Non-staff capabilities that continue as part of BAU.</p></div><strong>{operatingAnnual ? `${formatMoney(operatingAnnual)} / year` : 'Cost TBC'}</strong></div><div className="resource-readable-table-wrap"><table className="resource-readable-table resource-bau-operating-table"><thead><tr><th scope="col">Capability / budget</th><th scope="col">Annual budget</th><th scope="col">From</th><th scope="col">Owner</th><th scope="col">Funding status</th></tr></thead><tbody>{operating.map((ask) => <tr key={ask.id || askName(ask)}><th scope="row"><strong>{askName(ask)}</strong></th><td>{typeof ask.amount === 'number' ? `${formatMoney(ask.amount, ask.currency || 'GBP')} / year` : 'TBC'}</td><td>{ask.periodNeeded || 'TBC'}</td><td>{ask.owner || 'TBC'}</td><td><StatusBadge ask={ask} /></td></tr>)}</tbody></table></div></div> : null}<div className="resource-bau-total"><span>Total BAU operating budget</span><strong>{totalAnnual ? `${formatMoney(totalAnnual)} / year` : 'Not quantified'}</strong>{operatingAnnual ? <small>{formatMoney(staffing)} staffing + {formatMoney(operatingAnnual)} recurrent non-staff</small> : null}</div></> : <div className="resource-readable-table-wrap"><table className="resource-readable-table resource-bau-table"><thead><tr><th scope="col">Recurrent commitment</th><th scope="col">FTE</th><th scope="col">Annual run-rate</th><th scope="col">From</th><th scope="col">Owner</th></tr></thead><tbody>{bauAsks.map((ask) => <tr key={ask.id || askName(ask)}><th scope="row">{askName(ask)}</th><td>{typeof ask.fte === 'number' ? formatFte(ask.fte) : '—'}</td><td>{typeof ask.amount === 'number' ? `${formatMoney(ask.amount, ask.currency || 'GBP')} / year` : 'TBC'}</td><td>{ask.periodNeeded || 'TBC'}</td><td>{ask.owner || 'TBC'}</td></tr>)}</tbody></table></div>}</section>;
+  const permanentTotalFte = permanent.reduce((total, appointment) => total + (appointment.fte || 0), 0);
+  return <section className="resource-profile-section resource-bau-section"><SectionHeading title="BAU destination" description="The enduring people and operating budget the mobilisation is designed to leave behind, shown separately from the cost of mobilisation." aside={totalAnnual ? `${formatMoney(totalAnnual)} / year total` : null} />{permanent.length ? <><div className="resource-table-block is-permanent"><div className="resource-subheading"><div><h4>Permanent staffing</h4><p>The enduring establishment carried into BAU.</p></div><strong>{permanentTotalFte ? `${formatFte(permanentTotalFte)} · ` : ''}{staffing ? `${formatMoney(staffing)} / year` : 'Cost TBC'}</strong></div><div className="resource-readable-table-wrap"><table className="resource-readable-table resource-bau-table"><thead><tr><th scope="col">Permanent role</th><th scope="col">FTE</th><th scope="col">Annual BAU run-rate</th><th scope="col">BAU from</th><th scope="col">BAU owner</th></tr></thead><tbody>{permanent.map((appointment) => <tr key={appointment.resourceId || appointment.role}><th scope="row"><strong>{appointment.role}</strong><small>{appointment.appointmentLabel || 'Permanent post'}</small></th><td>{formatFte(appointment.fte || 0)}</td><td>{appointment.annualBauAmount ? `${formatMoney(appointment.annualBauAmount, appointment.currency || 'GBP')} / year` : 'TBC'}</td><td>{appointment.bauFrom || 'TBC'}</td><td>{appointment.bauOwner || 'TBC'}</td></tr>)}</tbody></table></div></div>{operating.length ? <div className="resource-table-block resource-bau-operating-block"><div className="resource-subheading"><div><h4>Recurrent operating budget</h4><p>Non-staff capabilities that continue as part of BAU.</p></div><strong>{operatingAnnual ? `${formatMoney(operatingAnnual)} / year` : 'Cost TBC'}</strong></div><div className="resource-readable-table-wrap"><table className="resource-readable-table resource-bau-operating-table"><thead><tr><th scope="col">Capability / budget</th><th scope="col">Annual budget</th><th scope="col">From</th><th scope="col">Owner</th><th scope="col">Funding status</th></tr></thead><tbody>{operating.map((ask) => <tr key={ask.id || askName(ask)}><th scope="row"><strong>{askName(ask)}</strong></th><td>{typeof ask.amount === 'number' ? `${formatMoney(ask.amount, ask.currency || 'GBP')} / year` : 'TBC'}</td><td>{ask.periodNeeded || 'TBC'}</td><td>{ask.owner || 'TBC'}</td><td><StatusBadge ask={ask} /></td></tr>)}</tbody></table></div></div> : null}<div className="resource-bau-total"><span>Total BAU operating budget</span><strong>{totalAnnual ? `${formatMoney(totalAnnual)} / year` : 'Not quantified'}</strong>{operatingAnnual ? <small>{permanentTotalFte ? `${formatFte(permanentTotalFte)} core · ` : ''}{formatMoney(staffing)} staffing + {formatMoney(operatingAnnual)} non-staff</small> : permanentTotalFte ? <small>{formatFte(permanentTotalFte)} core staffing</small> : null}</div></> : <div className="resource-readable-table-wrap"><table className="resource-readable-table resource-bau-table"><thead><tr><th scope="col">Recurrent commitment</th><th scope="col">FTE</th><th scope="col">Annual run-rate</th><th scope="col">From</th><th scope="col">Owner</th></tr></thead><tbody>{bauAsks.map((ask) => <tr key={ask.id || askName(ask)}><th scope="row">{askName(ask)}</th><td>{typeof ask.fte === 'number' ? formatFte(ask.fte) : '—'}</td><td>{typeof ask.amount === 'number' ? `${formatMoney(ask.amount, ask.currency || 'GBP')} / year` : 'TBC'}</td><td>{ask.periodNeeded || 'TBC'}</td><td>{ask.owner || 'TBC'}</td></tr>)}</tbody></table></div>}</section>;
 }
 
 function PlanningDetail({ profile, steps }) {
@@ -230,24 +263,45 @@ export function ResourceInvestmentProfile({ context }) {
   const staffingRunRate = permanentAnnualRunRate(context, profile);
   const recurrentNonStaff = nonStaffBauAnnual(profile);
   const bauBudget = bauOperatingBudget(context, profile);
+  const bauFte = bauFteForContext(context, profile);
+  const bauStart = bauStartForContext(context, profile);
   const years = deliveryYears(profile);
+  const firstYear = years[0] || null;
+  const firstYearInvestment = investmentForYear(profile, firstYear);
+  const firstYearNoteParts = [
+    firstYear?.year || null,
+    firstYearInvestment.fte > 0 ? `${formatFte(firstYearInvestment.fte)} funded` : null,
+    firstYearInvestment.staffing > 0 ? `${formatMoney(firstYearInvestment.staffing)} staffing` : null,
+    firstYearInvestment.other > 0 ? `${formatMoney(firstYearInvestment.other)} other investment` : null
+  ].filter(Boolean);
   const cashValue = profile.knownInvestment > 0 ? formatMoney(profile.knownInvestment) : 'Not quantified';
+  const firstYearValue = firstYearInvestment.total > 0 ? formatMoney(firstYearInvestment.total) : 'Not quantified';
+  const bauNoteParts = workforceModels.length ? [
+    bauStart ? `From ${bauStart}` : null,
+    bauFte > 0 ? `Indicative ${formatFte(bauFte)} core` : null,
+    staffingRunRate > 0 ? `${formatMoney(staffingRunRate)} staffing` : null,
+    recurrentNonStaff > 0 ? `${formatMoney(recurrentNonStaff)} non-staff` : null
+  ].filter(Boolean) : [
+    bauStart ? `From ${bauStart}` : null,
+    bauFte > 0 ? `Indicative ${formatFte(bauFte)} recurrent capacity` : null
+  ].filter(Boolean);
+  const mobilisationNote = years.length > 1 ? `${years.length}-year quantified cash profile; existing capacity shown separately` : 'Quantified mobilisation cash; existing capacity shown separately';
   const cards = workforceModels.length ? [
-    <MetricCard key="cash" label="Mobilisation investment" value={cashValue} note={years.length > 1 ? `Quantified across ${years.length} academic years` : 'Quantified mobilisation investment'} tone="resource-summary-cash" />,
-    <MetricCard key="permanent" label="Permanent posts to establish" value={permanent ? formatFte(permanent) : 'None recorded'} note={permanent ? 'Appoint as enduring institutional posts' : 'No permanent appointment model recorded'} tone="resource-summary-permanent" />,
-    <MetricCard key="peak" label="Peak mobilisation team" value={peak ? formatFte(peak) : 'Not quantified'} note={permanent && temporaryPeak ? `${formatFte(permanent)} permanent + ${formatFte(temporaryPeak)} time-limited` : 'Peak concurrent funded FTE'} tone="resource-summary-new" />,
-    <MetricCard key="bau" label="BAU operating budget" value={bauBudget ? `${formatMoney(bauBudget)} / year` : 'Not quantified'} note={permanent && recurrentNonStaff ? `${formatMoney(staffingRunRate)} staffing + ${formatMoney(recurrentNonStaff)} recurrent non-staff` : permanent ? `${formatFte(permanent)} recurrent staffing` : 'Recurrent liability where planned'} tone="resource-summary-bau" />
+    <MetricCard key="year-one" label="Year 1 investment" value={firstYearValue} note={firstYearNoteParts.join(' · ')} tone="resource-summary-y1" />,
+    <MetricCard key="cash" label="Total mobilisation investment" value={cashValue} note={mobilisationNote} tone="resource-summary-cash" />,
+    <MetricCard key="peak" label="Peak funded team" value={peak ? formatFte(peak) : 'Not quantified'} note={permanent && temporaryPeak ? `${formatFte(permanent)} permanent core + ${formatFte(temporaryPeak)} time-limited` : permanent ? `${formatFte(permanent)} permanent core` : 'Peak concurrent funded FTE'} tone="resource-summary-new" />,
+    <MetricCard key="bau" label="BAU operating budget" value={bauBudget ? formatMoney(bauBudget) : 'Not quantified'} suffix={bauBudget ? '\u00a0/\u00a0year' : null} note={bauNoteParts.join(' · ')} tone="resource-summary-bau" />
   ] : [
-    <MetricCard key="cash" label="Mobilisation investment" value={cashValue} note={years.length > 1 ? `Quantified across ${years.length} academic years` : 'Quantified mobilisation investment'} tone="resource-summary-cash" />,
-    <MetricCard key="funded" label="New funded capacity" value={peak ? formatFte(peak) : 'Not quantified'} note="Peak concurrent funded FTE during the plan" tone="resource-summary-new" />,
-    <MetricCard key="existing" label="Existing capacity to commit" value={profile.existingCapacityFte > 0 ? formatFte(profile.existingCapacityFte) : 'Not quantified'} note="Protected time from current establishment" tone="resource-summary-existing" />,
-    <MetricCard key="bau" label="BAU operating budget" value={bauBudget ? `${formatMoney(bauBudget)} / year` : 'Not recorded'} note="Recurrent commitment where one is planned" tone="resource-summary-bau" />
+    <MetricCard key="year-one" label="Year 1 investment" value={firstYearValue} note={firstYearNoteParts.join(' · ')} tone="resource-summary-y1" />,
+    <MetricCard key="cash" label="Total mobilisation investment" value={cashValue} note={mobilisationNote} tone="resource-summary-cash" />,
+    <MetricCard key="funded" label="Peak funded capacity" value={peak ? formatFte(peak) : 'Not quantified'} note="Peak concurrent funded FTE during mobilisation" tone="resource-summary-new" />,
+    <MetricCard key="bau" label="BAU operating budget" value={bauBudget ? formatMoney(bauBudget) : 'Not recorded'} suffix={bauBudget ? '\u00a0/\u00a0year' : null} note={bauNoteParts.length ? bauNoteParts.join(' · ') : 'Recurrent commitment where one is planned'} tone="resource-summary-bau" />
   ];
 
   const mobilisationUnresolved = (profile.deliveryInvestmentAsks || []).filter((ask) => fundingState(ask) !== 'confirmed').length;
   const bauUnresolved = (profile.bauLiabilityAsks || []).filter((ask) => fundingState(ask) !== 'confirmed').length;
 
-  return <section id="resource-investment-profile" className="panel resource-investment-profile"><header className="resource-profile-titlebar"><h2>{context.type === 'project' ? 'Project resources and investment' : 'Resources and investment'}</h2><p>A decision-ready view of mobilisation spend, appointments, existing institutional capacity and the intended business-as-usual landing.</p></header><div className="resource-profile-body resource-readable-body"><div className="resource-profile-summary-grid resource-readable-summary">{cards}</div><WorkforceCallout context={context} /><CapacityStrip profile={profile} /><YearStrip profile={profile} context={context} />{mobilisationUnresolved || bauUnresolved ? <p className="resource-attention-line">{mobilisationUnresolved ? <strong>{mobilisationUnresolved} mobilisation {mobilisationUnresolved === 1 ? 'item needs' : 'items need'} approval or validation. </strong> : null}{bauUnresolved ? <span>{bauUnresolved} BAU recurrent {bauUnresolved === 1 ? 'commitment still needs' : 'commitments still need'} its funding route closed.</span> : null}</p> : null}<PeopleSection profile={profile} context={context} /><BauSection profile={profile} context={context} /><OtherInvestmentSection profile={profile} /><PlanningDetail profile={profile} steps={steps} /></div></section>;
+  return <section id="resource-investment-profile" className="panel resource-investment-profile"><header className="resource-profile-titlebar"><h2>{context.type === 'project' ? 'Project resources and investment' : 'Resources and investment'}</h2><p>Year 1 funding, full mobilisation investment, funded capacity and the intended business-as-usual landing.</p></header><div className="resource-profile-body resource-readable-body"><div className="resource-profile-summary-grid resource-readable-summary">{cards}</div><WorkforceCallout context={context} /><CapacityStrip profile={profile} /><YearStrip profile={profile} context={context} />{mobilisationUnresolved || bauUnresolved ? <p className="resource-attention-line">{mobilisationUnresolved ? <strong>{mobilisationUnresolved} mobilisation {mobilisationUnresolved === 1 ? 'item needs' : 'items need'} approval or validation. </strong> : null}{bauUnresolved ? <span>{bauUnresolved} BAU recurrent {bauUnresolved === 1 ? 'commitment still needs' : 'commitments still need'} its funding route closed.</span> : null}</p> : null}<PeopleSection profile={profile} context={context} /><BauSection profile={profile} context={context} /><OtherInvestmentSection profile={profile} /><PlanningDetail profile={profile} steps={steps} /></div></section>;
 }
 
 export default ResourceInvestmentProfile;

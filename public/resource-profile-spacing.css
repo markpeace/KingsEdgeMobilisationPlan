@@ -1,13 +1,14 @@
 /*
- * Resource profile cascade bridge.
+ * Resource profile shared presentation.
  *
- * The shared React resource component replaced an older collapsed resource widget,
- * but legacy-public.css still contains some of that widget's padding and body rules.
- * These selectors deliberately outrank those legacy rules and make the shared panel
- * follow the same visual grammar as the rest of the deliverable page.
+ * The shared React resource component replaces an older collapsed resource widget,
+ * while legacy-public.css still contains some of that widget's body rules. These
+ * selectors keep the resource content consistent wherever it is used. Outer framing
+ * belongs to the host page: a standalone/project resource panel gets its own frame,
+ * while a deliverable .dd-section inherits the deliverable chapter primitive.
  */
 
-body #resource-investment-profile {
+body #resource-investment-profile:not(.dd-section) {
   width: 100%;
   min-width: 0;
   margin: 0 !important;
@@ -37,7 +38,6 @@ body #resource-investment-profile .resource-readable-body {
   gap: var(--deliverable-section-gap, 1rem) !important;
 }
 
-/* Match the main deliverable section-title scale and spacing. */
 body #resource-investment-profile .resource-profile-titlebar {
   margin: 0 0 1rem !important;
   padding: 0 !important;
@@ -60,10 +60,9 @@ body #resource-investment-profile .resource-profile-titlebar p {
   line-height: 1.38 !important;
 }
 
-/* Headline metrics use the same card grammar as 'Why this matters'. */
 body #resource-investment-profile .resource-readable-summary {
   display: grid !important;
-  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  grid-template-columns: minmax(0, 1.35fr) repeat(3, minmax(0, 1fr)) !important;
   gap: 0.7rem !important;
   padding: 0 !important;
   border: 0 !important;
@@ -80,6 +79,13 @@ body #resource-investment-profile .resource-metric-card:last-child {
   background: var(--deliverable-soft, #f7f7f7) !important;
 }
 
+body #resource-investment-profile .resource-summary-y1 {
+  padding: clamp(1rem, 1.45vw, 1.2rem) !important;
+  border: 2px solid var(--ink) !important;
+  border-top: 0.42rem solid var(--accent) !important;
+  background: #ffffff !important;
+}
+
 body #resource-investment-profile .resource-metric-card strong,
 body #resource-investment-profile .resource-summary-cash strong {
   color: var(--ink) !important;
@@ -88,6 +94,10 @@ body #resource-investment-profile .resource-summary-cash strong {
   font-weight: 400 !important;
   line-height: 1 !important;
   letter-spacing: -0.025em !important;
+}
+
+body #resource-investment-profile .resource-summary-y1 strong {
+  font-size: clamp(2rem, 2.7vw, 2.65rem) !important;
 }
 
 body #resource-investment-profile .resource-metric-card span {
@@ -100,13 +110,16 @@ body #resource-investment-profile .resource-metric-card span {
   text-transform: uppercase !important;
 }
 
+body #resource-investment-profile .resource-summary-y1 span {
+  font-size: 0.74rem !important;
+}
+
 body #resource-investment-profile .resource-metric-card small {
   color: var(--ink) !important;
   font-size: 0.82rem !important;
   line-height: 1.35 !important;
 }
 
-/* Appointment model is contextual information, not a separate visual system. */
 body #resource-investment-profile .resource-workforce-callout {
   display: grid !important;
   gap: 0.45rem !important;
@@ -143,7 +156,6 @@ body #resource-investment-profile .resource-capacity-strip {
   line-height: 1.35 !important;
 }
 
-/* Annual mobilisation profile reads as a quiet sibling-card row. */
 body #resource-investment-profile .resource-year-strip {
   display: grid !important;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)) !important;
@@ -158,6 +170,11 @@ body #resource-investment-profile .resource-year-summary:last-child {
   padding: var(--deliverable-card-padding, 0.95rem) !important;
   border: 1px solid var(--border) !important;
   background: var(--deliverable-soft, #f7f7f7) !important;
+}
+
+body #resource-investment-profile .resource-year-summary-first {
+  border-top: 3px solid var(--ink) !important;
+  background: #ffffff !important;
 }
 
 body #resource-investment-profile .resource-year-summary span {
@@ -193,7 +210,6 @@ body #resource-investment-profile .resource-attention-line {
   line-height: 1.38 !important;
 }
 
-/* Internal sections are page subsections, not nested panels. */
 body #resource-investment-profile .resource-profile-section {
   gap: 0.8rem !important;
   margin: 0 !important;
@@ -227,7 +243,6 @@ body #resource-investment-profile .resource-table-block.is-conditional {
   border-left: 0 !important;
 }
 
-/* Keep tables restrained and aligned to the same content gutter. */
 body #resource-investment-profile .resource-readable-table-wrap {
   margin: 0 !important;
   border-top: 1px solid var(--border) !important;
@@ -250,7 +265,6 @@ body #resource-investment-profile .resource-bau-total {
   background: transparent !important;
 }
 
-/* The disclosure follows the square, rule-led page controls. */
 body #resource-investment-profile .resource-secondary-detail {
   margin-top: 0.1rem !important;
   border-top: 2px solid var(--ink) !important;
@@ -266,15 +280,23 @@ body #resource-investment-profile .resource-secondary-detail > summary {
   body #resource-investment-profile .resource-readable-summary {
     grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
   }
+
+  body #resource-investment-profile .resource-summary-y1 {
+    grid-column: 1 / -1;
+  }
 }
 
 @media (max-width: 680px) {
-  body #resource-investment-profile {
+  body #resource-investment-profile:not(.dd-section) {
     padding: var(--deliverable-section-padding, 1rem) !important;
   }
 
   body #resource-investment-profile .resource-readable-summary,
   body #resource-investment-profile .resource-year-strip {
     grid-template-columns: 1fr !important;
+  }
+
+  body #resource-investment-profile .resource-summary-y1 {
+    grid-column: auto;
   }
 }
