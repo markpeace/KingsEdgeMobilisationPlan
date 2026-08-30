@@ -1,0 +1,178 @@
+/*
+ * Shared detail-page primitives.
+ *
+ * These recipes are loaded after the generated legacy compatibility bundle while
+ * deliverable surfaces migrate. The .ds-* classes are the reusable contract;
+ * existing deliverable selectors are temporary aliases so current markup can
+ * consume the same grammar without another page-specific override layer.
+ */
+
+/* Editorial cards: conceptual statements separated by hierarchy and rules. */
+.ds-editorial-grid,
+.case-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(0.9rem, 1.5vw, 1.35rem);
+}
+
+.ds-editorial-card,
+.case-grid .schema-card {
+  min-width: 0;
+  padding: var(--space-4) 0 var(--space-5);
+  border: 0;
+  border-top: var(--border-width-strong) solid var(--color-accent);
+  background: transparent;
+  box-shadow: none;
+}
+
+.ds-editorial-card > h3,
+.case-grid .schema-card h3 {
+  margin: 0 0 var(--space-2);
+  color: var(--color-accent-dark);
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: 900;
+  letter-spacing: 0.075em;
+  line-height: 1.05;
+  text-transform: uppercase;
+}
+
+.ds-editorial-card > p,
+.case-grid .schema-card p {
+  margin: 0;
+  color: var(--color-ink);
+  font-size: clamp(0.95rem, 0.98vw, 1.02rem);
+  line-height: 1.5;
+}
+
+/* Sequence cards: restrained stage marker rather than a saturated banner. */
+.ds-sequence-card,
+.route-through-panel .step-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: var(--space-4);
+  border: 1px solid var(--color-ink);
+  border-top: 4px solid var(--color-accent);
+  background: var(--color-surface);
+  box-shadow: none;
+}
+
+.ds-sequence-kicker {
+  color: var(--color-accent-dark);
+  font-size: var(--text-xs);
+  font-weight: 900;
+  letter-spacing: 0.065em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+/* Disclosures: one generous, reusable concertina treatment. */
+.ds-disclosure,
+.detail-accordion {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid var(--color-ink);
+  background: var(--color-surface);
+  box-shadow: none;
+}
+
+.ds-disclosure-trigger,
+.detail-accordion-header {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 0.32rem var(--space-4);
+  align-items: center;
+  width: 100%;
+  padding: clamp(1rem, 1.55vw, 1.35rem) clamp(1rem, 1.75vw, 1.5rem);
+  border: 0;
+  background: var(--color-surface);
+  color: var(--color-ink);
+  text-align: left;
+  cursor: pointer;
+  transition: background var(--transition-fast);
+}
+
+.ds-disclosure-trigger:hover,
+.ds-disclosure-trigger:focus-visible,
+.detail-accordion-header:hover,
+.detail-accordion-header:focus-visible {
+  background: var(--color-accent-soft);
+  outline: none;
+}
+
+.ds-disclosure-title,
+.detail-accordion-header span {
+  margin: 0;
+  font-family: var(--font-brand);
+  font-size: clamp(1.8rem, 2.35vw, 2.6rem);
+  font-weight: 400;
+  line-height: 0.99;
+  letter-spacing: -0.028em;
+}
+
+.ds-disclosure-summary,
+.detail-accordion-header em {
+  grid-column: 1;
+  max-width: 82ch;
+  color: var(--color-muted);
+  font-style: normal;
+  font-size: clamp(0.9rem, 0.96vw, 1rem);
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.ds-disclosure-action,
+.detail-accordion-header strong {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  align-self: center;
+  justify-self: end;
+  min-width: 3.6rem;
+  padding: 0.42rem 0.56rem;
+  border: 1px solid var(--color-ink);
+  background: var(--color-surface);
+  color: var(--color-ink);
+  font-size: 0.7rem;
+  font-weight: 850;
+  letter-spacing: 0.065em;
+  line-height: 1;
+  text-align: center;
+  text-transform: uppercase;
+  transition: border-color var(--transition-fast), color var(--transition-fast), background var(--transition-fast);
+}
+
+.ds-disclosure-trigger:hover .ds-disclosure-action,
+.ds-disclosure-trigger:focus-visible .ds-disclosure-action,
+.detail-accordion-header:hover strong,
+.detail-accordion-header:focus-visible strong {
+  border-color: var(--color-accent);
+  color: var(--color-accent-dark);
+}
+
+.ds-disclosure-body,
+.detail-accordion-body {
+  padding: 0 clamp(1rem, 1.75vw, 1.5rem) clamp(1rem, 1.75vw, 1.5rem);
+}
+
+@media (max-width: 760px) {
+  .ds-editorial-grid,
+  .case-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ds-disclosure-trigger,
+  .detail-accordion-header {
+    grid-template-columns: 1fr;
+  }
+
+  .ds-disclosure-action,
+  .detail-accordion-header strong {
+    grid-column: 1;
+    grid-row: auto;
+    justify-self: start;
+    margin-top: var(--space-1);
+  }
+}

@@ -12,6 +12,7 @@ const fail = (message) => {
 const designSystem = read('src/design-system.css');
 const siteStyles = read('src/styles.css');
 const resourceStyles = read('src/styles/resource-profile.css');
+const detailPrimitiveStyles = read('src/styles/detail-primitives.css');
 const deliverableStyles = read('src/styles/deliverable-detail.css');
 const projectStyles = read('src/styles/project-overview.css');
 const postLegacyStyles = read('src/styles/post-legacy-cleanup.css');
@@ -34,32 +35,36 @@ const canonicalTokens = [
 ];
 
 for (const token of canonicalTokens) {
-  if (!designSystem.includes(token)) {
-    fail(`src/design-system.css is missing canonical token ${token}`);
-  }
-  if (siteStyles.includes(token)) {
-    fail(`src/styles.css redeclares canonical token ${token}`);
-  }
+  if (!designSystem.includes(token)) fail(`src/design-system.css is missing canonical token ${token}`);
+  if (siteStyles.includes(token)) fail(`src/styles.css redeclares canonical token ${token}`);
 }
 
 if (/:root\s*\{/.test(siteStyles)) {
   fail('src/styles.css must not define :root; shared tokens belong in src/design-system.css');
 }
 
-if (/\b!important\b/.test(designSystem)) {
-  fail('src/design-system.css must not use !important');
+for (const [file, styles] of [
+  ['src/design-system.css', designSystem],
+  ['src/styles/resource-profile.css', resourceStyles],
+  ['src/styles/detail-primitives.css', detailPrimitiveStyles],
+  ['src/styles/deliverable-detail.css', deliverableStyles],
+  ['src/styles/project-overview.css', projectStyles]
+]) {
+  if (/\b!important\b/.test(styles)) {
+    fail(`${file} must not use !important; retire the conflicting legacy selector instead`);
+  }
 }
 
-if (/\b!important\b/.test(resourceStyles)) {
-  fail('src/styles/resource-profile.css must not use !important; fix the owning rule instead');
-}
-
-if (/\b!important\b/.test(deliverableStyles)) {
-  fail('src/styles/deliverable-detail.css must not use !important; retire the conflicting legacy selector instead');
-}
-
-if (/\b!important\b/.test(projectStyles)) {
-  fail('src/styles/project-overview.css must not use !important; its legacy selector families are retired');
+const requiredDetailPrimitives = [
+  '.ds-editorial-card',
+  '.ds-sequence-card',
+  '.ds-disclosure',
+  '.ds-disclosure-trigger'
+];
+for (const selector of requiredDetailPrimitives) {
+  if (!detailPrimitiveStyles.includes(selector)) {
+    fail(`src/styles/detail-primitives.css is missing shared primitive ${selector}`);
+  }
 }
 
 if (fs.existsSync(filePath('public/resource-profile-spacing.css'))) {
@@ -104,7 +109,7 @@ if (generatedLegacyStyles.length >= legacySourceStyles.length) {
   fail('generated legacy bundle is not smaller than the preserved legacy source');
 }
 
-const retiredSelectors = [
+const retiredSelectorTokens = [
   '.project-detail-hero',
   '.related-project-detail-hero',
   '.transformation-claim-panel',
@@ -116,26 +121,42 @@ const retiredSelectors = [
   '.project-step-stack',
   '.project-step-card',
   '.detail-hero:not(.project-detail-hero)',
-  '.detail-summary'
+  '.detail-summary',
+  '.case-grid',
+  '.detail-accordion',
+  '.route-through-panel',
+  '.step-card',
+  '.step-card-story',
+  '.step-story-block',
+  '.step-detail-toggle',
+  '.value-evidence-refined',
+  '.benefit-',
+  '.unmapped-evidence-block'
 ];
 const generatedLegacyBody = generatedLegacyStyles.replace(/^\/\*[\s\S]*?\*\//, '');
-for (const selector of retiredSelectors) {
+for (const selector of retiredSelectorTokens) {
   if (generatedLegacyBody.includes(selector)) {
-    fail(`generated legacy bundle still contains retired selector ${selector}`);
+    fail(`generated legacy bundle still contains retired selector token ${selector}`);
   }
 }
 
+if (/(^|\})\s*\.schema-card h3\s*\{/m.test(generatedLegacyBody)) {
+  fail('generated legacy bundle still contains exact retired selector .schema-card h3');
+}
+
 const siteImport = siteEntry.indexOf("import './site.jsx';");
+const primitiveImport = siteEntry.indexOf("import './styles/detail-primitives.css';");
 const deliverableImport = siteEntry.indexOf("import './styles/deliverable-detail.css';");
 const projectImport = siteEntry.indexOf("import './styles/project-overview.css';");
 const cleanupImport = siteEntry.indexOf("import './styles/post-legacy-cleanup.css';");
 if (
   siteImport < 0 ||
-  deliverableImport < siteImport ||
+  primitiveImport < siteImport ||
+  deliverableImport < primitiveImport ||
   projectImport < deliverableImport ||
   cleanupImport < projectImport
 ) {
-  fail('src/site-entry.jsx must load deliverable, project and cleanup styles after src/site.jsx in the documented order');
+  fail('src/site-entry.jsx must load shared detail primitives, deliverable, project and cleanup styles after src/site.jsx in the documented order');
 }
 
 const allowedLateStylesheets = new Set([
@@ -153,6 +174,4 @@ for (const href of linkedStylesheets) {
   }
 }
 
-if (!process.exitCode) {
-  console.log('Style architecture validation passed');
-}
+if (!process.exitCode) console.log('Style architecture validation passed');
