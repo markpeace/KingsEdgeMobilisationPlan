@@ -45,16 +45,25 @@ Owns reusable detail-surface recipes that currently need to follow the generated
 
 - editorial cards for conceptual statements;
 - sequence cards for ordered delivery stages;
-- disclosure/concertina surfaces.
+- disclosure/concertina rows.
 
 The `.ds-*` selectors are the reusable contract. Existing deliverable selectors are temporarily aliased into those recipes so current markup can consume the same grammar without a JSX rewrite or page-specific override file. These aliases should disappear as markup is progressively moved onto explicit primitive classes.
+
+### `src/styles/global-chrome.css`
+
+Owns the shared application chrome that sits around content rather than inside a single feature:
+
+- primary navigation treatment;
+- page-level utility actions;
+- planning-stage context strips.
+
+The current split KING'S EDGE / MOBILISATION PLAN brand remains visually stable while its historical rules are migrated separately.
 
 ### `src/styles.css`
 
 Owns site compositions that are genuinely specific to the mobilisation-plan interface, for example:
 
-- global navigation layout;
-- hero composition;
+- hero composition outside migrated feature pages;
 - project board;
 - deliverable board;
 - dependency lens;
@@ -71,10 +80,11 @@ Current owned feature styles include:
 
 - `src/styles/resource-profile.css` for Resources & Investment;
 - `src/styles/deliverable-detail.css` for deliverable-detail composition and feature-specific internals;
+- `src/styles/planning-detail.css` for governance, consultation history and RAID presentation;
 - `src/styles/project-overview.css` for project overview/detail presentation;
 - `src/styles/timeline.css` for the operational timeline.
 
-`src/site-entry.jsx` loads the normal application first, then the shared detail recipes and source-owned feature styles that still need to follow the legacy compatibility bundle while historical declarations are retired. This is an explicit migration boundary, not a general override mechanism.
+`src/site-entry.jsx` loads the normal application first, then the shared recipes and source-owned feature styles that still need to follow the legacy compatibility bundle while historical declarations are retired. This is an explicit migration boundary, not a general override mechanism.
 
 `src/styles/post-legacy-cleanup.css` is deliberately narrow. It contains only cross-site presentation clean-ups that still need to follow the legacy bundle. Build validation caps both its size and its use of `!important`.
 
@@ -84,9 +94,29 @@ Current owned feature styles include:
 
 `src/styles/legacy-public.css` is a stable wrapper around a gitignored compatibility bundle generated before development and production builds by `scripts/prepare-legacy-styles.mjs`. The generator removes selector families that have moved to canonical primitives or feature styles before the compatibility bundle enters the runtime cascade.
 
-The generator now retires project overview, project deliverable-board, deliverable hero, case-for-change, benefit/evidence, delivery-sequence and disclosure selector families. Build validation checks that these selectors cannot reappear in the generated compatibility CSS.
+The generator now retires project overview, project deliverable-board, deliverable hero, case-for-change, benefit/evidence, delivery-sequence, disclosure, global chrome, planning-context, governance, consultation and RAID selector families. Build validation checks that retired selectors cannot reappear in the generated compatibility CSS.
 
 This generated-bundle approach is transitional. Each migrated feature should reduce the preserved source until the compatibility layer can be removed completely.
+
+## Deliverable-page composition
+
+A deliverable page should read progressively from proposition to implementation rather than expose every planning field at equal weight.
+
+The canonical reading sequence is:
+
+1. hero and concise proposition;
+2. Why this matters;
+3. Benefits and evidence;
+4. Delivery timeline;
+5. Resources and investment;
+6. governance;
+7. decisions and consultation;
+8. risks, issues and assumptions;
+9. supporting planning detail where needed.
+
+The default view is for scanning. Long authored proposition detail remains available behind progressive disclosure. Timeline cards show an outcome and a small number of key outputs by default, with full step-level decisions, resources, risks, issues and assumptions behind step detail.
+
+Narrative order belongs in the canonical page composition layer, not in ad-hoc DOM reordering or late CSS overrides. Where wrapper markup exists only for application structure, `display: contents` may be used deliberately so child sections can participate in the page grid without inventing another visual container.
 
 ## Rules for new work
 
@@ -100,6 +130,8 @@ This generated-bundle approach is transitional. Each migrated feature should red
 8. A new visual treatment should normally be a shared primitive or a legitimate variant, not a one-off selector chain.
 9. Source-owned styles may temporarily follow `legacy-public.css` only through the documented `site-entry.jsx` migration boundary and must remain within validator guardrails.
 10. Do not edit generated legacy compatibility CSS as the source of truth. Historical migration work belongs in `legacy-public-source.css` and the generator retirement list.
+11. Keep the default reading surface scannable. Detailed authored material should use progressive disclosure rather than making every page state equally dense.
+12. Prefer CSS composition for visual sequence. Runtime DOM manipulation should be reserved for behaviour or content derivation that CSS cannot express.
 
 ## Migration status and priority
 
@@ -115,15 +147,18 @@ Completed:
 8. deliverable page foundation, hero and summary grammar moved into `src/styles/deliverable-detail.css` and onto shared design-system tokens;
 9. deliverable hero and generic detail-summary selectors retired from the runtime legacy bundle;
 10. shared editorial-card, sequence-card and disclosure recipes established;
-11. case for change, benefits/evidence, delivery sequence and detailed-plan disclosures moved away from historical styling and onto the shared grammar.
+11. case for change, benefits/evidence, delivery sequence and detailed-plan disclosures moved away from historical styling and onto the shared grammar;
+12. navigation, page actions and planning-stage context moved into shared global chrome;
+13. governance, consultation history and RAID moved into owned planning-detail styling;
+14. deliverable composition now follows a documented progressive reading sequence, with dense proposition and step detail disclosed on demand.
 
 Next:
 
-1. migrate remaining deliverable internals such as governance and RAID onto shared card/table primitives where appropriate;
-2. delete `src/styles/post-legacy-cleanup.css` once its small compatibility responsibilities have moved into their owning stylesheets;
-3. repeat the generated-retirement process for timeline and Theory of Change presentation;
-4. progressively shrink `legacy-public-source.css` as each retired feature family becomes safe to delete permanently;
-5. delete the legacy compatibility system once no live feature depends on it;
-6. move temporary selector aliases onto explicit `.ds-*` classes as the React markup is decomposed.
+1. delete `src/styles/post-legacy-cleanup.css` once its small compatibility responsibilities have moved into their owning stylesheets;
+2. repeat the generated-retirement process for timeline and Theory of Change presentation;
+3. progressively shrink `legacy-public-source.css` as each retired feature family becomes safe to delete permanently;
+4. delete the legacy compatibility system once no live feature depends on it;
+5. move temporary selector aliases onto explicit `.ds-*` classes as the React markup is decomposed;
+6. migrate the remaining historical brand treatment into owned global chrome when it can be done without destabilising the established visual identity.
 
 The aim is progressive retirement of legacy CSS rather than a risky whole-site rewrite.

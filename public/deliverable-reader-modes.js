@@ -57,6 +57,28 @@ function syncPlanningStagePosition() {
   if (clone.className !== cloneClassName) clone.className = cloneClassName;
 }
 
+function refineHeroProposition() {
+  const hero = document.querySelector('.detail-hero:not(.project-detail-hero)');
+  const source = hero?.querySelector(':scope > .detail-summary');
+  if (!hero || !source) return;
+
+  let details = hero.querySelector(':scope > .hero-proposition-detail');
+  if (!details) {
+    details = document.createElement('details');
+    details.className = 'hero-proposition-detail';
+    const summary = document.createElement('summary');
+    summary.textContent = 'Read full proposition';
+    const body = document.createElement('p');
+    body.textContent = source.textContent?.trim() || '';
+    details.append(summary, body);
+    const meta = hero.querySelector(':scope > .detail-meta');
+    (meta || hero).insertAdjacentElement(meta ? 'beforebegin' : 'beforeend', details);
+  } else {
+    const body = details.querySelector('p');
+    setTextIfChanged(body, source.textContent?.trim() || '');
+  }
+}
+
 function removeOverviewPanel() {
   document.querySelector('.at-a-glance-panel')?.remove();
 }
@@ -77,20 +99,12 @@ function removeReaderNavigation() {
   document.querySelector('.deliverable-layout')?.classList.add('deliverable-layout-single-column');
 }
 
-function syncWhyThisMattersPosition() {
-  const mainFlow = document.querySelector('.deliverable-main-flow');
-  const casePanel = mainFlow?.querySelector('.case-panel');
-  const routePanel = mainFlow?.querySelector('.route-through-panel');
-  if (!mainFlow || !casePanel || !routePanel || casePanel.nextElementSibling === routePanel) return;
-  mainFlow.insertBefore(casePanel, routePanel);
-}
-
 function initialiseAccordionDisclosure() {
   const key = window.location.hash;
   if (accordionsInitialised === key) return;
   const accordions = [...document.querySelectorAll('.detail-accordion[id]')];
   if (!accordions.length) return;
-  accordions.forEach((section) => setAccordionState(section.id, false));
+  accordions.forEach((section) => setAccordionState(section.id, section.id === 'value-evidence'));
   accordionsInitialised = key;
 }
 
@@ -136,12 +150,21 @@ function refinePlanningDetailCopy() {
   const copy = document.querySelector('.detailed-plan-control p');
   setTextIfChanged(
     copy,
-    'Use the concertina sections below for cross-cutting planning detail. Step-specific outputs, decisions, resources, risks, issues and assumptions are available inside the Delivery timeline cards above.'
+    'Use the sections below for cross-cutting planning detail. Step-specific decisions, resources, risks, issues and assumptions remain inside the Delivery timeline.'
   );
 }
 
 function stepLabelFor(index) {
   return `Step ${String(index + 1).padStart(2, '0')}`;
+}
+
+function compactSentence(value, maxLength = 190) {
+  const text = String(value || '').replace(/\s+/g, ' ').trim();
+  if (!text) return '';
+  const sentence = text.match(/^.*?[.!?](?=\s|$)/)?.[0] || text;
+  if (sentence.length <= maxLength) return sentence;
+  const clipped = sentence.slice(0, maxLength).replace(/\s+\S*$/, '').trim();
+  return `${clipped || sentence.slice(0, maxLength).trim()}…`;
 }
 
 function outputItems(card) {
@@ -150,7 +173,7 @@ function outputItems(card) {
   return [...(outputBlock?.querySelectorAll('li') || [])]
     .map((item) => item.querySelector('strong')?.textContent?.trim() || item.textContent?.trim())
     .filter(Boolean)
-    .slice(0, 3);
+    .slice(0, 2);
 }
 
 function renderStepHeader(card, index) {
@@ -173,7 +196,7 @@ function renderStepStory(card, index) {
   renderStepHeader(card, index);
   const summary = card.querySelector(':scope > p:not(.depends)');
   const depends = card.querySelector(':scope > .depends');
-  const purpose = summary?.textContent?.trim() || 'Purpose not yet captured.';
+  const purpose = compactSentence(summary?.textContent?.trim()) || 'Purpose not yet captured.';
   const outputs = outputItems(card);
 
   summary?.classList.add('step-source-hidden');
@@ -194,11 +217,11 @@ function renderStepStory(card, index) {
 
   setHtmlIfChanged(story, `
     <div class="step-story-block step-purpose-block">
-      <span>Purpose</span>
+      <span>Outcome</span>
       <p>${escapeHtml(purpose)}</p>
     </div>
     <div class="step-story-block step-produces-block">
-      <span>Produces</span>
+      <span>Key outputs</span>
       ${outputsHtml}
     </div>
   `);
@@ -211,7 +234,7 @@ function refineDeliveryTimeline() {
   setTextIfChanged(panel.querySelector('h2'), 'Delivery timeline');
   setTextIfChanged(
     panel.querySelector(':scope > .subtle'),
-    'The main delivery route for this deliverable. Each card shows the step purpose, what it produces and what it needs. Open step detail for decisions, resources, risks, issues and assumptions.'
+    'The main delivery route at a glance. Each card shows the intended outcome and key outputs; open step detail for the underlying decisions, resources, risks, issues and assumptions.'
   );
 
   panel.querySelectorAll('.step-card').forEach((card, index) => renderStepStory(card, index));
@@ -324,10 +347,10 @@ function refineCrossDeliverableDependencies() {
 function refreshDeliverablePage() {
   refreshScheduled = false;
   syncPlanningStagePosition();
+  refineHeroProposition();
   removeOverviewPanel();
   enableStepDetailsMode();
   removeReaderNavigation();
-  syncWhyThisMattersPosition();
   refineDeliveryTimeline();
   refinePlanningDetailCopy();
   refineCrossDeliverableDependencies();
