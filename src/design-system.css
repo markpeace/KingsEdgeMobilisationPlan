@@ -137,6 +137,10 @@ main,
   margin-inline: auto;
 }
 
+main {
+  padding: 2rem 0 4rem;
+}
+
 /* Layout primitives */
 .ds-stack {
   display: grid;
