@@ -3,15 +3,19 @@
 
 @media screen {
   .dd-page {
-    --dd-max: 1320px;
-    --dd-gap: clamp(1rem, 1.5vw, 1.35rem);
-    --dd-section-pad: clamp(1.15rem, 2vw, 1.65rem);
-    --dd-card-pad: clamp(0.85rem, 1.2vw, 1rem);
+    --dd-max: 1280px;
+    --dd-gap: clamp(1.35rem, 2vw, 1.9rem);
+    --dd-section-pad: clamp(1.35rem, 2.2vw, 1.8rem);
+    --dd-card-pad: clamp(0.95rem, 1.3vw, 1.15rem);
     --dd-soft: #f7f7f5;
-    --dd-title: clamp(2rem, 2.8vw, 3rem);
-    --dd-subtitle: clamp(1.35rem, 1.8vw, 1.75rem);
-    --dd-reading: 78rem;
+    --dd-soft-2: #fbfbfa;
+    --dd-title: clamp(2.15rem, 3vw, 3.25rem);
+    --dd-subtitle: clamp(1.45rem, 1.9vw, 1.9rem);
+    --dd-reading: 76ch;
     --dd-sticky-top: 70px;
+    --deliverable-card-padding: var(--dd-card-pad);
+    --deliverable-section-gap: 1rem;
+    --deliverable-soft: var(--dd-soft);
 
     display: grid;
     width: min(var(--dd-max), calc(100% - 2rem));
@@ -19,6 +23,7 @@
   }
 
   .dd-page > .a3-print-sheet { display: none; }
+  .dd-page [hidden] { display: none !important; }
 
   /* Top-level orientation */
   .dd-page .deliverable-actions {
@@ -39,8 +44,9 @@
     margin: 0;
     padding: 0;
     list-style: none;
-    font-size: 0.82rem;
-    font-weight: 800;
+    color: var(--muted);
+    font-size: 0.8rem;
+    font-weight: 700;
   }
 
   .deliverable-breadcrumbs li {
@@ -51,7 +57,7 @@
 
   .deliverable-breadcrumbs li + li::before {
     content: '/';
-    color: var(--muted);
+    color: #9a9a9a;
     font-weight: 400;
   }
 
@@ -64,19 +70,17 @@
   .deliverable-breadcrumbs a:hover,
   .deliverable-breadcrumbs a:focus-visible { color: var(--accent-dark); }
 
-  .deliverable-breadcrumbs [aria-current='page'] { color: var(--muted); }
-
   .dd-page .print-a3-button {
     flex: 0 0 auto;
-    min-height: 2.35rem;
-    padding: 0.35rem 0;
+    min-height: 2.2rem;
+    padding: 0.3rem 0;
     border: 0;
-    border-bottom: 2px solid var(--ink);
+    border-bottom: 1px solid var(--ink);
     background: transparent;
     color: var(--ink);
     font: inherit;
-    font-size: 0.82rem;
-    font-weight: 800;
+    font-size: 0.8rem;
+    font-weight: 700;
     cursor: pointer;
   }
 
@@ -90,12 +94,14 @@
   .dd-page > .detail-hero:not(.project-detail-hero) {
     scroll-margin-top: calc(var(--dd-sticky-top) + 3.5rem);
     margin: 0 !important;
-    padding: clamp(1.5rem, 3vw, 2.35rem) clamp(1.25rem, 3.4vw, 2.8rem) clamp(1.35rem, 2.5vw, 2rem) !important;
+    padding: clamp(1.55rem, 3vw, 2.4rem) clamp(1.3rem, 3.4vw, 2.75rem) clamp(1.4rem, 2.5vw, 2rem) !important;
     border: 2px solid var(--ink) !important;
-    border-left: clamp(0.7rem, 1.2vw, 0.95rem) solid var(--accent) !important;
+    border-left: clamp(0.55rem, 0.9vw, 0.75rem) solid var(--accent) !important;
     background: #fff !important;
     box-shadow: none !important;
   }
+
+  .dd-page > .detail-hero:not(.project-detail-hero)::after { display: none !important; }
 
   .dd-page .hero-context-line {
     display: flex;
@@ -106,60 +112,63 @@
   }
 
   .dd-page .hero-reference {
-    padding: 0.32rem 0.58rem;
+    padding: 0.3rem 0.55rem;
     background: var(--accent);
     color: #fff;
-    font-size: 0.78rem;
+    font-size: 0.76rem;
     font-weight: 900;
     letter-spacing: 0.07em;
   }
 
   .dd-page .hero-context-line .project-context {
     color: var(--muted);
-    font-size: 0.88rem;
-    font-weight: 800;
+    font-size: 0.86rem;
+    font-weight: 700;
   }
 
   .dd-page > .detail-hero h1 {
-    max-width: 72rem !important;
+    max-width: 20ch !important;
     margin: 0 0 0.85rem !important;
-    font-size: clamp(2.8rem, 5vw, 5rem) !important;
+    font-size: clamp(2.9rem, 5vw, 5rem) !important;
     line-height: 0.94 !important;
     letter-spacing: -0.04em !important;
   }
 
   .dd-page > .detail-hero > p,
   .dd-page > .detail-hero .detail-summary {
-    max-width: 74rem !important;
+    max-width: 82ch !important;
     margin: 0 !important;
     color: var(--muted) !important;
-    font-size: clamp(1rem, 1.15vw, 1.15rem) !important;
-    line-height: 1.45 !important;
+    font-size: clamp(1rem, 1.1vw, 1.12rem) !important;
+    line-height: 1.5 !important;
   }
 
-  .dd-page > .detail-hero .detail-summary { margin-top: 0.55rem !important; }
+  .dd-page > .detail-hero .detail-summary { margin-top: 0.6rem !important; }
 
   .dd-page .detail-meta {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 0.8rem;
+    gap: 1rem;
     max-width: 72rem;
     margin-top: 1.25rem;
   }
 
   .dd-page .detail-meta span {
-    padding: 0.6rem 0 0 !important;
+    min-width: 0;
+    padding: 0.55rem 0 0 !important;
     border: 0 !important;
-    border-top: 2px solid var(--ink) !important;
+    border-top: 1px solid var(--ink) !important;
     background: transparent !important;
     color: var(--ink);
     font-size: 0.84rem;
-    font-weight: 800;
+    font-weight: 700;
+    line-height: 1.35;
   }
 
   /* Main reading flow */
   .dd-page .deliverable-main-flow {
     display: grid !important;
+    grid-template-columns: minmax(0, 1fr) !important;
     gap: var(--dd-gap) !important;
     margin: 0 !important;
   }
@@ -179,112 +188,126 @@
   .dd-page #decision-log { order: 10; }
   .dd-page #risks-decisions { order: 11; }
 
-  /* Planning stage is orientation, not a content panel. */
-  .dd-page .dd-planning-stage {
+  /* Planning stage is a compact orientation strip. */
+  .dd-page .deliverable-main-flow > .planning-notice.dd-planning-stage {
     display: grid !important;
-    gap: 0.5rem !important;
-    padding: 0.8rem 0 0.9rem !important;
+    grid-template-columns: minmax(0, 1fr) minmax(18rem, 30rem) !important;
+    gap: 0.85rem 1.25rem !important;
+    align-items: center !important;
+    padding: 0.8rem 0 !important;
     border: 0 !important;
-    border-bottom: 2px solid var(--ink) !important;
+    border-top: 1px solid var(--border) !important;
+    border-bottom: 1px solid var(--border) !important;
+    border-left: 0 !important;
+    border-right: 0 !important;
     background: transparent !important;
     box-shadow: none !important;
   }
 
   .dd-page .dd-planning-stage .planning-notice-main {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 0.45rem 0.7rem;
+    display: grid !important;
+    grid-template-columns: auto auto minmax(0, 1fr) !important;
+    gap: 0.45rem 0.7rem !important;
+    align-items: center !important;
+    min-width: 0;
+  }
+
+  .dd-page .dd-planning-stage .planning-notice-label {
+    color: var(--accent-dark) !important;
+    font-size: 0.68rem !important;
+    font-weight: 900 !important;
+    letter-spacing: 0.07em !important;
+    text-transform: uppercase !important;
   }
 
   .dd-page .dd-planning-stage .planning-notice-main p {
-    flex: 1 1 32rem;
-    margin: 0;
-    color: var(--ink);
-    font-size: 0.9rem;
+    min-width: 0;
+    margin: 0 !important;
+    color: var(--ink) !important;
+    font-size: 0.88rem !important;
+    line-height: 1.4 !important;
   }
 
   .dd-page .dd-planning-stage .planning-notice-next {
-    margin: 0;
-    color: var(--muted);
-    font-size: 0.84rem;
+    margin: 0 !important;
+    padding-left: 1rem !important;
+    border-left: 1px solid var(--border) !important;
+    color: var(--muted) !important;
+    font-size: 0.82rem !important;
+    line-height: 1.4 !important;
   }
 
+  .dd-page .dd-planning-stage .planning-notice-next strong { color: var(--ink); }
+
   /* Persistent in-page navigator. */
-  .deliverable-section-nav {
+  .dd-page .deliverable-section-nav {
     position: sticky;
     top: var(--dd-sticky-top);
     z-index: 30;
     display: flex;
     align-items: center;
-    gap: 0.8rem;
-    padding: 0.55rem 0.7rem;
-    border: 1px solid var(--border);
-    border-top: 3px solid var(--ink);
-    background: rgba(255, 255, 255, 0.97);
+    gap: 0.9rem;
+    padding: 0.48rem 0;
+    border: 0 !important;
+    border-bottom: 1px solid var(--border) !important;
+    background: rgba(255, 255, 255, 0.98);
     backdrop-filter: blur(8px);
   }
 
-  .deliverable-section-nav > span {
+  .dd-page .deliverable-section-nav > span {
     flex: 0 0 auto;
-    color: var(--muted);
-    font-size: 0.68rem;
+    color: #747474;
+    font-size: 0.66rem;
     font-weight: 900;
     letter-spacing: 0.06em;
     text-transform: uppercase;
   }
 
-  .deliverable-section-nav > div {
+  .dd-page .deliverable-section-nav > div {
     display: flex;
     min-width: 0;
     overflow-x: auto;
-    scrollbar-width: thin;
+    scrollbar-width: none;
   }
 
-  .deliverable-section-nav button {
+  .dd-page .deliverable-section-nav > div::-webkit-scrollbar { display: none; }
+
+  .dd-page .deliverable-section-nav button {
     flex: 0 0 auto;
-    padding: 0.45rem 0.62rem;
-    border: 0;
-    border-bottom: 2px solid transparent;
-    background: transparent;
-    color: var(--muted);
+    padding: 0.42rem 0.62rem;
+    border: 0 !important;
+    border-bottom: 2px solid transparent !important;
+    background: transparent !important;
+    color: #666 !important;
     font: inherit;
-    font-size: 0.8rem;
-    font-weight: 800;
+    font-size: 0.79rem;
+    font-weight: 700;
     cursor: pointer;
   }
 
-  .deliverable-section-nav button:hover,
-  .deliverable-section-nav button:focus-visible,
-  .deliverable-section-nav button[aria-current='location'] {
-    color: var(--ink);
-    border-bottom-color: var(--accent);
+  .dd-page .deliverable-section-nav button:hover,
+  .dd-page .deliverable-section-nav button:focus-visible,
+  .dd-page .deliverable-section-nav button[aria-current='location'] {
+    color: var(--ink) !important;
+    border-bottom-color: var(--accent) !important;
     outline-offset: -2px;
   }
 
-  /* Shared section primitive. */
-  .dd-page .dd-section {
+  /* Shared section primitive. Sections are editorial chapters, not boxes. */
+  .dd-page .dd-section,
+  .dd-page #resource-investment-profile.dd-section {
     scroll-margin-top: calc(var(--dd-sticky-top) + 3.5rem);
-    padding: var(--dd-section-pad) !important;
-    border: 2px solid var(--ink) !important;
-    border-top: 0.36rem solid var(--accent) !important;
+    padding: var(--dd-section-pad) 0 0 !important;
+    border: 0 !important;
+    border-top: 4px solid var(--ink) !important;
     background: #fff !important;
     box-shadow: none !important;
-  }
-
-  /* The resource panel has an older ID-specific cascade bridge. This selector
-     deliberately lets it consume the same section primitive on deliverable pages. */
-  .dd-page #resource-investment-profile.dd-section {
-    padding: var(--dd-section-pad) !important;
-    border: 2px solid var(--ink) !important;
-    border-top: 0.36rem solid var(--accent) !important;
-    background: #fff !important;
   }
 
   .dd-page .dd-section > h2,
   .dd-page .dd-section-heading h2,
   .dd-page #resource-investment-profile .resource-profile-titlebar h2 {
-    margin: 0 0 0.4rem !important;
+    margin: 0 0 0.45rem !important;
     font-family: var(--font-brand) !important;
     font-size: var(--dd-title) !important;
     font-weight: 400 !important;
@@ -301,210 +324,518 @@
     margin: 0 !important;
     color: var(--muted) !important;
     font-size: 0.94rem !important;
-    line-height: 1.42 !important;
+    line-height: 1.48 !important;
   }
 
-  .dd-page .dd-card,
-  .dd-page .case-grid .schema-card {
+  .dd-page .dd-card {
+    min-width: 0;
     padding: var(--dd-card-pad) !important;
     border: 1px solid var(--border) !important;
-    border-top: 3px solid var(--accent) !important;
-    background: var(--dd-soft) !important;
+    background: var(--dd-soft-2) !important;
     box-shadow: none !important;
   }
 
   /* Why this matters */
-  .dd-page .case-grid {
+  .dd-page #why-this-matters .case-grid {
     display: grid !important;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 0.75rem !important;
-    margin-top: 1rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 0.8rem !important;
+    margin-top: 1.05rem !important;
   }
 
-  .dd-page .case-grid .schema-card h3 {
-    margin: 0 0 0.35rem;
-    color: var(--accent-dark);
-    font-size: 0.72rem;
-    font-weight: 900;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
+  .dd-page #why-this-matters .case-grid .schema-card {
+    min-width: 0 !important;
+    padding: 1rem 1.05rem !important;
+    border: 1px solid var(--border) !important;
+    border-left: 3px solid var(--accent) !important;
+    border-top: 1px solid var(--border) !important;
+    background: var(--dd-soft-2) !important;
+    box-shadow: none !important;
   }
 
-  .dd-page .case-grid .schema-card p { margin: 0; line-height: 1.45; }
+  .dd-page #why-this-matters .case-grid .schema-card h3 {
+    margin: 0 0 0.4rem !important;
+    color: var(--accent-dark) !important;
+    font-size: 0.7rem !important;
+    font-weight: 900 !important;
+    letter-spacing: 0.06em !important;
+    text-transform: uppercase !important;
+  }
 
-  /* Benefits and evidence */
+  .dd-page #why-this-matters .case-grid .schema-card p {
+    max-width: 58ch;
+    margin: 0 !important;
+    color: var(--ink) !important;
+    font-size: 0.95rem !important;
+    line-height: 1.5 !important;
+  }
+
+  /* Benefits and evidence. One benefit per row, with a readable story. */
   .dd-page #value-evidence > .detail-accordion-header[hidden] { display: none !important; }
   .dd-page #value-evidence .detail-accordion-body { padding: 0 !important; }
-
-  .benefit-realisation-list {
-    display: grid;
-    gap: 0.8rem;
-    margin-top: 1rem;
+  .dd-page #value-evidence .delivery-model-panel {
+    display: block !important;
+    grid-template-columns: none !important;
+    gap: 0 !important;
+    margin: 0 !important;
   }
 
-  .benefit-realisation-card {
-    display: grid;
-    grid-template-columns: minmax(0, 1.15fr) minmax(16rem, 0.85fr);
-    gap: 0.9rem 1.1rem;
+  .dd-page #value-evidence .value-evidence-explainer {
+    max-width: var(--dd-reading) !important;
+    margin: 0 !important;
+    color: var(--muted) !important;
+    font-size: 0.9rem !important;
+    line-height: 1.45 !important;
   }
 
-  .benefit-card-header { grid-column: 1; }
-  .benefit-success-look { grid-column: 1; }
-  .benefit-evidence-group { grid-column: 2; grid-row: 1 / span 2; }
-  .benefit-enabled-by { grid-column: 1 / -1; }
-
-  .benefit-label,
-  .benefit-card-header h4,
-  .benefit-evidence-heading h5,
-  .benefit-success-look h5,
-  .benefit-enabled-by h5 { margin: 0; }
-
-  .benefit-label {
-    color: var(--accent-dark);
-    font-size: 0.7rem;
-    font-weight: 900;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
+  .dd-page #value-evidence .benefit-realisation-list {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    grid-auto-flow: row !important;
+    gap: 0.9rem !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    margin: 1rem 0 0 !important;
   }
 
-  .benefit-card-header h4 {
-    margin-top: 0.3rem;
-    font-family: var(--font-brand);
-    font-size: var(--dd-subtitle);
-    font-weight: 400;
-    line-height: 1.05;
+  .dd-page #value-evidence .benefit-realisation-card.dd-card {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1.25fr) minmax(19rem, 0.75fr) !important;
+    grid-template-areas:
+      'benefit evidence'
+      'success evidence'
+      'enabled enabled' !important;
+    align-items: start !important;
+    gap: 0.9rem 1.6rem !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    padding: 1.2rem 1.25rem !important;
+    overflow: visible !important;
+    border: 1px solid var(--border) !important;
+    border-left: 4px solid var(--accent) !important;
+    border-top: 1px solid var(--border) !important;
+    background: #fff !important;
   }
 
-  .benefit-value-statement { margin: 0.45rem 0 0; line-height: 1.45; }
-  .benefit-context { display: flex; flex-wrap: wrap; gap: 0.8rem 1.2rem; margin: 0.65rem 0 0; }
-  .benefit-context div { display: grid; gap: 0.1rem; }
-  .benefit-context dt { color: var(--muted); font-size: 0.68rem; font-weight: 900; text-transform: uppercase; }
-  .benefit-context dd { margin: 0; font-size: 0.82rem; }
-
-  .benefit-success-look,
-  .benefit-evidence-group {
-    padding-top: 0.75rem;
-    border-top: 1px solid var(--border);
+  .dd-page #value-evidence .benefit-card-header {
+    grid-area: benefit !important;
+    min-width: 0;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
   }
 
-  .benefit-success-look h5,
-  .benefit-evidence-heading h5,
-  .benefit-enabled-by h5 {
-    font-size: 0.72rem;
-    font-weight: 900;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
+  .dd-page #value-evidence .benefit-label {
+    display: block !important;
+    margin: 0 0 0.3rem !important;
+    color: var(--accent-dark) !important;
+    font-size: 0.68rem !important;
+    font-weight: 900 !important;
+    letter-spacing: 0.07em !important;
+    line-height: 1 !important;
+    text-transform: uppercase !important;
   }
 
-  .benefit-success-look p { margin: 0.3rem 0 0; line-height: 1.4; }
-  .benefit-evidence-heading { display: flex; justify-content: space-between; gap: 0.7rem; }
-  .benefit-evidence-heading span { color: var(--muted); font-size: 0.76rem; }
-  .benefit-measure-list { display: grid; gap: 0.45rem; margin-top: 0.45rem; }
-
-  .benefit-measure {
-    border-top: 1px solid var(--border);
-    background: #fff;
+  .dd-page #value-evidence .benefit-card-header h4 {
+    max-width: 28ch;
+    margin: 0 !important;
+    font-family: var(--font-brand) !important;
+    font-size: var(--dd-subtitle) !important;
+    font-weight: 400 !important;
+    line-height: 1.05 !important;
+    letter-spacing: -0.02em !important;
   }
 
-  .benefit-measure summary {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 0.7rem;
-    padding: 0.55rem 0;
+  .dd-page #value-evidence .benefit-value-statement {
+    max-width: 62ch;
+    margin: 0.55rem 0 0 !important;
+    color: var(--muted) !important;
+    font-size: 0.95rem !important;
+    font-weight: 400 !important;
+    line-height: 1.5 !important;
+  }
+
+  .dd-page #value-evidence .benefit-context {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 0.65rem 1.25rem !important;
+    margin: 0.8rem 0 0 !important;
+    padding: 0.75rem 0 0 !important;
+    border: 0 !important;
+    border-top: 1px solid var(--border) !important;
+  }
+
+  .dd-page #value-evidence .benefit-context > div {
+    display: block !important;
+    min-width: 0 !important;
+  }
+
+  .dd-page #value-evidence .benefit-context dt,
+  .dd-page #value-evidence .benefit-success-look h5,
+  .dd-page #value-evidence .benefit-evidence-heading h5,
+  .dd-page #value-evidence .benefit-enabled-by h5 {
+    margin: 0 !important;
+    color: var(--accent-dark) !important;
+    font-size: 0.65rem !important;
+    font-weight: 900 !important;
+    letter-spacing: 0.07em !important;
+    line-height: 1.1 !important;
+    text-transform: uppercase !important;
+  }
+
+  .dd-page #value-evidence .benefit-context dd {
+    margin: 0.22rem 0 0 !important;
+    color: var(--ink) !important;
+    font-size: 0.84rem !important;
+    font-weight: 600 !important;
+    line-height: 1.35 !important;
+  }
+
+  .dd-page #value-evidence .benefit-success-look {
+    grid-area: success !important;
+    display: block !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    padding: 0.8rem 0 0 !important;
+    border: 0 !important;
+    border-top: 1px solid var(--border) !important;
+    border-bottom: 0 !important;
+    background: transparent !important;
+  }
+
+  .dd-page #value-evidence .benefit-success-look p {
+    max-width: 60ch;
+    margin: 0.35rem 0 0 !important;
+    color: var(--ink) !important;
+    font-size: 0.92rem !important;
+    font-weight: 500 !important;
+    line-height: 1.48 !important;
+  }
+
+  .dd-page #value-evidence .benefit-evidence-group {
+    grid-area: evidence !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    padding: 0 0 0 1.2rem !important;
+    border: 0 !important;
+    border-left: 1px solid var(--border) !important;
+    background: transparent !important;
+  }
+
+  .dd-page #value-evidence .benefit-evidence-heading {
+    display: flex !important;
+    align-items: baseline !important;
+    justify-content: space-between !important;
+    gap: 0.75rem !important;
+    margin: 0 !important;
+  }
+
+  .dd-page #value-evidence .benefit-evidence-heading span {
+    color: var(--muted) !important;
+    font-size: 0.7rem !important;
+    font-weight: 700 !important;
+  }
+
+  .dd-page #value-evidence .benefit-evidence-group > p {
+    margin: 0.6rem 0 0 !important;
+    padding: 0.75rem !important;
+    border: 1px solid var(--border) !important;
+    background: var(--dd-soft) !important;
+    color: var(--muted) !important;
+    font-size: 0.84rem !important;
+    line-height: 1.4 !important;
+  }
+
+  .dd-page #value-evidence .benefit-measure-list {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 0.45rem !important;
+    margin-top: 0.5rem !important;
+  }
+
+  .dd-page #value-evidence .benefit-measure {
+    min-width: 0;
+    border: 0 !important;
+    border-top: 1px solid var(--border) !important;
+    background: transparent !important;
+  }
+
+  .dd-page #value-evidence .benefit-measure summary {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 0.75rem !important;
+    padding: 0.55rem 0 !important;
     cursor: pointer;
   }
 
-  .benefit-measure-summary-main { display: grid; gap: 0.1rem; }
-  .benefit-measure-summary-main .reference { color: var(--muted); font-size: 0.68rem; }
-  .benefit-measure-type { color: var(--muted); font-size: 0.68rem; }
-  .benefit-measure-body { display: grid; gap: 0.55rem; padding: 0 0 0.7rem; }
-  .benefit-measure-body p { margin: 0; }
-  .benefit-measure-thresholds { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.55rem; }
-  .benefit-measure-thresholds > div { padding: 0.55rem; background: var(--dd-soft); }
-  .benefit-measure-thresholds h6,
-  .benefit-measure-method h6 { margin: 0 0 0.2rem; font-size: 0.68rem; text-transform: uppercase; }
-  .benefit-meta { color: var(--muted); font-size: 0.76rem; }
-
-  .benefit-enabled-by-list { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.4rem; }
-  .benefit-enabled-chip { display: inline-flex; gap: 0.35rem; padding: 0.35rem 0.5rem; border: 1px solid var(--border); background: #fff; font-size: 0.76rem; }
-
-  /* Delivery timeline */
-  .dd-page #route-through > .subtle { margin-bottom: 1rem !important; }
-  .dd-page .steps-list { display: grid !important; grid-template-columns: 1fr !important; gap: 0 !important; overflow: visible !important; }
-
-  .dd-page .dd-step {
+  .dd-page #value-evidence .benefit-measure-summary-main {
     display: grid !important;
-    grid-template-columns: minmax(7.5rem, 10rem) minmax(0, 1fr) auto;
-    gap: 0.65rem 1.1rem;
-    padding: 1rem 0 !important;
+    gap: 0.12rem !important;
+    min-width: 0;
+  }
+
+  .dd-page #value-evidence .benefit-measure-summary-main .reference {
+    padding: 0 !important;
+    background: transparent !important;
+    color: var(--muted) !important;
+    font-size: 0.65rem !important;
+  }
+
+  .dd-page #value-evidence .benefit-measure-type {
+    color: var(--muted) !important;
+    font-size: 0.67rem !important;
+  }
+
+  .dd-page #value-evidence .benefit-measure-body {
+    display: grid !important;
+    gap: 0.55rem !important;
+    padding: 0 0 0.7rem !important;
+  }
+
+  .dd-page #value-evidence .benefit-measure-body p { margin: 0 !important; }
+
+  .dd-page #value-evidence .benefit-measure-thresholds {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 0.55rem !important;
+  }
+
+  .dd-page #value-evidence .benefit-measure-thresholds > div {
+    padding: 0.6rem !important;
+    background: var(--dd-soft) !important;
+  }
+
+  .dd-page #value-evidence .benefit-measure-thresholds h6,
+  .dd-page #value-evidence .benefit-measure-method h6 {
+    margin: 0 0 0.2rem !important;
+    font-size: 0.65rem !important;
+    text-transform: uppercase !important;
+  }
+
+  .dd-page #value-evidence .benefit-meta {
+    color: var(--muted) !important;
+    font-size: 0.75rem !important;
+  }
+
+  .dd-page #value-evidence .benefit-enabled-by {
+    grid-area: enabled !important;
+    min-width: 0;
+    margin: 0 !important;
+    padding: 0.8rem 0 0 !important;
+    border-top: 1px solid var(--border) !important;
+  }
+
+  .dd-page #value-evidence .benefit-enabled-by-list {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 0.4rem !important;
+    margin-top: 0.45rem !important;
+  }
+
+  .dd-page #value-evidence .benefit-enabled-chip {
+    display: inline-flex !important;
+    flex-wrap: wrap !important;
+    gap: 0.35rem !important;
+    padding: 0.4rem 0.55rem !important;
+    border: 1px solid var(--border) !important;
+    background: var(--dd-soft) !important;
+    font-size: 0.75rem !important;
+  }
+
+  /* Delivery timeline. Explicitly reset the old horizontal carousel. */
+  .dd-page .route-through-panel > .steps-list,
+  .dd-page main .route-through-panel > .steps-list {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    grid-auto-flow: row !important;
+    grid-auto-columns: auto !important;
+    gap: 0 !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    margin: 1rem 0 0 !important;
+    padding: 0 !important;
+    overflow: visible !important;
+    scroll-snap-type: none !important;
+  }
+
+  .dd-page .route-through-panel > .steps-list > .step-card.dd-step {
+    display: grid !important;
+    flex: none !important;
+    flex-basis: auto !important;
+    grid-template-columns: minmax(8.5rem, 10rem) minmax(0, 1fr) minmax(7rem, auto) !important;
+    grid-template-areas:
+      'meta title toggle'
+      'meta story story'
+      'meta detail detail' !important;
+    gap: 0.7rem 1.25rem !important;
+    width: 100% !important;
+    max-width: none !important;
+    min-width: 0 !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    padding: 1.15rem 0 !important;
+    overflow: visible !important;
     border: 0 !important;
     border-top: 1px solid var(--border) !important;
     background: transparent !important;
     box-shadow: none !important;
+    scroll-snap-align: none !important;
   }
 
-  .dd-page .dd-step:first-child { border-top: 2px solid var(--ink) !important; }
+  .dd-page .route-through-panel > .steps-list > .step-card.dd-step:first-child {
+    border-top: 2px solid var(--ink) !important;
+  }
+
+  .dd-page .route-through-panel .step-card::before,
+  .dd-page .route-through-panel .step-card::after {
+    display: none !important;
+    content: none !important;
+  }
+
   .dd-page .dd-source-hidden { display: none !important; }
 
-  .dd-step-meta { grid-column: 1; grid-row: 1 / span 3; display: grid; align-content: start; gap: 0.18rem; }
-  .dd-step-meta span { color: var(--accent-dark); font-size: 0.7rem; font-weight: 900; letter-spacing: 0.06em; text-transform: uppercase; }
-  .dd-step-meta strong { font-size: 0.8rem; line-height: 1.3; }
-
-  .dd-page .dd-step > h3 {
-    grid-column: 2;
-    margin: 0 !important;
-    font-family: var(--font-brand);
-    font-size: var(--dd-subtitle) !important;
-    font-weight: 400 !important;
-    line-height: 1.05;
+  .dd-page .dd-step-meta {
+    grid-area: meta !important;
+    display: grid !important;
+    align-content: start !important;
+    gap: 0.22rem !important;
+    min-width: 0;
   }
 
-  .dd-step-story { grid-column: 2; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.75rem; }
-  .dd-step-story > div { padding-top: 0.55rem; border-top: 1px solid var(--border); }
-  .dd-step-story span { color: var(--muted); font-size: 0.67rem; font-weight: 900; letter-spacing: 0.05em; text-transform: uppercase; }
-  .dd-step-story p,
-  .dd-step-story ul { margin: 0.3rem 0 0; font-size: 0.88rem; line-height: 1.4; }
-  .dd-step-story ul { padding-left: 1rem; }
+  .dd-page .dd-step-meta span {
+    color: var(--accent-dark) !important;
+    font-size: 0.68rem !important;
+    font-weight: 900 !important;
+    letter-spacing: 0.07em !important;
+    text-transform: uppercase !important;
+  }
 
-  .dd-step-toggle {
-    grid-column: 3;
-    grid-row: 1;
-    align-self: start;
-    padding: 0.25rem 0;
-    border: 0;
-    border-bottom: 1px solid var(--ink);
-    background: transparent;
-    color: var(--ink);
+  .dd-page .dd-step-meta strong {
+    color: var(--ink) !important;
+    font-size: 0.83rem !important;
+    font-weight: 700 !important;
+    line-height: 1.35 !important;
+  }
+
+  .dd-page .route-through-panel > .steps-list > .step-card.dd-step > h3 {
+    grid-area: title !important;
+    display: block !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    overflow: visible !important;
+    font-family: var(--font-brand) !important;
+    font-size: var(--dd-subtitle) !important;
+    font-weight: 400 !important;
+    line-height: 1.05 !important;
+    letter-spacing: -0.02em !important;
+    -webkit-line-clamp: unset !important;
+  }
+
+  .dd-page .dd-step-story {
+    grid-area: story !important;
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 1rem !important;
+    min-width: 0;
+  }
+
+  .dd-page .dd-step-story > div {
+    min-width: 0;
+    padding: 0.65rem 0 0 !important;
+    border-top: 1px solid var(--border) !important;
+  }
+
+  .dd-page .dd-step-story span {
+    color: #747474 !important;
+    font-size: 0.65rem !important;
+    font-weight: 900 !important;
+    letter-spacing: 0.06em !important;
+    text-transform: uppercase !important;
+  }
+
+  .dd-page .dd-step-story p,
+  .dd-page .dd-step-story ul {
+    max-width: 58ch;
+    margin: 0.35rem 0 0 !important;
+    color: var(--ink) !important;
+    font-size: 0.9rem !important;
+    font-weight: 400 !important;
+    line-height: 1.48 !important;
+  }
+
+  .dd-page .dd-step-story ul { padding-left: 1.1rem !important; }
+  .dd-page .dd-step-story li { margin: 0 0 0.25rem !important; }
+
+  .dd-page .dd-step-toggle {
+    grid-area: toggle !important;
+    align-self: start !important;
+    justify-self: end !important;
+    width: auto !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    padding: 0.25rem 0 !important;
+    border: 0 !important;
+    border-bottom: 1px solid var(--ink) !important;
+    background: transparent !important;
+    color: var(--ink) !important;
     font: inherit;
-    font-size: 0.76rem;
-    font-weight: 800;
+    font-size: 0.75rem !important;
+    font-weight: 700 !important;
+    line-height: 1.2 !important;
+    white-space: nowrap !important;
     cursor: pointer;
   }
 
-  .dd-step-detail { display: none !important; grid-column: 2 / -1; gap: 0.65rem; }
-  .dd-step-open .dd-step-detail { display: grid !important; }
-  .dd-step-detail .mini-block,
-  .dd-step-detail .resources-panel { padding: 0.75rem !important; border: 1px solid var(--border) !important; background: var(--dd-soft) !important; }
-
-  /* Secondary planning disclosures */
-  .dd-planning-heading {
-    display: block !important;
-    padding: 1rem 0 0 !important;
+  .dd-page .dd-step-detail {
+    grid-area: detail !important;
+    display: none !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 0.65rem !important;
+    min-width: 0;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0.25rem 0 0 !important;
     border: 0 !important;
-    border-top: 3px solid var(--ink) !important;
     background: transparent !important;
   }
 
-  .dd-planning-heading h2 {
-    margin: 0;
-    font-family: var(--font-brand);
-    font-size: var(--dd-title);
-    font-weight: 400;
-    line-height: 1;
+  .dd-page .dd-step-open .dd-step-detail { display: grid !important; }
+
+  .dd-page .dd-step-detail .mini-block,
+  .dd-page .dd-step-detail .resources-panel {
+    min-width: 0;
+    margin: 0 !important;
+    padding: 0.8rem !important;
+    border: 1px solid var(--border) !important;
+    background: var(--dd-soft) !important;
   }
 
-  .dd-planning-heading p { max-width: var(--dd-reading); margin: 0.35rem 0 0; color: var(--muted); }
+  /* Secondary planning disclosures */
+  .dd-page .dd-planning-heading {
+    display: block !important;
+    padding: 1.35rem 0 0 !important;
+    border: 0 !important;
+    border-top: 4px solid var(--ink) !important;
+    background: transparent !important;
+    box-shadow: none !important;
+  }
+
+  .dd-page .dd-planning-heading h2 {
+    margin: 0 !important;
+    font-family: var(--font-brand) !important;
+    font-size: var(--dd-title) !important;
+    font-weight: 400 !important;
+    line-height: 1 !important;
+  }
+
+  .dd-page .dd-planning-heading p {
+    max-width: var(--dd-reading) !important;
+    margin: 0.4rem 0 0 !important;
+    color: var(--muted) !important;
+    font-size: 0.9rem !important;
+    line-height: 1.45 !important;
+  }
 
   .dd-page .dd-disclosure:not(#value-evidence) {
     scroll-margin-top: calc(var(--dd-sticky-top) + 3.5rem);
@@ -517,86 +848,221 @@
 
   .dd-page .dd-disclosure:not(#value-evidence) .detail-accordion-header {
     display: grid !important;
-    grid-template-columns: minmax(12rem, 0.55fr) minmax(0, 1fr) auto;
-    gap: 0.7rem;
-    width: 100%;
-    padding: 0.75rem 0 !important;
+    grid-template-columns: minmax(14rem, 0.48fr) minmax(0, 1fr) auto !important;
+    gap: 0.75rem 1rem !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    padding: 0.8rem 0 !important;
     border: 0 !important;
     background: transparent !important;
-    text-align: left;
+    text-align: left !important;
   }
 
   .dd-page .dd-disclosure .detail-accordion-header > span {
-    font-family: var(--font-brand);
-    font-size: var(--dd-subtitle);
-    font-weight: 400;
+    min-width: 0;
+    font-family: var(--font-brand) !important;
+    font-size: var(--dd-subtitle) !important;
+    font-weight: 400 !important;
+    line-height: 1.05 !important;
   }
 
   .dd-page .dd-disclosure .detail-accordion-header > em {
     align-self: center;
-    color: var(--muted);
-    font-size: 0.82rem;
-    font-style: normal;
-    line-height: 1.35;
+    min-width: 0;
+    color: var(--muted) !important;
+    font-size: 0.82rem !important;
+    font-style: normal !important;
+    line-height: 1.4 !important;
   }
 
   .dd-page .dd-disclosure .detail-accordion-header > strong {
     align-self: center;
-    border-bottom: 1px solid var(--ink);
-    font-size: 0.76rem;
+    border-bottom: 1px solid var(--ink) !important;
+    font-size: 0.74rem !important;
+    font-weight: 700 !important;
   }
 
-  .dd-page .dd-disclosure .detail-accordion-body { padding: 0.3rem 0 1rem !important; }
-
-  .governance-summary-grid,
-  .governance-partner-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.7rem; }
-  .governance-block h3,
-  .governance-partner-card > span { margin: 0 0 0.35rem; color: var(--accent-dark); font-size: 0.7rem; font-weight: 900; letter-spacing: 0.05em; text-transform: uppercase; }
-  .governance-primary-value { display: block; margin-bottom: 0.3rem; font-family: var(--font-brand); font-size: 1.35rem; font-weight: 400; }
-  .governance-benefit-owner-list { margin: 0; padding: 0; list-style: none; }
-  .governance-benefit-owner-list li { display: grid; gap: 0.15rem; padding: 0.35rem 0; border-top: 1px solid var(--border); }
-  .governance-benefit-owner-list span { font-size: 0.78rem; }
-  .governance-partners { margin-top: 0.9rem; padding-top: 0.9rem; border-top: 1px solid var(--border); }
-  .governance-section-heading { margin-bottom: 0.65rem; }
-  .governance-section-heading h3 { margin: 0; font-family: var(--font-brand); font-size: var(--dd-subtitle); font-weight: 400; }
-  .governance-section-heading p { margin: 0.25rem 0 0; color: var(--muted); font-size: 0.84rem; }
-  .governance-partner-card strong { display: block; margin-bottom: 0.3rem; }
-
-  .dd-page [hidden] { display: none !important; }
-
-  @media (max-width: 900px) {
-    .benefit-realisation-card { grid-template-columns: 1fr; }
-    .benefit-card-header,
-    .benefit-success-look,
-    .benefit-evidence-group,
-    .benefit-enabled-by { grid-column: 1; grid-row: auto; }
-    .governance-summary-grid,
-    .governance-partner-grid { grid-template-columns: 1fr; }
-    .dd-page .dd-step { grid-template-columns: 7rem minmax(0, 1fr); }
-    .dd-step-toggle { grid-column: 2; grid-row: auto; justify-self: start; }
-    .dd-step-detail { grid-column: 2; }
-    .dd-page .dd-disclosure:not(#value-evidence) .detail-accordion-header { grid-template-columns: minmax(0, 1fr) auto; }
-    .dd-page .dd-disclosure .detail-accordion-header > em { grid-column: 1; grid-row: 2; }
-    .dd-page .dd-disclosure .detail-accordion-header > strong { grid-column: 2; grid-row: 1 / span 2; }
+  .dd-page .dd-disclosure .detail-accordion-body {
+    min-width: 0;
+    padding: 0.35rem 0 1.1rem !important;
   }
 
-  @media (max-width: 680px) {
+  /* Governance uses the same quiet card primitive. */
+  .dd-page .governance-summary-grid,
+  .dd-page .governance-partner-grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 0.75rem !important;
+  }
+
+  .dd-page .governance-block h3,
+  .dd-page .governance-partner-card > span {
+    margin: 0 0 0.4rem !important;
+    color: var(--accent-dark) !important;
+    font-size: 0.68rem !important;
+    font-weight: 900 !important;
+    letter-spacing: 0.06em !important;
+    text-transform: uppercase !important;
+  }
+
+  .dd-page .governance-primary-value {
+    display: block !important;
+    margin-bottom: 0.35rem !important;
+    font-family: var(--font-brand) !important;
+    font-size: 1.45rem !important;
+    font-weight: 400 !important;
+    line-height: 1.05 !important;
+  }
+
+  .dd-page .governance-benefit-owner-list {
+    margin: 0 !important;
+    padding: 0 !important;
+    list-style: none !important;
+  }
+
+  .dd-page .governance-benefit-owner-list li {
+    display: grid !important;
+    gap: 0.15rem !important;
+    padding: 0.4rem 0 !important;
+    border-top: 1px solid var(--border) !important;
+  }
+
+  .dd-page .governance-benefit-owner-list span { font-size: 0.8rem !important; }
+
+  .dd-page .governance-partners {
+    margin-top: 1rem !important;
+    padding-top: 1rem !important;
+    border-top: 1px solid var(--border) !important;
+  }
+
+  .dd-page .governance-section-heading { margin-bottom: 0.7rem !important; }
+  .dd-page .governance-section-heading h3 {
+    margin: 0 !important;
+    font-family: var(--font-brand) !important;
+    font-size: var(--dd-subtitle) !important;
+    font-weight: 400 !important;
+  }
+
+  .dd-page .governance-section-heading p {
+    max-width: var(--dd-reading);
+    margin: 0.25rem 0 0 !important;
+    color: var(--muted) !important;
+    font-size: 0.84rem !important;
+  }
+
+  .dd-page .governance-partner-card strong {
+    display: block !important;
+    margin-bottom: 0.3rem !important;
+  }
+
+  /* Keep Resources & Investment in the same chapter grammar without changing
+     the shared resource component's internal financial presentation. */
+  .dd-page #resource-investment-profile.dd-section {
+    width: 100% !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    padding: var(--dd-section-pad) 0 0 !important;
+    overflow: visible !important;
+    border: 0 !important;
+    border-top: 4px solid var(--ink) !important;
+    background: #fff !important;
+  }
+
+  .dd-page #resource-investment-profile .resource-profile-titlebar {
+    margin-bottom: 1rem !important;
+    padding: 0 !important;
+  }
+
+  @media (max-width: 1040px) {
+    .dd-page .deliverable-main-flow > .planning-notice.dd-planning-stage {
+      grid-template-columns: 1fr !important;
+    }
+
+    .dd-page .dd-planning-stage .planning-notice-next {
+      padding: 0.65rem 0 0 !important;
+      border-left: 0 !important;
+      border-top: 1px solid var(--border) !important;
+    }
+
+    .dd-page #value-evidence .benefit-realisation-card.dd-card {
+      grid-template-columns: 1fr !important;
+      grid-template-areas: 'benefit' 'success' 'evidence' 'enabled' !important;
+    }
+
+    .dd-page #value-evidence .benefit-evidence-group {
+      padding: 0.8rem 0 0 !important;
+      border-left: 0 !important;
+      border-top: 1px solid var(--border) !important;
+    }
+
+    .dd-page .governance-summary-grid,
+    .dd-page .governance-partner-grid { grid-template-columns: 1fr !important; }
+
+    .dd-page .route-through-panel > .steps-list > .step-card.dd-step {
+      grid-template-columns: 8rem minmax(0, 1fr) !important;
+      grid-template-areas:
+        'meta title'
+        'meta story'
+        'meta toggle'
+        'meta detail' !important;
+    }
+
+    .dd-page .dd-step-toggle { justify-self: start !important; }
+    .dd-page .dd-step-detail { grid-template-columns: 1fr !important; }
+  }
+
+  @media (max-width: 720px) {
     .dd-page { width: min(100% - 1rem, var(--dd-max)); }
     .dd-page .deliverable-actions { align-items: flex-start; }
-    .deliverable-breadcrumbs ol { font-size: 0.76rem; }
+    .deliverable-breadcrumbs ol { font-size: 0.74rem; }
     .dd-page > .detail-hero h1 { font-size: clamp(2.4rem, 12vw, 3.5rem) !important; }
+
     .dd-page .detail-meta,
-    .dd-page .case-grid,
-    .benefit-measure-thresholds,
-    .dd-step-story { grid-template-columns: 1fr; }
-    .deliverable-section-nav { position: static; margin-inline: -0.25rem; padding-inline: 0.45rem; }
-    .deliverable-section-nav > span { display: none; }
-    .dd-page .dd-step { grid-template-columns: 1fr; gap: 0.55rem; }
-    .dd-step-meta,
-    .dd-page .dd-step > h3,
-    .dd-step-story,
-    .dd-step-toggle,
-    .dd-step-detail { grid-column: 1; grid-row: auto; }
-    .dd-step-meta { grid-template-columns: auto 1fr; align-items: baseline; gap: 0.5rem; }
+    .dd-page #why-this-matters .case-grid,
+    .dd-page #value-evidence .benefit-context,
+    .dd-page #value-evidence .benefit-measure-thresholds,
+    .dd-page .dd-step-story { grid-template-columns: 1fr !important; }
+
+    .dd-page .deliverable-section-nav {
+      position: static;
+      margin-inline: 0;
+    }
+
+    .dd-page .deliverable-section-nav > span { display: none; }
+
+    .dd-page .dd-planning-stage .planning-notice-main {
+      grid-template-columns: auto auto !important;
+    }
+
+    .dd-page .dd-planning-stage .planning-notice-main p {
+      grid-column: 1 / -1;
+    }
+
+    .dd-page .route-through-panel > .steps-list > .step-card.dd-step {
+      grid-template-columns: 1fr !important;
+      grid-template-areas: 'meta' 'title' 'story' 'toggle' 'detail' !important;
+      gap: 0.55rem !important;
+      padding: 1rem 0 !important;
+    }
+
+    .dd-page .dd-step-meta {
+      grid-template-columns: auto 1fr !important;
+      align-items: baseline !important;
+      gap: 0.5rem !important;
+    }
+
+    .dd-page .dd-disclosure:not(#value-evidence) .detail-accordion-header {
+      grid-template-columns: minmax(0, 1fr) auto !important;
+    }
+
+    .dd-page .dd-disclosure .detail-accordion-header > em {
+      grid-column: 1;
+      grid-row: 2;
+    }
+
+    .dd-page .dd-disclosure .detail-accordion-header > strong {
+      grid-column: 2;
+      grid-row: 1 / span 2;
+    }
   }
 }
