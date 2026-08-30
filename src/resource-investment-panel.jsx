@@ -13,7 +13,6 @@ import {
   workforceModelsForResourceContext
 } from './resource-profile-context.js';
 import './styles/resource-profile.css';
-import './styles/resource-profile-fit.css';
 
 function formatMoney(amount, currency = 'GBP') {
   if (typeof amount !== 'number' || !Number.isFinite(amount)) return null;
