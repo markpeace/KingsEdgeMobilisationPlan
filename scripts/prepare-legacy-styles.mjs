@@ -5,7 +5,7 @@ const root = process.cwd();
 const sourcePath = path.join(root, 'src/styles/legacy-public-source.css');
 const outputPath = path.join(root, 'src/styles/legacy-public.generated.css');
 
-const retiredProjectSelectors = [
+const retiredSelectors = [
   '.project-detail-hero',
   '.related-project-detail-hero',
   '.transformation-claim-panel',
@@ -15,7 +15,9 @@ const retiredProjectSelectors = [
   '.project-deliverable-column',
   '.project-deliverable-header',
   '.project-step-stack',
-  '.project-step-card'
+  '.project-step-card',
+  '.detail-hero:not(.project-detail-hero)',
+  '.detail-summary'
 ];
 
 function semanticPrelude(value) {
@@ -162,7 +164,7 @@ function shouldRecurseAtRule(prelude) {
 }
 
 function isRetiredSelector(selector) {
-  return retiredProjectSelectors.some((token) => selector.includes(token));
+  return retiredSelectors.some((token) => selector.includes(token));
 }
 
 function filterCss(source) {
@@ -226,13 +228,13 @@ const result = filterCss(source);
 const banner = `/* GENERATED FILE. Do not edit directly.\n   Source: src/styles/legacy-public-source.css\n   Removed selector occurrences: ${result.removedSelectors}; fully removed rules: ${result.removedRules}. */\n`;
 const generated = `${banner}${result.css}`;
 
-const surviving = retiredProjectSelectors.filter((selector) => result.css.includes(selector));
+const surviving = retiredSelectors.filter((selector) => result.css.includes(selector));
 if (surviving.length) {
-  throw new Error(`Retired project selectors survived legacy generation: ${surviving.join(', ')}`);
+  throw new Error(`Retired selectors survived legacy generation: ${surviving.join(', ')}`);
 }
-if (result.removedSelectors < 25) {
-  throw new Error(`Legacy project retirement removed only ${result.removedSelectors} selector occurrences; expected at least 25. Check source drift.`);
+if (result.removedSelectors < 110) {
+  throw new Error(`Legacy retirement removed only ${result.removedSelectors} selector occurrences; expected at least 110. Check source drift.`);
 }
 
 fs.writeFileSync(outputPath, generated);
-console.log(`Prepared legacy CSS: removed ${result.removedSelectors} project selector occurrences across ${result.removedRules} fully retired rules.`);
+console.log(`Prepared legacy CSS: removed ${result.removedSelectors} retired selector occurrences across ${result.removedRules} fully retired rules.`);
