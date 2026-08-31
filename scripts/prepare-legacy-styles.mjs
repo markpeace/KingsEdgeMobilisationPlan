@@ -41,6 +41,11 @@ const explicitlyRetiredSelectorTokens = [
   '.measure-summary',
   '.measure-card',
   '.measure-row',
+  '.timeline-page',
+  '.timeline-controls',
+  '.timeline-key',
+  '.timeline-refresh',
+  '.timeline-modal',
   '#risks-decisions .schema-card'
 ];
 
