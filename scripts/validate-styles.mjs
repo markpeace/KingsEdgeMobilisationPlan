@@ -14,6 +14,7 @@ const siteStyles = read('src/styles.css');
 const resourceStyles = read('src/styles/resource-profile.css');
 const globalChromeStyles = read('src/styles/global-chrome.css');
 const indexNavigationStyles = read('src/styles/index-navigation.css');
+const measuresStyles = read('src/styles/measures-overview.css');
 const detailPrimitiveStyles = read('src/styles/detail-primitives.css');
 const portfolioStyles = read('src/styles/portfolio-overview.css');
 const deliverableStyles = read('src/styles/deliverable-detail.css');
@@ -52,6 +53,7 @@ for (const [file, styles] of [
   ['src/styles/resource-profile.css', resourceStyles],
   ['src/styles/global-chrome.css', globalChromeStyles],
   ['src/styles/index-navigation.css', indexNavigationStyles],
+  ['src/styles/measures-overview.css', measuresStyles],
   ['src/styles/detail-primitives.css', detailPrimitiveStyles],
   ['src/styles/portfolio-overview.css', portfolioStyles],
   ['src/styles/deliverable-detail.css', deliverableStyles],
@@ -160,6 +162,9 @@ const retiredSelectorTokens = [
   '.decision-log-',
   '.raid-grid',
   '.raid-column',
+  '.measure-summary',
+  '.measure-card',
+  '.measure-row',
   '#risks-decisions .schema-card'
 ];
 const generatedLegacyBody = generatedLegacyStyles.replace(/^\/\*[\s\S]*?\*\//, '');
@@ -176,6 +181,7 @@ if (/(^|\})\s*\.schema-card h3\s*\{/m.test(generatedLegacyBody)) {
 const siteImport = siteEntry.indexOf("import './site.jsx';");
 const chromeImport = siteEntry.indexOf("import './styles/global-chrome.css';");
 const indexNavigationImport = siteEntry.indexOf("import './styles/index-navigation.css';");
+const measuresImport = siteEntry.indexOf("import './styles/measures-overview.css';");
 const primitiveImport = siteEntry.indexOf("import './styles/detail-primitives.css';");
 const portfolioImport = siteEntry.indexOf("import './styles/portfolio-overview.css';");
 const deliverableImport = siteEntry.indexOf("import './styles/deliverable-detail.css';");
@@ -186,14 +192,15 @@ if (
   siteImport < 0 ||
   chromeImport < siteImport ||
   indexNavigationImport < chromeImport ||
-  primitiveImport < indexNavigationImport ||
+  measuresImport < indexNavigationImport ||
+  primitiveImport < measuresImport ||
   portfolioImport < primitiveImport ||
   deliverableImport < portfolioImport ||
   planningDetailImport < deliverableImport ||
   projectImport < planningDetailImport ||
   cleanupImport < projectImport
 ) {
-  fail('src/site-entry.jsx must load chrome, index, shared primitives and owned feature styles after src/site.jsx in the documented order');
+  fail('src/site-entry.jsx must load chrome, index, Measures, shared primitives and owned feature styles after src/site.jsx in the documented order');
 }
 
 const allowedLateStylesheets = new Set([
