@@ -1,0 +1,77 @@
+/* Measures reporting surface.
+   Summary metrics use the shared metric variables; result cards inherit the
+   shared catalogue grammar from index-navigation.css. */
+
+.measure-summary {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--metric-gap);
+  margin: 0 0 clamp(1rem, 1.8vw, 1.5rem);
+}
+
+.measure-card {
+  min-width: 0;
+  padding: var(--card-padding);
+  border: var(--card-border-width) solid var(--color-border);
+  border-top: var(--card-accent-width) solid var(--color-accent);
+  background: var(--color-surface-subtle);
+}
+
+.measure-card span {
+  display: block;
+  margin: 0 0 var(--space-2);
+  color: var(--color-ink);
+  font-family: var(--font-brand);
+  font-size: clamp(2.35rem, 4vw, 3.8rem);
+  font-weight: 400;
+  letter-spacing: -0.035em;
+  line-height: 0.9;
+}
+
+.measure-card strong {
+  display: block;
+  color: var(--color-muted);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.055em;
+  line-height: 1.25;
+  text-transform: uppercase;
+}
+
+.measure-row .index-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem var(--space-4);
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+  padding-top: var(--space-3);
+  border-top: 1px solid var(--color-border);
+}
+
+.measure-row .index-meta strong {
+  color: var(--color-accent-dark);
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.045em;
+  line-height: 1.25;
+  text-transform: uppercase;
+}
+
+.measure-row .index-meta span {
+  color: var(--color-muted);
+  font-size: 0.72rem;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+@media (max-width: 680px) {
+  .measure-summary {
+    grid-template-columns: 1fr;
+  }
+
+  .measure-row .index-meta {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}

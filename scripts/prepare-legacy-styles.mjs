@@ -38,6 +38,9 @@ const explicitlyRetiredSelectorTokens = [
   '.decision-log-',
   '.raid-grid',
   '.raid-column',
+  '.measure-summary',
+  '.measure-card',
+  '.measure-row',
   '#risks-decisions .schema-card'
 ];
 
