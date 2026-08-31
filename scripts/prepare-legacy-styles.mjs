@@ -23,6 +23,7 @@ const explicitlyRetiredSelectorTokens = [
   '.detail-summary',
   '.case-grid',
   '.detail-accordion',
+  '.detailed-plan-reveal',
   '.route-through-panel',
   '.step-card',
   '.step-card-story',
