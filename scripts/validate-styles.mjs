@@ -13,7 +13,9 @@ const designSystem = read('src/design-system.css');
 const siteStyles = read('src/styles.css');
 const resourceStyles = read('src/styles/resource-profile.css');
 const globalChromeStyles = read('src/styles/global-chrome.css');
+const indexNavigationStyles = read('src/styles/index-navigation.css');
 const detailPrimitiveStyles = read('src/styles/detail-primitives.css');
+const portfolioStyles = read('src/styles/portfolio-overview.css');
 const deliverableStyles = read('src/styles/deliverable-detail.css');
 const planningDetailStyles = read('src/styles/planning-detail.css');
 const projectStyles = read('src/styles/project-overview.css');
@@ -49,7 +51,9 @@ for (const [file, styles] of [
   ['src/design-system.css', designSystem],
   ['src/styles/resource-profile.css', resourceStyles],
   ['src/styles/global-chrome.css', globalChromeStyles],
+  ['src/styles/index-navigation.css', indexNavigationStyles],
   ['src/styles/detail-primitives.css', detailPrimitiveStyles],
+  ['src/styles/portfolio-overview.css', portfolioStyles],
   ['src/styles/deliverable-detail.css', deliverableStyles],
   ['src/styles/planning-detail.css', planningDetailStyles],
   ['src/styles/project-overview.css', projectStyles]
@@ -63,6 +67,13 @@ const requiredChromePrimitives = ['.ds-page-actions', '.ds-context-strip'];
 for (const selector of requiredChromePrimitives) {
   if (!globalChromeStyles.includes(selector)) {
     fail(`src/styles/global-chrome.css is missing shared chrome primitive ${selector}`);
+  }
+}
+
+const requiredIndexPrimitives = ['.ds-filter-strip', '.ds-catalogue-card'];
+for (const selector of requiredIndexPrimitives) {
+  if (!indexNavigationStyles.includes(selector)) {
+    fail(`src/styles/index-navigation.css is missing shared index primitive ${selector}`);
   }
 }
 
@@ -164,7 +175,9 @@ if (/(^|\})\s*\.schema-card h3\s*\{/m.test(generatedLegacyBody)) {
 
 const siteImport = siteEntry.indexOf("import './site.jsx';");
 const chromeImport = siteEntry.indexOf("import './styles/global-chrome.css';");
+const indexNavigationImport = siteEntry.indexOf("import './styles/index-navigation.css';");
 const primitiveImport = siteEntry.indexOf("import './styles/detail-primitives.css';");
+const portfolioImport = siteEntry.indexOf("import './styles/portfolio-overview.css';");
 const deliverableImport = siteEntry.indexOf("import './styles/deliverable-detail.css';");
 const planningDetailImport = siteEntry.indexOf("import './styles/planning-detail.css';");
 const projectImport = siteEntry.indexOf("import './styles/project-overview.css';");
@@ -172,13 +185,15 @@ const cleanupImport = siteEntry.indexOf("import './styles/post-legacy-cleanup.cs
 if (
   siteImport < 0 ||
   chromeImport < siteImport ||
-  primitiveImport < chromeImport ||
-  deliverableImport < primitiveImport ||
+  indexNavigationImport < chromeImport ||
+  primitiveImport < indexNavigationImport ||
+  portfolioImport < primitiveImport ||
+  deliverableImport < portfolioImport ||
   planningDetailImport < deliverableImport ||
   projectImport < planningDetailImport ||
   cleanupImport < projectImport
 ) {
-  fail('src/site-entry.jsx must load global chrome, detail primitives and owned feature styles after src/site.jsx in the documented order');
+  fail('src/site-entry.jsx must load chrome, index, shared primitives and owned feature styles after src/site.jsx in the documented order');
 }
 
 const allowedLateStylesheets = new Set([
