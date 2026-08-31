@@ -1,75 +1,135 @@
 /* Canonical project-overview presentation.
    Historical project selectors are removed from the generated legacy bundle. */
 
+main:has(> .project-detail-hero) {
+  --project-section-gap: clamp(0.9rem, 1.35vw, 1.15rem);
+  width: min(1360px, calc(100% - 2rem));
+  padding-top: 1.35rem;
+}
+
+main:has(> .project-detail-hero) > .back-link {
+  margin-bottom: 0.75rem;
+  padding: 0.42rem 0.62rem;
+  font-size: 0.82rem;
+}
+
 .project-detail-hero {
-  margin-bottom: 0;
-  padding-top: clamp(1.65rem, 2.8vw, 2.5rem);
-  padding-bottom: clamp(1.45rem, 2.4vw, 2.15rem);
-  border-bottom: 0;
+  margin: 0 0 var(--project-section-gap);
+  padding: clamp(1.35rem, 2.45vw, 2rem) clamp(1.35rem, 3.7vw, 3.35rem);
+  border: var(--border-width) solid var(--color-ink);
+  border-left: clamp(0.7rem, 1.35vw, 1rem) solid var(--color-accent);
   scroll-margin-top: 7rem;
 }
 
-.project-detail-hero h1 {
-  max-width: 72rem;
-  font-size: clamp(2.7rem, 4vw, 4.5rem);
+.related-project-detail-hero {
+  border-left-color: var(--color-ink);
 }
 
-.project-detail-hero > p,
-.project-detail-hero .detail-summary {
-  max-width: 76rem;
-}
-
-.project-detail-hero .detail-summary {
-  margin-top: 0.6rem;
+.project-detail-hero .hero-context-line {
+  width: 100%;
+  max-width: none;
+  gap: 0.45rem 0.7rem;
+  margin-bottom: 0.75rem;
   color: var(--color-muted);
-  font-size: clamp(1rem, 1.08vw, 1.1rem);
-  line-height: 1.42;
+  font-size: 0.88rem;
+  font-weight: 700;
+}
+
+.project-detail-hero .hero-context-line .reference {
+  padding: 0.28rem 0.48rem;
+  font-size: 0.68rem;
+}
+
+.related-project-detail-hero .hero-context-line .reference {
+  background: var(--color-ink);
+}
+
+.project-detail-hero h1 {
+  width: 100%;
+  max-width: 74rem;
+  margin: 0 0 0.72rem;
+  font-size: clamp(3.3rem, 5.6vw, 6rem);
+  line-height: 0.94;
+  letter-spacing: -0.043em;
+}
+
+.project-detail-hero > h1 + p {
+  max-width: 78ch;
+  margin: 0;
+  color: var(--color-ink);
+  font-size: clamp(1.04rem, 1.22vw, 1.22rem);
+  font-weight: 650;
+  line-height: 1.4;
+}
+
+.project-detail-hero .detail-summary {
+  max-width: 88ch;
+  margin: 0.9rem 0 0;
+  padding-top: 0.78rem;
+  border-top: 1px solid var(--color-border);
+  color: var(--color-muted);
+  font-size: clamp(0.94rem, 0.98vw, 1.02rem);
+  font-weight: 500;
+  line-height: 1.52;
+  white-space: pre-line;
+}
+
+.project-detail-hero .detail-summary + p {
+  max-width: 88ch;
+  margin: 0.72rem 0 0;
+  color: var(--color-muted);
+  font-size: 0.94rem;
+  font-weight: 600;
+  line-height: 1.45;
 }
 
 .project-detail-hero .detail-meta {
-  margin-top: 1rem;
+  width: 100%;
+  max-width: none;
+  gap: 0.45rem;
+  margin-top: 0.95rem;
+}
+
+.project-detail-hero .detail-meta span {
+  padding: 0.4rem 0.58rem;
+  background: var(--color-surface-softest);
+  font-size: 0.8rem;
+  font-weight: 750;
 }
 
 .project-detail-hero + .transformation-claim-panel {
-  display: grid;
-  grid-template-columns: minmax(9.5rem, auto) minmax(0, 1fr);
-  gap: 1rem 1.4rem;
-  align-items: start;
-  margin: 0 0 1.2rem;
-  padding: clamp(1.1rem, 1.8vw, 1.45rem) clamp(1.35rem, 3vw, 2.4rem);
-  border-top: 1px solid var(--border);
-  background: var(--color-surface);
+  margin-bottom: var(--project-section-gap);
 }
 
-.project-detail-hero + .transformation-claim-panel .eyebrow {
-  margin: 0;
-  align-self: start;
-}
-
-.project-detail-hero + .transformation-claim-panel p:last-child {
-  margin: 0;
-  max-width: 72rem;
-  font-size: clamp(1rem, 1.08vw, 1.12rem);
-  font-weight: 700;
-  line-height: 1.38;
-}
-
+/* Deliverables are the project-level route into deeper proposition and delivery detail. */
 .project-deliverable-panel {
-  margin: 0 0 1.5rem;
-  padding: clamp(1.2rem, 2.2vw, 1.75rem);
+  margin: 0 0 var(--project-section-gap);
+  padding: clamp(1.05rem, 1.5vw, 1.35rem) 0 clamp(1.25rem, 1.9vw, 1.65rem);
   overflow: visible;
+  border: 0;
+  border-top: var(--border-width-strong) solid var(--color-ink);
+  border-bottom: 1px solid var(--color-border);
+  background: transparent;
+  box-shadow: none;
   scroll-margin-top: 7rem;
 }
 
 .project-deliverable-panel > h2 {
-  margin-bottom: 0.45rem;
+  margin: 0 0 var(--space-2);
+  font-family: var(--font-brand);
+  font-size: clamp(2.25rem, 2.9vw, 3.15rem);
+  font-weight: 400;
+  line-height: 0.98;
+  letter-spacing: -0.03em;
 }
 
 .project-deliverable-panel > .subtle {
-  max-width: 54rem;
-  margin: 0 0 1.15rem;
-  font-size: 1rem;
-  line-height: 1.4;
+  max-width: 72ch;
+  margin: 0 0 var(--space-5);
+  color: var(--color-muted);
+  font-size: clamp(0.9rem, 0.96vw, 1rem);
+  font-weight: 600;
+  line-height: 1.42;
 }
 
 .project-deliverable-board {
@@ -79,8 +139,8 @@
 
 .project-deliverable-columns {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: var(--space-4);
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr));
+  gap: clamp(0.9rem, 1.4vw, 1.2rem);
   width: auto;
   min-width: 0;
 }
@@ -93,27 +153,11 @@
   background: transparent;
 }
 
+/* Base navigational-card appearance lives in detail-primitives.css. */
 .project-deliverable-header {
-  display: flex;
-  flex-direction: column;
   min-height: 100%;
   height: 100%;
-  padding: clamp(1.05rem, 1.8vw, 1.35rem);
-  border: var(--border-width) solid var(--color-ink);
-  border-left: 0.65rem solid var(--color-ink);
-  background: var(--color-surface);
-  color: var(--color-ink);
-  transition: border-color var(--transition-fast), background var(--transition-fast), transform var(--transition-fast);
-}
-
-.project-deliverable-header:hover,
-.project-deliverable-header:focus-visible {
-  border-color: var(--color-accent);
-  border-left-color: var(--color-accent);
-  background: var(--color-accent-soft);
-  color: var(--color-ink);
-  outline: none;
-  transform: translateY(-2px);
+  padding: clamp(0.95rem, 1.35vw, 1.15rem);
 }
 
 .project-deliverable-header .deliverable-context-line {
@@ -121,12 +165,6 @@
 }
 
 .project-deliverable-header .reference {
-  background: var(--color-ink);
-  color: var(--color-paper);
-}
-
-.project-deliverable-header:hover .reference,
-.project-deliverable-header:focus-visible .reference {
   background: var(--color-accent);
   color: var(--color-paper);
 }
@@ -136,26 +174,32 @@
   margin: 0 0 var(--space-3);
   overflow: visible;
   color: var(--color-ink);
-  font-size: clamp(1.55rem, 2vw, 2.05rem);
+  font-family: var(--font-brand);
+  font-size: clamp(1.45rem, 1.72vw, 1.9rem);
+  font-weight: 400;
   line-height: 1.04;
+  letter-spacing: -0.02em;
   -webkit-line-clamp: unset;
 }
 
 .project-deliverable-header p:not(.lead) {
-  display: block;
+  display: -webkit-box;
   margin: 0;
-  overflow: visible;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 5;
   color: var(--color-muted);
-  font-size: 0.98rem;
+  font-size: 0.94rem;
   line-height: 1.42;
-  -webkit-line-clamp: unset;
 }
 
 .project-deliverable-header .lead {
   margin: auto 0 0;
   padding-top: var(--space-4);
+  border-top: 1px solid var(--color-border);
   color: var(--color-ink);
-  font-size: 0.9rem;
+  font-size: 0.82rem;
+  font-weight: 750;
   line-height: 1.3;
 }
 
@@ -164,26 +208,39 @@
   display: block;
   margin-top: var(--space-3);
   color: var(--color-accent-dark);
-  font-size: 0.84rem;
-  font-weight: 850;
-  letter-spacing: 0.02em;
+  font-size: 0.74rem;
+  font-weight: 900;
+  letter-spacing: 0.055em;
+  line-height: 1;
+  text-transform: uppercase;
 }
 
 .project-step-stack {
   display: none;
 }
 
-@media (max-width: 900px) {
-  .project-detail-hero + .transformation-claim-panel,
-  .project-deliverable-columns {
-    grid-template-columns: 1fr;
+@media (max-width: 760px) {
+  main:has(> .project-detail-hero) {
+    width: min(100% - 1rem, 1360px);
+    padding-top: 0.8rem;
+  }
+
+  .project-detail-hero {
+    padding: 1.2rem 1rem;
+    border-left-width: 0.5rem;
+  }
+
+  .project-detail-hero h1 {
+    font-size: clamp(2.55rem, 13vw, 4rem);
   }
 }
 
-@media (max-width: 620px) {
-  .project-detail-hero,
-  .project-detail-hero + .transformation-claim-panel {
-    padding-left: 1.15rem;
-    padding-right: 1.15rem;
+@media (max-width: 480px) {
+  .project-detail-hero .detail-meta {
+    display: grid;
+  }
+
+  .project-detail-hero .detail-meta span {
+    width: 100%;
   }
 }
