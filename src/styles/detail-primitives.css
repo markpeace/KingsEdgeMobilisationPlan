@@ -2,8 +2,8 @@
  * Shared detail-page primitives.
  *
  * These recipes are loaded after the generated legacy compatibility bundle while
- * deliverable surfaces migrate. The .ds-* classes are the reusable contract;
- * existing deliverable selectors are temporary aliases so current markup can
+ * detail surfaces migrate. The .ds-* classes are the reusable contract;
+ * existing feature selectors are temporary aliases so current markup can
  * consume the same grammar without another page-specific override layer.
  */
 
@@ -44,6 +44,72 @@
   color: var(--color-ink);
   font-size: clamp(0.96rem, 1vw, 1.04rem);
   line-height: 1.52;
+}
+
+/* Strategic statements: a North Star or transformation claim, not another panel. */
+.ds-strategic-statement,
+.transformation-claim-panel {
+  display: grid;
+  grid-template-columns: minmax(8.5rem, 0.24fr) minmax(0, 1fr);
+  gap: var(--space-4) clamp(1.5rem, 3vw, 3rem);
+  align-items: start;
+  margin: 0;
+  padding: clamp(1.1rem, 1.7vw, 1.45rem) 0 clamp(1.35rem, 2vw, 1.8rem);
+  border: 0;
+  border-top: var(--border-width-strong) solid var(--color-ink);
+  border-bottom: 1px solid var(--color-border);
+  background: transparent;
+  box-shadow: none;
+}
+
+.ds-strategic-statement-label,
+.transformation-claim-panel .eyebrow {
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  color: var(--color-accent-dark);
+  font-size: 0.68rem;
+  font-weight: 900;
+  letter-spacing: 0.075em;
+  line-height: 1.05;
+}
+
+.ds-strategic-statement-body,
+.transformation-claim-panel > p:last-child {
+  max-width: 70rem;
+  margin: 0;
+  color: var(--color-ink);
+  font-family: var(--font-brand);
+  font-size: clamp(1.65rem, 2.25vw, 2.5rem);
+  font-weight: 400;
+  letter-spacing: -0.025em;
+  line-height: 1.08;
+}
+
+/* Navigational cards: scannable objects that open into a deeper detail surface. */
+.ds-nav-card,
+.project-deliverable-header {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: var(--space-4);
+  border: 1px solid var(--color-ink);
+  border-top: 4px solid var(--color-accent);
+  background: var(--color-surface);
+  color: var(--color-ink);
+  text-decoration: none;
+  box-shadow: none;
+  transition: border-color var(--transition-fast), background var(--transition-fast), color var(--transition-fast);
+}
+
+.ds-nav-card:hover,
+.ds-nav-card:focus-visible,
+.project-deliverable-header:hover,
+.project-deliverable-header:focus-visible {
+  border-color: var(--color-accent);
+  background: var(--color-accent-soft);
+  color: var(--color-ink);
+  outline: none;
 }
 
 /* Sequence cards: restrained stage marker rather than a saturated banner. */
@@ -179,6 +245,11 @@
 @media (max-width: 760px) {
   .ds-editorial-grid,
   .case-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ds-strategic-statement,
+  .transformation-claim-panel {
     grid-template-columns: 1fr;
   }
 
