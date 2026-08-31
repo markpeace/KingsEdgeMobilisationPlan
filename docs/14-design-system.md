@@ -44,10 +44,12 @@ Owns shared foundations:
 Owns reusable detail-surface recipes that currently need to follow the generated legacy compatibility bundle:
 
 - editorial cards for conceptual statements;
+- strategic statements for transformation claims and North Stars;
+- navigational cards for objects that open into deeper detail;
 - sequence cards for ordered delivery stages;
 - disclosure/concertina rows.
 
-The `.ds-*` selectors are the reusable contract. Existing deliverable selectors are temporarily aliased into those recipes so current markup can consume the same grammar without a JSX rewrite or page-specific override file. These aliases should disappear as markup is progressively moved onto explicit primitive classes.
+The `.ds-*` selectors are the reusable contract. Existing feature selectors are temporarily aliased into those recipes so current markup can consume the same grammar without a JSX rewrite or page-specific override file. These aliases should disappear as markup is progressively moved onto explicit primitive classes.
 
 ### `src/styles/global-chrome.css`
 
@@ -118,6 +120,19 @@ The default view is for scanning. Long authored proposition detail remains avail
 
 Narrative order belongs in the canonical page composition layer, not in ad-hoc DOM reordering or late CSS overrides. Where wrapper markup exists only for application structure, `display: contents` may be used deliberately so child sections can participate in the page grid without inventing another visual container.
 
+## Project-page composition
+
+A project page is an orientation surface. It should establish the project proposition, state the transformation being pursued, then provide a clear route into the deliverables where detailed planning lives.
+
+The default reading sequence is:
+
+1. project hero and proposition;
+2. transformation claim, where one is authored;
+3. deliverables as scannable navigational cards;
+4. project-level Resources and investment.
+
+Project pages deliberately do not reproduce step-level delivery planning. Deliverable cards should provide enough title, status, summary and ownership context to support a choice, then route the reader into the canonical deliverable detail page. Project-level transformation claims use the shared strategic-statement primitive rather than another boxed panel.
+
 ## Rules for new work
 
 1. Start by composing an existing primitive.
@@ -146,19 +161,21 @@ Completed:
 7. project overview `!important` debt reduced to zero;
 8. deliverable page foundation, hero and summary grammar moved into `src/styles/deliverable-detail.css` and onto shared design-system tokens;
 9. deliverable hero and generic detail-summary selectors retired from the runtime legacy bundle;
-10. shared editorial-card, sequence-card and disclosure recipes established;
+10. shared editorial-card, strategic-statement, navigational-card, sequence-card and disclosure recipes established;
 11. case for change, benefits/evidence, delivery sequence and detailed-plan disclosures moved away from historical styling and onto the shared grammar;
 12. navigation, page actions and planning-stage context moved into shared global chrome;
 13. governance, consultation history and RAID moved into owned planning-detail styling;
-14. deliverable composition now follows a documented progressive reading sequence, with dense proposition and step detail disclosed on demand.
+14. deliverable composition now follows a documented progressive reading sequence, with dense proposition and step detail disclosed on demand;
+15. project detail now uses the same hero, statement, navigation-card and rule-led section grammar while retaining a project-specific information hierarchy.
 
 Next:
 
-1. delete `src/styles/post-legacy-cleanup.css` once its small compatibility responsibilities have moved into their owning stylesheets;
-2. repeat the generated-retirement process for timeline and Theory of Change presentation;
-3. progressively shrink `legacy-public-source.css` as each retired feature family becomes safe to delete permanently;
-4. delete the legacy compatibility system once no live feature depends on it;
-5. move temporary selector aliases onto explicit `.ds-*` classes as the React markup is decomposed;
-6. migrate the remaining historical brand treatment into owned global chrome when it can be done without destabilising the established visual identity.
+1. inspect project-detail composition visually and decide whether long project narrative requires a React-level progressive disclosure treatment;
+2. delete `src/styles/post-legacy-cleanup.css` once its small compatibility responsibilities have moved into their owning stylesheets;
+3. repeat the generated-retirement process for timeline and Theory of Change presentation;
+4. progressively shrink `legacy-public-source.css` as each retired feature family becomes safe to delete permanently;
+5. delete the legacy compatibility system once no live feature depends on it;
+6. move temporary selector aliases onto explicit `.ds-*` classes as the React markup is decomposed;
+7. migrate the remaining historical brand treatment into owned global chrome when it can be done without destabilising the established visual identity.
 
 The aim is progressive retirement of legacy CSS rather than a risky whole-site rewrite.
