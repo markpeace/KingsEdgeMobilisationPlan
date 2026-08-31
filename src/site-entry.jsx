@@ -1,6 +1,7 @@
 import './site.jsx';
 import './styles/global-chrome.css';
 import './styles/index-navigation.css';
+import './styles/measures-overview.css';
 import './styles/detail-primitives.css';
 import './styles/portfolio-overview.css';
 import './styles/deliverable-detail.css';
