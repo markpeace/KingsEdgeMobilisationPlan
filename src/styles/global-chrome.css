@@ -6,6 +6,28 @@
  * intentionally left with the existing brand treatment until its own migration.
  */
 
+/* Sticky application chrome needs a consistent in-page scroll offset. */
+html {
+  scroll-padding-top: 7rem;
+}
+
+/* The homepage carries its identity in the authored hero and does not use the
+   generic detail-hero watermark. */
+.landing-hero::after {
+  display: none;
+  content: none;
+}
+
+/* The footer is retained in markup for now but is not part of the reader surface. */
+.site-footer {
+  display: none;
+}
+
+/* Pre-approval sequencing is communicated once through planning-stage context. */
+.indicative-label {
+  display: none;
+}
+
 /* Navigation is a quiet text-led control, not a row of miniature boxed cards. */
 .site-header nav {
   display: flex;
