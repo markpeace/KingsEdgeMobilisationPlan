@@ -1,0 +1,44 @@
+{
+  "benefits": [
+    {
+      "id": "2.2.2-B1",
+      "title": "More external relationships become meaningful student opportunities",
+      "statement": "King's uses its relationships with employers, industry, public bodies, community and third-sector organisations, civic and cultural partners, international organisations and alumni more systematically to generate a larger and more diverse supply of meaningful student experience.",
+      "beneficiary": "Students, external partners and King's",
+      "benefitType": "opportunity growth and external engagement",
+      "successLooksLike": "A greater proportion of relevant institutional relationships generate sustained student opportunities, with clearer routes for partners and alumni to contribute and less opportunity lost through fragmented ownership or brokerage."
+    },
+    {
+      "id": "2.2.2-B2",
+      "title": "Financial circumstances are less likely to prevent participation",
+      "statement": "A coherent Student Opportunities Fund gives students straightforward access to proportionate financial support for genuine participation costs, reducing the extent to which travel, accommodation, subsistence or other out-of-pocket costs determine who can take up valuable opportunities.",
+      "beneficiary": "Students, particularly those with limited discretionary financial resource",
+      "benefitType": "equitable access",
+      "successLooksLike": "Students can access low-friction microbursaries and larger opportunity awards where needed, and fewer worthwhile opportunities are declined or constrained because of unavoidable participation costs."
+    },
+    {
+      "id": "2.2.2-B3",
+      "title": "King's can manage partnership-engaged learning more coherently and efficiently",
+      "statement": "Clearer institutional relationship infrastructure, roles, systems and operational routes reduce duplication and friction across faculties and professional services while making it easier to broker, contract, administer and sustain partnership-engaged activity at scale.",
+      "beneficiary": "King's staff, faculties, professional services and external partners",
+      "benefitType": "institutional capability and efficiency",
+      "successLooksLike": "Partners encounter clearer routes into King's, staff can see and coordinate relevant relationships more effectively, and growing volumes of partnership-engaged activity can be supported without equivalent growth in duplicated local process."
+    },
+    {
+      "id": "2.2.2-B4",
+      "title": "Alumni and philanthropy generate additional opportunity as well as financial access",
+      "statement": "Alumni relationships and philanthropic capital are deliberately mobilised to create new opportunities for students, not only to fund individual participation. This includes socially purposeful and service-learning activity that can be generated through funded project-mobilisation models and opened to wider student participation.",
+      "beneficiary": "Students, alumni, donors and community or social-purpose partners",
+      "benefitType": "philanthropic leverage and opportunity creation",
+      "successLooksLike": "Philanthropic propositions support both access funds and the creation of additional student opportunities, including repeatable service-learning or social-good projects with clear student and community value."
+    },
+    {
+      "id": "2.2.2-B5",
+      "title": "Partnership infrastructure can scale with King's Edge ambition",
+      "statement": "The operating model is sized and revisited against the actual demand created by curriculum-embedded and wider co-curricular and extracurricular opportunity growth, ensuring that partnership capability remains an enabler rather than a constraint on programme ambition.",
+      "beneficiary": "Students, programmes, faculties and King's Edge",
+      "benefitType": "scalability and strategic enablement",
+      "successLooksLike": "Capacity decisions are informed by the volume and complexity of opportunity growth emerging through 2.1.4 and 2.2.4, with partnership and operational capability adjusted as demand changes rather than fixed independently of programme ambition."
+    }
+  ]
+}

@@ -1,0 +1,309 @@
+{
+  "steps": [
+    {
+      "id": "2.2.2-step-1",
+      "title": "Review institutional partnership infrastructure and future demand",
+      "period": {
+        "start": "jul-dec-2026:c",
+        "end": "jan-jun-2027:ab"
+      },
+      "summary": "Undertake a broad institutional review of how King's currently creates, holds, manages and activates external relationships that can generate student opportunity. Cover faculties, SASD, IES, Advancement and Alumni, and other relevant areas, including employer, industry, public-sector, policy, civic, cultural, community, third-sector and international relationships. Examine the relationship landscape, staffing and capability, systems and data, contracting, payments, partner experience, brokerage routes, duplication and gaps. Use the emerging ambitions in curriculum-embedded and wider opportunity growth to frame plausible future demand without assuming the eventual scale in advance.",
+      "dependsOn": [],
+      "outputs": [
+        {
+          "title": "Institutional partnership landscape and capability review",
+          "summary": "A current-state map of significant relationship-holding activity, staffing, systems, operational routes and partner-facing processes across King's, identifying strengths, duplication, gaps, friction and underused capacity."
+        },
+        {
+          "title": "Future-demand scenarios for partnership-engaged learning",
+          "summary": "An initial set of volume and complexity scenarios showing how partnership-management demand could change as 2.1.4 and 2.2.4 mature, so that future capacity can be sized against programme ambition rather than current activity alone."
+        }
+      ],
+      "resources": {
+        "existingCapacity": [
+          {
+            "role": "Head of Work-Based Experience and existing partnership teams",
+            "contribution": "Provide operational knowledge, workforce context, relationship intelligence and access to current processes across the areas in scope for the review.",
+            "owner": "SASD, faculties and other relevant relationship-holding teams",
+            "confidence": "developing",
+            "riskIfMissing": "The review will not establish a sufficiently complete picture of the current partnership landscape or the capacity that could be repurposed before new investment is designed."
+          }
+        ],
+        "enablingConditions": [
+          {
+            "condition": "Participation from all significant relationship-holding areas across King's",
+            "whatItUnlocks": "A genuinely institution-wide review rather than a partial map of centrally visible activity.",
+            "confidence": "developing",
+            "riskIfMissing": "The recommended model may duplicate existing capability, miss important partner networks or underestimate the complexity of the current operating environment."
+          }
+        ]
+      }
+    },
+    {
+      "id": "2.2.2-step-2",
+      "title": "Review student opportunity funding and philanthropic growth routes",
+      "period": {
+        "start": "jul-dec-2026:c",
+        "end": "jan-jun-2027:ab"
+      },
+      "summary": "Map and review the financial support currently available for students undertaking employment-enhancing and developmental activity, including centrally and locally held funds and externally supported schemes. Develop options for a coherent Student Opportunities Fund focused on low-friction £150-£250 microbursaries and more substantial awards of around £4,000 for genuine out-of-pocket participation costs. In parallel, work with alumni and philanthropy colleagues to develop propositions that increase opportunity supply as well as access, including service-learning and social-good models in which paid PhD project leads mobilise flexible opportunities for wider student participation.",
+      "dependsOn": [],
+      "outputs": [
+        {
+          "title": "Student opportunity funding landscape and consolidation options",
+          "summary": "A review of current funding pots, eligibility, administration, restrictions, student use and access friction, with options for consolidation into a simpler and more coherent Student Opportunities Fund."
+        },
+        {
+          "title": "Student Opportunities Fund design options",
+          "summary": "Options for a fund combining low-friction microbursaries of around £150-£250 with larger awards of around £4,000 for genuine participation costs, including proposed eligibility, administration and boundaries between financial access support and educational provision."
+        },
+        {
+          "title": "Alumni and philanthropic opportunity-growth propositions",
+          "summary": "A set of investable propositions through which alumni relationships and philanthropic capital can increase both access to opportunity and the supply of new opportunity, including a developed service-learning and social-good model using paid PhD project-mobilisation roles."
+        }
+      ],
+      "resources": {
+        "existingCapacity": [
+          {
+            "role": "Existing student-funding, alumni, Advancement and philanthropy capacity",
+            "contribution": "Provide the current funding landscape, donor and alumni context, administrative insight and specialist input needed to develop consolidation and growth options.",
+            "owner": "Relevant student-support, Advancement, Alumni and Philanthropy teams",
+            "confidence": "developing",
+            "riskIfMissing": "The review may design new mechanisms without understanding current restrictions, administration or realistic philanthropic routes."
+          }
+        ],
+        "enablingConditions": [
+          {
+            "condition": "Visibility of current student opportunity funds, external schemes and donor restrictions",
+            "whatItUnlocks": "A credible consolidation proposal and a clear distinction between funding that can be pooled, aligned or must remain restricted.",
+            "confidence": "developing",
+            "riskIfMissing": "The proposed Student Opportunities Fund may be financially or legally unrealistic."
+          }
+        ]
+      }
+    },
+    {
+      "id": "2.2.2-step-3",
+      "title": "Agree the target operating and investment model",
+      "period": "jan-jun-2027:c",
+      "summary": "Synthesize the two discovery reviews with the experiential-learning North Star and the emerging growth ambitions from 2.1.4 and 2.2.4. Produce costed operating-model options for partnership-engaged learning, including the mix of repurposed existing capacity and additional faculty-facing and shared operational capability, and recommend the model to mobilise for 2027/28. Confirm the preferred Student Opportunities Fund design and the initial alumni and philanthropic growth propositions. Test the current holding assumption of approximately £600,000 recurrent annual partnership-infrastructure investment rather than treating it as a pre-agreed answer.",
+      "dependsOn": [
+        "2.2.2-step-1",
+        "2.2.2-step-2"
+      ],
+      "outputs": [
+        {
+          "title": "Recommended partnership operating model and costed options",
+          "summary": "A recommended institutional model, supported by lean, central and more ambitious options, that sets out faculty-facing partnership capacity, shared operational support, systems and intelligence requirements, use of existing roles and the recurrent investment needed to support expected demand."
+        },
+        {
+          "title": "2027/28 mobilisation package",
+          "summary": "An agreed package covering the selected operating model, workforce and service changes, Student Opportunities Fund design, philanthropic propositions, implementation sequence, governance route and decisions required before mobilisation."
+        }
+      ],
+      "decisions": [
+        {
+          "title": "Select the operating and investment model for 2027/28",
+          "summary": "Agree the level and shape of partnership-infrastructure investment to mobilise, using the discovery evidence and emerging demand rather than the holding £600,000 assumption alone."
+        },
+        {
+          "title": "Agree the Student Opportunities Fund model",
+          "summary": "Confirm the scope, award structure, consolidation approach and administrative ownership of the Student Opportunities Fund before launch."
+        }
+      ],
+      "resources": {
+        "existingCapacity": [
+          {
+            "role": "Finance, HR, legal, procurement and operating-model expertise",
+            "contribution": "Test the feasibility, grade mix, organisational implications, contracting model and cost assumptions in the recommended options before an investment decision is taken.",
+            "owner": "Relevant King's professional services",
+            "confidence": "developing",
+            "riskIfMissing": "The preferred option may be strategically attractive but insufficiently tested for implementation or recurrent cost."
+          }
+        ],
+        "enablingConditions": [
+          {
+            "condition": "The experiential-learning North Star and operational principles from 2.1.2 are sufficiently developed to inform the recommended model",
+            "whatItUnlocks": "Alignment of partnership and access infrastructure with the shared educational and assurance expectations for experiential learning.",
+            "confidence": "developing",
+            "riskIfMissing": "The operating model can still be recommended, but some learning-design and assurance requirements may need to be incorporated during mobilisation rather than at selection."
+          },
+          {
+            "condition": "Sufficiently developed demand scenarios from 2.1.4 and 2.2.4",
+            "whatItUnlocks": "Testing the operating model against future opportunity growth rather than sizing it only around the current institutional baseline.",
+            "confidence": "developing",
+            "riskIfMissing": "The first investment decision will have to rely on wider ranges and be recalibrated earlier in delivery."
+          }
+        ]
+      }
+    },
+    {
+      "id": "2.2.2-step-4",
+      "title": "Mobilise the partnership and access infrastructure",
+      "period": {
+        "start": "jan-jun-2027:c",
+        "end": "jul-dec-2027:c"
+      },
+      "summary": "Implement the selected operating model for the 2027/28 academic year. Repurpose existing capacity where appropriate, recruit or assign additional faculty-facing and shared operational capability, establish common relationship and partner-management routes, improve contracting and payment processes, and put the required systems and intelligence in place. Launch the consolidated Student Opportunities Fund and begin the agreed alumni and philanthropic opportunity-growth activity, including early service-learning or social-good commissioning where ready.",
+      "dependsOn": [
+        "2.2.2-step-3"
+      ],
+      "outputs": [
+        {
+          "title": "Mobilised partnership-engaged learning infrastructure",
+          "summary": "The selected staffing, operating, systems and service arrangements are in place and able to support substantially greater volumes of partnership-engaged learning across faculties and professional services."
+        },
+        {
+          "title": "Operational Student Opportunities Fund",
+          "summary": "The consolidated fund is open through clear and proportionate application routes, with microbursary and larger-award mechanisms available for eligible participation costs."
+        },
+        {
+          "title": "First alumni and philanthropic opportunity-growth activity",
+          "summary": "Initial alumni-enabled and philanthropically supported opportunities are commissioned or mobilised, including service-learning or social-good activity where the model is sufficiently developed."
+        }
+      ],
+      "resources": {
+        "existingCapacity": [
+          {
+            "role": "Head of Work-Based Experience and other repurposable partnership capacity",
+            "contribution": "Provide existing leadership and capability within the new operating model so that the investment builds on rather than duplicates current provision.",
+            "owner": "SASD and relevant existing teams",
+            "confidence": "developing",
+            "riskIfMissing": "A larger proportion of the operating model would need to be created through new investment, reducing the reach achievable within the holding envelope."
+          },
+          {
+            "role": "Advancement, Alumni and Philanthropy capacity",
+            "contribution": "Develop donor propositions, mobilise alumni relationships and connect philanthropic activity to both student access and opportunity creation.",
+            "owner": "Advancement, Alumni and Philanthropy",
+            "confidence": "developing",
+            "riskIfMissing": "The model would rely disproportionately on core funding and would underuse alumni and philanthropic capacity as sources of opportunity growth."
+          },
+          {
+            "role": "Legal, procurement, finance and institutional risk services",
+            "contribution": "Provide defined and proportionate service routes for contracting, payments, partner onboarding and risk management rather than duplicating specialist functions within the partnership team.",
+            "owner": "Relevant King's professional services",
+            "confidence": "developing",
+            "riskIfMissing": "Partnership managers may absorb administrative workload and the model will struggle to scale efficiently."
+          }
+        ],
+        "newInvestment": [
+          {
+            "item": "Annual partnership-engaged learning infrastructure envelope",
+            "category": "partnership and operational capacity",
+            "amount": 600000,
+            "currency": "GBP",
+            "periodNeeded": "2027/28 onward; mobilisation-funded in 2027/28 and 2028/29, with intended transfer into business as usual thereafter",
+            "decisionNeededBy": "Summer 2027",
+            "fundingRoute": "King's Edge mobilisation investment for Years 2 and 3, with intended recurrent BAU settlement thereafter",
+            "fundingStatus": "holding assumption, subject to review and approval",
+            "bauLiability": true,
+            "confidence": "indicative",
+            "rationale": "Provides a middle-of-the-road holding envelope for materially stronger faculty-facing partnership management and shared operational capacity while assuming that existing leadership, some current roles and specialist institutional services can be repurposed or aligned. The current workforce hypothesis centres on substantial faculty-facing senior partnership capacity plus shared operations, but the final role mix and scale must be recommended by the October 2026 to April 2027 review and tested against demand from 2.1.4 and 2.2.4.",
+            "riskIfMissing": "King's may grow curriculum-embedded and wider experiential opportunity faster than the institution can source, broker, contract, pay for and sustain external partnerships, making partnership infrastructure a constraint on the wider King's Edge ambition."
+          }
+        ],
+        "enablingConditions": [
+          {
+            "condition": "Authority to repurpose existing roles and align specialist service capacity around the selected operating model",
+            "whatItUnlocks": "A stronger overall model within the £600,000 holding envelope by combining new investment with existing institutional capability.",
+            "confidence": "developing",
+            "riskIfMissing": "The same investment will buy less partnership-facing capacity and the recommended model may require a higher recurrent envelope."
+          }
+        ]
+      },
+      "assumptions": [
+        {
+          "title": "The £600,000 holding envelope covers infrastructure rather than opportunity funds",
+          "summary": "Student Opportunities Fund awards and philanthropically funded service-learning or social-good project pots are separate financial instruments and are not included within the £600,000 annual partnership-infrastructure assumption."
+        }
+      ]
+    },
+    {
+      "id": "2.2.2-step-5",
+      "title": "Scale and recalibrate against opportunity growth",
+      "period": {
+        "start": "jan-jun-2028:a",
+        "end": "jul-dec-2029:b"
+      },
+      "summary": "Operate and strengthen the model through the principal growth years of King's Edge. Track the volume, diversity and complexity of partnership-engaged learning generated through curriculum-embedded, near-curriculum and wider co-curricular or extracurricular growth, and use that evidence to adjust faculty-facing capacity, shared operations, systems and funding processes. Grow alumni and philanthropic contribution, expand the Student Opportunities Fund where evidence supports it, and develop repeatable service-learning and social-good commissioning routes. Treat resourcing as demand-led rather than assuming the initial 2027/28 model is the steady state.",
+      "dependsOn": [
+        "2.2.2-step-4"
+      ],
+      "outputs": [
+        {
+          "title": "Evidence-led capacity and investment reviews",
+          "summary": "Regular reviews compare actual and forecast demand with partnership and operational capacity, identifying where the model should be expanded, repurposed or simplified and what recurrent investment is justified."
+        },
+        {
+          "title": "Scaled opportunity-access and philanthropic mechanisms",
+          "summary": "The Student Opportunities Fund, alumni contribution and philanthropic opportunity-creation mechanisms have grown in response to demand and evidence, with repeatable models established where they demonstrate value."
+        }
+      ],
+      "resources": {
+        "existingCapacity": [
+          {
+            "role": "Partnership and operational capacity mobilised through 2.2.2-step-4",
+            "contribution": "Continue delivery using the funded and repurposed capacity already mobilised, with the mix adjusted as evidence on demand, productivity and partner complexity develops.",
+            "confidence": "indicative",
+            "riskIfMissing": "The institution will be unable to sustain the growing partnership-engaged learning portfolio or learn enough about the right steady-state model."
+          }
+        ],
+        "enablingConditions": [
+          {
+            "condition": "Regular access to opportunity-volume and pipeline evidence across 2.1.4, 2.2.3 and 2.2.4",
+            "whatItUnlocks": "Recalibration of partnership and administrative capacity against actual demand rather than relying on static workforce assumptions.",
+            "confidence": "developing",
+            "riskIfMissing": "Capacity may remain under- or over-sized while demand changes elsewhere in King's Edge."
+          }
+        ]
+      },
+      "assumptions": [
+        {
+          "title": "Opportunity growth will create additional partnership demand",
+          "summary": "The scale and pattern of demand will be materially influenced by 2.1.4 and 2.2.4 and should therefore be reviewed as those deliverables mature and move into delivery."
+        }
+      ]
+    },
+    {
+      "id": "2.2.2-step-6",
+      "title": "Establish the enduring business-as-usual model",
+      "period": {
+        "start": "jul-dec-2029:c",
+        "end": "jul-dec-2030:b"
+      },
+      "summary": "Confirm and transfer the enduring institutional model for student-opportunity partnerships and access. Set the long-term organisational home, faculty and central capacity, service expectations, systems ownership, Student Opportunities Fund governance and alumni or philanthropy interfaces using evidence from the mobilisation period. Confirm the recurrent business-as-usual requirement at the level justified by actual demand and the opportunity-growth model King's chooses to sustain.",
+      "dependsOn": [
+        "2.2.2-step-5"
+      ],
+      "outputs": [
+        {
+          "title": "Enduring partnership and access operating model",
+          "summary": "A business-as-usual model with clear organisational ownership, recurrent capacity, service routes, systems and funding responsibilities, sized against sustained institutional demand for partnership-engaged learning."
+        },
+        {
+          "title": "Business-as-usual funding and ownership settlement",
+          "summary": "The recurrent institutional commitment, including any continuing partnership-infrastructure investment and the governance of student opportunity and philanthropic funds, is agreed and transferred from mobilisation into normal institutional planning."
+        }
+      ],
+      "resources": {
+        "existingCapacity": [
+          {
+            "role": "Mature partnership and access infrastructure",
+            "contribution": "Transfer the capacity, operating routes and institutional relationships proven during mobilisation into the agreed long-term organisational home.",
+            "confidence": "indicative",
+            "riskIfMissing": "The capability built through mobilisation may fragment or contract when time-limited programme funding ends."
+          }
+        ],
+        "enablingConditions": [
+          {
+            "condition": "Business-as-usual funding and organisational ownership agreed at a demand-calibrated level",
+            "whatItUnlocks": "Sustained partnership-engaged learning infrastructure after King's Edge mobilisation funding ends.",
+            "decisionNeededBy": "Before the end of 2028/29 mobilisation funding",
+            "confidence": "indicative",
+            "riskIfMissing": "The £600,000 holding recurrent assumption, or its evidence-led replacement, will not have an authorised institutional funding route beyond mobilisation."
+          }
+        ]
+      }
+    }
+  ]
+}
