@@ -1,0 +1,20 @@
+{
+  "registryExample": {
+    "id": "edge-shared-example",
+    "title": "Example coherent shared resource",
+    "summary": "One resource used by several deliverables.",
+    "resourceType": "workforce",
+    "totalFte": 1.0,
+    "appointmentBasis": "permanent",
+    "fundingBasis": "Mobilisation funded, then BAU",
+    "bauDestination": "TBC"
+  },
+  "linkedAskExample": {
+    "role": "Example coherent shared resource",
+    "sharedResourceId": "edge-shared-example",
+    "sharedResourceAllocation": {
+      "fte": 0.25,
+      "note": "This deliverable consumes one quarter of the coherent resource."
+    }
+  }
+}
