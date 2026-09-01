@@ -173,7 +173,7 @@ Completed:
 16. Projects and Deliverables indexes now use source-owned portfolio and catalogue grammars;
 17. Measures reuses shared filter, metric and catalogue primitives;
 18. Timeline presentation is source-owned, its old public shim and legacy selector families are retired, and dependency selection follows the shared interaction grammar;
-19. Theory of Change presentation is source-owned, the late root stylesheet has been deleted, its causal chain consumes the shared sequence-card primitive, and its disclosures follow the established interaction grammar.
+19. Theory of Change presentation is source-owned and visually approved, the late root stylesheet has been deleted, its causal chain consumes the shared sequence-card primitive, and its disclosures follow the established interaction grammar.
 
 Next:
 
