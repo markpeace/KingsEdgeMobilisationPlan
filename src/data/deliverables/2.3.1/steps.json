@@ -1,0 +1,442 @@
+{
+  "steps": [
+    {
+      "id": "2.3.1-step-1",
+      "title": "Put the Beyond Course evidence into a live institutional dashboard",
+      "period": {
+        "start": "jul-dec-2026:b",
+        "end": "jul-dec-2026:c"
+      },
+      "summary": "From September to December 2026, turn the substantial baselining and provider data already assembled into a live Power BI product. Establish a common institutional view of Beyond Course participation and reach, with drill-down from King’s overall position through individual providers, programmes and activities. Incorporate King’s Edge participation data where feasible from the outset and establish the technical route for increasingly automated feeds.",
+      "dependsOn": [],
+      "outputs": [
+        {
+          "title": "Live Beyond Course dashboard",
+          "summary": "A live institutional Power BI dashboard available by Christmas 2026, with institutional, provider, programme and activity-level drill-down."
+        },
+        {
+          "title": "Common Beyond Course data model",
+          "summary": "Existing provider datasets brought into a common model with shared definitions for participation, reach, student profile, repeat engagement, equity and data quality."
+        },
+        {
+          "title": "King’s Edge data-feed route",
+          "summary": "An initial King’s Edge connection where feasible and a documented technical route for increasingly automated participation feeds."
+        },
+        {
+          "title": "Coverage and data-gap view",
+          "summary": "A visible account of which significant providers and activities are represented, where data remains incomplete and who owns closing each gap."
+        },
+        {
+          "title": "Refresh and ownership arrangements",
+          "summary": "Named data owners, refresh expectations and support arrangements so the dashboard can move from a one-off build into a live institutional product."
+        }
+      ],
+      "resources": {
+        "existingCapacity": [
+          {
+            "role": "Deliverable Lead",
+            "owner": "Steph White",
+            "fte": 0.1,
+            "contribution": "Own the proposition, dashboard requirements, institutional interpretation and provider expectations. Working allocation is approximately 0.1 to 0.15 FTE during mobilisation.",
+            "periodNeeded": "September 2026 onward",
+            "confidence": "working assumption"
+          },
+          {
+            "role": "Provider data owners",
+            "owner": "Relevant Beyond Course services and faculties",
+            "contribution": "Validate source data, definitions, activity ownership and refresh arrangements for the provision they deliver.",
+            "periodNeeded": "September to December 2026, then at routine refresh points",
+            "confidence": "existing capacity to be confirmed"
+          },
+          {
+            "role": "Data and integration support",
+            "owner": "Digital and IT / relevant institutional data services",
+            "contribution": "Provide short, focused support to establish a reliable King’s Edge-to-dashboard feed and appropriate data access without creating a separate technical team in 2.3.1.",
+            "periodNeeded": "Autumn 2026 and at material integration changes",
+            "confidence": "shared-capacity requirement",
+            "riskIfMissing": "The dashboard may remain dependent on manual extracts and will not mature into a live institutional product."
+          }
+        ],
+        "newInvestment": [
+          {
+            "id": "2.3.1-y1-bi-evaluation",
+            "item": "Beyond Course BI and Evaluation Analyst",
+            "category": "data, BI and evaluation capacity",
+            "fte": 0.5,
+            "amount": 31000,
+            "currency": "GBP",
+            "yearlyProfile": [
+              {
+                "academicYear": "2026/27",
+                "fte": 0.5,
+                "amount": 31000,
+                "note": "Working ten-month planning assumption, September 2026 to June 2027"
+              }
+            ],
+            "estimatedCost": "Approximately £31,000 for a 0.5 FTE ten-month working allocation, using the current Grade 7 planning benchmark as an indicative cost basis. The requirement may be met partly or wholly through existing or seconded analytical capacity.",
+            "owner": "King’s Edge / institutional BI capability, organisational home to confirm",
+            "periodNeeded": "September 2026 to June 2027",
+            "decisionNeededBy": "September 2026",
+            "fundingRoute": "King’s Edge mobilisation investment request unless existing or seconded capacity is confirmed",
+            "fundingStatus": "Indicative; route and existing capacity to validate",
+            "confidence": "planning estimate",
+            "rationale": "Provides protected capacity to turn the existing Beyond Course baseline into a live dashboard by Christmas and then deepen evaluation, provider reporting and impact analysis through the remainder of Year 1.",
+            "riskIfMissing": "Existing data is likely to remain periodically assembled rather than becoming a useful live institutional product, and the impact-analysis work will progress more slowly."
+          },
+          {
+            "id": "2.3.1-y1-adoption-coordination",
+            "item": "Project and institutional adoption coordination",
+            "category": "project and adoption capacity",
+            "fte": 0.2,
+            "amount": 11000,
+            "currency": "GBP",
+            "yearlyProfile": [
+              {
+                "academicYear": "2026/27",
+                "fte": 0.2,
+                "amount": 11000,
+                "note": "Working ten-month planning assumption, September 2026 to June 2027"
+              }
+            ],
+            "estimatedCost": "Approximately £11,000 for a 0.2 FTE ten-month working allocation, using the current Grade 6 planning benchmark as an indicative cost basis. The requirement may be met through existing or shared project capacity.",
+            "owner": "King’s Edge programme, organisational home to confirm",
+            "periodNeeded": "September 2026 to June 2027",
+            "decisionNeededBy": "September 2026",
+            "fundingRoute": "King’s Edge mobilisation investment request unless existing or shared project capacity is confirmed",
+            "fundingStatus": "Indicative; route and existing capacity to validate",
+            "confidence": "planning estimate",
+            "rationale": "Maintains provider coverage, onboarding actions, data-return coordination, decisions, dependencies and assurance so institutional adoption is not absorbed unsustainably by the Deliverable Lead.",
+            "riskIfMissing": "The dashboard may be built but institutional coverage and adoption may remain partial because provider follow-through, escalation and assurance are not actively coordinated."
+          }
+        ],
+        "enablingConditions": [
+          {
+            "condition": "Confirm the route for protected BI and evaluation capacity, testing first whether existing or seconded institutional capability can meet the requirement before treating the full planning estimate as new cash.",
+            "owner": "Steph White with King’s Edge programme leadership",
+            "decisionNeededBy": "September 2026",
+            "confidence": "developing",
+            "riskIfMissing": "The Christmas 2026 dashboard milestone is at risk."
+          },
+          {
+            "condition": "Confirm appropriate Power BI workspace, data access, information-governance arrangements and technical support for the Beyond Course dashboard.",
+            "owner": "Steph White with relevant Data and IT owners",
+            "decisionNeededBy": "Before dashboard production",
+            "confidence": "developing",
+            "riskIfMissing": "The dashboard cannot move reliably from existing analysis into live institutional reporting."
+          }
+        ]
+      }
+    },
+    {
+      "id": "2.3.1-step-2",
+      "title": "Establish King’s Edge as the institutional shopfront for Beyond Course opportunity",
+      "period": {
+        "start": "jul-dec-2026:b",
+        "end": "jan-jun-2027:c"
+      },
+      "summary": "From September 2026 to June 2027, move from partial and voluntary use of King’s Edge towards an institutional expectation that significant Beyond Course provision is visible through the common platform. Identify major providers and offers, establish minimum shopfronting expectations, support onboarding and maintain visible assurance about gaps. 2.3.1 owns the business requirements for visibility and discovery while 4.1.4 delivers the underlying King’s Edge product.",
+      "dependsOn": [],
+      "outputs": [
+        {
+          "title": "Institutional shopfronting standard",
+          "summary": "A clear expectation for which significant Beyond Course provision should be visible through King’s Edge and the minimum information required for a useful student-facing listing."
+        },
+        {
+          "title": "Provider and major-offer coverage baseline",
+          "summary": "A named view of the major services, faculties, programmes and offers that should be represented and their current King’s Edge adoption status."
+        },
+        {
+          "title": "Prioritised onboarding plan",
+          "summary": "A sequenced route for bringing missing significant provision into King’s Edge, with named provider owners and escalation routes for material gaps."
+        },
+        {
+          "title": "Opportunity description and categorisation requirements",
+          "summary": "Business requirements for audience, format, timing, accessibility, developmental value, curriculum relationship and other metadata needed for useful discovery and later evaluation."
+        },
+        {
+          "title": "Adoption assurance",
+          "summary": "Routine reporting that shows where significant Beyond Course provision is and is not shopfronted through the common platform."
+        }
+      ],
+      "resources": {
+        "existingCapacity": [
+          {
+            "role": "Deliverable Lead and business owner",
+            "owner": "Steph White",
+            "contribution": "Own the institutional standard, provider expectations, escalations and business requirements for opportunity visibility and discovery.",
+            "periodNeeded": "September 2026 onward",
+            "confidence": "working assumption"
+          },
+          {
+            "role": "King’s Edge digital product delivery",
+            "owner": "4.1.4 King’s Edge Digital Experience",
+            "contribution": "Deliver the replatform, provider spaces, discovery journeys, analytics and related product capabilities required by the Beyond Course proposition.",
+            "periodNeeded": "Across the 4.1.4 mobilisation roadmap",
+            "confidence": "planned shared capability"
+          },
+          {
+            "role": "Provider leads",
+            "owner": "Relevant services, faculties and programme owners",
+            "contribution": "Maintain accurate opportunity content, adopt agreed shopfronting standards and act on coverage or quality gaps.",
+            "periodNeeded": "During onboarding and then as business as usual",
+            "confidence": "existing capacity to be confirmed"
+          }
+        ],
+        "newInvestment": [],
+        "enablingConditions": [
+          {
+            "condition": "Secure an institutional governance route that can require significant Beyond Course providers to use the common King’s Edge shopfront rather than relying only on voluntary adoption.",
+            "owner": "Steph White with King’s Edge programme leadership",
+            "decisionNeededBy": "During autumn 2026",
+            "confidence": "developing",
+            "riskIfMissing": "King’s Edge may remain a partial catalogue and students will continue to encounter a fragmented offer."
+          },
+          {
+            "condition": "Maintain a clear product-management route between 2.3.1 as business owner and 4.1.4 as the digital delivery vehicle.",
+            "owner": "Steph White and 4.1.4 product leadership",
+            "decisionNeededBy": "During replatform scope and backlog decisions",
+            "confidence": "developing",
+            "riskIfMissing": "The replatform could preserve current functionality without delivering the institutional visibility and provider-adoption requirements of 2.3.1."
+          }
+        ]
+      }
+    },
+    {
+      "id": "2.3.1-step-3",
+      "title": "Establish the common impact model and undertake the first investment deep dives",
+      "period": {
+        "start": "jul-dec-2026:b",
+        "end": "jan-jun-2027:c"
+      },
+      "summary": "From autumn 2026 to June 2027, develop a proportionate institutional approach to evaluating Beyond Course activity beyond participation counts. Test relationships between participation and outcomes including career readiness, academic success, self-efficacy, belonging and engagement, with appropriate treatment of selection effects and limits on causal interpretation. Apply the approach to a first set of strategically significant or high-investment activities, including the King’s Undergraduate Research Fund.",
+      "dependsOn": [
+        "2.3.1-step-1"
+      ],
+      "outputs": [
+        {
+          "title": "Common Beyond Course evaluation framework",
+          "summary": "A proportionate approach to evaluating reach, equity and student impact across different types and intensities of Beyond Course activity."
+        },
+        {
+          "title": "Outcome and analytical specification",
+          "summary": "Agreed outcome measures, comparator approaches, segmentation, caveats and responsible-use principles for comparative analysis."
+        },
+        {
+          "title": "First comparative impact analyses",
+          "summary": "Initial analyses of the relationship between participation and available measures of student development, engagement and success."
+        },
+        {
+          "title": "Major investment deep dives",
+          "summary": "Two to four focused evaluations of strategically significant or high-investment programmes, including the King’s Undergraduate Research Fund where data permits."
+        },
+        {
+          "title": "Impact layer requirements for the dashboard",
+          "summary": "Prioritised additions to the dashboard so impact evidence can mature alongside participation reporting."
+        }
+      ],
+      "resources": {
+        "existingCapacity": [
+          {
+            "role": "Provider and subject expertise",
+            "owner": "Relevant programme and service owners",
+            "contribution": "Provide programme context, intended outcomes, delivery detail and interpretation for focused evaluation.",
+            "periodNeeded": "At each deep dive",
+            "confidence": "existing capacity"
+          },
+          {
+            "role": "Institutional data and methodological input",
+            "owner": "Relevant data owners and academic or evaluation expertise",
+            "contribution": "Support responsible linkage, comparator design, interpretation and methodological challenge where required.",
+            "periodNeeded": "During evaluation design and key analyses",
+            "confidence": "shared-capacity requirement"
+          }
+        ],
+        "newInvestment": [],
+        "enablingConditions": [
+          {
+            "condition": "Agree lawful and responsible linkage routes for participation data and relevant student outcome measures, including appropriate suppression, segmentation and interpretation.",
+            "owner": "Steph White with relevant data owners",
+            "decisionNeededBy": "Before comparative impact analysis",
+            "confidence": "developing",
+            "riskIfMissing": "Evaluation will remain limited to participation volumes and self-reported programme evidence."
+          }
+        ]
+      }
+    },
+    {
+      "id": "2.3.1-step-4",
+      "title": "Complete institutional coverage and automate the evidence base",
+      "period": {
+        "start": "jan-jun-2027:a",
+        "end": "jan-jun-2028:a"
+      },
+      "summary": "From early 2027 to early 2028, progressively move the Beyond Course evidence model away from periodic provider returns and towards routine digital data. Complete coverage of significant providers, increase automated King’s Edge feeds, improve consistency of opportunity metadata and exploit provider-management and analytics capabilities delivered through the developing King’s Edge product.",
+      "dependsOn": [
+        "2.3.1-step-1",
+        "2.3.1-step-2",
+        "4.1.4-step-2"
+      ],
+      "outputs": [
+        {
+          "title": "Near-comprehensive Beyond Course coverage",
+          "summary": "Significant institutional Beyond Course provision is represented in the evidence model and, wherever appropriate, in the King’s Edge shopfront."
+        },
+        {
+          "title": "Increasingly automated data flows",
+          "summary": "A growing share of participation and activity data reaches the dashboard through reliable system feeds rather than manual returns."
+        },
+        {
+          "title": "Provider-level routine use",
+          "summary": "Providers can access and use their own participation, reach and activity views as part of normal planning and evaluation."
+        },
+        {
+          "title": "Consistent opportunity metadata",
+          "summary": "The common taxonomy and data requirements are embedded sufficiently to support discovery, segmentation and evaluation."
+        },
+        {
+          "title": "Combined visibility and evidence assurance",
+          "summary": "Routine reporting shows both whether significant provision is visible to students and whether King’s can account for its participation and reach."
+        }
+      ]
+    },
+    {
+      "id": "2.3.1-step-5",
+      "title": "Use the evidence to improve the Beyond Course portfolio",
+      "period": {
+        "start": "jul-dec-2027:a",
+        "end": "jan-jun-2029:c"
+      },
+      "summary": "Across Years 2 and 3, move from establishing visibility and evidence towards using them systematically. Review differences in participation, student outcomes, demand and accessibility across providers and student groups, identify gaps, duplication and areas of strong or weak performance, and use the evidence with providers to improve provision and increasingly inform decisions about growth, redesign and investment.",
+      "dependsOn": [
+        "2.3.1-step-3",
+        "2.3.1-step-4"
+      ],
+      "outputs": [
+        {
+          "title": "Routine provider improvement conversations",
+          "summary": "Provider-level evidence is used to identify strengths, gaps and practical improvement priorities rather than functioning only as retrospective reporting."
+        },
+        {
+          "title": "Equity and participation-gap analysis",
+          "summary": "King’s can identify material differences in access and engagement between student groups and use them to target improvement."
+        },
+        {
+          "title": "Portfolio gap and duplication view",
+          "summary": "Evidence identifies unmet need, overlapping provision and areas where the Beyond Course ecology could be better balanced."
+        },
+        {
+          "title": "Further investment deep dives",
+          "summary": "Focused evaluation becomes routine for strategically significant or high-investment programmes."
+        },
+        {
+          "title": "Evidence-led portfolio recommendations",
+          "summary": "Recommendations identify provision that should be strengthened, scaled, redesigned, consolidated, commissioned or stopped."
+        }
+      ],
+      "resources": {
+        "newInvestment": [
+          {
+            "id": "2.3.1-y2-analysis",
+            "item": "Year 2 protected Beyond Course analytical and evaluation capacity",
+            "category": "data, BI and evaluation capacity",
+            "fte": 0.2,
+            "amount": 15000,
+            "currency": "GBP",
+            "yearlyProfile": [
+              {
+                "academicYear": "2027/28",
+                "fte": 0.2,
+                "amount": 15000,
+                "note": "Full-year working planning assumption"
+              }
+            ],
+            "fundingRoute": "King’s Edge Year 2 mobilisation investment request unless absorbed into existing analytical capacity",
+            "fundingStatus": "Indicative",
+            "confidence": "planning estimate",
+            "rationale": "Protects enough analytical capacity to maintain the evidence model, deepen evaluation and support provider and portfolio improvement as manual data handling reduces.",
+            "riskIfMissing": "The dashboard may remain operational but the deeper evaluation and portfolio-improvement function will be intermittent."
+          },
+          {
+            "id": "2.3.1-y3-analysis",
+            "item": "Year 3 protected Beyond Course analytical and evaluation capacity",
+            "category": "data, BI and evaluation capacity",
+            "fte": 0.2,
+            "amount": 15000,
+            "currency": "GBP",
+            "yearlyProfile": [
+              {
+                "academicYear": "2028/29",
+                "fte": 0.2,
+                "amount": 15000,
+                "note": "Full-year working planning assumption"
+              }
+            ],
+            "fundingRoute": "King’s Edge Year 3 mobilisation investment request unless absorbed into existing analytical capacity",
+            "fundingStatus": "Indicative",
+            "confidence": "planning estimate",
+            "rationale": "Maintains portfolio analysis, investment evaluation and institutional review while preparing the capability for business-as-usual stewardship.",
+            "riskIfMissing": "Evidence-led portfolio stewardship will remain dependent on ad hoc analytical effort."
+          }
+        ]
+      }
+    },
+    {
+      "id": "2.3.1-step-6",
+      "title": "Embed Beyond Course portfolio stewardship into business as usual",
+      "period": {
+        "start": "jul-dec-2028:c",
+        "end": "jul-dec-2029:c"
+      },
+      "summary": "By the end of mobilisation, establish an enduring institutional cycle through which King’s understands the Beyond Course offer, its participation, equity and impact and uses that evidence to shape future provision and investment. The dashboard, King’s Edge coverage standard, evaluation approach and provider review cycle become normal institutional infrastructure rather than mobilisation products.",
+      "dependsOn": [
+        "2.3.1-step-5"
+      ],
+      "outputs": [
+        {
+          "title": "Annual institutional Beyond Course portfolio review",
+          "summary": "A repeatable annual review of visibility, participation, equity, impact, gaps and investment priorities."
+        },
+        {
+          "title": "Routine evidence-led investment decisions",
+          "summary": "A defined route for using evidence to sustain, scale, redesign, consolidate or stop provision and to inform future commissioning."
+        },
+        {
+          "title": "Enduring ownership model",
+          "summary": "Named business ownership for the Beyond Course proposition, dashboard and institutional standards, with provider responsibilities and digital service boundaries clear."
+        },
+        {
+          "title": "Business-as-usual data and product support",
+          "summary": "Dashboard refresh, data quality and platform support are incorporated into enduring institutional data and digital service arrangements."
+        }
+      ],
+      "resources": {
+        "newInvestment": [
+          {
+            "id": "2.3.1-bau-analysis",
+            "item": "Annual business-as-usual Beyond Course analytical capacity",
+            "category": "data, BI and evaluation capacity",
+            "fte": 0.2,
+            "amount": 15000,
+            "currency": "GBP",
+            "bauLiability": true,
+            "periodNeeded": "July 2029 onward",
+            "fundingRoute": "Enduring institutional analytical / King’s Edge business-as-usual capacity",
+            "fundingStatus": "Indicative",
+            "confidence": "planning estimate",
+            "rationale": "Protects the analytical capacity needed to maintain routine Beyond Course evidence, evaluation and annual portfolio stewardship after mobilisation. Technical platform and data-feed support should sit within enduring institutional data and digital services rather than being duplicated here.",
+            "riskIfMissing": "The institutional evidence base may persist technically but lose the analytical stewardship required to turn it into service improvement and investment decisions."
+          }
+        ],
+        "enablingConditions": [
+          {
+            "condition": "Confirm the enduring organisational home and funding route for approximately 0.2 FTE analytical capacity, while absorbing technical dashboard and platform support into the relevant institutional services.",
+            "owner": "Steph White with King’s Edge programme leadership",
+            "decisionNeededBy": "Before the end of the three-year mobilisation",
+            "confidence": "developing",
+            "riskIfMissing": "The deliverable will reach the end of mobilisation without a sustainable stewardship model."
+          }
+        ]
+      }
+    }
+  ]
+}
