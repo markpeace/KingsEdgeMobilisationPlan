@@ -273,12 +273,6 @@ details[open] > summary .theory-disclosure-mark::before {
   line-height: 1.62;
 }
 
-.theory-causal-chain {
-  background:
-    linear-gradient(to right, var(--color-surface-subtle), var(--color-surface-subtle))
-    calc(50% - 50vw) 0 / 100vw 100% no-repeat;
-}
-
 .theory-chain {
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
@@ -298,7 +292,7 @@ details[open] > summary .theory-disclosure-mark::before {
   right: -1.2rem;
   width: 1.5rem;
   transform: translateY(-50%);
-  background: var(--color-surface-subtle);
+  background: var(--color-paper);
   color: var(--color-accent-dark);
   font-size: 1.3rem;
   font-weight: 800;
