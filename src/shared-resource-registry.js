@@ -1,4 +1,4 @@
-import registry from './data/shared-resources.json';
+import registry from './data/shared-resources.json' with { type: 'json' };
 
 export const sharedResourceRegistry = registry;
 
