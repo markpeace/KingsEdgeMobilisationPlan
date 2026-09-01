@@ -191,6 +191,77 @@ function dependencyHistoryFor(stepId) {
   return history;
 }
 
+function directOnwardFor(stepId) {
+  const onward = new Set();
+  for (const [id, entry] of timelineIdMap.entries()) {
+    if (entry?.type !== 'step') continue;
+    if (getStepDependencies(entry.item).includes(stepId)) onward.add(id);
+  }
+  return onward;
+}
+
+function ensureDependencyLens(timeline) {
+  let lens = timeline?.querySelector('.ke-timeline-dependency-lens');
+  if (lens) return lens;
+
+  const key = timeline?.querySelector('.ke-timeline-key');
+  if (!timeline || !key) return null;
+
+  lens = document.createElement('section');
+  lens.className = 'ke-timeline-dependency-lens';
+  lens.setAttribute('aria-live', 'polite');
+  lens.innerHTML = `
+    <div class="ke-timeline-dependency-lens-copy">
+      <span class="ke-timeline-dependency-lens-kicker">Dependency lens</span>
+      <strong class="ke-timeline-dependency-lens-title">Trace a delivery step</strong>
+      <p class="ke-timeline-dependency-lens-context"></p>
+      <p class="ke-timeline-dependency-lens-help">Select a step to show what it relies on and what it enables. Double-click a step for full detail.</p>
+    </div>
+    <div class="ke-timeline-dependency-lens-stats" aria-label="Selected step dependency summary">
+      <span class="ke-timeline-dependency-lens-stat"><strong data-ke-lens-prerequisites>0</strong><span>Prerequisites</span></span>
+      <span class="ke-timeline-dependency-lens-stat"><strong data-ke-lens-enables>0</strong><span>Directly enables</span></span>
+    </div>
+  `;
+  key.before(lens);
+  return lens;
+}
+
+function updateDependencyLens(timeline = document.querySelector('.ke-timeline-page')) {
+  if (!timeline) return;
+
+  const lens = ensureDependencyLens(timeline);
+  if (!lens) return;
+
+  const title = lens.querySelector('.ke-timeline-dependency-lens-title');
+  const context = lens.querySelector('.ke-timeline-dependency-lens-context');
+  const help = lens.querySelector('.ke-timeline-dependency-lens-help');
+  const prerequisiteCount = lens.querySelector('[data-ke-lens-prerequisites]');
+  const enablesCount = lens.querySelector('[data-ke-lens-enables]');
+  const selectedButton = timeline.querySelector('.ke-timeline-step[aria-pressed="true"], .ke-timeline-step.is-selected');
+  const selectedStepId = selectedButton?.dataset.stepId;
+
+  if (!selectedStepId) {
+    lens.classList.remove('is-active');
+    if (title) title.textContent = 'Trace a delivery step';
+    if (context) context.textContent = '';
+    if (help) help.textContent = 'Select a step to show what it relies on and what it enables. Double-click a step for full detail.';
+    if (prerequisiteCount) prerequisiteCount.textContent = '0';
+    if (enablesCount) enablesCount.textContent = '0';
+    return;
+  }
+
+  const entry = timelineIdMap.get(selectedStepId);
+  const selectedTitle = selectedButton.querySelector('.ke-timeline-step-title')?.textContent?.trim() || entry?.item?.title || selectedStepId;
+  const parentLabel = [entry?.parent?.displayId || entry?.parent?.id, entry?.parent?.title].filter(Boolean).join(' ');
+
+  lens.classList.add('is-active');
+  if (title) title.textContent = selectedTitle;
+  if (context) context.textContent = parentLabel;
+  if (help) help.textContent = 'Click the selected step again or clear the highlight to return to the full plan. Double-click for full detail.';
+  if (prerequisiteCount) prerequisiteCount.textContent = String(dependencyHistoryFor(selectedStepId).size);
+  if (enablesCount) enablesCount.textContent = String(directOnwardFor(selectedStepId).size);
+}
+
 function clearTransitiveDependencyHighlight(timeline) {
   timeline?.querySelectorAll('[data-ke-transitive-dependency="true"]').forEach((button) => {
     button.classList.remove('is-prerequisite');
@@ -225,6 +296,7 @@ function clearHighlight(timeline) {
   clearTransitiveDependencyHighlight(timeline);
   const clearButton = timeline?.querySelector('.ke-timeline-key .ke-text-button');
   clearButton?.click();
+  window.requestAnimationFrame(() => updateDependencyLens(timeline));
 }
 
 function selectStepWithoutModal(button, timeline) {
@@ -236,6 +308,7 @@ function selectStepWithoutModal(button, timeline) {
     if (interactionVersion !== stepInteractionVersion) return;
     document.querySelector('.ke-timeline-modal-close')?.click();
     applyDependencyHistory();
+    updateDependencyLens(timeline);
   });
 }
 
@@ -257,6 +330,7 @@ function openStepModal(button, timeline) {
   window.requestAnimationFrame(() => {
     updateDependencyLabels();
     applyDependencyHistory();
+    updateDependencyLens(timeline);
   });
 }
 
@@ -274,6 +348,7 @@ function installStepClickBehaviour() {
       window.requestAnimationFrame(() => {
         updateDependencyLabels();
         applyDependencyHistory();
+        updateDependencyLens(timeline);
       });
       return;
     }
@@ -320,6 +395,7 @@ function refreshTimelineScale() {
     setGridWidth(storedWidth());
     applyDependencyAwareLanes();
     applyDependencyHistory();
+    updateDependencyLens();
   });
 }
 

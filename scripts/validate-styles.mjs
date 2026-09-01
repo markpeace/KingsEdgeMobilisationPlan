@@ -15,6 +15,7 @@ const resourceStyles = read('src/styles/resource-profile.css');
 const globalChromeStyles = read('src/styles/global-chrome.css');
 const indexNavigationStyles = read('src/styles/index-navigation.css');
 const measuresStyles = read('src/styles/measures-overview.css');
+const timelineStyles = read('src/styles/timeline.css');
 const detailPrimitiveStyles = read('src/styles/detail-primitives.css');
 const portfolioStyles = read('src/styles/portfolio-overview.css');
 const deliverableStyles = read('src/styles/deliverable-detail.css');
@@ -54,6 +55,7 @@ for (const [file, styles] of [
   ['src/styles/global-chrome.css', globalChromeStyles],
   ['src/styles/index-navigation.css', indexNavigationStyles],
   ['src/styles/measures-overview.css', measuresStyles],
+  ['src/styles/timeline.css', timelineStyles],
   ['src/styles/detail-primitives.css', detailPrimitiveStyles],
   ['src/styles/portfolio-overview.css', portfolioStyles],
   ['src/styles/deliverable-detail.css', deliverableStyles],
@@ -97,6 +99,10 @@ if (fs.existsSync(filePath('public/resource-profile-spacing.css'))) {
 
 if (fs.existsSync(filePath('public/project-detail-refresh.css'))) {
   fail('obsolete public/project-detail-refresh.css must not be restored; project presentation belongs in src/styles/project-overview.css');
+}
+
+if (fs.existsSync(filePath('public/timeline-scale-control.css'))) {
+  fail('obsolete public/timeline-scale-control.css must not be restored; Timeline presentation belongs in src/styles/timeline.css');
 }
 
 const resourceShimImportantCount = (resourceShim.match(/!important/g) || []).length;
@@ -165,6 +171,11 @@ const retiredSelectorTokens = [
   '.measure-summary',
   '.measure-card',
   '.measure-row',
+  '.timeline-page',
+  '.timeline-controls',
+  '.timeline-key',
+  '.timeline-refresh',
+  '.timeline-modal',
   '#risks-decisions .schema-card'
 ];
 const generatedLegacyBody = generatedLegacyStyles.replace(/^\/\*[\s\S]*?\*\//, '');
@@ -204,7 +215,6 @@ if (
 }
 
 const allowedLateStylesheets = new Set([
-  '/timeline-scale-control.css',
   '/theory-of-change.css',
   '/resource-profile-legacy-shim.css'
 ]);

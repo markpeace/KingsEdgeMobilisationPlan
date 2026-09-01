@@ -15,24 +15,10 @@ html {
 }
 
 /* Pre-approval sequencing is communicated once through planning-stage context. */
-.indicative-label,
-.ke-timeline-step-status.is-indicative,
-.ke-delivery-status.is-indicative {
+.indicative-label {
   display: none;
 }
 
-.indicative-step-card,
-.timeline-row-indicative .timeline-title,
-.timeline-block-indicative,
-.ke-timeline-step.is-indicative {
+.indicative-step-card {
   border-style: solid !important;
-}
-
-.timeline-block-indicative,
-.ke-timeline-step.is-indicative {
-  background: var(--color-surface) !important;
-}
-
-.ke-timeline-step.is-indicative {
-  grid-template-columns: 1fr;
 }
