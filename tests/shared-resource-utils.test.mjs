@@ -7,6 +7,8 @@ import {
   sumFteByAcademicYear
 } from '../src/shared-resource-utils.js';
 
+const closeTo = (actual, expected, tolerance = 1e-9) => Math.abs(actual - expected) <= tolerance;
+
 test('shared resource links aggregate allocations without inferring identity from role text', () => {
   const steps = [
     {
@@ -114,8 +116,8 @@ test('planned allocations aggregate by academic year for selected deliverables',
 
   const summary = sharedResourcePlanSummary(registry, ['2.1.1', '2.1.2']);
   assert.equal(summary.length, 1);
-  assert.equal(summary[0].plannedAllocationByYear.get('2026/27'), 0.15);
-  assert.equal(summary[0].plannedAllocationByYear.get('2027/28'), 0.3);
+  assert.ok(closeTo(summary[0].plannedAllocationByYear.get('2026/27'), 0.15));
+  assert.ok(closeTo(summary[0].plannedAllocationByYear.get('2027/28'), 0.3));
 });
 
 test('sumFteByAcademicYear ignores malformed entries and adds valid profiles', () => {
@@ -124,6 +126,6 @@ test('sumFteByAcademicYear ignores malformed entries and adds valid profiles', (
     { yearlyProfile: [{ academicYear: '2026/27', fte: 0.05 }, { fte: 0.5 }] }
   ]);
 
-  assert.equal(totals.get('2026/27'), 0.15);
-  assert.equal(totals.get('2027/28'), 0.2);
+  assert.ok(closeTo(totals.get('2026/27'), 0.15));
+  assert.ok(closeTo(totals.get('2027/28'), 0.2));
 });
