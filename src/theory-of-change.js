@@ -133,7 +133,7 @@ function createJourneyNavigation() {
 
   const label = document.createElement('p');
   label.className = 'theory-journey-label';
-  label.textContent = 'The five moves';
+  label.textContent = 'Five transformations';
   nav.append(label);
 
   theory.transformations.items.forEach((item, index) => {
@@ -223,7 +223,7 @@ function createCausalChain() {
 
   theory.causalHypothesis.chain.forEach((text, index) => {
     const step = document.createElement('article');
-    step.className = 'theory-chain-step';
+    step.className = 'theory-chain-step ds-sequence-card';
 
     const number = document.createElement('span');
     number.textContent = String(index + 1).padStart(2, '0');
