@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "King's Edge shared resource registry",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["sharedResources"],
+  "properties": {
+    "sharedResources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true,
+        "required": ["id", "title"],
+        "properties": {
+          "id": {"type": "string", "minLength": 1},
+          "title": {"type": "string", "minLength": 1},
+          "summary": {"type": "string"},
+          "resourceType": {"type": "string"},
+          "totalFte": {"type": "number", "minimum": 0},
+          "appointmentBasis": {"type": "string"},
+          "fundingBasis": {"type": "string"},
+          "bauDestination": {"type": "string"}
+        }
+      }
+    }
+  }
+}
