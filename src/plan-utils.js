@@ -1,6 +1,7 @@
 import plan from './data/kings-edge-plan.json';
 import outOfProgrammeProjects from './data/enabling-projects.json';
 import stepDependencyOverrides from './data/step-dependencies.json';
+import resourceReconciliations from './data/shared-resource-reconciliations.json';
 import { registeredDeliverableMap } from './data/deliverables/index.js';
 import { DEFAULT_PLANNING_STATUS } from './planning-status.js';
 
@@ -176,6 +177,7 @@ const textOf = (item, fallback = 'Item') => typeof item === 'string' ? item : it
 const withVisibility = (item, fallback = 'internal-planning') => ({ ...item, visibility: item?.visibility || fallback });
 const summaryOf = (item) => item.summary || item.shortDescription || '';
 const detailSummaryOf = (item) => item.detailSummary || item.longDescription || item.description || item.longSummary || '';
+const supersededLocalAsks = asArray(resourceReconciliations.supersededLocalAsks);
 
 function deliverableWithOverride(deliverable) {
   return registeredDeliverableMap.get(deliverable.id) || deliverable;
@@ -189,6 +191,19 @@ function uniqueResourceItems(items) {
     seen.add(key);
     return true;
   });
+}
+
+function isSupersededResourceItem(item, askType, context = {}) {
+  return supersededLocalAsks.some((rule) => {
+    if (rule.stepId !== context.stepId || rule.askType !== askType || !rule.field) return false;
+    const actual = String(item?.[rule.field] ?? '').trim().toLowerCase();
+    const expected = String(rule.value ?? '').trim().toLowerCase();
+    return actual && actual === expected;
+  });
+}
+
+function activeResourceItems(items, askType, context = {}) {
+  return items.filter((item) => !isSupersededResourceItem(item, askType, context));
 }
 
 function normaliseResourceItem(item, askType, index, context = {}) {
@@ -207,19 +222,19 @@ function normaliseResourceItem(item, askType, index, context = {}) {
 }
 
 function normaliseResources(resources = {}, context = {}) {
-  const existingCapacityRaw = uniqueResourceItems([
+  const existingCapacityRaw = uniqueResourceItems(activeResourceItems([
     ...asArray(resources.existingCapacity),
     ...asArray(resources.people).map((item) => ({ role: item.role, contribution: item.notes || item.contribution || '', ...item }))
-  ]);
+  ], 'existingCapacity', context));
 
   const cashCosts = asArray(resources.cashCosts);
-  const newInvestmentRaw = uniqueResourceItems([
+  const newInvestmentRaw = uniqueResourceItems(activeResourceItems([
     ...asArray(resources.newInvestment).map((item) => {
       const matchingCost = cashCosts.find((cost) => String(cost.item || '').trim().toLowerCase() === String(item.item || '').trim().toLowerCase());
       return matchingCost ? { ...matchingCost, ...item, amount: item.amount ?? matchingCost.amount, currency: item.currency || matchingCost.currency } : item;
     }),
     ...cashCosts
-  ]);
+  ], 'newInvestment', context));
 
   const enablingConditionsRaw = uniqueResourceItems([
     ...asArray(resources.enablingConditions),

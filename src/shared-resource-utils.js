@@ -64,10 +64,52 @@ export function sharedResourceSummary(registry = {}, links = []) {
       resourceType: resource?.resourceType || '',
       totalFte: Number.isFinite(Number(resource?.totalFte)) ? Number(resource.totalFte) : null,
       appointmentBasis: resource?.appointmentBasis || '',
+      employmentHome: resource?.employmentHome || '',
       fundingBasis: resource?.fundingBasis || '',
       bauDestination: resource?.bauDestination || '',
+      yearlyProfile: asArray(resource?.yearlyProfile),
+      bauLiability: resource?.bauLiability || null,
       allocatedFte: sharedResourceAllocationFte(resourceLinks),
       links: resourceLinks
     };
+  });
+}
+
+export function sharedResourcePlannedAllocations(resource = {}, deliverableIds = []) {
+  const ids = new Set(asArray(deliverableIds));
+  return asArray(resource?.allocationPlan).filter((allocation) => ids.has(allocation?.deliverableId));
+}
+
+export function sumFteByAcademicYear(profiles = []) {
+  const totals = new Map();
+  for (const profile of asArray(profiles)) {
+    for (const entry of asArray(profile?.yearlyProfile)) {
+      const fte = Number(entry?.fte);
+      if (!entry?.academicYear || !Number.isFinite(fte)) continue;
+      totals.set(entry.academicYear, (totals.get(entry.academicYear) || 0) + fte);
+    }
+  }
+  return totals;
+}
+
+export function sharedResourcePlanSummary(registry = {}, deliverableIds = []) {
+  return asArray(registry?.sharedResources).flatMap((resource) => {
+    const allocations = sharedResourcePlannedAllocations(resource, deliverableIds);
+    if (!allocations.length) return [];
+    return [{
+      id: resource.id,
+      title: resource.title || resource.id,
+      summary: resource.summary || '',
+      resourceType: resource.resourceType || '',
+      totalFte: Number.isFinite(Number(resource.totalFte)) ? Number(resource.totalFte) : null,
+      appointmentBasis: resource.appointmentBasis || '',
+      employmentHome: resource.employmentHome || '',
+      fundingBasis: resource.fundingBasis || '',
+      bauDestination: resource.bauDestination || '',
+      yearlyProfile: asArray(resource.yearlyProfile),
+      bauLiability: resource.bauLiability || null,
+      plannedAllocationByYear: sumFteByAcademicYear(allocations),
+      allocations
+    }];
   });
 }
