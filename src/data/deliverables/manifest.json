@@ -116,6 +116,7 @@
       "parts": [
         "./2.4.1/core.json",
         "./2.4.1/overview.json",
+        "./2.4.1/steps.json",
         "./2.4.1/benefits.json"
       ]
     },
