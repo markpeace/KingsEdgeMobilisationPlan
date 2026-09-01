@@ -1,0 +1,659 @@
+/*
+ * Theory of Change presentation.
+ *
+ * The page keeps an editorial identity while consuming the canonical King's Edge
+ * tokens and shared sequence-card primitive. Page selectors own composition and
+ * Theory-specific disclosure states only; shared surfaces stay in the design system.
+ */
+
+.landing-main--with-theory {
+  display: block;
+  min-height: auto;
+}
+
+.landing-main--with-theory .landing-hero {
+  min-height: min(560px, calc(100vh - 190px));
+}
+
+.theory-of-change {
+  --theory-width: 1280px;
+  width: min(var(--theory-width), calc(100% - (2 * var(--page-gutter))));
+  margin-inline: auto;
+  padding: 0 0 clamp(4rem, 8vw, 7rem);
+  border-top: var(--border-width-strong) solid var(--color-ink);
+  color: var(--color-ink);
+}
+
+.theory-header {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.65fr);
+  gap: clamp(2rem, 5vw, 5rem);
+  margin: 0 0 clamp(3.5rem, 7vw, 6rem);
+  padding: clamp(2.5rem, 5vw, 5rem);
+  border-top: 0.5rem solid var(--color-accent);
+  background: var(--color-ink);
+  color: var(--color-paper);
+}
+
+.theory-header-copy {
+  align-self: end;
+}
+
+.theory-meta {
+  margin: 0 0 var(--space-4);
+  color: rgba(255, 255, 255, 0.68);
+  font-size: var(--text-xs);
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.theory-header h2 {
+  max-width: 820px;
+  margin: 0;
+  font-family: var(--font-brand);
+  font-size: clamp(2.8rem, 6vw, 5.8rem);
+  font-weight: 400;
+  letter-spacing: -0.05em;
+  line-height: 0.92;
+}
+
+.theory-standfirst {
+  max-width: 760px;
+  margin: clamp(1.5rem, 3vw, 2.25rem) 0 0;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: clamp(1.12rem, 1.8vw, 1.45rem);
+  line-height: 1.46;
+}
+
+.theory-journey-nav {
+  align-self: end;
+  border-top: var(--border-width) solid var(--color-paper);
+}
+
+.theory-journey-label {
+  margin: 0;
+  padding: 0.8rem 0 0.6rem;
+  color: rgba(255, 255, 255, 0.62);
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.theory-journey-link {
+  display: grid;
+  grid-template-columns: 2.25rem 1fr auto;
+  align-items: center;
+  width: 100%;
+  padding: 0.72rem 0;
+  border: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.26);
+  background: transparent;
+  color: var(--color-paper);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition: color var(--transition-fast), padding var(--transition-fast);
+}
+
+.theory-journey-link::after {
+  content: '↓';
+  color: var(--color-accent);
+  font-weight: 800;
+}
+
+.theory-journey-link span {
+  color: var(--color-accent);
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.theory-journey-link strong {
+  font-family: var(--font-brand);
+  font-size: clamp(1.15rem, 2vw, 1.65rem);
+  font-weight: 400;
+  line-height: 1;
+}
+
+.theory-journey-link:hover,
+.theory-journey-link:focus-visible {
+  padding-left: 0.45rem;
+  color: var(--color-accent);
+  outline: none;
+}
+
+.theory-scan-section {
+  padding: clamp(3rem, 6vw, 5.5rem) 0;
+  border-top: var(--border-width) solid var(--color-ink);
+}
+
+.theory-section-header {
+  display: grid;
+  grid-template-columns: minmax(260px, 0.78fr) minmax(320px, 1.22fr);
+  column-gap: clamp(2rem, 6vw, 6rem);
+  align-items: end;
+  margin-bottom: clamp(2rem, 4vw, 3.5rem);
+}
+
+.theory-section-header .eyebrow {
+  grid-column: 1;
+  margin: 0 0 var(--space-3);
+  color: var(--color-accent-dark);
+}
+
+.theory-section-header h3 {
+  grid-column: 1;
+  margin: 0;
+  font-family: var(--font-brand);
+  font-size: clamp(2rem, 3.8vw, 3.8rem);
+  font-weight: 400;
+  letter-spacing: -0.04em;
+  line-height: 0.98;
+}
+
+.theory-section-introduction {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  max-width: 760px;
+  margin: 0;
+  font-size: clamp(1.05rem, 1.55vw, 1.28rem);
+  line-height: 1.52;
+}
+
+.theory-transformation-list {
+  border-top: var(--border-width-strong) solid var(--color-ink);
+}
+
+.theory-transformation-row {
+  scroll-margin-top: 6rem;
+  border-bottom: 1px solid var(--color-ink);
+  background: var(--color-paper);
+  transition: background var(--transition-fast), color var(--transition-fast);
+}
+
+.theory-transformation-row summary,
+.theory-disclosure summary {
+  list-style: none;
+  cursor: pointer;
+}
+
+.theory-transformation-row summary::-webkit-details-marker,
+.theory-disclosure summary::-webkit-details-marker {
+  display: none;
+}
+
+.theory-transformation-row summary {
+  display: grid;
+  grid-template-columns: 3.5rem minmax(8rem, 0.55fr) minmax(260px, 1fr) minmax(280px, 1.15fr) auto;
+  gap: clamp(1rem, 2.2vw, 2rem);
+  align-items: center;
+  min-height: 132px;
+  padding: var(--space-4) var(--space-3);
+}
+
+.theory-transformation-row:hover:not([open]) {
+  background: var(--color-accent-soft);
+}
+
+.theory-transformation-row[open] {
+  background: var(--color-ink);
+  color: var(--color-paper);
+}
+
+.theory-transformation-number {
+  align-self: start;
+  padding-top: 0.45rem;
+  color: var(--color-accent-dark);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.theory-transformation-verb {
+  color: var(--color-accent);
+  font-family: var(--font-brand);
+  font-size: clamp(2.35rem, 4.2vw, 4.25rem);
+  font-weight: 400;
+  letter-spacing: -0.05em;
+  line-height: 0.86;
+}
+
+.theory-transformation-title {
+  font-size: clamp(1.05rem, 1.6vw, 1.34rem);
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.theory-transformation-tldr {
+  color: var(--color-muted);
+  font-size: 0.96rem;
+  line-height: 1.46;
+}
+
+.theory-transformation-row[open] .theory-transformation-tldr {
+  color: rgba(255, 255, 255, 0.74);
+}
+
+.theory-disclosure-cue {
+  display: inline-flex;
+  gap: 0.5rem;
+  align-items: center;
+  color: var(--color-accent-dark);
+  font-size: 0.7rem;
+  font-weight: 850;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.theory-disclosure-mark::before {
+  content: '+';
+  color: var(--color-accent-dark);
+  font-size: 1.2rem;
+  font-weight: 500;
+  line-height: 0.8;
+}
+
+details[open] > summary .theory-disclosure-mark::before {
+  content: '−';
+}
+
+.theory-transformation-body {
+  max-width: 78ch;
+  padding: 0 var(--space-8) var(--space-8) clamp(4.5rem, 19vw, 16rem);
+  border-top: 1px solid rgba(255, 255, 255, 0.22);
+}
+
+.theory-transformation-body p,
+.theory-disclosure-body p {
+  margin: var(--space-4) 0 0;
+  font-size: var(--text-md);
+  line-height: 1.62;
+}
+
+.theory-causal-chain {
+  background:
+    linear-gradient(to right, var(--color-surface-subtle), var(--color-surface-subtle))
+    calc(50% - 50vw) 0 / 100vw 100% no-repeat;
+}
+
+.theory-chain {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 0.85rem;
+  margin-bottom: var(--space-4);
+}
+
+.theory-chain-step {
+  min-height: 176px;
+}
+
+.theory-chain-step:not(:last-child)::after {
+  content: '→';
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  right: -1.2rem;
+  width: 1.5rem;
+  transform: translateY(-50%);
+  background: var(--color-surface-subtle);
+  color: var(--color-accent-dark);
+  font-size: 1.3rem;
+  font-weight: 800;
+  text-align: center;
+}
+
+.theory-chain-step > span {
+  display: block;
+  margin-bottom: var(--space-6);
+  color: var(--color-accent-dark);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.theory-chain-step > p {
+  margin: 0;
+  font-size: clamp(1rem, 1.35vw, 1.18rem);
+  font-weight: 800;
+  line-height: 1.25;
+}
+
+.theory-disclosure {
+  border: 1px solid var(--color-ink);
+  border-top: 4px solid var(--color-accent);
+  background: var(--color-paper);
+  transition: background var(--transition-fast), border-color var(--transition-fast), color var(--transition-fast);
+}
+
+.theory-disclosure summary {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: var(--space-6);
+  min-height: 190px;
+  padding: clamp(1.25rem, 2.5vw, 2rem);
+}
+
+.theory-disclosure:hover:not([open]) {
+  background: var(--color-accent-soft);
+}
+
+.theory-disclosure[open] {
+  border-color: var(--color-ink);
+  border-top-color: var(--color-accent);
+  background: var(--color-ink);
+  color: var(--color-paper);
+}
+
+.theory-disclosure-summary-copy {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.theory-card-label {
+  display: block;
+  margin-bottom: var(--space-4);
+  color: var(--color-accent-dark);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.theory-card-title {
+  display: block;
+  max-width: 34rem;
+  font-family: var(--font-brand);
+  font-size: clamp(1.55rem, 2.6vw, 2.65rem);
+  letter-spacing: -0.035em;
+  line-height: 1;
+}
+
+.theory-card-tldr {
+  display: block;
+  max-width: 48rem;
+  margin-top: auto;
+  padding-top: var(--space-8);
+  color: var(--color-muted);
+  font-size: clamp(0.96rem, 1.2vw, 1.08rem);
+  line-height: 1.5;
+}
+
+.theory-disclosure[open] .theory-card-label,
+.theory-disclosure[open] .theory-disclosure-cue,
+.theory-disclosure[open] .theory-disclosure-mark::before {
+  color: var(--color-accent);
+}
+
+.theory-disclosure[open] .theory-card-tldr {
+  color: rgba(255, 255, 255, 0.76);
+}
+
+.theory-disclosure-body {
+  padding: 0 clamp(1.25rem, 2.5vw, 2rem) clamp(1.75rem, 3vw, 2.5rem);
+  border-top: 1px solid rgba(255, 255, 255, 0.22);
+}
+
+.theory-disclosure-body > .theory-formal-title {
+  margin: var(--space-6) 0 0;
+  color: var(--color-accent);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.theory-causal-detail summary {
+  min-height: 138px;
+}
+
+.theory-causal-detail .theory-card-title {
+  font-size: clamp(1.35rem, 2vw, 2rem);
+}
+
+.theory-why-grid,
+.theory-anchor-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-4);
+}
+
+.theory-why-card summary {
+  min-height: 225px;
+}
+
+.theory-anchor-card summary {
+  min-height: 210px;
+}
+
+.theory-anchor-card .theory-card-title {
+  font-family: var(--font-body);
+  font-size: clamp(1.3rem, 1.9vw, 1.75rem);
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  line-height: 1.08;
+}
+
+.theory-closing {
+  margin-top: clamp(3rem, 6vw, 5.5rem);
+  padding: clamp(2.5rem, 5vw, 5rem);
+  border-top: 0.65rem solid var(--color-accent);
+  background: var(--color-ink);
+  color: var(--color-paper);
+}
+
+.theory-closing .eyebrow {
+  margin: 0 0 var(--space-4);
+  color: var(--color-accent);
+}
+
+.theory-closing h3 {
+  max-width: 940px;
+  margin: 0;
+  font-family: var(--font-brand);
+  font-size: clamp(2.2rem, 4.8vw, 4.8rem);
+  font-weight: 400;
+  letter-spacing: -0.045em;
+  line-height: 0.96;
+}
+
+.theory-closing-copy {
+  max-width: 720px;
+  margin: var(--space-6) 0 0;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: clamp(1.05rem, 1.55vw, 1.3rem);
+  line-height: 1.48;
+}
+
+.theory-transformation-row summary:focus-visible,
+.theory-disclosure summary:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: -3px;
+  box-shadow: none;
+}
+
+@media (max-width: 1040px) {
+  .theory-header {
+    grid-template-columns: 1fr;
+  }
+
+  .theory-journey-nav {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+
+  .theory-journey-label {
+    grid-column: 1 / -1;
+  }
+
+  .theory-journey-link {
+    grid-template-columns: 1fr;
+    gap: 0.35rem;
+    border-right: 1px solid rgba(255, 255, 255, 0.24);
+  }
+
+  .theory-journey-link::after {
+    display: none;
+  }
+
+  .theory-transformation-row summary {
+    grid-template-columns: 3rem minmax(7rem, 0.55fr) minmax(220px, 1fr) minmax(240px, 1.1fr) auto;
+    gap: var(--space-4);
+  }
+
+  .theory-chain {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .theory-chain-step:nth-child(3)::after {
+    display: none;
+  }
+
+  .theory-chain-step:nth-child(4) {
+    grid-column: 1 / 2;
+  }
+}
+
+@media (max-width: 820px) {
+  .theory-section-header {
+    grid-template-columns: 1fr;
+  }
+
+  .theory-section-header .eyebrow,
+  .theory-section-header h3,
+  .theory-section-introduction {
+    grid-column: 1;
+  }
+
+  .theory-section-introduction {
+    grid-row: auto;
+    margin-top: var(--space-5);
+  }
+
+  .theory-transformation-row summary {
+    grid-template-columns: 3rem minmax(0, 1fr) auto;
+    gap: 0.75rem var(--space-4);
+    align-items: start;
+    padding: 1.2rem 0.5rem;
+  }
+
+  .theory-transformation-number {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .theory-transformation-verb {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .theory-transformation-title {
+    grid-column: 2 / 4;
+    grid-row: 2;
+  }
+
+  .theory-transformation-tldr {
+    grid-column: 2 / 4;
+    grid-row: 3;
+  }
+
+  .theory-transformation-row .theory-disclosure-cue {
+    grid-column: 3;
+    grid-row: 1;
+  }
+
+  .theory-transformation-body {
+    padding: 0 1.25rem 1.75rem 4.5rem;
+  }
+
+  .theory-chain {
+    grid-template-columns: 1fr;
+  }
+
+  .theory-chain-step {
+    min-height: auto;
+  }
+
+  .theory-chain-step:not(:last-child)::after {
+    content: '↓';
+    top: auto;
+    right: 50%;
+    bottom: -1.45rem;
+    transform: translateX(50%);
+  }
+
+  .theory-chain-step:nth-child(3)::after {
+    display: block;
+  }
+
+  .theory-chain-step:nth-child(4) {
+    grid-column: auto;
+  }
+
+  .theory-why-grid,
+  .theory-anchor-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 620px) {
+  .landing-main--with-theory .landing-hero {
+    min-height: auto;
+  }
+
+  .theory-of-change {
+    width: min(100% - 1.25rem, var(--theory-width));
+  }
+
+  .theory-header {
+    padding: 2rem 1.25rem;
+  }
+
+  .theory-header h2 {
+    font-size: clamp(2.55rem, 14vw, 4.4rem);
+  }
+
+  .theory-journey-nav {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .theory-journey-link:last-child {
+    grid-column: 1 / -1;
+  }
+
+  .theory-scan-section {
+    padding: 2.75rem 0;
+  }
+
+  .theory-section-header h3 {
+    font-size: clamp(2rem, 11vw, 3.1rem);
+  }
+
+  .theory-transformation-verb {
+    font-size: clamp(2.3rem, 13vw, 3.5rem);
+  }
+
+  .theory-disclosure summary {
+    min-height: 190px;
+    padding: 1.2rem;
+  }
+
+  .theory-disclosure-cue > span:first-child {
+    display: none;
+  }
+
+  .theory-closing {
+    padding: 2.5rem 1.25rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .theory-journey-link,
+  .theory-transformation-row,
+  .theory-disclosure {
+    transition: none;
+  }
+}
