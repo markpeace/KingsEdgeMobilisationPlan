@@ -4,6 +4,7 @@ import {
   sharedResourceLinksFromSteps,
   sharedResourceSummary
 } from './shared-resource-utils.js';
+import './styles/shared-resources.css';
 
 function formatFte(value) {
   const number = Number(value);
