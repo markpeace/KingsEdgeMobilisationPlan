@@ -1,7 +1,14 @@
 {
   "id": "2.4.1",
-  "title": "Graduate Premium Evidence and Insight",
+  "title": "Graduate Premium Evidence and Content Assets",
   "lead": "Daniel Robson",
   "planningStatus": "proposition-review",
-  "decisionLog": []
+  "decisionLog": [
+    {
+      "date": "2026-09-01",
+      "type": "decision",
+      "forum": "King's Edge mobilisation planning",
+      "outcome": "Reconstructed 2.4.1 around a tighter boundary: the deliverable creates evidence-backed graduate premium fact packs, narratives, messaging frameworks and rich media assets for faculties, departments and disciplinary areas. It does not own mobilisation, channel strategy, campaigns or audience activation, which sit in 2.4.4 and other consuming activity. The working mobilisation model is three annual stages: prove the model and creative standard in Year 1, broaden the asset base in Year 2, and build critical mass and a renewable evidence estate in Year 3. Indicative incremental investment is £30,000 in 2026/27, £60,000 in 2027/28 and £100,000 in 2028/29, with editorial direction provided through faculty and central marketing expertise and analytical/project capacity drawn from shared King's Edge resources."
+    }
+  ]
 }
