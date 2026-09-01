@@ -1,0 +1,353 @@
+{
+  "steps": [
+    {
+      "id": "2.4.4-step-1",
+      "title": "Prove the proposition, activation and survey-optimisation model",
+      "period": {
+        "start": "jul-dec-2026:a",
+        "end": "jan-jun-2027:c"
+      },
+      "summary": "Keep Year 1 deliberately focused while the wider graduate premium evidence and content estate is still being built. Define the student-facing King’s Edge and graduate premium proposition, map the most important points in the student journey and test internal activation in a small number of priority settings. Make Graduate Outcomes response-rate optimisation the flagship survey intervention: use existing intelligence to identify areas where positive destinations appear strong but response is weaker than it should be, target engagement accordingly and evaluate what moves response. In parallel, map the small number of other surveys with material outcomes or reputation value, understand their mechanics and audiences, establish external perception baselines and test early messages using the first assets emerging from 2.4.1 rather than launching a large external campaign prematurely.",
+      "dependsOn": [],
+      "outputs": [
+        {
+          "title": "Student proposition and activation model",
+          "summary": "A clear student-facing King’s Edge and graduate premium proposition, mapped to priority student-journey touchpoints with an initial set of staff-facing language, prompts and activation pilots."
+        },
+        {
+          "title": "Graduate Outcomes optimisation pilot and strategic survey map",
+          "summary": "A targeted GO response-rate intervention model focused on high-value opportunities for improvement, together with a prioritised map of other outcomes, employability and reputation surveys, their mechanics, audiences and plausible intervention levers."
+        },
+        {
+          "title": "External audience and reputation activation baseline",
+          "summary": "A prioritised view of external audiences, current perceptions, early message tests and the activation opportunities that should be developed as the 2.4.1 evidence and content estate matures."
+        }
+      ],
+      "resources": {
+        "existingCapacity": [
+          {
+            "role": "Senior proposition, reputation and communications leadership",
+            "owner": "Project 2.4 owner with central and faculty Marketing / Brand / Communications expertise",
+            "contribution": "Provide strategic proposition direction, brand and reputation stewardship, senior stakeholder alignment and access to existing institutional channels and expertise.",
+            "periodNeeded": "2026/27",
+            "confidence": "planning assumption"
+          },
+          {
+            "role": "Graduate Outcomes and strategic survey expertise",
+            "owner": "Careers, Planning / Analytics and relevant institutional survey owners",
+            "contribution": "Support understanding of survey mechanics, target populations, response patterns, existing contact strategies, data governance and intervention feasibility.",
+            "periodNeeded": "2026/27",
+            "confidence": "planning assumption",
+            "riskIfMissing": "WP3 risks becoming generic communications activity rather than targeted performance optimisation."
+          },
+          {
+            "role": "Shared King’s Edge analytics and data capability",
+            "owner": "King’s Edge shared resource",
+            "fte": 0.05,
+            "sharedResourceId": "edge-analytics-data-capability",
+            "sharedResourceAllocation": {
+              "fte": 0.05
+            },
+            "contribution": "Provide targeted analytical support for Graduate Outcomes segmentation, intervention design and early reputation intelligence within the currently allocated programme envelope.",
+            "periodNeeded": "2026/27",
+            "confidence": "confirmed programme allocation"
+          },
+          {
+            "role": "Shared King’s Edge Project Officer capacity",
+            "owner": "Transformation Office shared resource",
+            "fte": 0.1,
+            "sharedResourceId": "edge-project-officer-capacity",
+            "sharedResourceAllocation": {
+              "fte": 0.1
+            },
+            "contribution": "Coordinate pilots, survey interventions, stakeholder activity, campaign logistics and delivery tracking.",
+            "periodNeeded": "2026/27",
+            "confidence": "confirmed programme allocation"
+          },
+          {
+            "role": "Shared King’s Edge programme / project management",
+            "owner": "Transformation Office shared resource",
+            "fte": 0.05,
+            "sharedResourceId": "edge-programme-project-management",
+            "sharedResourceAllocation": {
+              "fte": 0.05
+            },
+            "contribution": "Provide proportionate planning, dependency management and governance across the three work packages.",
+            "periodNeeded": "2026/27",
+            "confidence": "confirmed programme allocation"
+          }
+        ],
+        "newInvestment": [
+          {
+            "item": "Dedicated graduate premium activation and reputation delivery capacity",
+            "category": "workforce",
+            "fte": 0.5,
+            "owner": "Project 2.4 / institutional home to confirm",
+            "fundingRoute": "King’s Edge mobilisation funding request or agreed institutional capacity",
+            "fundingStatus": "route to confirm",
+            "confidence": "headline planning assumption",
+            "rationale": "Provides a single delivery spine across student proposition work, external reputation activation and strategic survey performance rather than dispersing responsibility across multiple teams.",
+            "riskIfMissing": "The three work packages are likely to remain fragmented and dependent on uncoordinated contributions from already stretched teams."
+          },
+          {
+            "item": "Year 1 activation, research and survey-intervention envelope",
+            "category": "activation and research",
+            "amount": 25000,
+            "currency": "GBP",
+            "owner": "2.4.4 delivery lead",
+            "fundingRoute": "King’s Edge mobilisation funding request",
+            "fundingStatus": "requested",
+            "confidence": "indicative",
+            "rationale": "Funds proposition and audience research, message testing, targeted Graduate Outcomes interventions, small activation pilots and evaluation. Rich-media production remains funded through 2.4.1.",
+            "riskIfMissing": "Year 1 can define strategy but will have limited ability to test interventions and establish evidence about what works."
+          }
+        ],
+        "enablingConditions": [
+          {
+            "condition": "The analytical requirement for WP3 is reviewed during proposition development, recognising that the existing shared King’s Edge analytics allocation is smaller than the likely total survey-optimisation need.",
+            "owner": "Project 2.4 owner with Careers, Planning / Analytics and King’s Edge programme leadership",
+            "decisionNeededBy": "Before detailed 2026/27 delivery design",
+            "confidence": "open",
+            "riskIfMissing": "Survey optimisation may be under-resourced or compete with other programme analytical priorities."
+          },
+          {
+            "condition": "The first evidence-backed assets from 2.4.1 are available for controlled message and audience testing during Year 1.",
+            "owner": "2.4.1 and 2.4.4 delivery leads",
+            "confidence": "developing",
+            "riskIfMissing": "External work should remain at baseline and proposition-testing stage rather than moving into unsupported claims or premature campaigning."
+          }
+        ]
+      }
+    },
+    {
+      "id": "2.4.4-step-2",
+      "title": "Scale student adoption and test external reputation activation",
+      "period": {
+        "start": "jul-dec-2027:a",
+        "end": "jan-jun-2028:c"
+      },
+      "summary": "Scale the strongest Year 1 student proposition and adoption approaches through onboarding, advising, Careers, faculty activity, digital touchpoints and other major student moments, using the developing King’s Canvas, portal and academic-year rhythm where they add value. Industrialise the Graduate Outcomes optimisation model across priority departments and cohorts and establish repeatable evaluation of interventions. Use the broader 2.4.1 asset estate and 2.4.2 external validation to run targeted external activation with priority applicant, family, employer, alumni, international and sector audiences, testing which messages, channels, advocates and partnerships create measurable reputation or market traction.",
+      "dependsOn": [
+        "2.4.4-step-1",
+        "2.4.1"
+      ],
+      "outputs": [
+        {
+          "title": "Scaled student adoption model",
+          "summary": "The graduate premium proposition is activated consistently through a broader set of student-facing channels, moments and staff communities, with early evidence about recognition and engagement."
+        },
+        {
+          "title": "Scaled Graduate Outcomes response-optimisation cycle",
+          "summary": "A repeatable model for identifying high-value response opportunities, targeting interventions, monitoring response and learning what works across priority areas."
+        },
+        {
+          "title": "Targeted external reputation pilots",
+          "summary": "A portfolio of audience-specific activation tests using evidence-backed 2.4.1 assets, employer and alumni advocacy, recruitment and international channels, partnerships and selected sector-facing activity."
+        }
+      ],
+      "resources": {
+        "existingCapacity": [
+          {
+            "role": "Senior proposition, reputation and communications leadership",
+            "owner": "Project 2.4 owner with central and faculty Marketing / Brand / Communications expertise",
+            "contribution": "Steer scaled activation, ensure institutional coherence and connect the work to existing recruitment, communications, reputation and engagement activity.",
+            "periodNeeded": "2027/28",
+            "confidence": "planning assumption"
+          },
+          {
+            "role": "Graduate Outcomes and strategic survey expertise",
+            "owner": "Careers, Planning / Analytics and relevant institutional survey owners",
+            "contribution": "Support scaled response optimisation and development of strategies for priority external employability and reputation surveys.",
+            "periodNeeded": "2027/28",
+            "confidence": "planning assumption"
+          },
+          {
+            "role": "Shared King’s Edge analytics and data capability",
+            "owner": "King’s Edge shared resource",
+            "fte": 0.15,
+            "sharedResourceId": "edge-analytics-data-capability",
+            "sharedResourceAllocation": {
+              "fte": 0.15
+            },
+            "contribution": "Support segmentation, intervention evaluation, audience insight and survey-performance analysis within the currently allocated programme envelope.",
+            "periodNeeded": "2027/28",
+            "confidence": "confirmed programme allocation"
+          },
+          {
+            "role": "Shared King’s Edge Project Officer capacity",
+            "owner": "Transformation Office shared resource",
+            "fte": 0.2,
+            "sharedResourceId": "edge-project-officer-capacity",
+            "sharedResourceAllocation": {
+              "fte": 0.2
+            },
+            "contribution": "Coordinate the larger portfolio of student, survey and external activation activity.",
+            "periodNeeded": "2027/28",
+            "confidence": "confirmed programme allocation"
+          },
+          {
+            "role": "Shared King’s Edge programme / project management",
+            "owner": "Transformation Office shared resource",
+            "fte": 0.05,
+            "sharedResourceId": "edge-programme-project-management",
+            "sharedResourceAllocation": {
+              "fte": 0.05
+            },
+            "contribution": "Maintain dependencies, governance and portfolio-level delivery control as activity scales.",
+            "periodNeeded": "2027/28",
+            "confidence": "confirmed programme allocation"
+          }
+        ],
+        "newInvestment": [
+          {
+            "item": "Dedicated graduate premium activation and reputation delivery capacity",
+            "category": "workforce",
+            "fte": 1.0,
+            "owner": "Project 2.4 / institutional home to confirm",
+            "fundingRoute": "King’s Edge mobilisation funding request or agreed institutional capacity",
+            "fundingStatus": "route to confirm",
+            "confidence": "headline planning assumption",
+            "rationale": "Provides full-time delivery leadership as student adoption, survey optimisation and targeted external activation all move beyond pilot scale.",
+            "riskIfMissing": "Scaling will depend on fragmented part-time contributions and the external reputation programme is unlikely to develop with sufficient coherence."
+          },
+          {
+            "item": "Year 2 activation, research and survey-intervention envelope",
+            "category": "activation and research",
+            "amount": 50000,
+            "currency": "GBP",
+            "owner": "2.4.4 delivery lead",
+            "fundingRoute": "King’s Edge mobilisation funding request",
+            "fundingStatus": "requested",
+            "confidence": "indicative",
+            "rationale": "Supports scaled student activation, targeted Graduate Outcomes interventions, audience and perception research, external reputation pilots and evaluation. Content and rich-media commissioning remain in 2.4.1.",
+            "riskIfMissing": "The work can coordinate existing channels but will have limited ability to test or scale new interventions against priority audiences."
+          }
+        ],
+        "enablingConditions": [
+          {
+            "condition": "The analytical and survey-specialist capacity required for scaled WP3 delivery has been agreed after the Year 1 resource review.",
+            "owner": "Project 2.4 owner with Careers, Planning / Analytics and King’s Edge programme leadership",
+            "decisionNeededBy": "Before 2027/28 delivery mobilisation",
+            "confidence": "open",
+            "riskIfMissing": "The programme may scale activation faster than it can target and evaluate survey-performance interventions."
+          }
+        ]
+      }
+    },
+    {
+      "id": "2.4.4-step-3",
+      "title": "Embed adoption, reputation and strategic survey performance",
+      "period": {
+        "start": "jul-dec-2028:a",
+        "end": "jan-jun-2029:c"
+      },
+      "summary": "Use the final mobilisation year to embed the strongest approaches rather than simply increasing campaign volume. Make the graduate premium proposition part of normal student-facing practice and the institutional rhythm, with sustained staff adoption and clear links into the wider King’s Edge experience. Scale external reputation approaches that have demonstrated traction, including employer and alumni advocacy, recruitment and international activation, partnerships, PR and sector-facing activity, drawing on the now-mature 2.4.1 asset estate and 2.4.2 validation. Establish a repeatable annual strategic survey-performance cycle covering Graduate Outcomes and the small number of priority employability and reputation surveys, with clear ownership, intervention plans, evaluation and continuous refinement.",
+      "dependsOn": [
+        "2.4.4-step-2",
+        "2.4.2"
+      ],
+      "outputs": [
+        {
+          "title": "Embedded graduate premium adoption model",
+          "summary": "The proposition is sustained through normal student-facing channels, staff practice and institutional rhythms rather than relying primarily on standalone campaign activity."
+        },
+        {
+          "title": "Scaled reputation and market activation model",
+          "summary": "The external approaches that have demonstrated value are integrated into ongoing recruitment, communications, employer, alumni, partnership and sector activity with clear audience priorities and stewardship."
+        },
+        {
+          "title": "Annual strategic survey-performance cycle",
+          "summary": "Graduate Outcomes and priority external employability and reputation surveys have understood mechanics, explicit performance strategies, named institutional partners, targeted interventions and an annual evaluate-and-refine cycle."
+        }
+      ],
+      "resources": {
+        "existingCapacity": [
+          {
+            "role": "Senior proposition, reputation and communications leadership",
+            "owner": "Project 2.4 owner with central and faculty Marketing / Brand / Communications expertise",
+            "contribution": "Embed the mature model into institutional reputation, recruitment, communications and student-facing practice and settle its enduring governance.",
+            "periodNeeded": "2028/29",
+            "confidence": "planning assumption"
+          },
+          {
+            "role": "Graduate Outcomes and strategic survey expertise",
+            "owner": "Careers, Planning / Analytics and relevant institutional survey owners",
+            "contribution": "Operate and refine the annual survey-performance cycle and connect survey intelligence back into proposition and reputation priorities.",
+            "periodNeeded": "2028/29",
+            "confidence": "planning assumption"
+          },
+          {
+            "role": "Shared King’s Edge analytics and data capability",
+            "owner": "King’s Edge shared resource",
+            "fte": 0.15,
+            "sharedResourceId": "edge-analytics-data-capability",
+            "sharedResourceAllocation": {
+              "fte": 0.15
+            },
+            "contribution": "Support annual targeting, performance evaluation and reputation intelligence within the currently allocated programme envelope.",
+            "periodNeeded": "2028/29",
+            "confidence": "confirmed programme allocation"
+          },
+          {
+            "role": "Shared King’s Edge Project Officer capacity",
+            "owner": "Transformation Office shared resource",
+            "fte": 0.2,
+            "sharedResourceId": "edge-project-officer-capacity",
+            "sharedResourceAllocation": {
+              "fte": 0.2
+            },
+            "contribution": "Support scaled delivery and handoff of recurring activity into enduring institutional routes.",
+            "periodNeeded": "2028/29",
+            "confidence": "confirmed programme allocation"
+          },
+          {
+            "role": "Shared King’s Edge programme / project management",
+            "owner": "Transformation Office shared resource",
+            "fte": 0.05,
+            "sharedResourceId": "edge-programme-project-management",
+            "sharedResourceAllocation": {
+              "fte": 0.05
+            },
+            "contribution": "Support final mobilisation governance, dependency management and transition decisions.",
+            "periodNeeded": "2028/29",
+            "confidence": "confirmed programme allocation"
+          }
+        ],
+        "newInvestment": [
+          {
+            "item": "Dedicated graduate premium activation and reputation delivery capacity",
+            "category": "workforce",
+            "fte": 1.0,
+            "owner": "Project 2.4 / institutional home to confirm",
+            "fundingRoute": "King’s Edge mobilisation funding request or agreed institutional capacity",
+            "fundingStatus": "route to confirm",
+            "confidence": "headline planning assumption",
+            "rationale": "Maintains a coherent delivery and stewardship function while the model is embedded and the business-as-usual destination is settled.",
+            "riskIfMissing": "The final mobilisation year may generate activity without securing enduring ownership or consistent practice."
+          },
+          {
+            "item": "Year 3 activation, research and survey-intervention envelope",
+            "category": "activation and research",
+            "amount": 75000,
+            "currency": "GBP",
+            "owner": "2.4.4 delivery lead",
+            "fundingRoute": "King’s Edge mobilisation funding request",
+            "fundingStatus": "requested",
+            "confidence": "indicative",
+            "rationale": "Supports the mature portfolio of targeted reputation activity, survey-performance interventions, audience research and evaluation while continuing to exclude content production already funded through 2.4.1.",
+            "riskIfMissing": "The programme will be able to embed low-cost activity but will have limited capacity to sustain or scale reputation interventions that require paid research, activation or partnership support."
+          }
+        ],
+        "enablingConditions": [
+          {
+            "condition": "An enduring institutional home and funding route are agreed for the activation/reputation function and the analytical/survey capability that must continue after mobilisation.",
+            "owner": "Project 2.4 owner with King’s Edge programme leadership and relevant institutional functions",
+            "decisionNeededBy": "Before the end of 2028/29",
+            "confidence": "open",
+            "riskIfMissing": "Student proposition, reputation and survey-performance work may fragment again once mobilisation funding ends."
+          }
+        ]
+      }
+    }
+  ]
+}
