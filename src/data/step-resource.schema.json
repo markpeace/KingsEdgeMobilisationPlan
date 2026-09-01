@@ -12,6 +12,26 @@
           "type": "string",
           "description": "Optional stable ID. The app generates one from the step when omitted."
         },
+        "sharedResourceId": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Optional stable ID linking this ask to one coherent resource in src/data/shared-resources.json."
+        },
+        "sharedResourceAllocation": {
+          "type": "object",
+          "additionalProperties": true,
+          "properties": {
+            "fte": {
+              "type": "number",
+              "minimum": 0,
+              "description": "The portion of the coherent shared resource allocated to this ask."
+            },
+            "note": {
+              "type": "string",
+              "description": "Optional explanation of how this ask consumes or contributes to the shared resource."
+            }
+          }
+        },
         "periodNeeded": {
           "description": "When the resource is needed. Omit when it is the same as the parent step period.",
           "oneOf": [
