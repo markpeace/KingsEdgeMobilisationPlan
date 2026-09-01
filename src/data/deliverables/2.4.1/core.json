@@ -2,6 +2,10 @@
   "id": "2.4.1",
   "title": "Graduate Premium Evidence and Content Assets",
   "lead": "Daniel Robson",
+  "ownership": {
+    "accountableOwner": "Rachel Kershaw",
+    "deliveryLead": "Daniel Robson"
+  },
   "planningStatus": "proposition-review",
   "decisionLog": [
     {
