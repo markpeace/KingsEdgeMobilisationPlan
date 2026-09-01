@@ -18,7 +18,26 @@
           "title": "Future-demand scenarios for partnership-engaged learning",
           "summary": "An initial set of volume and complexity scenarios showing how partnership-management demand could change as 2.1.4 and 2.2.4 mature, so that future capacity can be sized against programme ambition rather than current activity alone."
         }
-      ]
+      ],
+      "resources": {
+        "existingCapacity": [
+          {
+            "role": "Head of Work-Based Experience and existing partnership teams",
+            "contribution": "Provide operational knowledge, workforce context, relationship intelligence and access to current processes across the areas in scope for the review.",
+            "owner": "SASD, faculties and other relevant relationship-holding teams",
+            "confidence": "developing",
+            "riskIfMissing": "The review will not establish a sufficiently complete picture of the current partnership landscape or the capacity that could be repurposed before new investment is designed."
+          }
+        ],
+        "enablingConditions": [
+          {
+            "condition": "Participation from all significant relationship-holding areas across King's",
+            "whatItUnlocks": "A genuinely institution-wide review rather than a partial map of centrally visible activity.",
+            "confidence": "developing",
+            "riskIfMissing": "The recommended model may duplicate existing capability, miss important partner networks or underestimate the complexity of the current operating environment."
+          }
+        ]
+      }
     },
     {
       "id": "2.2.2-step-2",
@@ -42,7 +61,26 @@
           "title": "Alumni and philanthropic opportunity-growth propositions",
           "summary": "A set of investable propositions through which alumni relationships and philanthropic capital can increase both access to opportunity and the supply of new opportunity, including a developed service-learning and social-good model using paid PhD project-mobilisation roles."
         }
-      ]
+      ],
+      "resources": {
+        "existingCapacity": [
+          {
+            "role": "Existing student-funding, alumni, Advancement and philanthropy capacity",
+            "contribution": "Provide the current funding landscape, donor and alumni context, administrative insight and specialist input needed to develop consolidation and growth options.",
+            "owner": "Relevant student-support, Advancement, Alumni and Philanthropy teams",
+            "confidence": "developing",
+            "riskIfMissing": "The review may design new mechanisms without understanding current restrictions, administration or realistic philanthropic routes."
+          }
+        ],
+        "enablingConditions": [
+          {
+            "condition": "Visibility of current student opportunity funds, external schemes and donor restrictions",
+            "whatItUnlocks": "A credible consolidation proposal and a clear distinction between funding that can be pooled, aligned or must remain restricted.",
+            "confidence": "developing",
+            "riskIfMissing": "The proposed Student Opportunities Fund may be financially or legally unrealistic."
+          }
+        ]
+      }
     },
     {
       "id": "2.2.2-step-3",
@@ -73,7 +111,26 @@
           "title": "Agree the Student Opportunities Fund model",
           "summary": "Confirm the scope, award structure, consolidation approach and administrative ownership of the Student Opportunities Fund before launch."
         }
-      ]
+      ],
+      "resources": {
+        "existingCapacity": [
+          {
+            "role": "Finance, HR, legal, procurement and operating-model expertise",
+            "contribution": "Test the feasibility, grade mix, organisational implications, contracting model and cost assumptions in the recommended options before an investment decision is taken.",
+            "owner": "Relevant King's professional services",
+            "confidence": "developing",
+            "riskIfMissing": "The preferred option may be strategically attractive but insufficiently tested for implementation or recurrent cost."
+          }
+        ],
+        "enablingConditions": [
+          {
+            "condition": "Sufficiently developed demand scenarios from 2.1.4 and 2.2.4",
+            "whatItUnlocks": "Testing the operating model against future opportunity growth rather than sizing it only around the current institutional baseline.",
+            "confidence": "developing",
+            "riskIfMissing": "The first investment decision will have to rely on wider ranges and be recalibrated earlier in delivery."
+          }
+        ]
+      }
     },
     {
       "id": "2.2.2-step-4",
@@ -99,6 +156,61 @@
           "title": "First alumni and philanthropic opportunity-growth activity",
           "summary": "Initial alumni-enabled and philanthropically supported opportunities are commissioned or mobilised, including service-learning or social-good activity where the model is sufficiently developed."
         }
+      ],
+      "resources": {
+        "existingCapacity": [
+          {
+            "role": "Head of Work-Based Experience and other repurposable partnership capacity",
+            "contribution": "Provide existing leadership and capability within the new operating model so that the investment builds on rather than duplicates current provision.",
+            "owner": "SASD and relevant existing teams",
+            "confidence": "developing",
+            "riskIfMissing": "A larger proportion of the operating model would need to be created through new investment, reducing the reach achievable within the holding envelope."
+          },
+          {
+            "role": "Advancement, Alumni and Philanthropy capacity",
+            "contribution": "Develop donor propositions, mobilise alumni relationships and connect philanthropic activity to both student access and opportunity creation.",
+            "owner": "Advancement, Alumni and Philanthropy",
+            "confidence": "developing",
+            "riskIfMissing": "The model would rely disproportionately on core funding and would underuse alumni and philanthropic capacity as sources of opportunity growth."
+          },
+          {
+            "role": "Legal, procurement, finance and institutional risk services",
+            "contribution": "Provide defined and proportionate service routes for contracting, payments, partner onboarding and risk management rather than duplicating specialist functions within the partnership team.",
+            "owner": "Relevant King's professional services",
+            "confidence": "developing",
+            "riskIfMissing": "Partnership managers may absorb administrative workload and the model will struggle to scale efficiently."
+          }
+        ],
+        "newInvestment": [
+          {
+            "item": "Annual partnership-engaged learning infrastructure envelope",
+            "category": "partnership and operational capacity",
+            "amount": 600000,
+            "currency": "GBP",
+            "periodNeeded": "2027/28 onward; mobilisation-funded in 2027/28 and 2028/29, with intended transfer into business as usual thereafter",
+            "decisionNeededBy": "Summer 2027",
+            "fundingRoute": "King's Edge mobilisation investment for Years 2 and 3, with intended recurrent BAU settlement thereafter",
+            "fundingStatus": "holding assumption, subject to review and approval",
+            "bauLiability": true,
+            "confidence": "indicative",
+            "rationale": "Provides a middle-of-the-road holding envelope for materially stronger faculty-facing partnership management and shared operational capacity while assuming that existing leadership, some current roles and specialist institutional services can be repurposed or aligned. The current workforce hypothesis centres on substantial faculty-facing senior partnership capacity plus shared operations, but the final role mix and scale must be recommended by the October 2026 to April 2027 review and tested against demand from 2.1.4 and 2.2.4.",
+            "riskIfMissing": "King's may grow curriculum-embedded and wider experiential opportunity faster than the institution can source, broker, contract, pay for and sustain external partnerships, making partnership infrastructure a constraint on the wider King's Edge ambition."
+          }
+        ],
+        "enablingConditions": [
+          {
+            "condition": "Authority to repurpose existing roles and align specialist service capacity around the selected operating model",
+            "whatItUnlocks": "A stronger overall model within the £600,000 holding envelope by combining new investment with existing institutional capability.",
+            "confidence": "developing",
+            "riskIfMissing": "The same investment will buy less partnership-facing capacity and the recommended model may require a higher recurrent envelope."
+          }
+        ]
+      },
+      "assumptions": [
+        {
+          "title": "The £600,000 holding envelope covers infrastructure rather than opportunity funds",
+          "summary": "Student Opportunities Fund awards and philanthropically funded service-learning or social-good project pots are separate financial instruments and are not included within the £600,000 annual partnership-infrastructure assumption."
+        }
       ]
     },
     {
@@ -122,6 +234,24 @@
           "summary": "The Student Opportunities Fund, alumni contribution and philanthropic opportunity-creation mechanisms have grown in response to demand and evidence, with repeatable models established where they demonstrate value."
         }
       ],
+      "resources": {
+        "existingCapacity": [
+          {
+            "role": "Partnership and operational capacity mobilised through 2.2.2-step-4",
+            "contribution": "Continue delivery using the funded and repurposed capacity already mobilised, with the mix adjusted as evidence on demand, productivity and partner complexity develops.",
+            "confidence": "indicative",
+            "riskIfMissing": "The institution will be unable to sustain the growing partnership-engaged learning portfolio or learn enough about the right steady-state model."
+          }
+        ],
+        "enablingConditions": [
+          {
+            "condition": "Regular access to opportunity-volume and pipeline evidence across 2.1.4, 2.2.3 and 2.2.4",
+            "whatItUnlocks": "Recalibration of partnership and administrative capacity against actual demand rather than relying on static workforce assumptions.",
+            "confidence": "developing",
+            "riskIfMissing": "Capacity may remain under- or over-sized while demand changes elsewhere in King's Edge."
+          }
+        ]
+      },
       "assumptions": [
         {
           "title": "Opportunity growth will create additional partnership demand",
@@ -149,7 +279,26 @@
           "title": "Business-as-usual funding and ownership settlement",
           "summary": "The recurrent institutional commitment, including any continuing partnership-infrastructure investment and the governance of student opportunity and philanthropic funds, is agreed and transferred from mobilisation into normal institutional planning."
         }
-      ]
+      ],
+      "resources": {
+        "existingCapacity": [
+          {
+            "role": "Mature partnership and access infrastructure",
+            "contribution": "Transfer the capacity, operating routes and institutional relationships proven during mobilisation into the agreed long-term organisational home.",
+            "confidence": "indicative",
+            "riskIfMissing": "The capability built through mobilisation may fragment or contract when time-limited programme funding ends."
+          }
+        ],
+        "enablingConditions": [
+          {
+            "condition": "Business-as-usual funding and organisational ownership agreed at a demand-calibrated level",
+            "whatItUnlocks": "Sustained partnership-engaged learning infrastructure after King's Edge mobilisation funding ends.",
+            "decisionNeededBy": "Before the end of 2028/29 mobilisation funding",
+            "confidence": "indicative",
+            "riskIfMissing": "The £600,000 holding recurrent assumption, or its evidence-led replacement, will not have an authorised institutional funding route beyond mobilisation."
+          }
+        ]
+      }
     }
   ]
 }
