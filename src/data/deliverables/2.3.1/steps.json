@@ -273,8 +273,7 @@
       "summary": "From early 2027 to early 2028, progressively move the Beyond Course evidence model away from periodic provider returns and towards routine digital data. Complete coverage of significant providers, increase automated King’s Edge feeds, improve consistency of opportunity metadata and exploit provider-management and analytics capabilities delivered through the developing King’s Edge product.",
       "dependsOn": [
         "2.3.1-step-1",
-        "2.3.1-step-2",
-        "4.1.4-step-2"
+        "2.3.1-step-2"
       ],
       "outputs": [
         {
