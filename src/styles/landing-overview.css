@@ -1,0 +1,202 @@
+/*
+ * Homepage / landing composition.
+ *
+ * This preserves the approved landing surface while moving it out of the
+ * historical compatibility bundle. Shared panel, typography and colour
+ * foundations remain owned by the design system.
+ */
+
+.landing-main {
+  min-height: calc(100vh - 130px);
+  display: grid;
+  align-items: center;
+}
+
+.landing-hero {
+  display: grid;
+  align-content: center;
+  min-height: min(640px, calc(100vh - 150px));
+  margin-top: var(--space-4);
+  margin-bottom: 0;
+  padding-top: clamp(2.4rem, 5vw, 4.8rem);
+  padding-bottom: clamp(2.2rem, 4vw, 3.8rem);
+}
+
+.landing-hero .eyebrow {
+  display: none;
+}
+
+.landing-hero h1 {
+  max-width: 720px;
+  margin-bottom: 0.75rem;
+  font-size: clamp(3.65rem, 6.25vw, 6.35rem);
+  line-height: 0.9;
+  text-transform: uppercase;
+}
+
+.landing-hero h1::after {
+  content: "A King's education is a journey of purpose as well as a course of study.";
+  display: block;
+  max-width: 920px;
+  margin-top: clamp(0.9rem, 1.8vw, 1.35rem);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  font-size: clamp(1.25rem, 1.9vw, 1.85rem);
+  font-style: italic;
+  font-weight: 700;
+  line-height: 1.14;
+  letter-spacing: -0.028em;
+  text-transform: none;
+}
+
+/* The current programme purpose remains the data source, but the landing page
+   uses the approved public-facing articulation until the Landing component is
+   decomposed into explicit authored fields. */
+.landing-hero > p:not(.eyebrow) {
+  max-width: 940px;
+  margin: 0;
+  color: transparent;
+  font-size: 0;
+  line-height: 0;
+}
+
+.landing-hero > p:not(.eyebrow)::before {
+  content: "The value of higher education can no longer be left implicit. As the graduate premium becomes more contested, and as AI reshapes knowledge, skills and work, King's needs to be clearer about what a King's education adds: purpose, experience, evidence of skills, and a distinctive contribution to the world.";
+  display: block;
+  max-width: 940px;
+  color: var(--color-muted);
+  font-size: clamp(1rem, 1.16vw, 1.14rem);
+  font-weight: 400;
+  line-height: 1.44;
+}
+
+.landing-hero > p:not(.eyebrow)::after {
+  content: "This mobilisation plan turns that proposition into delivery: the projects, dependencies, measures and decisions needed to make King's Edge visible, navigable and evidenced for every student.";
+  display: block;
+  max-width: 940px;
+  margin-top: 0.75rem;
+  color: var(--color-ink);
+  font-size: clamp(1rem, 1.16vw, 1.14rem);
+  font-weight: 700;
+  line-height: 1.44;
+}
+
+.landing-hero .landing-links {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.75rem;
+  max-width: 1180px;
+  margin-top: clamp(2rem, 3.2vw, 2.7rem);
+}
+
+.landing-links a {
+  position: relative;
+  display: grid;
+  grid-template-rows: auto auto 1fr auto;
+  gap: 0.45rem;
+  min-height: 142px;
+  padding: 1rem 1rem 1.1rem;
+  border: var(--border-width) solid var(--color-ink);
+  background: var(--color-paper);
+  color: var(--color-ink);
+  text-decoration: none;
+  transition: background var(--transition-fast), color var(--transition-fast), border-color var(--transition-fast);
+}
+
+.landing-links a:hover,
+.landing-links a:focus-visible {
+  border-color: var(--color-accent);
+  background: var(--color-accent);
+  color: var(--color-paper);
+}
+
+.landing-links a:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+.landing-links span {
+  color: var(--color-accent-dark);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.landing-links strong {
+  max-width: 16rem;
+  font-size: clamp(1.15rem, 1.6vw, 1.55rem);
+  line-height: 1.02;
+  letter-spacing: -0.03em;
+}
+
+.landing-links em {
+  color: var(--color-muted);
+  font-style: normal;
+  font-size: 0.95rem;
+  line-height: 1.35;
+}
+
+.landing-links a::after {
+  content: 'Open →';
+  align-self: end;
+  margin-top: 0.4rem;
+  color: var(--color-accent-dark);
+  font-size: 0.86rem;
+  font-weight: 800;
+}
+
+.landing-links a:hover em,
+.landing-links a:hover span,
+.landing-links a:hover::after,
+.landing-links a:focus-visible em,
+.landing-links a:focus-visible span,
+.landing-links a:focus-visible::after {
+  color: rgba(255, 255, 255, 0.86);
+}
+
+.landing-links a:first-child {
+  background: var(--color-ink);
+  color: var(--color-paper);
+}
+
+.landing-links a:first-child em,
+.landing-links a:first-child span,
+.landing-links a:first-child::after {
+  color: rgba(255, 255, 255, 0.86);
+}
+
+.landing-links a:first-child:hover,
+.landing-links a:first-child:focus-visible {
+  background: var(--color-accent);
+}
+
+@media (max-width: 1180px) {
+  .landing-hero .landing-links {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  .landing-main,
+  .landing-hero {
+    min-height: auto;
+  }
+
+  .landing-hero h1 {
+    font-size: clamp(2.8rem, 16vw, 4rem);
+  }
+
+  .landing-hero h1::after {
+    font-size: clamp(1.1rem, 5.2vw, 1.45rem);
+  }
+
+  .landing-hero .landing-links {
+    grid-template-columns: 1fr;
+  }
+
+  .landing-links a:first-child {
+    order: -1;
+  }
+}
