@@ -89,8 +89,7 @@
       "summary": "Synthesize the two discovery reviews with the experiential-learning North Star and the emerging growth ambitions from 2.1.4 and 2.2.4. Produce costed operating-model options for partnership-engaged learning, including the mix of repurposed existing capacity and additional faculty-facing and shared operational capability, and recommend the model to mobilise for 2027/28. Confirm the preferred Student Opportunities Fund design and the initial alumni and philanthropic growth propositions. Test the current holding assumption of approximately £600,000 recurrent annual partnership-infrastructure investment rather than treating it as a pre-agreed answer.",
       "dependsOn": [
         "2.2.2-step-1",
-        "2.2.2-step-2",
-        "2.1.2-step-4"
+        "2.2.2-step-2"
       ],
       "outputs": [
         {
@@ -123,6 +122,12 @@
           }
         ],
         "enablingConditions": [
+          {
+            "condition": "The experiential-learning North Star and operational principles from 2.1.2 are sufficiently developed to inform the recommended model",
+            "whatItUnlocks": "Alignment of partnership and access infrastructure with the shared educational and assurance expectations for experiential learning.",
+            "confidence": "developing",
+            "riskIfMissing": "The operating model can still be recommended, but some learning-design and assurance requirements may need to be incorporated during mobilisation rather than at selection."
+          },
           {
             "condition": "Sufficiently developed demand scenarios from 2.1.4 and 2.2.4",
             "whatItUnlocks": "Testing the operating model against future opportunity growth rather than sizing it only around the current institutional baseline.",
