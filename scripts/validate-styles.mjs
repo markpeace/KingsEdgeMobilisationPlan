@@ -21,12 +21,14 @@ const portfolioStyles = read('src/styles/portfolio-overview.css');
 const deliverableStyles = read('src/styles/deliverable-detail.css');
 const planningDetailStyles = read('src/styles/planning-detail.css');
 const projectStyles = read('src/styles/project-overview.css');
+const theoryStyles = read('src/styles/theory-of-change.css');
 const postLegacyStyles = read('src/styles/post-legacy-cleanup.css');
 const generatedLegacyStyles = read('src/styles/legacy-public.generated.css');
 const legacySourceStyles = read('src/styles/legacy-public-source.css');
 const legacyEntry = read('src/styles/legacy-public.css');
 const resourceShim = read('public/resource-profile-legacy-shim.css');
 const siteEntry = read('src/site-entry.jsx');
+const theoryScript = read('src/theory-of-change.js');
 const index = read('index.html');
 
 const canonicalTokens = [
@@ -60,7 +62,8 @@ for (const [file, styles] of [
   ['src/styles/portfolio-overview.css', portfolioStyles],
   ['src/styles/deliverable-detail.css', deliverableStyles],
   ['src/styles/planning-detail.css', planningDetailStyles],
-  ['src/styles/project-overview.css', projectStyles]
+  ['src/styles/project-overview.css', projectStyles],
+  ['src/styles/theory-of-change.css', theoryStyles]
 ]) {
   if (/\b!important\b/.test(styles)) {
     fail(`${file} must not use !important; retire the conflicting legacy selector instead`);
@@ -93,6 +96,10 @@ for (const selector of requiredDetailPrimitives) {
   }
 }
 
+if (!theoryScript.includes("theory-chain-step ds-sequence-card")) {
+  fail('Theory of Change causal chain must consume the shared sequence-card primitive');
+}
+
 if (fs.existsSync(filePath('public/resource-profile-spacing.css'))) {
   fail('obsolete public/resource-profile-spacing.css must not be restored');
 }
@@ -103,6 +110,10 @@ if (fs.existsSync(filePath('public/project-detail-refresh.css'))) {
 
 if (fs.existsSync(filePath('public/timeline-scale-control.css'))) {
   fail('obsolete public/timeline-scale-control.css must not be restored; Timeline presentation belongs in src/styles/timeline.css');
+}
+
+if (fs.existsSync(filePath('theory-of-change.css'))) {
+  fail('obsolete root theory-of-change.css must not be restored; Theory presentation belongs in src/styles/theory-of-change.css');
 }
 
 const resourceShimImportantCount = (resourceShim.match(/!important/g) || []).length;
@@ -198,6 +209,7 @@ const portfolioImport = siteEntry.indexOf("import './styles/portfolio-overview.c
 const deliverableImport = siteEntry.indexOf("import './styles/deliverable-detail.css';");
 const planningDetailImport = siteEntry.indexOf("import './styles/planning-detail.css';");
 const projectImport = siteEntry.indexOf("import './styles/project-overview.css';");
+const theoryImport = siteEntry.indexOf("import './styles/theory-of-change.css';");
 const cleanupImport = siteEntry.indexOf("import './styles/post-legacy-cleanup.css';");
 if (
   siteImport < 0 ||
@@ -209,13 +221,13 @@ if (
   deliverableImport < portfolioImport ||
   planningDetailImport < deliverableImport ||
   projectImport < planningDetailImport ||
-  cleanupImport < projectImport
+  theoryImport < projectImport ||
+  cleanupImport < theoryImport
 ) {
   fail('src/site-entry.jsx must load chrome, index, Measures, shared primitives and owned feature styles after src/site.jsx in the documented order');
 }
 
 const allowedLateStylesheets = new Set([
-  '/theory-of-change.css',
   '/resource-profile-legacy-shim.css'
 ]);
 

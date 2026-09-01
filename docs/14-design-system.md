@@ -84,7 +84,8 @@ Current owned feature styles include:
 - `src/styles/deliverable-detail.css` for deliverable-detail composition and feature-specific internals;
 - `src/styles/planning-detail.css` for governance, consultation history and RAID presentation;
 - `src/styles/project-overview.css` for project overview/detail presentation;
-- `src/styles/timeline.css` for the operational timeline.
+- `src/styles/timeline.css` for the operational timeline;
+- `src/styles/theory-of-change.css` for the editorial Theory of Change composition and its disclosure states.
 
 `src/site-entry.jsx` loads the normal application first, then the shared recipes and source-owned feature styles that still need to follow the legacy compatibility bundle while historical declarations are retired. This is an explicit migration boundary, not a general override mechanism.
 
@@ -96,7 +97,9 @@ Current owned feature styles include:
 
 `src/styles/legacy-public.css` is a stable wrapper around a gitignored compatibility bundle generated before development and production builds by `scripts/prepare-legacy-styles.mjs`. The generator removes selector families that have moved to canonical primitives or feature styles before the compatibility bundle enters the runtime cascade.
 
-The generator now retires project overview, project deliverable-board, deliverable hero, case-for-change, benefit/evidence, delivery-sequence, disclosure, global chrome, planning-context, governance, consultation and RAID selector families. Build validation checks that retired selectors cannot reappear in the generated compatibility CSS.
+The generator now retires project overview, project deliverable-board, deliverable hero, case-for-change, benefit/evidence, delivery-sequence, disclosure, global chrome, planning-context, governance, consultation, RAID and Timeline selector families. Build validation checks that retired selectors cannot reappear in the generated compatibility CSS.
+
+Theory of Change presentation is no longer a late public shim. It is source-owned, imported through `src/site-entry.jsx`, uses the shared sequence-card primitive for the causal chain, and follows the same black/white/red disclosure grammar as the rest of the product.
 
 This generated-bundle approach is transitional. Each migrated feature should reduce the preserved source until the compatibility layer can be removed completely.
 
@@ -166,16 +169,18 @@ Completed:
 12. navigation, page actions and planning-stage context moved into shared global chrome;
 13. governance, consultation history and RAID moved into owned planning-detail styling;
 14. deliverable composition now follows a documented progressive reading sequence, with dense proposition and step detail disclosed on demand;
-15. project detail now uses the same hero, statement, navigation-card and rule-led section grammar while retaining a project-specific information hierarchy.
+15. project detail now uses the same hero, statement, navigation-card and rule-led section grammar while retaining a project-specific information hierarchy;
+16. Projects and Deliverables indexes now use source-owned portfolio and catalogue grammars;
+17. Measures reuses shared filter, metric and catalogue primitives;
+18. Timeline presentation is source-owned, its old public shim and legacy selector families are retired, and dependency selection follows the shared interaction grammar;
+19. Theory of Change presentation is source-owned and visually approved, the late root stylesheet has been deleted, its causal chain consumes the shared sequence-card primitive, and its disclosures follow the established interaction grammar.
 
 Next:
 
-1. inspect project-detail composition visually and decide whether long project narrative requires a React-level progressive disclosure treatment;
-2. delete `src/styles/post-legacy-cleanup.css` once its small compatibility responsibilities have moved into their owning stylesheets;
-3. repeat the generated-retirement process for timeline and Theory of Change presentation;
-4. progressively shrink `legacy-public-source.css` as each retired feature family becomes safe to delete permanently;
-5. delete the legacy compatibility system once no live feature depends on it;
-6. move temporary selector aliases onto explicit `.ds-*` classes as the React markup is decomposed;
-7. migrate the remaining historical brand treatment into owned global chrome when it can be done without destabilising the established visual identity.
+1. delete `src/styles/post-legacy-cleanup.css` once its small compatibility responsibilities have moved into their owning stylesheets;
+2. progressively shrink `legacy-public-source.css` as each retired feature family becomes safe to delete permanently;
+3. delete the legacy compatibility system once no live feature depends on it;
+4. move temporary selector aliases onto explicit `.ds-*` classes as the React markup is decomposed;
+5. migrate the remaining historical brand treatment into owned global chrome when it can be done without destabilising the established visual identity.
 
 The aim is progressive retirement of legacy CSS rather than a risky whole-site rewrite.
