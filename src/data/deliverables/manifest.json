@@ -57,7 +57,9 @@
       "id": "2.2.2",
       "projectId": "2.2",
       "parts": [
-        "./2.2.2/core.json"
+        "./2.2.2/core.json",
+        "./2.2.2/overview.json",
+        "./2.2.2/benefits.json"
       ]
     },
     {
