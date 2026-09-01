@@ -1,0 +1,238 @@
+{
+  "steps": [
+    {
+      "id": "2.4.2-step-1",
+      "title": "Design and prove the external insight and validation model",
+      "period": {
+        "start": "jul-dec-2026:a",
+        "end": "jan-jun-2027:c"
+      },
+      "summary": "Map the employer, alumni, professional, industry and other external insight structures already operating across King’s, then define a common model that can work at university, faculty and departmental level without displacing local ownership. Agree the minimum standard for purpose, membership, cadence, evidence presented, core validation questions, recording insight and tracing action. Test the framework with a deliberately varied set of existing groups and use those pilots to produce the first consolidated external insight and validation report across both the student offer and graduate premium or reputational claims.",
+      "dependsOn": [],
+      "outputs": [
+        {
+          "title": "External insight architecture and coverage map",
+          "summary": "A university-wide map of existing employer, alumni and related insight structures, showing where they operate, what they currently do, how levels relate and where material gaps or duplication exist."
+        },
+        {
+          "title": "Common external validation framework",
+          "summary": "A reusable minimum standard for panel purpose, membership, cadence, evidence and propositions presented, core validation questions, discipline-specific extension, recording insight and tracking institutional response."
+        },
+        {
+          "title": "Year 1 pilot cycle and consolidated insight report",
+          "summary": "A representative set of university, faculty and departmental pilots demonstrating the model in practice, followed by a synthesis of what has been validated, what should change and what requires further evidence."
+        }
+      ],
+      "resources": {
+        "existingCapacity": [
+          {
+            "role": "External insight stewardship",
+            "owner": "Careers & Employability, alumni engagement and relevant King’s Edge leadership",
+            "fte": 0.2,
+            "contribution": "Provide central stewardship of the framework, connect existing employer and alumni engagement structures, support panel design and lead institutional synthesis.",
+            "periodNeeded": "2026/27",
+            "confidence": "planning assumption",
+            "riskIfMissing": "The deliverable risks becoming a one-off mapping exercise without enough capacity to establish a coherent institutional model."
+          },
+          {
+            "role": "Faculty and departmental external insight leads and panel conveners",
+            "owner": "Participating faculties, departments and professional service teams",
+            "contribution": "Map existing structures, adapt the common framework to disciplinary contexts, convene external voices and own local responses to material insight.",
+            "periodNeeded": "2026/27",
+            "confidence": "planning assumption"
+          },
+          {
+            "role": "Reputational and proposition expertise",
+            "owner": "Faculty and central Marketing / Brand / Communications expertise",
+            "contribution": "Identify graduate premium and reputational propositions that warrant external challenge and help interpret what validation means for later activation.",
+            "periodNeeded": "2026/27",
+            "confidence": "planning assumption"
+          },
+          {
+            "role": "Shared King’s Edge project support",
+            "owner": "Transformation Office shared resource",
+            "fte": 0.05,
+            "contribution": "Coordinate the mapping exercise, pilot groups, evidence packs, meeting logistics, action registers and delivery tracking.",
+            "periodNeeded": "2026/27",
+            "confidence": "indicative"
+          }
+        ],
+        "newInvestment": [
+          {
+            "item": "Year 1 external insight and validation operating envelope",
+            "amount": 15000,
+            "currency": "GBP",
+            "fundingRoute": "King’s Edge mobilisation funding request",
+            "fundingStatus": "requested",
+            "confidence": "indicative",
+            "rationale": "Supports proportionate facilitation, targeted sector intelligence, accessibility and event costs, synthesis support and selective gap-filling where existing employer or alumni structures cannot provide the external perspective needed to prove the model.",
+            "riskIfMissing": "The model can still be designed, but pilots will depend almost entirely on existing structures and may not test important gaps in coverage or more demanding forms of cross-institutional synthesis."
+          }
+        ],
+        "enablingConditions": [
+          {
+            "condition": "Existing employer, alumni, faculty and departmental engagement structures participate in the mapping and are willing to trial a common minimum standard without losing legitimate local ownership.",
+            "owner": "2.4 project owner and 2.4.2 delivery lead",
+            "confidence": "developing",
+            "riskIfMissing": "The model could be perceived as a central reporting requirement rather than a way to make existing external engagement more useful."
+          }
+        ]
+      }
+    },
+    {
+      "id": "2.4.2-step-2",
+      "title": "Scale the university, faculty and departmental insight network",
+      "period": {
+        "start": "jul-dec-2027:a",
+        "end": "jan-jun-2028:c"
+      },
+      "summary": "Use the proven Year 1 framework across a broader range of university, faculty and departmental structures. Prioritise adoption where external insight is already strong and can be made more systematic, while actively addressing important gaps in sector, disciplinary or audience coverage. Build a regular flow of evidence and propositions into panels so external voices are testing live student interventions, opportunity design and graduate premium claims rather than discussing employability in general terms. Produce a second annual synthesis with an action register that identifies the implications for curriculum, skills, opportunity growth, evidence and reputation work.",
+      "dependsOn": [
+        "2.4.2-step-1"
+      ],
+      "outputs": [
+        {
+          "title": "Broader institutional adoption of the common model",
+          "summary": "A materially larger network of university, faculty and departmental structures operating to the shared minimum standard while retaining discipline-specific membership and questions."
+        },
+        {
+          "title": "External insight coverage and gap plan",
+          "summary": "A maintained view of where King’s has sufficient external challenge, where insight is duplicated or fragmented and where new or strengthened relationships are required."
+        },
+        {
+          "title": "Annual external intelligence and action report",
+          "summary": "A university-level synthesis of validated propositions, emerging external priorities, material challenges and named responses across the student offer and graduate premium."
+        }
+      ],
+      "resources": {
+        "existingCapacity": [
+          {
+            "role": "External insight stewardship",
+            "owner": "Careers & Employability, alumni engagement and relevant King’s Edge leadership",
+            "fte": 0.2,
+            "contribution": "Steward the common framework, support broader adoption, identify coverage gaps and lead the annual institutional synthesis and action cycle.",
+            "periodNeeded": "2027/28",
+            "confidence": "planning assumption"
+          },
+          {
+            "role": "Faculty and departmental external insight leads and panel conveners",
+            "owner": "Participating faculties, departments and professional service teams",
+            "contribution": "Operate local structures to the common minimum standard, bring relevant propositions forward for testing and own responses to material local insight.",
+            "periodNeeded": "2027/28",
+            "confidence": "planning assumption"
+          },
+          {
+            "role": "Shared King’s Edge project support",
+            "owner": "Transformation Office shared resource",
+            "fte": 0.1,
+            "contribution": "Coordinate the expanded annual cycle, maintain the coverage map and action register, support evidence flows and track adoption and follow-through.",
+            "periodNeeded": "2027/28",
+            "confidence": "indicative"
+          },
+          {
+            "role": "Shared King’s Edge programme / project management",
+            "owner": "Transformation Office shared resource",
+            "fte": 0.05,
+            "contribution": "Manage cross-deliverable dependencies, escalation and assurance as external insight increasingly shapes other King’s Edge work.",
+            "periodNeeded": "2027/28",
+            "confidence": "indicative"
+          }
+        ],
+        "newInvestment": [
+          {
+            "item": "Year 2 external insight and validation operating envelope",
+            "amount": 25000,
+            "currency": "GBP",
+            "fundingRoute": "King’s Edge mobilisation funding request",
+            "fundingStatus": "requested",
+            "confidence": "indicative",
+            "rationale": "Supports broader institutional adoption, targeted gap-filling, specialist external intelligence or facilitation where useful, and the larger synthesis and convening requirements of a university-wide annual cycle.",
+            "riskIfMissing": "The common standard can spread through willing existing structures, but important gaps in coverage and cross-institutional intelligence are likely to persist."
+          }
+        ]
+      }
+    },
+    {
+      "id": "2.4.2-step-3",
+      "title": "Embed a renewable external intelligence and validation cycle",
+      "period": {
+        "start": "jul-dec-2028:a",
+        "end": "jan-jun-2029:c"
+      },
+      "summary": "Use the final mobilisation year to make external insight a routine input to how King’s Edge and relevant institutional teams judge the student offer and the graduate premium. Complete priority coverage gaps, strengthen the flow of evidence between university, faculty and departmental structures, and demonstrate a traceable route from external challenge to institutional response. Establish the enduring ownership, stewardship and operating envelope required to keep the framework current after mobilisation, with local panels continuing to be owned by the teams and communities closest to their disciplines and sectors.",
+      "dependsOn": [
+        "2.4.2-step-2"
+      ],
+      "outputs": [
+        {
+          "title": "Mature external insight and validation network",
+          "summary": "A coherent university, faculty and departmental network operating to a shared minimum standard, with priority gaps addressed and a clear route for important local intelligence to inform wider institutional understanding."
+        },
+        {
+          "title": "Traceable validation-to-action evidence",
+          "summary": "A body of examples showing where external insight has validated, changed, qualified or stopped student-facing activity or graduate premium propositions, demonstrating that the system influences decisions rather than simply recording views."
+        },
+        {
+          "title": "BAU stewardship and annual cycle",
+          "summary": "An agreed post-mobilisation owner, annual cadence, refresh route and proportionate operating envelope for maintaining the common framework, coverage map, synthesis and action loop."
+        }
+      ],
+      "resources": {
+        "existingCapacity": [
+          {
+            "role": "External insight stewardship",
+            "owner": "Careers & Employability, alumni engagement and relevant King’s Edge leadership",
+            "fte": 0.2,
+            "contribution": "Steward the mature framework, lead annual synthesis and prepare the handoff into an enduring institutional operating model.",
+            "periodNeeded": "2028/29",
+            "confidence": "planning assumption"
+          },
+          {
+            "role": "Faculty and departmental external insight leads and panel conveners",
+            "owner": "Participating faculties, departments and professional service teams",
+            "contribution": "Operate and refresh local insight structures, maintain disciplinary relevance and own responses to external challenge.",
+            "periodNeeded": "2028/29",
+            "confidence": "planning assumption"
+          },
+          {
+            "role": "Shared King’s Edge project support",
+            "owner": "Transformation Office shared resource",
+            "fte": 0.1,
+            "contribution": "Coordinate the final mobilisation-year cycle, maintain traceability and support transition of the operating model into BAU.",
+            "periodNeeded": "2028/29",
+            "confidence": "indicative"
+          },
+          {
+            "role": "Shared King’s Edge programme / project management",
+            "owner": "Transformation Office shared resource",
+            "fte": 0.05,
+            "contribution": "Support final assurance, dependency management and handoff of the cross-institutional validation cycle.",
+            "periodNeeded": "2028/29",
+            "confidence": "indicative"
+          }
+        ],
+        "newInvestment": [
+          {
+            "item": "Year 3 external insight and validation operating envelope",
+            "amount": 25000,
+            "currency": "GBP",
+            "fundingRoute": "King’s Edge mobilisation funding request",
+            "fundingStatus": "requested",
+            "confidence": "indicative",
+            "rationale": "Maintains targeted external intelligence, gap-filling, facilitation and synthesis while the network reaches maturity and the enduring operating model is agreed.",
+            "riskIfMissing": "The framework can continue through existing relationships, but King’s will have less ability to address weak coverage or commission the external intelligence needed around emerging priorities."
+          }
+        ],
+        "enablingConditions": [
+          {
+            "condition": "An enduring institutional home is agreed for approximately 0.2 FTE of framework stewardship and an annual operating or commissioning envelope of around £20,000 to £25,000 after mobilisation.",
+            "owner": "Project 2.4 owner with Careers, alumni and relevant institutional partners",
+            "decisionNeededBy": "Before the end of 2028/29",
+            "confidence": "developing",
+            "riskIfMissing": "Local panels may continue, but the common framework, institutional synthesis and validation-to-action loop are likely to fragment over time."
+          }
+        ]
+      }
+    }
+  ]
+}
