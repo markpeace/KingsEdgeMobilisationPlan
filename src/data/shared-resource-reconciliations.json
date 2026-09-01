@@ -1,0 +1,81 @@
+{
+  "supersededLocalAsks": [
+    {
+      "sharedResourceId": "edge-programme-project-management",
+      "stepId": "2.1.1-step-2",
+      "askType": "existingCapacity",
+      "field": "role",
+      "value": "Borrowed Project Manager",
+      "reason": "Replaced by the coherent 0.5 FTE King's Edge programme/project-management resource and its agreed 2.1.1 allocation."
+    },
+    {
+      "sharedResourceId": "edge-programme-project-management",
+      "stepId": "2.1.1-step-3",
+      "askType": "existingCapacity",
+      "field": "role",
+      "value": "Borrowed Project Manager",
+      "reason": "Replaced by the coherent 0.5 FTE King's Edge programme/project-management resource and its agreed 2.1.1 allocation."
+    },
+    {
+      "sharedResourceId": "edge-programme-project-management",
+      "stepId": "2.1.1-step-4",
+      "askType": "existingCapacity",
+      "field": "role",
+      "value": "Borrowed Project Manager",
+      "reason": "Replaced by the coherent 0.5 FTE King's Edge programme/project-management resource and its agreed 2.1.1 allocation."
+    },
+    {
+      "sharedResourceId": "edge-programme-project-management",
+      "stepId": "2.1.1-step-5",
+      "askType": "existingCapacity",
+      "field": "role",
+      "value": "Borrowed Project Manager",
+      "reason": "Replaced by the coherent 0.5 FTE King's Edge programme/project-management resource and its agreed 2.1.1 allocation."
+    },
+    {
+      "sharedResourceId": "edge-programme-project-management",
+      "stepId": "2.1.1-step-6",
+      "askType": "existingCapacity",
+      "field": "role",
+      "value": "Borrowed Project Manager",
+      "reason": "Replaced by the coherent 0.5 FTE King's Edge programme/project-management resource and its agreed 2.1.1 allocation."
+    },
+    {
+      "sharedResourceId": "edge-programme-project-management",
+      "stepId": "2.1.1-step-7",
+      "askType": "existingCapacity",
+      "field": "role",
+      "value": "Borrowed Project Manager",
+      "reason": "Replaced by the coherent 0.5 FTE King's Edge programme/project-management resource and its agreed 2.1.1 allocation."
+    },
+    {
+      "sharedResourceId": "edge-analytics-data-capability",
+      "stepId": "2.3.1-step-1",
+      "askType": "newInvestment",
+      "field": "id",
+      "value": "2.3.1-y1-bi-evaluation",
+      "reason": "The bespoke 0.5 FTE BI analyst assumption is superseded by the coherent King's Edge analytics and data capability."
+    },
+    {
+      "sharedResourceId": "edge-project-officer-capacity",
+      "stepId": "2.3.1-step-1",
+      "askType": "newInvestment",
+      "field": "id",
+      "value": "2.3.1-y1-adoption-coordination",
+      "reason": "The bespoke adoption-coordination assumption is superseded by the coherent King's Edge Project Officer capacity."
+    }
+  ],
+  "fundingContributions": [
+    {
+      "sharedResourceId": "edge-analytics-data-capability",
+      "stepId": "2.1.1-step-1",
+      "askType": "newInvestment",
+      "field": "item",
+      "value": "Six-week student internship",
+      "academicYear": "2026/27",
+      "amount": 4000,
+      "currency": "GBP",
+      "treatment": "Counts within the £21,000 Year 1 coherent analytics envelope, not in addition to it."
+    }
+  ]
+}
