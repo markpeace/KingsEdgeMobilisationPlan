@@ -1,0 +1,46 @@
+{
+  "summary": "Builds student understanding and value around the King’s graduate premium, grows external reputation and market traction, and strategically improves performance in high-value outcomes and reputation surveys.",
+  "detailSummary": "2.4.4 is the activation and reputation layer of the King’s graduate premium. It takes the evidence, narratives and publication-ready assets created through 2.4.1 and ensures they are understood, used and turned into recognised value by the audiences that matter. Its remit is deliberately broader than communications: it combines proposition management, student engagement, reputation building, market activation and strategic survey-performance work.\n\nThe deliverable is organised around three connected work packages. WP1, Student Proposition and Adoption, develops a clear King’s Edge and graduate premium proposition for current students and the staff who shape their experience, then embeds that proposition through the student journey. WP2, External Reputation and Market Activation, uses evidence-backed assets and external validation to build profile, credibility and market traction with applicants, families, employers, alumni, partners, international audiences and the wider sector. WP3, Strategic Survey Performance and Reputation Optimisation, treats high-value surveys as strategic performance environments in which King’s can intervene deliberately. Its immediate priority is Graduate Outcomes response-rate optimisation, particularly where positive destination evidence is strong but response is weaker than it should be; it also develops targeted strategies for reputation and employability surveys such as the Global Employability University Ranking and Survey (GEURS).\n\nThe three work packages operate as a feedback loop. Survey and reputation intelligence helps identify where recognition or response performance is weak; student and external activation provide targeted interventions; and subsequent performance helps King’s refine the proposition, audiences and activity. 2.4.4 does not recreate the evidence and rich-media production owned by 2.4.1. It consumes those assets and turns them into engagement, recognition, reputation and measurable performance.",
+  "problemSolved": "King’s creates significant graduate value, but that value is not yet consistently recognised by students, articulated by staff, visible to external audiences or translated into the survey and reputation performance that shapes institutional outcomes and market position.",
+  "whatChanges": "King’s establishes a coordinated graduate premium activation and reputation function that builds student adoption, grows external recognition and market traction, and systematically improves performance in strategically important outcomes and reputation surveys.",
+  "caseForChange": {
+    "problem": "The graduate premium only creates strategic value if people recognise it, believe it and use it. At present, student understanding of the wider King’s proposition is uneven, staff-facing language and activation are fragmented, and external communication can struggle to connect robust evidence with a distinctive and repeated account of graduate value. At the same time, strategically important surveys are often treated primarily as reporting exercises rather than environments in which performance can be understood and deliberately improved. In Graduate Outcomes, this can mean strong positive destinations are under-represented where response rates are weak. In external employability and reputation surveys, King’s may not fully convert the strength of its graduates, partnerships and institutional activity into recognition among the audiences whose perceptions shape the result.",
+    "opportunity": "King’s can manage graduate premium recognition as a connected internal, external and performance challenge. A strong student proposition can help current students recognise and articulate the value they are building. Evidence-backed external activation can turn the growing 2.4.1 asset estate into market and reputation traction. Strategic survey optimisation can identify the mechanics, audiences and interventions that most influence high-value measures, beginning with targeted Graduate Outcomes response-rate improvement and extending to priority employability and reputation surveys. Taken together, these create a closed loop in which evidence shapes activation, activation shapes recognition and measured response shapes the next round of activity.",
+    "whyNow": "The enabling conditions for a more deliberate approach are coming together during the mobilisation period. 2.1.1 is strengthening course-owned graduate futures evidence, 2.4.1 is beginning to create reusable evidence and content assets, and 2.4.2 will add external validation and future-facing insight. King’s also now has richer Graduate Outcomes intelligence that can support much more targeted response-rate intervention. With the value of higher education, graduate outcomes and employability reputation under sustained scrutiny, there is a timely opportunity to move from dispersed communications and survey activity to an intentional proposition, reputation and performance model.",
+    "intendedChange": "Across three mobilisation years, King’s moves from fragmented activation to a repeatable model for creating recognised graduate value. Year 1 proves the student proposition and survey-optimisation approach while establishing external audience priorities and testing early messages. Year 2 scales student adoption and uses the expanding 2.4.1 asset base to test targeted external activation while industrialising the strongest Graduate Outcomes interventions. Year 3 embeds the proposition through normal student-facing activity, scales the external reputation approaches that work and establishes an annual strategic survey-performance cycle. By the end of mobilisation, King’s has a clearer route for turning evidence of graduate value into student recognition, external reputation and measurable institutional performance."
+  },
+  "components": [
+    {
+      "title": "WP1 · Student Proposition and Adoption",
+      "summary": "Build a clear King’s Edge and graduate premium proposition for current students and the staff who shape their experience, then embed it through the student journey so students recognise, value and can articulate what they are gaining."
+    },
+    {
+      "title": "WP2 · External Reputation and Market Activation",
+      "summary": "Use evidence-backed graduate premium assets, advocacy, partnerships and targeted activity to build profile, credibility and market traction with applicants, families, employers, alumni, international audiences and the wider sector."
+    },
+    {
+      "title": "WP3 · Strategic Survey Performance and Reputation Optimisation",
+      "summary": "Systematically improve performance in high-value outcomes and reputation surveys by understanding how each instrument works and applying targeted interventions, beginning with Graduate Outcomes response-rate optimisation and priority employability and reputation surveys."
+    }
+  ],
+  "dependencies": [
+    {
+      "targetId": "2.4.1",
+      "type": "input",
+      "label": "Consumes evidence-backed graduate premium fact packs, narratives, messaging frameworks and rich media once they are ready for activation."
+    },
+    {
+      "targetId": "2.4.2",
+      "type": "input",
+      "label": "Uses external validation and future-facing insight to strengthen claims, audience priorities and reputation activity."
+    }
+  ],
+  "feedsInto": [],
+  "relatedDeliverables": [
+    "2.4.1",
+    "2.4.2",
+    "2.3.4",
+    "2.3.1",
+    "2.2.1"
+  ]
+}
