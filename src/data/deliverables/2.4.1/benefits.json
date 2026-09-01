@@ -2,19 +2,23 @@
   "benefits": [
     {
       "id": "2.4.1-B1",
-      "title": "External audiences better understand the distinctive value of a King’s education",
-      "statement": "Applicants, families, employers, partners and other priority audiences encounter a clearer, richer and more persuasive account of what King’s graduates know, can do and contribute.",
-      "beneficiary": "Applicants, families, employers, partners and other priority external audiences",
-      "benefitType": "external recognition and institutional proposition",
-      "successLooksLike": "Graduate premium evidence is routinely used across priority recruitment, market and external-engagement activity, with audiences receiving propositions that are specific, evidence-rich and tailored to what matters to them."
+      "title": "King’s can substantiate its graduate premium with greater confidence and specificity",
+      "statement": "King’s has a richer, evidence-backed account of the value its students gain, with claims grounded in course-level evidence, institutional data and wider evidence of skills, experience and graduate futures.",
+      "beneficiary": "King’s, faculties, departments and disciplinary communities",
+      "benefitType": "evidence and institutional proposition",
+      "owner": "Daniel Robson and Rachel Kershaw",
+      "realisationPeriod": "From 2026/27, deepening across the mobilisation period",
+      "successLooksLike": "Graduate premium claims and narratives are specific, evidence-linked, appropriately caveated and capable of being traced back to credible institutional, course-level or qualitative evidence."
     },
     {
       "id": "2.4.1-B2",
-      "title": "King’s can make better decisions about where its graduate premium is strongest and where it needs strengthening",
-      "statement": "King’s gains an aggregated view of the graduate value created across courses and through the wider student experience, allowing institutional and faculty leaders to identify distinctive strengths, recurring gaps and priorities for further enhancement.",
-      "beneficiary": "King’s, faculties and programme teams",
-      "benefitType": "institutional insight and enhancement",
-      "successLooksLike": "The combined evidence informs decisions about curriculum, graduate-futures activity, opportunity development and institutional investment, with insight feeding back into programmes and faculties."
+      "title": "The graduate premium can be represented with disciplinary depth and compelling human evidence",
+      "statement": "Faculties, departments and disciplinary areas are represented through a coherent mix of facts, narratives, proof points and high-quality human and visual evidence rather than generic institutional language alone.",
+      "beneficiary": "Faculties, departments and teams that need credible graduate premium content",
+      "benefitType": "content quality and asset readiness",
+      "owner": "Faculty and central marketing expertise with Daniel Robson",
+      "realisationPeriod": "From Year 1 exemplars, with broader coverage by 2028/29",
+      "successLooksLike": "Priority areas have publication-ready graduate premium asset packages that combine robust evidence with distinctive narratives, case material and rich media, and can be handed to 2.4.4 or other legitimate users without requiring the core proposition to be rebuilt each time."
     }
   ]
 }
