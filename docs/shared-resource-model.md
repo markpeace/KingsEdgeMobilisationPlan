@@ -4,7 +4,9 @@ This repository supports coherent people and capability resources that contribut
 
 ## Purpose
 
-Step-level resource asks remain authoritative for delivery planning. A shared resource adds identity above those asks so several deliverables can point to the same underlying post, placement, project-management capacity or analytical capability without duplicating the underlying resource concept.
+Most resource demand remains authored on the delivery step that needs it. Shared workforce is the deliberate exception where no single deliverable truthfully owns the whole post or capability.
+
+A shared resource adds stable identity above individual delivery asks so several deliverables can consume parts of one underlying post, placement cohort, project-management capacity or analytical capability without turning that resource into unrelated fractional jobs or duplicating its cost.
 
 ## Registry
 
@@ -12,9 +14,26 @@ Shared resources are defined once in:
 
 `src/data/shared-resources.json`
 
-Each resource should use a stable `id` and may carry descriptive metadata such as title, summary, resource type, total FTE or capacity, appointment basis, funding basis and BAU destination.
+Each resource uses a stable `id` and may carry:
 
-The registry is deliberately separate from deliverable JSON because the resource may span projects and deliverables.
+- title and summary;
+- resource type;
+- peak coherent FTE;
+- appointment basis and employment home;
+- mobilisation funding basis;
+- an academic-year `yearlyProfile` for coherent FTE and cost;
+- an `allocationPlan` showing the intended FTE contribution to each deliverable by academic year;
+- a BAU destination and recurrent liability where the mobilisation creates one.
+
+The registry is separate from deliverable JSON because these resources span projects and deliverables.
+
+## Planned allocation before detailed delivery design
+
+Some deliverables reach resource planning before all of their delivery steps are sufficiently mature to carry a defensible step-level allocation. Do not invent delivery steps simply to park a workforce fraction.
+
+In that situation, record the agreed distribution in the shared resource `allocationPlan`. This is the portfolio reconciliation target. The validator requires the deliverable allocations in each academic year to add back to the coherent FTE for that year.
+
+As delivery design matures, the relevant step asks can reference the same shared resource. The step allocation describes where the work is actually consumed; the registry continues to define the coherent resource, its total cost and the portfolio-level reconciliation.
 
 ## Linking a step resource ask
 
@@ -25,25 +44,40 @@ Any item in `existingCapacity` or `newInvestment` may optionally include:
   "sharedResourceId": "edge-example-resource",
   "sharedResourceAllocation": {
     "fte": 0.25,
-    "note": "Quarter of the coherent post is planned against this deliverable."
+    "note": "Quarter of the coherent post is consumed by this delivery activity."
   }
 }
 ```
 
-`sharedResourceId` links the ask to the coherent resource. `sharedResourceAllocation` records the planned contribution of that deliverable or step to the shared total. Allocation metadata is optional because some shared resources are cash or capability rather than FTE-led.
+`sharedResourceId` links the ask to the coherent resource. `sharedResourceAllocation` records the contribution of that step where a step-level allocation is useful. Do not infer shared identity from matching role names.
 
-Do not infer shared identity from matching role names. Use the stable ID.
+## Counting and costing rule
 
-## Counting rule
+For deliverable-local resources, step-level asks remain the financial and delivery truth.
 
-The ordinary resource profile continues to derive demand from step asks exactly as before. Shared-resource aggregation is a second view over those same asks.
+For a genuinely cross-deliverable shared workforce resource, the coherent FTE and cost are recorded once in the programme registry. The `allocationPlan` distributes capacity, not duplicate salary. Do not repeat the full cost, or a pro-rata salary cost, in every consuming deliverable merely to make local totals add up.
 
-A shared resource should be counted once as a coherent resource in the registry, while its linked allocations explain where that resource is consumed. Do not repeat the full underlying cost on every linked deliverable. Record the financial ask once at the step where funding is first required, then use linked existing-capacity asks or zero-cash allocation records elsewhere as appropriate.
+This means a deliverable resource profile can legitimately show that it consumes, for example, 0.15 FTE of a 1.0 FTE shared role while the coherent resource profile shows the single cost envelope once.
+
+Where a pre-existing local ask has been replaced by a later coherent shared-resource decision, record the transition in:
+
+`src/data/shared-resource-reconciliations.json`
+
+Superseded local asks are omitted during normal plan loading so they cannot continue to inflate the current resource profile. The underlying authored delivery file remains intact as an auditable record of the earlier assumption.
+
+A local amount can also be recorded as a `fundingContribution` when it forms part of, rather than sits on top of, a coherent shared envelope. The current example is the confirmed £4,000 six-week 2.1.1 internship, which counts within the £21,000 Year 1 analytics envelope.
 
 ## BAU
 
-A shared resource can still use the existing `bauLiability: true` mechanism on the authoritative new-investment ask. The registry may additionally describe the intended BAU destination so readers can distinguish mobilisation funding from the enduring organisational liability.
+The registry can carry a `bauLiability` where a shared workforce resource creates an enduring organisational commitment. Time-limited placements and mobilisation-only capacity should state explicitly that there is no automatic BAU continuation.
 
-## Current status
+## Current King's Edge shared workforce
 
-The registry is scaffolded but intentionally empty. Programme-specific resources should be added only when the relevant delivery plans are ready for resource authoring.
+The current registry contains four coherent resources:
+
+1. Deputy Director, Enrichment & Enhancement, 1.0 FTE, permanent, mobilisation-funded from January 2027 and then a recurrent BAU liability.
+2. King's Edge Analytics & Data Capability, 0.6 FTE-equivalent King's Talent capacity in Year 1 followed by one sandwich-year placement in each of Years 2 and 3.
+3. King's Edge Project Officer Capacity, 1.0 FTE-equivalent King's Talent pool in Year 1 followed by two sandwich-year Project Officers in each of Years 2 and 3, hosted by the Transformation Office.
+4. King's Edge Programme / Project Management, 0.5 FTE Transformation Office capacity across all three mobilisation years.
+
+The allocation plan is a planning baseline and should be rebalanced when detailed delivery evidence shows that workload lands differently, while always reconciling to the coherent resource total.
