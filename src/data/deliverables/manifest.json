@@ -54,6 +54,13 @@
       ]
     },
     {
+      "id": "2.2.2",
+      "projectId": "2.2",
+      "parts": [
+        "./2.2.2/core.json"
+      ]
+    },
+    {
       "id": "2.2.3",
       "projectId": "2.2",
       "parts": [
