@@ -6,6 +6,11 @@
       "statement": "Students gain a more complete and coherent view of the opportunities available beyond their courses as significant provision across King’s is progressively brought together through a common King’s Edge shopfront. Opportunities become easier to discover, understand and navigate without students needing prior knowledge of which service, faculty or team provides them.",
       "beneficiary": "Students",
       "benefitType": "opportunity access, visibility and equity",
+      "owner": "Steph White",
+      "enabledBy": [
+        "2.3.1-step-2",
+        "2.3.1-step-4"
+      ],
       "successLooksLike": "A growing proportion of significant Beyond Course provision is visible through King’s Edge, student use of the platform grows, and participation becomes less dependent on students already knowing where opportunities sit within the institution."
     },
     {
@@ -14,6 +19,12 @@
       "statement": "King’s gains a live and increasingly comprehensive evidence base for Beyond Course participation, allowing staff to understand reach, patterns of engagement and inequalities from the institutional level through services, programmes and individual activities. Over time, participation evidence can be connected more consistently with measures including career readiness, academic success, self-efficacy, belonging and engagement.",
       "beneficiary": "Students, opportunity providers and King’s",
       "benefitType": "institutional insight, evaluation and equity",
+      "owner": "Steph White",
+      "enabledBy": [
+        "2.3.1-step-1",
+        "2.3.1-step-3",
+        "2.3.1-step-4"
+      ],
       "successLooksLike": "King’s can routinely report Beyond Course participation and reach across the institution, providers can interrogate their own activity through a common dashboard, and an increasing proportion of provision can be evaluated using shared measures of student participation and impact."
     },
     {
@@ -22,6 +33,12 @@
       "statement": "A clearer view of provision, participation and impact enables King’s to steward its Beyond Course offer more deliberately. Providers can improve activity using evidence about reach and outcomes, while institutional leaders can identify gaps, inequalities and duplication and make more confident decisions about what should be sustained, strengthened, scaled, redesigned or stopped. Major investments can increasingly be judged against the value they create for students rather than activity volumes alone.",
       "beneficiary": "Students, opportunity providers and King’s",
       "benefitType": "portfolio improvement and effective use of investment",
+      "owner": "Steph White",
+      "enabledBy": [
+        "2.3.1-step-3",
+        "2.3.1-step-5",
+        "2.3.1-step-6"
+      ],
       "successLooksLike": "Evidence about reach, equity and student impact is routinely used in service planning and investment decisions, significant programmes can demonstrate their contribution more confidently, and King’s can show how the Beyond Course portfolio changes in response to what it learns."
     }
   ]
