@@ -53,11 +53,15 @@ The `.ds-*` selectors are the reusable contract. Existing feature selectors are 
 
 ### `src/styles/global-chrome.css`
 
-Owns the shared application chrome that sits around content rather than inside a single feature:
+Owns the shared application chrome and cross-site reading contracts that sit around content rather than inside a single feature:
 
 - primary navigation treatment;
 - page-level utility actions;
-- planning-stage context strips.
+- planning-stage context strips;
+- sticky-header scroll offset;
+- homepage watermark suppression;
+- temporary footer visibility policy;
+- suppression of repeated inline indicative labels where planning stage already communicates the same state.
 
 The current split KING'S EDGE / MOBILISATION PLAN brand remains visually stable while its historical rules are migrated separately.
 
@@ -87,9 +91,9 @@ Current owned feature styles include:
 - `src/styles/timeline.css` for the operational timeline;
 - `src/styles/theory-of-change.css` for the editorial Theory of Change composition and its disclosure states.
 
-`src/site-entry.jsx` loads the normal application first, then the shared recipes and source-owned feature styles that still need to follow the legacy compatibility bundle while historical declarations are retired. This is an explicit migration boundary, not a general override mechanism.
+`src/site-entry.jsx` loads the normal application first, then the shared recipes and source-owned feature styles that still need to follow the generated legacy compatibility bundle while historical declarations are retired. This is an explicit migration boundary, not a general override mechanism.
 
-`src/styles/post-legacy-cleanup.css` is deliberately narrow. It contains only cross-site presentation clean-ups that still need to follow the legacy bundle. Build validation caps both its size and its use of `!important`.
+There are no late-loaded stylesheets in `index.html`. Any live styling must enter through the normal bundled source cascade. Compatibility is now limited to the generated legacy bundle itself rather than separate public shims or post-legacy override files.
 
 ### Legacy compatibility
 
@@ -97,7 +101,9 @@ Current owned feature styles include:
 
 `src/styles/legacy-public.css` is a stable wrapper around a gitignored compatibility bundle generated before development and production builds by `scripts/prepare-legacy-styles.mjs`. The generator removes selector families that have moved to canonical primitives or feature styles before the compatibility bundle enters the runtime cascade.
 
-The generator now retires project overview, project deliverable-board, deliverable hero, case-for-change, benefit/evidence, delivery-sequence, disclosure, global chrome, planning-context, governance, consultation, RAID and Timeline selector families. Build validation checks that retired selectors cannot reappear in the generated compatibility CSS.
+`scripts/style-retirement-config.mjs` is the single registry of retired selector families. The generator and style validator both import it so retirement rules cannot drift between build preparation and architecture validation.
+
+The generator now retires project overview, project deliverable-board, deliverable hero, case-for-change, benefit/evidence, delivery-sequence, disclosure, global chrome, planning-context, governance, consultation, RAID, Measures, Timeline, indicative-step and obsolete Resource & Investment widget selector families. Build validation checks that retired selectors cannot reappear in the generated compatibility CSS.
 
 Theory of Change presentation is no longer a late public shim. It is source-owned, imported through `src/site-entry.jsx`, uses the shared sequence-card primitive for the causal chain, and follows the same black/white/red disclosure grammar as the rest of the product.
 
@@ -143,11 +149,11 @@ Project pages deliberately do not reproduce step-level delivery planning. Delive
 3. Keep page selectors concerned with composition and feature-specific structure, not restating shared appearance.
 4. Avoid raw colour values outside the design system unless the value is intrinsic to a visualisation or print requirement.
 5. Avoid `!important`. Where it is currently required to defeat generic legacy cascade rules, treat it as migration debt and retire the conflicting legacy rule rather than adding another override.
-6. Do not add new late-loaded override stylesheets to `index.html`.
+6. Do not add stylesheet links to `index.html` or create late-loaded override files. Styling belongs in the bundled source cascade.
 7. Prefer one content gutter, one border rule and one hierarchy per section. Avoid nested boxes unless the information architecture genuinely requires them.
 8. A new visual treatment should normally be a shared primitive or a legitimate variant, not a one-off selector chain.
 9. Source-owned styles may temporarily follow `legacy-public.css` only through the documented `site-entry.jsx` migration boundary and must remain within validator guardrails.
-10. Do not edit generated legacy compatibility CSS as the source of truth. Historical migration work belongs in `legacy-public-source.css` and the generator retirement list.
+10. Do not edit generated legacy compatibility CSS as the source of truth. Historical migration work belongs in `legacy-public-source.css` and the shared selector-retirement registry.
 11. Keep the default reading surface scannable. Detailed authored material should use progressive disclosure rather than making every page state equally dense.
 12. Prefer CSS composition for visual sequence. Runtime DOM manipulation should be reserved for behaviour or content derivation that CSS cannot express.
 
@@ -173,14 +179,17 @@ Completed:
 16. Projects and Deliverables indexes now use source-owned portfolio and catalogue grammars;
 17. Measures reuses shared filter, metric and catalogue primitives;
 18. Timeline presentation is source-owned, its old public shim and legacy selector families are retired, and dependency selection follows the shared interaction grammar;
-19. Theory of Change presentation is source-owned and visually approved, the late root stylesheet has been deleted, its causal chain consumes the shared sequence-card primitive, and its disclosures follow the established interaction grammar.
+19. Theory of Change presentation is source-owned and visually approved, the late root stylesheet has been deleted, its causal chain consumes the shared sequence-card primitive, and its disclosures follow the established interaction grammar;
+20. `src/styles/post-legacy-cleanup.css` has been deleted and its remaining cross-site contracts moved into their source owner;
+21. the Resource & Investment compatibility shim has been deleted and obsolete resource widget selectors are retired before the legacy bundle enters the runtime cascade;
+22. `index.html` no longer late-loads any CSS;
+23. legacy selector retirement is defined once in `scripts/style-retirement-config.mjs` and shared by generation and validation.
 
 Next:
 
-1. delete `src/styles/post-legacy-cleanup.css` once its small compatibility responsibilities have moved into their owning stylesheets;
-2. progressively shrink `legacy-public-source.css` as each retired feature family becomes safe to delete permanently;
-3. delete the legacy compatibility system once no live feature depends on it;
-4. move temporary selector aliases onto explicit `.ds-*` classes as the React markup is decomposed;
-5. migrate the remaining historical brand treatment into owned global chrome when it can be done without destabilising the established visual identity.
+1. progressively shrink `legacy-public-source.css` as each retired feature family becomes safe to delete permanently;
+2. move temporary selector aliases onto explicit `.ds-*` classes as the React markup is decomposed;
+3. migrate the remaining historical landing-page and brand treatment into owned source styles without destabilising the established visual identity;
+4. delete the generated legacy compatibility system once no live feature depends on it.
 
 The aim is progressive retirement of legacy CSS rather than a risky whole-site rewrite.
