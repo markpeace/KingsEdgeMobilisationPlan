@@ -1,64 +1,15 @@
 import fs from 'node:fs';
 import path from 'node:path';
+import {
+  exactlyRetiredSelectors,
+  explicitlyRetiredSelectorTokens,
+  retiredProjectSelectorTokens,
+  retiredSelectorTokens
+} from './style-retirement-config.mjs';
 
 const root = process.cwd();
 const sourcePath = path.join(root, 'src/styles/legacy-public-source.css');
 const outputPath = path.join(root, 'src/styles/legacy-public.generated.css');
-
-const retiredProjectSelectorTokens = [
-  '.project-detail-hero',
-  '.related-project-detail-hero',
-  '.transformation-claim-panel',
-  '.project-deliverable-panel',
-  '.project-deliverable-board',
-  '.project-deliverable-columns',
-  '.project-deliverable-column',
-  '.project-deliverable-header',
-  '.project-step-stack',
-  '.project-step-card'
-];
-
-const explicitlyRetiredSelectorTokens = [
-  '.detail-hero:not(.project-detail-hero)',
-  '.detail-summary',
-  '.case-grid',
-  '.detail-accordion',
-  '.detailed-plan-reveal',
-  '.route-through-panel',
-  '.step-card',
-  '.step-card-story',
-  '.step-story-block',
-  '.step-detail-toggle',
-  '.value-evidence-refined',
-  '.benefit-',
-  '.unmapped-evidence-block',
-  '.site-header',
-  '.planning-notice',
-  '.governance-',
-  '.decision-log-',
-  '.raid-grid',
-  '.raid-column',
-  '.measure-summary',
-  '.measure-card',
-  '.measure-row',
-  '.timeline-page',
-  '.timeline-controls',
-  '.timeline-key',
-  '.timeline-refresh',
-  '.timeline-modal',
-  '#risks-decisions .schema-card'
-];
-
-/* These generic selectors conflict with migrated consumers but must not retire
-   more-specific schema-card variants that still belong to legacy features. */
-const exactlyRetiredSelectors = [
-  '.schema-card h3'
-];
-
-const retiredSelectorTokens = [
-  ...retiredProjectSelectorTokens,
-  ...explicitlyRetiredSelectorTokens
-];
 
 function semanticPrelude(value) {
   return value.replace(/\/\*[\s\S]*?\*\//g, '').trim();
@@ -293,8 +244,10 @@ if (survivingTokens.length) {
   throw new Error(`Retired selector tokens survived legacy generation: ${survivingTokens.join(', ')}`);
 }
 
-if (/(^|\})\s*\.schema-card h3\s*\{/m.test(result.css)) {
-  throw new Error('Exact retired selector .schema-card h3 survived legacy generation');
+for (const selector of exactlyRetiredSelectors) {
+  if (selector === '.schema-card h3' && /(^|\})\s*\.schema-card h3\s*\{/m.test(result.css)) {
+    throw new Error('Exact retired selector .schema-card h3 survived legacy generation');
+  }
 }
 
 if (result.removedSelectors < 102) {
