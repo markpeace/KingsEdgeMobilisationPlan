@@ -4,6 +4,7 @@ import { fileURLToPath } from 'node:url';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const registryPath = path.join(root, 'src/data/shared-resources.json');
+const reconciliationsPath = path.join(root, 'src/data/shared-resource-reconciliations.json');
 const deliverablesRoot = path.join(root, 'src/data/deliverables');
 const planPath = path.join(root, 'src/data/kings-edge-plan.json');
 const enablingPath = path.join(root, 'src/data/enabling-projects.json');
@@ -39,6 +40,22 @@ function collectLinks(value, source, pointer = '$', links = []) {
     collectLinks(child, source, `${pointer}.${key}`, links);
   }
   return links;
+}
+
+function collectSteps(value, source, steps = new Map()) {
+  if (Array.isArray(value)) {
+    value.forEach((item) => collectSteps(item, source, steps));
+    return steps;
+  }
+  if (!value || typeof value !== 'object') return steps;
+
+  if (typeof value.id === 'string' && value.resources && typeof value.resources === 'object') {
+    if (!steps.has(value.id)) steps.set(value.id, []);
+    steps.get(value.id).push({ source, step: value });
+  }
+
+  for (const child of Object.values(value)) collectSteps(child, source, steps);
+  return steps;
 }
 
 function knownDeliverableIds() {
@@ -93,7 +110,13 @@ function validateYearlyProfile(profile, label, errors, { allowAmount = true } = 
   return byYear;
 }
 
+function matchesRule(item, rule) {
+  if (!rule?.field) return false;
+  return String(item?.[rule.field] ?? '').trim().toLowerCase() === String(rule.value ?? '').trim().toLowerCase();
+}
+
 const registry = readJson(registryPath);
+const reconciliations = fs.existsSync(reconciliationsPath) ? readJson(reconciliationsPath) : {};
 const resources = Array.isArray(registry.sharedResources) ? registry.sharedResources : [];
 const deliverableIds = knownDeliverableIds();
 const ids = new Set();
@@ -178,7 +201,10 @@ for (const [index, resource] of resources.entries()) {
 }
 
 const files = [...topLevelFiles, ...jsonFilesUnder(deliverablesRoot)].filter((file) => fs.existsSync(file));
-const links = files.flatMap((file) => collectLinks(readJson(file), path.relative(root, file)));
+const documents = files.map((file) => ({ source: path.relative(root, file), value: readJson(file) }));
+const links = documents.flatMap(({ source, value }) => collectLinks(value, source));
+const steps = new Map();
+for (const { source, value } of documents) collectSteps(value, source, steps);
 
 for (const { source, pointer, ask } of links) {
   if (!ids.has(ask.sharedResourceId)) {
@@ -194,10 +220,38 @@ for (const { source, pointer, ask } of links) {
   }
 }
 
+for (const [index, rule] of (reconciliations.supersededLocalAsks || []).entries()) {
+  const label = `shared-resource-reconciliations.supersededLocalAsks[${index}]`;
+  if (!ids.has(rule.sharedResourceId)) errors.push(`${label} references unknown shared resource '${rule.sharedResourceId}'.`);
+  const candidates = steps.get(rule.stepId) || [];
+  if (!candidates.length) {
+    errors.push(`${label} references unknown resource-bearing step '${rule.stepId}'.`);
+    continue;
+  }
+  const matches = candidates.flatMap(({ source, step }) => (step.resources?.[rule.askType] || [])
+    .filter((item) => matchesRule(item, rule))
+    .map((item) => ({ source, item })));
+  if (!matches.length) errors.push(`${label} does not match a current ${rule.askType} ask on '${rule.stepId}'.`);
+}
+
+for (const [index, contribution] of (reconciliations.fundingContributions || []).entries()) {
+  const label = `shared-resource-reconciliations.fundingContributions[${index}]`;
+  if (!ids.has(contribution.sharedResourceId)) errors.push(`${label} references unknown shared resource '${contribution.sharedResourceId}'.`);
+  if (!Number.isFinite(contribution.amount) || contribution.amount < 0) errors.push(`${label}.amount must be a non-negative number.`);
+  if (!contribution.currency || typeof contribution.currency !== 'string') errors.push(`${label}.currency is required.`);
+  const candidates = steps.get(contribution.stepId) || [];
+  if (!candidates.length) {
+    errors.push(`${label} references unknown resource-bearing step '${contribution.stepId}'.`);
+    continue;
+  }
+  const matches = candidates.flatMap(({ step }) => (step.resources?.[contribution.askType] || []).filter((item) => matchesRule(item, contribution)));
+  if (!matches.length) errors.push(`${label} does not match a current ${contribution.askType} ask on '${contribution.stepId}'.`);
+}
+
 if (errors.length) {
   console.error('Shared resource validation failed:');
   errors.forEach((error) => console.error(`- ${error}`));
   process.exit(1);
 }
 
-console.log(`Shared resource validation passed: ${resources.length} registered resource(s), ${links.length} linked ask(s).`);
+console.log(`Shared resource validation passed: ${resources.length} registered resource(s), ${links.length} linked ask(s), ${(reconciliations.supersededLocalAsks || []).length} superseded local ask(s).`);
