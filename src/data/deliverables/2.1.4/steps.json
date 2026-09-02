@@ -1,0 +1,219 @@
+{
+  "steps": [
+    {
+      "id": "2.1.4-step-1",
+      "title": "Define the experiential-learning evidence requirements for curriculum review",
+      "period": "jul-dec-2026:bc",
+      "summary": "Work with the Curriculum Framework review to define the minimum evidence needed to understand curriculum-embedded experiential learning across King's. Cover presence and type of experiential learning, learning purpose, inclusion and access, reflection and assessment, support requirements, visibility to students and the extent to which current provision aligns with the emerging 2.1.2 North Star.",
+      "dependsOn": ["curriculum-framework-review"],
+      "outputs": [
+        {
+          "title": "Experiential-learning curriculum review requirements",
+          "summary": "A concise set of questions and evidence requirements that allow curriculum review to surface existing provision, hidden practice, material gaps, access issues and assurance needs."
+        }
+      ],
+      "resources": {
+        "existingCapacity": [
+          {
+            "role": "Curriculum Framework review and programme-enhancement capacity",
+            "owner": "Curriculum Framework review / relevant education teams",
+            "contribution": "Provide the institutional audit and review route through which experiential-learning evidence can be captured without creating a separate parallel curriculum audit.",
+            "periodNeeded": "Autumn 2026 onward",
+            "confidence": "planned enabling dependency"
+          },
+          {
+            "role": "Experiential Learning Curriculum and Policy Development Capacity",
+            "owner": "King's Edge shared resource",
+            "sharedResourceId": "edge-experiential-learning-curriculum-policy",
+            "contribution": "Translate the North Star into usable curriculum evidence requirements and provide specialist support across the diagnostic and implementation cycle.",
+            "periodNeeded": "Across mobilisation",
+            "confidence": "planning estimate"
+          },
+          {
+            "role": "King's Edge Project Officer capacity",
+            "owner": "Transformation Office shared resource",
+            "sharedResourceId": "edge-project-officer-capacity",
+            "contribution": "Support coordination, evidence collation, tracking and preparation of the emerging baseline and priority view.",
+            "periodNeeded": "Across mobilisation",
+            "confidence": "planned shared capacity"
+          },
+          {
+            "role": "King's Edge Programme / Project Management",
+            "owner": "Transformation Office shared resource",
+            "sharedResourceId": "edge-programme-project-management",
+            "contribution": "Support dependency management between curriculum review, the North Star, near-curriculum work and later implementation decisions.",
+            "periodNeeded": "Across mobilisation",
+            "confidence": "planned shared capacity"
+          }
+        ]
+      }
+    },
+    {
+      "id": "2.1.4-step-2",
+      "title": "Build the initial curriculum baseline and identify growth priorities",
+      "period": {"start": "jan-jun-2027:a", "end": "jan-jun-2027:b"},
+      "summary": "Use the available Curriculum Framework review evidence and targeted follow-up where necessary to build the first practical picture of curriculum-embedded experiential learning across King's. Identify areas of strong or reusable practice, hidden provision, significant gaps, uneven student access and opportunities where modest change could unlock substantial benefit. Treat the baseline as sufficiently robust for prioritisation, not as a claim that every programme has been exhaustively audited.",
+      "dependsOn": ["2.1.4-step-1", "2.1.2-step-1"],
+      "outputs": [
+        {
+          "title": "Initial curriculum-embedded experiential-learning baseline",
+          "summary": "An institution-level view of current provision, strengths, gaps and unevenness using the best available curriculum-review evidence."
+        },
+        {
+          "title": "Prioritised growth and assurance opportunity set",
+          "summary": "A bounded set of programme, faculty or thematic priorities where intervention is likely to improve student access, educational quality or scalability."
+        }
+      ],
+      "resources": {
+        "enablingConditions": [
+          {
+            "condition": "Sufficient curriculum-review evidence is available by spring 2027 to support prioritisation.",
+            "whatItUnlocks": "A Year 1 implementation plan based on real institutional evidence rather than generic assumptions about where experiential learning is weak.",
+            "confidence": "developing",
+            "riskIfMissing": "The Year 2 portfolio will need to begin with a smaller pilot set and refresh priorities as further review evidence becomes available."
+          }
+        ]
+      }
+    },
+    {
+      "id": "2.1.4-step-3",
+      "title": "Agree the 2027/28 curriculum growth and assurance plan",
+      "period": "jan-jun-2027:c",
+      "summary": "Combine the initial curriculum baseline with the ratified direction from 2.1.2 to select the first targeted implementation cohort for 2027/28. Define the support model, assurance expectations, evidence to collect and how the £75,000 Year 2 implementation envelope should be deployed. Preserve flexibility to fund programme redesign, academic development, curriculum prototyping, small delivery costs or other proportionate interventions where these are the most effective response.",
+      "dependsOn": ["2.1.4-step-2", "2.1.2-step-2"],
+      "outputs": [
+        {
+          "title": "2027/28 targeted curriculum implementation portfolio",
+          "summary": "An agreed first cohort of curriculum-growth interventions with clear rationale, intended student benefit, support requirements, assurance expectations and investment range."
+        },
+        {
+          "title": "Curriculum experiential-learning assurance model",
+          "summary": "A proportionate approach for testing whether funded or newly developed provision aligns with the North Star, including educational purpose, inclusion, support, reflection, assessment and evidence."
+        }
+      ],
+      "resources": {
+        "existingCapacity": [
+          {
+            "role": "Faculty and programme leadership",
+            "owner": "Selected faculties and programmes",
+            "contribution": "Co-design feasible interventions and identify the local academic ownership, approvals and implementation conditions needed for the first portfolio.",
+            "periodNeeded": "Spring and summer 2027",
+            "confidence": "to be confirmed through prioritisation"
+          }
+        ]
+      }
+    },
+    {
+      "id": "2.1.4-step-4",
+      "title": "Implement and evaluate the first targeted curriculum growth portfolio",
+      "period": {"start": "jul-dec-2027:a", "end": "jan-jun-2028:c"},
+      "summary": "Support the first targeted cohort of programmes or faculties to strengthen curriculum-embedded experiential learning. Use the implementation envelope flexibly against evidence-led needs, test reusable approaches and collect enough evidence about student reach, educational value, inclusion, delivery effort and scalability to inform the next round of growth.",
+      "dependsOn": ["2.1.4-step-3", "2.1.2-step-3"],
+      "outputs": [
+        {
+          "title": "First implemented curriculum-growth portfolio",
+          "summary": "A set of completed or substantially implemented curriculum changes in the highest-priority areas identified through Year 1 evidence."
+        },
+        {
+          "title": "Year 2 implementation and evaluation review",
+          "summary": "Evidence on what changed, who benefited, what it took to deliver and which approaches should be adapted, scaled or stopped."
+        }
+      ],
+      "resources": {
+        "newInvestment": [
+          {
+            "id": "2.1.4-y2-curriculum-implementation",
+            "item": "Curriculum experiential-learning implementation and innovation fund",
+            "category": "curriculum development and implementation",
+            "amount": 75000,
+            "currency": "GBP",
+            "yearlyProfile": [{"academicYear": "2027/28", "amount": 75000, "note": "Evidence-led portfolio envelope for targeted programme or faculty curriculum interventions."}],
+            "estimatedCost": "£75,000 Year 2 planning envelope.",
+            "periodNeeded": "2027/28",
+            "decisionNeededBy": "Summer 2027",
+            "fundingRoute": "King's Edge mobilisation investment request",
+            "fundingStatus": "planning envelope, subject to Year 1 prioritisation",
+            "confidence": "indicative",
+            "rationale": "Allows the programme to move from diagnosis to real curriculum change while preserving flexibility over the exact mix of interventions until the Year 1 baseline identifies where investment will have the greatest value.",
+            "riskIfMissing": "The programme could establish a strong North Star and diagnose gaps without having a practical means to help programmes act on them."
+          },
+          {
+            "id": "2.1.4-y2-co-design-evaluation",
+            "item": "Curriculum implementation co-design and evaluation envelope",
+            "category": "student partnership and evaluation",
+            "amount": 10000,
+            "currency": "GBP",
+            "yearlyProfile": [{"academicYear": "2027/28", "amount": 10000}],
+            "estimatedCost": "£10,000 Year 2 planning envelope.",
+            "periodNeeded": "2027/28",
+            "fundingRoute": "King's Edge mobilisation investment request",
+            "fundingStatus": "indicative",
+            "confidence": "planning estimate",
+            "rationale": "Supports student partnership, implementation testing and evaluation across the first curriculum-growth cohort.",
+            "riskIfMissing": "Implementation learning may be more dependent on internal delivery perspectives and less sensitive to student experience and accessibility."
+          }
+        ]
+      }
+    },
+    {
+      "id": "2.1.4-step-5",
+      "title": "Scale evidence-led curriculum growth and settle the enduring assurance route",
+      "period": {"start": "jul-dec-2028:a", "end": "jan-jun-2029:c"},
+      "summary": "Use Year 2 implementation evidence and the continuing curriculum baseline to broaden support to a second, larger portfolio of priority programmes or faculties. Concentrate the £150,000 Year 3 implementation envelope on approaches that have demonstrated educational value or address material access gaps, while refining the enduring route through which curriculum review and enhancement will continue to identify, support and assure experiential learning after mobilisation.",
+      "dependsOn": ["2.1.4-step-4", "2.1.2-step-4"],
+      "outputs": [
+        {
+          "title": "Scaled curriculum-growth portfolio",
+          "summary": "A larger evidence-led set of curriculum interventions building on approaches that demonstrated value during the first implementation cycle."
+        },
+        {
+          "title": "Enduring curriculum growth and assurance recommendation",
+          "summary": "A recommendation for how experiential-learning evidence, support and assurance should sit within normal curriculum review and enhancement after mobilisation, including any remaining BAU resource implications."
+        }
+      ],
+      "resources": {
+        "newInvestment": [
+          {
+            "id": "2.1.4-y3-curriculum-implementation",
+            "item": "Scaled curriculum experiential-learning implementation and innovation fund",
+            "category": "curriculum development and implementation",
+            "amount": 150000,
+            "currency": "GBP",
+            "yearlyProfile": [{"academicYear": "2028/29", "amount": 150000, "note": "Scaled evidence-led portfolio envelope, to be recalibrated using Year 2 implementation evidence."}],
+            "estimatedCost": "£150,000 Year 3 planning envelope.",
+            "periodNeeded": "2028/29",
+            "decisionNeededBy": "Summer 2028",
+            "fundingRoute": "King's Edge mobilisation investment request",
+            "fundingStatus": "planning envelope, subject to implementation evidence",
+            "confidence": "indicative",
+            "rationale": "Provides a credible scaling shape for the business case while making the final deployment explicitly evidence-led rather than pre-allocating funding to programmes before the first implementation cycle has been evaluated.",
+            "riskIfMissing": "Successful Year 2 models may remain isolated pilots and priority curriculum gaps may persist without a mechanism to support broader adoption."
+          },
+          {
+            "id": "2.1.4-y3-co-design-evaluation",
+            "item": "Scaled curriculum co-design and evaluation envelope",
+            "category": "student partnership and evaluation",
+            "amount": 10000,
+            "currency": "GBP",
+            "yearlyProfile": [{"academicYear": "2028/29", "amount": 10000}],
+            "estimatedCost": "£10,000 Year 3 planning envelope.",
+            "periodNeeded": "2028/29",
+            "fundingRoute": "King's Edge mobilisation investment request",
+            "fundingStatus": "indicative",
+            "confidence": "planning estimate",
+            "rationale": "Maintains student partnership and evaluation alongside the larger Year 3 implementation portfolio.",
+            "riskIfMissing": "Scaling decisions may rely too heavily on delivery-volume evidence without enough direct evidence about student experience, inclusion and educational value."
+          }
+        ],
+        "enablingConditions": [
+          {
+            "condition": "The Year 3 portfolio is recalibrated using Year 2 evidence rather than treating the £150,000 envelope as an automatic spending target.",
+            "whatItUnlocks": "A credible business-case planning shape without locking King's into weak or unnecessary interventions.",
+            "confidence": "planning assumption",
+            "riskIfMissing": "Mobilisation funding could become input-driven rather than evidence-led."
+          }
+        ]
+      }
+    }
+  ]
+}
