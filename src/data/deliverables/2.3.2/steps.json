@@ -1,0 +1,405 @@
+{
+  "steps": [
+    {
+      "id": "2.3.2-step-1",
+      "title": "Build the Student Life personas and participation principles",
+      "period": {
+        "start": "jul-dec-2026:b",
+        "end": "jul-dec-2026:b"
+      },
+      "summary": "From September to November 2026, develop a small set of evidence-led participation archetypes that make materially different forms of student life tangible and usable. Draw on existing student insight, participation evidence and targeted qualitative work to represent differences in campus presence, commuting, paid work, caring, disability, placements, digital study, confidence, financial pressure and other factors that shape participation. Align the personas with the 2.3.4 student-journey framework so 2.3.2 provides the who/how lens while 2.3.4 provides the when lens.",
+      "dependsOn": [],
+      "outputs": [
+        {
+          "title": "Student Life persona set",
+          "summary": "A bounded set of approximately six to eight evidence-led participation archetypes representing materially different patterns of time, presence, constraint and participation rather than demographic stereotypes."
+        },
+        {
+          "title": "Evidence and validation pack",
+          "summary": "A concise account of the evidence behind the personas, their limits, the student voices used to test them and the conditions under which they should be refreshed."
+        },
+        {
+          "title": "Physical and digital participation principles",
+          "summary": "Shared design principles for testing whether opportunities, spaces, rhythms and digital journeys create realistic and legitimate routes into participation for different student forms."
+        }
+      ],
+      "resources": {
+        "existingCapacity": [
+          {
+            "role": "Deliverable Lead",
+            "owner": "Steph White",
+            "contribution": "Own the proposition, persona framework, institutional relationships and translation of insight into programme requirements.",
+            "periodNeeded": "Across mobilisation",
+            "confidence": "existing capacity to be validated"
+          },
+          {
+            "role": "Deputy Director, Enrichment & Enhancement",
+            "owner": "King's Edge shared resource",
+            "fte": 0.1,
+            "sharedResourceId": "edge-deputy-director-enrichment-enhancement",
+            "sharedResourceAllocation": {
+              "fte": 0.1,
+              "note": "Existing 2.3.2 allocation in the shared Deputy Director resource profile."
+            },
+            "contribution": "Provide senior sponsorship, cross-portfolio leverage and the route for persona findings to shape commissioning and wider programme decisions.",
+            "periodNeeded": "From January 2027 onward",
+            "confidence": "planned shared capacity"
+          },
+          {
+            "role": "King's Edge Project Officer capacity",
+            "owner": "Transformation Office shared resource",
+            "fte": 0.05,
+            "sharedResourceId": "edge-project-officer-capacity",
+            "sharedResourceAllocation": {
+              "fte": 0.05,
+              "note": "Existing 2.3.2 Year 1 allocation in the shared Project Officer resource profile."
+            },
+            "contribution": "Support research coordination, workshops, documentation, action tracking and assurance activity.",
+            "periodNeeded": "Across Year 1",
+            "confidence": "planned shared capacity"
+          },
+          {
+            "role": "Participation and impact evidence",
+            "owner": "2.3.1 Beyond the Course: Visibility, Reach and Impact",
+            "contribution": "Provide available participation, reach and equity evidence to inform persona design and later testing without creating a separate analytical function in 2.3.2.",
+            "periodNeeded": "During persona development and refresh",
+            "confidence": "planned shared dependency"
+          }
+        ],
+        "newInvestment": [
+          {
+            "id": "2.3.2-y1-insight-design",
+            "item": "Student-life insight and service-design commission",
+            "category": "student insight and inclusive service design",
+            "amount": 10000,
+            "currency": "GBP",
+            "yearlyProfile": [
+              {
+                "academicYear": "2026/27",
+                "amount": 10000,
+                "note": "Targeted external or student-partnership support for evidence synthesis, qualitative testing, persona development and inclusive design."
+              }
+            ],
+            "estimatedCost": "£10,000 Year 1 planning envelope.",
+            "owner": "Steph White",
+            "periodNeeded": "September to November 2026",
+            "decisionNeededBy": "September 2026",
+            "fundingRoute": "King's Edge mobilisation investment request",
+            "fundingStatus": "indicative",
+            "confidence": "planning estimate",
+            "rationale": "Allows the persona framework to be grounded in real student evidence and tested with students rather than becoming an internally invented segmentation exercise.",
+            "riskIfMissing": "The persona set may rely too heavily on existing assumptions and be less credible as a programme-wide assurance and commissioning tool."
+          }
+        ],
+        "enablingConditions": [
+          {
+            "condition": "Agree a common boundary with 2.3.4 so persona development and student-journey mapping reinforce rather than duplicate one another.",
+            "owner": "Steph White and 2.3.4 delivery lead",
+            "decisionNeededBy": "Before substantive persona research",
+            "confidence": "developing",
+            "riskIfMissing": "The programme may create overlapping models of student need that are difficult to use consistently."
+          }
+        ]
+      }
+    },
+    {
+      "id": "2.3.2-step-2",
+      "title": "Use the personas to test King's Edge and identify commissioning priorities",
+      "period": {
+        "start": "jul-dec-2026:b",
+        "end": "jan-jun-2027:a"
+      },
+      "summary": "From November 2026 to February 2027, apply the personas across the major King's Edge propositions and student journeys. Test whether different student forms can realistically discover, enter and benefit from opportunities, communities and experiences, and identify where weak routes into participation reflect design, timing, digital, physical or provision gaps. Translate material gaps into actions for existing deliverables or clear demand signals for new commissioning through 2.2.4.",
+      "dependsOn": [
+        "2.3.2-step-1"
+      ],
+      "outputs": [
+        {
+          "title": "King's Edge persona assurance",
+          "summary": "A structured walkthrough of the major King's Edge propositions showing where each participation archetype is well served, weakly served or excluded."
+        },
+        {
+          "title": "Participation gap and action map",
+          "summary": "A prioritised diagnosis distinguishing gaps that require design changes, better orchestration, digital capability, physical activation or substantive new provision."
+        },
+        {
+          "title": "First commissioning requirements",
+          "summary": "Evidence-led briefs for material unmet needs that should shape the 2.2.4 opportunity portfolio, including the Belonging and Connection workpackage and other thematic workpackages where relevant."
+        }
+      ]
+    },
+    {
+      "id": "2.3.2-step-3",
+      "title": "Design the richer campus and digital-twin proposition",
+      "period": {
+        "start": "jul-dec-2026:c",
+        "end": "jan-jun-2027:a"
+      },
+      "summary": "From December 2026 to March 2027, translate the personas and gap analysis into a practical Student Life by Design playbook. Define what a richer, more vibrant and more festival-like campus experience means in practice, focusing on low-friction invitations to encounter people, activity and opportunity. Define the corresponding digital-twin requirements as authentic digital routes into participation rather than simple replication of physical activity, and feed substantive product requirements into 4.1.4.",
+      "dependsOn": [
+        "2.3.2-step-1",
+        "2.3.2-step-2"
+      ],
+      "outputs": [
+        {
+          "title": "Student Life by Design playbook",
+          "summary": "A concise design framework covering vibrancy, low-friction participation, encounter, accessibility, inclusion, physical-digital complementarity and application of the personas."
+        },
+        {
+          "title": "Richer campus prototype brief",
+          "summary": "A shortlist of two to three bounded environments, places or moments in which different activation approaches can be tested during Year 1."
+        },
+        {
+          "title": "Digital-twin requirements",
+          "summary": "Prioritised student-life requirements for authentic digital participation, discovery, community and shared experience to be considered within 4.1.4 product delivery rather than funded as a separate digital build."
+        }
+      ]
+    },
+    {
+      "id": "2.3.2-step-4",
+      "title": "Prototype richer physical and digital participation",
+      "period": {
+        "start": "jan-jun-2027:b",
+        "end": "jan-jun-2027:c"
+      },
+      "summary": "From March to June 2027, run a small number of deliberately bounded prototypes that test how King's can make student life more visible, sociable and permeable. Use temporary or reusable activation infrastructure, improved invitations and wayfinding, participatory formats and complementary digital routes. Where prototypes require substantive new activities or learning opportunities, specify the need through 2.3.2 and commission the provision through 2.2.4 rather than paying for it twice.",
+      "dependsOn": [
+        "2.3.2-step-3"
+      ],
+      "outputs": [
+        {
+          "title": "Year 1 Student Life prototypes",
+          "summary": "Two to three bounded physical/digital participation prototypes testing different forms of low-friction encounter and participation."
+        },
+        {
+          "title": "Reusable activation assets and formats",
+          "summary": "Practical infrastructure, templates and formats that can be reused or adapted if evidence supports later scaling."
+        },
+        {
+          "title": "Prototype evidence",
+          "summary": "A proportionate evidence set covering who encountered and participated, how different personas experienced the intervention, what it cost and what should be retained, changed or stopped."
+        }
+      ],
+      "resources": {
+        "newInvestment": [
+          {
+            "id": "2.3.2-y1-activation-prototypes",
+            "item": "Student Life physical and digital activation prototypes",
+            "category": "participation design and activation",
+            "amount": 20000,
+            "currency": "GBP",
+            "yearlyProfile": [
+              {
+                "academicYear": "2026/27",
+                "amount": 20000,
+                "note": "Flexible prototype envelope for temporary or reusable activation infrastructure, wayfinding, participation design, production and bounded digital participation experiments."
+              }
+            ],
+            "estimatedCost": "£20,000 Year 1 planning envelope.",
+            "owner": "Steph White",
+            "periodNeeded": "March to June 2027",
+            "decisionNeededBy": "January 2027",
+            "fundingRoute": "King's Edge mobilisation investment request",
+            "fundingStatus": "indicative",
+            "confidence": "planning estimate",
+            "rationale": "Creates enough practical capacity to test the proposition in real student environments without establishing a large standalone events or content budget in 2.3.2.",
+            "riskIfMissing": "Year 1 may remain a design and assurance exercise without sufficient live testing to justify later investment."
+          }
+        ],
+        "enablingConditions": [
+          {
+            "condition": "Secure cooperation from Estates and Facilities, campus operations, KCLSU, relevant faculties and service providers for bounded prototype locations and activity.",
+            "owner": "Steph White with Deputy Director, Enrichment & Enhancement",
+            "decisionNeededBy": "Before prototype mobilisation",
+            "confidence": "developing",
+            "riskIfMissing": "The physical proposition cannot be tested credibly in live campus environments."
+          },
+          {
+            "condition": "Maintain the boundary that substantive new opportunity content is commissioned through 2.2.4 and substantive digital build through 4.1.4.",
+            "owner": "King's Edge programme leadership",
+            "decisionNeededBy": "At prototype and commissioning decisions",
+            "confidence": "working assumption",
+            "riskIfMissing": "2.3.2 will duplicate expenditure already held elsewhere in the programme."
+          }
+        ]
+      }
+    },
+    {
+      "id": "2.3.2-step-5",
+      "title": "Set the Year 2 scale and commissioning plan",
+      "period": "jan-jun-2027:c",
+      "summary": "By June 2027, bring together persona assurance, prototype learning, 2.3.1 participation evidence and the emerging 2.3.4 rhythm to decide what should scale in 2027/28. Refresh the priority participation gaps, specify the next commissioning requirements for 2.2.4, agree the physical activation programme and maintain a clear backlog of digital-twin requirements for 4.1.4.",
+      "dependsOn": [
+        "2.3.2-step-2",
+        "2.3.2-step-4"
+      ],
+      "outputs": [
+        {
+          "title": "2027/28 Student Life scale plan",
+          "summary": "A focused plan identifying which activation models should expand, where they should operate and which student forms or participation gaps they are intended to address."
+        },
+        {
+          "title": "2027/28 Student Life commissioning priorities",
+          "summary": "A persona- and evidence-led set of needs, target groups and preferred participation formats that informs the next 2.2.4 commissioning round."
+        },
+        {
+          "title": "Refreshed programme assurance",
+          "summary": "An updated view of material inclusion and participation gaps across King's Edge, with named owning deliverables and follow-up actions."
+        }
+      ]
+    },
+    {
+      "id": "2.3.2-step-6",
+      "title": "Scale successful Student Life by Design models in Year 2",
+      "period": {
+        "start": "jul-dec-2027:a",
+        "end": "jan-jun-2028:c"
+      },
+      "summary": "Across 2027/28, expand the strongest Year 1 activation approaches into a more recognisable programme of richer student-life environments across King's campuses and digital spaces. Connect physical and digital participation deliberately to the 2.3.4 student-year rhythm, use personas and 2.3.1 evidence to focus activity on underserved student forms, and use 2.3.4 moments and 2.3.2 gap analysis to shape commissioning through 2.2.4. Prioritise reusable formats and infrastructure over repeated one-off event spend.",
+      "dependsOn": [
+        "2.3.2-step-5"
+      ],
+      "outputs": [
+        {
+          "title": "Scaled Student Life activation programme",
+          "summary": "Successful physical/digital participation models operate across a broader set of campuses, places or student moments with clearer reuse and lower setup cost."
+        },
+        {
+          "title": "Year 2 persona assurance and commissioning cycle",
+          "summary": "The personas are refreshed where needed and become a routine input into programme assurance and the annual 2.2.4 commissioning portfolio."
+        },
+        {
+          "title": "Reusable activation toolkit",
+          "summary": "A practical set of formats, design patterns, infrastructure and delivery guidance that faculties, services and partners can use rather than recreating the model from scratch."
+        }
+      ],
+      "resources": {
+        "existingCapacity": [
+          {
+            "role": "Deputy Director, Enrichment & Enhancement",
+            "owner": "King's Edge shared resource",
+            "fte": 0.1,
+            "sharedResourceId": "edge-deputy-director-enrichment-enhancement",
+            "contribution": "Provide programme leadership and institutional leverage for scaling and commissioning decisions.",
+            "periodNeeded": "2027/28",
+            "confidence": "planned shared capacity"
+          },
+          {
+            "role": "King's Edge Project Officer capacity",
+            "owner": "Transformation Office shared resource",
+            "fte": 0.1,
+            "sharedResourceId": "edge-project-officer-capacity",
+            "contribution": "Support coordination, delivery tracking, partner activity and annual assurance.",
+            "periodNeeded": "2027/28",
+            "confidence": "planned shared capacity"
+          }
+        ],
+        "newInvestment": [
+          {
+            "id": "2.3.2-y2-activation",
+            "item": "Year 2 Student Life activation and scale fund",
+            "category": "participation design and activation",
+            "amount": 50000,
+            "currency": "GBP",
+            "yearlyProfile": [
+              {
+                "academicYear": "2027/28",
+                "amount": 50000
+              }
+            ],
+            "estimatedCost": "£50,000 Year 2 planning envelope.",
+            "owner": "Steph White",
+            "periodNeeded": "2027/28",
+            "decisionNeededBy": "Summer 2027",
+            "fundingRoute": "King's Edge Year 2 mobilisation investment request",
+            "fundingStatus": "indicative",
+            "confidence": "planning estimate",
+            "rationale": "Scales evidence-backed activation models and reusable infrastructure while substantive opportunity commissioning and digital build remain funded elsewhere.",
+            "riskIfMissing": "Successful Year 1 models will remain isolated pilots rather than becoming a recognisable part of student life."
+          }
+        ]
+      }
+    },
+    {
+      "id": "2.3.2-step-7",
+      "title": "Institutionalise Student Life by Design in Year 3",
+      "period": {
+        "start": "jul-dec-2028:a",
+        "end": "jan-jun-2029:c"
+      },
+      "summary": "Across 2028/29, broaden and mature the model so richer physical and digital participation is increasingly delivered through normal faculty, service, KCLSU and campus practice rather than a centrally run pilot programme. Maintain the personas as an annual King's Edge assurance and demand-setting mechanism, deepen the integration of digital participation through 4.1.4, and establish the steady-state activation, refresh and commissioning relationships needed beyond mobilisation.",
+      "dependsOn": [
+        "2.3.2-step-6"
+      ],
+      "outputs": [
+        {
+          "title": "Mature multi-campus Student Life model",
+          "summary": "A recognisable set of reusable physical and digital participation patterns is established across the institution with broader local ownership."
+        },
+        {
+          "title": "Embedded persona assurance and demand-setting cycle",
+          "summary": "Annual persona assurance routinely identifies material gaps and informs existing-deliverable priorities and 2.2.4 commissioning."
+        },
+        {
+          "title": "Steady-state operating and funding model",
+          "summary": "A clear BAU model identifies which activation infrastructure and refresh activity require recurrent funding, what should be absorbed into normal institutional practice and how substantive provision and digital capability continue through their owning portfolios."
+        }
+      ],
+      "resources": {
+        "existingCapacity": [
+          {
+            "role": "Deputy Director, Enrichment & Enhancement",
+            "owner": "King's Edge shared resource",
+            "fte": 0.1,
+            "sharedResourceId": "edge-deputy-director-enrichment-enhancement",
+            "contribution": "Lead transition from mobilisation into enduring institutional ownership and commissioning practice.",
+            "periodNeeded": "2028/29",
+            "confidence": "planned shared capacity"
+          },
+          {
+            "role": "King's Edge Project Officer capacity",
+            "owner": "Transformation Office shared resource",
+            "fte": 0.1,
+            "sharedResourceId": "edge-project-officer-capacity",
+            "contribution": "Support final-year scaling, documentation, transition and assurance.",
+            "periodNeeded": "2028/29",
+            "confidence": "planned shared capacity"
+          }
+        ],
+        "newInvestment": [
+          {
+            "id": "2.3.2-y3-activation",
+            "item": "Year 3 Student Life activation and institutionalisation fund",
+            "category": "participation design and activation",
+            "amount": 60000,
+            "currency": "GBP",
+            "yearlyProfile": [
+              {
+                "academicYear": "2028/29",
+                "amount": 60000
+              }
+            ],
+            "estimatedCost": "£60,000 Year 3 planning envelope.",
+            "owner": "Steph White",
+            "periodNeeded": "2028/29",
+            "decisionNeededBy": "Summer 2028",
+            "fundingRoute": "King's Edge Year 3 mobilisation investment request",
+            "fundingStatus": "indicative",
+            "confidence": "planning estimate",
+            "rationale": "Broadens the reusable activation model and supports transition into enduring local and programme ownership without duplicating substantive opportunity or digital product budgets.",
+            "riskIfMissing": "The model may remain dependent on isolated local enthusiasm and fail to establish a sustainable institution-wide practice."
+          }
+        ],
+        "enablingConditions": [
+          {
+            "condition": "Use Year 2 and Year 3 evidence to determine a proportionate recurrent activation and refresh requirement rather than fixing the BAU amount in advance.",
+            "owner": "Steph White with King's Edge programme leadership",
+            "decisionNeededBy": "During 2028/29 business-as-usual planning",
+            "confidence": "developing",
+            "riskIfMissing": "Either an unnecessary recurrent liability is created or successful participation infrastructure is allowed to decay after mobilisation."
+          }
+        ]
+      }
+    }
+  ]
+}
