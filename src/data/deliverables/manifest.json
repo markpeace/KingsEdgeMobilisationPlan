@@ -98,6 +98,7 @@
       "parts": [
         "./2.3.2/core.json",
         "./2.3.2/overview.json",
+        "./2.3.2/steps.json",
         "./2.3.2/benefits.json"
       ]
     },
