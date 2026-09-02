@@ -29,6 +29,11 @@
             "role": "Deputy Director, Enrichment & Enhancement",
             "owner": "King's Edge shared resource",
             "fte": 0.15,
+            "sharedResourceId": "edge-deputy-director-enrichment-enhancement",
+            "sharedResourceAllocation": {
+              "fte": 0.15,
+              "note": "Existing 2.3.4 allocation in the shared Deputy Director resource profile."
+            },
             "contribution": "Provide senior sponsorship, cross-portfolio leverage, escalation and connection across the co-curricular and extra-curricular portfolios.",
             "periodNeeded": "From January 2027 onward",
             "confidence": "planned shared capacity"
@@ -37,6 +42,11 @@
             "role": "King's Edge Project Officer capacity",
             "owner": "Transformation Office shared resource",
             "fte": 0.05,
+            "sharedResourceId": "edge-project-officer-capacity",
+            "sharedResourceAllocation": {
+              "fte": 0.05,
+              "note": "Existing 2.3.4 Year 1 allocation in the shared Project Officer resource profile."
+            },
             "contribution": "Support stakeholder coordination, workshop administration, mapping, action tracking and documentation.",
             "periodNeeded": "Across Year 1",
             "confidence": "planned shared capacity"
