@@ -1,0 +1,210 @@
+{
+  "steps": [
+    {
+      "id": "2.3.4-step-1",
+      "title": "Build the shared student-journey framework",
+      "period": {
+        "start": "jul-dec-2026:b",
+        "end": "jul-dec-2026:b"
+      },
+      "summary": "From September to November 2026, convene the major agendas shaping student life and establish a shared framework for understanding the wider King’s experience through time. Map functional milestones, common student need and capacity states, different patterns of study and the institutional priorities that need to be considered together.",
+      "dependsOn": [],
+      "outputs": [
+        {
+          "title": "Shared student-journey framework",
+          "summary": "A practical common model of functional milestones, transitions, student need and capacity states that can accommodate different programmes, calendars and patterns of study."
+        },
+        {
+          "title": "Cross-institutional stakeholder group",
+          "summary": "A working convening group spanning employability, student success, wellbeing, community and connection, belonging, wider participation, faculties, services, KCLSU and other relevant partners."
+        },
+        {
+          "title": "Planning principles",
+          "summary": "Agreed principles for using the framework to coordinate activity around students rather than around separate organisational calendars."
+        }
+      ],
+      "resources": {
+        "existingCapacity": [
+          {
+            "role": "Deputy Director, Enrichment & Enhancement",
+            "owner": "King's Edge shared resource",
+            "fte": 0.15,
+            "contribution": "Provide senior sponsorship, cross-portfolio leverage, escalation and connection across the co-curricular and extra-curricular portfolios.",
+            "periodNeeded": "From January 2027 onward",
+            "confidence": "planned shared capacity"
+          },
+          {
+            "role": "King's Edge Project Officer capacity",
+            "owner": "Transformation Office shared resource",
+            "fte": 0.05,
+            "contribution": "Support stakeholder coordination, workshop administration, mapping, action tracking and documentation.",
+            "periodNeeded": "Across Year 1",
+            "confidence": "planned shared capacity"
+          },
+          {
+            "role": "Stakeholder participation",
+            "owner": "Relevant faculties, services, KCLSU and student-experience agenda owners",
+            "contribution": "Bring existing strategies, calendars, evidence and delivery plans into the shared journey mapping and planning process.",
+            "periodNeeded": "At key design and planning points",
+            "confidence": "existing capacity to be confirmed"
+          }
+        ],
+        "newInvestment": [
+          {
+            "id": "2.3.4-y1-sem-backfill",
+            "item": "Senior Education Manager delivery lead backfill",
+            "category": "protected senior delivery capacity",
+            "fte": 0.3,
+            "amount": 22500,
+            "currency": "GBP",
+            "yearlyProfile": [
+              {
+                "academicYear": "2026/27",
+                "fte": 0.3,
+                "amount": 22500,
+                "note": "Working ten-month planning assumption, September 2026 to June 2027"
+              }
+            ],
+            "estimatedCost": "Approximately £22,500 for 0.3 FTE protected SEM capacity over ten months, using a £90,000 fully-loaded annual planning assumption.",
+            "owner": "SEM, TBC",
+            "periodNeeded": "September 2026 to June 2027",
+            "decisionNeededBy": "September 2026",
+            "fundingRoute": "King's Edge mobilisation investment request unless equivalent protected capacity or backfill can be provided from existing resources",
+            "fundingStatus": "Indicative; route to confirm",
+            "confidence": "planning estimate",
+            "rationale": "Protects sufficient senior management capacity to convene across institutional boundaries, synthesise multiple agendas, build the shared framework and carry the work through to an agreed 2027/28 rhythm.",
+            "riskIfMissing": "The work is likely to become an additional responsibility absorbed around existing commitments, weakening the cross-institutional convening, synthesis and follow-through required to create a credible shared rhythm."
+          }
+        ],
+        "enablingConditions": [
+          {
+            "condition": "Confirm the named SEM delivery lead and route for 0.3 FTE protected capacity or equivalent backfill.",
+            "owner": "Zak Evans with King's Edge programme leadership",
+            "decisionNeededBy": "September 2026",
+            "confidence": "developing",
+            "riskIfMissing": "Year 1 mobilisation will lack a consistently available delivery owner."
+          }
+        ]
+      }
+    },
+    {
+      "id": "2.3.4-step-2",
+      "title": "Diagnose the current institutional rhythm",
+      "period": {
+        "start": "jul-dec-2026:b",
+        "end": "jan-jun-2027:a"
+      },
+      "summary": "From November 2026 to February 2027, overlay existing activity, support, communications and opportunity onto the shared journey framework. Identify pressure points, competing asks, quieter periods, gaps, strong existing moments and inequalities in routes into participation, drawing on available participation and student-experience evidence as well as stakeholder insight.",
+      "dependsOn": [
+        "2.3.4-step-1"
+      ],
+      "outputs": [
+        {
+          "title": "Current-state rhythm map",
+          "summary": "A shared view of major activity, support, opportunity and communication across the student journey rather than by organisational owner."
+        },
+        {
+          "title": "Pressure, gap and intersection analysis",
+          "summary": "An evidence-informed diagnosis of where agendas compete, reinforce one another, leave gaps or create opportunities for stronger coordination."
+        },
+        {
+          "title": "Priority design questions for 2027/28",
+          "summary": "A focused set of moments and problems where changing timing, coordination, invitation or provision could materially improve the wider student experience."
+        }
+      ]
+    },
+    {
+      "id": "2.3.4-step-3",
+      "title": "Design the first coordinated King’s rhythm",
+      "period": {
+        "start": "jan-jun-2027:a",
+        "end": "jan-jun-2027:c"
+      },
+      "summary": "From February to June 2027, use the diagnosis to agree a small number of priority moments and cross-agenda planning choices for 2027/28. Determine what should be coordinated, surfaced differently, connected across agendas or selectively commissioned, and assign clear institutional ownership for each agreed intervention.",
+      "dependsOn": [
+        "2.3.4-step-2"
+      ],
+      "outputs": [
+        {
+          "title": "2027/28 Wider King’s Experience Rhythm",
+          "summary": "An agreed first-year rhythm showing priority student moments, intersecting agendas, planned institutional responses and named owners."
+        },
+        {
+          "title": "Priority moment plans",
+          "summary": "A small number of practical cross-institutional plans setting out what will change in timing, coordination, invitation, communication or provision."
+        },
+        {
+          "title": "Commissioning and escalation view",
+          "summary": "A clear distinction between needs that can be met through better alignment of existing provision and genuine gaps that require commissioning or wider portfolio action."
+        }
+      ]
+    },
+    {
+      "id": "2.3.4-step-4",
+      "title": "Establish the annual student-journey planning cycle",
+      "period": "jan-jun-2027:c",
+      "summary": "By summer 2027, turn the Year 1 design process into a repeatable institutional planning cycle. Confirm governance, stakeholder cadence, evidence inputs, decision points and ownership so the 2027/28 rhythm can be activated and the process can be repeated annually.",
+      "dependsOn": [
+        "2.3.4-step-3"
+      ],
+      "outputs": [
+        {
+          "title": "Annual planning cycle",
+          "summary": "A repeatable cross-institutional process for reviewing the student journey, bringing agendas together, agreeing priority moments and shaping the coming year."
+        },
+        {
+          "title": "Governance and ownership model",
+          "summary": "Named roles, forums, escalation routes and responsibilities for maintaining the rhythm and converting agreed priorities into delivery."
+        },
+        {
+          "title": "Evaluation approach",
+          "summary": "A proportionate plan for using participation, engagement and student-experience evidence to understand whether changes to timing and coordination improve the wider experience."
+        }
+      ]
+    },
+    {
+      "id": "2.3.4-step-5",
+      "title": "Run and learn from the first full coordinated rhythm",
+      "period": {
+        "start": "jul-dec-2027:a",
+        "end": "jan-jun-2028:c"
+      },
+      "summary": "Across 2027/28, activate the agreed priority moments, coordinate institutional agendas around them and use developing Beyond Course and student-experience evidence to understand what changes participation, connection and student experience. Adapt the rhythm during the year where evidence or changing student need justifies it.",
+      "dependsOn": [
+        "2.3.4-step-4"
+      ],
+      "outputs": [
+        {
+          "title": "First full-year coordinated rhythm delivered",
+          "summary": "Priority moments are activated through joined-up institutional delivery rather than isolated agenda-led activity."
+        },
+        {
+          "title": "Year 2 learning review",
+          "summary": "Evidence and stakeholder learning identify which forms of coordination create value, where the framework needs adjustment and what should change for the following year."
+        }
+      ]
+    },
+    {
+      "id": "2.3.4-step-6",
+      "title": "Refine, broaden and embed the rhythm",
+      "period": {
+        "start": "jul-dec-2028:a",
+        "end": "jan-jun-2029:c"
+      },
+      "summary": "Across 2028/29, refine the framework from evidence, strengthen its application across different student journeys and patterns of study, deepen participation by faculties and services, and establish the cross-agenda planning cycle as a normal part of institutional student-experience planning.",
+      "dependsOn": [
+        "2.3.4-step-5"
+      ],
+      "outputs": [
+        {
+          "title": "Mature student-journey rhythm framework",
+          "summary": "The rhythm reflects learning from delivery and works across a broader range of student journeys and study patterns."
+        },
+        {
+          "title": "Embedded planning practice",
+          "summary": "Cross-agenda consideration of the student journey becomes part of normal annual planning rather than a time-limited King’s Edge mobilisation activity."
+        }
+      ]
+    }
+  ]
+}
