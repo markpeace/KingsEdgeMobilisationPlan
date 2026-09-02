@@ -107,6 +107,7 @@
       "parts": [
         "./2.3.4/core.json",
         "./2.3.4/overview.json",
+        "./2.3.4/steps.json",
         "./2.3.4/benefits.json"
       ]
     },
