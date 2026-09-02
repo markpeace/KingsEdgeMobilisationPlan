@@ -73,11 +73,12 @@ The registry can carry a `bauLiability` where a shared workforce resource create
 
 ## Current King's Edge shared workforce
 
-The current registry contains four coherent resources:
+The current registry contains five coherent resources:
 
 1. Deputy Director, Enrichment & Enhancement, 1.0 FTE, permanent, mobilisation-funded from January 2027 and then a recurrent BAU liability.
 2. King's Edge Analytics & Data Capability, 0.6 FTE-equivalent King's Talent capacity in Year 1 followed by one sandwich-year placement in each of Years 2 and 3.
 3. King's Edge Project Officer Capacity, 1.0 FTE-equivalent King's Talent pool in Year 1 followed by two sandwich-year Project Officers in each of Years 2 and 3, hosted by the Transformation Office.
 4. King's Edge Programme / Project Management, 0.5 FTE Transformation Office capacity across all three mobilisation years.
+5. Experiential Learning Curriculum and Policy Development Capacity, 0.6 FTE-equivalent in Year 1 and 0.8 FTE in Years 2 and 3, mobilisation-funded at £40,000 / £55,000 / £55,000 across 2.1.2, 2.1.4 and 2.2.3, with no automatic BAU continuation.
 
 The allocation plan is a planning baseline and should be rebalanced when detailed delivery evidence shows that workload lands differently, while always reconciling to the coherent resource total.

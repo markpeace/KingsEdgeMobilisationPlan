@@ -1,7 +1,14 @@
 {
   "id": "2.1.2",
-  "title": "Experiential Learning Framework and Entitlement",
+  "title": "Experiential Learning North Star and Future Student Entitlement",
   "lead": "TBC, Convener of the Experiential Learning Strategic Community of Practice",
-  "planningStatus": "proposition-review",
-  "decisionLog": []
+  "planningStatus": "resource-planning",
+  "decisionLog": [
+    {
+      "date": "2026-09-02",
+      "type": "decision",
+      "forum": "King's Edge mobilisation planning",
+      "outcome": "Confirmed the Year 1 delivery intent for 2.1.2: use the Strategic Community of Practice and existing institutional expertise to establish a clear King's experiential-learning North Star, define the future student-entitlement ambition and leave 2026/27 with a forward implementation plan. Delivery will overlap with 2.1.4 and 2.2.3 rather than waiting for a fully sequential hand-off."
+    }
+  ]
 }

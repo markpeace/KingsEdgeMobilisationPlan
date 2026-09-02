@@ -1,0 +1,165 @@
+{
+  "steps": [
+    {
+      "id": "2.2.3-step-1",
+      "title": "Develop and ratify the institutional sandwich-year policy and regulatory model",
+      "period": {"start": "jul-dec-2026:b", "end": "jan-jun-2027:b"},
+      "summary": "From September 2026 to approximately April 2027, review the current institutional and programme-level barriers to offering sandwich years and develop a common King's policy and regulatory model. Define the standard route for approval, programme adoption, student progression, assessment or recognition, administration and any transdisciplinary possibilities, while preserving a proportionate route for legitimate programme-level variation. Take the agreed model through the required academic and regulatory governance so it is ready for implementation.",
+      "dependsOn": [],
+      "outputs": [
+        {
+          "title": "Ratified sandwich-year policy and regulatory model",
+          "summary": "An institutionally agreed route that makes sandwich years easier for programmes to adopt and students to access, with common requirements handled once rather than repeatedly recreated locally."
+        },
+        {
+          "title": "Implementation guidance for programmes and services",
+          "summary": "Practical guidance covering adoption, approvals, student journey, administration, roles and the circumstances in which programme-level variation is legitimate."
+        }
+      ],
+      "resources": {
+        "existingCapacity": [
+          {
+            "role": "Academic regulations, quality and curriculum expertise",
+            "owner": "Relevant King's academic and professional services",
+            "contribution": "Provide the policy, regulatory, quality-assurance and governance expertise needed to design and ratify an institutionally workable sandwich-year model.",
+            "periodNeeded": "September 2026 to April 2027",
+            "confidence": "existing capacity to be validated"
+          },
+          {
+            "role": "Deputy Director, Enrichment & Enhancement",
+            "owner": "King's Edge shared resource",
+            "sharedResourceId": "edge-deputy-director-enrichment-enhancement",
+            "contribution": "Provide senior ownership and cross-portfolio coordination for the near-curriculum proposition and its relationship to wider opportunity infrastructure.",
+            "periodNeeded": "Across mobilisation",
+            "confidence": "planned shared capacity"
+          },
+          {
+            "role": "Experiential Learning Curriculum and Policy Development Capacity",
+            "owner": "King's Edge shared resource",
+            "sharedResourceId": "edge-experiential-learning-curriculum-policy",
+            "contribution": "Provide specialist policy, curriculum and academic-development capacity across the sandwich-year, capstone and wider near-curriculum architecture.",
+            "periodNeeded": "Across mobilisation",
+            "confidence": "planning estimate"
+          },
+          {
+            "role": "King's Edge Project Officer capacity",
+            "owner": "Transformation Office shared resource",
+            "sharedResourceId": "edge-project-officer-capacity",
+            "contribution": "Support policy review, coordination, governance papers, consultation tracking and implementation documentation.",
+            "periodNeeded": "Across mobilisation",
+            "confidence": "planned shared capacity"
+          },
+          {
+            "role": "King's Edge Programme / Project Management",
+            "owner": "Transformation Office shared resource",
+            "sharedResourceId": "edge-programme-project-management",
+            "contribution": "Support dependency management and implementation planning from Year 2 onward.",
+            "periodNeeded": "2027/28 onward",
+            "confidence": "planned shared capacity"
+          }
+        ],
+        "enablingConditions": [
+          {
+            "condition": "A clear academic-governance route and sufficient engagement from programmes with existing or prospective sandwich-year provision.",
+            "whatItUnlocks": "A policy that can be ratified by spring 2027 and is grounded in the practical realities programmes and students face.",
+            "confidence": "developing",
+            "riskIfMissing": "Policy development may remain conceptual or require additional governance cycles before programmes can use it."
+          }
+        ]
+      }
+    },
+    {
+      "id": "2.2.3-step-2",
+      "title": "Design and validate the shared Level 6 experiential-learning capstone",
+      "period": {"start": "jul-dec-2026:b", "end": "jan-jun-2027:b"},
+      "summary": "In parallel with sandwich-year reform, design and take through validation a shared 15-credit Level 6 capstone or wrapper module through which students can synthesise and evidence accumulated experiential learning. Define learning outcomes, reflective and integrative pedagogy, assessment, eligibility, evidence requirements, academic ownership, administration and how the module can remain sufficiently generic to recognise diverse experiential learning without becoming educationally thin.",
+      "dependsOn": ["2.1.2-step-1"],
+      "outputs": [
+        {
+          "title": "Validated 15-credit Level 6 experiential-learning capstone",
+          "summary": "A shared module approved for institutional use, with clear learning outcomes, assessment and assurance requirements and a model that can recognise diverse accumulated experiential learning through rigorous reflection and synthesis."
+        },
+        {
+          "title": "Capstone operating and adoption model",
+          "summary": "A practical model covering student eligibility, evidence, enrolment, academic ownership, assessment, administration and how programmes can make the module available."
+        }
+      ],
+      "resources": {
+        "existingCapacity": [
+          {
+            "role": "Academic module-development and validation expertise",
+            "owner": "Relevant King's faculty, King's Academy and quality-assurance capacity",
+            "contribution": "Co-design the module, test academic level and assessment integrity, and take the proposal through validation.",
+            "periodNeeded": "September 2026 to April 2027",
+            "confidence": "existing capacity to be validated"
+          }
+        ],
+        "enablingConditions": [
+          {
+            "condition": "The emerging 2.1.2 typology and learning-design principles are mature enough to inform the module without waiting for final North Star ratification.",
+            "whatItUnlocks": "A capstone that acts as a practical test of the North Star while still progressing through validation during Year 1.",
+            "confidence": "developing",
+            "riskIfMissing": "The module can still progress, but may require refinement once the full North Star is ratified."
+          }
+        ]
+      }
+    },
+    {
+      "id": "2.2.3-step-3",
+      "title": "Consolidate the reusable near-curriculum architecture and next priorities",
+      "period": "jan-jun-2027:c",
+      "summary": "Use the sandwich-year and capstone work as live proofs of the wider near-curriculum proposition. Identify the common approval, administration, timetabling, recognition, student-journey and governance requirements that should become reusable institutional architecture. Decide which additional near-curriculum routes are worth developing next, if any, based on curriculum evidence, student demand and strategic value rather than assuming a large predefined suite of modules.",
+      "dependsOn": ["2.2.3-step-1", "2.2.3-step-2", "2.1.2-step-2"],
+      "outputs": [
+        {
+          "title": "Near-curriculum academic and administrative architecture",
+          "summary": "A documented common route for policy, approval, administration, recognition and assurance based on the first two Year 1 products."
+        },
+        {
+          "title": "Prioritised 2027/28 near-curriculum roadmap",
+          "summary": "A bounded set of next implementation priorities, including any additional shared module or pathway development justified by evidence."
+        }
+      ],
+      "resources": {
+        "enablingConditions": [
+          {
+            "condition": "2.2.2 partnership and operational infrastructure remains a dependency rather than being duplicated inside 2.2.3.",
+            "whatItUnlocks": "Near-curriculum routes can draw on external opportunity capacity where required without creating a second partnership function or double-counting its investment.",
+            "confidence": "agreed boundary",
+            "riskIfMissing": "Resource plans could duplicate partnership and operational capacity already owned elsewhere in King's Edge."
+          }
+        ]
+      }
+    },
+    {
+      "id": "2.2.3-step-4",
+      "title": "Implement and test the first reusable near-curriculum routes",
+      "period": {"start": "jul-dec-2027:a", "end": "jan-jun-2028:c"},
+      "summary": "Put the ratified sandwich-year route and validated Level 6 capstone into practical use with early adopter programmes and students. Test the end-to-end academic, regulatory and administrative journey, resolve friction and progress only the additional near-curriculum priorities selected through the Year 1 roadmap. Use shared curriculum-development capacity and existing institutional services rather than creating a parallel operating function.",
+      "dependsOn": ["2.2.3-step-3", "2.1.2-step-3"],
+      "outputs": [
+        {
+          "title": "First implemented near-curriculum routes",
+          "summary": "The sandwich-year model and Level 6 capstone are in practical use with implementation learning captured and common administrative routes tested."
+        },
+        {
+          "title": "Year 2 route and friction review",
+          "summary": "Evidence on student uptake, programme adoption, governance and administrative friction, with refinements and any justified next-route development identified."
+        }
+      ]
+    },
+    {
+      "id": "2.2.3-step-5",
+      "title": "Extend the architecture selectively and recommend the steady-state model",
+      "period": {"start": "jul-dec-2028:a", "end": "jan-jun-2029:c"},
+      "summary": "Extend near-curriculum routes only where Year 2 evidence and the wider experiential-learning implementation plan show a clear institutional need. Confirm which shared policies, modules and administrative structures should become stable provision after mobilisation, which should remain optional or demand-led, and what enduring ownership or resource is required.",
+      "dependsOn": ["2.2.3-step-4", "2.1.4-step-4"],
+      "outputs": [
+        {
+          "title": "Scaled near-curriculum architecture and BAU recommendation",
+          "summary": "A refined set of reusable pathways plus an evidence-led recommendation for their enduring academic, regulatory and administrative ownership after mobilisation."
+        }
+      ]
+    }
+  ]
+}
