@@ -33,7 +33,8 @@
         "./2.1.2/core.json",
         "./2.1.2/overview.json",
         "./2.1.2/steps.json",
-        "./2.1.2/benefits.json"
+        "./2.1.2/benefits.json",
+        "./2.1.2/governance.json"
       ]
     },
     {
@@ -52,7 +53,8 @@
         "./2.1.4/core.json",
         "./2.1.4/overview.json",
         "./2.1.4/steps.json",
-        "./2.1.4/benefits.json"
+        "./2.1.4/benefits.json",
+        "./2.1.4/governance.json"
       ]
     },
     {
@@ -81,7 +83,8 @@
         "./2.2.3/core.json",
         "./2.2.3/overview.json",
         "./2.2.3/steps.json",
-        "./2.2.3/benefits.json"
+        "./2.2.3/benefits.json",
+        "./2.2.3/governance.json"
       ]
     },
     {
