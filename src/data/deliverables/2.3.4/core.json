@@ -1,11 +1,24 @@
 {
   "id": "2.3.4",
   "title": "Rhythms of the Wider King’s Experience",
-  "lead": "Steph White",
+  "lead": "SEM, TBC",
   "planningStatus": "proposition-review",
-  "decisionLog": [],
+  "decisionLog": [
+    {
+      "date": "2026-09-02",
+      "type": "decision",
+      "forum": "King's Edge mobilisation planning",
+      "outcome": "Reframed 2.3.4 as the cross-institutional orchestration layer for the wider King’s experience. The deliverable will bring together employability, student success, wellbeing, community and connection, belonging, wider participation, faculties, services and KCLSU around a shared student-journey rhythm, rather than operating as a central events calendar."
+    },
+    {
+      "date": "2026-09-02",
+      "type": "decision",
+      "forum": "King's Edge mobilisation planning",
+      "outcome": "Confirmed the Year 1 mobilisation route and working resource assumption. A Senior Education Manager, TBC, will lead delivery with 0.3 FTE protected capacity from September 2026 to June 2027, costed provisionally as £22,500 SEM backfill. Year 1 will produce a shared student-journey framework, diagnose the current institutional rhythm, design the first coordinated 2027/28 rhythm and establish a repeatable annual planning cycle."
+    }
+  ],
   "ownership": {
     "accountableOwner": "Zak Evans",
-    "deliveryLead": "Steph White"
+    "deliveryLead": "SEM, TBC"
   }
 }
