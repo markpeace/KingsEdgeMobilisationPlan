@@ -11,34 +11,11 @@
       "fundingBasis": "Mobilisation-funded from January 2027; £52,500 in 2026/27 and £90,000 in each full mobilisation year, then recurrent BAU funding.",
       "bauDestination": "Permanent Enrichment & Enhancement establishment; £90,000 annual recurrent BAU liability after mobilisation.",
       "yearlyProfile": [
-        {
-          "academicYear": "2026/27",
-          "fte": 1.0,
-          "amount": 52500,
-          "currency": "GBP",
-          "note": "1.0 FTE from January to July 2027, costed at seven months of a £90,000 fully-loaded annual planning cost."
-        },
-        {
-          "academicYear": "2027/28",
-          "fte": 1.0,
-          "amount": 90000,
-          "currency": "GBP"
-        },
-        {
-          "academicYear": "2028/29",
-          "fte": 1.0,
-          "amount": 90000,
-          "currency": "GBP"
-        }
+        { "academicYear": "2026/27", "fte": 1.0, "amount": 52500, "currency": "GBP", "note": "1.0 FTE from January to July 2027, costed at seven months of a £90,000 fully-loaded annual planning cost." },
+        { "academicYear": "2027/28", "fte": 1.0, "amount": 90000, "currency": "GBP" },
+        { "academicYear": "2028/29", "fte": 1.0, "amount": 90000, "currency": "GBP" }
       ],
-      "bauLiability": {
-        "from": "July 2029",
-        "fte": 1.0,
-        "annualAmount": 90000,
-        "currency": "GBP",
-        "owner": "Enrichment & Enhancement",
-        "confidence": "planning assumption"
-      },
+      "bauLiability": { "from": "July 2029", "fte": 1.0, "annualAmount": 90000, "currency": "GBP", "owner": "Enrichment & Enhancement", "confidence": "planning assumption" },
       "allocationPlan": [
         { "deliverableId": "2.2.1", "yearlyProfile": [{ "academicYear": "2026/27", "fte": 0.10 }, { "academicYear": "2027/28", "fte": 0.10 }, { "academicYear": "2028/29", "fte": 0.10 }] },
         { "deliverableId": "2.2.2", "yearlyProfile": [{ "academicYear": "2026/27", "fte": 0.15 }, { "academicYear": "2027/28", "fte": 0.15 }, { "academicYear": "2028/29", "fte": 0.15 }] },
@@ -61,27 +38,9 @@
       "fundingBasis": "Mobilisation-funded student employment: £21,000 Year 1 planning envelope, then £35,000 per sandwich-year placement.",
       "bauDestination": "No automatic BAU continuation; evaluate the student analytics placement model from evidence.",
       "yearlyProfile": [
-        {
-          "academicYear": "2026/27",
-          "fte": 0.6,
-          "amount": 21000,
-          "currency": "GBP",
-          "note": "Flexible King's Talent pool. The already-funded £4,000 six-week 2.1.1 internship counts within this envelope rather than in addition to it."
-        },
-        {
-          "academicYear": "2027/28",
-          "fte": 1.0,
-          "amount": 35000,
-          "currency": "GBP",
-          "note": "One full-time sandwich-year analytics/data placement."
-        },
-        {
-          "academicYear": "2028/29",
-          "fte": 1.0,
-          "amount": 35000,
-          "currency": "GBP",
-          "note": "One full-time sandwich-year analytics/data placement."
-        }
+        { "academicYear": "2026/27", "fte": 0.6, "amount": 21000, "currency": "GBP", "note": "Flexible King's Talent pool. The already-funded £4,000 six-week 2.1.1 internship counts within this envelope rather than in addition to it." },
+        { "academicYear": "2027/28", "fte": 1.0, "amount": 35000, "currency": "GBP", "note": "One full-time sandwich-year analytics/data placement." },
+        { "academicYear": "2028/29", "fte": 1.0, "amount": 35000, "currency": "GBP", "note": "One full-time sandwich-year analytics/data placement." }
       ],
       "allocationPlan": [
         { "deliverableId": "2.1.1", "yearlyProfile": [{ "academicYear": "2026/27", "fte": 0.25 }, { "academicYear": "2027/28", "fte": 0.25 }, { "academicYear": "2028/29", "fte": 0.25 }] },
@@ -101,27 +60,9 @@
       "fundingBasis": "Transformation Office-hosted mobilisation capacity: £35,000 Year 1 King's Talent envelope, then £70,000 per year for two sandwich placements.",
       "bauDestination": "No automatic BAU continuation; time-limited mobilisation capacity.",
       "yearlyProfile": [
-        {
-          "academicYear": "2026/27",
-          "fte": 1.0,
-          "amount": 35000,
-          "currency": "GBP",
-          "note": "Flexible King's Talent pool, likely delivered by several students across defined assignments."
-        },
-        {
-          "academicYear": "2027/28",
-          "fte": 2.0,
-          "amount": 70000,
-          "currency": "GBP",
-          "note": "Two full-time sandwich-year King's Edge Project Officers."
-        },
-        {
-          "academicYear": "2028/29",
-          "fte": 2.0,
-          "amount": 70000,
-          "currency": "GBP",
-          "note": "Two new full-time sandwich-year King's Edge Project Officers."
-        }
+        { "academicYear": "2026/27", "fte": 1.0, "amount": 35000, "currency": "GBP", "note": "Flexible King's Talent pool, likely delivered by several students across defined assignments." },
+        { "academicYear": "2027/28", "fte": 2.0, "amount": 70000, "currency": "GBP", "note": "Two full-time sandwich-year King's Edge Project Officers." },
+        { "academicYear": "2028/29", "fte": 2.0, "amount": 70000, "currency": "GBP", "note": "Two new full-time sandwich-year King's Edge Project Officers." }
       ],
       "allocationPlan": [
         { "deliverableId": "2.1.1", "yearlyProfile": [{ "academicYear": "2026/27", "fte": 0.10 }, { "academicYear": "2027/28", "fte": 0.20 }, { "academicYear": "2028/29", "fte": 0.20 }] },
@@ -168,6 +109,27 @@
         { "deliverableId": "2.4.1", "yearlyProfile": [{ "academicYear": "2026/27", "fte": 0.05 }, { "academicYear": "2027/28", "fte": 0.05 }, { "academicYear": "2028/29", "fte": 0.05 }] },
         { "deliverableId": "2.4.2", "yearlyProfile": [{ "academicYear": "2026/27", "fte": 0.00 }, { "academicYear": "2027/28", "fte": 0.05 }, { "academicYear": "2028/29", "fte": 0.05 }] },
         { "deliverableId": "2.4.4", "yearlyProfile": [{ "academicYear": "2026/27", "fte": 0.05 }, { "academicYear": "2027/28", "fte": 0.05 }, { "academicYear": "2028/29", "fte": 0.05 }] }
+      ]
+    },
+    {
+      "id": "edge-experiential-learning-curriculum-policy",
+      "title": "Experiential Learning Curriculum and Policy Development Capacity",
+      "summary": "Time-limited specialist academic-development, curriculum and policy capacity serving the experiential-learning North Star, curriculum growth and assurance, and near-curriculum pathways as one coherent mobilisation resource rather than fragmented fractional roles.",
+      "resourceType": "workforce",
+      "totalFte": 0.8,
+      "appointmentBasis": "Fixed-term secondment, backfill or equivalent specialist capacity; final delivery route to confirm",
+      "employmentHome": "King's Academy / Education & Student Success, TBC",
+      "fundingBasis": "King's Edge mobilisation-funded specialist capacity: £40,000 in 2026/27 and £55,000 in each of 2027/28 and 2028/29.",
+      "bauDestination": "No automatic BAU continuation. The final mobilisation year will determine whether ongoing experiential-learning curriculum support can be absorbed into existing curriculum and King's Academy structures or requires a recurrent resource.",
+      "yearlyProfile": [
+        { "academicYear": "2026/27", "fte": 0.6, "amount": 40000, "currency": "GBP", "note": "Planning envelope for specialist curriculum, policy and academic-development capacity across the three package deliverables." },
+        { "academicYear": "2027/28", "fte": 0.8, "amount": 55000, "currency": "GBP" },
+        { "academicYear": "2028/29", "fte": 0.8, "amount": 55000, "currency": "GBP" }
+      ],
+      "allocationPlan": [
+        { "deliverableId": "2.1.2", "yearlyProfile": [{ "academicYear": "2026/27", "fte": 0.20 }, { "academicYear": "2027/28", "fte": 0.15 }, { "academicYear": "2028/29", "fte": 0.10 }] },
+        { "deliverableId": "2.1.4", "yearlyProfile": [{ "academicYear": "2026/27", "fte": 0.15 }, { "academicYear": "2027/28", "fte": 0.45 }, { "academicYear": "2028/29", "fte": 0.50 }] },
+        { "deliverableId": "2.2.3", "yearlyProfile": [{ "academicYear": "2026/27", "fte": 0.25 }, { "academicYear": "2027/28", "fte": 0.20 }, { "academicYear": "2028/29", "fte": 0.20 }] }
       ]
     }
   ]
