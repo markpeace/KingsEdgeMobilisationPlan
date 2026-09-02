@@ -1,9 +1,16 @@
 {
   "id": "2.3.2",
-  "title": "Belonging and Participation: Physical and Digital Student Life",
+  "title": "Student Life by Design",
   "lead": "Steph White",
   "planningStatus": "proposition-review",
-  "decisionLog": [],
+  "decisionLog": [
+    {
+      "date": "2026-09-02",
+      "type": "decision",
+      "forum": "King's Edge mobilisation planning",
+      "outcome": "Reframed 2.3.2 around designing student life for the different ways students actually live, study and participate. Evidence-led student personas become both a design input for the deliverable and an assurance lens across King's Edge, alongside a stronger proposition for richer, more vibrant and festival-like campuses and a meaningful digital twin for students who are less or never campus-present."
+    }
+  ],
   "ownership": {
     "accountableOwner": "Zak Evans",
     "deliveryLead": "Steph White"
