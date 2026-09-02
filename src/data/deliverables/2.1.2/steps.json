@@ -6,7 +6,7 @@
       "period": "jul-dec-2026:bc",
       "summary": "Use the Experiential Learning Strategic Community of Practice as the principal route to surface, compare and codify strong practice already present across King's. Establish a practical typology spanning curriculum and co-curriculum, identify the educational purposes different forms of experience serve, and make visible where current practice already challenges a narrow placement-led account of experiential learning.",
       "dependsOn": [
-        "1.4.2-step-1"
+        "1.4.2"
       ],
       "outputs": [
         {
