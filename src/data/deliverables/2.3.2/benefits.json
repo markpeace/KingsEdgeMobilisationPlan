@@ -5,24 +5,24 @@
       "title": "King’s creates a richer and more vibrant student life",
       "statement": "King’s campuses become more active settings for participation beyond scheduled study, with frequent, visible and low-friction opportunities to connect, explore, contribute and encounter something unexpected. The physical estate contributes more deliberately to belonging, community, opportunity, graduate futures and students’ sense of the value they gain from university life.",
       "beneficiary": "Students and King’s",
-      "benefitType": "campus vibrancy and physical participation",
-      "successLooksLike": "Participation and dwell beyond scheduled study increase, student perceptions of campus vibrancy and community strengthen, and engagement grows with activity encountered through campus-based invitations."
+      "benefitType": "physical participation, belonging and estate value",
+      "successLooksLike": "Participation and dwell beyond scheduled study increase, student perceptions of campus vibrancy and community strengthen, and more students engage with activity encountered through campus-based invitations."
     },
     {
       "id": "2.3.2-B2",
       "title": "Students with different patterns of life and study can participate meaningfully",
       "statement": "King’s designs its wider student experience around the realities of commuting, paid work, caring, disability, placements, digital study and other materially different patterns of participation. A credible digital twin gives students who are less or never campus-present meaningful routes into communities, relationships, activity and opportunity rather than a thinner substitute for campus life.",
-      "beneficiary": "Students with different patterns of presence and participation",
-      "benefitType": "equitable participation and digital access",
-      "successLooksLike": "Participation becomes more equitable across different student forms, digital and blended participation grows in both reach and depth, and students with lower campus presence report stronger access to community and wider opportunity."
+      "beneficiary": "Students with different patterns of presence, time and participation",
+      "benefitType": "equitable access and digital participation",
+      "successLooksLike": "Participation becomes more equitable across different student forms, digital and blended participation grows in reach and depth, and students with lower campus presence report stronger access to community and wider opportunity."
     },
     {
       "id": "2.3.2-B3",
-      "title": "King’s Edge is designed and tested against the diversity of student lives",
-      "statement": "Evidence-led student personas become a practical design and assurance tool across King’s Edge, enabling projects and deliverables to test whether their propositions genuinely work for students with different patterns of time, presence, confidence and participation. This gives the programme a clearer mechanism for identifying exclusion, testing assumptions and targeting future investment where the student experience remains weakest.",
-      "beneficiary": "Students and the King’s Edge programme",
-      "benefitType": "inclusive design and programme assurance",
-      "successLooksLike": "The personas are routinely used in design and assurance across King’s Edge, material gaps are identified and acted upon, and subsequent investment and commissioning can demonstrate how it responds to different forms of student life."
+      "title": "King’s Edge is designed, commissioned and tested against the diversity of student lives",
+      "statement": "Evidence-led student personas become a practical design, assurance and demand-setting tool across King’s Edge. They enable projects to test whether their propositions work for students with different patterns of time, presence, confidence and participation, and convert material gaps into clearer requirements or commissioning priorities through 2.2.4.",
+      "beneficiary": "King’s Edge programme and students",
+      "benefitType": "inclusive design, assurance and responsive commissioning",
+      "successLooksLike": "The personas are routinely used in design and assurance across King’s Edge; material gaps are identified and acted upon; and subsequent investment and commissioning can demonstrate how it responds to different forms of student life."
     }
   ]
 }
