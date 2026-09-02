@@ -1,0 +1,204 @@
+{
+  "steps": [
+    {
+      "id": "2.1.2-step-1",
+      "title": "Synthesize King's practice and establish the experiential-learning typology",
+      "period": "jul-dec-2026:bc",
+      "summary": "Use the Experiential Learning Strategic Community of Practice as the principal route to surface, compare and codify strong practice already present across King's. Establish a practical typology spanning curriculum and co-curriculum, identify the educational purposes different forms of experience serve, and make visible where current practice already challenges a narrow placement-led account of experiential learning.",
+      "dependsOn": [
+        "1.4.2-step-1"
+      ],
+      "outputs": [
+        {
+          "title": "King's experiential-learning practice synthesis",
+          "summary": "A concise synthesis of existing institutional practice, expertise and emerging principles, showing the breadth of experiential learning already present across disciplines and contexts."
+        },
+        {
+          "title": "Working experiential-learning typology",
+          "summary": "A usable typology that distinguishes materially different forms of experiential learning and provides a common language for later design, assurance and growth decisions."
+        }
+      ],
+      "resources": {
+        "existingCapacity": [
+          {
+            "role": "Experiential Learning Strategic Community of Practice",
+            "owner": "1.4.2 Strategic Communities of Practice",
+            "contribution": "Provide the institutional forum, practitioner expertise and challenge through which existing practice is surfaced, compared and codified.",
+            "periodNeeded": "September to December 2026",
+            "confidence": "planned dependency"
+          },
+          {
+            "role": "Experiential Learning Curriculum and Policy Development Capacity",
+            "owner": "King's Edge shared resource",
+            "sharedResourceId": "edge-experiential-learning-curriculum-policy",
+            "contribution": "Provide specialist synthesis, curriculum and academic-development capacity across the North Star, curriculum-growth and near-curriculum workstreams without creating separate fractional roles in each deliverable.",
+            "periodNeeded": "Across mobilisation",
+            "confidence": "planning estimate"
+          },
+          {
+            "role": "King's Edge Project Officer capacity",
+            "owner": "Transformation Office shared resource",
+            "sharedResourceId": "edge-project-officer-capacity",
+            "contribution": "Support coordination, evidence collation, workshops, documentation and action tracking.",
+            "periodNeeded": "Across mobilisation",
+            "confidence": "planned shared capacity"
+          }
+        ],
+        "enablingConditions": [
+          {
+            "condition": "The Strategic Community of Practice is active early enough in 2026/27 to contribute substantive practitioner input.",
+            "whatItUnlocks": "A North Star grounded in King's real practice rather than designed as a centrally imposed abstraction.",
+            "confidence": "developing",
+            "riskIfMissing": "The framework could become generic, less credible to practitioners and weaker as a basis for later adoption."
+          }
+        ]
+      }
+    },
+    {
+      "id": "2.1.2-step-2",
+      "title": "Co-design and test the King's North Star and future student entitlement",
+      "period": {
+        "start": "jul-dec-2026:b",
+        "end": "jan-jun-2027:b"
+      },
+      "summary": "Translate the practice synthesis and theoretical basis into a distinctive institutional proposition. Define the learning-design, reflection, assessment, inclusion, support and assurance principles that should characterise experiential learning at King's, and develop a credible future student-entitlement ambition. Test the proposition with students, educators, professional services and the live policy and module work in 2.2.3 so that the North Star is ambitious but operationally meaningful.",
+      "dependsOn": [
+        "2.1.2-step-1"
+      ],
+      "outputs": [
+        {
+          "title": "Draft King's experiential-learning North Star",
+          "summary": "A coherent draft framework setting out the educational rationale, typology, design principles, assessment and reflection expectations, inclusion requirements and reusable delivery concepts."
+        },
+        {
+          "title": "Draft future student-entitlement ambition",
+          "summary": "A clear statement of the experiential learning students should ultimately be able to expect through a King's education, framed as a future implementation ambition rather than a claim of current universal provision."
+        },
+        {
+          "title": "Stakeholder and student testing record",
+          "summary": "Evidence of how the draft proposition has been tested, challenged and refined with students and the academic and professional communities that will need to use it."
+        }
+      ],
+      "resources": {
+        "existingCapacity": [
+          {
+            "role": "Academic, professional-service and student contributors",
+            "owner": "Relevant faculties and King's professional services",
+            "contribution": "Test the proposition against disciplinary diversity, student need, curriculum constraints and practical delivery requirements.",
+            "periodNeeded": "Autumn 2026 to April 2027",
+            "confidence": "existing capacity to be validated"
+          }
+        ],
+        "newInvestment": [
+          {
+            "id": "2.1.2-y1-co-design-testing",
+            "item": "Experiential-learning co-design and testing envelope",
+            "category": "student partnership, design and evaluation",
+            "amount": 5000,
+            "currency": "GBP",
+            "yearlyProfile": [
+              {
+                "academicYear": "2026/27",
+                "amount": 5000,
+                "note": "Targeted student partnership, testing, workshop and evaluation activity supporting the North Star and entitlement design."
+              }
+            ],
+            "estimatedCost": "£5,000 Year 1 planning envelope.",
+            "periodNeeded": "September 2026 to April 2027",
+            "decisionNeededBy": "Autumn 2026",
+            "fundingRoute": "King's Edge mobilisation investment request",
+            "fundingStatus": "indicative",
+            "confidence": "planning estimate",
+            "rationale": "Creates enough genuinely incremental capacity to test the proposition with students and users rather than relying only on internal expert development.",
+            "riskIfMissing": "The North Star may be intellectually coherent but insufficiently tested against student experience, accessibility and practical use."
+          }
+        ]
+      }
+    },
+    {
+      "id": "2.1.2-step-3",
+      "title": "Ratify the North Star and set the forward implementation trajectory",
+      "period": "jan-jun-2027:c",
+      "summary": "Finalize the institutional North Star and future entitlement ambition, incorporating learning from the curriculum baseline in 2.1.4 and the sandwich-year and Level 6 capstone work in 2.2.3. Establish the forward implementation trajectory, including the requirements that later curriculum growth, near-curriculum provision, partnership infrastructure and assurance activity should meet.",
+      "dependsOn": [
+        "2.1.2-step-2",
+        "2.1.4-step-2",
+        "2.2.3-step-1",
+        "2.2.3-step-2"
+      ],
+      "outputs": [
+        {
+          "title": "Ratified experiential-learning North Star",
+          "summary": "The agreed King's framework and aspiration for experiential learning, suitable for use as a design and investment reference point across the programme."
+        },
+        {
+          "title": "Future student-entitlement statement",
+          "summary": "The agreed direction of travel for the experiential learning students should ultimately expect, with implementation staged rather than overclaimed in Year 1."
+        },
+        {
+          "title": "2027/28 onward implementation roadmap",
+          "summary": "A sequenced plan linking the North Star to curriculum growth, near-curriculum routes, assurance, enabling infrastructure and the next institutional decisions."
+        }
+      ],
+      "resources": {
+        "existingCapacity": [
+          {
+            "role": "Academic and institutional governance",
+            "owner": "Relevant education governance and executive sponsors",
+            "contribution": "Provide the route to sense-check, endorse and embed the North Star as an institutional reference point.",
+            "periodNeeded": "Summer 2027",
+            "confidence": "governance route to confirm"
+          }
+        ],
+        "enablingConditions": [
+          {
+            "condition": "Sufficiently mature evidence from 2.1.4 and live design learning from 2.2.3.",
+            "whatItUnlocks": "A Year 1 North Star and roadmap grounded in both institutional aspiration and practical implementation evidence.",
+            "confidence": "developing",
+            "riskIfMissing": "The roadmap may need earlier recalibration in 2027/28 as curriculum and regulatory evidence catches up."
+          }
+        ]
+      }
+    },
+    {
+      "id": "2.1.2-step-4",
+      "title": "Steward and refine the framework through the first implementation cycle",
+      "period": {
+        "start": "jul-dec-2027:a",
+        "end": "jan-jun-2028:c"
+      },
+      "summary": "Use the first targeted curriculum-growth and near-curriculum implementation activity to test whether the North Star works as a practical design and assurance framework. Capture where the typology, entitlement, assessment expectations or reusable models need refinement and maintain a living connection between scholarship and implementation.",
+      "dependsOn": [
+        "2.1.2-step-3",
+        "2.1.4-step-3",
+        "2.2.3-step-3"
+      ],
+      "outputs": [
+        {
+          "title": "First implementation learning review",
+          "summary": "A structured review of how the North Star performs in live curriculum and near-curriculum implementation, with agreed refinements where evidence supports them."
+        }
+      ]
+    },
+    {
+      "id": "2.1.2-step-5",
+      "title": "Refresh the entitlement and institutional framework from scaled evidence",
+      "period": {
+        "start": "jul-dec-2028:a",
+        "end": "jan-jun-2029:c"
+      },
+      "summary": "Refresh the North Star and entitlement ambition using evidence from scaled curriculum growth, near-curriculum provision and wider experiential-learning delivery. Confirm what should become stable institutional policy, guidance and business-as-usual stewardship after mobilisation.",
+      "dependsOn": [
+        "2.1.2-step-4",
+        "2.1.4-step-4",
+        "2.2.3-step-4"
+      ],
+      "outputs": [
+        {
+          "title": "Mobilisation-end experiential-learning framework and stewardship recommendation",
+          "summary": "An updated framework, entitlement trajectory and recommendation for enduring ownership, refresh and assurance after the three-year mobilisation."
+        }
+      ]
+    }
+  ]
+}
