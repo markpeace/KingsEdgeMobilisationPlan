@@ -1,0 +1,183 @@
+{
+  "steps": [
+    {
+      "id": "2.1.3-step-1",
+      "title": "Frame the skills discovery and hold a common institutional space",
+      "period": "jul-dec-2026:b",
+      "summary": "Bring together the early interested faculties and relevant Careers, curriculum and education colleagues to define the questions that discovery must answer. Maintain holding relationships with areas already developing local skills approaches so that King’s can investigate a common route without asking them to pause useful local thinking.",
+      "dependsOn": ["curriculum-framework-review"],
+      "outputs": [
+        {
+          "title": "Skills discovery brief and reference group",
+          "summary": "A bounded discovery brief covering taxonomy fitness, technical mediation, curriculum evidence, student usability and external meaning, supported by a small reference group.",
+          "acceptanceCriteria": "The brief defines what would count as evidence to adopt, adapt or reconsider the UKSSC route and identifies the first curriculum contexts and source materials for testing."
+        }
+      ],
+      "resources": {
+        "existingCapacity": [
+          {
+            "role": "King’s Edge Project Officer capacity",
+            "owner": "Transformation Office shared resource",
+            "sharedResourceId": "edge-project-officer-capacity",
+            "sharedResourceAllocation": {"fte": 0.05, "note": "Year 1 allocation for coordination, reference-group administration and evidence collation."},
+            "confidence": "planned shared capacity"
+          }
+        ]
+      }
+    },
+    {
+      "id": "2.1.3-step-2",
+      "title": "Build and test the curriculum skills-mapping proof of concept",
+      "period": {"start": "jul-dec-2026:c", "end": "jan-jun-2027:b"},
+      "summary": "Develop a deliberately narrow technical prototype that tests how the UKSSC can be queried and mediated and whether curriculum evidence can be used to surface meaningful capabilities. Compare different source material such as module descriptors, KEATS content, assessment briefs and richer teaching documentation where available. Review outputs with disciplinary experts rather than treating model extraction as ground truth.",
+      "dependsOn": ["2.1.3-step-1"],
+      "outputs": [
+        {
+          "title": "Curriculum skills-mapping proof of concept",
+          "summary": "A working prototype and documented test set showing where automated or AI-supported mapping performs well, where it misses less obvious capabilities and where human interpretation remains necessary.",
+          "acceptanceCriteria": "The prototype has been tested across more than one disciplinary context and against more than one type of curriculum evidence, with false positives, omissions and usability limitations recorded."
+        },
+        {
+          "title": "Curriculum evidence fitness assessment",
+          "summary": "A practical judgement on which existing educational artefacts are sufficiently rich for skills surfacing and where current practice creates evidence gaps.",
+          "acceptanceCriteria": "The assessment distinguishes limitations of the taxonomy, technology and institutional documentation rather than attributing all mapping weakness to one source."
+        }
+      ],
+      "resources": {
+        "newInvestment": [
+          {
+            "id": "2.1.3-skills-prototype",
+            "item": "Paid student technical prototyping capacity",
+            "category": "student technical project",
+            "estimatedCost": "TBC through resource planning; intended as a bounded proof-of-concept assignment rather than enduring digital product development.",
+            "owner": "King’s Edge",
+            "fundingStatus": "to be costed",
+            "confidence": "developing",
+            "rationale": "Provides dedicated engineering capacity to test the classification, data access and mapping workflow without waiting for or duplicating the enduring Digital Hub build.",
+            "riskIfMissing": "The project may remain at the level of conceptual discussion and be unable to test the real technical and usability constraints Vanessa identified."
+          }
+        ],
+        "enablingConditions": [
+          {
+            "condition": "Relevant UKSSC datasets or APIs and suitable curriculum artefacts can be accessed for controlled prototyping.",
+            "whatItUnlocks": "Meaningful testing of both the taxonomy and the input evidence rather than abstract stakeholder reactions to the raw framework.",
+            "confidence": "developing",
+            "riskIfMissing": "Discovery will need to use a smaller manual sample and technical conclusions will remain provisional."
+          }
+        ]
+      }
+    },
+    {
+      "id": "2.1.3-step-3",
+      "title": "Decide the candidate architecture and select trailblazer partners",
+      "period": "jan-jun-2027:c",
+      "summary": "Synthesize technical, disciplinary, student and external-user evidence to decide whether UKSSC should remain the foundation, be materially curated or extended, or be reconsidered. Define the shared evidence semantics and select a small number of programmes, departments or faculties willing to go all in during 2027/28.",
+      "dependsOn": ["2.1.3-step-2"],
+      "outputs": [
+        {
+          "title": "Skills architecture discovery decision",
+          "summary": "A transparent adopt, adapt or reconsider judgement on the UKSSC route, including known limits, curation principles and the emerging relationship between association, claim, evidence and assurance.",
+          "acceptanceCriteria": "The decision is supported by documented technical and user evidence and does not treat the sunk cost of the prototype as a reason to continue."
+        },
+        {
+          "title": "Skills trailblazer portfolio",
+          "summary": "A small set of willing academic partners with defined curriculum and student use cases, local ownership and explicit learning questions.",
+          "acceptanceCriteria": "Partners are prepared to change practice sufficiently to test the approach in curriculum, learning design or student use rather than only review a central framework."
+        }
+      ],
+      "resources": {
+        "enablingConditions": [
+          {
+            "condition": "Trailblazer selection prioritises genuine willingness to engage deeply with curriculum and student practice.",
+            "whatItUnlocks": "Evidence about what the skills architecture requires when implemented seriously.",
+            "confidence": "developing",
+            "riskIfMissing": "The project may test only surface mapping and learn little about educational or organisational viability."
+          }
+        ]
+      }
+    },
+    {
+      "id": "2.1.3-step-4",
+      "title": "Build capability through deep skills trailblazers",
+      "period": {"start": "jul-dec-2027:a", "end": "jan-jun-2028:b"},
+      "summary": "Support trailblazer partners to use the candidate skills architecture deeply: surface capabilities across selected curriculum, examine where learning design and assessment provide credible evidence, make the language meaningful to students and test how it connects to purpose and wider experiences. Build local capability rather than treating the trailblazers as passive sites for a central product.",
+      "dependsOn": ["2.1.3-step-3"],
+      "outputs": [
+        {
+          "title": "Implemented skills trailblazers",
+          "summary": "Live examples of disciplines or programmes using the architecture in curriculum and student practice with documented academic effort, student usefulness, evidence quality and local adaptations.",
+          "acceptanceCriteria": "Trailblazers have moved beyond mapping labels onto programmes and can show how the language is used in real educational or student-development activity."
+        },
+        {
+          "title": "Trailblazer capability and practice library",
+          "summary": "Reusable patterns, prompts, mapping approaches, learning-design implications and known failure modes emerging from the trailblazer cycle.",
+          "acceptanceCriteria": "The library distinguishes reusable practice from context-specific adaptations and includes evidence about burden as well as benefit."
+        }
+      ],
+      "resources": {
+        "newInvestment": [
+          {
+            "id": "2.1.3-trailblazer-capability",
+            "item": "Skills trailblazer capacity-building envelope",
+            "category": "academic and professional capacity building",
+            "estimatedCost": "TBC through Year 1 resource planning and trailblazer selection.",
+            "owner": "King’s Edge / trailblazer partners",
+            "fundingStatus": "planning envelope to be quantified",
+            "confidence": "indicative",
+            "rationale": "Protects the time needed for curriculum interpretation, learning-design work, student testing and local capability building so trailblazers can test the model properly.",
+            "riskIfMissing": "Implementation may remain superficial and dependent on a small number of enthusiasts working around normal workload."
+          }
+        ]
+      }
+    },
+    {
+      "id": "2.1.3-step-5",
+      "title": "Test portability and settle the shared skills architecture",
+      "period": "jan-jun-2028:c",
+      "summary": "Compare the trailblazer implementations to determine which elements are genuinely portable, which need disciplinary variation and which created too much burden or too little value. Settle the common architecture, curation and evidence principles and define what should move into institutional curriculum and digital routes.",
+      "dependsOn": ["2.1.3-step-4"],
+      "outputs": [
+        {
+          "title": "Skills architecture portability review",
+          "summary": "A clear account of what should scale, adapt, remain local or stop, grounded in trailblazer evidence.",
+          "acceptanceCriteria": "The review explicitly tests whether success relied on exceptional local commitment and includes evidence from students as well as delivery teams."
+        },
+        {
+          "title": "Institutional living skills architecture",
+          "summary": "The agreed shared language, curation rules, evidence semantics and implementation requirements for wider adoption.",
+          "acceptanceCriteria": "The architecture is specific enough to support Curriculum Framework and Digital Hub implementation while preserving justified disciplinary difference."
+        }
+      ]
+    },
+    {
+      "id": "2.1.3-step-6",
+      "title": "Institutionalise the proven skills architecture",
+      "period": {"start": "jul-dec-2028:a", "end": "jan-jun-2029:c"},
+      "summary": "Embed the proven common architecture into Curriculum Framework review and enhancement, relevant opportunity data and the Digital Student Experience Hub. Scale support and guidance around the parts that demonstrated value, while maintaining governance for taxonomy change, disciplinary extension and the distinction between mapped, evidenced and assured capabilities.",
+      "dependsOn": ["2.1.3-step-5", "curriculum-framework-review", "4.1"],
+      "outputs": [
+        {
+          "title": "Institutional skills implementation",
+          "summary": "A supported common skills architecture carried through the agreed curriculum and student-facing institutional routes.",
+          "acceptanceCriteria": "The enduring governance, curriculum requirements, digital requirements and support model are adopted or live, with remaining BAU resource needs explicit."
+        }
+      ],
+      "resources": {
+        "enablingConditions": [
+          {
+            "condition": "The Digital Student Experience Hub formally carries the student-facing skills profile and evidence functionality rather than a separate King’s Edge product.",
+            "whatItUnlocks": "A reusable institutional capability and avoids duplicating digital investment.",
+            "confidence": "planned dependency",
+            "riskIfMissing": "The shared skills architecture could become institutionally defined but remain difficult for students to use coherently."
+          },
+          {
+            "condition": "Institutionalisation is limited to elements with credible trailblazer and portability evidence.",
+            "whatItUnlocks": "A common architecture without forcing uniform practices that did not travel well.",
+            "confidence": "planning principle",
+            "riskIfMissing": "King’s may convert successful local experimentation into unnecessary central bureaucracy."
+          }
+        ]
+      }
+    }
+  ]
+}
