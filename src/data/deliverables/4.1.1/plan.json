@@ -1,0 +1,60 @@
+{
+  "summary": "Establishes the authoritative student knowledge foundation through Year One discovery, governance, content rationalisation and live proving through King’s Answers, then progressively expands governed knowledge for reuse through the Digital Student Experience Hub.",
+  "detailSummary": "4.1.1 is now the institutional knowledge work beneath the Digital Student Experience Hub rather than a CRM-delivery workstream. CRM, ticketing, case-management and enquiry workflow are inherited from the separately delivered King’s Answers and wider enquiry-management capability. This deliverable owns the quality, authority and operating model of the student-facing knowledge that those services consume.\n\nYear One combines proposition design with practical migration. King’s first agrees what counts as authoritative student knowledge, how it differs from transient opportunity content and staff operational guidance, how ownership and editorial control work, and which priority knowledge domains should be tackled first. In parallel, existing content is audited and classified so that priority material can be improved, consolidated, retired or newly authored rather than copied wholesale.\n\nKing’s Answers provides the first live proving environment. Search behaviour, unresolved questions and enquiry demand should be used to test whether content is findable, sufficient, trustworthy and correctly owned. The same foundation is then made available for reuse through the Digital Student Experience Hub, with broader rollout sequenced according to student need and service readiness.\n\nThe work will require protected content-design, editorial and migration capacity in addition to the Hub product team. The precise organisational route and incremental cost are intentionally left TBC until the initial audit and operating-model design establish the scale of the requirement.",
+  "steps": [
+    {
+      "id": "4.1.1-step-1",
+      "title": "Define the student knowledge architecture and governance",
+      "period": {"start": "jul-dec-2026:b", "end": "jul-dec-2026:c"},
+      "summary": "From September to November 2026, agree the boundary of the authoritative student knowledge foundation, including audience separation, content inclusion and exclusion rules, the distinction between durable information and opportunity content, taxonomy and metadata principles, authoritative ownership, editorial control, review and expiry expectations, and the relationship with King’s Answers, the Hub, web/DXP channels and staff-facing guidance.",
+      "dependsOn": [],
+      "resources": {"people": [
+        {"role": "Knowledge/content design lead", "type": "TBC", "fte": null, "notes": "Cross-institution lead required to shape the content model, governance and migration approach."},
+        {"role": "Service and subject-matter owners", "type": "existing", "fte": null, "notes": "Protected participation from priority student-service domains, Communications/web and relevant faculty/service representatives."}
+      ]}
+    },
+    {
+      "id": "4.1.1-step-2",
+      "title": "Audit and classify priority student-facing information",
+      "period": {"start": "jul-dec-2026:c", "end": "jan-jun-2027:a"},
+      "summary": "From November 2026 to February 2027, map priority student information across the current estate, identify authoritative sources and owners, classify content as retain, improve, consolidate, retire or redirect, identify gaps, and produce a sequenced migration and rationalisation backlog. Use existing migration work and student-enquiry research as starting evidence rather than repeating discovery unnecessarily.",
+      "dependsOn": ["4.1.1-step-1"],
+      "resources": {"people": [
+        {"role": "Content audit and migration capacity", "type": "TBC", "fte": null, "notes": "Protected editorial/content operations capacity; scale and funding route to be confirmed from the audit."},
+        {"role": "Business analysis", "type": "existing / shared", "fte": 0.1, "notes": "Indicative shared input to map ownership, dependencies and content flows; not yet an incremental funded post."}
+      ]}
+    },
+    {
+      "id": "4.1.1-step-3",
+      "title": "Prepare and publish the first governed knowledge domains through King’s Answers",
+      "period": {"start": "jul-dec-2026:c", "end": "jan-jun-2027:b"},
+      "summary": "From December 2026 to April 2027, improve, consolidate and author the first priority knowledge domains using the agreed model, establish named content ownership and review dates, and make them available through King’s Answers. Do not migrate weak or unsuitable content simply to achieve coverage.",
+      "dependsOn": ["4.1.1-step-1", "4.1.1-step-2"],
+      "resources": {"people": [
+        {"role": "Content design, editorial and migration capacity", "type": "TBC", "fte": null, "notes": "Required to turn audited source material into publishable governed knowledge rather than relying on unmanaged distributed editing."},
+        {"role": "King’s Answers product/service team", "type": "existing dependency", "fte": null, "notes": "Provides the proving environment and technical route; CRM/ticketing/workflow remain outside 4.1.1 scope."}
+      ]}
+    },
+    {
+      "id": "4.1.1-step-4",
+      "title": "Establish knowledge operations and the enquiry-evidence improvement loop",
+      "period": {"start": "jan-jun-2027:a", "end": "jan-jun-2027:c"},
+      "summary": "From February to June 2027, make authoring, approval, review, expiry, defect handling and ownership transfer operational. Define how search data, failed self-service, unresolved questions and enquiry demand identify missing or weak knowledge and feed a transparent improvement backlog.",
+      "dependsOn": ["4.1.1-step-3"]
+    },
+    {
+      "id": "4.1.1-step-5",
+      "title": "Make governed knowledge reusable through the Digital Student Experience Hub",
+      "period": {"start": "jan-jun-2027:b", "end": "jul-dec-2027:b"},
+      "summary": "From April to September 2027, establish the simplest safe and supportable way for the Hub to retrieve or surface governed student knowledge for the focused first release, while preserving King’s Answers and enquiry management as separately delivered service capabilities. Use live student testing to confirm findability, sufficiency and hand-off where information alone is not enough.",
+      "dependsOn": ["4.1.1-step-3", "4.1.2-step-2"]
+    },
+    {
+      "id": "4.1.1-step-6",
+      "title": "Expand authoritative knowledge and rationalise redundant student information",
+      "period": {"start": "jul-dec-2027:b", "end": "jan-jun-2029:c"},
+      "summary": "From the first Hub release through the remainder of mobilisation, extend the governed model to additional priority domains, consolidate or retire redundant copies where continuity is proven, and use evidence from Hub use, King’s Answers and service demand to sequence the next areas. Settle the enduring institutional knowledge ownership and operating capacity before mobilisation closes.",
+      "dependsOn": ["4.1.1-step-4", "4.1.1-step-5"]
+    }
+  ]
+}
