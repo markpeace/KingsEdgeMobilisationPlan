@@ -103,6 +103,16 @@ if (/(^|\n)\.depends(?:\b|[.:])/m.test(siteStyles)) {
   fail('src/styles.css must not style the behavioural .depends hook; visible delivery dependency presentation belongs to the canonical delivery sequence');
 }
 
+const residualDeliverySequenceSelectors = [
+  ['delivery step cards', /(^|\n)\.step-card(?:\b|[.:])/m],
+  ['delivery step list', /(^|\n)\.steps-list(?:\b|[.:])/m]
+];
+for (const [label, pattern] of residualDeliverySequenceSelectors) {
+  if (pattern.test(siteStyles)) {
+    fail(`src/styles.css contains ${label}; delivery sequence styling belongs to shared detail primitives and src/styles/deliverable-detail.css`);
+  }
+}
+
 const printMediaIndex = siteStyles.search(/@media\s+print\s*\{/m);
 const screenSiteStyles = printMediaIndex >= 0 ? siteStyles.slice(0, printMediaIndex) : siteStyles;
 if (/\b!important\b/.test(screenSiteStyles)) {
@@ -212,12 +222,24 @@ for (const selector of requiredPortfolioContracts) {
 const requiredDetailPrimitives = [
   '.ds-editorial-card',
   '.ds-sequence-card',
+  '.route-through-panel .step-card',
   '.ds-disclosure',
   '.ds-disclosure-trigger'
 ];
 for (const selector of requiredDetailPrimitives) {
   if (!detailPrimitiveStyles.includes(selector)) {
     fail(`src/styles/detail-primitives.css is missing shared primitive ${selector}`);
+  }
+}
+
+const requiredDeliverableSequenceContracts = [
+  '.route-through-panel > .steps-list',
+  '.route-through-panel .step-card > h3',
+  '.step-detail-toggle'
+];
+for (const selector of requiredDeliverableSequenceContracts) {
+  if (!deliverableStyles.includes(selector)) {
+    fail(`src/styles/deliverable-detail.css is missing canonical delivery-sequence contract ${selector}`);
   }
 }
 
