@@ -41,22 +41,33 @@
             "id": "2.2.1-discovery-practitioner-capacity",
             "item": "Protected practitioner discovery capacity and service backfill",
             "category": "staff development and backfill",
-            "estimatedCost": "TBC through resource planning; intended to protect meaningful practitioner time rather than rely on discretionary capacity.",
+            "fte": 0.3,
+            "amount": 22500,
+            "currency": "GBP",
+            "yearlyProfile": [{"academicYear": "2026/27", "amount": 22500, "note": "Planning conversion using the same £75,000 fully-loaded annual benchmark used elsewhere in the mobilisation plan for protected senior delivery capacity."}],
+            "estimatedCost": "£22,500 Year 1 planning envelope.",
             "owner": "Careers and Employability / relevant student-facing teams",
-            "fundingStatus": "to be costed",
-            "confidence": "developing",
-            "rationale": "Discovery requires practitioners to research, design and test developmental practice rather than add the work on top of peak service delivery.",
+            "decisionNeededBy": "Autumn 2026",
+            "fundingRoute": "King's Edge mobilisation investment request",
+            "fundingStatus": "planning envelope",
+            "confidence": "planning estimate",
+            "rationale": "Discovery requires practitioners to research, design and test developmental practice rather than add the work on top of peak service delivery. The 0.3 FTE is a cash-equivalent planning envelope that can be deployed through release, backfill or equivalent protected capacity across more than one practitioner.",
             "riskIfMissing": "The model is likely to remain conceptual or be shaped mainly by central project assumptions rather than deep practitioner learning."
           },
           {
             "id": "2.2.1-discovery-student-partnership",
-            "item": "Paid student discovery and co-design envelope",
+            "item": "Purpose, skills and recognition paid student discovery and co-design envelope",
             "category": "student partnership",
-            "estimatedCost": "TBC through resource planning.",
+            "amount": 7500,
+            "currency": "GBP",
+            "yearlyProfile": [{"academicYear": "2026/27", "amount": 7500, "note": "Held once in 2.2.1 for repeated paid student discovery across the connected Package 4 propositions, avoiding duplicate student-partnership asks in each deliverable."}],
+            "estimatedCost": "£7,500 Year 1 planning envelope.",
             "owner": "King’s Edge",
-            "fundingStatus": "to be costed",
-            "confidence": "developing",
-            "rationale": "Supports repeated participation by different student groups rather than one-off consultation with already-engaged volunteers.",
+            "decisionNeededBy": "Autumn 2026",
+            "fundingRoute": "King's Edge mobilisation investment request",
+            "fundingStatus": "planning envelope",
+            "confidence": "planning estimate",
+            "rationale": "Supports repeated participation by varied student groups across purpose, skills and recognition discovery rather than one-off consultation with already-engaged volunteers.",
             "riskIfMissing": "Discovery evidence may over-represent highly engaged students and under-test the universal ambition."
           }
         ]
@@ -115,9 +126,14 @@
             "id": "2.2.1-trailblazer-capability",
             "item": "Purpose and self-direction trailblazer capability envelope",
             "category": "staff capacity and capability building",
-            "estimatedCost": "TBC through Year 1 resource planning and trailblazer selection.",
+            "amount": 45000,
+            "currency": "GBP",
+            "yearlyProfile": [{"academicYear": "2027/28", "amount": 45000, "note": "Planning envelope for a small number of deep trailblazers; deployment to be recalibrated after Year 1 discovery and partner selection."}],
+            "estimatedCost": "£45,000 Year 2 planning envelope.",
             "owner": "King’s Edge / trailblazer partners",
-            "fundingStatus": "planning envelope to be quantified",
+            "decisionNeededBy": "Summer 2027",
+            "fundingRoute": "King's Edge mobilisation investment request",
+            "fundingStatus": "planning envelope, subject to Year 1 discovery",
             "confidence": "indicative",
             "rationale": "Allows selected partners to protect staff time, develop capability and make the local journey changes required to test the proposition deeply.",
             "riskIfMissing": "Trailblazer work may depend on goodwill and remain too shallow to inform institutionalisation."
@@ -166,6 +182,24 @@
         }
       ],
       "resources": {
+        "newInvestment": [
+          {
+            "id": "2.2.1-y3-institutionalisation",
+            "item": "Purpose and self-direction institutionalisation envelope",
+            "category": "implementation and capability transfer",
+            "amount": 25000,
+            "currency": "GBP",
+            "yearlyProfile": [{"academicYear": "2028/29", "amount": 25000, "note": "Evidence-led Year 3 planning reserve. Release only against the elements selected through portability review."}],
+            "estimatedCost": "£25,000 Year 3 planning envelope.",
+            "owner": "King’s Edge / enduring student-facing owners TBC",
+            "decisionNeededBy": "Summer 2028",
+            "fundingRoute": "King's Edge mobilisation investment request",
+            "fundingStatus": "planning reserve, conditional on portability evidence",
+            "confidence": "indicative",
+            "rationale": "Provides a credible business-case shape for staff development, capability transfer and implementation without pre-committing to universal rollout before the trailblazers have been evaluated.",
+            "riskIfMissing": "Proven practice may stall at the trailblazer stage because no mobilisation capacity exists to transfer it into mainstream routes."
+          }
+        ],
         "enablingConditions": [
           {
             "condition": "Institutionalisation is limited to elements with credible trailblazer and portability evidence.",
