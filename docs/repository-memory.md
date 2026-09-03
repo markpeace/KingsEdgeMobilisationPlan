@@ -96,11 +96,32 @@ Allowed values:
 - `resource-confirmation`
 - `approved-to-mobilise`
 
-Deliverables default to `proposition-development` unless explicitly moved to a later `planningStatus`. `2.1.3`, `2.2.1` and `2.4.3` are at Proposition review. `2.1.1` is conservatively at Plan validation; no deliverable should imply Board or resource approval without an explicit recorded decision.
+Deliverables default to `proposition-development` unless explicitly moved to a later `planningStatus`. `2.1.3`, `2.2.1` and `2.4.3` are now at Delivery design following the 1 September 2026 delivery-lead proposition and mobilisation sense-check. `2.1.1` is conservatively at Plan validation; no deliverable should imply Board or resource approval without an explicit recorded decision.
 
 The canonical work, gate and UX behaviour for each stage are documented in `docs/deliverable-gates.md` and centralised in `src/planning-status.js`.
 
 Do not use `tags`, `planningMaturity`, `visibility`, or `src/data/status.json` as the planning-stage workflow.
+
+### Package 4 mobilisation pattern
+
+`2.2.1`, `2.1.3` and `2.4.3` form the working portfolio package **Student Purpose, Skills and Educational Recognition**.
+
+Their settled mobilisation pattern is:
+
+1. **Discover** before fixing the institutional solution.
+2. **Trailblaze and build capability** with a small number of willing partners prepared to go sufficiently deep to test the proposition properly.
+3. **Test portability** so that success dependent on unusual local enthusiasm is not mistaken for a scalable institutional model.
+4. **Institutionalise what works** through mainstream curriculum, policy, operating and Digital Student Experience Hub routes.
+
+This is intentionally deeper than a lightweight pilot. Year 1 is principally discovery, Year 2 is deep trailblazer use and capability building, and Year 3 institutionalises only the elements that have demonstrated value and portability.
+
+For `2.2.1`, **A Conversation about Purpose with Every Student** remains the proposition. King’s Canvas is its living student-facing expression, not the proposition itself. Human developmental practice should be discovered and tested before technology is allowed to define the model.
+
+For `2.1.3`, the UK Standard Skills Classification is the leading candidate for a shared skills architecture, not a settled institutional choice. Year 1 explicitly tests taxonomy fitness, technical mediation and usable curriculum evidence and may result in adoption, adaptation or reconsideration.
+
+For `2.4.3`, the enduring container is deliberately open. Discovery should resolve the trust and authority model before King’s decides whether the final experience is an enhanced transcript, broader portfolio containing the transcript, HEAR successor or hybrid. Student claim, student evidence, institutional recognition and King’s certification must remain visibly distinct.
+
+Substantive enduring digital implementation for all three should be carried through the Digital Student Experience Hub rather than rebilled as separate King’s Edge platform development.
 
 ### Planning status is different from planning maturity
 
@@ -154,7 +175,7 @@ Measures and timeline sequencing appear from Delivery design. Timeline steps rem
 
 ## Current working assumptions
 
-- The next content task is project-by-project naming and description scrutiny.
+- Package 4 has moved into delivery design; the next planning task is to complete its resource-planning basis, including protected practitioner capacity, paid student discovery/prototyping, trailblazer capability envelopes and reconciliation of shared-resource cash shares.
 - Deliverable development follows the stages in `docs/deliverable-gates.md`, keeping delivery design separate from subsequent resource planning.
 - The plan should remain senior-leadership ready: clear, concise, defensible and not over-bureaucratic.
 - Benefits should be written as realised value, not disguised outputs.
@@ -165,17 +186,18 @@ Measures and timeline sequencing appear from Delivery design. Timeline steps rem
 
 ## Recommended project manager rhythm
 
-First pass: project naming and description.
+First pass: sharpen propositions and move them through the appropriate development gate.
 
-For each of the four projects, sharpen:
+For each project or package, test:
 
-- project title;
+- project and deliverable titles;
 - card-facing `summary`;
 - richer `detailSummary`, where useful;
 - institutional transformation claim;
-- whether the four deliverables underneath still feel like the right grouping.
+- whether the deliverables still form the right grouping;
+- whether a common mobilisation pattern adds coherence without flattening meaningful differences.
 
-Second pass: develop and informally review each proposition, then design its unconstrained delivery route.
+Second pass: design the unconstrained delivery route before cost constrains it.
 
 For each deliverable, test:
 
@@ -186,7 +208,10 @@ For each deliverable, test:
 - whether the intended change is genuinely transformational;
 - whether benefits, outputs and measures are distinct;
 - whether dependencies and ownership are plausible;
+- whether the sequence includes a credible route from experimentation to institutional adoption;
 - what needs to be true to pass its current gate.
+
+Third pass: resource the agreed delivery route and reconcile shared investment at package level without inventing false precision in later years.
 
 ## Known cautions for future agents
 
