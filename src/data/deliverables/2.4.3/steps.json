@@ -1,0 +1,157 @@
+{
+  "steps": [
+    {
+      "id": "2.4.3-step-1",
+      "title": "Discover the trust, recognition and record landscape",
+      "period": {"start": "jul-dec-2026:b", "end": "jan-jun-2027:a"},
+      "summary": "Map the current academic transcript, HEAR and related recognition practices; identify where recognised learning, microcredentials, skills evidence and student-provided evidence currently sit; and work with Registry, academic governance, students and relevant services to surface the institutional trust questions that a fuller account must resolve.",
+      "dependsOn": [],
+      "outputs": [
+        {
+          "title": "Current-state recognition and authority map",
+          "summary": "A practical map of current records, recognition routes, authoritative systems, policy constraints and gaps.",
+          "acceptanceCriteria": "The map distinguishes formal academic record, institutional recognition and student-owned evidence and identifies the material policy and operational questions rather than assuming they can be solved in interface design."
+        },
+        {
+          "title": "Trusted educational record discovery brief",
+          "summary": "A bounded set of trust, policy, information and user questions to be resolved before a preferred service architecture is selected.",
+          "acceptanceCriteria": "The brief includes institutional and student perspectives and defines what evidence is needed to compare alternative record or portfolio models."
+        }
+      ],
+      "resources": {
+        "existingCapacity": [
+          {
+            "role": "King’s Edge Project Officer capacity",
+            "owner": "Transformation Office shared resource",
+            "sharedResourceId": "edge-project-officer-capacity",
+            "sharedResourceAllocation": {"fte": 0.05, "note": "Year 1 allocation for stakeholder coordination, evidence collation and prototype administration."},
+            "confidence": "planned shared capacity"
+          }
+        ]
+      }
+    },
+    {
+      "id": "2.4.3-step-2",
+      "title": "Define the trust model and prototype competing record architectures",
+      "period": {"start": "jan-jun-2027:a", "end": "jan-jun-2027:b"},
+      "summary": "Define the status and provenance model for academic record, certified capability, recognised learning, student evidence and student claim. Prototype multiple ways of assembling these elements, including options where the formal transcript remains one authoritative layer inside a broader educational record or portfolio. Test understanding and usefulness rather than selecting a model by preference alone.",
+      "dependsOn": ["2.4.3-step-1"],
+      "outputs": [
+        {
+          "title": "Trust and authority model",
+          "summary": "A proposed institutional semantics for what King’s certifies, formally recognises, accepts as evidence and presents as student claim, including provenance and governance requirements.",
+          "acceptanceCriteria": "The model makes the distinctions legible to non-specialist users and identifies unresolved academic-policy decisions explicitly."
+        },
+        {
+          "title": "Alternative fuller-record prototypes",
+          "summary": "A small set of competing service concepts tested with students and institutional stakeholders.",
+          "acceptanceCriteria": "Testing shows whether users understand the authority of different elements and records material trade-offs between transcript, portfolio and hybrid approaches."
+        }
+      ]
+    },
+    {
+      "id": "2.4.3-step-3",
+      "title": "Select the candidate model and trailblazer partners",
+      "period": "jan-jun-2027:c",
+      "summary": "Use discovery evidence and the emerging 2.1.3 capability and evidence semantics to choose the strongest candidate architecture or bounded set of architectures for live testing. Select willing programmes, faculties and professional-service partners prepared to work through the academic, operational and data implications in depth.",
+      "dependsOn": ["2.4.3-step-2", "2.1.3-step-3"],
+      "outputs": [
+        {
+          "title": "Trusted record trailblazer decision",
+          "summary": "The selected candidate architecture or architectures, the decisions still to be tested and the policy boundaries for live trailblazer work.",
+          "acceptanceCriteria": "The decision explains why alternatives were not selected and preserves unresolved questions that need real-world evidence."
+        },
+        {
+          "title": "Trusted record trailblazer portfolio",
+          "summary": "A small set of academic and operational partners with real student use cases, data sources, local ownership and explicit learning questions.",
+          "acceptanceCriteria": "Partners commit enough academic, Registry and operational attention to test the trust model rather than merely review prototype screens."
+        }
+      ]
+    },
+    {
+      "id": "2.4.3-step-4",
+      "title": "Run trailblazer fuller-record models with real students and evidence",
+      "period": {"start": "jul-dec-2027:a", "end": "jan-jun-2028:b"},
+      "summary": "Implement bounded trailblazer models using real student journeys, capabilities, recognised learning and evidence. Build the operational and academic capability needed to govern status and provenance, test student usefulness and external intelligibility and refine requirements for the Digital Student Experience Hub without creating a separate production platform.",
+      "dependsOn": ["2.4.3-step-3"],
+      "outputs": [
+        {
+          "title": "Implemented trusted-record trailblazers",
+          "summary": "Live or controlled real-data implementations demonstrating how the candidate trust model behaves across selected contexts.",
+          "acceptanceCriteria": "Trailblazers have tested real evidence and recognition cases, documented academic and operational effort and collected evidence from students and institutional users."
+        },
+        {
+          "title": "Refined record information and service model",
+          "summary": "An evidence-led information model, policy requirement set and Digital Hub service requirements derived from trailblazer use.",
+          "acceptanceCriteria": "The model records status and provenance explicitly and separates enduring institutional requirements from local trailblazer workarounds."
+        }
+      ],
+      "resources": {
+        "newInvestment": [
+          {
+            "id": "2.4.3-trailblazer-capability",
+            "item": "Trusted educational record trailblazer capability envelope",
+            "category": "academic, policy and operational capacity building",
+            "estimatedCost": "TBC through Year 1 resource planning and trailblazer selection.",
+            "owner": "King’s Edge / trailblazer partners",
+            "fundingStatus": "planning envelope to be quantified",
+            "confidence": "indicative",
+            "rationale": "Protects the academic, Registry and operational time needed to work through real recognition cases and build credible institutional capability.",
+            "riskIfMissing": "The preferred model may remain an attractive concept without evidence that King’s can govern and operate it in practice."
+          }
+        ],
+        "enablingConditions": [
+          {
+            "condition": "The Digital Student Experience Hub can provide proportionate prototype or integration support where required without this deliverable building a separate platform.",
+            "whatItUnlocks": "Testing the trusted record in the institutional digital direction while preserving the project boundary.",
+            "confidence": "planned dependency",
+            "riskIfMissing": "Policy and information-model testing can proceed, but evidence about the eventual digital service will remain more conceptual."
+          }
+        ]
+      }
+    },
+    {
+      "id": "2.4.3-step-5",
+      "title": "Test portability and settle the institutional trusted-record architecture",
+      "period": "jan-jun-2028:c",
+      "summary": "Compare trailblazer evidence across contexts to determine which recognition rules, information structures and service patterns are sufficiently useful, understandable and operationally realistic to scale. Identify where broader recognition depends on exceptional local effort or creates unacceptable ambiguity, burden or governance risk.",
+      "dependsOn": ["2.4.3-step-4", "2.1.3-step-5"],
+      "outputs": [
+        {
+          "title": "Trusted record portability and policy review",
+          "summary": "A clear judgement on what should scale, adapt, remain local or stop and the academic-policy decisions required for institutional adoption.",
+          "acceptanceCriteria": "Recommendations address student usefulness, institutional trust, operational burden and external intelligibility rather than privileging one dimension alone."
+        },
+        {
+          "title": "Institutional trusted educational record architecture",
+          "summary": "The agreed trust model, information architecture, recognition principles, operating requirements and Digital Hub specification for wider adoption.",
+          "acceptanceCriteria": "The architecture makes clear whether the formal transcript, broader portfolio or hybrid model is being institutionalised and what authority attaches to each component."
+        }
+      ]
+    },
+    {
+      "id": "2.4.3-step-6",
+      "title": "Institutionalise the proven trusted educational record",
+      "period": {"start": "jul-dec-2028:a", "end": "jan-jun-2029:c"},
+      "summary": "Embed the agreed recognition and information model through academic policy, Registry and relevant operating processes, and the Digital Student Experience Hub. Scale only the elements that survived portability testing and settle enduring governance and business-as-usual ownership.",
+      "dependsOn": ["2.4.3-step-5", "4.1"],
+      "outputs": [
+        {
+          "title": "Institutional trusted educational record service",
+          "summary": "The agreed fuller record or portfolio architecture embedded in institutional policy, operating practice and the mainstream digital student experience.",
+          "acceptanceCriteria": "The authoritative record, wider recognition, student evidence and claim layers are governed and visibly distinct; enduring ownership and remaining BAU requirements are explicit."
+        }
+      ],
+      "resources": {
+        "enablingConditions": [
+          {
+            "condition": "Institutionalisation is limited to record and recognition patterns with credible trailblazer and portability evidence.",
+            "whatItUnlocks": "A trusted fuller account without weakening the authority of the academic record or creating unsustainable local workload.",
+            "confidence": "planning principle",
+            "riskIfMissing": "King’s may standardise a richer record before its trust and operating model has been demonstrated."
+          }
+        ]
+      }
+    }
+  ]
+}
