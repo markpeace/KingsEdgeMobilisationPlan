@@ -2,6 +2,15 @@
   "id": "2.4.3",
   "title": "A Fuller Account of Every Student’s Learning",
   "lead": "Vanessa Freeman",
-  "planningStatus": "proposition-review",
-  "decisionLog": []
+  "planningStatus": "delivery-design",
+  "decisionLog": [
+    {
+      "date": "2026-09-01",
+      "type": "consultation",
+      "forum": "Delivery lead proposition and mobilisation sense-check",
+      "seenBy": ["Vanessa Freeman", "Mark Peace"],
+      "outcome": "Proceed to delivery design without presuming that the final product must be an enhanced academic transcript. Discovery will resolve the trust, authority and information model before trailblazer testing of candidate record or portfolio architectures.",
+      "notes": "The enduring academic transcript may remain an authoritative layer inside a wider trusted educational record. Student claims, student evidence and King’s-certified achievement must remain visibly distinct. The mobilisation route is discover, trailblaze, test portability, then institutionalise."
+    }
+  ]
 }
