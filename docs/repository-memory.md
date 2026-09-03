@@ -141,15 +141,17 @@ The decision-support view is held in `docs/portfolio-investment-packages.md`.
 
 **Settled:** the Digital Student Experience Hub is a separate institutional investment and must not be rolled into the headline King’s Edge funding ask. King’s Edge is the first substantive native product domain and a critical proving use case for the Hub, but the Hub has broader institutional scope and value.
 
-The current reconciled **King’s Edge mobilisation** profile excludes the Digital Hub and is **£535.2k in 2026/27, £1.569m in 2027/28 and £1.719m in 2028/29: £3.8232m across three years**.
+The current reconciled **King’s Edge mobilisation** profile excludes the Digital Hub and is **£560.2k in 2026/27, £1.604m in 2027/28 and £1.764m in 2028/29: £3.9282m across three years**.
 
 The separate **Digital Student Experience Hub** profile is **£358k in 2026/27 and £429k in each of 2027/28 and 2028/29: £1.216m currently itemised**. The 4.1.2 decision log also retains a **£3m working three-year strategic envelope** for the Hub. The difference is evidence-led headroom for later integration/platform investment, not an itemised or approved commitment.
 
-For dependency and whole-system planning only, the currently itemised combined profile is **£893.2k / £1.998m / £2.148m = £5.0392m across three years**. Do **not** describe this combined figure as the King’s Edge ask.
+For dependency and whole-system planning only, the currently itemised combined profile is **£918.2k / £2.033m / £2.193m = £5.1442m across three years**. Do **not** describe this combined figure as the King’s Edge ask.
 
-The current identifiable recurrent exposure is approximately **£1.031m p.a. plus TBC for King’s Edge**, and **at least c.£394k p.a. plus TBC platform/run costs for the Digital Hub**. Within the King’s Edge figure, £600k p.a. is explicitly a holding assumption for the future partnership-infrastructure model and must be tested during Year 1.
+The current identifiable recurrent exposure is approximately **£1.076m p.a. plus TBC for King’s Edge**, and **at least c.£394k p.a. plus TBC platform/run costs for the Digital Hub**. Within the King’s Edge figure, £600k p.a. is explicitly a holding assumption for the future partnership-infrastructure model and must be tested during Year 1.
 
-The Graduate Futures package has been reconciled to the current shared PM registry: its Year 1 programme/project-management share is **0.20 FTE / £13.2k**, giving **£144.9k Year 1 and approximately £732.8k across mobilisation**.
+The Graduate Futures package has been reconciled to the current shared PM registry and the new 2.4.4 strategic engagement fund: its Year 1 programme/project-management share is **0.20 FTE / £13.2k**, and its package profile is now **£169.9k / £296.45k / £371.45k = approximately £837.8k across mobilisation**.
+
+**Settled:** `2.4.4 Graduate Premium Adoption & Activation` is the accounting home for the **Strategic Partnerships, Profile & External Engagement Fund**: **£25k in 2026/27, £35k in 2027/28 and £45k in 2028/29**, with a **£45k p.a. recurrent BAU liability from 2029/30**. Budget control sits with King’s Edge programme leadership and the fund may be deployed across the King’s Edge portfolio where activity advances strategic partnership development, external profile, purposeful UK/international mobility, partner hosting or reciprocal visits, networks, convening or related external engagement. It is additional to the existing 2.4.4 activation, research and survey-intervention envelopes and must not be double counted elsewhere.
 
 Deliverable **2.3.3 is deferred**. Its former 0.10 FTE Deputy Director allocation and 0.05 / 0.10 / 0.10 FTE Project Officer allocations have been redeployed to **2.3.4** so funded shared capacity is not parked against inactive work. This produces a reconciled Beyond-Course package profile of **£278.5k / £971.95k / £1.03195m = £2.2824m**, with current identifiable BAU of approximately **£847k p.a. plus TBC**. The reallocation does not increase the coherent shared-resource envelopes.
 
