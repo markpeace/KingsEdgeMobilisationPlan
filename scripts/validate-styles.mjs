@@ -83,6 +83,10 @@ for (const selector of requiredChromePrimitives) {
 
 const requiredChromeContracts = [
   'scroll-padding-top: 7rem',
+  '.brand::before',
+  '.brand::after',
+  `content: "KING'S EDGE"`,
+  "content: 'MOBILISATION PLAN'",
   '.site-footer',
   '.indicative-label'
 ];
