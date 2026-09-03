@@ -47,7 +47,27 @@
           "summary": "A small set of competing service concepts tested with students and institutional stakeholders.",
           "acceptanceCriteria": "Testing shows whether users understand the authority of different elements and records material trade-offs between transcript, portfolio and hybrid approaches."
         }
-      ]
+      ],
+      "resources": {
+        "newInvestment": [
+          {
+            "id": "2.4.3-y1-record-prototyping",
+            "item": "Trusted record discovery and prototype-testing envelope",
+            "category": "service design, policy discovery and user testing",
+            "amount": 5000,
+            "currency": "GBP",
+            "yearlyProfile": [{"academicYear": "2026/27", "amount": 5000, "note": "Small bounded envelope for competing low-fidelity prototypes, facilitated testing and specialist discovery costs. Paid student participation is covered once through the connected 2.2.1 package-wide student discovery envelope."}],
+            "estimatedCost": "£5,000 Year 1 planning envelope.",
+            "owner": "King’s Edge",
+            "decisionNeededBy": "Autumn 2026",
+            "fundingRoute": "King's Edge mobilisation investment request",
+            "fundingStatus": "planning envelope",
+            "confidence": "planning estimate",
+            "rationale": "Allows the project to compare competing record architectures and test trust and authority semantics before committing to a production model.",
+            "riskIfMissing": "The preferred model may be chosen through stakeholder discussion without enough evidence about whether users actually understand or value it."
+          }
+        ]
+      }
     },
     {
       "id": "2.4.3-step-3",
@@ -92,9 +112,14 @@
             "id": "2.4.3-trailblazer-capability",
             "item": "Trusted educational record trailblazer capability envelope",
             "category": "academic, policy and operational capacity building",
-            "estimatedCost": "TBC through Year 1 resource planning and trailblazer selection.",
+            "amount": 45000,
+            "currency": "GBP",
+            "yearlyProfile": [{"academicYear": "2027/28", "amount": 45000, "note": "Planning envelope for a small number of deep academic and operational trailblazers; deployment is conditional on the Year 1 trust-model decision."}],
+            "estimatedCost": "£45,000 Year 2 planning envelope.",
             "owner": "King’s Edge / trailblazer partners",
-            "fundingStatus": "planning envelope to be quantified",
+            "decisionNeededBy": "Summer 2027",
+            "fundingRoute": "King's Edge mobilisation investment request",
+            "fundingStatus": "planning envelope, subject to Year 1 discovery",
             "confidence": "indicative",
             "rationale": "Protects the academic, Registry and operational time needed to work through real recognition cases and build credible institutional capability.",
             "riskIfMissing": "The preferred model may remain an attractive concept without evidence that King’s can govern and operate it in practice."
@@ -143,6 +168,24 @@
         }
       ],
       "resources": {
+        "newInvestment": [
+          {
+            "id": "2.4.3-y3-institutionalisation",
+            "item": "Trusted educational record institutionalisation envelope",
+            "category": "policy, operating-model and capability transfer",
+            "amount": 35000,
+            "currency": "GBP",
+            "yearlyProfile": [{"academicYear": "2028/29", "amount": 35000, "note": "Evidence-led Year 3 planning reserve for policy implementation, Registry and service-process change, guidance and capability transfer after portability testing."}],
+            "estimatedCost": "£35,000 Year 3 planning envelope.",
+            "owner": "King’s Edge / Registry and enduring recognition owners TBC",
+            "decisionNeededBy": "Summer 2028",
+            "fundingRoute": "King's Edge mobilisation investment request",
+            "fundingStatus": "planning reserve, conditional on portability evidence",
+            "confidence": "indicative",
+            "rationale": "Provides a credible route from trailblazer evidence into mainstream policy and operating practice without presuming in Year 1 which record architecture will survive testing.",
+            "riskIfMissing": "A proven model may not transition from controlled trailblazers into mainstream institutional policy and operations."
+          }
+        ],
         "enablingConditions": [
           {
             "condition": "Institutionalisation is limited to record and recognition patterns with credible trailblazer and portability evidence.",
