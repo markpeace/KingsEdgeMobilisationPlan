@@ -79,6 +79,16 @@ for (const [label, pattern] of deadTimelineSelectors) {
   }
 }
 
+const residualPortfolioSelectors = [
+  ['Projects index presentation', /(^|\n)\.(?:project-grid|project-board|project-scroll|programme-divider|project-column|project-header-link|deliverable-stack|deliverable-card)(?:\b|[.:])/m],
+  ['generic Projects owner or lead metadata', /(^|\n)\.(?:owner|lead)\s*(?:,|\{)/m]
+];
+for (const [label, pattern] of residualPortfolioSelectors) {
+  if (pattern.test(siteStyles)) {
+    fail(`src/styles.css contains ${label}; the Projects index is owned by src/styles/portfolio-overview.css`);
+  }
+}
+
 for (const [file, styles] of [
   ['src/design-system.css', designSystem],
   ['src/styles/resource-profile.css', resourceStyles],
@@ -154,6 +164,21 @@ const requiredTimelineContracts = [
 for (const selector of requiredTimelineContracts) {
   if (!timelineStyles.includes(selector)) {
     fail(`src/styles/timeline.css is missing canonical timeline contract ${selector}`);
+  }
+}
+
+const requiredPortfolioContracts = [
+  '.project-board',
+  '.project-scroll',
+  '.project-column {',
+  '.project-column-header',
+  '.deliverable-stack',
+  '.deliverable-card',
+  '.programme-divider'
+];
+for (const selector of requiredPortfolioContracts) {
+  if (!portfolioStyles.includes(selector)) {
+    fail(`src/styles/portfolio-overview.css is missing canonical Projects index contract ${selector}`);
   }
 }
 
