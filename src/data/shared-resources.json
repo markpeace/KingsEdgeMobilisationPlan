@@ -23,8 +23,7 @@
         { "deliverableId": "2.2.4", "yearlyProfile": [{ "academicYear": "2026/27", "fte": 0.15 }, { "academicYear": "2027/28", "fte": 0.15 }, { "academicYear": "2028/29", "fte": 0.15 }] },
         { "deliverableId": "2.3.1", "yearlyProfile": [{ "academicYear": "2026/27", "fte": 0.15 }, { "academicYear": "2027/28", "fte": 0.15 }, { "academicYear": "2028/29", "fte": 0.15 }] },
         { "deliverableId": "2.3.2", "yearlyProfile": [{ "academicYear": "2026/27", "fte": 0.10 }, { "academicYear": "2027/28", "fte": 0.10 }, { "academicYear": "2028/29", "fte": 0.10 }] },
-        { "deliverableId": "2.3.3", "yearlyProfile": [{ "academicYear": "2026/27", "fte": 0.10 }, { "academicYear": "2027/28", "fte": 0.10 }, { "academicYear": "2028/29", "fte": 0.10 }] },
-        { "deliverableId": "2.3.4", "yearlyProfile": [{ "academicYear": "2026/27", "fte": 0.15 }, { "academicYear": "2027/28", "fte": 0.15 }, { "academicYear": "2028/29", "fte": 0.15 }] }
+        { "deliverableId": "2.3.4", "yearlyProfile": [{ "academicYear": "2026/27", "fte": 0.25 }, { "academicYear": "2027/28", "fte": 0.25 }, { "academicYear": "2028/29", "fte": 0.25 }] }
       ]
     },
     {
@@ -75,8 +74,7 @@
         { "deliverableId": "2.2.4", "yearlyProfile": [{ "academicYear": "2026/27", "fte": 0.10 }, { "academicYear": "2027/28", "fte": 0.20 }, { "academicYear": "2028/29", "fte": 0.20 }] },
         { "deliverableId": "2.3.1", "yearlyProfile": [{ "academicYear": "2026/27", "fte": 0.10 }, { "academicYear": "2027/28", "fte": 0.20 }, { "academicYear": "2028/29", "fte": 0.20 }] },
         { "deliverableId": "2.3.2", "yearlyProfile": [{ "academicYear": "2026/27", "fte": 0.05 }, { "academicYear": "2027/28", "fte": 0.10 }, { "academicYear": "2028/29", "fte": 0.10 }] },
-        { "deliverableId": "2.3.3", "yearlyProfile": [{ "academicYear": "2026/27", "fte": 0.05 }, { "academicYear": "2027/28", "fte": 0.10 }, { "academicYear": "2028/29", "fte": 0.10 }] },
-        { "deliverableId": "2.3.4", "yearlyProfile": [{ "academicYear": "2026/27", "fte": 0.05 }, { "academicYear": "2027/28", "fte": 0.10 }, { "academicYear": "2028/29", "fte": 0.10 }] },
+        { "deliverableId": "2.3.4", "yearlyProfile": [{ "academicYear": "2026/27", "fte": 0.10 }, { "academicYear": "2027/28", "fte": 0.20 }, { "academicYear": "2028/29", "fte": 0.20 }] },
         { "deliverableId": "2.4.1", "yearlyProfile": [{ "academicYear": "2026/27", "fte": 0.05 }, { "academicYear": "2027/28", "fte": 0.10 }, { "academicYear": "2028/29", "fte": 0.10 }] },
         { "deliverableId": "2.4.2", "yearlyProfile": [{ "academicYear": "2026/27", "fte": 0.05 }, { "academicYear": "2027/28", "fte": 0.10 }, { "academicYear": "2028/29", "fte": 0.10 }] },
         { "deliverableId": "2.4.3", "yearlyProfile": [{ "academicYear": "2026/27", "fte": 0.05 }, { "academicYear": "2027/28", "fte": 0.10 }, { "academicYear": "2028/29", "fte": 0.10 }] },
