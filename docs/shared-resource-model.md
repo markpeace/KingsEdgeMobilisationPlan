@@ -35,6 +35,12 @@ In that situation, record the agreed distribution in the shared resource `alloca
 
 As delivery design matures, the relevant step asks can reference the same shared resource. The step allocation describes where the work is actually consumed; the registry continues to define the coherent resource, its total cost and the portfolio-level reconciliation.
 
+### Deferred deliverables and released capacity
+
+When a deliverable is deliberately deferred, funded shared capacity should not remain parked against work that is no longer in the active investment view. Reallocate that capacity transparently to active work where there is a credible demand for it, without increasing the coherent resource envelope.
+
+Deliverable **2.3.3 Subject Societies and Student-Led Discipline Communities is currently deferred**. Its former 0.10 FTE share of the Deputy Director, Enrichment & Enhancement and 0.05 / 0.10 / 0.10 FTE share of Project Officer capacity have therefore been redeployed to **2.3.4 Rhythms of the Wider King’s Experience**, which carries the active cross-institutional coordination and student-journey orchestration work. This is a reallocation of already-funded capacity, not additional investment. If 2.3.3 is reactivated, the shared-resource plan must be rebalanced explicitly rather than silently over-allocating the coherent posts.
+
 ## Linking a step resource ask
 
 Any item in `existingCapacity` or `newInvestment` may optionally include:
