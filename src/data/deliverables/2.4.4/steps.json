@@ -100,6 +100,19 @@
             "confidence": "indicative",
             "rationale": "Funds proposition and audience research, message testing, targeted Graduate Outcomes interventions, small activation pilots and evaluation. Rich-media production remains funded through 2.4.1.",
             "riskIfMissing": "Year 1 can define strategy but will have limited ability to test interventions and establish evidence about what works."
+          },
+          {
+            "id": "2.4.4-y1-strategic-partnerships-profile-fund",
+            "item": "Year 1 Strategic Partnerships, Profile & External Engagement Fund",
+            "category": "strategic partnerships and external engagement",
+            "amount": 25000,
+            "currency": "GBP",
+            "owner": "King’s Edge programme leadership (budget held in 2.4.4)",
+            "fundingRoute": "King’s Edge mobilisation funding request",
+            "fundingStatus": "requested",
+            "confidence": "planning assumption",
+            "rationale": "Flexible programme-controlled fund, accounted for in 2.4.4 but deployable across King’s Edge, for strategic partnership development, external profile, targeted UK and international mobility, partner hosting and reciprocal visits, network participation, convening and small exploratory partnership activity. It is distinct from the activation, research and survey-intervention envelope.",
+            "riskIfMissing": "Strategic relationship-building and external engagement will depend on fragmented local travel, events or host-team budgets, limiting the programme’s ability to act on high-value opportunities."
           }
         ],
         "enablingConditions": [
@@ -221,6 +234,19 @@
             "confidence": "indicative",
             "rationale": "Supports scaled student activation, targeted Graduate Outcomes interventions, audience and perception research, external reputation pilots and evaluation. Content and rich-media commissioning remain in 2.4.1.",
             "riskIfMissing": "The work can coordinate existing channels but will have limited ability to test or scale new interventions against priority audiences."
+          },
+          {
+            "id": "2.4.4-y2-strategic-partnerships-profile-fund",
+            "item": "Year 2 Strategic Partnerships, Profile & External Engagement Fund",
+            "category": "strategic partnerships and external engagement",
+            "amount": 35000,
+            "currency": "GBP",
+            "owner": "King’s Edge programme leadership (budget held in 2.4.4)",
+            "fundingRoute": "King’s Edge mobilisation funding request",
+            "fundingStatus": "requested",
+            "confidence": "planning assumption",
+            "rationale": "Expands the programme-controlled fund as partnership, employer, alumni, international and sector-facing work develops. It remains deployable across King’s Edge priorities while being accounted for once in 2.4.4 and distinct from activation, research and survey-intervention spend.",
+            "riskIfMissing": "The programme may identify valuable external relationships but lack flexible operating capacity to develop them at the pace required."
           }
         ],
         "enablingConditions": [
@@ -336,6 +362,34 @@
             "confidence": "indicative",
             "rationale": "Supports the mature portfolio of targeted reputation activity, survey-performance interventions, audience research and evaluation while continuing to exclude content production already funded through 2.4.1.",
             "riskIfMissing": "The programme will be able to embed low-cost activity but will have limited capacity to sustain or scale reputation interventions that require paid research, activation or partnership support."
+          },
+          {
+            "id": "2.4.4-y3-strategic-partnerships-profile-fund",
+            "item": "Year 3 Strategic Partnerships, Profile & External Engagement Fund",
+            "category": "strategic partnerships and external engagement",
+            "amount": 45000,
+            "currency": "GBP",
+            "owner": "King’s Edge programme leadership (budget held in 2.4.4)",
+            "fundingRoute": "King’s Edge mobilisation funding request",
+            "fundingStatus": "requested",
+            "confidence": "planning assumption",
+            "rationale": "Provides the mature mobilisation-year operating envelope for strategic partnerships, external profile, targeted UK and international mobility, partner hosting, networks and convening. It remains programme-controlled across King’s Edge while being accounted for once in 2.4.4 and is additional to activation, research and survey-intervention spend.",
+            "riskIfMissing": "The programme may embed its propositions without retaining sufficient outward-facing operating capacity to sustain relationships and external learning."
+          },
+          {
+            "id": "2.4.4-bau-strategic-partnerships-profile-fund",
+            "item": "Recurring Strategic Partnerships, Profile & External Engagement Fund",
+            "category": "strategic partnerships and external engagement",
+            "amount": 45000,
+            "currency": "GBP",
+            "bauLiability": true,
+            "owner": "King’s Edge programme leadership / enduring institutional home to confirm",
+            "fundingRoute": "Recurrent King’s Edge operating budget / institutional route to confirm",
+            "fundingStatus": "future BAU funding route to confirm",
+            "periodNeeded": "From 2029/30 onward",
+            "confidence": "planning assumption",
+            "rationale": "Maintains a flexible annual operating budget after mobilisation for strategic relationship development, employer, alumni, civic, sector and international engagement, external profile, targeted mobility and reciprocal partner activity across the King’s Edge portfolio. The accounting home remains 2.4.4 while deployment is controlled at programme level.",
+            "riskIfMissing": "Partnership and profile activity risks becoming opportunistic and dependent on ad hoc travel, event or host-team budgets once mobilisation funding ends."
           }
         ],
         "enablingConditions": [
