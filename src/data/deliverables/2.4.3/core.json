@@ -2,7 +2,7 @@
   "id": "2.4.3",
   "title": "A Fuller Account of Every Student’s Learning",
   "lead": "Vanessa Freeman",
-  "planningStatus": "delivery-design",
+  "planningStatus": "resource-planning",
   "decisionLog": [
     {
       "date": "2026-09-01",
@@ -11,6 +11,13 @@
       "seenBy": ["Vanessa Freeman", "Mark Peace"],
       "outcome": "Proceed to delivery design without presuming that the final product must be an enhanced academic transcript. Discovery will resolve the trust, authority and information model before trailblazer testing of candidate record or portfolio architectures.",
       "notes": "The enduring academic transcript may remain an authoritative layer inside a wider trusted educational record. Student claims, student evidence and King’s-certified achievement must remain visibly distinct. The mobilisation route is discover, trailblaze, test portability, then institutionalise."
+    },
+    {
+      "date": "2026-09-03",
+      "type": "decision",
+      "forum": "King's Edge resource-planning pass",
+      "outcome": "Advance to resource planning with a small Year 1 discovery and prototype-testing envelope, protected Year 2 trailblazer capacity and an evidence-led Year 3 institutionalisation envelope.",
+      "notes": "Production digital capability remains within the Digital Student Experience Hub. The package funds the trust, policy, information and operating model and the capacity required to test those models in real institutional settings."
     }
   ]
 }
