@@ -76,90 +76,6 @@
   margin-bottom: 0.75rem;
 }
 
-.project-grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 1rem;
-  align-items: start;
-}
-
-.project-board {
-  overflow-x: auto;
-  padding-bottom: 0.9rem;
-  scrollbar-color: var(--accent) #f1f1f1;
-}
-
-.project-scroll {
-  display: flex;
-  align-items: stretch;
-  gap: 1rem;
-  width: max-content;
-  min-width: 100%;
-}
-
-.programme-divider {
-  flex: 0 0 88px;
-  min-height: 100%;
-  display: grid;
-  place-items: center;
-  border-left: 3px dotted var(--accent);
-  border-right: 3px dotted var(--accent);
-  background: repeating-linear-gradient(45deg, rgba(237, 28, 36, 0.045) 0 14px, transparent 14px 28px);
-  color: var(--accent);
-  font-weight: 800;
-  font-size: 1.2rem;
-}
-
-.project-column {
-  display: grid;
-  grid-template-rows: 270px 1fr;
-  flex: 0 0 clamp(330px, 21.5vw, 365px);
-  min-width: clamp(330px, 21.5vw, 365px);
-  border-radius: 0;
-  overflow: hidden;
-  background: #ffffff;
-}
-
-.project-header-link,
-.project-column-header {
-  text-decoration: none;
-}
-
-.project-column-header {
-  display: flex;
-  flex-direction: column;
-  min-height: 270px;
-  padding: 1.15rem 1.15rem 1rem;
-  border-bottom: 3px solid var(--ink);
-  background: var(--ink);
-  color: #ffffff;
-  transition: background 150ms ease, color 150ms ease;
-}
-
-.project-column-header:hover {
-  background: var(--accent);
-}
-
-.project-column-header .reference {
-  color: var(--ink);
-  background: #ffffff;
-}
-
-.project-column-header h2 {
-  display: -webkit-box;
-  margin: 0.75rem 0 0.85rem;
-  overflow: hidden;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 4;
-  font-family: var(--font-brand);
-  font-size: clamp(1.25rem, 1.55vw, 1.7rem);
-  font-weight: 400;
-  line-height: 1.05;
-  letter-spacing: -0.02em;
-}
-
-.project-column-header p,
-.deliverable-card p,
 .index-row p,
 .component-card p,
 .step-card p,
@@ -169,40 +85,6 @@
   line-height: 1.4;
 }
 
-.project-column-header p {
-  color: rgba(255, 255, 255, 0.84);
-}
-
-.project-column-header p:not(.owner) {
-  display: -webkit-box;
-  margin: 0;
-  overflow: hidden;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 4;
-  font-size: 0.96rem;
-  line-height: 1.38;
-}
-
-.owner,
-.lead {
-  font-weight: 700;
-  color: var(--ink) !important;
-}
-
-.project-column-header .owner {
-  margin-top: auto;
-  margin-bottom: 0;
-  color: #ffffff !important;
-}
-
-.deliverable-stack {
-  display: grid;
-  grid-template-rows: repeat(4, minmax(286px, 1fr));
-  gap: 0;
-  padding: 0;
-}
-
-.deliverable-card,
 .index-row,
 .component-card,
 .step-card {
@@ -216,30 +98,18 @@
   transition: background 150ms ease, color 150ms ease, border-color 150ms ease;
 }
 
-.deliverable-card {
-  display: flex;
-  flex-direction: column;
-  min-height: 286px;
-}
-
 .component-card,
 .step-card,
 .index-row {
   border: 2px solid var(--border);
 }
 
-.deliverable-card:last-child {
-  border-bottom: 0;
-}
-
-.deliverable-card:hover,
 .index-row:hover {
   border-color: var(--accent);
   background: var(--accent-soft);
   box-shadow: none;
 }
 
-.deliverable-card h3,
 .index-row h3,
 .component-card h3,
 .step-card h3,
@@ -251,26 +121,6 @@
   font-weight: 700;
   line-height: 1.15;
   letter-spacing: -0.01em;
-}
-
-.deliverable-card h3 {
-  display: -webkit-box;
-  margin: 0.75rem 0 0.85rem;
-  overflow: hidden;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 4;
-}
-
-.deliverable-card > p:not(.lead) {
-  display: -webkit-box;
-  margin: 0;
-  overflow: hidden;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 4;
-}
-
-.deliverable-card .lead {
-  margin-top: auto;
 }
 
 .sidebars-preview {
@@ -425,10 +275,6 @@
 }
 
 @media (max-width: 1180px) {
-  .project-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
   .component-grid,
   .steps-list {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -436,33 +282,6 @@
 }
 
 @media (max-width: 760px) {
-  .project-board {
-    overflow-x: visible;
-  }
-
-  .project-scroll {
-    display: grid;
-    width: auto;
-  }
-
-  .project-column,
-  .project-column-header,
-  .deliverable-card {
-    display: block;
-    min-height: unset;
-    min-width: unset;
-  }
-
-  .project-column-header h2,
-  .project-column-header p:not(.owner),
-  .deliverable-card h3,
-  .deliverable-card > p:not(.lead) {
-    display: block;
-    overflow: visible;
-    -webkit-line-clamp: unset;
-  }
-
-  .project-grid,
   .dependency-grid,
   .detail-grid,
   .component-grid,
