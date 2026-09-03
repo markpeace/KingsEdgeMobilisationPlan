@@ -96,7 +96,7 @@ Allowed values:
 - `resource-confirmation`
 - `approved-to-mobilise`
 
-Deliverables default to `proposition-development` unless explicitly moved to a later `planningStatus`. `2.1.3`, `2.2.1` and `2.4.3` are now at Delivery design following the 1 September 2026 delivery-lead proposition and mobilisation sense-check. `2.1.1` is conservatively at Plan validation; no deliverable should imply Board or resource approval without an explicit recorded decision.
+Deliverables default to `proposition-development` unless explicitly moved to a later `planningStatus`. `2.1.3`, `2.2.1` and `2.4.3` are now at **Resource planning** following the 1 September 2026 delivery-lead sense-check and the 3 September 2026 package resource-planning pass. Their delivery routes and indicative mobilisation envelopes are authored, but no Board or resource approval is implied. `2.1.1` is conservatively at Plan validation.
 
 The canonical work, gate and UX behaviour for each stage are documented in `docs/deliverable-gates.md` and centralised in `src/planning-status.js`.
 
@@ -122,6 +122,20 @@ For `2.1.3`, the UK Standard Skills Classification is the leading candidate for 
 For `2.4.3`, the enduring container is deliberately open. Discovery should resolve the trust and authority model before King’s decides whether the final experience is an enhanced transcript, broader portfolio containing the transcript, HEAR successor or hybrid. Student claim, student evidence, institutional recognition and King’s certification must remain visibly distinct.
 
 Substantive enduring digital implementation for all three should be carried through the Digital Student Experience Hub rather than rebilled as separate King’s Edge platform development.
+
+### Package 4 resource-planning basis
+
+The current Package 4 business-case planning shape is **£53k in 2026/27, £169.5k in 2027/28 and £119.5k in 2028/29: £342k across mobilisation**.
+
+Year 1 direct investment is £42.5k: £22.5k protected practitioner discovery/backfill for purpose; one £7.5k paid student discovery/co-design envelope held once for the connected package; £7.5k bounded student technical prototyping for the skills proof of concept; and £5k trusted-record discovery/prototype testing. The package also carries £10.5k of apportioned shared funded capacity in Year 1: £5.25k Deputy Director and £5.25k Project Officer.
+
+Year 2 holds £150k of direct trailblazer capability envelopes: £45k purpose, £60k skills and £45k trusted record, plus £19.5k apportioned shared capacity. Year 3 holds £100k of conditional institutionalisation envelopes: £25k purpose, £40k skills and £35k trusted record, plus £19.5k apportioned shared capacity.
+
+The later-year direct figures are planning envelopes rather than automatic spending targets. Year 2 should be recalibrated after discovery and trailblazer selection. Year 3 should be released only against elements that survive portability testing.
+
+There is no current Package 4 allocation from the shared analytics or programme/project-management resources. The only presently identifiable recurrent BAU liability is approximately **£9k p.a.**, the package’s 0.10 share of the permanent Deputy Director post. Enduring practitioner, curriculum/skills governance and Registry/recognition operating requirements remain TBC until mobilisation evidence shows what needs to persist.
+
+The completed five-package investment view in `docs/portfolio-investment-packages.md` is approximately **£889.5k Year 1**, **at least c.£5.01m across mobilisation** and **c.£1.416m p.a. currently identifiable BAU plus TBC**.
 
 ### Planning status is different from planning maturity
 
@@ -175,8 +189,8 @@ Measures and timeline sequencing appear from Delivery design. Timeline steps rem
 
 ## Current working assumptions
 
-- Package 4 has moved into delivery design; the next planning task is to complete its resource-planning basis, including protected practitioner capacity, paid student discovery/prototyping, trailblazer capability envelopes and reconciliation of shared-resource cash shares.
-- Deliverable development follows the stages in `docs/deliverable-gates.md`, keeping delivery design separate from subsequent resource planning.
+- Package 4 has completed a first resource-planning pass and remains at `resource-planning` pending scrutiny and plan validation. Its cash envelopes are explicitly planning assumptions, especially in Years 2 and 3.
+- Deliverable development follows the stages in `docs/deliverable-gates.md`, keeping delivery design separate from resource planning and both separate from later approval.
 - The plan should remain senior-leadership ready: clear, concise, defensible and not over-bureaucratic.
 - Benefits should be written as realised value, not disguised outputs.
 - Measures should test whether benefits are happening, not merely count activity.
@@ -212,6 +226,8 @@ For each deliverable, test:
 - what needs to be true to pass its current gate.
 
 Third pass: resource the agreed delivery route and reconcile shared investment at package level without inventing false precision in later years.
+
+Fourth pass: validate the plan as a whole, including benefits, measures, ownership, dependencies, assumptions, resource sufficiency and whether the Year 1 return is genuinely decision-ready.
 
 ## Known cautions for future agents
 
