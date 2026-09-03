@@ -99,6 +99,16 @@ for (const [label, pattern] of residualCatalogueSelectors) {
   }
 }
 
+if (/(^|\n)\.depends(?:\b|[.:])/m.test(siteStyles)) {
+  fail('src/styles.css must not style the behavioural .depends hook; visible delivery dependency presentation belongs to the canonical delivery sequence');
+}
+
+const printMediaIndex = siteStyles.search(/@media\s+print\s*\{/m);
+const screenSiteStyles = printMediaIndex >= 0 ? siteStyles.slice(0, printMediaIndex) : siteStyles;
+if (/\b!important\b/.test(screenSiteStyles)) {
+  fail('src/styles.css must not use !important in screen presentation; print-only isolation is the sole residual exception');
+}
+
 for (const [file, styles] of [
   ['src/design-system.css', designSystem],
   ['src/styles/resource-profile.css', resourceStyles],
