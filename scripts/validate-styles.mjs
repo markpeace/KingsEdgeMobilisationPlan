@@ -57,7 +57,10 @@ if (/:root\s*\{/.test(siteStyles)) {
 const residualChromeOwners = [
   ['site header', /(^|\n)\.site-header\s*\{/m],
   ['brand', /(^|\n)\.brand\s*\{/m],
-  ['header navigation', /(^|\n)\.site-header nav\s*\{/m]
+  ['header navigation', /(^|\n)\.site-header nav\s*\{/m],
+  ['site footer', /(^|\n)\.site-footer\s*\{/m],
+  ['deliverable actions', /(^|\n)\.deliverable-actions\s*\{/m],
+  ['print action', /(^|\n)\.print-a3-button\s*\{/m]
 ];
 for (const [label, pattern] of residualChromeOwners) {
   if (pattern.test(siteStyles)) {
@@ -100,6 +103,8 @@ const requiredChromeContracts = [
   `content: "KING'S EDGE"`,
   "content: 'MOBILISATION PLAN'",
   '.site-footer',
+  '.deliverable-actions',
+  '.print-a3-button',
   '.indicative-label'
 ];
 for (const contract of requiredChromeContracts) {
