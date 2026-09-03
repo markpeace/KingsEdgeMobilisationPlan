@@ -75,6 +75,8 @@ Owns only residual mobilisation-plan compositions that have not yet moved to a c
 
 It must not own the Projects portfolio, Deliverables/Measures catalogue navigation, operational Timeline, global chrome or other feature families that already have a canonical stylesheet. It should not redefine tokens or duplicate the base styling of panels, controls, labels or tags. Historical generic declarations should continue to move to their canonical owner as the file is decomposed.
 
+Screen presentation in `src/styles.css` must not use `!important`. The A3 `@media print` visibility isolation is the sole residual exception because it deliberately suppresses the normal application surface while printing the dedicated sheet.
+
 ### Feature stylesheets
 
 Feature stylesheets define layouts or states that are unique to a feature and consume shared tokens and primitives rather than establish a parallel visual system.
@@ -196,7 +198,8 @@ Completed:
 24. the approved landing presentation is source-owned in `src/styles/landing-overview.css`, with its historical selector families retired from the runtime compatibility bundle and no `!important` debt;
 25. the split KING'S EDGE / MOBILISATION PLAN header identity is source-owned in `src/styles/global-chrome.css`, with the historical `.brand` family retired from runtime compatibility CSS;
 26. the Projects index is fully source-owned in `src/styles/portfolio-overview.css`; residual project-board/card selectors and their generic `.owner`/`.lead` `!important` rules have been removed from `src/styles.css` and guarded against reintroduction;
-27. Deliverables and Measures catalogue navigation is fully source-owned in `src/styles/index-navigation.css`; residual `.toolbar`, `.index-list`, `.index-row` and `.index-meta` rules have been removed from `src/styles.css` and guarded against reintroduction.
+27. Deliverables and Measures catalogue navigation is fully source-owned in `src/styles/index-navigation.css`; residual `.toolbar`, `.index-list`, `.index-row` and `.index-meta` rules have been removed from `src/styles.css` and guarded against reintroduction;
+28. obsolete `.depends` screen styling has been removed from `src/styles.css`, leaving no screen-level `!important`; validation preserves that rule while allowing only the isolated A3 print visibility exception.
 
 Next:
 
