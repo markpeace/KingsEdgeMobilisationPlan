@@ -89,6 +89,16 @@ for (const [label, pattern] of residualPortfolioSelectors) {
   }
 }
 
+const residualCatalogueSelectors = [
+  ['catalogue filter toolbar', /(^|\n)\.toolbar(?:\s|\{|:|,)/m],
+  ['catalogue list, row or metadata', /(^|\n)\.(?:index-list|index-row|index-meta)(?:\b|[.:])/m]
+];
+for (const [label, pattern] of residualCatalogueSelectors) {
+  if (pattern.test(siteStyles)) {
+    fail(`src/styles.css contains ${label}; Deliverables and Measures catalogue navigation is owned by src/styles/index-navigation.css`);
+  }
+}
+
 for (const [file, styles] of [
   ['src/design-system.css', designSystem],
   ['src/styles/resource-profile.css', resourceStyles],
@@ -147,7 +157,14 @@ for (const contract of requiredLandingContracts) {
   }
 }
 
-const requiredIndexPrimitives = ['.ds-filter-strip', '.ds-catalogue-card'];
+const requiredIndexPrimitives = [
+  '.ds-filter-strip',
+  '.ds-catalogue-card',
+  '.toolbar:not(.timeline-toolbar)',
+  '.index-list',
+  '.deliverable-index-row',
+  '.measure-row'
+];
 for (const selector of requiredIndexPrimitives) {
   if (!indexNavigationStyles.includes(selector)) {
     fail(`src/styles/index-navigation.css is missing shared index primitive ${selector}`);
