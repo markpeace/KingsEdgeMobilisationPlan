@@ -1,0 +1,180 @@
+{
+  "steps": [
+    {
+      "id": "2.2.1-step-1",
+      "title": "Discover what effective purpose and self-direction practice looks like",
+      "period": {"start": "jul-dec-2026:b", "end": "jan-jun-2027:b"},
+      "summary": "Benchmark life-design and adjacent practice, map relevant King’s student-facing work, and run iterative small-group discovery with deliberately varied students. Test how students engage with values, uncertainty, aspiration, need, belonging and changing direction; identify the moments and human practices that appear to create value before specifying a scaled digital solution.",
+      "dependsOn": [],
+      "outputs": [
+        {
+          "title": "King’s purpose and self-direction discovery model",
+          "summary": "An evidence-informed first model of the developmental practices, prompts, moments and relationships that appear useful across different student contexts.",
+          "acceptanceCriteria": "The model is grounded in documented student and practitioner testing, explicitly includes uncertainty as a legitimate starting point and identifies material assumptions still requiring trailblazer testing."
+        },
+        {
+          "title": "Student journey and practice hypothesis",
+          "summary": "A first map of where purpose and self-direction work may add value across the student journey and which human relationships could carry different elements.",
+          "acceptanceCriteria": "The map distinguishes hypotheses from settled practice and identifies the questions that trailblazer partners need to test in live delivery."
+        }
+      ],
+      "resources": {
+        "existingCapacity": [
+          {
+            "role": "King’s Edge Project Officer capacity",
+            "owner": "Transformation Office shared resource",
+            "sharedResourceId": "edge-project-officer-capacity",
+            "sharedResourceAllocation": {"fte": 0.05, "note": "Year 1 allocation for coordination, student recruitment, evidence collation and workshop administration."},
+            "confidence": "planned shared capacity"
+          },
+          {
+            "role": "Deputy Director, Enrichment & Enhancement",
+            "owner": "Enrichment & Enhancement shared resource",
+            "sharedResourceId": "edge-deputy-director-enrichment-enhancement",
+            "sharedResourceAllocation": {"fte": 0.10, "note": "From January 2027, provide senior coordination across the purpose proposition and wider opportunity ecology."},
+            "periodNeeded": "January 2027 onward",
+            "confidence": "planned shared capacity"
+          }
+        ],
+        "newInvestment": [
+          {
+            "id": "2.2.1-discovery-practitioner-capacity",
+            "item": "Protected practitioner discovery capacity and service backfill",
+            "category": "staff development and backfill",
+            "estimatedCost": "TBC through resource planning; intended to protect meaningful practitioner time rather than rely on discretionary capacity.",
+            "owner": "Careers and Employability / relevant student-facing teams",
+            "fundingStatus": "to be costed",
+            "confidence": "developing",
+            "rationale": "Discovery requires practitioners to research, design and test developmental practice rather than add the work on top of peak service delivery.",
+            "riskIfMissing": "The model is likely to remain conceptual or be shaped mainly by central project assumptions rather than deep practitioner learning."
+          },
+          {
+            "id": "2.2.1-discovery-student-partnership",
+            "item": "Paid student discovery and co-design envelope",
+            "category": "student partnership",
+            "estimatedCost": "TBC through resource planning.",
+            "owner": "King’s Edge",
+            "fundingStatus": "to be costed",
+            "confidence": "developing",
+            "rationale": "Supports repeated participation by different student groups rather than one-off consultation with already-engaged volunteers.",
+            "riskIfMissing": "Discovery evidence may over-represent highly engaged students and under-test the universal ambition."
+          }
+        ]
+      }
+    },
+    {
+      "id": "2.2.1-step-2",
+      "title": "Select trailblazer partners and build the capability to go all in",
+      "period": "jan-jun-2027:c",
+      "summary": "Select a small number of willing trailblazer partners across academic and student-facing settings. Co-design a sufficiently deep implementation of the emerging model, identify the staff development, role clarity, journey changes and low-fidelity Canvas support required, and give partners enough protected capacity to test the proposition properly rather than run a lightweight pilot.",
+      "dependsOn": ["2.2.1-step-1"],
+      "outputs": [
+        {
+          "title": "Purpose and self-direction trailblazer portfolio",
+          "summary": "A small set of partners with clear reasons to participate, defined student cohorts, implementation scope, local ownership and learning questions.",
+          "acceptanceCriteria": "Partners commit to implementing the model with sufficient depth, protected capacity and evidence collection to test both value and delivery requirements."
+        },
+        {
+          "title": "Trailblazer capability and implementation plan",
+          "summary": "The training, practice support, journey changes, student involvement and digital prototype needs for the 2027/28 trailblazer cycle.",
+          "acceptanceCriteria": "The plan distinguishes common elements from locally adaptable practice and includes explicit portability questions."
+        }
+      ],
+      "resources": {
+        "enablingConditions": [
+          {
+            "condition": "Trailblazer partners are selected for willingness and capacity to change practice deeply, not simply for ease of recruitment.",
+            "whatItUnlocks": "A meaningful test of the proposition under conditions where it has a fair chance to work.",
+            "confidence": "developing",
+            "riskIfMissing": "A thin pilot could produce ambiguous evidence about an underpowered version of the model."
+          }
+        ]
+      }
+    },
+    {
+      "id": "2.2.1-step-3",
+      "title": "Run trailblazer purpose journeys with real student cohorts",
+      "period": {"start": "jul-dec-2027:a", "end": "jan-jun-2028:b"},
+      "summary": "Support trailblazer partners to implement the purpose and self-direction model across real student journeys, building local capability while iterating the human practice and the emerging King’s Canvas experience. Use the Digital Student Experience Hub where useful to extend proven practices, but do not allow availability of digital functionality to dictate the educational model.",
+      "dependsOn": ["2.2.1-step-2"],
+      "outputs": [
+        {
+          "title": "Implemented purpose and self-direction trailblazers",
+          "summary": "Live implementations across selected partners with documented student reach, practice changes, staff capability and learning.",
+          "acceptanceCriteria": "Each trailblazer has delivered the agreed model through real student touchpoints and captured enough evidence to judge student value, delivery effort and conditions for success."
+        },
+        {
+          "title": "Evidence-led King’s Canvas requirements",
+          "summary": "Refined product and journey requirements derived from live practice rather than a pre-set software concept.",
+          "acceptanceCriteria": "Requirements identify what digital support should sustain, prompt or connect and what should remain primarily human or locally delivered."
+        }
+      ],
+      "resources": {
+        "newInvestment": [
+          {
+            "id": "2.2.1-trailblazer-capability",
+            "item": "Purpose and self-direction trailblazer capability envelope",
+            "category": "staff capacity and capability building",
+            "estimatedCost": "TBC through Year 1 resource planning and trailblazer selection.",
+            "owner": "King’s Edge / trailblazer partners",
+            "fundingStatus": "planning envelope to be quantified",
+            "confidence": "indicative",
+            "rationale": "Allows selected partners to protect staff time, develop capability and make the local journey changes required to test the proposition deeply.",
+            "riskIfMissing": "Trailblazer work may depend on goodwill and remain too shallow to inform institutionalisation."
+          }
+        ],
+        "enablingConditions": [
+          {
+            "condition": "The Digital Student Experience Hub can receive evidence-led Canvas requirements and provide proportionate prototype support where prioritised.",
+            "whatItUnlocks": "Testing of how proven developmental practice can be extended digitally without creating a separate Edge platform.",
+            "confidence": "planned dependency",
+            "riskIfMissing": "The human model can still be tested, but evidence about digital continuity and scale will be deferred."
+          }
+        ]
+      }
+    },
+    {
+      "id": "2.2.1-step-4",
+      "title": "Test portability and settle the institutional model",
+      "period": "jan-jun-2028:c",
+      "summary": "Compare trailblazer evidence and identify which elements created student value, which depended on exceptional local commitment, which need adaptation for different contexts and what minimum capability is realistic at institutional scale. Define the model that should be institutionalised and the elements that should remain specialist or optional.",
+      "dependsOn": ["2.2.1-step-3"],
+      "outputs": [
+        {
+          "title": "Purpose and self-direction portability review",
+          "summary": "A bounded judgement on what should scale, adapt, remain specialist or stop.",
+          "acceptanceCriteria": "Recommendations explicitly separate evidence of student value from implementation enthusiasm and identify the conditions needed outside trailblazer settings."
+        },
+        {
+          "title": "Institutional purpose and self-direction model",
+          "summary": "The agreed common model, role architecture, staff capability expectations and Digital Hub requirements for wider adoption.",
+          "acceptanceCriteria": "The model is specific enough to guide institutional implementation while preserving justified local variation."
+        }
+      ]
+    },
+    {
+      "id": "2.2.1-step-5",
+      "title": "Institutionalise the proven purpose and self-direction model",
+      "period": {"start": "jul-dec-2028:a", "end": "jan-jun-2029:c"},
+      "summary": "Embed the elements that survived portability testing into the relevant student journey, staff development, role expectations and Digital Student Experience Hub capabilities. Scale deliberately, retaining specialist human practice where needed and continuing to evaluate reach, student value and uneven adoption.",
+      "dependsOn": ["2.2.1-step-4", "4.1"],
+      "outputs": [
+        {
+          "title": "Institutional purpose and self-direction offer",
+          "summary": "A scaled and supported model embedded through the agreed student-facing relationships and digital environment.",
+          "acceptanceCriteria": "The institutional route, ownership, staff support and digital capabilities are live or formally adopted, with remaining exceptions and BAU requirements explicit."
+        }
+      ],
+      "resources": {
+        "enablingConditions": [
+          {
+            "condition": "Institutionalisation is limited to elements with credible trailblazer and portability evidence.",
+            "whatItUnlocks": "Coherent scaling without converting local enthusiasm into premature universal policy.",
+            "confidence": "planning principle",
+            "riskIfMissing": "King’s may standardise practices whose value or portability has not been demonstrated."
+          }
+        ]
+      }
+    }
+  ]
+}
