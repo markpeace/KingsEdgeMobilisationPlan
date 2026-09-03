@@ -77,15 +77,13 @@
 }
 
 .component-card p,
-.step-card p,
 .dependency-card p,
 .compact-list {
   color: var(--muted);
   line-height: 1.4;
 }
 
-.component-card,
-.step-card {
+.component-card {
   display: block;
   text-decoration: none;
   background: #ffffff;
@@ -96,7 +94,6 @@
 }
 
 .component-card h3,
-.step-card h3,
 .dependency-card h3 {
   margin: 0.75rem 0 0.5rem;
   color: var(--ink);
@@ -178,12 +175,6 @@
   gap: 0.75rem;
 }
 
-.steps-list {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 0.75rem;
-}
-
 .dependency-list li {
   margin-bottom: 0.9rem;
 }
@@ -214,8 +205,7 @@
 }
 
 @media (max-width: 1180px) {
-  .component-grid,
-  .steps-list {
+  .component-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
@@ -223,8 +213,7 @@
 @media (max-width: 760px) {
   .dependency-grid,
   .detail-grid,
-  .component-grid,
-  .steps-list {
+  .component-grid {
     grid-template-columns: 1fr;
   }
 
