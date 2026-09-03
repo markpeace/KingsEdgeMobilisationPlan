@@ -54,6 +54,17 @@ if (/:root\s*\{/.test(siteStyles)) {
   fail('src/styles.css must not define :root; shared tokens belong in src/design-system.css');
 }
 
+const residualChromeOwners = [
+  ['site header', /(^|\n)\.site-header\s*\{/m],
+  ['brand', /(^|\n)\.brand\s*\{/m],
+  ['header navigation', /(^|\n)\.site-header nav\s*\{/m]
+];
+for (const [label, pattern] of residualChromeOwners) {
+  if (pattern.test(siteStyles)) {
+    fail(`src/styles.css must not own ${label} presentation; use src/styles/global-chrome.css`);
+  }
+}
+
 for (const [file, styles] of [
   ['src/design-system.css', designSystem],
   ['src/styles/resource-profile.css', resourceStyles],
@@ -83,6 +94,7 @@ for (const selector of requiredChromePrimitives) {
 
 const requiredChromeContracts = [
   'scroll-padding-top: 7rem',
+  '.site-header {',
   '.brand::before',
   '.brand::after',
   `content: "KING'S EDGE"`,
