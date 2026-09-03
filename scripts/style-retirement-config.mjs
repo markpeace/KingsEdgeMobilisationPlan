@@ -26,6 +26,7 @@ export const explicitlyRetiredSelectorTokens = [
   '.benefit-',
   '.unmapped-evidence-block',
   '.site-header',
+  '.brand',
   '.planning-notice',
   '.landing-main',
   '.landing-hero',
