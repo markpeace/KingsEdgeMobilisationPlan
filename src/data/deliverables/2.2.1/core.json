@@ -2,6 +2,15 @@
   "id": "2.2.1",
   "title": "A Conversation about Purpose with Every Student",
   "lead": "Vanessa Freeman",
-  "planningStatus": "proposition-review",
-  "decisionLog": []
+  "planningStatus": "delivery-design",
+  "decisionLog": [
+    {
+      "date": "2026-09-01",
+      "type": "consultation",
+      "forum": "Delivery lead proposition and mobilisation sense-check",
+      "seenBy": ["Vanessa Freeman", "Mark Peace"],
+      "outcome": "Proceed to delivery design on a deliberately phased basis: discover effective human developmental practice first, build capability with willing trailblazer partners, test portability, then institutionalise what proves valuable.",
+      "notes": "King's Canvas remains the living student-facing expression of the proposition rather than the proposition itself. Digital design should follow and extend proven developmental practice rather than determine it."
+    }
+  ]
 }
