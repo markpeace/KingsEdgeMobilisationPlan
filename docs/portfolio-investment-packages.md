@@ -44,7 +44,7 @@ The current **King’s Edge mobilisation ask**, excluding the separate Digital S
 
 | | 2026/27 | 2027/28 | 2028/29 | Three-year total |
 |---|---:|---:|---:|---:|
-| **King’s Edge mobilisation** | **£535.2k** | **£1.569m** | **£1.719m** | **£3.8232m** |
+| **King’s Edge mobilisation** | **£560.2k** | **£1.604m** | **£1.764m** | **£3.9282m** |
 
 The separate **Digital Student Experience Hub** planning position is:
 
@@ -54,15 +54,16 @@ The separate **Digital Student Experience Hub** planning position is:
 
 The Hub also carries a **£3.0m working three-year strategic investment envelope** in its decision log. Only £1.216m is currently itemised. The remaining headroom is for later integration and platform investment to be released from evidence rather than treated as a pre-allocated commitment.
 
-For dependency and whole-system planning only, the two investments together currently give an itemised profile of **£893.2k in 2026/27, £1.998m in 2027/28 and £2.148m in 2028/29: £5.0392m across three years**. This combined figure should **not** be presented as the King’s Edge funding ask.
+For dependency and whole-system planning only, the two investments together currently give an itemised profile of **£918.2k in 2026/27, £2.033m in 2027/28 and £2.193m in 2028/29: £5.1442m across three years**. This combined figure should **not** be presented as the King’s Edge funding ask.
 
-The current **King’s Edge identifiable BAU exposure is approximately £1.031m p.a., plus TBC elements**. Within that figure, **£600k p.a. is explicitly a holding assumption for partnership infrastructure** which Year 1 is designed to test rather than ratify automatically. The separate Digital Hub currently carries **at least c.£394k p.a.** of identifiable BAU, plus TBC platform/run costs.
+The current **King’s Edge identifiable BAU exposure is approximately £1.076m p.a., plus TBC elements**. Within that figure, **£600k p.a. is explicitly a holding assumption for partnership infrastructure** which Year 1 is designed to test rather than ratify automatically. The separate Digital Hub currently carries **at least c.£394k p.a.** of identifiable BAU, plus TBC platform/run costs.
 
 ### Important costing decisions
 
 - Deliverable **2.3.3 Subject Societies and Student-Led Discipline Communities remains deferred** and is not being funded as an active deliverable.
 - The shared Deputy Director and Project Officer capacity previously parked against 2.3.3 has been **redeployed to 2.3.4 Rhythms of the Wider King’s Experience**, so the coherent funded resources reconcile fully to active work without increasing their total cost.
 - The Graduate Futures package uses the current shared programme/project-management allocation of **0.20 FTE in Year 1, worth £13.2k**.
+- **2.4.4 holds a Strategic Partnerships, Profile & External Engagement Fund of £25k / £35k / £45k across mobilisation, with a £45k p.a. recurrent BAU liability.** It is accounted for once in 2.4.4 but controlled by King’s Edge programme leadership and may be deployed across the portfolio for strategic partnership development, external profile, purposeful UK/international mobility, partner engagement and related activity. It is additional to the existing activation, research and survey-intervention envelopes.
 - Digital product implementation for purpose, skills and recognition is funded through the **separate Digital Student Experience Hub investment** and is not rebilled into the King’s Edge educational proposition packages.
 - Partnership infrastructure is costed once in **Beyond-Course Opportunity and Participation**, even where it also enables curricular and near-curricular experiential learning.
 
@@ -130,9 +131,9 @@ The **Digital Student Experience Hub** — 4.1.2, 4.1.3 and 4.1.4, enabled by 4.
     <tr valign="top">
       <td valign="top"><strong>Graduate Futures Intelligence and Value</strong><br><br><em>Plan refs: 2.1.1, 2.4.1, 2.4.2, 2.4.4</em><br><br><strong>North Star:</strong> <strong>King’s continuously understands, strengthens, proves and activates the distinctive graduate value of its education</strong>, using course-level evidence, external challenge and outcomes intelligence both to improve the offer and to make credible claims to students and the wider market.</td>
       <td valign="top"><strong>Student:</strong> “I can recognise and articulate more of the value I am gaining from my course, wider experiences, skills and ambitions.”<br><br><strong>Course team:</strong> “I have trusted evidence to explain the graduate futures value of my course and, where it points to an opportunity, take proportionate action to strengthen it.”<br><br><strong>Faculty / disciplinary community:</strong> “I have specific evidence, stories and proof points that show the distinctive graduate value of my discipline rather than relying on generic institutional claims.”<br><br><strong>Employer / alumnus / external partner:</strong> “There is a structured way for my insight to challenge and strengthen what King’s offers students and the claims it makes about their future value.”<br><br><strong>Prospective student:</strong> “I encounter clearer, more specific and better-evidenced accounts of where a King’s education can take me.”<br><br><strong>Recruitment / reputation colleague:</strong> “I have credible, reusable evidence and content that I can activate with different audiences without rebuilding the graduate-premium argument each time.”<br><br><strong>The University:</strong> “We can distinguish what we believe about the value of a King’s education from what the evidence and external challenge actually support, and refine claims that do not stand up.”<br><br><strong>The University:</strong> “We can identify where outcomes, survey representation and external perceptions offer the greatest opportunity for improvement, target interventions and learn what actually moves them.”</td>
-      <td valign="top"><strong>£144.9k.</strong> Moves King’s from generic graduate-value claims towards a <strong>course-level evidence, improvement and activation system</strong>: the first Graduate Futures evidence-and-action model; publication-ready graduate-premium exemplars and rich media; a common external-validation model; a tested student proposition; targeted Graduate Outcomes response optimisation; and the first strategic survey/reputation intelligence baseline.</td>
-      <td valign="top"><strong>£732.8k:</strong> approximately <strong>£144.9k / £261.45k / £326.45k</strong>. Years 2–3 scale the evidence/content estate, external-validation network, student adoption, survey optimisation and targeted reputation activation.</td>
-      <td valign="top"><strong>c.£166k p.a. current planning proxy, plus TBC.</strong> Assumes a 1.0 FTE activation/reputation role, mature £75k activation/research envelope and £25k external-insight operating envelope. Final role, content-refresh, analytical and organisational model remains evidence-led.</td>
+      <td valign="top"><strong>£169.9k.</strong> Moves King’s from generic graduate-value claims towards a <strong>course-level evidence, improvement and activation system</strong>: the first Graduate Futures evidence-and-action model; publication-ready graduate-premium exemplars and rich media; a common external-validation model; a tested student proposition; targeted Graduate Outcomes response optimisation; the first strategic survey/reputation intelligence baseline; and flexible programme-controlled capacity for strategic partnership and external profile development.</td>
+      <td valign="top"><strong>£837.8k:</strong> approximately <strong>£169.9k / £296.45k / £371.45k</strong>. Years 2–3 scale the evidence/content estate, external-validation network, student adoption, survey optimisation, targeted reputation activation and strategic partnership/profile activity.</td>
+      <td valign="top"><strong>c.£211k p.a. current planning proxy, plus TBC.</strong> Assumes a 1.0 FTE activation/reputation role, mature £75k activation/research envelope, £25k external-insight operating envelope and £45k Strategic Partnerships, Profile & External Engagement Fund. Final role, content-refresh, analytical and organisational model remains evidence-led.</td>
     </tr>
   </tbody>
 </table>
@@ -181,13 +182,15 @@ The Digital Student Experience Hub does not draw on these King’s Edge shared-r
 
 ### Graduate Futures Intelligence and Value
 
-The corrected **£144.9k Year 1 planning total** comprises:
+The corrected **£169.9k Year 1 planning total** comprises:
 
-- **£70.7k direct activity**: £30k 2.4.1, £15k 2.4.2, £25k 2.4.4 and £0.7k direct LLM cost for 2.1.1;
+- **£95.7k direct activity**: £30k 2.4.1, £15k 2.4.2, £50k 2.4.4 (£25k activation/research plus £25k Strategic Partnerships, Profile & External Engagement Fund) and £0.7k direct LLM cost for 2.1.1;
 - **£33k planning conversion** for the dedicated 0.5 FTE 2.4.4 role, using a £66k fully-loaded annual benchmark because the source specifies FTE but not an authored cash value; and
 - **£41.2k shared funded capacity**: £17.5k analytics, £10.5k Project Officer and **£13.2k programme/project management**.
 
-The resulting three-year profile is approximately **£144.9k / £261.45k / £326.45k = £732.8k**.
+The resulting three-year profile is approximately **£169.9k / £296.45k / £371.45k = £837.8k**.
+
+The **Strategic Partnerships, Profile & External Engagement Fund** is £25k / £35k / £45k across mobilisation and creates a **£45k p.a. recurrent BAU liability from 2029/30**. Its accounting home is 2.4.4, but budget control sits with King’s Edge programme leadership and deployment may support strategic partnership development, external profile, purposeful UK/international mobility, partner engagement, convening and related priorities across the King’s Edge portfolio. It is additional to the activation, research and survey-intervention envelopes and should not be double counted elsewhere.
 
 ### Beyond-Course Opportunity and Participation
 
@@ -233,12 +236,12 @@ The 4.1.2 decision log retains a **£3m three-year strategic investment envelope
 
 The current numbers are sufficiently mature for prioritisation, but they are not all equally certain.
 
-- **King’s Edge / Graduate Futures:** direct activity is well specified; the cash value of the dedicated 2.4.4 role remains a planning conversion and its BAU destination is not yet validated.
+- **King’s Edge / Graduate Futures:** direct activity is well specified; the cash value of the dedicated 2.4.4 role remains a planning conversion and its BAU destination is not yet validated. The strategic partnerships/profile fund is deliberately flexible, but its annual ceiling, programme-level control and £45k BAU assumption are explicit.
 - **King’s Edge / Beyond Course:** the £600k p.a. partnership-infrastructure figure is deliberately a **holding assumption**. Year 1 should produce the evidence to increase, reduce or reshape it. The Student Opportunities Fund award pot is not yet quantified.
 - **King’s Edge / Purpose, Skills and Recognition:** Year 1 is well bounded. Year 2 and 3 are capability envelopes which should contract as well as expand if discovery or portability evidence is weak.
 - **King’s Edge / Experiential Learning:** Year 1 is well bounded. Later curriculum-growth envelopes are explicitly evidence-led and should not be treated as automatic spending targets.
 - **Digital Hub:** £358k Year 1 and the core 4.1.3 staffing/tooling profile are well specified. Later integration/platform spend is deliberately held within the separate £3m strategic envelope and should be released from evidence.
-- **BAU:** the King’s Edge c.£1.031m p.a. and Digital Hub c.£394k p.a. figures are identifiable exposures rather than settled recurrent budgets. Several TBC items could add cost, while the £600k partnership assumption could reduce materially after review.
+- **BAU:** the King’s Edge c.£1.076m p.a. and Digital Hub c.£394k p.a. figures are identifiable exposures rather than settled recurrent budgets. Several TBC items could add cost, while the £600k partnership assumption could reduce materially after review.
 
 ---
 
