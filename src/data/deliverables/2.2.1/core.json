@@ -2,7 +2,7 @@
   "id": "2.2.1",
   "title": "A Conversation about Purpose with Every Student",
   "lead": "Vanessa Freeman",
-  "planningStatus": "delivery-design",
+  "planningStatus": "resource-planning",
   "decisionLog": [
     {
       "date": "2026-09-01",
@@ -11,6 +11,13 @@
       "seenBy": ["Vanessa Freeman", "Mark Peace"],
       "outcome": "Proceed to delivery design on a deliberately phased basis: discover effective human developmental practice first, build capability with willing trailblazer partners, test portability, then institutionalise what proves valuable.",
       "notes": "King's Canvas remains the living student-facing expression of the proposition rather than the proposition itself. Digital design should follow and extend proven developmental practice rather than determine it."
+    },
+    {
+      "date": "2026-09-03",
+      "type": "decision",
+      "forum": "King's Edge resource-planning pass",
+      "outcome": "Advance to resource planning using explicit mobilisation envelopes for protected practitioner discovery, paid student partnership, deep trailblazer implementation and evidence-led institutionalisation. These are planning assumptions for the business case, not pre-allocated budgets.",
+      "notes": "Digital build remains costed through the Digital Student Experience Hub. Later-year envelopes must be recalibrated from discovery, trailblazer and portability evidence."
     }
   ]
 }
