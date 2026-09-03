@@ -68,6 +68,17 @@ for (const [label, pattern] of residualChromeOwners) {
   }
 }
 
+const deadTimelineSelectors = [
+  ['unprefixed timeline presentation', /(^|\n)\.timeline(?:-|\s*\{)/m],
+  ['unprefixed dependency lens', /(^|\n)\.dependency-lens(?:\b|[.:])/m],
+  ['legacy timeline key state', /(^|\n)\.(?:key-box|selected-key|dependency-key|dependent-key|dependency-dot)\b/m]
+];
+for (const [label, pattern] of deadTimelineSelectors) {
+  if (pattern.test(siteStyles)) {
+    fail(`src/styles.css contains ${label}; the operational timeline is owned by src/styles/timeline.css`);
+  }
+}
+
 for (const [file, styles] of [
   ['src/design-system.css', designSystem],
   ['src/styles/resource-profile.css', resourceStyles],
@@ -130,6 +141,19 @@ const requiredIndexPrimitives = ['.ds-filter-strip', '.ds-catalogue-card'];
 for (const selector of requiredIndexPrimitives) {
   if (!indexNavigationStyles.includes(selector)) {
     fail(`src/styles/index-navigation.css is missing shared index primitive ${selector}`);
+  }
+}
+
+const requiredTimelineContracts = [
+  '.ke-timeline-page',
+  '.ke-timeline-toolbar',
+  '.ke-timeline-dependency-lens',
+  '.ke-timeline-table',
+  '.ke-timeline-step'
+];
+for (const selector of requiredTimelineContracts) {
+  if (!timelineStyles.includes(selector)) {
+    fail(`src/styles/timeline.css is missing canonical timeline contract ${selector}`);
   }
 }
 
