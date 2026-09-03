@@ -6,6 +6,7 @@
       "statement": "Students and graduates can select, organise and connect the knowledge, capabilities and experiences developed through their course and broader King’s experience. They can build audience-relevant narratives about what they know, can do and contribute while clearly distinguishing between learning that King’s certifies or recognises, evidence they provide and claims they make.",
       "beneficiary": "Students and graduates",
       "benefitType": "student articulation and equitable externalisation",
+      "owner": "Vanessa Freeman",
       "successLooksLike": "Students can use the fuller record or portfolio during study and at key transition points to select and connect relevant learning gains, explain why they matter, distinguish their status and point to appropriate evidence."
     },
     {
@@ -14,6 +15,7 @@
       "statement": "King’s can use responsibly governed aggregate profiles to demonstrate knowledge, capabilities and recognised learning developed through its education while retaining the distinctive contribution of individual courses and making the evidential basis of institutional claims visible.",
       "beneficiary": "King’s, students, graduates and external partners",
       "benefitType": "institutional evidence and external relevance",
+      "owner": "Vanessa Freeman",
       "successLooksLike": "King’s can produce governed aggregate accounts that show both course distinctiveness and patterns across the institution and can trace those narratives back to underlying evidence and recognition status."
     },
     {
@@ -22,6 +24,7 @@
       "statement": "A clear trust and authority model allows King’s to broaden what students can carry forward from their education while preserving the distinction between the formal academic record, institutional recognition, student evidence and student claim.",
       "beneficiary": "Students, King’s, academic governance and external users",
       "benefitType": "trusted recognition and institutional assurance",
+      "owner": "Vanessa Freeman",
       "successLooksLike": "Trailblazer and institutional models make the authority, provenance and status of each element unambiguous to students, staff and external readers, with broader recognition governed through agreed policy rather than interface convention."
     }
   ]
