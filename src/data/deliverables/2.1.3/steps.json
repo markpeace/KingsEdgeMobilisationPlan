@@ -49,10 +49,15 @@
             "id": "2.1.3-skills-prototype",
             "item": "Paid student technical prototyping capacity",
             "category": "student technical project",
-            "estimatedCost": "TBC through resource planning; intended as a bounded proof-of-concept assignment rather than enduring digital product development.",
+            "amount": 7500,
+            "currency": "GBP",
+            "yearlyProfile": [{"academicYear": "2026/27", "amount": 7500, "note": "Bounded technical proof-of-concept assignment, sized above the existing six-week internship benchmark while remaining deliberately short of a production-development ask."}],
+            "estimatedCost": "£7,500 Year 1 planning envelope.",
             "owner": "King’s Edge",
-            "fundingStatus": "to be costed",
-            "confidence": "developing",
+            "decisionNeededBy": "Autumn 2026",
+            "fundingRoute": "King's Edge mobilisation investment request",
+            "fundingStatus": "planning envelope",
+            "confidence": "planning estimate",
             "rationale": "Provides dedicated engineering capacity to test the classification, data access and mapping workflow without waiting for or duplicating the enduring Digital Hub build.",
             "riskIfMissing": "The project may remain at the level of conceptual discussion and be unable to test the real technical and usability constraints Vanessa identified."
           }
@@ -120,9 +125,14 @@
             "id": "2.1.3-trailblazer-capability",
             "item": "Skills trailblazer capacity-building envelope",
             "category": "academic and professional capacity building",
-            "estimatedCost": "TBC through Year 1 resource planning and trailblazer selection.",
+            "amount": 60000,
+            "currency": "GBP",
+            "yearlyProfile": [{"academicYear": "2027/28", "amount": 60000, "note": "Largest Package 4 trailblazer envelope because meaningful testing requires curriculum interpretation, disciplinary academic time, learning-design work and student use across more than one context."}],
+            "estimatedCost": "£60,000 Year 2 planning envelope.",
             "owner": "King’s Edge / trailblazer partners",
-            "fundingStatus": "planning envelope to be quantified",
+            "decisionNeededBy": "Summer 2027",
+            "fundingRoute": "King's Edge mobilisation investment request",
+            "fundingStatus": "planning envelope, subject to Year 1 discovery",
             "confidence": "indicative",
             "rationale": "Protects the time needed for curriculum interpretation, learning-design work, student testing and local capability building so trailblazers can test the model properly.",
             "riskIfMissing": "Implementation may remain superficial and dependent on a small number of enthusiasts working around normal workload."
@@ -163,6 +173,24 @@
         }
       ],
       "resources": {
+        "newInvestment": [
+          {
+            "id": "2.1.3-y3-institutionalisation",
+            "item": "Skills architecture institutionalisation envelope",
+            "category": "curriculum implementation and capability transfer",
+            "amount": 40000,
+            "currency": "GBP",
+            "yearlyProfile": [{"academicYear": "2028/29", "amount": 40000, "note": "Evidence-led Year 3 planning reserve for curriculum guidance, capability transfer, curation and implementation support after portability testing."}],
+            "estimatedCost": "£40,000 Year 3 planning envelope.",
+            "owner": "King’s Edge / Curriculum Framework and enduring skills owners TBC",
+            "decisionNeededBy": "Summer 2028",
+            "fundingRoute": "King's Edge mobilisation investment request",
+            "fundingStatus": "planning reserve, conditional on portability evidence",
+            "confidence": "indicative",
+            "rationale": "Provides a credible route from successful trailblazers into supported curriculum and institutional practice without pre-funding a universal implementation model before its burden and value are known.",
+            "riskIfMissing": "A useful shared architecture may be defined but fail to travel because programmes lack practical implementation and capability-transfer support."
+          }
+        ],
         "enablingConditions": [
           {
             "condition": "The Digital Student Experience Hub formally carries the student-facing skills profile and evidence functionality rather than a separate King’s Edge product.",
