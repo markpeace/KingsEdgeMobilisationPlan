@@ -42,6 +42,8 @@ Edge should not run separate micro-audits of skills, experiential learning or gr
 
 This matters because the curriculum is one of the principal places where students develop the graduate premium, but much of that value is currently implicit. The Curriculum Framework audit is the mechanism for surfacing where skills and experiential learning are already present, where provision is hidden or uneven, and where programmes need support to grow opportunity.
 
+For the living skills work, the Curriculum Framework is also the mainstream institutional route through which a proven skills architecture can eventually be embedded. Year 1 discovery and later trailblazer work should determine what curriculum evidence, mapping practice and assurance are actually useful before a common requirement is institutionalised.
+
 ### Core Edge needs serviced
 
 - Audit of curriculum-embedded skills development
@@ -49,34 +51,38 @@ This matters because the curriculum is one of the principal places where student
 - Identification of programme-level graduate premium contribution
 - Baseline for curriculum opportunity growth and assurance
 - Evidence to support programme graduate premium profiles and evidence packs
+- Enduring route for a tested and portable skills architecture after trailblazer development
 
 ### What changes
 
-Edge requirements become part of mainstream curriculum review, avoiding duplication and ensuring skills, experiential learning and graduate value are embedded in the core academic framework.
+Edge requirements become part of mainstream curriculum review, avoiding duplication and ensuring skills, experiential learning and graduate value are embedded in the core academic framework only where the underlying models have been sufficiently tested.
 
-## Related project 3: Single Student App / Digital Portal
+## Related project 3: Digital Student Experience Hub
 
 ### How this fulfils core Edge needs
 
-The Single Student App provides the digital environment through which the King's Edge offer becomes navigable, personal and usable for students.
+The Digital Student Experience Hub provides the digital environment through which the King's Edge offer becomes navigable, personal and usable for students.
 
-Edge should define the requirements, but not build a separate platform. The app needs to carry the digital functionality through which students can reflect on purpose, navigate opportunities, connect experiences to skills, and ultimately evidence and articulate what they have gained.
+Edge should define the educational, service and information requirements, but not build a separate platform. The Hub needs to carry the digital functionality through which students can reflect on purpose, navigate opportunities, connect experiences to a proven skills architecture and ultimately evidence and articulate what they have gained.
 
-This includes building out the existing Eventbrite-like opportunity platform so that it becomes a richer portal for opportunity navigation, connected to King's Canvas, skills profiles, evidence capture, microcredentials, digital badges and the future enhanced student record.
+For purpose, digital functionality should extend a human developmental model that has first been tested with students and trailblazer partners. For skills, the Hub should eventually carry the student-facing profile, evidence and navigation experience once 2.1.3 has established a sufficiently useful shared architecture. For recognition, it should implement the trusted educational-record model selected through discovery and trailblazer evidence rather than presuming that the final product must be an enhanced transcript.
+
+This includes building out the existing opportunity platform so that it becomes part of a richer route for opportunity navigation, connected to King's Canvas, skills profiles, evidence capture, microcredentials, digital badges and the fuller trusted account of student learning.
 
 ### Core Edge needs serviced
 
-- King's Canvas functionality for purpose, aspiration and planning
+- King's Canvas functionality for purpose, aspiration and planning, derived from proven developmental practice
 - Digital opportunity catalogue and navigation
 - Search, filtering and recommendation of opportunities
-- Links between opportunities, skills profiles and student aspirations
+- Links between opportunities, a tested skills architecture and student aspirations
+- Student-facing skills profile and evidence functionality once the 2.1.3 model is sufficiently mature
 - Technical support for microcredentials and digital badges
-- Future enhanced transcript / HEAR-alternative functionality
+- Fuller trusted educational-record functionality, with transcript, portfolio or hybrid architecture determined through 2.4.3 discovery and trailblazers
 - Evidence capture and articulation support
 
 ### What changes
 
-Students move from a fragmented opportunity landscape to a coherent digital route through which they can plan, find, access, evidence and articulate the value of their King's experience.
+Students move from a fragmented opportunity landscape to a coherent digital route through which they can plan, find, access, evidence and articulate the value of their King's experience. Digital implementation follows evidence-led educational and recognition requirements rather than becoming a separate King's Edge product strategy.
 
 ## Site treatment
 
@@ -95,8 +101,4 @@ Related projects are held in:
 src/data/enabling-projects.json
 ```
 
-Step-level dependency relationships are held in:
-
-```text
-src/data/step-dependencies.json
-```
+Step-level dependency relationships are normally authored through each deliverable's `steps.json` using `dependsOn`; `src/data/step-dependencies.json` remains available only for exceptional external dependency records.
