@@ -3,18 +3,26 @@
     {
       "id": "2.2.1-B1",
       "title": "Students develop purposeful agency and enduring self-direction",
-      "statement": "Students can articulate what matters to them, explore uncertainty and make intentional choices. Regular reflection strengthens their ability to revise direction, connect knowledge with experience and continue shaping their lives, learning and contribution beyond King’s.",
+      "statement": "Students can articulate what currently matters to them, including where they remain uncertain, make intentional choices and strengthen their ability to revise direction as they learn more about themselves and the possibilities available to them. They connect knowledge with experience and continue shaping their lives, learning and contribution beyond King’s.",
       "beneficiary": "Students and graduates",
       "benefitType": "purposeful agency and self-direction",
-      "successLooksLike": "Students can articulate and revisit their purposes, make intentional choices about their King’s experience and adapt their direction as their circumstances and ambitions change."
+      "successLooksLike": "Students can articulate and revisit what matters to them, make intentional choices about their King’s experience and adapt their direction as their circumstances, evidence and ambitions change."
     },
     {
       "id": "2.2.1-B2",
-      "title": "King’s creates a more coherent, equitable and responsive opportunity ecology",
-      "statement": "Students can identify relevant opportunities and understand how experiences connect, with less reliance on confidence, networks or institutional knowledge. King’s can make more relevant recommendations and better-informed investment decisions, reducing inequality and fear of missing out while improving the reach, relevance and value of enrichment provision.",
+      "title": "Students can navigate a rich opportunity ecology more intentionally and equitably",
+      "statement": "Students can identify opportunities relevant to their evolving purposes and understand how experiences connect, with less dependence on prior confidence, networks or institutional knowledge. King’s can use governed patterns of student ambition and need to improve recommendations and shape enrichment provision more responsively.",
       "beneficiary": "Students, opportunity providers and King’s",
       "benefitType": "equitable navigation and responsive provision",
-      "successLooksLike": "Students from different backgrounds can identify opportunities relevant to their purposes, while decisions about enrichment provision draw on clearer patterns of student ambition, need and demand."
+      "successLooksLike": "Students from different backgrounds and patterns of study can identify opportunities relevant to their purposes, while decisions about enrichment provision draw on clearer and appropriately governed evidence about student ambition, need and demand."
+    },
+    {
+      "id": "2.2.1-B3",
+      "title": "King’s develops a more coherent approach to supporting purpose and self-direction",
+      "statement": "Relevant student-facing relationships share a clearer developmental logic around reflection, transition, aspiration and need. Specialist practice remains where it adds value, while students encounter a more coherent journey rather than disconnected conversations owned by separate services.",
+      "beneficiary": "Students, student-facing teams and King’s",
+      "benefitType": "developmental coherence and institutional capability",
+      "successLooksLike": "Trailblazer partners can describe and deliver a coherent purpose and self-direction model across relevant touchpoints, and the elements selected for wider adoption have evidence that they remain useful outside unusually committed local settings."
     }
   ]
 }
