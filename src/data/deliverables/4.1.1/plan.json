@@ -9,8 +9,8 @@
       "summary": "From September to November 2026, agree the boundary of the authoritative student knowledge foundation, including audience separation, content inclusion and exclusion rules, the distinction between durable information and opportunity content, taxonomy and metadata principles, authoritative ownership, editorial control, review and expiry expectations, and the relationship with King’s Answers, the Hub, web/DXP channels and staff-facing guidance.",
       "dependsOn": [],
       "resources": {"people": [
-        {"role": "Knowledge/content design lead", "type": "TBC", "fte": null, "notes": "Cross-institution lead required to shape the content model, governance and migration approach."},
-        {"role": "Service and subject-matter owners", "type": "existing", "fte": null, "notes": "Protected participation from priority student-service domains, Communications/web and relevant faculty/service representatives."}
+        {"role": "Knowledge/content design lead", "type": "TBC", "notes": "Cross-institution lead required to shape the content model, governance and migration approach."},
+        {"role": "Service and subject-matter owners", "type": "existing", "notes": "Protected participation from priority student-service domains, Communications/web and relevant faculty/service representatives."}
       ]}
     },
     {
@@ -20,8 +20,8 @@
       "summary": "From November 2026 to February 2027, map priority student information across the current estate, identify authoritative sources and owners, classify content as retain, improve, consolidate, retire or redirect, identify gaps, and produce a sequenced migration and rationalisation backlog. Use existing migration work and student-enquiry research as starting evidence rather than repeating discovery unnecessarily.",
       "dependsOn": ["4.1.1-step-1"],
       "resources": {"people": [
-        {"role": "Content audit and migration capacity", "type": "TBC", "fte": null, "notes": "Protected editorial/content operations capacity; scale and funding route to be confirmed from the audit."},
-        {"role": "Business analysis", "type": "existing / shared", "fte": null, "notes": "Protected shared input may be required to map ownership, dependencies and content flows; exact capacity is TBC rather than assumed."}
+        {"role": "Content audit and migration capacity", "type": "TBC", "notes": "Protected editorial/content operations capacity; scale and funding route to be confirmed from the audit."},
+        {"role": "Business analysis", "type": "existing / shared", "notes": "Protected shared input may be required to map ownership, dependencies and content flows; exact capacity is TBC rather than assumed."}
       ]}
     },
     {
@@ -31,8 +31,8 @@
       "summary": "From December 2026 to April 2027, improve, consolidate and author the first priority knowledge domains using the agreed model, establish named content ownership and review dates, and make them available through King’s Answers. Do not migrate weak or unsuitable content simply to achieve coverage.",
       "dependsOn": ["4.1.1-step-1", "4.1.1-step-2"],
       "resources": {"people": [
-        {"role": "Content design, editorial and migration capacity", "type": "TBC", "fte": null, "notes": "Required to turn audited source material into publishable governed knowledge rather than relying on unmanaged distributed editing."},
-        {"role": "King’s Answers product/service team", "type": "existing dependency", "fte": null, "notes": "Provides the proving environment and technical route; CRM/ticketing/workflow remain outside 4.1.1 scope."}
+        {"role": "Content design, editorial and migration capacity", "type": "TBC", "notes": "Required to turn audited source material into publishable governed knowledge rather than relying on unmanaged distributed editing."},
+        {"role": "King’s Answers product/service team", "type": "existing dependency", "notes": "Provides the proving environment and technical route; CRM/ticketing/workflow remain outside 4.1.1 scope."}
       ]}
     },
     {
