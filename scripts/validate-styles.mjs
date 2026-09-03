@@ -17,6 +17,7 @@ const designSystem = read('src/design-system.css');
 const siteStyles = read('src/styles.css');
 const resourceStyles = read('src/styles/resource-profile.css');
 const globalChromeStyles = read('src/styles/global-chrome.css');
+const landingStyles = read('src/styles/landing-overview.css');
 const indexNavigationStyles = read('src/styles/index-navigation.css');
 const measuresStyles = read('src/styles/measures-overview.css');
 const timelineStyles = read('src/styles/timeline.css');
@@ -57,6 +58,7 @@ for (const [file, styles] of [
   ['src/design-system.css', designSystem],
   ['src/styles/resource-profile.css', resourceStyles],
   ['src/styles/global-chrome.css', globalChromeStyles],
+  ['src/styles/landing-overview.css', landingStyles],
   ['src/styles/index-navigation.css', indexNavigationStyles],
   ['src/styles/measures-overview.css', measuresStyles],
   ['src/styles/timeline.css', timelineStyles],
@@ -81,13 +83,25 @@ for (const selector of requiredChromePrimitives) {
 
 const requiredChromeContracts = [
   'scroll-padding-top: 7rem',
-  '.landing-hero::after',
   '.site-footer',
   '.indicative-label'
 ];
 for (const contract of requiredChromeContracts) {
   if (!globalChromeStyles.includes(contract)) {
     fail(`src/styles/global-chrome.css is missing migrated cross-site contract ${contract}`);
+  }
+}
+
+const requiredLandingContracts = [
+  '.landing-main',
+  '.landing-hero::after',
+  '.landing-hero h1::after',
+  '.landing-hero .landing-links',
+  '.landing-links a:first-child'
+];
+for (const contract of requiredLandingContracts) {
+  if (!landingStyles.includes(contract)) {
+    fail(`src/styles/landing-overview.css is missing landing contract ${contract}`);
   }
 }
 
@@ -159,6 +173,7 @@ for (const selector of exactlyRetiredSelectors) {
 
 const siteImport = siteEntry.indexOf("import './site.jsx';");
 const chromeImport = siteEntry.indexOf("import './styles/global-chrome.css';");
+const landingImport = siteEntry.indexOf("import './styles/landing-overview.css';");
 const indexNavigationImport = siteEntry.indexOf("import './styles/index-navigation.css';");
 const measuresImport = siteEntry.indexOf("import './styles/measures-overview.css';");
 const primitiveImport = siteEntry.indexOf("import './styles/detail-primitives.css';");
@@ -170,7 +185,8 @@ const theoryImport = siteEntry.indexOf("import './styles/theory-of-change.css';"
 if (
   siteImport < 0 ||
   chromeImport < siteImport ||
-  indexNavigationImport < chromeImport ||
+  landingImport < chromeImport ||
+  indexNavigationImport < landingImport ||
   measuresImport < indexNavigationImport ||
   primitiveImport < measuresImport ||
   portfolioImport < primitiveImport ||
@@ -179,7 +195,7 @@ if (
   projectImport < planningDetailImport ||
   theoryImport < projectImport
 ) {
-  fail('src/site-entry.jsx must load chrome, index, Measures, shared primitives and owned feature styles after src/site.jsx in the documented order');
+  fail('src/site-entry.jsx must load chrome, landing, index, Measures, shared primitives and owned feature styles after src/site.jsx in the documented order');
 }
 
 if (siteEntry.includes('post-legacy-cleanup.css')) {

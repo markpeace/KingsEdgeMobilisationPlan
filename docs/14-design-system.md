@@ -59,7 +59,6 @@ Owns the shared application chrome and cross-site reading contracts that sit aro
 - page-level utility actions;
 - planning-stage context strips;
 - sticky-header scroll offset;
-- homepage watermark suppression;
 - temporary footer visibility policy;
 - suppression of repeated inline indicative labels where planning stage already communicates the same state.
 
@@ -69,11 +68,10 @@ The current split KING'S EDGE / MOBILISATION PLAN brand remains visually stable 
 
 Owns site compositions that are genuinely specific to the mobilisation-plan interface, for example:
 
-- hero composition outside migrated feature pages;
+- generic hero composition outside migrated feature pages;
 - project board;
 - deliverable board;
 - dependency lens;
-- timeline composition;
 - print layout.
 
 It should not redefine tokens or duplicate the base styling of panels, controls, labels or tags.
@@ -84,6 +82,7 @@ Feature stylesheets define layouts or states that are unique to a feature and co
 
 Current owned feature styles include:
 
+- `src/styles/landing-overview.css` for the approved homepage composition and landing navigation;
 - `src/styles/resource-profile.css` for Resources & Investment;
 - `src/styles/deliverable-detail.css` for deliverable-detail composition and feature-specific internals;
 - `src/styles/planning-detail.css` for governance, consultation history and RAID presentation;
@@ -103,11 +102,19 @@ There are no late-loaded stylesheets in `index.html`. Any live styling must ente
 
 `scripts/style-retirement-config.mjs` is the single registry of retired selector families. The generator and style validator both import it so retirement rules cannot drift between build preparation and architecture validation.
 
-The generator now retires project overview, project deliverable-board, deliverable hero, case-for-change, benefit/evidence, delivery-sequence, disclosure, global chrome, planning-context, governance, consultation, RAID, Measures, Timeline, indicative-step and obsolete Resource & Investment widget selector families. Build validation checks that retired selectors cannot reappear in the generated compatibility CSS.
+The generator now retires project overview, project deliverable-board, deliverable hero, case-for-change, benefit/evidence, delivery-sequence, disclosure, global chrome, planning-context, landing, governance, consultation, RAID, Measures, Timeline, indicative-step and obsolete Resource & Investment widget selector families. Build validation checks that retired selectors cannot reappear in the generated compatibility CSS.
 
 Theory of Change presentation is no longer a late public shim. It is source-owned, imported through `src/site-entry.jsx`, uses the shared sequence-card primitive for the causal chain, and follows the same black/white/red disclosure grammar as the rest of the product.
 
 This generated-bundle approach is transitional. Each migrated feature should reduce the preserved source until the compatibility layer can be removed completely.
+
+## Landing-page composition
+
+The homepage is an orientation surface rather than a dashboard. It establishes the King's Edge proposition, then provides four direct routes into the programme views.
+
+The approved visual composition is source-owned in `src/styles/landing-overview.css`. Historical `.landing-main`, `.landing-hero` and `.landing-links` selectors are removed from the compatibility bundle before runtime. The page-specific suppression of the generic hero watermark also belongs here rather than in global chrome.
+
+The current public-facing standfirst and proposition copy remain expressed through the landing stylesheet while the older `Landing` component still exposes only the programme title and purpose as authored fields. That is content-structure debt rather than a styling dependency: when the component is decomposed, those strings should move into explicit authored markup without changing the approved presentation.
 
 ## Deliverable-page composition
 
@@ -183,13 +190,15 @@ Completed:
 20. `src/styles/post-legacy-cleanup.css` has been deleted and its remaining cross-site contracts moved into their source owner;
 21. the Resource & Investment compatibility shim has been deleted and obsolete resource widget selectors are retired before the legacy bundle enters the runtime cascade;
 22. `index.html` no longer late-loads any CSS;
-23. legacy selector retirement is defined once in `scripts/style-retirement-config.mjs` and shared by generation and validation.
+23. legacy selector retirement is defined once in `scripts/style-retirement-config.mjs` and shared by generation and validation;
+24. the approved landing presentation is source-owned in `src/styles/landing-overview.css`, with its historical selector families retired from the runtime compatibility bundle and no `!important` debt.
 
 Next:
 
 1. progressively shrink `legacy-public-source.css` as each retired feature family becomes safe to delete permanently;
 2. move temporary selector aliases onto explicit `.ds-*` classes as the React markup is decomposed;
-3. migrate the remaining historical landing-page and brand treatment into owned source styles without destabilising the established visual identity;
-4. delete the generated legacy compatibility system once no live feature depends on it.
+3. move landing public-facing copy into explicit authored markup when the `Landing` component is decomposed;
+4. migrate the remaining historical brand treatment into owned global chrome without destabilising the established visual identity;
+5. delete the generated legacy compatibility system once no live feature depends on it.
 
 The aim is progressive retirement of legacy CSS rather than a risky whole-site rewrite.
