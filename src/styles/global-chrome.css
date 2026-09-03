@@ -11,13 +11,6 @@ html {
   scroll-padding-top: 7rem;
 }
 
-/* The homepage carries its identity in the authored hero and does not use the
-   generic detail-hero watermark. */
-.landing-hero::after {
-  display: none;
-  content: none;
-}
-
 /* The footer is retained in markup for now but is not part of the reader surface. */
 .site-footer {
   display: none;
