@@ -2,7 +2,7 @@
   "id": "2.1.3",
   "title": "A Living Skills Language for Student Futures",
   "lead": "Vanessa Freeman",
-  "planningStatus": "delivery-design",
+  "planningStatus": "resource-planning",
   "decisionLog": [
     {
       "date": "2026-09-01",
@@ -11,6 +11,13 @@
       "seenBy": ["Vanessa Freeman", "Mark Peace"],
       "outcome": "Proceed to delivery design with the UK Standard Skills Classification treated as the leading candidate rather than a settled institutional choice. Year 1 will test taxonomy fitness, technical mediation and usable curriculum evidence before trailblazer adoption.",
       "notes": "Curriculum-facing discovery should start before the student-facing skills experience. The mobilisation route is discover, build capability with willing trailblazer partners, test portability, then institutionalise the shared architecture that proves useful."
+    },
+    {
+      "date": "2026-09-03",
+      "type": "decision",
+      "forum": "King's Edge resource-planning pass",
+      "outcome": "Advance to resource planning with a bounded Year 1 technical proof-of-concept budget, a larger Year 2 trailblazer capability envelope and an evidence-led Year 3 institutionalisation envelope.",
+      "notes": "The technical prototype tests the proposition and does not fund a separate production platform. Student-facing digital implementation remains a Digital Student Experience Hub dependency."
     }
   ]
 }
