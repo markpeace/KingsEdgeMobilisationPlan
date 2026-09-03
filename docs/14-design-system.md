@@ -67,15 +67,13 @@ The header keeps the accessible `King's Edge Mobilisation Plan` anchor text in R
 
 ### `src/styles.css`
 
-Owns site compositions that are genuinely specific to the mobilisation-plan interface, for example:
+Owns only residual mobilisation-plan compositions that have not yet moved to a clearer source owner, for example:
 
-- generic hero composition outside migrated feature pages;
-- project board;
-- deliverable board;
-- dependency lens;
-- print layout.
+- generic hero and section-heading composition outside migrated feature pages;
+- residual generic index, component and dependency scaffolding still shared by older markup;
+- the A3 print layout.
 
-It should not redefine tokens or duplicate the base styling of panels, controls, labels or tags. Historical generic declarations should continue to move to their canonical owner as the file is decomposed.
+It must not own the Projects portfolio, operational Timeline, global chrome or other feature families that already have a canonical stylesheet. It should not redefine tokens or duplicate the base styling of panels, controls, labels or tags. Historical generic declarations should continue to move to their canonical owner as the file is decomposed.
 
 ### Feature stylesheets
 
@@ -84,6 +82,9 @@ Feature stylesheets define layouts or states that are unique to a feature and co
 Current owned feature styles include:
 
 - `src/styles/landing-overview.css` for the approved homepage composition and landing navigation;
+- `src/styles/index-navigation.css` for shared Deliverables/Measures catalogue navigation;
+- `src/styles/measures-overview.css` for measure-specific reporting anatomy;
+- `src/styles/portfolio-overview.css` for the Projects index horizontal comparative board;
 - `src/styles/resource-profile.css` for Resources & Investment;
 - `src/styles/deliverable-detail.css` for deliverable-detail composition and feature-specific internals;
 - `src/styles/planning-detail.css` for governance, consultation history and RAID presentation;
@@ -193,7 +194,8 @@ Completed:
 22. `index.html` no longer late-loads any CSS;
 23. legacy selector retirement is defined once in `scripts/style-retirement-config.mjs` and shared by generation and validation;
 24. the approved landing presentation is source-owned in `src/styles/landing-overview.css`, with its historical selector families retired from the runtime compatibility bundle and no `!important` debt;
-25. the split KING'S EDGE / MOBILISATION PLAN header identity is source-owned in `src/styles/global-chrome.css`, with the historical `.brand` family retired from runtime compatibility CSS.
+25. the split KING'S EDGE / MOBILISATION PLAN header identity is source-owned in `src/styles/global-chrome.css`, with the historical `.brand` family retired from runtime compatibility CSS;
+26. the Projects index is fully source-owned in `src/styles/portfolio-overview.css`; residual project-board/card selectors and their generic `.owner`/`.lead` `!important` rules have been removed from `src/styles.css` and guarded against reintroduction.
 
 Next:
 
