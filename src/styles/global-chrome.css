@@ -1,14 +1,56 @@
 /*
  * Shared site chrome.
  *
- * This layer owns application navigation, page-level utility actions and slim
- * planning-context strips. The split KING'S EDGE / MOBILISATION PLAN brand is
- * intentionally left with the existing brand treatment until its own migration.
+ * This layer owns application navigation, header identity, page-level utility
+ * actions and slim planning-context strips.
  */
 
 /* Sticky application chrome needs a consistent in-page scroll offset. */
 html {
   scroll-padding-top: 7rem;
+}
+
+/* Preserve the established split King's Edge identity while keeping the anchor's
+   accessible name in the markup. */
+.brand {
+  display: inline-flex;
+  align-items: stretch;
+  gap: 0;
+  width: auto;
+  max-width: none;
+  padding: 0;
+  background: transparent;
+  color: transparent;
+  font-size: 0;
+  line-height: 1;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.brand::before,
+.brand::after {
+  display: inline-flex;
+  align-items: center;
+  min-height: 88px;
+  font-family: var(--font-brand);
+  font-size: clamp(2.45rem, 3.15vw, 3.05rem);
+  font-weight: 400;
+  letter-spacing: -0.032em;
+  line-height: 0.82;
+}
+
+.brand::before {
+  content: "KING'S EDGE";
+  padding: 0.48rem clamp(1.05rem, 2vw, 1.6rem) 0.34rem clamp(1rem, 2.1vw, 1.55rem);
+  background: var(--color-accent);
+  color: var(--color-paper);
+}
+
+.brand::after {
+  content: 'MOBILISATION PLAN';
+  padding: 0.48rem clamp(1rem, 1.5vw, 1.4rem) 0.34rem;
+  background: var(--color-paper);
+  color: var(--color-ink);
 }
 
 /* The footer is retained in markup for now but is not part of the reader surface. */
@@ -175,6 +217,14 @@ html {
   display: none;
 }
 
+@media (max-width: 1180px) {
+  .brand::before,
+  .brand::after {
+    min-height: 80px;
+    font-size: clamp(1.85rem, 3.2vw, 2.4rem);
+  }
+}
+
 @media (max-width: 900px) {
   .site-header nav {
     gap: var(--space-1);
@@ -196,6 +246,20 @@ html {
 }
 
 @media (max-width: 760px) {
+  .brand {
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .brand::before,
+  .brand::after {
+    flex: 1 1 auto;
+    justify-content: center;
+    min-height: 54px;
+    font-size: clamp(1.5rem, 8vw, 2rem);
+  }
+
   .site-header nav {
     width: 100%;
     justify-content: center;
