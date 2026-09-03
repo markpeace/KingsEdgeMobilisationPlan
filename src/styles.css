@@ -164,8 +164,6 @@
 .component-card p,
 .step-card p,
 .dependency-card p,
-.timeline-title span,
-.dependency-lens p,
 .compact-list {
   color: var(--muted);
   line-height: 1.4;
@@ -411,41 +409,6 @@
   gap: 0.5rem;
 }
 
-.timeline-toolbar {
-  align-items: center;
-}
-
-.dependency-lens {
-  display: grid;
-  grid-template-columns: 1.5fr 1fr 1fr;
-  gap: 1rem;
-  align-items: start;
-  margin: 1rem 0;
-  padding: 1.25rem;
-  border: 2px solid var(--ink);
-  border-left: 0.75rem solid var(--accent);
-  border-radius: 0;
-  background: #ffffff;
-  box-shadow: none;
-}
-
-.dependency-lens.empty {
-  grid-template-columns: 1fr;
-}
-
-.dependency-lens h2,
-.dependency-lens h3,
-.dependency-lens p {
-  margin-top: 0;
-}
-
-.dependency-lens h2,
-.dependency-lens h3 {
-  font-family: var(--font-body);
-  font-weight: 700;
-  letter-spacing: -0.01em;
-}
-
 .compact-list {
   display: grid;
   gap: 0.45rem;
@@ -461,179 +424,13 @@
   color: var(--accent);
 }
 
-.timeline-key {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-  align-items: center;
-  margin: 1rem 0;
-  color: var(--muted);
-  font-size: 0.92rem;
-  font-weight: 700;
-}
-
-.timeline-key span {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.35rem;
-}
-
-.key-box {
-  display: inline-block;
-  width: 1rem;
-  height: 1rem;
-  border-radius: 0;
-  border: 2px solid var(--ink);
-}
-
-.selected-key {
-  background: var(--ink);
-}
-
-.dependency-key {
-  background: var(--accent);
-}
-
-.dependent-key {
-  background: #ffffff;
-  border-color: var(--accent);
-}
-
-.timeline {
-  overflow-x: auto;
-  border: 2px solid var(--ink);
-  border-radius: 0;
-  background: #ffffff;
-  box-shadow: none;
-}
-
-.timeline-header,
-.timeline-row {
-  display: grid;
-  grid-template-columns: 300px repeat(4, minmax(230px, 1fr));
-  min-width: 1220px;
-}
-
-.timeline-header {
-  position: sticky;
-  top: 70px;
-  z-index: 5;
-  background: var(--ink);
-  color: #ffffff;
-  font-weight: 700;
-}
-
-.timeline-header > div,
-.timeline-cell,
-.timeline-title {
-  border-right: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-  padding: 0.75rem;
-}
-
-.timeline-header > div {
-  border-color: rgba(255, 255, 255, 0.25);
-}
-
-.timeline-row:last-child .timeline-cell,
-.timeline-row:last-child .timeline-title {
-  border-bottom: 0;
-}
-
-.timeline-title {
-  display: grid;
-  gap: 0.35rem;
-  text-decoration: none;
-  background: #ffffff;
-  border-right: 3px solid var(--ink);
-}
-
-.timeline-title strong {
-  line-height: 1.15;
-  font-weight: 700;
-}
-
-.timeline-cell {
-  min-height: 96px;
-  background: #ffffff;
-}
-
-.timeline-block {
-  position: relative;
-  display: grid;
-  grid-template-columns: 1fr auto;
-  width: 100%;
-  gap: 0.45rem;
-  align-items: start;
-  text-align: left;
-  font: inherit;
-  color: var(--ink);
-  cursor: pointer;
-  border: 2px solid var(--ink);
-  background: #ffffff;
-  border-radius: 0;
-  padding: 0.65rem;
-  margin-bottom: 0.5rem;
-  font-size: 0.88rem;
-  font-weight: 700;
-  line-height: 1.25;
-  transition: background 150ms ease, color 150ms ease, opacity 150ms ease, border-color 150ms ease;
-}
-
-.timeline-block:hover,
-.timeline-block:focus-visible {
-  border-color: var(--accent);
-  outline: none;
-  background: var(--accent-soft);
-}
-
-.timeline-block.selected {
-  background: var(--ink) !important;
-  color: #ffffff !important;
-  border-color: var(--ink) !important;
-}
-
-.timeline-block.dependency-highlight {
-  background: var(--accent) !important;
-  border-color: var(--accent) !important;
-  color: #ffffff !important;
-}
-
-.timeline-block.dependent-highlight {
-  background: #ffffff !important;
-  border-color: var(--accent) !important;
-  color: var(--accent-dark) !important;
-}
-
-.timeline-block.dimmed {
-  opacity: 0.28;
-}
-
-.timeline-block.selected .dependency-dot,
-.timeline-block.dependency-highlight .dependency-dot {
-  background: #ffffff;
-  color: var(--accent);
-}
-
-.dependency-dot {
-  width: 1.45rem;
-  height: 1.45rem;
-  border-radius: 50%;
-  display: inline-grid;
-  place-items: center;
-  background: var(--accent);
-  color: white;
-  font-weight: 700;
-}
-
 @media (max-width: 1180px) {
   .project-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .component-grid,
-  .steps-list,
-  .dependency-lens {
+  .steps-list {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
@@ -670,8 +467,7 @@
   .detail-grid,
   .component-grid,
   .steps-list,
-  .index-row,
-  .dependency-lens {
+  .index-row {
     grid-template-columns: 1fr;
   }
 
