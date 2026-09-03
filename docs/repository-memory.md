@@ -135,7 +135,19 @@ The later-year direct figures are planning envelopes rather than automatic spend
 
 There is no current Package 4 allocation from the shared analytics or programme/project-management resources. The only presently identifiable recurrent BAU liability is approximately **£9k p.a.**, the package’s 0.10 share of the permanent Deputy Director post. Enduring practitioner, curriculum/skills governance and Registry/recognition operating requirements remain TBC until mobilisation evidence shows what needs to persist.
 
-The completed five-package investment view in `docs/portfolio-investment-packages.md` is approximately **£889.5k Year 1**, **at least c.£5.01m across mobilisation** and **c.£1.416m p.a. currently identifiable BAU plus TBC**.
+### Five-package portfolio investment reconciliation
+
+The completed five-package decision-support view is held in `docs/portfolio-investment-packages.md`.
+
+As of 3 September 2026, the reconciled **itemised** mobilisation profile is **£893.2k in 2026/27, £1.998m in 2027/28 and £2.148m in 2028/29: £5.0392m across the three-year mobilisation**.
+
+The Digital Student Experience Hub separately carries a **£3m working three-year strategic envelope** in the 4.1.2 decision log, of which £1.216m is currently itemised. If that full Digital envelope were eventually required, the equivalent five-package working envelope would be approximately **£6.8232m**, before still-unquantified items such as a Student Opportunities Fund award pot. Do not treat the £3m envelope as an itemised or approved commitment.
+
+The current **gross identifiable BAU exposure is approximately £1.425m p.a. plus TBC**. Of this, £600k p.a. is explicitly a holding assumption for the future partnership-infrastructure model and must be tested during Year 1. Excluding that holding assumption, approximately £825k p.a. is currently identifiable, while several other recurrent requirements remain open.
+
+The Graduate Futures package has been reconciled to the current shared PM registry: its Year 1 programme/project-management share is **0.20 FTE / £13.2k**, giving **£144.9k Year 1 and approximately £732.8k across mobilisation**, rather than the earlier £148.2k / c.£736k view.
+
+Deliverable **2.3.3 is deferred**. Its former 0.10 FTE Deputy Director allocation and 0.05 / 0.10 / 0.10 FTE Project Officer allocations have been redeployed to **2.3.4** so funded shared capacity is not parked against inactive work. This produces a reconciled Beyond-Course package profile of **£278.5k / £971.95k / £1.03195m = £2.2824m**, with current identifiable BAU of approximately **£847k p.a. plus TBC**. The reallocation does not increase the coherent shared-resource envelopes.
 
 ### Planning status is different from planning maturity
 
