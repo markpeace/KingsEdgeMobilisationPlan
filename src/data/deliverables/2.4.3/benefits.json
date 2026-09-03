@@ -3,18 +3,26 @@
     {
       "id": "2.4.3-B1",
       "title": "Students curate and communicate credible accounts of their learning",
-      "statement": "Students and graduates use the enhanced transcript to select, organise and connect the knowledge, capabilities and experiences developed through their course and broader King’s experience. They curate audience-relevant narratives about what they know, can do and contribute, drawing appropriately on gains that are certified, evidenced or claimed. This makes credible articulation less dependent on confidence, networks or familiarity with professional language.",
+      "statement": "Students and graduates can select, organise and connect the knowledge, capabilities and experiences developed through their course and broader King’s experience. They can build audience-relevant narratives about what they know, can do and contribute while clearly distinguishing between learning that King’s certifies or recognises, evidence they provide and claims they make.",
       "beneficiary": "Students and graduates",
       "benefitType": "student articulation and equitable externalisation",
-      "successLooksLike": "Students actively use the transcript during study and at key transition points to curate and externalise narratives about the value they take into the world. These narratives select and connect relevant learning gains, explain why they matter, distinguish between certified, evidenced and claimed capabilities, and point to appropriate evidence."
+      "successLooksLike": "Students can use the fuller record or portfolio during study and at key transition points to select and connect relevant learning gains, explain why they matter, distinguish their status and point to appropriate evidence."
     },
     {
       "id": "2.4.3-B2",
       "title": "King’s can demonstrate the distinctive capabilities and relevance of its education",
-      "statement": "King’s uses responsibly aggregated transcript profiles to demonstrate the knowledge and capabilities developed through its education, retaining the distinctive contribution of individual courses within the institutional picture. This provides a stronger evidence base for engaging government, business, industry and wider society on what King’s graduates know, can do and contribute.",
+      "statement": "King’s can use responsibly governed aggregate profiles to demonstrate knowledge, capabilities and recognised learning developed through its education while retaining the distinctive contribution of individual courses and making the evidential basis of institutional claims visible.",
       "beneficiary": "King’s, students, graduates and external partners",
       "benefitType": "institutional evidence and external relevance",
-      "successLooksLike": "King’s routinely uses governed aggregate profiles in external engagement and institutional narratives. These accounts show both the distinctiveness of individual courses and patterns across King’s, and are grounded in the underlying transcript evidence."
+      "successLooksLike": "King’s can produce governed aggregate accounts that show both course distinctiveness and patterns across the institution and can trace those narratives back to underlying evidence and recognition status."
+    },
+    {
+      "id": "2.4.3-B3",
+      "title": "King’s can recognise broader learning without weakening trust in the academic record",
+      "statement": "A clear trust and authority model allows King’s to broaden what students can carry forward from their education while preserving the distinction between the formal academic record, institutional recognition, student evidence and student claim.",
+      "beneficiary": "Students, King’s, academic governance and external users",
+      "benefitType": "trusted recognition and institutional assurance",
+      "successLooksLike": "Trailblazer and institutional models make the authority, provenance and status of each element unambiguous to students, staff and external readers, with broader recognition governed through agreed policy rather than interface convention."
     }
   ]
 }
