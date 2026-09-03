@@ -176,7 +176,9 @@
       "id": "4.1.1",
       "projectId": "4.1",
       "parts": [
-        "./4.1.1/core.json"
+        "./4.1.1/core.json",
+        "./4.1.1/plan.json",
+        "./4.1.1/governance.json"
       ]
     },
     {
