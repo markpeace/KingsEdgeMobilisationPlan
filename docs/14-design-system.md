@@ -55,6 +55,7 @@ The `.ds-*` selectors are the reusable contract. Existing feature selectors are 
 
 Owns the shared application chrome and cross-site reading contracts that sit around content rather than inside a single feature:
 
+- the split KING'S EDGE / MOBILISATION PLAN header identity;
 - primary navigation treatment;
 - page-level utility actions;
 - planning-stage context strips;
@@ -62,7 +63,7 @@ Owns the shared application chrome and cross-site reading contracts that sit aro
 - temporary footer visibility policy;
 - suppression of repeated inline indicative labels where planning stage already communicates the same state.
 
-The current split KING'S EDGE / MOBILISATION PLAN brand remains visually stable while its historical rules are migrated separately.
+The header keeps the accessible `King's Edge Mobilisation Plan` anchor text in React while the established split red/white visual treatment is source-owned in global chrome. Historical `.brand` selectors are retired from the runtime compatibility bundle.
 
 ### `src/styles.css`
 
@@ -74,7 +75,7 @@ Owns site compositions that are genuinely specific to the mobilisation-plan inte
 - dependency lens;
 - print layout.
 
-It should not redefine tokens or duplicate the base styling of panels, controls, labels or tags.
+It should not redefine tokens or duplicate the base styling of panels, controls, labels or tags. Historical generic declarations should continue to move to their canonical owner as the file is decomposed.
 
 ### Feature stylesheets
 
@@ -102,7 +103,7 @@ There are no late-loaded stylesheets in `index.html`. Any live styling must ente
 
 `scripts/style-retirement-config.mjs` is the single registry of retired selector families. The generator and style validator both import it so retirement rules cannot drift between build preparation and architecture validation.
 
-The generator now retires project overview, project deliverable-board, deliverable hero, case-for-change, benefit/evidence, delivery-sequence, disclosure, global chrome, planning-context, landing, governance, consultation, RAID, Measures, Timeline, indicative-step and obsolete Resource & Investment widget selector families. Build validation checks that retired selectors cannot reappear in the generated compatibility CSS.
+The generator now retires project overview, project deliverable-board, deliverable hero, case-for-change, benefit/evidence, delivery-sequence, disclosure, global chrome, header brand, planning-context, landing, governance, consultation, RAID, Measures, Timeline, indicative-step and obsolete Resource & Investment widget selector families. Build validation checks that retired selectors cannot reappear in the generated compatibility CSS.
 
 Theory of Change presentation is no longer a late public shim. It is source-owned, imported through `src/site-entry.jsx`, uses the shared sequence-card primitive for the causal chain, and follows the same black/white/red disclosure grammar as the rest of the product.
 
@@ -191,14 +192,15 @@ Completed:
 21. the Resource & Investment compatibility shim has been deleted and obsolete resource widget selectors are retired before the legacy bundle enters the runtime cascade;
 22. `index.html` no longer late-loads any CSS;
 23. legacy selector retirement is defined once in `scripts/style-retirement-config.mjs` and shared by generation and validation;
-24. the approved landing presentation is source-owned in `src/styles/landing-overview.css`, with its historical selector families retired from the runtime compatibility bundle and no `!important` debt.
+24. the approved landing presentation is source-owned in `src/styles/landing-overview.css`, with its historical selector families retired from the runtime compatibility bundle and no `!important` debt;
+25. the split KING'S EDGE / MOBILISATION PLAN header identity is source-owned in `src/styles/global-chrome.css`, with the historical `.brand` family retired from runtime compatibility CSS.
 
 Next:
 
 1. progressively shrink `legacy-public-source.css` as each retired feature family becomes safe to delete permanently;
 2. move temporary selector aliases onto explicit `.ds-*` classes as the React markup is decomposed;
 3. move landing public-facing copy into explicit authored markup when the `Landing` component is decomposed;
-4. migrate the remaining historical brand treatment into owned global chrome without destabilising the established visual identity;
+4. continue decomposing residual generic presentation in `src/styles.css` into its canonical owners;
 5. delete the generated legacy compatibility system once no live feature depends on it.
 
 The aim is progressive retirement of legacy CSS rather than a risky whole-site rewrite.
