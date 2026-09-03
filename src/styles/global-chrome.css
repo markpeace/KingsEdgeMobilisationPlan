@@ -71,6 +71,10 @@ html {
 /* The footer is retained in markup for now but is not part of the reader surface. */
 .site-footer {
   display: none;
+  padding: 1.5rem clamp(1rem, 3vw, 2rem);
+  border-top: 3px solid var(--color-ink);
+  color: var(--color-muted);
+  text-align: center;
 }
 
 /* Pre-approval sequencing is communicated once through planning-stage context. */
