@@ -76,6 +76,23 @@ for (const contract of requiredSharedHeroContracts) {
   }
 }
 
+if (/(^|\n)\.section-heading\s*\{/m.test(siteStyles)) {
+  fail('src/styles.css must not own the shared section-heading frame; use src/design-system.css');
+}
+
+const requiredSectionHeadingFrame = [
+  '.section-heading {',
+  'margin: clamp(0.9rem, 1.5vw, 1.35rem) 0 clamp(0.85rem, 1.4vw, 1.15rem);',
+  'padding: 0 0 1rem;',
+  'border-bottom: var(--border-width) solid var(--color-ink);',
+  'background: transparent;'
+];
+for (const contract of requiredSectionHeadingFrame) {
+  if (!designSystem.includes(contract)) {
+    fail(`src/design-system.css is missing effective section-heading frame contract ${contract}`);
+  }
+}
+
 const residualSectionHeadingTypography = [
   ['section-heading h1', /(^|\n)\.section-heading\s+h1(?:\s|,|\{|[.:])/m],
   ['section-heading h2', /(^|\n)\.section-heading\s+h2(?:\s|,|\{|[.:])/m],
@@ -99,8 +116,16 @@ for (const contract of requiredSectionHeadingTypography) {
   }
 }
 
+if (/(^|\n)\.projects-heading\s*\{/m.test(portfolioStyles)) {
+  fail('src/styles/portfolio-overview.css must not restore the shadowed Projects section-heading frame; the shared frame belongs in src/design-system.css');
+}
+
 if (/(^|\n)\.projects-heading\s+h1(?:\s|\{|[.:])/m.test(portfolioStyles)) {
   fail('src/styles/portfolio-overview.css must not restore the shadowed Projects h1 variant; shared section-heading typography owns that contract');
+}
+
+if (timelineStyles.includes('.ke-timeline-page .section-heading')) {
+  fail('src/styles/timeline.css must not restore the shadowed Timeline section-heading margin; the shared frame belongs in src/design-system.css');
 }
 
 const residualChromeOwners = [
@@ -374,7 +399,7 @@ for (const selector of retiredSelectorTokens) {
 
 const escapeRegExp = (value) => value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 for (const selector of exactlyRetiredSelectors) {
-  const exactSelectorPattern = new RegExp(`(^|[},\\n])\\s*${escapeRegExp(selector)}\\s*(?:,|\\{)`, 'm');
+  const exactSelectorPattern = new RegExp(`(^|[},\n])\\s*${escapeRegExp(selector)}\\s*(?:,|\\{)`, 'm');
   if (exactSelectorPattern.test(generatedLegacyBody)) {
     fail(`generated legacy bundle still contains exact retired selector ${selector}`);
   }
