@@ -62,9 +62,11 @@ export const explicitlyRetiredSelectorTokens = [
 ];
 
 /* These generic selectors conflict with migrated consumers but must not retire
-   more-specific schema-card variants that still belong to legacy features. */
+   more-specific variants that still belong to legacy features. */
 export const exactlyRetiredSelectors = [
-  '.schema-card h3'
+  '.schema-card h3',
+  '.section-heading h1',
+  '.section-heading p'
 ];
 
 export const retiredSelectorTokens = [

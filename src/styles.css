@@ -1,49 +1,9 @@
-.section-heading h1 {
-  position: relative;
-  z-index: 1;
-  max-width: 1050px;
-  margin: 0 0 1rem;
-  font-family: var(--font-brand);
-  font-size: clamp(3rem, 6.7vw, 6.4rem);
-  font-weight: 400;
-  line-height: 0.95;
-  letter-spacing: -0.035em;
-}
-
-.section-heading h1 {
-  font-size: clamp(2.45rem, 4.5vw, 4.8rem);
-}
-
-.section-heading p {
-  position: relative;
-  z-index: 1;
-  max-width: 850px;
-  color: var(--muted);
-  font-size: clamp(1rem, 1.2vw, 1.18rem);
-  line-height: 1.45;
-}
-
 .section-heading {
   position: relative;
   border-radius: 0;
   padding: 1.35rem 1.35rem 1.35rem 1.5rem;
   margin: 1rem 0;
   border-left: 0.75rem solid var(--accent);
-}
-
-.section-heading h1,
-.section-heading h2 {
-  margin: 0.25rem 0;
-}
-
-.section-heading h2,
-.panel h2 {
-  font-family: var(--font-brand);
-  font-size: clamp(1.5rem, 2.5vw, 2.45rem);
-  font-weight: 400;
-  line-height: 1.02;
-  letter-spacing: -0.025em;
-  margin-bottom: 0.75rem;
 }
 
 .back-link {
@@ -58,13 +18,13 @@
 }
 
 .panel h2 {
+  font-family: var(--font-brand);
+  font-size: clamp(1.5rem, 2.5vw, 2.45rem);
+  font-weight: 400;
+  line-height: 1.02;
+  letter-spacing: -0.025em;
   margin-top: 0;
-}
-
-@media (max-width: 760px) {
-  .section-heading h1 {
-    font-size: 2.8rem;
-  }
+  margin-bottom: 0.75rem;
 }
 
 .a3-print-sheet {

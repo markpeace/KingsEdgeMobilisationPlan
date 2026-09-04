@@ -241,6 +241,39 @@ main {
   line-height: var(--line-body);
 }
 
+/* Shared section-heading typography. Values preserve the effective legacy
+   contract rather than the shadowed declarations that remained in styles.css. */
+.section-heading h1 {
+  position: relative;
+  z-index: 1;
+  max-width: 980px;
+  margin: 0 0 0.55rem;
+  font-family: var(--font-brand);
+  font-size: clamp(2.6rem, 3.75vw, 4.15rem);
+  font-weight: 400;
+  line-height: 0.96;
+  letter-spacing: -0.033em;
+}
+
+.section-heading p {
+  position: relative;
+  z-index: 1;
+  max-width: 920px;
+  margin: 0;
+  color: var(--color-muted);
+  font-size: clamp(0.98rem, 1.05vw, 1.08rem);
+  line-height: 1.42;
+}
+
+.section-heading h2 {
+  margin: var(--space-1) 0 var(--space-3);
+  font-family: var(--font-brand);
+  font-size: var(--heading-lg);
+  font-weight: 400;
+  line-height: 1.02;
+  letter-spacing: -0.025em;
+}
+
 /* Typography primitives */
 .ds-display-heading {
   margin: 0;
@@ -394,6 +427,10 @@ button.ds-control {
   .hero h1,
   .detail-hero h1 {
     font-size: 2.8rem;
+  }
+
+  .section-heading h1 {
+    font-size: clamp(2.3rem, 12vw, 3.2rem);
   }
 
   .hero,
