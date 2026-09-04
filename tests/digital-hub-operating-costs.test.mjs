@@ -45,7 +45,7 @@ test('4.1.2 recurring operating costs replace one-off Azure and student co-desig
   assert.ok(profile.asks.some((ask) => ask.id === '4.1.2-operating-runtime-ai'));
 });
 
-test('4.1.3 separates permanent posts, specialist workforce, outsourced QA and rolling placement BAU', () => {
+test('4.1.3 applies 50/50 Product Manager allocation while preserving institutional permanent core', () => {
   const baseline = load('../src/data/deliverables/4.1.3/it-resource-baseline.json');
   const recurrence = load('../src/data/deliverables/4.1.3/it-resource-recurrence.json');
   const workforce = load('../src/data/deliverables/4.1.3/it-resource-workforce.json').workforceModel;
@@ -59,21 +59,34 @@ test('4.1.3 separates permanent posts, specialist workforce, outsourced QA and r
 
   const permanent = workforce.appointments.filter((appointment) => appointment.appointmentBasis === 'permanent');
   const placements = workforce.appointments.filter((appointment) => appointment.appointmentBasis === 'placement');
+  const productManager = permanent.find((appointment) => appointment.role === 'Product Manager');
+
   assert.equal(permanent.length, 4);
   assert.equal(permanent.reduce((total, appointment) => total + appointment.fte, 0), 4);
-  assert.equal(permanent.reduce((total, appointment) => total + appointment.annualBauAmount, 0), 323856);
+  assert.equal(permanent.reduce((total, appointment) => total + appointment.annualBauAmount, 0), 276072);
+  assert.equal(productManager?.institutionalAnnualCost, 95568);
+  assert.equal(productManager?.studentHubAllocatedFte, 0.5);
+  assert.equal(productManager?.staffHubAllocatedFte, 0.5);
+  assert.equal(productManager?.annualBauAmount, 47784);
+
   assert.equal(placements.length, 1);
   assert.equal(placements[0].annualBauAmount, 35000);
   assert.ok(!workforce.appointments.some((appointment) => appointment.resourceId === '4.1.3-y1-role-qa-infuse'));
 
-  assert.equal(profile.phases.find((phase) => phase.year === '2026/27').total, 490720);
-  assert.equal(profile.phases.find((phase) => phase.year === '2027/28').total, 726080);
-  assert.equal(profile.phases.find((phase) => phase.year === '2028/29').total, 726080);
-  assert.equal(profile.knownAnnualBauLiability, 726080);
+  assert.equal(profile.phases.find((phase) => phase.year === '2026/27').total, 458864);
+  assert.equal(profile.phases.find((phase) => phase.year === '2027/28').total, 678296);
+  assert.equal(profile.phases.find((phase) => phase.year === '2028/29').total, 678296);
+  assert.equal(profile.knownAnnualBauLiability, 678296);
+
+  assert.ok(!profile.asks.some((ask) => ask.id === '4.1.3-y1-role-product-manager'));
+  assert.ok(profile.asks.some((ask) => ask.id === '4.1.3-operating-product-manager-student-share'));
+  assert.equal(profile.asks.find((ask) => ask.id === '4.1.3-operating-product-manager-student-share')?.fte, 0.5);
+
   assert.ok(!profile.asks.some((ask) => ask.id === '4.1.3-y1-role-qa-infuse'));
   assert.ok(profile.asks.some((ask) => ask.id === '4.1.3-operating-infuse-qa-nonpay'));
   assert.equal(profile.asks.find((ask) => ask.id === '4.1.3-operating-infuse-qa-nonpay')?.category, 'non-pay: outsourced testing service');
   assert.ok(profile.asks.some((ask) => ask.id === '4.1.3-bau-permanent-product-core'));
+  assert.equal(profile.asks.find((ask) => ask.id === '4.1.3-bau-permanent-product-core')?.amount, 276072);
   assert.ok(profile.asks.some((ask) => ask.id === '4.1.3-bau-specialist-workforce-high-water'));
   assert.ok(profile.asks.some((ask) => ask.id === '4.1.3-bau-infuse-qa-nonpay'));
   assert.ok(profile.asks.some((ask) => ask.id === '4.1.3-bau-rolling-sandwich-placement'));
