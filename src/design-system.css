@@ -166,8 +166,7 @@ main {
 .hero,
 .detail-hero,
 .section-heading,
-.project-column,
-.dependency-card {
+.project-column {
   background: var(--color-surface);
   border: var(--border-width) solid var(--color-ink);
   border-radius: var(--radius-none);
