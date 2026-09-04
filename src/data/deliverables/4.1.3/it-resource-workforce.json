@@ -1,7 +1,7 @@
 {
   "workforceModel": {
-    "status": "Digital and IT mature-team high-water model with a four-post permanent core and unresolved specialist/service sourcing",
-    "summary": "The high-water funding model should not imply that every costed Digital and IT line becomes a permanent Student Hub post, but neither should it hide the enduring product capability that King’s is deliberately creating. The current planning assumption is therefore a 4.0 FTE permanent Digital and IT core from the outset: Product Manager, Backend Engineer, Full-Stack Developer and UX/UI Designer. Mobilisation investment carries these posts to June 2029 and recurrent Digital and IT establishment takes over from July 2029, with the Product Manager cost allocation still to be agreed with the Staff Digital Hub. The remaining mature-team lines are kept as high-water specialist or service capacity until Digital and IT confirms whether they are dedicated, shared, existing or externally sourced. Mark Peace as Product Owner and the expected existing IT Delivery Manager remain existing capacity rather than funded appointments.",
+    "status": "Digital and IT mature-team high-water model with a four-post permanent core, a rolling sandwich-year placement and unresolved specialist workforce sourcing",
+    "summary": "The high-water funding model should not imply that every costed Digital and IT line becomes a permanent Student Hub post, but neither should it hide the enduring product capability that King’s is deliberately creating. The current planning assumption is a 4.0 FTE permanent Digital and IT core from the outset: Product Manager, Backend Engineer, Full-Stack Developer and UX/UI Designer. Mobilisation investment carries these posts to June 2029 and recurrent Digital and IT establishment takes over from July 2029, with the Product Manager cost allocation still to be agreed with the Staff Digital Hub. A rolling paid sandwich-year engineering placement is treated as a recurrent development and talent-pipeline commitment from BAU. Solution Architecture, DevOps, Dynamics, Cloud Infrastructure and IAM remain high-water specialist workforce capacity until Digital and IT confirms whether they are dedicated, shared or existing. Infuse QA is explicitly excluded from the workforce establishment because it is an outsourced non-pay testing service. Mark Peace as Product Owner and the expected existing IT Delivery Manager remain existing capacity rather than funded appointments.",
     "appointments": [
       {
         "resourceId": "4.1.3-y1-role-product-manager",
@@ -57,15 +57,6 @@
         "annualBauAmount": 66240
       },
       {
-        "resourceId": "4.1.3-y1-role-qa-infuse",
-        "role": "QA Engineer through Infuse",
-        "appointmentBasis": "other",
-        "appointmentLabel": "Externally sourced high-water QA provision",
-        "fte": 1.0,
-        "fundingBasis": "Student Hub mobilisation investment using the current Infuse testing-cost assumption",
-        "endState": "Decide whether mature QA is externally sourced, in-house or mixed before recurrent funding is fixed."
-      },
-      {
         "resourceId": "4.1.3-y1-role-devops",
         "role": "Azure DevOps Engineer",
         "appointmentBasis": "other",
@@ -105,10 +96,13 @@
         "resourceId": "4.1.3-y2-y3-junior-fullstack-placement",
         "role": "Junior Full-Stack Engineer (sandwich-year placement)",
         "appointmentBasis": "placement",
-        "appointmentLabel": "Paid sandwich-year placement",
+        "appointmentLabel": "Rolling paid sandwich-year placement",
         "fte": 1.0,
-        "fundingBasis": "Time-limited mobilisation investment in Years Two and Three",
-        "endState": "No automatic BAU continuation; evaluate the placement model from student experience, productive contribution, supervision cost and talent-pipeline evidence."
+        "fundingBasis": "Mobilisation-funded in Years Two and Three, then a recurring annual placement within the Digital Student Experience Hub / Digital and IT BAU capability",
+        "bauFrom": "July 2029",
+        "bauOwner": "Digital and IT with the enduring Digital Student Experience Hub product owner",
+        "annualBauAmount": 35000,
+        "endState": "Maintain one rolling supervised sandwich-year placement each year as a student-development, insight and digital-talent-pipeline commitment; review discipline and placement design annually without treating the student as critical delivery capacity."
       }
     ]
   }
