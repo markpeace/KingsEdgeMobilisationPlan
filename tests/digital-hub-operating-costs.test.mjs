@@ -70,6 +70,9 @@ test('4.1.3 separates permanent posts, specialist workforce, outsourced QA and r
   assert.equal(profile.phases.find((phase) => phase.year === '2027/28').total, 726080);
   assert.equal(profile.phases.find((phase) => phase.year === '2028/29').total, 726080);
   assert.equal(profile.knownAnnualBauLiability, 726080);
+  assert.ok(!profile.asks.some((ask) => ask.id === '4.1.3-y1-role-qa-infuse'));
+  assert.ok(profile.asks.some((ask) => ask.id === '4.1.3-operating-infuse-qa-nonpay'));
+  assert.equal(profile.asks.find((ask) => ask.id === '4.1.3-operating-infuse-qa-nonpay')?.category, 'non-pay: outsourced testing service');
   assert.ok(profile.asks.some((ask) => ask.id === '4.1.3-bau-permanent-product-core'));
   assert.ok(profile.asks.some((ask) => ask.id === '4.1.3-bau-specialist-workforce-high-water'));
   assert.ok(profile.asks.some((ask) => ask.id === '4.1.3-bau-infuse-qa-nonpay'));
