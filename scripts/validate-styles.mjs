@@ -54,6 +54,28 @@ if (/:root\s*\{/.test(siteStyles)) {
   fail('src/styles.css must not define :root; shared tokens belong in src/design-system.css');
 }
 
+const residualSharedHeroSelectors = [
+  ['generic hero framing', /(^|\n)\.hero(?:\s|,|\{|::|[.:])/m],
+  ['detail hero framing', /(^|\n)\.detail-hero(?:\s|,|\{|::|[.:])/m]
+];
+for (const [label, pattern] of residualSharedHeroSelectors) {
+  if (pattern.test(siteStyles)) {
+    fail(`src/styles.css contains ${label}; shared hero presentation belongs in src/design-system.css`);
+  }
+}
+
+const requiredSharedHeroContracts = [
+  '.hero,\n.detail-hero {',
+  '.hero::after,\n.detail-hero::after',
+  '.hero h1,\n.detail-hero h1',
+  '.hero p,\n.detail-hero p'
+];
+for (const contract of requiredSharedHeroContracts) {
+  if (!designSystem.includes(contract)) {
+    fail(`src/design-system.css is missing shared hero contract ${contract}`);
+  }
+}
+
 const residualChromeOwners = [
   ['site header', /(^|\n)\.site-header\s*\{/m],
   ['brand', /(^|\n)\.brand\s*\{/m],
