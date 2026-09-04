@@ -1,0 +1,148 @@
+{
+  "operatingCostModel": {
+    "summary": "Treat student co-design, cloud/platform consumption and student-facing AI inference as continuing product operating costs rather than one-off Year One discovery items. The current planning profile keeps these lines explicit and separately challengeable: paid student visioning and co-design internships at £15,000 per year; Azure, environments and platform costs ramping £50,000 / £75,000 / £100,000 across mobilisation and then £100,000 per year in BAU; and a provisional runtime AI inference, retrieval and token-consumption allowance of £50,000 / £75,000 / £100,000 across mobilisation and £100,000 per year in BAU. The AI allowance is deliberately separate from the £90,000 Devin/Cognition engineering-productivity budget held in 4.1.3.",
+    "newInvestment": [
+      {
+        "id": "4.1.2-operating-student-codesign",
+        "item": "Paid student visioning and co-design internships",
+        "category": "student co-design and research",
+        "amount": 15000,
+        "currency": "GBP",
+        "yearlyProfile": [
+          {"academicYear": "2026/27", "amount": 15000, "note": "Annual paid student co-design and visioning envelope"},
+          {"academicYear": "2027/28", "amount": 15000, "note": "Recurring paid student co-design and product-evolution envelope"},
+          {"academicYear": "2028/29", "amount": 15000, "note": "Recurring paid student co-design and product-evolution envelope"}
+        ],
+        "estimatedCost": "£15,000 per year across mobilisation, £45,000 over three years in constant 2026 prices. The envelope should fund meaningful paid student participation rather than episodic consultation, with exact internship numbers, duration and payroll treatment determined through King’s employment arrangements.",
+        "owner": "Digital Student Experience Hub product leadership",
+        "periodNeeded": "2026/27 to 2028/29",
+        "decisionNeededBy": "Before each annual student recruitment cycle",
+        "fundingRoute": "Digital Student Experience Hub mobilisation business case",
+        "fundingStatus": "Unfunded recurrent mobilisation provision; business-case approval required",
+        "confidence": "planning envelope",
+        "rationale": "Student partnership should remain a standing part of product discovery, prioritisation, testing and evolution after the initial Hub vision is formed. A recurring paid cohort creates continuity while broader research continues to validate representativeness.",
+        "riskIfMissing": "Student involvement may collapse back into occasional consultation once the first-release discovery phase ends."
+      },
+      {
+        "id": "4.1.2-operating-azure-platform",
+        "item": "Digital Student Experience Hub Azure, environments and platform costs",
+        "category": "digital app and platform costs",
+        "amount": 50000,
+        "currency": "GBP",
+        "yearlyProfile": [
+          {"academicYear": "2026/27", "amount": 50000, "note": "Year One build, environments and initial live-service planning allowance"},
+          {"academicYear": "2027/28", "amount": 75000, "note": "Year Two ramp as live usage and integrations grow"},
+          {"academicYear": "2028/29", "amount": 100000, "note": "Year Three mature-product high-water platform allowance"}
+        ],
+        "estimatedCost": "£225,000 across mobilisation using a £50,000 / £75,000 / £100,000 ramp, then a £100,000 annual BAU planning allowance from July 2029. Actual spend should be reforecast from architecture, service usage and Azure consumption data rather than treated as an entitlement to spend.",
+        "owner": "Digital and IT",
+        "periodNeeded": "November 2026 onward",
+        "decisionNeededBy": "At annual platform budget setting and material architecture changes",
+        "fundingRoute": "Digital Student Experience Hub mobilisation business case, then recurrent Digital and IT / Student Hub platform budget",
+        "fundingStatus": "High-water planning profile; actual consumption and attribution to validate",
+        "confidence": "working planning envelope",
+        "rationale": "Makes the expected growth in hosting, environments, observability, platform services and live-service consumption explicit rather than carrying a Year One-only amount or a flat later-year hold.",
+        "riskIfMissing": "The Hub may be funded to build but not to operate and scale its shared platform safely as usage and integrations increase."
+      },
+      {
+        "id": "4.1.2-operating-runtime-ai",
+        "item": "Student-facing AI inference, retrieval and token-consumption allowance",
+        "category": "student-facing AI and intelligence operating costs",
+        "amount": 50000,
+        "currency": "GBP",
+        "yearlyProfile": [
+          {"academicYear": "2026/27", "amount": 50000, "note": "Provisional Year One allowance for prototyping and first-release intelligence capability"},
+          {"academicYear": "2027/28", "amount": 75000, "note": "Provisional Year Two allowance as live usage and personalised intelligence grow"},
+          {"academicYear": "2028/29", "amount": 100000, "note": "Provisional mature-product high-water allowance pending measured unit economics"}
+        ],
+        "estimatedCost": "Provisional £225,000 three-year planning envelope using the same £50,000 / £75,000 / £100,000 ramp as platform costs, then £100,000 per year as a high-water BAU allowance. This is not yet a usage forecast. Jon Ward and James Costerton should validate the likely model mix, prompts and actions per active student, context and retrieval design, caching, embeddings/vector retrieval, safety and moderation, observability and any institutional AI gateway or shared capacity before the business case is finalised.",
+        "owner": "Digital and IT with Digital Student Experience Hub product leadership",
+        "periodNeeded": "2026/27 onward as student-facing intelligence is introduced",
+        "decisionNeededBy": "Before first material student-facing AI capability is commissioned and at annual budget review",
+        "fundingRoute": "Digital Student Experience Hub mobilisation business case, then recurrent AI/service-consumption operating budget",
+        "fundingStatus": "Provisional high-water allowance; Digital and IT validation required",
+        "confidence": "early planning hypothesis",
+        "rationale": "The Hub architecture explicitly includes an intelligence layer. Runtime model inference and retrieval consumption are economically different from engineering-productivity tooling and from base Azure hosting, so they need a visible operating envelope rather than being assumed to be free or absorbed elsewhere.",
+        "riskIfMissing": "Student-facing intelligence may be designed without a sustainable unit-cost model, creating either an unfunded live-service liability or pressure to suppress useful functionality after launch."
+      },
+      {
+        "id": "4.1.2-bau-student-codesign",
+        "item": "BAU paid student visioning and co-design internships",
+        "category": "student co-design and research",
+        "amount": 15000,
+        "currency": "GBP",
+        "bauLiability": true,
+        "estimatedCost": "£15,000 annual recurrent envelope from July 2029 for paid student participation in product discovery, testing, prioritisation and evolution.",
+        "owner": "Enduring Digital Student Experience Hub product owner",
+        "periodNeeded": "July 2029 onward",
+        "decisionNeededBy": "Before 2029/30 recurrent budgets are fixed",
+        "fundingRoute": "Enduring Digital Student Experience Hub product operating budget",
+        "fundingStatus": "Planned recurrent product-partnership commitment",
+        "confidence": "planning assumption",
+        "rationale": "Keeps direct paid student partnership within the product operating model rather than treating co-design as a mobilisation-only activity.",
+        "riskIfMissing": "The live Hub may continue to evolve without sustained student participation in product decisions."
+      },
+      {
+        "id": "4.1.2-bau-azure-platform",
+        "item": "BAU Azure, environments and platform run-cost allowance",
+        "category": "digital app and platform costs",
+        "amount": 100000,
+        "currency": "GBP",
+        "bauLiability": true,
+        "estimatedCost": "£100,000 annual recurrent high-water platform allowance from July 2029, to be reforecast from actual architecture and consumption before transition to BAU.",
+        "owner": "Digital and IT",
+        "periodNeeded": "July 2029 onward",
+        "decisionNeededBy": "Before 2029/30 recurrent platform budgets are fixed",
+        "fundingRoute": "Digital and IT / Digital Student Experience Hub recurrent platform budget",
+        "fundingStatus": "High-water recurrent planning allowance; actual consumption and attribution to confirm",
+        "confidence": "planning estimate",
+        "rationale": "Makes the cloud and platform run cost an explicit enduring liability of a live institutional product.",
+        "riskIfMissing": "The Hub may reach BAU without a funded platform on which to operate."
+      },
+      {
+        "id": "4.1.2-bau-runtime-ai",
+        "item": "BAU student-facing AI inference, retrieval and token-consumption allowance",
+        "category": "student-facing AI and intelligence operating costs",
+        "amount": 100000,
+        "currency": "GBP",
+        "bauLiability": true,
+        "estimatedCost": "£100,000 annual recurrent high-water allowance from July 2029 for student-facing AI inference, retrieval and associated model-service consumption. Final amount must be set from measured live usage and the institutional AI commercial route.",
+        "owner": "Digital and IT with enduring Digital Student Experience Hub product owner",
+        "periodNeeded": "July 2029 onward",
+        "decisionNeededBy": "Before 2029/30 recurrent operating budgets are fixed",
+        "fundingRoute": "Digital and IT / Digital Student Experience Hub recurrent AI-service operating budget",
+        "fundingStatus": "Provisional high-water recurrent allowance; commercial model and measured demand to validate",
+        "confidence": "early planning hypothesis",
+        "rationale": "Separates the cost of running student-facing intelligence from both Azure hosting and Devin/Cognition engineering tooling so the BAU model reflects actual product economics.",
+        "riskIfMissing": "The Hub may create useful AI-enabled student experiences during mobilisation without a funded route to operate them at institutional scale."
+      }
+    ],
+    "enablingConditions": [
+      {
+        "condition": "Validate the £50,000 / £75,000 / £100,000 runtime AI allowance with Jon Ward and James Costerton using a simple demand and unit-economics model covering active students, likely AI interactions, model mix, prompt/context size, retrieval and embeddings, caching, safety/moderation, observability and any shared institutional AI gateway.",
+        "owner": "Jon Ward / James Costerton with Mark Peace",
+        "decisionNeededBy": "Before final Digital Student Experience Hub business-case submission",
+        "confidence": "open validation question",
+        "riskIfMissing": "The business case either omits a material live-service cost or reserves an arbitrary amount that cannot be defended."
+      },
+      {
+        "condition": "Validate the £50,000 / £75,000 / £100,000 Azure and platform ramp and the £100,000 BAU allowance against the target architecture, expected service volumes and Digital and IT charging model.",
+        "owner": "Jon Ward / James Costerton with Digital and IT platform leadership",
+        "decisionNeededBy": "Before final business-case submission and again before Year Two budgeting",
+        "confidence": "working planning hypothesis",
+        "riskIfMissing": "The plan may either underfund a growing live product or retain unnecessary platform contingency."
+      },
+      {
+        "condition": "Establish an annual paid-student recruitment and supervision route so the £15,000 co-design envelope can operate as a recurring product capability rather than a one-off Year One exercise.",
+        "owner": "Digital Student Experience Hub product leadership with relevant student-employment support",
+        "decisionNeededBy": "Before the first annual recruitment cycle",
+        "confidence": "planning assumption",
+        "riskIfMissing": "The budget may exist without a repeatable mechanism for sustained student partnership."
+      }
+    ]
+  },
+  "supersededResourceAskIds": [
+    "4.1.2-y1-student-codesign-internships",
+    "4.1.2-y1-platform-envelope"
+  ]
+}
