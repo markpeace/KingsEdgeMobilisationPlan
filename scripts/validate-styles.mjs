@@ -113,6 +113,16 @@ for (const [label, pattern] of residualDeliverySequenceSelectors) {
   }
 }
 
+const residualSupportingPlanningSelectors = [
+  ['component planning detail', /(^|\n)\.(?:component-grid|component-card)(?:\b|[.:])/m],
+  ['dependency and handoff planning detail', /(^|\n)\.(?:detail-grid|link-list|compact-list)(?:\b|[.:])/m]
+];
+for (const [label, pattern] of residualSupportingPlanningSelectors) {
+  if (pattern.test(siteStyles)) {
+    fail(`src/styles.css contains ${label}; supporting planning detail is owned by src/styles/planning-detail.css`);
+  }
+}
+
 const deadResidualHelpers = [
   '.dependency-grid',
   '.dependency-card',
@@ -253,6 +263,22 @@ const requiredDeliverableSequenceContracts = [
 for (const selector of requiredDeliverableSequenceContracts) {
   if (!deliverableStyles.includes(selector)) {
     fail(`src/styles/deliverable-detail.css is missing canonical delivery-sequence contract ${selector}`);
+  }
+}
+
+const requiredPlanningDetailContracts = [
+  '.governance-refined',
+  '.decision-log-list',
+  '.raid-grid',
+  '.component-grid',
+  '.component-card',
+  '.detail-grid',
+  '.link-list',
+  '.compact-list'
+];
+for (const selector of requiredPlanningDetailContracts) {
+  if (!planningDetailStyles.includes(selector)) {
+    fail(`src/styles/planning-detail.css is missing canonical planning-detail contract ${selector}`);
   }
 }
 
