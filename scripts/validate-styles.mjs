@@ -113,6 +113,19 @@ for (const [label, pattern] of residualDeliverySequenceSelectors) {
   }
 }
 
+const deadResidualHelpers = [
+  '.dependency-grid',
+  '.dependency-card',
+  '.dependency-list',
+  '.sidebars-preview',
+  '.secondary-button'
+];
+for (const selector of deadResidualHelpers) {
+  if (siteStyles.includes(selector) || designSystem.includes(selector)) {
+    fail(`dead helper ${selector} must not return to src/styles.css or src/design-system.css`);
+  }
+}
+
 const printMediaIndex = siteStyles.search(/@media\s+print\s*\{/m);
 const screenSiteStyles = printMediaIndex >= 0 ? siteStyles.slice(0, printMediaIndex) : siteStyles;
 if (/\b!important\b/.test(screenSiteStyles)) {
