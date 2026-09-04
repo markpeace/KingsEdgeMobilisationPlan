@@ -1,6 +1,6 @@
 {
   "summary": "Uses Digital and IT’s mature-team estimate as the high-water mobilisation ceiling while distinguishing permanent product posts, unresolved specialist workforce, outsourced non-pay QA and the recurring sandwich-year placement.",
-  "detailSummary": "The Digital and IT high-water model remains the prudent ceiling for mobilisation staffing and services, but the enduring pay/non-pay position is now explicit. The current planning assumption is a 4.0 FTE permanent Digital and IT product core from the outset: Product Manager, Backend Engineer, Full-Stack Developer and UX/UI Designer. At the current Digital and IT cost rates these posts have a combined full-year run-rate of approximately £323,856. Mobilisation funding carries them through June 2029 and recurrent Digital and IT establishment takes over from July 2029, with the Product Manager’s eventual Student-versus-Staff Hub allocation still to be settled.\n\nThe remaining high-water specialist workforce, excluding outsourced QA, is approximately £205,224 per full year: Solution Architect / Technical Lead, fractional Azure DevOps, Dynamics Developer, fractional Cloud Infrastructure and fractional IAM. These remain visible workforce risks until Digital and IT confirms which are dedicated, shared, existing or attributable to another programme. Infuse QA is treated separately as an outsourced non-pay testing service at £6,000 per month, £72,000 per full year. It therefore remains in the high-water cash envelope but is not part of the pay establishment. Product Owner remains Mark Peace from existing workload and the IT Delivery Manager remains an existing-capacity assumption.\n\nThe paid sandwich-year Junior Full-Stack placement remains £35,000 in each of Years Two and Three and is now treated as a rolling BAU commitment from July 2029 rather than a mobilisation-only experiment. The intent is to maintain one supervised placement each year as a student-development, insight and digital-talent-pipeline route without making the placement critical delivery capacity.\n\nThe Hub operating-cost model sits explicitly with 4.1.2. Paid student visioning and co-design is treated as an annual £15,000 product capability across mobilisation and BAU. Azure, environments and platform costs ramp £50,000 / £75,000 / £100,000 across the three mobilisation years and retain a £100,000 BAU high-water allowance. A separate student-facing AI inference, retrieval and token-consumption planning allowance is introduced at £50,000 / £75,000 / £100,000, also retaining £100,000 as a BAU high-water allowance. This runtime AI budget is distinct from the £90,000 annual Devin/Cognition engineering-productivity allowance in 4.1.3.\n\nThe three-year mobilisation profile remains approximately £638,720 in 2026/27, £924,080 in 2027/28 and £974,080 in 2028/29: £2,536,880 across mobilisation. The BAU risk ceiling rises by £35,000 because the sandwich-year placement is now recurrent. The current worst-case recurrent exposure is therefore approximately £941,080 per year before the enduring 4.1.1 knowledge/content operating model. Of this, £564,080 is pay/workforce exposure including the rolling placement, while £377,000 is known non-pay operating/service exposure including Infuse QA, Devin/Cognition, Azure/platform, student-facing AI runtime and recurring paid student co-design. This remains a high-water risk ceiling rather than a settled BAU budget.",
+  "detailSummary": "The Digital and IT high-water model remains the prudent ceiling for mobilisation staffing and services, but the enduring pay/non-pay position is now explicit. The current planning assumption is a 4.0 FTE permanent Digital and IT product core from the outset: Product Manager, Backend Engineer, Full-Stack Developer and UX/UI Designer. At the current Digital and IT cost rates these posts have a combined full-year run-rate of approximately £323,856. Mobilisation funding carries them through June 2029 and recurrent Digital and IT establishment takes over from July 2029, with the Product Manager’s eventual Student-versus-Staff Hub allocation still to be settled.\n\nThe remaining high-water specialist workforce, excluding outsourced QA, is approximately £205,224 per full year: Solution Architect / Technical Lead, fractional Azure DevOps, Dynamics Developer, fractional Cloud Infrastructure and fractional IAM. These remain visible workforce risks until Digital and IT confirms which are dedicated, shared, existing or attributable to another programme. Infuse QA is treated separately as an outsourced non-pay testing service at £6,000 per month, £48,000 in the eight-month Year One mobilisation period and £72,000 per full year thereafter. The old QA Engineer workforce ask is superseded by this non-pay service line, so the cash envelope is unchanged but the pay establishment is not overstated. Product Owner remains Mark Peace from existing workload and the IT Delivery Manager remains an existing-capacity assumption.\n\nThe paid sandwich-year Junior Full-Stack placement remains £35,000 in each of Years Two and Three and is now treated as a rolling BAU commitment from July 2029 rather than a mobilisation-only experiment. The intent is to maintain one supervised placement each year as a student-development, insight and digital-talent-pipeline route without making the placement critical delivery capacity.\n\nThe Hub operating-cost model sits explicitly with 4.1.2. Paid student visioning and co-design is treated as an annual £15,000 product capability across mobilisation and BAU. Azure, environments and platform costs ramp £50,000 / £75,000 / £100,000 across the three mobilisation years and retain a £100,000 BAU high-water allowance. A separate student-facing AI inference, retrieval and token-consumption planning allowance is introduced at £50,000 / £75,000 / £100,000, also retaining £100,000 as a BAU high-water allowance. This runtime AI budget is distinct from the £90,000 annual Devin/Cognition engineering-productivity allowance in 4.1.3.\n\nThe three-year mobilisation profile remains approximately £638,720 in 2026/27, £924,080 in 2027/28 and £974,080 in 2028/29: £2,536,880 across mobilisation. The BAU risk ceiling rises by £35,000 because the sandwich-year placement is now recurrent. The current worst-case recurrent exposure is therefore approximately £941,080 per year before the enduring 4.1.1 knowledge/content operating model. Of this, £564,080 is pay/workforce exposure including the rolling placement, while £377,000 is known non-pay operating/service exposure including Infuse QA, Devin/Cognition, Azure/platform, student-facing AI runtime and recurring paid student co-design. This remains a high-water risk ceiling rather than a settled BAU budget.",
   "fundingEnvelope": {
     "status": "Current high-water working baseline pending Digital and IT phasing, sourcing, AI-consumption and cross-Hub attribution validation",
     "source": "Digital and IT mature-team estimate shared by Jon Ward on 3-4 September 2026, subsequent clarification from Jon Ward and James Costerton, and 4 September product-operating-cost refinement",
@@ -20,23 +20,12 @@
     "permanentCore": {
       "fte": 4.0,
       "fullYearRunRate": 323856,
-      "roles": [
-        "Product Manager",
-        "Backend Engineer",
-        "Full-Stack Developer",
-        "UX/UI Designer"
-      ],
+      "roles": ["Product Manager", "Backend Engineer", "Full-Stack Developer", "UX/UI Designer"],
       "basis": "Permanent Digital and IT posts from the outset, mobilisation-funded to June 2029 and recurrent from July 2029. Product Manager allocation with the Staff Digital Hub remains to be agreed."
     },
     "unresolvedSpecialistWorkforce": {
       "fullYearHighWaterRunRate": 205224,
-      "roles": [
-        "Solution Architect / Technical Lead",
-        "Azure DevOps Engineer",
-        "Dynamics Developer",
-        "Infrastructure Engineer (Cloud)",
-        "IAM Engineer (Cloud)"
-      ],
+      "roles": ["Solution Architect / Technical Lead", "Azure DevOps Engineer", "Dynamics Developer", "Infrastructure Engineer (Cloud)", "IAM Engineer (Cloud)"],
       "basis": "Held in the funding ceiling until Digital and IT confirms dedicated, shared, existing or alternative-programme sourcing. Infuse QA is excluded because it is outsourced non-pay."
     },
     "outsourcedNonPayQa": {
@@ -48,8 +37,7 @@
     "currentWorstCasePayAndWorkforce": {
       "monthlyCostExcludingInfuse": 44090,
       "yearOneEightMonthCostExcludingInfuse": 352720,
-      "fullYearRunRateExcludingInfuse": 529080,
-      "basis": "All costed Digital and IT workforce lines except Product Owner and outsourced Infuse QA are held as Student Hub cash until sharing, existing-capacity or alternative-programme funding is confirmed."
+      "fullYearRunRateExcludingInfuse": 529080
     },
     "currentWorstCaseTeamAndQaCash": {
       "monthlyCost": 50090,
@@ -64,38 +52,11 @@
       "purpose": "One supervised rolling Junior Full-Stack Engineer sandwich-year placement each year as additional developmental capacity, student insight and a digital-talent pipeline."
     },
     "otherCosts": {
-      "agenticDevelopment": {
-        "yearOne": 90000,
-        "yearTwo": 90000,
-        "yearThree": 90000,
-        "bauAnnualHighWater": 90000,
-        "note": "Dedicated Devin/Cognition engineering-productivity planning allowance; separate from Infuse QA and student-facing AI inference."
-      },
-      "azurePlatform": {
-        "yearOne": 50000,
-        "yearTwo": 75000,
-        "yearThree": 100000,
-        "bauAnnualHighWater": 100000
-      },
-      "studentFacingAiRuntime": {
-        "yearOne": 50000,
-        "yearTwo": 75000,
-        "yearThree": 100000,
-        "bauAnnualHighWater": 100000,
-        "note": "Provisional inference, retrieval and model-service consumption envelope requiring Digital and IT validation."
-      },
-      "studentVisioningAndCodesign": {
-        "yearOne": 15000,
-        "yearTwo": 15000,
-        "yearThree": 15000,
-        "bauAnnual": 15000
-      },
-      "knowledgeAndContentDelivery": {
-        "yearOne": 33000,
-        "yearTwo": 33000,
-        "yearThree": 33000,
-        "note": "Held under 4.1.1. Enduring scale remains TBC from discovery and live operating evidence."
-      }
+      "agenticDevelopment": {"yearOne": 90000, "yearTwo": 90000, "yearThree": 90000, "bauAnnualHighWater": 90000},
+      "azurePlatform": {"yearOne": 50000, "yearTwo": 75000, "yearThree": 100000, "bauAnnualHighWater": 100000},
+      "studentFacingAiRuntime": {"yearOne": 50000, "yearTwo": 75000, "yearThree": 100000, "bauAnnualHighWater": 100000},
+      "studentVisioningAndCodesign": {"yearOne": 15000, "yearTwo": 15000, "yearThree": 15000, "bauAnnual": 15000},
+      "knowledgeAndContentDelivery": {"yearOne": 33000, "yearTwo": 33000, "yearThree": 33000, "note": "Held under 4.1.1. Enduring scale remains TBC from discovery and live operating evidence."}
     },
     "hubTotal": {
       "yearOne": 638720,
@@ -122,8 +83,26 @@
   },
   "operatingCostModel": {
     "title": "Enduring product workforce and service commitments",
-    "summary": "Separate permanent posts, rolling student placement, unresolved specialist workforce and outsourced QA so the recurrent liability has a clear pay/non-pay meaning.",
+    "summary": "Separate permanent posts, rolling student placement, unresolved specialist workforce and outsourced QA so the resource profile has a clear pay/non-pay meaning.",
     "newInvestment": [
+      {
+        "id": "4.1.3-operating-infuse-qa-nonpay",
+        "item": "Outsourced QA/testing through Infuse",
+        "category": "non-pay: outsourced testing service",
+        "amount": 48000,
+        "currency": "GBP",
+        "yearlyProfile": [
+          {"academicYear": "2026/27", "amount": 48000, "note": "Eight-month Year One provision at £6,000 per month"},
+          {"academicYear": "2027/28", "amount": 72000, "note": "Full-year outsourced QA/testing provision"},
+          {"academicYear": "2028/29", "amount": 72000, "note": "Full-year outsourced QA/testing provision"}
+        ],
+        "estimatedCost": "£48,000 in Year One and £72,000 in each full mobilisation year at the current Infuse £6,000 monthly rate. This replaces the earlier QA Engineer workforce presentation without changing the cash envelope.",
+        "owner": "Digital and IT",
+        "periodNeeded": "November 2026 to June 2029",
+        "fundingRoute": "Digital Student Experience Hub mobilisation non-pay budget",
+        "fundingStatus": "High-water outsourced service provision; contract and mature sourcing to confirm",
+        "confidence": "current Digital and IT supplier-cost assumption"
+      },
       {
         "id": "4.1.3-bau-permanent-product-core",
         "item": "BAU permanent four-post Digital and IT product core",
@@ -212,6 +191,7 @@
     ]
   },
   "supersededResourceAskIds": [
+    "4.1.3-y1-role-qa-infuse",
     "4.1.3-y2-y3-platform-high-water-hold",
     "4.1.3-bau-platform-high-water",
     "4.1.3-bau-worst-case-staffing"
