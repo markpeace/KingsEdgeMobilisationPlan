@@ -1,0 +1,107 @@
+{
+  "workforceModel": {
+    "status": "Digital and IT mature-team high-water model, not yet final workforce design",
+    "summary": "The appointments below represent the currently costed Digital and IT mature-team capacity carried in the funding ceiling. Appointment and sourcing routes are deliberately not treated as permanent by default: the high-water model is intended to preserve funding cover while Digital and IT confirms phasing, existing/shared capacity, external sourcing and cross-Hub attribution. Mark Peace as Product Owner and the expected existing IT Delivery Manager are recorded as existing capacity in the delivery step rather than as funded appointments.",
+    "appointments": [
+      {
+        "resourceId": "4.1.3-y1-role-product-manager",
+        "role": "Product Manager",
+        "appointmentBasis": "other",
+        "appointmentLabel": "High-water mature-team provision",
+        "fte": 1.0,
+        "fundingBasis": "Full Student Hub cash provision pending an agreed allocation with the Staff Digital Hub",
+        "endState": "Confirm enduring organisational home, sourcing route and Student/Staff Hub cost allocation before mobilisation closes."
+      },
+      {
+        "resourceId": "4.1.3-y1-role-solution-architect",
+        "role": "Solution Architect / Technical Lead",
+        "appointmentBasis": "other",
+        "appointmentLabel": "High-water mature-team provision",
+        "fte": 1.0,
+        "fundingBasis": "Full cash provision pending confirmation of dedicated, phased or existing architecture capacity",
+        "endState": "Set the enduring architecture model from actual demand and Digital and IT capacity; no automatic permanent 1.0 FTE commitment is created by the high-water envelope."
+      },
+      {
+        "resourceId": "4.1.3-y1-role-backend",
+        "role": "Backend Engineer",
+        "appointmentBasis": "other",
+        "appointmentLabel": "High-water mature-team provision",
+        "fte": 1.0,
+        "fundingBasis": "Student Hub mobilisation investment through Digital and IT",
+        "endState": "Confirm the enduring engineering establishment and funding route from live product demand before the end of mobilisation."
+      },
+      {
+        "resourceId": "4.1.3-y1-role-fullstack",
+        "role": "Full-Stack Developer",
+        "appointmentBasis": "other",
+        "appointmentLabel": "High-water mature-team provision",
+        "fte": 1.0,
+        "fundingBasis": "Student Hub mobilisation investment through Digital and IT",
+        "endState": "Confirm the enduring engineering establishment and funding route from live product demand before the end of mobilisation."
+      },
+      {
+        "resourceId": "4.1.3-y1-role-ux-ui",
+        "role": "UX/UI Designer",
+        "appointmentBasis": "other",
+        "appointmentLabel": "High-water mature-team provision",
+        "fte": 1.0,
+        "fundingBasis": "Student Hub mobilisation investment through Digital and IT",
+        "endState": "Confirm the enduring design, service-design and user-research capability model from delivery evidence before mobilisation closes."
+      },
+      {
+        "resourceId": "4.1.3-y1-role-qa-infuse",
+        "role": "QA Engineer through Infuse",
+        "appointmentBasis": "other",
+        "appointmentLabel": "Externally sourced high-water QA provision",
+        "fte": 1.0,
+        "fundingBasis": "Student Hub mobilisation investment using the current Infuse testing-cost assumption",
+        "endState": "Decide whether mature QA is externally sourced, in-house or mixed before recurrent funding is fixed."
+      },
+      {
+        "resourceId": "4.1.3-y1-role-devops",
+        "role": "Azure DevOps Engineer",
+        "appointmentBasis": "other",
+        "appointmentLabel": "Fractional high-water specialist provision",
+        "fte": 0.5,
+        "fundingBasis": "Cash provision until a protected existing/shared Digital and IT route is confirmed",
+        "endState": "Settle the enduring DevOps/platform service model and remove directly attributable Student Hub cost where standing Digital and IT capacity can supply it."
+      },
+      {
+        "resourceId": "4.1.3-y1-role-dynamics",
+        "role": "Dynamics Developer",
+        "appointmentBasis": "other",
+        "appointmentLabel": "High-water provision pending scope attribution",
+        "fte": 1.0,
+        "fundingBasis": "Full Student Hub cash provision pending confirmation of what work is genuinely attributable to the Hub",
+        "endState": "Retain, fractionally allocate or remove the role from the Student Hub operating model once its boundary with King’s Answers, CRM and wider enquiry management is clear."
+      },
+      {
+        "resourceId": "4.1.3-y1-role-cloud-infrastructure",
+        "role": "Infrastructure Engineer (Cloud)",
+        "appointmentBasis": "other",
+        "appointmentLabel": "Fractional high-water specialist provision",
+        "fte": 0.25,
+        "fundingBasis": "Cash provision until a protected existing/shared Digital and IT route is confirmed",
+        "endState": "Settle the enduring cloud-infrastructure service model and remove directly attributable Student Hub cost where standing Digital and IT capacity can supply it."
+      },
+      {
+        "resourceId": "4.1.3-y1-role-cloud-iam",
+        "role": "IAM Engineer (Cloud)",
+        "appointmentBasis": "other",
+        "appointmentLabel": "Fractional high-water specialist provision",
+        "fte": 0.125,
+        "fundingBasis": "Cash provision until a protected existing/shared Digital and IT route is confirmed",
+        "endState": "Settle the enduring identity and access-management service model and remove directly attributable Student Hub cost where standing Digital and IT capacity can supply it."
+      },
+      {
+        "resourceId": "4.1.3-y2-y3-junior-fullstack-placement",
+        "role": "Junior Full-Stack Engineer (sandwich-year placement)",
+        "appointmentBasis": "placement",
+        "appointmentLabel": "Paid sandwich-year placement",
+        "fte": 1.0,
+        "fundingBasis": "Time-limited mobilisation investment in Years Two and Three",
+        "endState": "No automatic BAU continuation; evaluate the placement model from student experience, productive contribution, supervision cost and talent-pipeline evidence."
+      }
+    ]
+  }
+}
