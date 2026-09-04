@@ -31,7 +31,8 @@ Owns shared foundations:
 - page container;
 - stack, cluster and responsive grid layouts;
 - foundational panels and cards;
-- display and section headings;
+- shared hero framing;
+- display and section-heading typography primitives;
 - eyebrows and reference labels;
 - controls and buttons;
 - compact tags;
@@ -69,11 +70,11 @@ The header keeps the accessible `King's Edge Mobilisation Plan` anchor text in R
 
 Owns only residual mobilisation-plan compositions that have not yet moved to a clearer source owner, principally:
 
-- generic hero and section-heading composition outside migrated feature pages;
-- generic back-link, detail metadata and panel-heading normalization still consumed across older detail markup;
+- generic section-heading composition and typography outside migrated feature pages;
+- generic back-link spacing, detail metadata layout and panel-heading normalization still consumed across older detail markup;
 - the A3 print layout.
 
-It must not own the Projects portfolio, Deliverables/Measures catalogue navigation, supporting planning detail, operational Timeline, global chrome or other feature families that already have a canonical stylesheet. It should not redefine tokens or duplicate the base styling of panels, controls, labels or tags. Historical generic declarations should continue to move to their canonical owner as the file is decomposed.
+It must not own the Projects portfolio, Deliverables/Measures catalogue navigation, shared hero framing, supporting planning detail, operational Timeline, global chrome or other feature families that already have a canonical stylesheet. It should not redefine tokens or duplicate the base styling of panels, controls, labels or tags. Historical generic declarations should continue to move to their canonical owner as the file is decomposed.
 
 Screen presentation in `src/styles.css` must not use `!important`. The A3 `@media print` visibility isolation is the sole residual exception because it deliberately suppresses the normal application surface while printing the dedicated sheet.
 
@@ -107,6 +108,10 @@ There are no late-loaded stylesheets in `index.html`. Any live styling must ente
 `scripts/style-retirement-config.mjs` is the single registry of retired selector families. The generator and style validator both import it so retirement rules cannot drift between build preparation and architecture validation.
 
 The generator now retires project overview, project deliverable-board, deliverable hero, case-for-change, benefit/evidence, delivery-sequence, disclosure, global chrome, header brand, planning-context, landing, governance, consultation, RAID, supporting planning detail, Measures, Timeline, indicative-step, dead historical helper selectors and obsolete Resource & Investment widget selector families. Build validation checks that retired selectors cannot reappear in the generated compatibility CSS.
+
+The generic `.section-heading` family remains a live compatibility dependency. Historical `!important` declarations currently own the effective container, h1, paragraph and mobile presentation and mask some later Projects and Timeline rules. That family needs an effective-contract migration rather than a wholesale move of the residual declarations.
+
+Historical `.secondary-button` compatibility styling is retired, but current Timeline markup still contains two `.secondary-button` aliases. Those should be replaced with explicit Timeline or design-system classes before the selector can be considered absent from runtime markup.
 
 Theory of Change presentation is no longer a late public shim. It is source-owned, imported through `src/site-entry.jsx`, uses the shared sequence-card primitive for the causal chain, and follows the same black/white/red disclosure grammar as the rest of the product.
 
@@ -177,7 +182,7 @@ Completed:
 3. Resources & Investment moved into its canonical component stylesheet, with the former spacing bridge deleted;
 4. project overview presentation moved out of `public/project-detail-refresh.css` and into source-owned feature styling;
 5. the late public project refresh file deleted;
-6. project overview and deliverable-board selector families removed from the runtime legacy bundle before build;
+6. project overview and project deliverable-board selector families removed from the runtime legacy bundle before build;
 7. project overview `!important` debt reduced to zero;
 8. deliverable page foundation, hero and summary grammar moved into `src/styles/deliverable-detail.css` and onto shared design-system tokens;
 9. deliverable hero and generic detail-summary selectors retired from the runtime legacy bundle;
@@ -200,15 +205,18 @@ Completed:
 26. the Projects index is fully source-owned in `src/styles/portfolio-overview.css`; residual project-board/card selectors and their generic `.owner`/`.lead` `!important` rules have been removed from `src/styles.css` and guarded against reintroduction;
 27. Deliverables and Measures catalogue navigation is fully source-owned in `src/styles/index-navigation.css`; residual `.toolbar`, `.index-list`, `.index-row` and `.index-meta` rules have been removed from `src/styles.css` and guarded against reintroduction;
 28. obsolete `.depends` screen styling has been removed from `src/styles.css`, leaving no screen-level `!important`; validation preserves that rule while allowing only the isolated A3 print visibility exception;
-29. dead historical helpers `.dependency-grid`, `.dependency-card`, `.dependency-list`, `.sidebars-preview` and `.secondary-button` have been removed from residual/source-owned foundations and retired from generated runtime compatibility CSS;
-30. supporting planning detail (`.component-grid`, `.component-card`, `.detail-grid`, `.link-list` and `.compact-list`) is fully owned by `src/styles/planning-detail.css`, removed from the residual stylesheet, retired from runtime legacy CSS and guarded against reintroduction.
+29. dead historical helpers `.dependency-grid`, `.dependency-card`, `.dependency-list` and `.sidebars-preview` have been removed from residual/source-owned foundations. Historical `.secondary-button` styling is retired from generated compatibility CSS, while its remaining Timeline markup aliases are tracked separately;
+30. supporting planning detail (`.component-grid`, `.component-card`, `.detail-grid`, `.link-list` and `.compact-list`) is fully owned by `src/styles/planning-detail.css`, removed from the residual stylesheet, retired from runtime legacy CSS and guarded against reintroduction;
+31. generic `.hero` / `.detail-hero` framing, watermark, typography and responsive treatment moved into `src/design-system.css`, with residual ownership removed and validator guardrails added.
 
 Next:
 
-1. progressively shrink `legacy-public-source.css` as each retired feature family becomes safe to delete permanently;
-2. move temporary selector aliases onto explicit `.ds-*` classes as the React markup is decomposed;
-3. move landing public-facing copy into explicit authored markup when the `Landing` component is decomposed;
-4. continue decomposing residual generic presentation in `src/styles.css` into its canonical owners;
-5. delete the generated legacy compatibility system once no live feature depends on it.
+1. migrate the effective `.section-heading` contract, including its legacy container, typography and mobile rules, while neutralising currently shadowed Projects and Timeline declarations;
+2. audit `.back-link`, `.detail-meta` and generic `.panel h2` against their live project/deliverable consumers;
+3. replace the remaining Timeline `.secondary-button` markup aliases with explicit owned classes;
+4. progressively shrink `legacy-public-source.css` as each retired feature family becomes safe to delete permanently;
+5. move temporary selector aliases onto explicit `.ds-*` classes as the React markup is decomposed;
+6. move landing public-facing copy into explicit authored markup when the `Landing` component is decomposed;
+7. delete the generated legacy compatibility system once no live feature depends on it.
 
 The aim is progressive retirement of legacy CSS rather than a risky whole-site rewrite.

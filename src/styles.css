@@ -1,39 +1,12 @@
-.hero,
-.detail-hero {
-  position: relative;
-  overflow: hidden;
-  border-radius: 0;
-  padding: clamp(2rem, 5vw, 4.5rem) clamp(1.5rem, 5vw, 4rem) clamp(2rem, 4vw, 3.5rem);
-  margin-bottom: 1.25rem;
-  border-left: clamp(1.1rem, 3vw, 2rem) solid var(--accent);
-}
-
-.hero::after,
-.detail-hero::after {
-  content: "KING'S EDGE";
-  position: absolute;
-  right: clamp(1rem, 3vw, 2rem);
-  bottom: 1rem;
-  color: rgba(237, 28, 36, 0.055);
-  font-family: var(--font-brand);
-  font-size: clamp(3rem, 10vw, 8.5rem);
-  font-weight: 400;
-  line-height: 0.82;
-  letter-spacing: -0.03em;
-  pointer-events: none;
-}
-
-.hero h1,
-.detail-hero h1,
 .section-heading h1 {
   position: relative;
   z-index: 1;
   max-width: 1050px;
+  margin: 0 0 1rem;
   font-family: var(--font-brand);
   font-size: clamp(3rem, 6.7vw, 6.4rem);
   font-weight: 400;
   line-height: 0.95;
-  margin: 0 0 1rem;
   letter-spacing: -0.035em;
 }
 
@@ -41,8 +14,6 @@
   font-size: clamp(2.45rem, 4.5vw, 4.8rem);
 }
 
-.hero p,
-.detail-hero p,
 .section-heading p {
   position: relative;
   z-index: 1;
@@ -91,15 +62,8 @@
 }
 
 @media (max-width: 760px) {
-  .hero h1,
-  .detail-hero h1,
   .section-heading h1 {
     font-size: 2.8rem;
-  }
-
-  .hero,
-  .detail-hero {
-    border-left-width: 1rem;
   }
 }
 
