@@ -3,7 +3,7 @@
 > **Working decision-support view**  
 > **Primary audience:** Mark Peace and ESS Portfolio colleagues  
 > **Status:** Four-package King’s Edge investment view reconciled; Digital Student Experience Hub shown separately as an enabling institutional investment  
-> **Last updated:** 3 September 2026
+> **Last updated:** 4 September 2026
 
 ## Purpose
 
@@ -50,13 +50,13 @@ The separate **Digital Student Experience Hub** planning position is:
 
 | | 2026/27 | 2027/28 | 2028/29 | Three-year total |
 |---|---:|---:|---:|---:|
-| **Digital Hub, currently itemised** | **£358k** | **£429k** | **£429k** | **£1.216m** |
+| **Digital Hub, currently itemised** | **£391k** | **£462k** | **£462k** | **£1.315m** |
 
-The Hub also carries a **£3.0m working three-year strategic investment envelope** in its decision log. Only £1.216m is currently itemised. The remaining headroom is for later integration and platform investment to be released from evidence rather than treated as a pre-allocated commitment.
+The Hub also carries a **£3.0m working three-year strategic investment envelope** in its decision log. £1.315m is now itemised. The remaining **£1.685m headroom** is for later integration, platform and evidence-led capacity investment rather than a pre-allocated commitment.
 
-For dependency and whole-system planning only, the two investments together currently give an itemised profile of **£918.2k in 2026/27, £2.033m in 2027/28 and £2.193m in 2028/29: £5.1442m across three years**. This combined figure should **not** be presented as the King’s Edge funding ask.
+For dependency and whole-system planning only, the two investments together currently give an itemised profile of **£951.2k in 2026/27, £2.066m in 2027/28 and £2.226m in 2028/29: £5.2432m across three years**. This combined figure should **not** be presented as the King’s Edge funding ask.
 
-The current **King’s Edge identifiable BAU exposure is approximately £1.076m p.a., plus TBC elements**. Within that figure, **£600k p.a. is explicitly a holding assumption for partnership infrastructure** which Year 1 is designed to test rather than ratify automatically. The separate Digital Hub currently carries **at least c.£394k p.a.** of identifiable BAU, plus TBC platform/run costs.
+The current **King’s Edge identifiable BAU exposure is approximately £1.076m p.a., plus TBC elements**. Within that figure, **£600k p.a. is explicitly a holding assumption for partnership infrastructure** which Year 1 is designed to test rather than ratify automatically. The separate Digital Hub currently carries **at least c.£394k p.a.** of identifiable BAU, plus TBC platform/run and knowledge/content operating costs. The additional 4.1.1 content capacity is a mobilisation provision and does not yet create an automatic recurrent BAU commitment.
 
 ### Important costing decisions
 
@@ -64,6 +64,7 @@ The current **King’s Edge identifiable BAU exposure is approximately £1.076m 
 - The shared Deputy Director and Project Officer capacity previously parked against 2.3.3 has been **redeployed to 2.3.4 Rhythms of the Wider King’s Experience**, so the coherent funded resources reconcile fully to active work without increasing their total cost.
 - The Graduate Futures package uses the current shared programme/project-management allocation of **0.20 FTE in Year 1, worth £13.2k**.
 - **2.4.4 holds a Strategic Partnerships, Profile & External Engagement Fund of £25k / £35k / £45k across mobilisation, with a £45k p.a. recurrent BAU liability.** It is accounted for once in 2.4.4 but controlled by King’s Edge programme leadership and may be deployed across the portfolio for strategic partnership development, external profile, purposeful UK/international mobility, partner engagement and related activity. It is additional to the existing activation, research and survey-intervention envelopes.
+- **4.1.1 now includes a minimum 0.5 FTE communications, content-design and editorial delivery provision at £33k in each mobilisation year, £99k across three years.** It is funded through the separate Digital Student Experience Hub investment. Organisationally it should be designed alongside the existing 2.4.4 activation/reputation allocation, creating approximately 1.0 FTE of combined King’s Edge / Student Experience communications-content capacity in 2026/27 and 1.5 FTE in 2027/28 and 2028/29. This does not increase the King’s Edge ask: the existing 2.4.4 share remains there and only the additional 0.5 FTE is charged to the Hub.
 - Digital product implementation for purpose, skills and recognition is funded through the **separate Digital Student Experience Hub investment** and is not rebilled into the King’s Edge educational proposition packages.
 - Partnership infrastructure is costed once in **Beyond-Course Opportunity and Participation**, even where it also enables curricular and near-curricular experiential learning.
 
@@ -156,9 +157,9 @@ The **Digital Student Experience Hub** — 4.1.2, 4.1.3 and 4.1.4, enabled by 4.
     <tr valign="top">
       <td valign="top"><strong>Digital Student Experience Hub</strong><br><br><em>Plan refs: 4.1.2, 4.1.3, 4.1.4; enabled by 4.1.1</em><br><br><strong>North Star:</strong> <strong>Every student has a single, personalised digital relationship with King’s: one coherent place to begin, navigate and act</strong>, underpinned by an enduring institutional product capability that progressively integrates and rationalises the student-facing digital estate.</td>
       <td valign="top"><strong>Student:</strong> “I have one clear place to go at King’s to see what I need to do, what’s coming up, access learning and essential information, and get help or ask a question.”<br><br><strong>Student:</strong> “I can navigate opportunities that are relevant to me, connect them to my aspirations, and build a more personalised journey through my time at King’s.”<br><br><strong>Student:</strong> “I am less dependent on already knowing how King’s works or having the right networks to find the opportunities and support available to me.”<br><br><strong>Student-facing service owner:</strong> “I can make my service easier for students to find and use through a shared digital experience, rather than creating another separate destination.”<br><br><strong>Digital / product team:</strong> “We can take an emerging student need from discovery into a tested, supported live service more quickly, with clearer priorities and trade-offs.”<br><br><strong>The University:</strong> “We can progressively integrate and rationalise a fragmented student-facing digital estate, while turning successful innovation into supported institutional provision rather than a succession of temporary projects.”</td>
-      <td valign="top"><strong>£358k.</strong> Establishes the permanent-intent four-person product core and shared Hub foundations; replatforms King’s Edge onto those foundations; co-designs and tests the common student home; and leaves a <strong>launch-ready first Hub release plus an evidence-led backlog for progressive integration</strong>. First live release follows in September 2027.</td>
-      <td valign="top"><strong>£1.216m currently itemised within a £3.0m working three-year strategic envelope.</strong> The itemised floor covers the funded product capability/tooling and initial Year 1 platform/co-design commitments. Remaining strategic headroom is for evidence-led journey integration and platform investment rather than pre-allocated spend.</td>
-      <td valign="top"><strong>At least c.£394k p.a. currently identified, plus TBC platform/run costs.</strong> Baseline is the permanent 4.0 FTE product core plus agentic development tooling. Future hosting, platform and deeper integration operating costs are to be evidenced.</td>
+      <td valign="top"><strong>£391k.</strong> Establishes the permanent-intent four-person product core and shared Hub foundations; funds the first dedicated communications/content-design capacity for the Student Knowledge and Information Foundation; replatforms King’s Edge onto shared foundations; co-designs and tests the common student home; and leaves a <strong>launch-ready first Hub release plus an evidence-led backlog for progressive integration</strong>. First live release follows in September 2027.</td>
+      <td valign="top"><strong>£1.315m currently itemised within a £3.0m working three-year strategic envelope.</strong> The itemised floor covers the funded product capability/tooling, initial Year 1 platform/co-design commitments and a 0.5 FTE knowledge/content delivery provision across mobilisation. Remaining strategic headroom is for evidence-led journey integration, platform investment and any additional capacity demonstrated through discovery rather than pre-allocated spend.</td>
+      <td valign="top"><strong>At least c.£394k p.a. currently identified, plus TBC platform/run and knowledge/content costs.</strong> Baseline is the permanent 4.0 FTE product core plus agentic development tooling. The 4.1.1 content provision is mobilisation-funded; its enduring scale and organisational home will be determined from discovery and live operating evidence rather than assumed now.</td>
     </tr>
   </tbody>
 </table>
@@ -178,7 +179,7 @@ The King’s Edge package-attributed Year 1 shares sum back exactly to that £18
 - Student Purpose, Skills and Educational Recognition: **£10.5k**;
 - Experiential Learning in the Curriculum: **£53.8k**.
 
-The Digital Student Experience Hub does not draw on these King’s Edge shared-resource envelopes; its funded team and tooling are costed directly in 4.1.3.
+The Digital Student Experience Hub does not draw on these King’s Edge shared-resource envelopes. The new 4.1.1 allocation is a separate Hub-funded resource. It is intended to be designed organisationally alongside the existing direct 2.4.4 activation/reputation capacity, but no cost is transferred between the two investment asks and no King’s Edge shared-resource cost is double counted.
 
 ### Graduate Futures Intelligence and Value
 
@@ -189,6 +190,8 @@ The corrected **£169.9k Year 1 planning total** comprises:
 - **£41.2k shared funded capacity**: £17.5k analytics, £10.5k Project Officer and **£13.2k programme/project management**.
 
 The resulting three-year profile is approximately **£169.9k / £296.45k / £371.45k = £837.8k**.
+
+The existing 2.4.4 capacity should be treated as the King’s Edge allocation within the broader communications/content role design, not as an additional post on top of it. The King’s Edge profile and totals are unchanged by the 4 September resource-alignment decision.
 
 The **Strategic Partnerships, Profile & External Engagement Fund** is £25k / £35k / £45k across mobilisation and creates a **£45k p.a. recurrent BAU liability from 2029/30**. Its accounting home is 2.4.4, but budget control sits with King’s Edge programme leadership and deployment may support strategic partnership development, external profile, purposeful UK/international mobility, partner engagement, convening and related priorities across the King’s Edge portfolio. It is additional to the activation, research and survey-intervention envelopes and should not be double counted elsewhere.
 
@@ -224,11 +227,15 @@ No cost from 2.2.2 is added to this package. Partnership infrastructure is an en
 
 ### Digital Student Experience Hub
 
-The separate **£358k Year 1 baseline** comprises approximately £203k for the four experienced product-team posts, £90k agentic software-development tooling, £50k Azure/environments/platform costs and £15k paid student visioning/co-design.
+The separate **£391k Year 1 baseline** comprises approximately £203k for the four experienced product-team posts, £90k agentic software-development tooling, £50k Azure/environments/platform costs, £15k paid student visioning/co-design and **£33k for the 0.5 FTE 4.1.1 communications/content-design and editorial delivery provision**.
 
-The directly itemised three-year position is **£1.216m**: £1.151m for the 4.1.3 product capability and tooling across mobilisation plus £65k of Year 1 platform/co-design costs held through 4.1.2. 4.1.4 carries no separate incremental digital build envelope because it is delivered through the same team and foundations.
+The directly itemised three-year position is **£1.315m**: £1.151m for the 4.1.3 product capability and tooling across mobilisation, £65k of Year 1 platform/co-design costs held through 4.1.2 and **£99k for the 0.5 FTE 4.1.1 content-delivery provision across the three mobilisation years**. 4.1.4 carries no separate incremental digital build envelope because it is delivered through the same team and foundations.
 
-The 4.1.2 decision log retains a **£3m three-year strategic investment envelope**. This should be treated as planning headroom for later integration and platform work, not as an itemised commitment and not as part of the King’s Edge ask.
+The 4.1.1 provision is a minimum business-case envelope. Senior knowledge/content architecture and governance leadership and authoritative subject ownership are assumed to come from protected existing institutional capacity. The funded 0.5 FTE provides hands-on remediation, content design, editorial production and migration/adoption support. Discovery and the first SASD implementation should determine whether wider institutional rollout needs a larger or differently configured content operation.
+
+Organisationally, the 4.1.1 0.5 FTE should be designed alongside the existing 2.4.4 activation/reputation allocation. On the current assumptions this creates a combined communications/content capability of approximately **1.0 FTE in 2026/27 and 1.5 FTE in 2027/28 and 2028/29**, while preserving the accounting split between the King’s Edge and Digital Hub asks.
+
+The 4.1.2 decision log retains a **£3m three-year strategic investment envelope**. With £1.315m now itemised, approximately **£1.685m remains as planning headroom** for later integration, platform work and evidence-led capacity changes. This is not an itemised commitment and is not part of the King’s Edge ask.
 
 ---
 
@@ -236,12 +243,12 @@ The 4.1.2 decision log retains a **£3m three-year strategic investment envelope
 
 The current numbers are sufficiently mature for prioritisation, but they are not all equally certain.
 
-- **King’s Edge / Graduate Futures:** direct activity is well specified; the cash value of the dedicated 2.4.4 role remains a planning conversion and its BAU destination is not yet validated. The strategic partnerships/profile fund is deliberately flexible, but its annual ceiling, programme-level control and £45k BAU assumption are explicit.
+- **King’s Edge / Graduate Futures:** direct activity is well specified; the cash value of the dedicated 2.4.4 role remains a planning conversion and its BAU destination is not yet validated. Its organisational design should now be considered alongside the 4.1.1 content provision, without changing the King’s Edge cost allocation. The strategic partnerships/profile fund is deliberately flexible, but its annual ceiling, programme-level control and £45k BAU assumption are explicit.
 - **King’s Edge / Beyond Course:** the £600k p.a. partnership-infrastructure figure is deliberately a **holding assumption**. Year 1 should produce the evidence to increase, reduce or reshape it. The Student Opportunities Fund award pot is not yet quantified.
 - **King’s Edge / Purpose, Skills and Recognition:** Year 1 is well bounded. Year 2 and 3 are capability envelopes which should contract as well as expand if discovery or portability evidence is weak.
 - **King’s Edge / Experiential Learning:** Year 1 is well bounded. Later curriculum-growth envelopes are explicitly evidence-led and should not be treated as automatic spending targets.
-- **Digital Hub:** £358k Year 1 and the core 4.1.3 staffing/tooling profile are well specified. Later integration/platform spend is deliberately held within the separate £3m strategic envelope and should be released from evidence.
-- **BAU:** the King’s Edge c.£1.076m p.a. and Digital Hub c.£394k p.a. figures are identifiable exposures rather than settled recurrent budgets. Several TBC items could add cost, while the £600k partnership assumption could reduce materially after review.
+- **Digital Hub:** the **£391k Year 1 baseline** now includes a quantified 0.5 FTE knowledge/content-delivery provision as well as the core 4.1.3 staffing/tooling profile. The adequacy of that 0.5 FTE for wider post-SASD rollout is intentionally evidence-led. Later integration/platform spend remains within the separate £3m strategic envelope and should be released from evidence.
+- **BAU:** the King’s Edge c.£1.076m p.a. and Digital Hub c.£394k p.a. figures are identifiable exposures rather than settled recurrent budgets. Several TBC items could add cost, including the enduring knowledge/content operating model, while the £600k partnership assumption could reduce materially after review.
 
 ---
 
