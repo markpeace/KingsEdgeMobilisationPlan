@@ -63,10 +63,10 @@ The UI uses this flag to render Edge projects first, then the out of programme p
 ```json
 {
   "id": "4.1",
-  "title": "Student Experience Hub",
+  "title": "Digital Student Experience Hub",
   "owner": "Mark Peace",
   "deliveryContext": "out-of-programme",
-  "summary": "Creates a coherent and personalised digital student experience through integrated systems, strengthened CRM capability and shared digital enhancements.",
+  "summary": "Creates a coherent and personalised digital student experience by combining an authoritative student knowledge foundation, progressive integration of existing systems and services, and an enduring multidisciplinary product capability.",
   "deliverables": [
     { "id": "4.1.1" },
     { "id": "4.1.2" },
