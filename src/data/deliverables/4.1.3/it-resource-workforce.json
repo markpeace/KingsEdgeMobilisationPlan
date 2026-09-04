@@ -1,18 +1,21 @@
 {
   "workforceModel": {
-    "status": "Digital and IT mature-team high-water model with a four-post permanent core, a rolling sandwich-year placement and unresolved specialist workforce sourcing",
-    "summary": "The high-water funding model should not imply that every costed Digital and IT line becomes a permanent Student Hub post, but neither should it hide the enduring product capability that King’s is deliberately creating. The current planning assumption is a 4.0 FTE permanent Digital and IT core from the outset: Product Manager, Backend Engineer, Full-Stack Developer and UX/UI Designer. Mobilisation investment carries these posts to June 2029 and recurrent Digital and IT establishment takes over from July 2029, with the Product Manager cost allocation still to be agreed with the Staff Digital Hub. A rolling paid sandwich-year engineering placement is treated as a recurrent development and talent-pipeline commitment from BAU. Solution Architecture, DevOps, Dynamics, Cloud Infrastructure and IAM remain high-water specialist workforce capacity until Digital and IT confirms whether they are dedicated, shared or existing. Infuse QA is explicitly excluded from the workforce establishment because it is an outsourced non-pay testing service. Mark Peace as Product Owner and the expected existing IT Delivery Manager remain existing capacity rather than funded appointments.",
+    "status": "Digital and IT mature-team high-water model with a four-post permanent institutional core, 50/50 Product Manager allocation across Student and Staff Hubs, a rolling sandwich-year placement and unresolved specialist workforce sourcing",
+    "summary": "The permanent institutional product core remains four Digital and IT posts from the outset: Product Manager, Backend Engineer, Full-Stack Developer and UX/UI Designer. Jon Ward has now confirmed that the 1.0 FTE Product Manager should be funded 50/50 between the Student and Staff Hubs to ring-fence costs and avoid cross-subsidisation. The Student Hub therefore carries 0.5 FTE / £47,784 p.a. of the Product Manager’s £95,568 full institutional annual cost, while the Staff Hub must carry the other half. The remaining three permanent posts are fully attributed to the Student Hub in the current model. Mobilisation investment carries the Student Hub shares to June 2029 and recurrent Digital and IT establishment takes over from July 2029. A rolling paid sandwich-year engineering placement is treated as a recurrent development and talent-pipeline commitment from BAU. Solution Architecture, DevOps, Dynamics, Cloud Infrastructure and IAM remain high-water specialist workforce capacity until Digital and IT confirms whether they are dedicated, shared or existing. Infuse QA is excluded from the workforce establishment because it is confirmed outsourced non-pay testing. Mark Peace as Product Owner and the expected existing IT Delivery Manager remain existing capacity rather than funded appointments.",
     "appointments": [
       {
-        "resourceId": "4.1.3-y1-role-product-manager",
+        "resourceId": "4.1.3-operating-product-manager-student-share",
         "role": "Product Manager",
         "appointmentBasis": "permanent",
-        "appointmentLabel": "Permanent Digital and IT product-management post",
+        "appointmentLabel": "Permanent 1.0 FTE Digital and IT Product Manager shared 50/50 across Student and Staff Hubs",
         "fte": 1.0,
-        "fundingBasis": "Mobilisation-funded to June 2029; recurrent Digital and IT establishment from July 2029. Student-versus-Staff Hub cost allocation remains to be agreed.",
+        "studentHubAllocatedFte": 0.5,
+        "staffHubAllocatedFte": 0.5,
+        "institutionalAnnualCost": 95568,
+        "fundingBasis": "One permanent institutional post. Student Hub mobilisation and BAU funding carries 50%; Staff Hub funding route carries the other 50%, following Jon Ward’s 4 September confirmation.",
         "bauFrom": "July 2029",
-        "bauOwner": "Digital and IT",
-        "annualBauAmount": 95568
+        "bauOwner": "Digital and IT with explicit Student / Staff Hub cost allocation",
+        "annualBauAmount": 47784
       },
       {
         "resourceId": "4.1.3-y1-role-solution-architect",
