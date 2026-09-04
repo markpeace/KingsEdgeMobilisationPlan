@@ -1,27 +1,38 @@
 {
-  "summary": "Uses Digital and IT’s mature-team estimate as the high-water mobilisation ceiling while distinguishing permanent product posts, unresolved specialist workforce, outsourced non-pay QA and the recurring sandwich-year placement.",
-  "detailSummary": "The Digital and IT high-water model remains the prudent ceiling for mobilisation staffing and services, but the enduring pay/non-pay position is now explicit. The current planning assumption is a 4.0 FTE permanent Digital and IT product core from the outset: Product Manager, Backend Engineer, Full-Stack Developer and UX/UI Designer. At the current Digital and IT cost rates these posts have a combined full-year run-rate of approximately £323,856. Mobilisation funding carries them through June 2029 and recurrent Digital and IT establishment takes over from July 2029, with the Product Manager’s eventual Student-versus-Staff Hub allocation still to be settled.\n\nThe remaining high-water specialist workforce, excluding outsourced QA, is approximately £205,224 per full year: Solution Architect / Technical Lead, fractional Azure DevOps, Dynamics Developer, fractional Cloud Infrastructure and fractional IAM. These remain visible workforce risks until Digital and IT confirms which are dedicated, shared, existing or attributable to another programme. Infuse QA is treated separately as an outsourced non-pay testing service at £6,000 per month, £48,000 in the eight-month Year One mobilisation period and £72,000 per full year thereafter. The old QA Engineer workforce ask is superseded by this non-pay service line, so the cash envelope is unchanged but the pay establishment is not overstated. Product Owner remains Mark Peace from existing workload and the IT Delivery Manager remains an existing-capacity assumption.\n\nThe paid sandwich-year Junior Full-Stack placement remains £35,000 in each of Years Two and Three and is now treated as a rolling BAU commitment from July 2029 rather than a mobilisation-only experiment. The intent is to maintain one supervised placement each year as a student-development, insight and digital-talent-pipeline route without making the placement critical delivery capacity.\n\nThe Hub operating-cost model sits explicitly with 4.1.2. Paid student visioning and co-design is treated as an annual £15,000 product capability across mobilisation and BAU. Azure, environments and platform costs ramp £50,000 / £75,000 / £100,000 across the three mobilisation years and retain a £100,000 BAU high-water allowance. A separate student-facing AI inference, retrieval and token-consumption planning allowance is introduced at £50,000 / £75,000 / £100,000, also retaining £100,000 as a BAU high-water allowance. This runtime AI budget is distinct from the £90,000 annual Devin/Cognition engineering-productivity allowance in 4.1.3.\n\nThe three-year mobilisation profile remains approximately £638,720 in 2026/27, £924,080 in 2027/28 and £974,080 in 2028/29: £2,536,880 across mobilisation. The BAU risk ceiling rises by £35,000 because the sandwich-year placement is now recurrent. The current worst-case recurrent exposure is therefore approximately £941,080 per year before the enduring 4.1.1 knowledge/content operating model. Of this, £564,080 is pay/workforce exposure including the rolling placement, while £377,000 is known non-pay operating/service exposure including Infuse QA, Devin/Cognition, Azure/platform, student-facing AI runtime and recurring paid student co-design. This remains a high-water risk ceiling rather than a settled BAU budget.",
+  "summary": "Uses Digital and IT’s mature-team estimate as the high-water mobilisation ceiling, now applying Jon Ward’s confirmed 50/50 Product Manager allocation between the Student and Staff Hubs while keeping recruitment phasing and the remaining specialist/service questions explicit.",
+  "detailSummary": "The Digital and IT high-water model remains the prudent ceiling for mobilisation staffing and services, but the first confirmed cross-Hub reduction is now applied. Jon Ward has agreed that the permanent 1.0 FTE Product Manager should be allocated 50/50 between the Student and Staff Hubs to avoid cross-subsidisation. The full institutional cost of the four-post permanent product core remains approximately £323,856 per year, but the Student Hub funding share is therefore approximately £276,072 per year: half of the Product Manager plus the full Backend Engineer, Full-Stack Developer and UX/UI Designer. The other half of the Product Manager must be carried by the Staff Hub or its funding route rather than disappearing from the institutional model.\n\nThe remaining high-water specialist workforce, excluding outsourced QA, is approximately £205,224 per full year: Solution Architect / Technical Lead, fractional Azure DevOps, Dynamics Developer, fractional Cloud Infrastructure and fractional IAM. These remain visible workforce risks until Digital and IT confirms which are dedicated, shared, existing or attributable to another programme. Infuse QA is confirmed as outsourced non-pay testing at £6,000 per month, £48,000 in the eight-month Year One mobilisation period and £72,000 per full year thereafter. Jon Ward confirms that the service provides cost-effective capacity plus important expertise in test automation and non-functional testing. Product Owner remains Mark Peace from existing workload and the IT Delivery Manager remains an existing-capacity assumption.\n\nJon Ward also advises that, even if recruitment for all new roles begins on day one, a realistic recruitment and onboarding period is around six months, with appointments arriving steadily over that period. The gap may need to be bridged through contractors and/or reprioritised existing Digital and IT capacity. Because the bridge route is not yet agreed and contractors could increase rather than reduce cash cost, the plan does not automatically discount the remaining Year One envelope for recruitment lag. Instead, the six-month lead time is now an explicit mobilisation constraint and the next Digital and IT pass should turn it into a credible month-by-month deployment and bridge plan.\n\nThe paid sandwich-year Junior Full-Stack placement remains £35,000 in each of Years Two and Three and a rolling BAU commitment from July 2029. The Hub operating-cost model remains explicit: £90,000 annual Devin/Cognition engineering-productivity tooling; recurring student co-design; Azure/platform and student-facing AI runtime allowances. Jon has flagged development software as a further potential Student/Staff Hub shared-cost category, so James Costerton is asked to identify which development tools should be shared and how those costs should be allocated.\n\nApplying the confirmed 50/50 Product Manager split reduces the current Student Hub high-water profile to approximately £606,864 in 2026/27, £876,296 in 2027/28 and £926,296 in 2028/29: £2,409,456 across mobilisation. This remains within the £3.0m strategic envelope and leaves £590,544 unallocated headroom. The current worst-case recurrent Student Hub exposure falls to approximately £893,296 per year before the enduring 4.1.1 knowledge/content operating model. Of this, £516,296 is pay/workforce exposure including the rolling placement, while £377,000 is known non-pay operating/service exposure. The reduction is an attribution decision, not an institutional saving: the Staff Hub must carry the other 50% Product Manager share.",
   "fundingEnvelope": {
-    "status": "Current high-water working baseline pending Digital and IT phasing, sourcing, AI-consumption and cross-Hub attribution validation",
-    "source": "Digital and IT mature-team estimate shared by Jon Ward on 3-4 September 2026, subsequent clarification from Jon Ward and James Costerton, and 4 September product-operating-cost refinement",
+    "status": "Current high-water working baseline after confirmed 50/50 Product Manager allocation; pending Digital and IT recruitment phasing, sourcing, AI-consumption and further cross-Hub attribution validation",
+    "source": "Digital and IT mature-team estimate shared by Jon Ward on 3-4 September 2026; Jon Ward follow-up on 4 September confirming 50/50 Product Manager allocation, six-month recruitment lead time and Infuse outsourcing treatment; remaining technical questions with James Costerton",
     "itReportedGrossMatureTeam": {
       "monthlyCost": 56842,
       "twelveMonthCost": 682108,
       "eighteenMonthCost": 1023162,
       "twentyFourMonthCost": 1364216,
       "thirtySixMonthCost": 2046324,
-      "note": "These are the totals shown in the Digital and IT working sheet and include the Product Owner resource. The Infuse QA line is treated as outsourced non-pay even though it appears alongside roles in the source table."
+      "note": "These are the totals shown in the original Digital and IT working sheet and include the full Product Owner and Product Manager costs. The Student Hub funding model now removes Product Owner and allocates only 50% of Product Manager. Infuse QA is treated as outsourced non-pay even though it appears alongside roles in the source table."
     },
     "knownExistingOrNonCash": [
       "Mark Peace provides Product Owner leadership from existing workload; no incremental Student Hub cash ask is carried for the Product Owner line.",
       "An IT Delivery Manager is required but Digital and IT currently expects to provide this from existing capacity; no new cash is included until advised otherwise.",
       "Approximately 0.2 FTE Business Analysis remains an existing or seconded protected-capacity assumption during the main discovery period."
     ],
+    "confirmedCrossHubAllocation": {
+      "productManagerInstitutionalFte": 1.0,
+      "studentHubAllocation": 0.5,
+      "staffHubAllocation": 0.5,
+      "institutionalAnnualCost": 95568,
+      "studentHubAnnualShare": 47784,
+      "staffHubAnnualShare": 47784,
+      "basis": "Jon Ward confirms the Product Manager should be 50/50 to ring-fence Student and Staff Hub costs and avoid cross-subsidisation."
+    },
     "permanentCore": {
-      "fte": 4.0,
-      "fullYearRunRate": 323856,
+      "institutionalFte": 4.0,
+      "institutionalFullYearRunRate": 323856,
+      "studentHubAttributedFte": 3.5,
+      "studentHubFullYearRunRate": 276072,
       "roles": ["Product Manager", "Backend Engineer", "Full-Stack Developer", "UX/UI Designer"],
-      "basis": "Permanent Digital and IT posts from the outset, mobilisation-funded to June 2029 and recurrent from July 2029. Product Manager allocation with the Staff Digital Hub remains to be agreed."
+      "basis": "Four permanent Digital and IT posts from the outset. The Product Manager is institutionally 1.0 FTE but only 0.5 FTE / 50% of its cost is attributed to the Student Hub; the Staff Hub carries the other half."
     },
     "unresolvedSpecialistWorkforce": {
       "fullYearHighWaterRunRate": 205224,
@@ -32,18 +43,25 @@
       "yearOneEightMonthCost": 48000,
       "fullYearRunRate": 72000,
       "supplier": "Infuse",
-      "basis": "Outsourced QA/testing service at £6,000 per month in the current Digital and IT estimate. This is non-pay service expenditure, not a Student Hub post."
+      "basis": "Confirmed outsourced QA/testing service at £6,000 per month. Jon Ward highlights cost-effective capacity, test automation and non-functional testing expertise. This is non-pay service expenditure, not a Student Hub post."
+    },
+    "recruitmentAndMobilisation": {
+      "realisticRecruitmentLeadTimeMonths": 6,
+      "onboardingPattern": "Steady onboarding across the recruitment period rather than all roles becoming available together",
+      "possibleBridgeRoutes": ["contractors", "reprioritised existing Digital and IT capacity"],
+      "budgetTreatment": "Do not reduce the remaining Year One high-water envelope solely for recruitment lag until the bridge route and its cost are agreed; use the next Digital and IT pass to produce a month-by-month deployment and bridge plan."
     },
     "currentWorstCasePayAndWorkforce": {
-      "monthlyCostExcludingInfuse": 44090,
-      "yearOneEightMonthCostExcludingInfuse": 352720,
-      "fullYearRunRateExcludingInfuse": 529080
+      "monthlyCostExcludingInfuse": 40108,
+      "yearOneEightMonthCostExcludingInfuse": 320864,
+      "fullYearRunRateExcludingInfuse": 481296,
+      "basis": "Student Hub cash after removing Product Owner, allocating Product Manager 50/50, and excluding outsourced Infuse QA. Other unresolved workforce lines remain held at high-water."
     },
     "currentWorstCaseTeamAndQaCash": {
-      "monthlyCost": 50090,
-      "yearOneEightMonthCost": 400720,
-      "fullYearRunRate": 601080,
-      "basis": "Preserves the total cash value of the Digital and IT team estimate after removing Product Owner, while separating £72,000 p.a. Infuse QA as non-pay."
+      "monthlyCost": 46108,
+      "yearOneEightMonthCost": 368864,
+      "fullYearRunRate": 553296,
+      "basis": "Student Hub share of the Digital and IT team estimate plus outsourced Infuse QA, after removing Product Owner and allocating Product Manager 50/50."
     },
     "sandwichYearPlacement": {
       "yearTwo": 35000,
@@ -59,32 +77,84 @@
       "knowledgeAndContentDelivery": {"yearOne": 33000, "yearTwo": 33000, "yearThree": 33000, "note": "Held under 4.1.1. Enduring scale remains TBC from discovery and live operating evidence."}
     },
     "hubTotal": {
-      "yearOne": 638720,
-      "yearTwo": 924080,
-      "yearThree": 974080,
-      "threeYearTotal": 2536880,
+      "yearOne": 606864,
+      "yearTwo": 876296,
+      "yearThree": 926296,
+      "threeYearTotal": 2409456,
       "strategicEnvelope": 3000000,
-      "remainingHeadroom": 463120
+      "remainingHeadroom": 590544
     },
     "worstCaseBauRunRate": {
-      "permanentCorePay": 323856,
+      "studentHubPermanentCorePay": 276072,
       "unresolvedSpecialistWorkforcePay": 205224,
       "rollingSandwichPlacementPay": 35000,
-      "totalPayAndWorkforce": 564080,
+      "totalPayAndWorkforce": 516296,
       "outsourcedInfuseQaNonPay": 72000,
       "agenticDevelopmentNonPay": 90000,
       "azurePlatformNonPay": 100000,
       "studentFacingAiRuntimeNonPay": 100000,
       "paidStudentCodesignOperatingBudget": 15000,
       "totalKnownNonPayAndOperating": 377000,
-      "knownTotalBeforeKnowledgeContent": 941080,
-      "note": "Risk ceiling only. The permanent core and rolling placement are explicit. Specialist workforce, cross-Hub allocations and several service costs remain validation opportunities. Enduring 4.1.1 knowledge/content operations remain additional TBC exposure."
+      "knownTotalBeforeKnowledgeContent": 893296,
+      "note": "Student Hub risk ceiling only. The Staff Hub carries the other £47,784 annual Product Manager share. Specialist workforce, development-software sharing, other cross-Hub allocations and several service costs remain validation opportunities. Enduring 4.1.1 knowledge/content operations remain additional TBC exposure."
     }
   },
+  "resourceQuestions": [
+    {
+      "question": "Given a realistic six-month recruitment period with steady onboarding, what month-by-month Year One deployment should we assume and how should the gap be bridged between contractors and reprioritised existing Digital and IT capacity?",
+      "owner": "Jon Ward / James Costerton with Mark Peace",
+      "effect": "Converts the high-water Year One envelope into a credible deployment profile without assuming recruitment lag automatically creates a saving."
+    },
+    {
+      "question": "Which development-software and engineering-tooling costs should be shared between the Student and Staff Hubs, and what allocation should be charged to each business case?",
+      "owner": "James Costerton / Digital and IT",
+      "effect": "Extends the confirmed Product Manager ring-fencing principle to shared development tooling and prevents cross-subsidisation or double counting."
+    },
+    {
+      "question": "What specific work is the 1.0 FTE Dynamics Developer expected to deliver, and what proportion is truly attributable to the Student Experience Hub rather than King’s Answers, CRM/enquiry management or another programme?",
+      "owner": "James Costerton / Digital and IT",
+      "effect": "Could remove or fractionally allocate the Dynamics line from the Student Hub funding case."
+    },
+    {
+      "question": "Does the mature model require a dedicated 1.0 FTE Solution Architect / Technical Lead throughout mobilisation, and which of DevOps, Cloud Infrastructure and IAM can be supplied through standing or shared Digital and IT capacity?",
+      "owner": "James Costerton / Digital and IT",
+      "effect": "May reduce the specialist workforce cash line while retaining clear technical authority and service coverage."
+    },
+    {
+      "question": "Are the £50k / £75k / £100k Azure/platform profile and the separate student-facing AI inference/retrieval allowance at the same profile sensible high-water assumptions, and can the AI line be grounded in a simple demand and unit-cost model?",
+      "owner": "James Costerton / Digital and IT",
+      "effect": "Turns provisional operating-cost allowances into a defensible business-case and BAU model."
+    },
+    {
+      "question": "Beyond Product Manager, which remaining workforce or non-pay lines are genuinely new dedicated Student Hub investment versus existing protected capacity, shared new capacity, outsourced service or another programme’s cost?",
+      "owner": "Digital and IT with Finance and Mark Peace",
+      "effect": "Creates the next auditable reduction pass from the Student Hub high-water envelope."
+    }
+  ],
   "operatingCostModel": {
     "title": "Enduring product workforce and service commitments",
-    "summary": "Separate permanent posts, rolling student placement, unresolved specialist workforce and outsourced QA so the resource profile has a clear pay/non-pay meaning.",
+    "summary": "Separate the Student Hub share of permanent posts, rolling student placement, unresolved specialist workforce and outsourced QA so the resource profile has a clear pay/non-pay and cross-Hub allocation meaning.",
     "newInvestment": [
+      {
+        "id": "4.1.3-operating-product-manager-student-share",
+        "item": "Student Hub 50% share of permanent Product Manager",
+        "category": "pay: shared permanent digital product staffing",
+        "fte": 0.5,
+        "amount": 31856,
+        "currency": "GBP",
+        "yearlyProfile": [
+          {"academicYear": "2026/27", "fte": 0.5, "amount": 31856, "note": "Eight-month Student Hub 50% share of the full 1.0 FTE G8 Product Manager"},
+          {"academicYear": "2027/28", "fte": 0.5, "amount": 47784, "note": "Full-year Student Hub 50% share"},
+          {"academicYear": "2028/29", "fte": 0.5, "amount": 47784, "note": "Full-year Student Hub 50% share"}
+        ],
+        "estimatedCost": "The institutional Product Manager remains a full 1.0 FTE G8 post costing £95,568 per full year at the current Digital and IT rate. Following Jon Ward’s 4 September confirmation, the Student Hub carries 50% and the Staff Hub must carry the other 50%.",
+        "owner": "Digital and IT",
+        "periodNeeded": "November 2026 onward",
+        "fundingRoute": "50% Digital Student Experience Hub business case / 50% Staff Hub funding route",
+        "fundingStatus": "Confirmed working cross-Hub allocation",
+        "confidence": "confirmed by Jon Ward",
+        "rationale": "Ring-fences Student and Staff Hub costs while retaining one coherent Product Manager role across the two related propositions."
+      },
       {
         "id": "4.1.3-operating-infuse-qa-nonpay",
         "item": "Outsourced QA/testing through Infuse",
@@ -96,27 +166,27 @@
           {"academicYear": "2027/28", "amount": 72000, "note": "Full-year outsourced QA/testing provision"},
           {"academicYear": "2028/29", "amount": 72000, "note": "Full-year outsourced QA/testing provision"}
         ],
-        "estimatedCost": "£48,000 in Year One and £72,000 in each full mobilisation year at the current Infuse £6,000 monthly rate. This replaces the earlier QA Engineer workforce presentation without changing the cash envelope.",
+        "estimatedCost": "£48,000 in Year One and £72,000 in each full mobilisation year at the current Infuse £6,000 monthly rate. Jon Ward confirms the outsourced model and highlights cost-effective resource, test automation and non-functional testing expertise.",
         "owner": "Digital and IT",
         "periodNeeded": "November 2026 to June 2029",
         "fundingRoute": "Digital Student Experience Hub mobilisation non-pay budget",
-        "fundingStatus": "High-water outsourced service provision; contract and mature sourcing to confirm",
-        "confidence": "current Digital and IT supplier-cost assumption"
+        "fundingStatus": "Confirmed outsourced service treatment; contract and mature sourcing subject to normal review",
+        "confidence": "confirmed by Jon Ward"
       },
       {
         "id": "4.1.3-bau-permanent-product-core",
-        "item": "BAU permanent four-post Digital and IT product core",
+        "item": "Student Hub BAU share of permanent four-post Digital and IT product core",
         "category": "pay: permanent digital product staffing",
-        "fte": 4.0,
-        "amount": 323856,
+        "fte": 3.5,
+        "amount": 276072,
         "currency": "GBP",
         "bauLiability": true,
-        "estimatedCost": "£323,856 annual constant-price run-rate from July 2029 for Product Manager, Backend Engineer, Full-Stack Developer and UX/UI Designer.",
+        "estimatedCost": "£276,072 annual Student Hub share from July 2029: 50% of Product Manager (£47,784) plus full Backend Engineer (£81,024), Full-Stack Developer (£81,024) and UX/UI Designer (£66,240). The underlying institutional core remains four permanent posts costing £323,856, with the Staff Hub carrying the other £47,784 Product Manager share.",
         "owner": "Digital and IT",
         "periodNeeded": "July 2029 onward",
-        "fundingRoute": "Mobilisation-funded to June 2029, then recurrent Digital and IT establishment with cross-Hub allocation where appropriate",
-        "fundingStatus": "Planned permanent establishment; recurrent funding route and Product Manager allocation to confirm",
-        "confidence": "current workforce planning assumption"
+        "fundingRoute": "Student Hub share through recurrent Digital and IT establishment; Staff Hub to fund its 50% Product Manager share",
+        "fundingStatus": "Planned permanent establishment with confirmed 50/50 Product Manager allocation",
+        "confidence": "current workforce planning assumption; Product Manager split confirmed by Jon Ward"
       },
       {
         "id": "4.1.3-bau-specialist-workforce-high-water",
@@ -142,9 +212,9 @@
         "estimatedCost": "£72,000 annual high-water allowance at the current £6,000 per month Infuse rate. This is external service expenditure rather than a permanent or contingent Student Hub post.",
         "owner": "Digital and IT",
         "periodNeeded": "July 2029 onward",
-        "fundingRoute": "Recurrent Digital and IT / Student Hub non-pay operating budget, subject to mature QA sourcing decision",
-        "fundingStatus": "High-water outsourced service provision; contract and mature sourcing to confirm",
-        "confidence": "current Digital and IT supplier-cost assumption"
+        "fundingRoute": "Recurrent Digital and IT / Student Hub non-pay operating budget, subject to normal commercial and sourcing review",
+        "fundingStatus": "Confirmed outsourced-service treatment; BAU contract route to settle",
+        "confidence": "current Digital and IT supplier-cost assumption confirmed by Jon Ward"
       },
       {
         "id": "4.1.3-bau-rolling-sandwich-placement",
@@ -165,22 +235,34 @@
     ],
     "enablingConditions": [
       {
-        "condition": "Confirm with Digital and IT / HR that Product Manager, Backend Engineer, Full-Stack Developer and UX/UI Designer can be created as permanent Digital and IT posts from the outset, with mobilisation funding through June 2029 and an explicit recurrent destination from July 2029.",
-        "owner": "James Costerton / Jon Ward with Mark Peace, HR and Finance",
-        "decisionNeededBy": "Before recruitment begins",
-        "confidence": "current planning assumption requiring workforce confirmation"
+        "condition": "Create the permanent four-post Digital and IT product core as an institutional capability, with the Product Manager explicitly funded 50/50 between Student and Staff Hubs rather than cross-subsidised through the Student Success business case.",
+        "owner": "Jon Ward / James Costerton with Mark Peace, Staff Hub sponsor, HR and Finance",
+        "decisionNeededBy": "Before recruitment terms and final business-case allocations are fixed",
+        "confidence": "Product Manager split confirmed by Jon Ward; employment and funding mechanics to implement"
       },
       {
-        "condition": "Treat Infuse QA as non-pay outsourced testing in the business case and confirm whether that external-service model remains the preferred BAU route or changes later.",
-        "owner": "James Costerton / Digital and IT with Finance",
-        "decisionNeededBy": "Before final business-case pay/non-pay presentation and before recurrent QA sourcing is fixed",
-        "confidence": "current sourcing interpretation"
+        "condition": "Turn the realistic six-month recruitment and steady-onboarding assumption into a month-by-month Year One mobilisation plan, identifying when contractors or reprioritised existing Digital and IT capacity are needed and the resulting cash implications.",
+        "owner": "Jon Ward / James Costerton with Mark Peace",
+        "decisionNeededBy": "Before final Year One business-case phasing is submitted",
+        "confidence": "recruitment lead time confirmed; bridge model unresolved"
+      },
+      {
+        "condition": "Treat Infuse QA as non-pay outsourced testing. Preserve its specialist contribution to test automation and non-functional testing while reviewing the enduring contract model through normal BAU sourcing decisions.",
+        "owner": "Digital and IT with Finance",
+        "decisionNeededBy": "Before final business-case pay/non-pay presentation and later BAU procurement decisions",
+        "confidence": "confirmed by Jon Ward"
       },
       {
         "condition": "For the remaining £205,224 annual high-water specialist workforce capacity, classify each line as dedicated permanent capacity, existing protected service, shared new capacity or out-of-scope programme cost before recurrent budgets are fixed.",
-        "owner": "Digital and IT with Mark Peace and Finance",
-        "decisionNeededBy": "During mobilisation, with an initial classification before final business-case submission",
+        "owner": "James Costerton / Digital and IT with Mark Peace and Finance",
+        "decisionNeededBy": "Initial classification before final business-case submission",
         "confidence": "open sourcing and attribution question"
+      },
+      {
+        "condition": "Identify development-software and engineering-tooling costs that support both Student and Staff Hubs and agree an explicit allocation between the two funding routes.",
+        "owner": "James Costerton / Digital and IT",
+        "decisionNeededBy": "Before final non-pay business-case allocation",
+        "confidence": "open shared-cost question raised by Jon Ward"
       },
       {
         "condition": "Establish a repeatable annual recruitment, supervision and learning model for one rolling sandwich-year placement so the BAU commitment remains a high-quality student opportunity rather than cheap or critical labour.",
@@ -191,6 +273,7 @@
     ]
   },
   "supersededResourceAskIds": [
+    "4.1.3-y1-role-product-manager",
     "4.1.3-y1-role-qa-infuse",
     "4.1.3-y2-y3-platform-high-water-hold",
     "4.1.3-bau-platform-high-water",
