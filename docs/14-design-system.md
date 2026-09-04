@@ -32,7 +32,7 @@ Owns shared foundations:
 - stack, cluster and responsive grid layouts;
 - foundational panels and cards;
 - shared hero framing;
-- shared section-heading typography;
+- shared section-heading frame and typography;
 - display and section-heading typography primitives;
 - eyebrows and reference labels;
 - controls and buttons;
@@ -71,11 +71,10 @@ The header keeps the accessible `King's Edge Mobilisation Plan` anchor text in R
 
 Owns only residual mobilisation-plan compositions that have not yet moved to a clearer source owner, principally:
 
-- the generic section-heading container frame while its final compatibility rule is retired;
 - generic back-link spacing, detail metadata layout and panel-heading normalization still consumed across older detail markup;
 - the A3 print layout.
 
-It must not own the Projects portfolio, Deliverables/Measures catalogue navigation, shared hero framing, shared section-heading typography, supporting planning detail, operational Timeline, global chrome or other feature families that already have a canonical stylesheet. It should not redefine tokens or duplicate the base styling of panels, controls, labels or tags. Historical generic declarations should continue to move to their canonical owner as the file is decomposed.
+It must not own the Projects portfolio, Deliverables/Measures catalogue navigation, shared hero framing, shared section-heading framing or typography, supporting planning detail, operational Timeline, global chrome or other feature families that already have a canonical stylesheet. It should not redefine tokens or duplicate the base styling of panels, controls, labels or tags. Historical generic declarations should continue to move to their canonical owner as the file is decomposed.
 
 Screen presentation in `src/styles.css` must not use `!important`. The A3 `@media print` visibility isolation is the sole residual exception because it deliberately suppresses the normal application surface while printing the dedicated sheet.
 
@@ -108,9 +107,9 @@ There are no late-loaded stylesheets in `index.html`. Any live styling must ente
 
 `scripts/style-retirement-config.mjs` is the single registry of retired selector families. The generator and style validator both import it so retirement rules cannot drift between build preparation and architecture validation.
 
-The generator now retires project overview, project deliverable-board, deliverable hero, case-for-change, benefit/evidence, delivery-sequence, disclosure, global chrome, header brand, planning-context, landing, governance, consultation, RAID, supporting planning detail, Measures, Timeline, indicative-step, dead historical helper selectors and obsolete Resource & Investment widget selector families. Build validation checks that retired selectors cannot reappear in the generated compatibility CSS.
+The generator now retires project overview, project deliverable-board, deliverable hero, case-for-change, benefit/evidence, delivery-sequence, disclosure, global chrome, header brand, planning-context, landing, governance, consultation, RAID, supporting planning detail, Measures, Timeline, generic section-heading, indicative-step, dead historical helper selectors and obsolete Resource & Investment widget selector families. Build validation checks that retired selectors cannot reappear in the generated compatibility CSS.
 
-The effective `.section-heading h1` and `.section-heading p` contracts, including the responsive h1 size, are now design-system owned. The historical exact selectors are retired from generated compatibility CSS. The generic `.section-heading` container and `.section-heading .eyebrow` suppression remain live compatibility dependencies for the next tranche because the container currently masks older Projects and Timeline rules.
+The generic `.section-heading` family is now fully source-owned by the design system. The canonical frame preserves the effective black-rule composition that users already saw under compatibility styling. Shadowed Projects and Timeline frame variants were removed rather than allowed to become newly active. The historical `.section-heading .eyebrow` suppression had no live markup consumer and was retired rather than preserved as dead behaviour.
 
 Historical `.secondary-button` compatibility styling is retired, but current Timeline markup still contains two `.secondary-button` aliases. Those should be replaced with explicit Timeline or design-system classes before the selector can be considered absent from runtime markup.
 
@@ -209,16 +208,16 @@ Completed:
 29. dead historical helpers `.dependency-grid`, `.dependency-card`, `.dependency-list` and `.sidebars-preview` have been removed from residual/source-owned foundations. Historical `.secondary-button` styling is retired from generated compatibility CSS, while its remaining Timeline markup aliases are tracked separately;
 30. supporting planning detail (`.component-grid`, `.component-card`, `.detail-grid`, `.link-list` and `.compact-list`) is fully owned by `src/styles/planning-detail.css`, removed from the residual stylesheet, retired from runtime legacy CSS and guarded against reintroduction;
 31. generic `.hero` / `.detail-hero` framing, watermark, typography and responsive treatment moved into `src/design-system.css`, with residual ownership removed and validator guardrails added;
-32. effective `.section-heading` h1, h2 and paragraph typography moved into `src/design-system.css`; historical h1/p compatibility selectors are retired exactly, shadowed Projects typography is removed, and validator guardrails protect the new owner.
+32. effective `.section-heading` h1, h2 and paragraph typography moved into `src/design-system.css`; historical h1/p compatibility selectors are retired exactly, shadowed Projects typography is removed, and validator guardrails protect the new owner;
+33. the effective generic `.section-heading` frame moved into `src/design-system.css`; the full generic compatibility family is retired, shadowed Projects and Timeline frame variants are removed, dead eyebrow suppression is dropped, and validator guardrails protect the shared owner.
 
 Next:
 
-1. migrate the effective `.section-heading` container frame and eyebrow policy, neutralising the currently shadowed Projects and Timeline container declarations before retiring the generic compatibility selector;
-2. audit `.back-link`, `.detail-meta` and generic `.panel h2` against their live project/deliverable consumers;
-3. replace the remaining Timeline `.secondary-button` markup aliases with explicit owned classes;
-4. progressively shrink `legacy-public-source.css` as each retired feature family becomes safe to delete permanently;
-5. move temporary selector aliases onto explicit `.ds-*` classes as the React markup is decomposed;
-6. move landing public-facing copy into explicit authored markup when the `Landing` component is decomposed;
-7. delete the generated legacy compatibility system once no live feature depends on it.
+1. audit `.back-link`, `.detail-meta` and generic `.panel h2` against their live project/deliverable consumers;
+2. replace the remaining Timeline `.secondary-button` markup aliases with explicit owned classes;
+3. progressively shrink `legacy-public-source.css` as each retired feature family becomes safe to delete permanently;
+4. move temporary selector aliases onto explicit `.ds-*` classes as the React markup is decomposed;
+5. move landing public-facing copy into explicit authored markup when the `Landing` component is decomposed;
+6. delete the generated legacy compatibility system once no live feature depends on it.
 
 The aim is progressive retirement of legacy CSS rather than a risky whole-site rewrite.

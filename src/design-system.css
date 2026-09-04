@@ -165,7 +165,6 @@ main {
 .panel,
 .hero,
 .detail-hero,
-.section-heading,
 .project-column {
   background: var(--color-surface);
   border: var(--border-width) solid var(--color-ink);
@@ -241,8 +240,20 @@ main {
   line-height: var(--line-body);
 }
 
-/* Shared section-heading typography. Values preserve the effective legacy
-   contract rather than the shadowed declarations that remained in styles.css. */
+/* Shared section-heading frame and typography. Values preserve the effective
+   legacy contract rather than the shadowed declarations that remained in
+   residual and feature stylesheets. */
+.section-heading {
+  position: relative;
+  margin: clamp(0.9rem, 1.5vw, 1.35rem) 0 clamp(0.85rem, 1.4vw, 1.15rem);
+  padding: 0 0 1rem;
+  border: 0;
+  border-bottom: var(--border-width) solid var(--color-ink);
+  border-radius: var(--radius-none);
+  background: transparent;
+  box-shadow: var(--shadow-none);
+}
+
 .section-heading h1 {
   position: relative;
   z-index: 1;
