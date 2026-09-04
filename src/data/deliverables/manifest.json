@@ -199,7 +199,8 @@
         "./4.1.3/plan.json",
         "./4.1.3/timeline-reflow.json",
         "./4.1.3/workforce.json",
-        "./4.1.3/governance.json"
+        "./4.1.3/governance.json",
+        "./4.1.3/it-resource-baseline.json"
       ]
     },
     {
