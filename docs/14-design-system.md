@@ -70,7 +70,7 @@ The header keeps the accessible `King's Edge Mobilisation Plan` anchor text in R
 Owns only residual mobilisation-plan compositions that have not yet moved to a clearer source owner, for example:
 
 - generic hero and section-heading composition outside migrated feature pages;
-- residual generic component and dependency scaffolding still shared by older markup;
+- residual generic component scaffolding still shared by older markup;
 - the A3 print layout.
 
 It must not own the Projects portfolio, Deliverables/Measures catalogue navigation, operational Timeline, global chrome or other feature families that already have a canonical stylesheet. It should not redefine tokens or duplicate the base styling of panels, controls, labels or tags. Historical generic declarations should continue to move to their canonical owner as the file is decomposed.
@@ -106,7 +106,7 @@ There are no late-loaded stylesheets in `index.html`. Any live styling must ente
 
 `scripts/style-retirement-config.mjs` is the single registry of retired selector families. The generator and style validator both import it so retirement rules cannot drift between build preparation and architecture validation.
 
-The generator now retires project overview, project deliverable-board, deliverable hero, case-for-change, benefit/evidence, delivery-sequence, disclosure, global chrome, header brand, planning-context, landing, governance, consultation, RAID, Measures, Timeline, indicative-step and obsolete Resource & Investment widget selector families. Build validation checks that retired selectors cannot reappear in the generated compatibility CSS.
+The generator now retires project overview, project deliverable-board, deliverable hero, case-for-change, benefit/evidence, delivery-sequence, disclosure, global chrome, header brand, planning-context, landing, governance, consultation, RAID, Measures, Timeline, indicative-step, dead historical helper selectors and obsolete Resource & Investment widget selector families. Build validation checks that retired selectors cannot reappear in the generated compatibility CSS.
 
 Theory of Change presentation is no longer a late public shim. It is source-owned, imported through `src/site-entry.jsx`, uses the shared sequence-card primitive for the causal chain, and follows the same black/white/red disclosure grammar as the rest of the product.
 
@@ -199,7 +199,8 @@ Completed:
 25. the split KING'S EDGE / MOBILISATION PLAN header identity is source-owned in `src/styles/global-chrome.css`, with the historical `.brand` family retired from runtime compatibility CSS;
 26. the Projects index is fully source-owned in `src/styles/portfolio-overview.css`; residual project-board/card selectors and their generic `.owner`/`.lead` `!important` rules have been removed from `src/styles.css` and guarded against reintroduction;
 27. Deliverables and Measures catalogue navigation is fully source-owned in `src/styles/index-navigation.css`; residual `.toolbar`, `.index-list`, `.index-row` and `.index-meta` rules have been removed from `src/styles.css` and guarded against reintroduction;
-28. obsolete `.depends` screen styling has been removed from `src/styles.css`, leaving no screen-level `!important`; validation preserves that rule while allowing only the isolated A3 print visibility exception.
+28. obsolete `.depends` screen styling has been removed from `src/styles.css`, leaving no screen-level `!important`; validation preserves that rule while allowing only the isolated A3 print visibility exception;
+29. dead historical helpers `.dependency-grid`, `.dependency-card`, `.dependency-list`, `.sidebars-preview` and `.secondary-button` have been removed from residual/source-owned foundations and retired from generated runtime compatibility CSS.
 
 Next:
 
