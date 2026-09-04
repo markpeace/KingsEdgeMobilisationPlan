@@ -84,7 +84,7 @@
       "problem": "King’s students currently experience the university through a fragmented collection of systems, portals, websites, service channels and information sources. Information, opportunities, administrative tasks and support are distributed according to institutional structures rather than organised around student needs. Students must work out where to go, navigate inconsistent interfaces and often move between several destinations to complete a single journey.\n\nThe knowledge estate is fragmented as well as the digital estate. Similar guidance can exist in several places, authoritative ownership is not always clear, and stale or contradictory content can be surfaced alongside reliable information. This weakens self-service, makes future AI-supported interactions riskier and means that improving the interface alone would reproduce underlying information problems.\n\nStudent enquiries and service workflows also need coherent handling when information alone is not sufficient. That CRM, ticketing, workflow and case-management capability is being delivered through King’s Answers and wider enquiry-management work. The challenge for 4.1 is therefore to integrate with that service infrastructure while owning the student-facing product, authoritative knowledge foundation and reusable digital capabilities needed to make the overall experience coherent.\n\nKing’s also lacks a sufficiently dependable route for meeting new digital needs without creating further standalone products. Requirements are liable to be addressed through local system changes, project-specific portals or temporary solutions, reproducing common functions and expanding the estate without making the student experience more joined up.",
       "opportunity": "The Digital Student Experience Hub creates the opportunity to organise the student-facing digital relationship around student journeys while building on, rather than unnecessarily replacing, authoritative institutional systems.\n\nA governed knowledge foundation can give the Hub, King’s Answers and future AI-supported interactions a common source of trustworthy student information. Existing platforms can continue to hold authoritative data and specialist functionality while the Hub progressively surfaces the useful information and actions students need through coherent journeys. Separately delivered enquiry-management capabilities can then provide routing, ticketing, workflow and case handling where self-service is insufficient, without becoming the product boundary of the Hub itself.\n\nA sustained multidisciplinary product capability can evolve this environment continuously. It can integrate services, prototype and test new journeys, reuse common capabilities and retire duplicated entry points once continuity is proven. King’s Edge provides an immediate substantive domain through which this architecture can be tested while creating capabilities designed for wider institutional reuse.",
       "whyNow": "King’s is at an inflection point in the future of its student-facing digital and information estate. Student frustration with fragmented systems, poor communication and difficult service journeys is already pronounced, while the institution is advancing work on a unified digital front door, King’s Answers and wider enquiry management.\n\nAt the same time, King’s Edge is moving into delivery and will generate substantial new demand for digital functionality, and the institution needs to avoid solving those requirements through another standalone product. The 2 September 2026 cross-university discussion also made the content and knowledge challenge explicit: a better interface cannot safely depend on an unmanaged estate of duplicated, stale or poorly owned information.\n\nThese pressures need a shared product direction now. If knowledge, enquiry management, app development and programme-specific requirements evolve independently, King’s risks reproducing fragmentation across new platforms. The full end state will necessarily be delivered in phases, but the ownership boundaries, architectural direction and institutional product capability need to be established before further investment compounds the problem.",
-      "intendedChange": "King’s moves from a fragmented collection of student-facing systems, information sources and service channels to a single, continuously evolving digital relationship with students.\n\nThe Digital Student Experience Hub becomes the primary environment through which students discover trusted information and opportunities, complete actions, access services and seek support. Existing systems remain authoritative where appropriate, but their useful information and functionality are progressively orchestrated into coherent journeys. A governed knowledge foundation provides reliable student-facing information across channels, reducing duplicated and conflicting content.\n\nWhen information is not enough, the Hub connects students into separately delivered King’s Answers and enquiry-management capabilities for ticketing, workflow, case handling and service fulfilment. Those capabilities retain their own ownership and governance while integrating cleanly with the student-facing experience.\n\nNew digital capabilities are developed through an enduring multidisciplinary product function rather than additional standalone products. King’s Edge provides the first substantive native domain, and the capabilities proved there are reused across wider journeys. Over time, redundant entry points and content copies are rationalised once replacement and continuity are proven, leaving students less dependent on understanding King’s internal structures and King’s better able to evolve the experience as one institutional product.",
+      "intendedChange": "King’s moves from a fragmented collection of student-facing systems, information sources and service channels to a single, continuously evolving digital relationship with students.\n\nThe Digital Student Experience Hub becomes the primary environment through which students discover trusted information and opportunities, complete actions, access services and seek support. Existing systems remain authoritative where appropriate, but their useful information and functionality are progressively orchestrated into coherent journeys. A governed knowledge foundation provides reliable student-facing information across channels, reducing duplicated and conflicting content.\n\nWhen information is not enough, the Hub connects students into separately delivered King’s Answers and enquiry-management capabilities for ticketing, workflow, case handling and service fulfilment. Those capabilities retain their own ownership and governance while integrating cleanly with the student-facing experience.\n\nNew digital capabilities are developed through an enduring multidisciplinary product function rather than additional standalone products. King’s Edge provides the first substantive native domain, and the capabilities proved there are reused across wider journeys. Over time, redundant entry points and content copies are rationalised once replacement and continuity are proven, leaving students less dependent on understanding King’s internal structures and King’s better able to evolve the experience as one institutional product."
     },
     "deliverables": [
       {
@@ -93,8 +93,7 @@
         "lead": "TBC – cross-institution knowledge and content lead",
         "planningStatus": "proposition-development",
         "decisionLog": [],
-        "summary": "Creates the authoritative, governed student knowledge foundation needed for King’s Answers, the Digital Student Experience Hub, self-service and future AI-supported student interactions.",
-        "detailSummary": "Establishes a governed institutional source of trusted student-facing information, with clear inclusion rules, authoritative ownership, content standards, lifecycle controls and a managed route for rationalising and improving the current knowledge estate. King’s Answers provides the immediate proving environment and feedback loop, while the same knowledge foundation is designed for reuse through the Digital Student Experience Hub and future AI-supported interactions. CRM, ticketing, case management, service workflows and the wider enquiry-management programme remain outside 4.1.1 and are inherited through their existing delivery routes."
+        "summary": "Creates the authoritative, governed student knowledge foundation needed for King’s Answers, the Digital Student Experience Hub, self-service and future AI-supported student interactions."
       },
       {
         "id": "4.1.2",
@@ -102,50 +101,7 @@
         "lead": "Joe Moore",
         "planningStatus": "proposition-development",
         "decisionLog": [],
-        "summary": "Creates the evolving digital front door through which students can navigate information, opportunities, actions and support across King’s.",
-        "detailSummary": "The Student App and Journey Integration deliverable will establish the Student Experience Hub as the primary digital environment through which students navigate their relationship with King’s. It will progressively bring together relevant information and functionality from existing systems, organising the experience around student journeys rather than institutional structures.\n\nThe Hub will be developed iteratively. Priority journeys and systems will be integrated in successive phases, combining common navigation, search, personalisation, self-service and access to support. Existing systems will remain authoritative where appropriate, but students should increasingly be able to complete useful parts of their journey within the Hub rather than being passed between unrelated destinations.\n\nThis approach avoids both an unmanageable wholesale replacement programme and the creation of another superficial portal containing only links. It creates a sustained product through which duplicated entry points can be rationalised and the student experience improved over time.",
-        "caseForChange": {
-          "problem": "Students currently encounter King’s through a fragmented collection of portals, applications, websites and organisational routes. Information and functionality are structured around the systems and teams that provide them rather than around what a student is trying to achieve.\n\nStudents must therefore know where to look, interpret inconsistent terminology and interfaces, and move between multiple destinations to complete related actions. Important services and opportunities may remain invisible unless students already understand the institution or happen to encounter the correct communication.\n\nThis creates unnecessary effort and uneven access. It also weakens the value of the substantial services, information and opportunities King’s already provides because their breadth is not matched by a coherent way of navigating and using them.",
-          "opportunity": "The Student Experience Hub can create a common student-facing experience across existing platforms without requiring every underlying system to be replaced.\n\nInformation and functionality can be progressively integrated into coherent end-to-end journeys. Common capabilities such as navigation, search, personalisation, notifications, self-service and case visibility can be developed once and reused across different areas of the student experience.\n\nAn iterative approach allows King’s to prioritise the journeys where integration will make the greatest difference, learn from student use and progressively rationalise duplicated destinations. The result can become increasingly useful and intelligent over time rather than depending on a single large launch.",
-          "whyNow": "King’s is at an inflection point in the future of its student-facing digital estate.\n\nThe current fragmentation is already a material source of student frustration, while the institution is considering the future of existing student apps, portals and integration approaches. The Digital Front Door has been identified as a high-priority initiative, including an expectation that parallel entry points will progressively be rationalised.\n\nAt the same time, CRM investment and new digital demands are creating decisions that need a common student-facing product direction. Without that direction, individual programmes and services are likely to continue developing separate destinations and interfaces that later require integration or replacement.\n\nThe full environment cannot be delivered at once, but its architectural direction and product ownership need to be established before further investment compounds the current fragmentation.",
-          "intendedChange": "The Student Experience Hub becomes the primary and continuously evolving digital front door to King’s.\n\nStudents can increasingly discover relevant information and opportunities, complete actions, access services and seek support through journeys designed around their needs. Existing systems continue to hold authoritative data and specialist functionality, but their useful information and actions are surfaced through a more coherent experience.\n\nPriority journeys are integrated iteratively, personalisation improves as the underlying data and capabilities mature, and duplicated entry points are progressively reduced. Students become less dependent on understanding King’s internal structures in order to make effective use of the university."
-        },
-        "ownership": {
-          "accountableOwner": "Mark Peace",
-          "deliveryLead": "Joe Moore"
-        },
-        "benefits": [
-          {
-            "id": "4.1.2-B1",
-            "title": "Students can navigate King’s more easily",
-            "statement": "Students can find relevant information, services and actions through coherent journeys rather than identifying and navigating separate institutional systems.",
-            "beneficiary": "All students",
-            "benefitType": "student experience and accessibility",
-            "owner": "Mark Peace",
-            "realisationPeriod": "From the first released priority journeys, increasing with integration",
-            "successLooksLike": "Students can complete common journeys with fewer destinations, fewer dead ends and less dependence on prior institutional knowledge."
-          },
-          {
-            "id": "4.1.2-B2",
-            "title": "Access to provision becomes more equitable",
-            "statement": "Personalised discovery and clearer digital routes make services and opportunities more visible to students who are less able to rely on informal knowledge, confidence or existing networks.",
-            "beneficiary": "Students, particularly those currently less well served by fragmented provision",
-            "benefitType": "inclusion and participation",
-            "owner": "Mark Peace",
-            "realisationPeriod": "As discovery, personalisation and priority content mature",
-            "successLooksLike": "Relevant provision reaches a broader range of students and differences in discovery or take-up between student groups begin to narrow."
-          },
-          {
-            "id": "4.1.2-B3",
-            "title": "King’s reduces duplication in its student-facing digital estate",
-            "statement": "Shared product capabilities and progressive integration reduce the need for services and programmes to maintain parallel entry points and repeated versions of common functions.",
-            "beneficiary": "Students, service owners and King’s",
-            "benefitType": "institutional coherence and efficiency",
-            "owner": "TBC – Digital product and architecture owner",
-            "realisationPeriod": "Medium term, as systems and journeys are integrated",
-            "successLooksLike": "New requirements are met through the Hub where appropriate, and redundant portals or entry points can be retired without loss of necessary functionality."
-          }
-        ]
+        "summary": "Creates the evolving digital front door through which students can navigate information, opportunities, actions and support across King’s."
       },
       {
         "id": "4.1.3",
@@ -153,50 +109,7 @@
         "lead": "James Costerton",
         "planningStatus": "proposition-development",
         "decisionLog": [],
-        "summary": "Creates the multidisciplinary capability to rapidly design, test and mature digital enhancements within the shared Student Experience Hub.",
-        "detailSummary": "The Digital Innovation and Product Development Capability will establish a sustained route through which emerging student needs can become working digital enhancements. A multidisciplinary team will combine product management, service design, user research, software development, data, integration and change expertise around the continued evolution of the Student Experience Hub.\n\nThe team will work iteratively: understanding a need, prototyping a response, testing it with students and services, and developing successful approaches into reliable capabilities. Work will take place within the Hub’s shared architecture and standards so that innovation strengthens the common environment rather than generating additional standalone products.\n\nThe deliverable will also establish a deliberate route from experimentation into sustained operation. Capabilities that prove valuable will be hardened, documented and transferred into appropriate enduring ownership, while unsuccessful approaches can be concluded before they generate unnecessary long-term commitments.",
-        "caseForChange": {
-          "problem": "King’s does not currently have a sufficiently dependable route for turning emerging student-experience needs into well-designed digital capabilities.\n\nRequirements are often addressed through conventional system change, local initiatives, temporary projects or standalone products. These routes can be slow, difficult to prioritise and disconnected from one another. Similar functions may be developed more than once, while promising prototypes can struggle to move into secure and supported institutional operation.\n\nThis limits King’s ability to respond rapidly to changing student expectations and new strategic propositions. It also means innovation can expand the digital estate without strengthening a coherent shared environment.",
-          "opportunity": "A dedicated multidisciplinary product-development capability can give King’s a faster and more disciplined route from need to sustainable digital enhancement.\n\nWorking directly within the Student Experience Hub, the team can combine discovery, service design, prototyping, technical development and evaluation. It can test assumptions early, involve students continuously and reuse shared capabilities, data and integrations.\n\nA clear maturation and handover model would allow experimentation without creating unsupported permanent products. Successful enhancements can become part of the institutional service, while evidence from unsuccessful or partial trials can still inform future decisions.",
-          "whyNow": "King’s is at an inflection point in both its digital architecture and its demand for innovation.\n\nThe Student Experience Hub and CRM investments will establish foundations that could support a more agile development model, but only if product practices, standards and delivery capacity are created alongside them. King’s Edge is also generating an immediate pipeline of substantial feature requirements that cannot wait for the completion of a multi-year end-state platform.\n\nWithout a shared development capability, this demand is likely to be channelled into separate procurements, local builds or temporary products. Establishing the capability now allows early requirements to test and strengthen the Hub’s architecture while producing visible student value.",
-          "intendedChange": "King’s has a sustained multidisciplinary capability for continuously developing its digital student experience.\n\nEmerging needs enter a transparent product pipeline, are explored with students and service owners, and are tested through proportionate prototypes before substantial commitment. Successful enhancements are developed within the shared Hub environment and transferred into secure, supported ownership.\n\nDigital innovation becomes faster without becoming fragmented: each development either extends reusable institutional capability or generates evidence that improves future decisions."
-        },
-        "ownership": {
-          "accountableOwner": "Mark Peace",
-          "deliveryLead": "James Costerton"
-        },
-        "benefits": [
-          {
-            "id": "4.1.3-B1",
-            "title": "King’s responds more quickly to emerging student needs",
-            "statement": "Priority needs can be translated into tested digital responses in shorter cycles, with student feedback shaping development before large commitments are made.",
-            "beneficiary": "Students and student-facing services",
-            "benefitType": "responsiveness and innovation",
-            "owner": "TBC – Digital Innovation Development Team product lead",
-            "realisationPeriod": "From establishment of the first delivery pipeline",
-            "successLooksLike": "Priority needs move predictably from discovery to tested capability, and users can influence solutions while they are still adaptable."
-          },
-          {
-            "id": "4.1.3-B2",
-            "title": "Digital investment creates more reusable institutional value",
-            "statement": "New enhancements are built using common architecture and capabilities, reducing repeated development and allowing value created for one journey to benefit others.",
-            "beneficiary": "King’s, product teams, services and students",
-            "benefitType": "efficiency and institutional capability",
-            "owner": "TBC – Digital product and architecture owner",
-            "realisationPeriod": "Increasing as the shared capability library develops",
-            "successLooksLike": "New work reuses existing components and integrations, and capabilities developed for one proposition are demonstrably adopted elsewhere."
-          },
-          {
-            "id": "4.1.3-B3",
-            "title": "Successful innovation becomes sustainable institutional provision",
-            "statement": "Valuable prototypes have a defined route into secure, supported and appropriately owned operation rather than remaining temporary or becoming unmanaged legacy products.",
-            "beneficiary": "Students, service owners and King’s",
-            "benefitType": "sustainability and risk reduction",
-            "owner": "TBC – Student Experience Hub product owner",
-            "realisationPeriod": "From the first capability-maturation and transfer cycle",
-            "successLooksLike": "Successful enhancements have explicit support, security, maintenance and ownership arrangements, while unsuccessful trials can be closed cleanly."
-          }
-        ]
+        "summary": "Creates the multidisciplinary capability to design, build, test and sustain digital products within the shared Digital Student Experience Hub."
       },
       {
         "id": "4.1.4",
@@ -204,50 +117,7 @@
         "lead": "Zak Evans",
         "planningStatus": "proposition-development",
         "decisionLog": [],
-        "summary": "Delivers the digital experience through which students can discover, pursue, evidence and gain recognition for King’s Edge opportunities within the shared Student Experience Hub.",
-        "detailSummary": "The King’s Edge Digital Experience will deliver the student-facing capabilities needed to make the King’s Edge proposition navigable, personalised and usable. Students will be able to discover relevant opportunities, connect them to their aspirations, plan participation, manage activity, capture evidence, reflect on development and gain recognition for what they have achieved.\n\nThese requirements will be delivered within the Student Experience Hub rather than through a separate long-term Edge portal. Capabilities such as discovery, recommendation, planning, participation, communication, evidence and recognition will be designed for reuse across the wider student experience, while King’s Edge retains ownership of its proposition, content, curation and development model.\n\nKing’s Edge will provide a substantial early body of product demand through which the Hub’s architecture and innovation model can be tested. The result should deliver immediate value to Edge while accelerating shared capabilities that can subsequently support other student journeys.",
-        "caseForChange": {
-          "problem": "King’s offers a wide range of experiences, activities and development opportunities, but students cannot currently navigate them as a coherent developmental journey.\n\nOpportunities are distributed across providers, systems and communications. Students may struggle to discover what is relevant, understand how different experiences connect to their aspirations, or maintain a useful record of what they have done and learned. Access therefore depends too heavily on prior knowledge, confidence and networks.\n\nKing’s Edge will intensify the need for digital discovery, personalisation, planning, participation, reflection, evidence and recognition. Without a shared route for delivering these functions, Edge risks creating another standalone destination and duplicating capabilities that are also valuable elsewhere.",
-          "opportunity": "King’s Edge can become a major early use case for the Student Experience Hub and its digital innovation capability.\n\nThe demands generated by Edge can be translated into an integrated student journey: from exploring purpose and aspirations, through discovering and participating in relevant opportunities, to capturing evidence and articulating development. This creates a tangible student proposition while testing shared capabilities against substantive real-world needs.\n\nDesigning the resulting functions for wider reuse means investment made to support Edge can also strengthen the broader student experience. Edge remains distinctive through its opportunity offer, developmental framework, curation and recognition, while the underlying digital capabilities become part of the common institutional environment.",
-          "whyNow": "King’s Edge is moving from proposition into delivery and needs credible digital enablement to achieve its intended reach and coherence.\n\nEarly portal development has already begun to establish elements of the architecture and development culture required for in-house delivery. Decisions taken now will determine whether this work becomes a separate Edge product or contributes to the shared Student Experience Hub.\n\nThe wider Hub will take time to integrate the full institutional landscape, but Edge requirements are sufficiently developed to provide an immediate and comparatively lower-risk route for testing new capabilities. Delaying alignment would either impede Edge delivery or create functions that later need to be migrated, redesigned or replaced.",
-          "intendedChange": "Students encounter King’s Edge as a coherent developmental experience within the Student Experience Hub.\n\nThey can explore their aspirations, discover relevant opportunities, make plans, participate, connect experiences to skills and goals, capture evidence, reflect and gain recognition. Their journey is not confined to one isolated programme interface but connects naturally with the wider information, services and opportunities available through King’s.\n\nThe capabilities developed to support Edge become reusable parts of the Hub. King’s Edge gains the digital functionality it needs, while the institution gains tested approaches to personalisation, planning, participation, evidence and recognition that can support other student journeys."
-        },
-        "ownership": {
-          "accountableOwner": "Mark Peace",
-          "deliveryLead": "Zak Evans"
-        },
-        "benefits": [
-          {
-            "id": "4.1.4-B1",
-            "title": "More students discover and access relevant opportunities",
-            "statement": "A coherent and personalised route helps students find opportunities that fit their interests, circumstances, development needs and aspirations.",
-            "beneficiary": "All students, particularly those less connected to informal opportunity networks",
-            "benefitType": "access, inclusion and participation",
-            "owner": "Mark Peace",
-            "realisationPeriod": "From release of discovery and recommendation capabilities",
-            "successLooksLike": "A broader and more representative range of students discover and progress into relevant opportunities, with less reliance on chance or insider knowledge."
-          },
-          {
-            "id": "4.1.4-B2",
-            "title": "Students pursue development more intentionally",
-            "statement": "Students can connect aspirations, plans and participation, helping them make more purposeful choices and sustain engagement across their time at King’s.",
-            "beneficiary": "Students",
-            "benefitType": "student development and agency",
-            "owner": "Mark Peace",
-            "realisationPeriod": "From implementation of planning and participation journeys",
-            "successLooksLike": "Students use the environment to identify goals, select appropriate next steps and connect separate experiences into a meaningful developmental journey."
-          },
-          {
-            "id": "4.1.4-B3",
-            "title": "Students can evidence and articulate what they have developed",
-            "statement": "Evidence capture, reflection and recognition help students understand and communicate the capabilities and impact developed through their King’s experience.",
-            "beneficiary": "Students, graduates and prospective employers or partners",
-            "benefitType": "graduate outcomes and recognition",
-            "owner": "Mark Peace",
-            "realisationPeriod": "From implementation of evidence and recognition capabilities, strengthening over time",
-            "successLooksLike": "Students maintain credible evidence of development, receive appropriate recognition and can articulate their skills and experience with greater confidence and specificity."
-          }
-        ]
+        "summary": "Delivers King’s Edge as the first substantive native product domain within the shared Digital Student Experience Hub."
       }
     ],
     "servesDeliverables": [
