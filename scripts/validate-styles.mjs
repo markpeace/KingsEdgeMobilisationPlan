@@ -128,6 +128,27 @@ if (timelineStyles.includes('.ke-timeline-page .section-heading')) {
   fail('src/styles/timeline.css must not restore the shadowed Timeline section-heading margin; the shared frame belongs in src/design-system.css');
 }
 
+const residualSharedDetailFoundations = [
+  ['generic back-link spacing', /(^|\n)\.back-link\s*\{/m],
+  ['detail metadata layout', /(^|\n)\.detail-meta\s*\{/m],
+  ['panel heading normalization', /(^|\n)\.panel\s+h2(?:\s|,|\{|[.:])/m]
+];
+for (const [label, pattern] of residualSharedDetailFoundations) {
+  if (pattern.test(siteStyles)) {
+    fail(`src/styles.css contains ${label}; shared screen foundations belong in src/design-system.css or their feature owner`);
+  }
+}
+
+const requiredSharedDetailFoundations = [
+  '.detail-meta {\n  display: flex;\n  flex-wrap: wrap;\n}',
+  '.panel h2 {\n  margin: 0 0 0.75rem;\n  font-family: var(--font-brand);\n  font-size: var(--heading-lg);'
+];
+for (const contract of requiredSharedDetailFoundations) {
+  if (!designSystem.includes(contract)) {
+    fail(`src/design-system.css is missing shared detail foundation ${contract}`);
+  }
+}
+
 const residualChromeOwners = [
   ['site header', /(^|\n)\.site-header\s*\{/m],
   ['brand', /(^|\n)\.brand\s*\{/m],
@@ -214,6 +235,15 @@ const printMediaIndex = siteStyles.search(/@media\s+print\s*\{/m);
 const screenSiteStyles = printMediaIndex >= 0 ? siteStyles.slice(0, printMediaIndex) : siteStyles;
 if (/\b!important\b/.test(screenSiteStyles)) {
   fail('src/styles.css must not use !important in screen presentation; print-only isolation is the sole residual exception');
+}
+
+const a3ScreenVisibilityPattern = /\.a3-print-sheet\s*\{\s*display:\s*none;\s*\}/m;
+if (!a3ScreenVisibilityPattern.test(screenSiteStyles)) {
+  fail('src/styles.css must keep the dedicated A3 print sheet hidden during normal screen rendering');
+}
+const nonPrintResidualStyles = screenSiteStyles.replace(a3ScreenVisibilityPattern, '').trim();
+if (nonPrintResidualStyles) {
+  fail('src/styles.css is now reserved for A3 print composition; ordinary screen presentation belongs in the design system or a feature owner');
 }
 
 for (const [file, styles] of [
