@@ -1,37 +1,37 @@
 {
-  "summary": "Establishes the authoritative student knowledge foundation through Year One discovery, governance, content rationalisation and live proving through King’s Answers, then progressively expands governed knowledge for reuse through the Digital Student Experience Hub.",
-  "detailSummary": "4.1.1 is now the institutional knowledge work beneath the Digital Student Experience Hub rather than a CRM-delivery workstream. CRM, ticketing, case-management and enquiry workflow are inherited from the separately delivered King’s Answers and wider enquiry-management capability. This deliverable owns the quality, authority and operating model of the student-facing knowledge that those services consume.\n\nYear One combines proposition design with practical migration. King’s first agrees what counts as authoritative student knowledge, how it differs from transient opportunity content and staff operational guidance, how ownership and editorial control work, and which priority knowledge domains should be tackled first. In parallel, existing content is audited and classified so that priority material can be improved, consolidated, retired or newly authored rather than copied wholesale.\n\nKing’s Answers provides the first live proving environment. Search behaviour, unresolved questions and enquiry demand should be used to test whether content is findable, sufficient, trustworthy and correctly owned. The same foundation is then made available for reuse through the Digital Student Experience Hub, with broader rollout sequenced according to student need and service readiness.\n\nThe work will require protected content-design, editorial and migration capacity in addition to the Hub product team. The precise organisational route, capacity and incremental cost are intentionally left TBC until the initial audit and operating-model design establish the scale of the requirement.",
+  "summary": "Establishes the authoritative student knowledge foundation through institution-wide discovery and roadmap design, with detailed Year One audit, governance proving and live implementation beginning in SASD through King’s Answers before progressive expansion across King’s.",
+  "detailSummary": "4.1.1 is the institutional knowledge work beneath the Digital Student Experience Hub rather than a CRM-delivery workstream. CRM, ticketing, case-management and enquiry workflow are inherited from the separately delivered King’s Answers and wider enquiry-management capability. This deliverable owns the quality, authority and operating model of the student-facing knowledge that those services consume.\n\nThe discovery boundary is institution-wide from the outset. King’s should identify the student-facing knowledge domains held across all relevant services and directorates, understand their current channels and ownership, and produce an exhaustive domain map and sequenced roadmap to eventual institutional coverage. This is a breadth exercise: it prevents the initial implementation boundary from becoming the long-term boundary without requiring a detailed audit and remediation of every service in Year One.\n\nDetailed Year One implementation should begin with priority knowledge domains within SASD. This creates a bounded environment in which to test the information model, content standards, governance, ownership and operating model while using King’s Answers as the immediate self-service and enquiry-management proving environment. Existing SASD content will be audited and classified so priority material can be improved, consolidated, retired or newly authored rather than copied wholesale.\n\nKing’s Answers provides the first live feedback loop. Search behaviour, unresolved questions and enquiry demand should be used to test whether content is findable, sufficient, trustworthy and correctly owned. The same foundation is then made available for reuse through the Digital Student Experience Hub, with the proven SASD model progressively extended across the institution-wide roadmap according to student need, service readiness and evidence from the first implementation.\n\nThe work will require protected content-design, editorial and migration capacity in addition to the Hub product team. The precise organisational route, capacity and incremental cost are intentionally left TBC until the discovery, first SASD audit and operating-model design establish the scale of the requirement.",
   "steps": [
     {
       "id": "4.1.1-step-1",
-      "title": "Define the student knowledge architecture and governance",
+      "title": "Discover the institutional student knowledge landscape and define the operating model",
       "period": {"start": "jul-dec-2026:b", "end": "jul-dec-2026:c"},
-      "summary": "From September to November 2026, agree the boundary of the authoritative student knowledge foundation, including audience separation, content inclusion and exclusion rules, the distinction between durable information and opportunity content, taxonomy and metadata principles, authoritative ownership, editorial control, review and expiry expectations, and the relationship with King’s Answers, the Hub, web/DXP channels and staff-facing guidance.",
+      "summary": "From September to November 2026, establish the institution-wide discovery baseline: identify student-facing knowledge domains across relevant services and directorates, current channels and ownership, and the main overlaps, gaps and dependencies. In parallel, define the boundary of authoritative student knowledge, including audience separation, content inclusion and exclusion rules, the distinction between durable information and opportunity content, taxonomy and metadata principles, authoritative ownership, editorial control, review and expiry expectations, and the relationship with King’s Answers, the Hub, web/DXP channels and staff-facing guidance. Produce an exhaustive domain map and sequenced roadmap to institutional coverage, while confirming SASD as the first detailed implementation boundary.",
       "dependsOn": [],
       "resources": {"people": [
-        {"role": "Knowledge/content design lead", "type": "TBC", "notes": "Cross-institution lead required to shape the content model, governance and migration approach."},
-        {"role": "Service and subject-matter owners", "type": "existing", "notes": "Protected participation from priority student-service domains, Communications/web and relevant faculty/service representatives."}
+        {"role": "Knowledge/content design lead", "type": "TBC", "notes": "Cross-institution lead required to shape the content model, discovery, governance and migration approach."},
+        {"role": "Service and subject-matter owners", "type": "existing", "notes": "Protected participation from SASD and representative student-facing services/directorates, Communications/web, Digital and IT and relevant faculty/service representatives."}
       ]}
     },
     {
       "id": "4.1.1-step-2",
-      "title": "Audit and classify priority student-facing information",
+      "title": "Audit and classify priority SASD student knowledge",
       "period": {"start": "jul-dec-2026:c", "end": "jan-jun-2027:a"},
-      "summary": "From November 2026 to February 2027, map priority student information across the current estate, identify authoritative sources and owners, classify content as retain, improve, consolidate, retire or redirect, identify gaps, and produce a sequenced migration and rationalisation backlog. Use existing migration work and student-enquiry research as starting evidence rather than repeating discovery unnecessarily.",
+      "summary": "From November 2026 to February 2027, conduct the first detailed content audit within priority SASD knowledge domains. Identify authoritative sources and owners, classify content as retain, improve, consolidate, retire or redirect, identify gaps, and produce a sequenced SASD migration and rationalisation backlog. Use existing migration work and student-enquiry research as starting evidence rather than repeating discovery unnecessarily. The purpose is to prove the method in depth before extending detailed audit activity across the wider institutional roadmap.",
       "dependsOn": ["4.1.1-step-1"],
       "resources": {"people": [
-        {"role": "Content audit and migration capacity", "type": "TBC", "notes": "Protected editorial/content operations capacity; scale and funding route to be confirmed from the audit."},
+        {"role": "Content audit and migration capacity", "type": "TBC", "notes": "Protected editorial/content operations capacity for the first SASD domains; scale and funding route to be confirmed from the audit."},
         {"role": "Business analysis", "type": "existing / shared", "notes": "Protected shared input may be required to map ownership, dependencies and content flows; exact capacity is TBC rather than assumed."}
       ]}
     },
     {
       "id": "4.1.1-step-3",
-      "title": "Prepare and publish the first governed knowledge domains through King’s Answers",
+      "title": "Prepare and publish the first governed SASD knowledge domains through King’s Answers",
       "period": {"start": "jul-dec-2026:c", "end": "jan-jun-2027:b"},
-      "summary": "From December 2026 to April 2027, improve, consolidate and author the first priority knowledge domains using the agreed model, establish named content ownership and review dates, and make them available through King’s Answers. Do not migrate weak or unsuitable content simply to achieve coverage.",
+      "summary": "From December 2026 to April 2027, improve, consolidate and author the first priority SASD knowledge domains using the agreed model, establish named content ownership and review dates, and make them available through King’s Answers. Do not migrate weak or unsuitable content simply to achieve coverage. Capture the effort, governance and editorial patterns required so later institutional rollout can be planned from evidence rather than assumption.",
       "dependsOn": ["4.1.1-step-1", "4.1.1-step-2"],
       "resources": {"people": [
-        {"role": "Content design, editorial and migration capacity", "type": "TBC", "notes": "Required to turn audited source material into publishable governed knowledge rather than relying on unmanaged distributed editing."},
+        {"role": "Content design, editorial and migration capacity", "type": "TBC", "notes": "Required to turn audited SASD source material into publishable governed knowledge rather than relying on unmanaged distributed editing."},
         {"role": "King’s Answers product/service team", "type": "existing dependency", "notes": "Provides the proving environment and technical route; CRM/ticketing/workflow remain outside 4.1.1 scope."}
       ]}
     },
@@ -39,21 +39,21 @@
       "id": "4.1.1-step-4",
       "title": "Establish knowledge operations and the enquiry-evidence improvement loop",
       "period": {"start": "jan-jun-2027:a", "end": "jan-jun-2027:c"},
-      "summary": "From February to June 2027, make authoring, approval, review, expiry, defect handling and ownership transfer operational. Define how search data, failed self-service, unresolved questions and enquiry demand identify missing or weak knowledge and feed a transparent improvement backlog.",
+      "summary": "From February to June 2027, make authoring, approval, review, expiry, defect handling and ownership transfer operational for the first SASD knowledge domains. Define how search data, failed self-service, unresolved questions and enquiry demand identify missing or weak knowledge and feed a transparent improvement backlog. Use the live operating evidence to refine the model for wider institutional adoption.",
       "dependsOn": ["4.1.1-step-3"]
     },
     {
       "id": "4.1.1-step-5",
       "title": "Make governed knowledge reusable through the Digital Student Experience Hub",
       "period": {"start": "jan-jun-2027:b", "end": "jul-dec-2027:b"},
-      "summary": "From April to September 2027, establish the simplest safe and supportable way for the Hub to retrieve or surface governed student knowledge for the focused first release, while preserving King’s Answers and enquiry management as separately delivered service capabilities. Use live student testing to confirm findability, sufficiency and hand-off where information alone is not enough.",
+      "summary": "From April to September 2027, establish the simplest safe and supportable way for the Hub to retrieve or surface governed SASD student knowledge for the focused first release, while preserving King’s Answers and enquiry management as separately delivered service capabilities. Use live student testing to confirm findability, sufficiency and hand-off where information alone is not enough.",
       "dependsOn": ["4.1.1-step-3", "4.1.2-step-2"]
     },
     {
       "id": "4.1.1-step-6",
-      "title": "Expand authoritative knowledge and rationalise redundant student information",
+      "title": "Extend the governed knowledge model across the institutional roadmap",
       "period": {"start": "jul-dec-2027:b", "end": "jan-jun-2029:c"},
-      "summary": "From the first Hub release through the remainder of mobilisation, extend the governed model to additional priority domains, consolidate or retire redundant copies where continuity is proven, and use evidence from Hub use, King’s Answers and service demand to sequence the next areas. Settle the enduring institutional knowledge ownership and operating capacity before mobilisation closes.",
+      "summary": "From the first Hub release through the remainder of mobilisation, use the institution-wide domain roadmap and evidence from the SASD implementation to sequence detailed discovery, migration and governance adoption across all relevant student-facing services and directorates. Expand the governed model to additional priority domains, consolidate or retire redundant copies where continuity is proven, and use evidence from Hub use, King’s Answers and service demand to adjust sequencing. The roadmap should remain exhaustive in intended institutional coverage even where implementation is deliberately phased. Settle the enduring institutional knowledge ownership and operating capacity before mobilisation closes.",
       "dependsOn": ["4.1.1-step-4", "4.1.1-step-5"]
     }
   ]
