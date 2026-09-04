@@ -2,7 +2,7 @@
 
 > **Working decision-support view**  
 > **Primary audience:** Mark Peace and ESS Portfolio colleagues  
-> **Status:** Four-package King’s Edge investment view reconciled; Digital Student Experience Hub shown separately as an enabling institutional investment  
+> **Status:** Four-package King’s Edge investment view reconciled; Digital Student Experience Hub shown separately using the current Digital and IT high-water funding baseline  
 > **Last updated:** 4 September 2026
 
 ## Purpose
@@ -46,17 +46,17 @@ The current **King’s Edge mobilisation ask**, excluding the separate Digital S
 |---|---:|---:|---:|---:|
 | **King’s Edge mobilisation** | **£560.2k** | **£1.604m** | **£1.764m** | **£3.9282m** |
 
-The separate **Digital Student Experience Hub** planning position is:
+The separate **Digital Student Experience Hub** high-water planning position is:
 
 | | 2026/27 | 2027/28 | 2028/29 | Three-year total |
 |---|---:|---:|---:|---:|
-| **Digital Hub, currently itemised** | **£391k** | **£462k** | **£462k** | **£1.315m** |
+| **Digital Hub, current high-water baseline** | **£588.72k** | **£849.08k** | **£849.08k** | **£2.28688m** |
 
-The Hub also carries a **£3.0m working three-year strategic investment envelope** in its decision log. £1.315m is now itemised. The remaining **£1.685m headroom** is for later integration, platform and evidence-led capacity investment rather than a pre-allocated commitment.
+The Hub continues to carry a **£3.0m working three-year strategic investment envelope**. £2.28688m is now provisionally itemised on the current worst-case basis, leaving **£713.12k headroom**. The high-water model intentionally funds unresolved Digital and IT capacity until phasing, existing-resource deployment, Staff-Hub sharing and scope attribution are confirmed. Reductions should therefore be expected as validation progresses; the £3m envelope remains the ceiling rather than a spending target.
 
-For dependency and whole-system planning only, the two investments together currently give an itemised profile of **£951.2k in 2026/27, £2.066m in 2027/28 and £2.226m in 2028/29: £5.2432m across three years**. This combined figure should **not** be presented as the King’s Edge funding ask.
+For dependency and whole-system planning only, the two investments together currently give a high-water itemised profile of **£1.14892m in 2026/27, £2.45308m in 2027/28 and £2.61308m in 2028/29: £6.21508m across three years**. This combined figure should **not** be presented as the King’s Edge funding ask.
 
-The current **King’s Edge identifiable BAU exposure is approximately £1.076m p.a., plus TBC elements**. Within that figure, **£600k p.a. is explicitly a holding assumption for partnership infrastructure** which Year 1 is designed to test rather than ratify automatically. The separate Digital Hub currently carries **at least c.£394k p.a.** of identifiable BAU, plus TBC platform/run and knowledge/content operating costs. The additional 4.1.1 content capacity is a mobilisation provision and does not yet create an automatic recurrent BAU commitment.
+The current **King’s Edge identifiable BAU exposure is approximately £1.076m p.a., plus TBC elements**. Within that figure, **£600k p.a. is explicitly a holding assumption for partnership infrastructure** which Year 1 is designed to test rather than ratify automatically. The separate Digital Hub now carries a **c.£781.08k p.a. worst-case recurrent risk envelope before any enduring knowledge/content operating cost**: £601.08k mature-team staffing and specialist capacity, £90k agentic-development tooling and a £90k Azure/platform allowance. This is deliberately not a settled BAU design and should reduce where Product Manager or tooling is shared with the Staff Hub, specialist capacity comes from existing Digital and IT resources, Dynamics work proves out of scope, or sourcing changes. The additional 4.1.1 content capacity remains a mobilisation provision and does not yet create an automatic recurrent BAU commitment.
 
 ### Important costing decisions
 
@@ -65,6 +65,11 @@ The current **King’s Edge identifiable BAU exposure is approximately £1.076m 
 - The Graduate Futures package uses the current shared programme/project-management allocation of **0.20 FTE in Year 1, worth £13.2k**.
 - **2.4.4 holds a Strategic Partnerships, Profile & External Engagement Fund of £25k / £35k / £45k across mobilisation, with a £45k p.a. recurrent BAU liability.** It is accounted for once in 2.4.4 but controlled by King’s Edge programme leadership and may be deployed across the portfolio for strategic partnership development, external profile, purposeful UK/international mobility, partner engagement and related activity. It is additional to the existing activation, research and survey-intervention envelopes.
 - **4.1.1 now includes a minimum 0.5 FTE communications, content-design and editorial delivery provision at £33k in each mobilisation year, £99k across three years.** It is funded through the separate Digital Student Experience Hub investment. Organisationally it should be designed alongside the existing 2.4.4 activation/reputation allocation, creating approximately 1.0 FTE of combined King’s Edge / Student Experience communications-content capacity in 2026/27 and 1.5 FTE in 2027/28 and 2028/29. This does not increase the King’s Edge ask: the existing 2.4.4 share remains there and only the additional 0.5 FTE is charged to the Hub.
+- **The Digital Hub now uses the 4 September Digital and IT mature-team estimate as its high-water funding baseline.** The gross IT model is £56,842 per month including Product Owner. Mark Peace remains Product Owner from existing workload, so the current worst-case incremental staffing ask is £50,090 per month: £400.72k for the existing eight-month Year One mobilisation period and £601.08k per full year thereafter before the separate student placement.
+- The high-water case carries **100% of the Product Manager cost until Staff-Hub sharing is agreed**, a full Solution Architect / Technical Lead, the costed DevOps / Cloud Infrastructure / IAM fractions and the full Dynamics Developer until credible existing, shared or alternative-programme routes are confirmed. The funding case should reduce when those routes are evidenced rather than assume them prematurely.
+- **QA through Infuse is testing capacity and is separate from the £90k p.a. Devin/Cognition agentic-development allowance.** The mature QA sourcing model remains to be settled.
+- **Azure/platform costs remain £50k in Year One and are held at £90k in both Years Two and Three for the high-water case.** Digital and IT considers a profile rising to around £90k by Year Three reasonably accurate; the Year Two £90k is therefore a prudent temporary hold until the consumption curve is better known.
+- The **£35k sandwich-year Junior Full-Stack Engineer remains provisioned in each of Years Two and Three** as supervised additional developmental capacity and a talent-pipeline test, not as a replacement for experienced delivery roles.
 - Digital product implementation for purpose, skills and recognition is funded through the **separate Digital Student Experience Hub investment** and is not rebilled into the King’s Edge educational proposition packages.
 - Partnership infrastructure is costed once in **Beyond-Course Opportunity and Participation**, even where it also enables curricular and near-curricular experiential learning.
 
@@ -157,9 +162,9 @@ The **Digital Student Experience Hub** — 4.1.2, 4.1.3 and 4.1.4, enabled by 4.
     <tr valign="top">
       <td valign="top"><strong>Digital Student Experience Hub</strong><br><br><em>Plan refs: 4.1.2, 4.1.3, 4.1.4; enabled by 4.1.1</em><br><br><strong>North Star:</strong> <strong>Every student has a single, personalised digital relationship with King’s: one coherent place to begin, navigate and act</strong>, underpinned by an enduring institutional product capability that progressively integrates and rationalises the student-facing digital estate.</td>
       <td valign="top"><strong>Student:</strong> “I have one clear place to go at King’s to see what I need to do, what’s coming up, access learning and essential information, and get help or ask a question.”<br><br><strong>Student:</strong> “I can navigate opportunities that are relevant to me, connect them to my aspirations, and build a more personalised journey through my time at King’s.”<br><br><strong>Student:</strong> “I am less dependent on already knowing how King’s works or having the right networks to find the opportunities and support available to me.”<br><br><strong>Student-facing service owner:</strong> “I can make my service easier for students to find and use through a shared digital experience, rather than creating another separate destination.”<br><br><strong>Digital / product team:</strong> “We can take an emerging student need from discovery into a tested, supported live service more quickly, with clearer priorities and trade-offs.”<br><br><strong>The University:</strong> “We can progressively integrate and rationalise a fragmented student-facing digital estate, while turning successful innovation into supported institutional provision rather than a succession of temporary projects.”</td>
-      <td valign="top"><strong>£391k.</strong> Establishes the permanent-intent four-person product core and shared Hub foundations; funds the first dedicated communications/content-design capacity for the Student Knowledge and Information Foundation; replatforms King’s Edge onto shared foundations; co-designs and tests the common student home; and leaves a <strong>launch-ready first Hub release plus an evidence-led backlog for progressive integration</strong>. First live release follows in September 2027.</td>
-      <td valign="top"><strong>£1.315m currently itemised within a £3.0m working three-year strategic envelope.</strong> The itemised floor covers the funded product capability/tooling, initial Year 1 platform/co-design commitments and a 0.5 FTE knowledge/content delivery provision across mobilisation. Remaining strategic headroom is for evidence-led journey integration, platform investment and any additional capacity demonstrated through discovery rather than pre-allocated spend.</td>
-      <td valign="top"><strong>At least c.£394k p.a. currently identified, plus TBC platform/run and knowledge/content costs.</strong> Baseline is the permanent 4.0 FTE product core plus agentic development tooling. The 4.1.1 content provision is mobilisation-funded; its enduring scale and organisational home will be determined from discovery and live operating evidence rather than assumed now.</td>
+      <td valign="top"><strong>£588.72k high-water provision.</strong> Funds the current Digital and IT mature-team model for the eight-month mobilisation period after removing the known existing Product Owner; retains the £90k Devin/Cognition agentic-development allowance, £50k Year One Azure/platform envelope, £15k paid student visioning/co-design and £33k 4.1.1 content-delivery capacity. The purpose is to secure enough funding to mobilise confidently, then reduce actual deployment where Digital and IT confirms phasing, existing capacity or shared funding.</td>
+      <td valign="top"><strong>£2.28688m current high-water position within the £3.0m strategic envelope.</strong> This includes the costed mature-team capability at full Student-Hub attribution except Product Owner, one £35k sandwich-year placement in each of Years Two and Three, £90k p.a. agentic development, a £50k / £90k / £90k Azure/platform high-water profile, £15k Year One student co-design and £99k 4.1.1 content delivery. Approximately £713.12k remains unallocated within the strategic ceiling.</td>
+      <td valign="top"><strong>c.£781.08k p.a. worst-case recurrent risk envelope, plus TBC knowledge/content operations.</strong> This is £601.08k mature-team staffing/specialist capacity, £90k agentic development and £90k Azure/platform. It is explicitly expected to reduce where Product Manager/tooling is shared with the Staff Hub, specialist capacity comes from existing Digital and IT resources, Dynamics is attributed elsewhere or the mature sourcing model changes.</td>
     </tr>
   </tbody>
 </table>
@@ -227,15 +232,42 @@ No cost from 2.2.2 is added to this package. Partnership infrastructure is an en
 
 ### Digital Student Experience Hub
 
-The separate **£391k Year 1 baseline** comprises approximately £203k for the four experienced product-team posts, £90k agentic software-development tooling, £50k Azure/environments/platform costs, £15k paid student visioning/co-design and **£33k for the 0.5 FTE 4.1.1 communications/content-design and editorial delivery provision**.
+The current Digital and IT working sheet describes a mature Hub team costing **£56,842 per month gross**, including a Product Owner line, and reports **£682,108 over twelve months** before other costs. The role model is Product Manager, Product Owner, Solution Architect / Technical Lead, Backend Engineer, Full-Stack Developer, UX/UI Designer, QA through Infuse, 0.5 FTE Azure DevOps, 1.0 FTE Dynamics Developer, 0.25 FTE Cloud Infrastructure and 0.125 FTE Cloud IAM. Digital and IT also identifies a Delivery Manager as required, but currently expects to provide that from existing capacity and has not included it in the cost table.
 
-The directly itemised three-year position is **£1.315m**: £1.151m for the 4.1.3 product capability and tooling across mobilisation, £65k of Year 1 platform/co-design costs held through 4.1.2 and **£99k for the 0.5 FTE 4.1.1 content-delivery provision across the three mobilisation years**. 4.1.4 carries no separate incremental digital build envelope because it is delivered through the same team and foundations.
+Mark Peace remains Product Owner from existing workload, so the high-water **incremental cash staffing** position removes that cost but otherwise assumes every currently costed role must be funded until a credible lower-cost route is agreed. This gives **£50,090 per month**, **£400,720 for the eight-month November 2026 to June 2027 Year One mobilisation period**, and **£601,080 per full year** in Years Two and Three before the separate student placement.
 
-The 4.1.1 provision is a minimum business-case envelope. Senior knowledge/content architecture and governance leadership and authoritative subject ownership are assumed to come from protected existing institutional capacity. The funded 0.5 FTE provides hands-on remediation, content design, editorial production and migration/adoption support. Discovery and the first SASD implementation should determine whether wider institutional rollout needs a larger or differently configured content operation.
+The high-water method is deliberately asymmetric: we do not count known existing Product Owner capacity as new cash, but we **do** carry uncertain lines in full until validated. In particular:
 
-Organisationally, the 4.1.1 0.5 FTE should be designed alongside the existing 2.4.4 activation/reputation allocation. On the current assumptions this creates a combined communications/content capability of approximately **1.0 FTE in 2026/27 and 1.5 FTE in 2027/28 and 2028/29**, while preserving the accounting split between the King’s Edge and Digital Hub asks.
+- the **Product Manager is held at 100% Student Hub cost** until the proposed sharing with the Staff Digital Hub is converted into an agreed allocation;
+- the **Solution Architect / Technical Lead is held at 1.0 FTE** until Digital and IT confirms whether the role can be phased or partly supplied from existing architecture capacity;
+- the **0.5 DevOps, 0.25 Cloud Infrastructure and 0.125 IAM lines are carried in cash** even though they are strong candidates for protected existing/shared Digital and IT capacity;
+- the **Dynamics Developer is carried at 1.0 FTE pending a scope test** of what actually serves the Student Hub rather than King’s Answers, CRM/enquiry management or another delivery route;
+- **QA is currently costed through Infuse at £6k per month** and is separate from agentic-development tooling;
+- an IT **Delivery Manager remains an existing-capacity assumption** unless Digital and IT advises otherwise.
 
-The 4.1.2 decision log retains a **£3m three-year strategic investment envelope**. With £1.315m now itemised, approximately **£1.685m remains as planning headroom** for later integration, platform work and evidence-led capacity changes. This is not an itemised commitment and is not part of the King’s Edge ask.
+The separate **£90k annual agentic-development allowance** remains in all three years. James Costerton has confirmed that this is for a dedicated **Devin instance purchased from Cognition**, not the Infuse testing cost. Shared use with the Staff Hub or wider Digital and IT may later reduce the Student Hub allocation.
+
+Azure/environments/platform costs remain **£50k in Year One**. Digital and IT considers the estimate of costs rising to around **£90k by Year Three** reasonably accurate. The high-water plan therefore carries **£90k in both Years Two and Three** until the intermediate consumption profile is better evidenced.
+
+The separate 4.1.2 paid student visioning/co-design envelope remains **£15k in Year One**. The 4.1.1 content-delivery provision remains **£33k in each year, £99k across mobilisation** and is not moved into the product-team budget. One supervised sandwich-year Junior Full-Stack Engineer remains held at **£35k in each of Years Two and Three**, £70k total, as additional developmental/talent-pipeline capacity rather than a substitute for professional engineering roles.
+
+The resulting high-water Hub profile is therefore:
+
+| Component | 2026/27 | 2027/28 | 2028/29 | Three-year total |
+|---|---:|---:|---:|---:|
+| Mature-team incremental cash staffing | £400.72k | £601.08k | £601.08k | £1.60288m |
+| Sandwich-year engineering placement | – | £35k | £35k | £70k |
+| Devin/Cognition agentic development | £90k | £90k | £90k | £270k |
+| Azure / environments / platform | £50k | £90k | £90k | £230k |
+| Paid student visioning/co-design | £15k | – | – | £15k |
+| 4.1.1 content-delivery provision | £33k | £33k | £33k | £99k |
+| **Total** | **£588.72k** | **£849.08k** | **£849.08k** | **£2.28688m** |
+
+Against the existing **£3m three-year strategic envelope**, this leaves **£713.12k headroom**. The current intent is not to find additional things to spend that headroom on. It protects the business case while Digital and IT validation brings the high-water workforce and platform assumptions down through phasing, existing-resource deployment, Staff-Hub cost sharing and scope attribution.
+
+The current recurrent risk position is approximately **£781.08k p.a. before any enduring knowledge/content operation**: £601.08k mature-team staffing/specialist capacity, £90k agentic development and £90k Azure/platform. This is explicitly a high-water BAU risk envelope rather than a settled permanent establishment. The sandwich-year placement has no automatic BAU continuation.
+
+Organisationally, the 4.1.1 0.5 FTE should still be designed alongside the existing 2.4.4 activation/reputation allocation. On the current assumptions this creates a combined communications/content capability of approximately **1.0 FTE in 2026/27 and 1.5 FTE in 2027/28 and 2028/29**, while preserving the accounting split between the King’s Edge and Digital Hub asks.
 
 ---
 
@@ -247,8 +279,8 @@ The current numbers are sufficiently mature for prioritisation, but they are not
 - **King’s Edge / Beyond Course:** the £600k p.a. partnership-infrastructure figure is deliberately a **holding assumption**. Year 1 should produce the evidence to increase, reduce or reshape it. The Student Opportunities Fund award pot is not yet quantified.
 - **King’s Edge / Purpose, Skills and Recognition:** Year 1 is well bounded. Year 2 and 3 are capability envelopes which should contract as well as expand if discovery or portability evidence is weak.
 - **King’s Edge / Experiential Learning:** Year 1 is well bounded. Later curriculum-growth envelopes are explicitly evidence-led and should not be treated as automatic spending targets.
-- **Digital Hub:** the **£391k Year 1 baseline** now includes a quantified 0.5 FTE knowledge/content-delivery provision as well as the core 4.1.3 staffing/tooling profile. The adequacy of that 0.5 FTE for wider post-SASD rollout is intentionally evidence-led. Later integration/platform spend remains within the separate £3m strategic envelope and should be released from evidence.
-- **BAU:** the King’s Edge c.£1.076m p.a. and Digital Hub c.£394k p.a. figures are identifiable exposures rather than settled recurrent budgets. Several TBC items could add cost, including the enduring knowledge/content operating model, while the £600k partnership assumption could reduce materially after review.
+- **Digital Hub:** the **£588.72k Year One and £2.28688m three-year figures are deliberately high-water funding baselines, not expected final spend**. The next reduction pass must come from Digital and IT: Year One phasing; which mature-team roles are genuinely new versus protected existing resource; Product Manager and tooling allocation between Student and Staff Hubs; whether a full dedicated Solution Architect is needed throughout; what the Dynamics Developer actually serves; and whether DevOps, Cloud Infrastructure and IAM can be supplied from existing/shared capacity. QA sourcing and the exact Azure consumption curve also remain open.
+- **BAU:** the King’s Edge c.£1.076m p.a. figure and the Digital Hub **c.£781.08k p.a. high-water risk envelope** are not settled recurrent budgets. The Hub number should reduce through workforce/sourcing and attribution decisions; TBC enduring knowledge/content operations could add cost, while the £600k King’s Edge partnership assumption could reduce materially after review.
 
 ---
 
@@ -266,3 +298,4 @@ Before using this grid for a formal investment decision:
 8. Check the user stories against current benefit statements and beneficiaries in the source deliverables.
 9. Keep estimates, holding assumptions, proxies and evidence-led future costs visibly qualified.
 10. Confirm that BAU liabilities remain visible even where their enduring funding route is unresolved.
+11. For the Digital Hub, reconcile every reduction from the high-water model to a named Digital and IT decision on phasing, existing/shared capacity, sourcing or scope attribution rather than removing provision by assumption.
