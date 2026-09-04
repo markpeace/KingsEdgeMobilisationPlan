@@ -76,6 +76,33 @@ for (const contract of requiredSharedHeroContracts) {
   }
 }
 
+const residualSectionHeadingTypography = [
+  ['section-heading h1', /(^|\n)\.section-heading\s+h1(?:\s|,|\{|[.:])/m],
+  ['section-heading h2', /(^|\n)\.section-heading\s+h2(?:\s|,|\{|[.:])/m],
+  ['section-heading paragraph', /(^|\n)\.section-heading\s+p(?:\s|,|\{|[.:])/m]
+];
+for (const [label, pattern] of residualSectionHeadingTypography) {
+  if (pattern.test(siteStyles)) {
+    fail(`src/styles.css contains ${label}; shared section-heading typography belongs in src/design-system.css`);
+  }
+}
+
+const requiredSectionHeadingTypography = [
+  '.section-heading h1 {',
+  '.section-heading p {',
+  '.section-heading h2 {',
+  'font-size: clamp(2.3rem, 12vw, 3.2rem);'
+];
+for (const contract of requiredSectionHeadingTypography) {
+  if (!designSystem.includes(contract)) {
+    fail(`src/design-system.css is missing effective section-heading typography contract ${contract}`);
+  }
+}
+
+if (/(^|\n)\.projects-heading\s+h1(?:\s|\{|[.:])/m.test(portfolioStyles)) {
+  fail('src/styles/portfolio-overview.css must not restore the shadowed Projects h1 variant; shared section-heading typography owns that contract');
+}
+
 const residualChromeOwners = [
   ['site header', /(^|\n)\.site-header\s*\{/m],
   ['brand', /(^|\n)\.brand\s*\{/m],
@@ -345,9 +372,11 @@ for (const selector of retiredSelectorTokens) {
   }
 }
 
+const escapeRegExp = (value) => value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 for (const selector of exactlyRetiredSelectors) {
-  if (selector === '.schema-card h3' && /(^|\})\s*\.schema-card h3\s*\{/m.test(generatedLegacyBody)) {
-    fail('generated legacy bundle still contains exact retired selector .schema-card h3');
+  const exactSelectorPattern = new RegExp(`(^|[},\\n])\\s*${escapeRegExp(selector)}\\s*(?:,|\\{)`, 'm');
+  if (exactSelectorPattern.test(generatedLegacyBody)) {
+    fail(`generated legacy bundle still contains exact retired selector ${selector}`);
   }
 }
 
