@@ -1,9 +1,10 @@
 /*
  * Canonical cross-cutting planning detail.
  *
- * Governance, consultation history and RAID share a restrained ruled treatment
- * inside the common disclosure primitive. They use hierarchy and whitespace
- * rather than another generation of nested boxed cards.
+ * Governance, consultation history, RAID, components and dependency/handoff
+ * detail share a restrained treatment inside the common disclosure primitive.
+ * They use hierarchy and whitespace rather than another generation of nested
+ * boxed cards.
  */
 
 /* Governance */
@@ -280,6 +281,73 @@
   line-height: 1.35;
 }
 
+/* Supporting planning detail: components and dependency/handoff views */
+.component-card p,
+.compact-list {
+  color: var(--color-muted);
+  line-height: 1.4;
+}
+
+.component-card {
+  display: block;
+  padding: 1rem;
+  border: 2px solid var(--color-border);
+  border-radius: 0;
+  background: var(--color-surface);
+  text-decoration: none;
+  transition: background var(--transition-fast), color var(--transition-fast), border-color var(--transition-fast);
+}
+
+.component-card h3 {
+  margin: 0.75rem 0 0.5rem;
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+
+.component-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.detail-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.link-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.compact-list {
+  display: grid;
+  gap: 0.45rem;
+  margin: 0;
+  padding-left: 1.1rem;
+}
+
+.compact-list a {
+  text-decoration: none;
+}
+
+.compact-list a:hover {
+  color: var(--color-accent);
+}
+
+@media (max-width: 1180px) {
+  .component-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
 @media (max-width: 1100px) {
   .governance-summary-grid {
     grid-template-columns: 1fr;
@@ -287,11 +355,10 @@
 }
 
 @media (max-width: 760px) {
-  .governance-partner-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .raid-grid {
+  .governance-partner-grid,
+  .raid-grid,
+  .detail-grid,
+  .component-grid {
     grid-template-columns: 1fr;
   }
 }
