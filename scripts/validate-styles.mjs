@@ -27,6 +27,7 @@ const deliverableStyles = read('src/styles/deliverable-detail.css');
 const planningDetailStyles = read('src/styles/planning-detail.css');
 const projectStyles = read('src/styles/project-overview.css');
 const theoryStyles = read('src/styles/theory-of-change.css');
+const printStyles = read('src/styles/print-a3.css');
 const generatedLegacyStyles = read('src/styles/legacy-public.generated.css');
 const legacySourceStyles = read('src/styles/legacy-public-source.css');
 const legacyEntry = read('src/styles/legacy-public.css');
@@ -136,10 +137,12 @@ for (const selector of deadResidualHelpers) {
   }
 }
 
-const printMediaIndex = siteStyles.search(/@media\s+print\s*\{/m);
-const screenSiteStyles = printMediaIndex >= 0 ? siteStyles.slice(0, printMediaIndex) : siteStyles;
-if (/\b!important\b/.test(screenSiteStyles)) {
-  fail('src/styles.css must not use !important in screen presentation; print-only isolation is the sole residual exception');
+if (siteStyles.includes('.a3-print-') || /@media\s+print\s*\{/m.test(siteStyles)) {
+  fail('src/styles.css must not own A3 print presentation; use src/styles/print-a3.css');
+}
+
+if (/\b!important\b/.test(siteStyles)) {
+  fail('src/styles.css must not use !important; the isolated A3 print exception belongs only in src/styles/print-a3.css');
 }
 
 for (const [file, styles] of [
@@ -160,6 +163,17 @@ for (const [file, styles] of [
   if (/\b!important\b/.test(styles)) {
     fail(`${file} must not use !important; retire the conflicting legacy selector instead`);
   }
+}
+
+const printMediaIndex = printStyles.search(/@media\s+print\s*\{/m);
+if (printMediaIndex < 0) {
+  fail('src/styles/print-a3.css must contain an explicit @media print block');
+} else if (/\b!important\b/.test(printStyles.slice(0, printMediaIndex))) {
+  fail('src/styles/print-a3.css must not use !important outside its print media block');
+}
+const printImportantMatches = printStyles.match(/\b!important\b/g) || [];
+if (printImportantMatches.length !== 1 || !/display:\s*none\s*!important/.test(printStyles)) {
+  fail('src/styles/print-a3.css may use exactly one !important, solely for A3 print visibility isolation');
 }
 
 const requiredChromePrimitives = ['.ds-page-actions', '.ds-context-strip'];
@@ -282,6 +296,19 @@ for (const selector of requiredPlanningDetailContracts) {
   }
 }
 
+const requiredPrintContracts = [
+  '.a3-print-sheet {',
+  '@media print',
+  'size: A3 landscape',
+  '.a3-print-grid',
+  '.deliverable-detail-page > :not(.a3-print-sheet)'
+];
+for (const contract of requiredPrintContracts) {
+  if (!printStyles.includes(contract)) {
+    fail(`src/styles/print-a3.css is missing canonical A3 print contract ${contract}`);
+  }
+}
+
 if (!theoryScript.includes('theory-chain-step ds-sequence-card')) {
   fail('Theory of Change causal chain must consume the shared sequence-card primitive');
 }
@@ -340,6 +367,7 @@ const deliverableImport = siteEntry.indexOf("import './styles/deliverable-detail
 const planningDetailImport = siteEntry.indexOf("import './styles/planning-detail.css';");
 const projectImport = siteEntry.indexOf("import './styles/project-overview.css';");
 const theoryImport = siteEntry.indexOf("import './styles/theory-of-change.css';");
+const printImport = siteEntry.indexOf("import './styles/print-a3.css';");
 if (
   siteImport < 0 ||
   chromeImport < siteImport ||
@@ -351,9 +379,10 @@ if (
   deliverableImport < portfolioImport ||
   planningDetailImport < deliverableImport ||
   projectImport < planningDetailImport ||
-  theoryImport < projectImport
+  theoryImport < projectImport ||
+  printImport < theoryImport
 ) {
-  fail('src/site-entry.jsx must load chrome, landing, index, Measures, shared primitives and owned feature styles after src/site.jsx in the documented order');
+  fail('src/site-entry.jsx must load chrome, landing, index, Measures, shared primitives, owned feature styles and A3 print styling after src/site.jsx in the documented order');
 }
 
 if (siteEntry.includes('post-legacy-cleanup.css')) {
