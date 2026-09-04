@@ -180,9 +180,12 @@ function validateWorkforceModel(deliverable) {
     return;
   }
 
-  const resourceIds = new Set((deliverable.steps || []).flatMap((step) =>
-    (step.resources?.newInvestment || []).map((ask) => ask.id).filter(Boolean)
-  ));
+  const resourceIds = new Set([
+    ...(deliverable.steps || []).flatMap((step) =>
+      (step.resources?.newInvestment || []).map((ask) => ask.id).filter(Boolean)
+    ),
+    ...(deliverable.operatingCostModel?.newInvestment || []).map((ask) => ask.id).filter(Boolean)
+  ]);
   const seen = new Set();
 
   model.appointments.forEach((appointment, index) => {
@@ -238,6 +241,7 @@ if (warnings.length) {
   console.warn('Resource model validation warnings:');
   warnings.forEach((warning) => console.warn(`- ${warning}`));
 }
+
 if (errors.length) {
   console.error('Resource model validation failed:');
   errors.forEach((error) => console.error(`- ${error}`));

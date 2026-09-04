@@ -6,65 +6,80 @@
 
 ## Working position
 
-The Digital Student Experience Hub should currently be funded to a prudent high-water position and then reduced through explicit Digital and IT decisions on phasing, shared capacity, sourcing and scope attribution. The current three-year strategic envelope remains **£3.0m**.
+The Digital Student Experience Hub should continue to be funded to a prudent high-water position and then reduced through explicit Digital and IT decisions on phasing, shared capacity, sourcing and scope attribution. The current three-year strategic envelope remains **£3.0m**.
 
-The revised high-water profile is unchanged by the latest pay/non-pay and placement treatment:
+Jon Ward’s 4 September follow-up provides the first confirmed reduction from the previous high-water model: the **1.0 FTE Product Manager should be allocated 50/50 between the Student and Staff Hubs** to ring-fence costs and avoid cross-subsidisation. The full institutional Product Manager post remains required; only half of its cost is now charged to the Student Hub business case.
+
+The revised Student Hub high-water profile is:
 
 | Component | 2026/27 | 2027/28 | 2028/29 | Three-year total |
 |---|---:|---:|---:|---:|
-| Mature-team workforce and QA cash provision | £400.72k | £601.08k | £601.08k | £1.60288m |
+| Student Hub share of mature-team workforce and QA cash provision | £368.864k | £553.296k | £553.296k | £1.475456m |
 | Sandwich-year engineering placement | – | £35k | £35k | £70k |
 | Devin/Cognition agentic development | £90k | £90k | £90k | £270k |
 | Azure / environments / platform | £50k | £75k | £100k | £225k |
 | Student-facing AI inference, retrieval and token consumption | £50k | £75k | £100k | £225k |
 | Paid student visioning and co-design | £15k | £15k | £15k | £45k |
 | 4.1.1 content-delivery provision | £33k | £33k | £33k | £99k |
-| **Total** | **£638.72k** | **£924.08k** | **£974.08k** | **£2.53688m** |
+| **Total** | **£606.864k** | **£876.296k** | **£926.296k** | **£2.409456m** |
 
-This leaves **£463.12k headroom** within the £3.0m strategic envelope. The headroom is not an allocation or spending target. It protects the investment case while Digital and IT validation resolves the remaining uncertainty.
+This leaves **£590.544k headroom** within the £3.0m strategic envelope. The reduction from the previous £2.53688m Student Hub position is entirely the confirmed 50% Staff Hub allocation of the Product Manager. It is an attribution change rather than an institutional saving.
+
+## Recruitment and Year 1 mobilisation
+
+Jon Ward advises that even if recruitment for all new roles begins on day one, **around six months is a realistic recruitment period**, with appointments onboarding steadily rather than all becoming available together.
+
+That creates a real mobilisation gap. Jon identifies two plausible bridge routes:
+
+- contractors; and/or
+- reprioritising existing Digital and IT capacity away from other work.
+
+The current business case should **not automatically discount the remaining Year 1 envelope because recruitment will take time**. Contractor cover could increase cash cost, while using existing capacity creates an opportunity cost elsewhere. The next Digital and IT pass should therefore translate the six-month assumption into a month-by-month recruitment, onboarding and bridge plan before the final Year 1 phasing is submitted.
 
 ## Enduring product operating costs
 
 **Paid student visioning and co-design** is held at **£15k per year during mobilisation and £15k per year in BAU**. Student partnership should continue through product discovery, testing, prioritisation and evolution after the first Hub vision and release are established.
 
-**Azure, environments and platform consumption** is profiled at **£50k / £75k / £100k** across mobilisation and **£100k per year in BAU**. The ramp is a planning envelope, not an entitlement to spend. Jon Ward and James Costerton should validate it against the target architecture, expected service volumes and Digital and IT charging model.
+**Azure, environments and platform consumption** is profiled at **£50k / £75k / £100k** across mobilisation and **£100k per year in BAU**. The ramp remains a planning envelope requiring Digital and IT validation against the target architecture, service volumes and charging model.
 
-**Student-facing AI inference, retrieval and token consumption** is provisionally profiled at the same **£50k / £75k / £100k** ramp and **£100k per year in BAU**. This is deliberately separate from the £90k annual Devin/Cognition engineering-productivity allowance. It is not yet a usage forecast and should be validated with Digital and IT using a simple unit-economics model covering active students, likely AI interactions, model mix, prompt/context size, retrieval and embeddings, caching, safety/moderation, observability and any shared institutional AI gateway.
+**Student-facing AI inference, retrieval and token consumption** is provisionally profiled at the same **£50k / £75k / £100k** ramp and **£100k per year in BAU**. This remains separate from the £90k annual Devin/Cognition engineering-productivity allowance and requires a simple demand/unit-economics model with James Costerton.
 
-**Infuse QA/testing is non-pay outsourced service expenditure.** The current planning rate is **£6k per month**, giving a **£48k Year 1** eight-month provision and **£72k per full year** thereafter. It remains part of the high-water cash requirement, but it should not appear as a Student Hub post or within the pay establishment.
+**Infuse QA/testing is confirmed non-pay outsourced service expenditure.** The current planning rate is **£6k per month**, giving a **£48k Year 1** eight-month provision and **£72k per full year** thereafter. Jon Ward confirms that Infuse provides cost-effective resource plus expertise in **test automation and non-functional testing**, both important to the Hub. It therefore remains in the high-water cash requirement but not in the pay establishment.
+
+Jon has also identified **development software** as another possible shared Student/Staff Hub cost. James Costerton should identify which development tools are genuinely shared and propose an explicit allocation rather than defaulting them to the Student Hub.
 
 ## Workforce and BAU
 
-The current planning assumption is a **4.0 FTE permanent Digital and IT product core from the outset**:
+The institutional planning assumption remains a **4.0 FTE permanent Digital and IT product core**:
 
-| Permanent core | Current full-year planning cost |
-|---|---:|
-| Product Manager | £95,568 |
-| Backend Engineer | £81,024 |
-| Full-Stack Developer | £81,024 |
-| UX/UI Designer | £66,240 |
-| **Permanent core total** | **£323,856 p.a.** |
+| Permanent core | Institutional full-year cost | Student Hub allocation |
+|---|---:|---:|
+| Product Manager | £95,568 | **50% / £47,784** |
+| Backend Engineer | £81,024 | £81,024 |
+| Full-Stack Developer | £81,024 | £81,024 |
+| UX/UI Designer | £66,240 | £66,240 |
+| **Total** | **£323,856 p.a.** | **£276,072 p.a.** |
 
-Mobilisation funding carries these posts through June 2029 and recurrent Digital and IT establishment should take over from July 2029. The Product Manager remains a likely shared role with the Staff Digital Hub, so the final Student Hub allocation is still to be agreed.
+The Staff Hub must carry the remaining **£47,784 p.a. Product Manager share**. The Student Hub business case should not cross-subsidise it.
 
-The remaining high-water **specialist workforce** is **£205,224 p.a.**: Solution Architect / Technical Lead, fractional Azure DevOps, Dynamics Developer, fractional Cloud Infrastructure and fractional IAM. These remain visible workforce risks until Digital and IT confirms whether they are dedicated, shared, existing or attributable to another programme.
+The remaining high-water **specialist workforce** is **£205,224 p.a.**: Solution Architect / Technical Lead, fractional Azure DevOps, Dynamics Developer, fractional Cloud Infrastructure and fractional IAM. These remain visible workforce risks until James/Digital and IT confirms whether they are dedicated, shared, existing or attributable to another programme.
 
-The **£72k p.a. Infuse QA provision sits outside that workforce figure as non-pay**. This makes the current full-year Digital and IT team/service high-water total the same £601.08k as before, but with a clearer split: **£529.08k pay/workforce and £72k outsourced QA service**.
+The **£72k p.a. Infuse QA provision sits outside workforce as non-pay**. After the 50/50 Product Manager allocation, the current full-year Student Hub team/service high-water total is **£553.296k**, comprising **£481.296k pay/workforce plus £72k outsourced QA** before the separate sandwich placement and Devin/Cognition allowance.
 
 Mark Peace remains Product Owner from existing workload. The IT Delivery Manager remains an expected existing Digital and IT contribution. Approximately 0.2 FTE Business Analysis remains an existing or seconded protected-capacity assumption during the main discovery period.
 
 ## Rolling sandwich-year placement
 
-The **£35k sandwich-year engineering placement is now a recurring BAU commitment**, not merely a mobilisation experiment. One paid supervised placement should be recruited each year from 2027/28 onward, with the exact discipline able to evolve as the product and skills need changes.
+The **£35k sandwich-year engineering placement is a recurring BAU commitment**. One paid supervised placement should be recruited each year from 2027/28 onward, with the exact discipline able to evolve as the product and skills need changes.
 
-The placement is deliberately additional to the experienced team. It should provide a strong student-development experience, bring a live student perspective into the product capability and create a King’s digital-talent pipeline. It should never hold critical delivery responsibility or be treated as cheap substitution for professional capacity.
+The placement is additional to the experienced team. It should provide a strong student-development experience, bring a live student perspective into the product capability and create a King’s digital-talent pipeline. It should never hold critical delivery responsibility or be treated as cheap substitution for professional capacity.
 
 ## Recurrent high-water position
 
-The resulting **worst-case recurrent exposure is approximately £941.08k p.a. before the enduring 4.1.1 knowledge/content operating model**:
+The resulting **worst-case Student Hub recurrent exposure is approximately £893.296k p.a. before the enduring 4.1.1 knowledge/content operating model**:
 
-### Pay and workforce: £564.08k
-- **£323.856k** permanent four-post product core;
+### Pay and workforce: £516.296k
+- **£276.072k** Student Hub share of the permanent four-post institutional product core;
 - **£205.224k** unresolved specialist workforce capacity; and
 - **£35k** rolling sandwich-year placement.
 
@@ -75,21 +90,19 @@ The resulting **worst-case recurrent exposure is approximately £941.08k p.a. be
 - **£100k** student-facing AI inference/retrieval consumption; and
 - **£15k** recurring paid student co-design operating envelope.
 
-The **£941.08k** figure is a risk ceiling, not a settled BAU budget. The permanent core and rolling placement are intended commitments. The specialist-workforce component should reduce where Digital and IT can provide shared or standing capability or where scope belongs elsewhere; the non-pay allowances should be reforecast from actual commercial and consumption evidence.
+The **£893.296k** figure is a Student Hub risk ceiling, not a settled BAU budget. The Staff Hub carries an additional **£47.784k p.a.** for its half of the Product Manager. The specialist-workforce component should reduce where Digital and IT can provide shared or standing capability or where scope belongs elsewhere; the non-pay allowances should be reforecast from actual commercial and consumption evidence.
 
-## Questions to take back to Jon Ward and James Costerton
+## Current questions for Digital and IT
 
-1. **Azure/platform:** Is £50k / £75k / £100k a sensible high-water ramp for the target architecture, and is £100k a defensible mature annual run-cost allowance?
-2. **Student-facing AI runtime:** What should a defensible initial inference/retrieval budget be? Can Digital and IT model likely cost per active student or per AI-enabled interaction, including retrieval, embeddings, caching, moderation and observability? Is there institutional/shared AI capacity that changes the incremental Student Hub cost?
-3. **Devin versus runtime AI:** Confirm that the £90k Devin/Cognition allowance is engineering productivity and should remain commercially and financially separate from student-facing inference consumption.
-4. **Permanent establishment:** Can Product Manager, Backend Engineer, Full-Stack Developer and UX/UI Designer be created as permanent Digital and IT posts from the outset, mobilisation-funded to June 2029 with a clear recurrent landing from July 2029?
-5. **Infuse QA:** Confirm that the £6k monthly Infuse line is wholly outsourced non-pay QA/testing and should be budgeted as service expenditure rather than workforce. Is outsourcing also the intended mature-state QA model?
-6. **Specialist workforce:** For Solution Architecture, DevOps, Dynamics, Infrastructure and IAM, which lines should ultimately be dedicated posts, standing Digital and IT services, shared capacity or costs of another programme?
-7. **Cross-Hub allocation:** What proportion of Product Manager, agentic tooling and any other shared capability should properly be charged to the Student Hub versus the Staff Hub?
-8. **Dynamics:** What specific Student Hub deliverables require the Dynamics Developer, and what proportion instead belongs to King’s Answers, CRM or enquiry-management delivery?
-9. **Rolling placement:** Can we establish one repeatable annual sandwich-year placement route within Digital and IT, with a stable £35k envelope, supervision model and recruitment cycle?
-10. **Recurring student partnership:** Is there a repeatable employment/supervision route that allows the £15k paid student co-design envelope to operate annually rather than as a one-off internship exercise?
+The Product Manager allocation and Infuse treatment are now decisions rather than open questions. The remaining handback is:
+
+1. **Recruitment and Year 1 bridge:** Given a realistic six-month recruitment period with steady onboarding, what month-by-month deployment should we assume and how should the gap be bridged between contractors and reprioritised existing Digital and IT capacity?
+2. **Shared development software:** Which development-software and engineering-tooling costs genuinely support both Student and Staff Hubs, and what allocation should be charged to each?
+3. **Dynamics:** What specific Student Hub deliverables require the Dynamics Developer, and what proportion instead belongs to King’s Answers, CRM/enquiry management or another programme?
+4. **Architecture and specialist capacity:** Do we need a dedicated 1.0 FTE Solution Architect / Technical Lead throughout, and which of DevOps, Cloud Infrastructure and IAM can be supplied through standing/shared Digital and IT capacity?
+5. **Azure/platform and student-facing AI:** Are the £50k / £75k / £100k profiles sensible high-water assumptions? For AI, can we establish a simple cost-per-active-student or cost-per-AI-interaction model covering model mix, retrieval, embeddings, caching, moderation and observability?
+6. **Remaining new versus shared capacity:** Beyond the now-settled Product Manager split and Infuse treatment, which remaining lines are genuinely new dedicated Student Hub investment versus existing protected capacity, shared capacity, outsourced service or another programme’s cost?
 
 ## Planning principle
 
-The business case should continue to carry uncertain requirements at high-water until a named and credible alternative is agreed. Reductions should be auditable decisions, not optimistic assumptions. At the same time, enduring product capabilities should be represented honestly as permanent, recurrent pay or recurrent non-pay where that is the intended institutional end state.
+The business case should continue to carry uncertain requirements at high-water until a named and credible alternative is agreed. Reductions should be auditable decisions, not optimistic assumptions. Confirmed cross-Hub allocations, such as the Product Manager 50/50 split, should be applied immediately while retaining visibility of the full institutional resource requirement.
