@@ -1,52 +1,60 @@
 {
   "workforceModel": {
-    "status": "Digital and IT mature-team high-water model, not yet final workforce design",
-    "summary": "The appointments below represent the currently costed Digital and IT mature-team capacity carried in the funding ceiling. Appointment and sourcing routes are deliberately not treated as permanent by default: the high-water model is intended to preserve funding cover while Digital and IT confirms phasing, existing/shared capacity, external sourcing and cross-Hub attribution. Mark Peace as Product Owner and the expected existing IT Delivery Manager are recorded as existing capacity in the delivery step rather than as funded appointments.",
+    "status": "Digital and IT mature-team high-water model with a four-post permanent core and unresolved specialist/service sourcing",
+    "summary": "The high-water funding model should not imply that every costed Digital and IT line becomes a permanent Student Hub post, but neither should it hide the enduring product capability that King’s is deliberately creating. The current planning assumption is therefore a 4.0 FTE permanent Digital and IT core from the outset: Product Manager, Backend Engineer, Full-Stack Developer and UX/UI Designer. Mobilisation investment carries these posts to June 2029 and recurrent Digital and IT establishment takes over from July 2029, with the Product Manager cost allocation still to be agreed with the Staff Digital Hub. The remaining mature-team lines are kept as high-water specialist or service capacity until Digital and IT confirms whether they are dedicated, shared, existing or externally sourced. Mark Peace as Product Owner and the expected existing IT Delivery Manager remain existing capacity rather than funded appointments.",
     "appointments": [
       {
         "resourceId": "4.1.3-y1-role-product-manager",
         "role": "Product Manager",
-        "appointmentBasis": "other",
-        "appointmentLabel": "High-water mature-team provision",
+        "appointmentBasis": "permanent",
+        "appointmentLabel": "Permanent Digital and IT product-management post",
         "fte": 1.0,
-        "fundingBasis": "Full Student Hub cash provision pending an agreed allocation with the Staff Digital Hub",
-        "endState": "Confirm enduring organisational home, sourcing route and Student/Staff Hub cost allocation before mobilisation closes."
+        "fundingBasis": "Mobilisation-funded to June 2029; recurrent Digital and IT establishment from July 2029. Student-versus-Staff Hub cost allocation remains to be agreed.",
+        "bauFrom": "July 2029",
+        "bauOwner": "Digital and IT",
+        "annualBauAmount": 95568
       },
       {
         "resourceId": "4.1.3-y1-role-solution-architect",
         "role": "Solution Architect / Technical Lead",
         "appointmentBasis": "other",
-        "appointmentLabel": "High-water mature-team provision",
+        "appointmentLabel": "High-water mature-team provision pending architecture sourcing decision",
         "fte": 1.0,
         "fundingBasis": "Full cash provision pending confirmation of dedicated, phased or existing architecture capacity",
-        "endState": "Set the enduring architecture model from actual demand and Digital and IT capacity; no automatic permanent 1.0 FTE commitment is created by the high-water envelope."
+        "endState": "Set the enduring architecture model from actual demand and Digital and IT capacity; a permanent dedicated 1.0 FTE Student Hub post is not assumed until that model is confirmed."
       },
       {
         "resourceId": "4.1.3-y1-role-backend",
         "role": "Backend Engineer",
-        "appointmentBasis": "other",
-        "appointmentLabel": "High-water mature-team provision",
+        "appointmentBasis": "permanent",
+        "appointmentLabel": "Permanent Digital and IT engineering post",
         "fte": 1.0,
-        "fundingBasis": "Student Hub mobilisation investment through Digital and IT",
-        "endState": "Confirm the enduring engineering establishment and funding route from live product demand before the end of mobilisation."
+        "fundingBasis": "Mobilisation-funded to June 2029; recurrent Digital and IT establishment from July 2029",
+        "bauFrom": "July 2029",
+        "bauOwner": "Digital and IT",
+        "annualBauAmount": 81024
       },
       {
         "resourceId": "4.1.3-y1-role-fullstack",
         "role": "Full-Stack Developer",
-        "appointmentBasis": "other",
-        "appointmentLabel": "High-water mature-team provision",
+        "appointmentBasis": "permanent",
+        "appointmentLabel": "Permanent Digital and IT engineering post",
         "fte": 1.0,
-        "fundingBasis": "Student Hub mobilisation investment through Digital and IT",
-        "endState": "Confirm the enduring engineering establishment and funding route from live product demand before the end of mobilisation."
+        "fundingBasis": "Mobilisation-funded to June 2029; recurrent Digital and IT establishment from July 2029",
+        "bauFrom": "July 2029",
+        "bauOwner": "Digital and IT",
+        "annualBauAmount": 81024
       },
       {
         "resourceId": "4.1.3-y1-role-ux-ui",
         "role": "UX/UI Designer",
-        "appointmentBasis": "other",
-        "appointmentLabel": "High-water mature-team provision",
+        "appointmentBasis": "permanent",
+        "appointmentLabel": "Permanent Digital and IT design post",
         "fte": 1.0,
-        "fundingBasis": "Student Hub mobilisation investment through Digital and IT",
-        "endState": "Confirm the enduring design, service-design and user-research capability model from delivery evidence before mobilisation closes."
+        "fundingBasis": "Mobilisation-funded to June 2029; recurrent Digital and IT establishment from July 2029. Service-design and user-research coverage remains a role-scope question.",
+        "bauFrom": "July 2029",
+        "bauOwner": "Digital and IT",
+        "annualBauAmount": 66240
       },
       {
         "resourceId": "4.1.3-y1-role-qa-infuse",

@@ -1,0 +1,172 @@
+{
+  "summary": "Uses Digital and IT’s mature-team estimate as the high-water mobilisation ceiling while distinguishing the four-post permanent product core from specialist/service capacity whose enduring sourcing and Student Hub attribution remain to be validated.",
+  "detailSummary": "The Digital and IT high-water model remains the prudent ceiling for mobilisation staffing, but the enduring workforce story is now made explicit. The current planning assumption is a 4.0 FTE permanent Digital and IT product core from the outset: Product Manager, Backend Engineer, Full-Stack Developer and UX/UI Designer. At the current Digital and IT cost rates these posts have a combined full-year run-rate of approximately £323,856. Mobilisation funding carries them through June 2029 and recurrent Digital and IT establishment takes over from July 2029, with the Product Manager’s eventual Student-versus-Staff Hub allocation still to be settled.\n\nThe remaining currently costed mature-team capacity totals up to approximately £277,224 per full year: Solution Architect / Technical Lead, Infuse QA, fractional Azure DevOps, Dynamics Developer, fractional Cloud Infrastructure and fractional IAM. These lines remain in the high-water funding ceiling until Digital and IT confirms which are dedicated, shared, existing, externally sourced or attributable to another programme. They are therefore visible BAU risk, but not assumed permanent Student Hub posts. Product Owner remains Mark Peace from existing workload and the IT Delivery Manager remains an existing-capacity assumption.\n\nThe Hub operating-cost model now sits explicitly with 4.1.2. Paid student visioning and co-design is treated as an annual £15,000 product capability across mobilisation and BAU. Azure, environments and platform costs ramp £50,000 / £75,000 / £100,000 across the three mobilisation years and retain a £100,000 BAU high-water allowance. A separate student-facing AI inference, retrieval and token-consumption planning allowance is introduced at £50,000 / £75,000 / £100,000, also retaining £100,000 as a BAU high-water allowance. This runtime AI budget is distinct from the £90,000 annual Devin/Cognition engineering-productivity allowance in 4.1.3 and must be validated with Jon Ward and James Costerton using an explicit demand and unit-economics model.\n\nOn this revised high-water basis, the current Digital Student Experience Hub profile is approximately £638,720 in 2026/27, £924,080 in 2027/28 and £974,080 in 2028/29: £2,536,880 across mobilisation. This remains within the £3.0m strategic envelope and leaves £463,120 unallocated headroom. The current worst-case recurrent exposure is approximately £906,080 per year before the enduring 4.1.1 knowledge/content operating model: £601,080 mature-team staffing and specialist capacity, £90,000 agentic development, £100,000 Azure/platform, £100,000 student-facing AI consumption and £15,000 recurring paid student co-design. That £906,080 remains a risk ceiling, not a settled BAU budget; the permanent-post component currently identified within it is £323,856 per year, while £277,224 of mature-team specialist/service capacity is deliberately still open to reduction or alternative sourcing.",
+  "fundingEnvelope": {
+    "status": "Current high-water working baseline pending Digital and IT phasing, sourcing, AI-consumption and cross-Hub attribution validation",
+    "source": "Digital and IT mature-team estimate shared by Jon Ward on 3-4 September 2026, subsequent clarification from Jon Ward and James Costerton, and 4 September product-operating-cost refinement",
+    "itReportedGrossMatureTeam": {
+      "monthlyCost": 56842,
+      "twelveMonthCost": 682108,
+      "eighteenMonthCost": 1023162,
+      "twentyFourMonthCost": 1364216,
+      "thirtySixMonthCost": 2046324,
+      "note": "These are the totals shown in the Digital and IT working sheet and include the Product Owner resource. Individual displayed monthly lines are rounded and do not reproduce every longer-period total exactly."
+    },
+    "knownExistingOrNonCash": [
+      "Mark Peace provides Product Owner leadership from existing workload; no incremental Student Hub cash ask is carried for the Product Owner line.",
+      "An IT Delivery Manager is required but Digital and IT currently expects to provide this from existing capacity; no new cash is included until advised otherwise.",
+      "Approximately 0.2 FTE Business Analysis remains an existing or seconded protected-capacity assumption during the main discovery period."
+    ],
+    "permanentCore": {
+      "fte": 4.0,
+      "fullYearRunRate": 323856,
+      "roles": [
+        "Product Manager",
+        "Backend Engineer",
+        "Full-Stack Developer",
+        "UX/UI Designer"
+      ],
+      "basis": "Permanent Digital and IT posts from the outset, mobilisation-funded to June 2029 and recurrent from July 2029. Product Manager allocation with the Staff Digital Hub remains to be agreed."
+    },
+    "unresolvedSpecialistAndServiceCapacity": {
+      "fullYearHighWaterRunRate": 277224,
+      "roles": [
+        "Solution Architect / Technical Lead",
+        "QA Engineer through Infuse",
+        "Azure DevOps Engineer",
+        "Dynamics Developer",
+        "Infrastructure Engineer (Cloud)",
+        "IAM Engineer (Cloud)"
+      ],
+      "basis": "Held in the funding ceiling until Digital and IT confirms dedicated, shared, existing, external or alternative-programme sourcing."
+    },
+    "currentWorstCaseIncrementalStaffing": {
+      "monthlyCost": 50090,
+      "yearOneEightMonthCost": 400720,
+      "fullYearRunRate": 601080,
+      "basis": "All costed Digital and IT roles except Product Owner are held as Student Hub cash until sharing, existing-capacity or alternative-programme funding is confirmed."
+    },
+    "sandwichYearPlacement": {
+      "yearTwo": 35000,
+      "yearThree": 35000,
+      "purpose": "One supervised Junior Full-Stack Engineer placement per year as additional developmental capacity and a student-to-digital-talent pipeline test."
+    },
+    "otherCosts": {
+      "agenticDevelopment": {
+        "yearOne": 90000,
+        "yearTwo": 90000,
+        "yearThree": 90000,
+        "bauAnnualHighWater": 90000,
+        "note": "Dedicated Devin/Cognition engineering-productivity planning allowance; separate from Infuse QA and student-facing AI inference."
+      },
+      "azurePlatform": {
+        "yearOne": 50000,
+        "yearTwo": 75000,
+        "yearThree": 100000,
+        "bauAnnualHighWater": 100000,
+        "note": "Explicit ramp now held in 4.1.2 rather than a Year One amount plus later 4.1.3 holding provision."
+      },
+      "studentFacingAiRuntime": {
+        "yearOne": 50000,
+        "yearTwo": 75000,
+        "yearThree": 100000,
+        "bauAnnualHighWater": 100000,
+        "note": "Provisional inference, retrieval and model-service consumption envelope. Requires Jon Ward / James Costerton validation from expected demand and unit economics."
+      },
+      "studentVisioningAndCodesign": {
+        "yearOne": 15000,
+        "yearTwo": 15000,
+        "yearThree": 15000,
+        "bauAnnual": 15000,
+        "note": "Recurring paid student product-partnership envelope, not a Year One-only discovery cost."
+      },
+      "knowledgeAndContentDelivery": {
+        "yearOne": 33000,
+        "yearTwo": 33000,
+        "yearThree": 33000,
+        "note": "Held under 4.1.1. Enduring scale remains TBC from discovery and live operating evidence."
+      }
+    },
+    "hubTotal": {
+      "yearOne": 638720,
+      "yearTwo": 924080,
+      "yearThree": 974080,
+      "threeYearTotal": 2536880,
+      "strategicEnvelope": 3000000,
+      "remainingHeadroom": 463120
+    },
+    "worstCaseBauRunRate": {
+      "permanentCoreStaffing": 323856,
+      "unresolvedSpecialistAndServiceCapacity": 277224,
+      "staffingAndSpecialistCapacity": 601080,
+      "agenticDevelopment": 90000,
+      "azurePlatform": 100000,
+      "studentFacingAiRuntime": 100000,
+      "paidStudentCodesign": 15000,
+      "knownTotalBeforeKnowledgeContent": 906080,
+      "note": "Risk ceiling only. The permanent core is explicit; specialist/service capacity and cross-Hub allocations remain expected reduction opportunities. Enduring 4.1.1 knowledge/content operations remain additional TBC exposure."
+    }
+  },
+  "operatingCostModel": {
+    "title": "Enduring product workforce commitments",
+    "summary": "Separate the permanent Digital and IT product core from the remaining high-water specialist and service capacity so the recurrent liability has a clear workforce meaning.",
+    "newInvestment": [
+      {
+        "id": "4.1.3-bau-permanent-product-core",
+        "item": "BAU permanent four-post Digital and IT product core",
+        "category": "digital product staffing capacity",
+        "fte": 4.0,
+        "amount": 323856,
+        "currency": "GBP",
+        "bauLiability": true,
+        "estimatedCost": "£323,856 annual constant-price run-rate from July 2029 for the Product Manager (£95,568), Backend Engineer (£81,024), Full-Stack Developer (£81,024) and UX/UI Designer (£66,240). Product Manager cost allocation with the Staff Digital Hub remains to be settled.",
+        "owner": "Digital and IT",
+        "periodNeeded": "July 2029 onward",
+        "decisionNeededBy": "Before recruitment terms are fixed and before 2029/30 recurrent budgets are set",
+        "fundingRoute": "Mobilisation-funded to June 2029, then recurrent Digital and IT establishment with cross-Hub allocation where appropriate",
+        "fundingStatus": "Planned permanent establishment; recurrent funding route and Product Manager allocation to confirm",
+        "confidence": "current workforce planning assumption",
+        "rationale": "Makes the enduring institutional product capability explicit rather than representing all mature-team capacity as temporary while simultaneously carrying a recurrent staffing liability.",
+        "riskIfMissing": "King’s builds a strategically enduring product through temporary labour and reaches the end of mobilisation with no stable team to operate and evolve it."
+      },
+      {
+        "id": "4.1.3-bau-specialist-service-high-water",
+        "item": "BAU high-water specialist and service capacity",
+        "category": "digital specialist and service capacity",
+        "amount": 277224,
+        "currency": "GBP",
+        "bauLiability": true,
+        "estimatedCost": "£277,224 annual maximum from the currently costed Solution Architect / Technical Lead, Infuse QA, Azure DevOps, Dynamics Developer, Cloud Infrastructure and IAM lines. This is deliberately not represented as six permanent Student Hub appointments.",
+        "owner": "Digital and IT with Student Hub sponsor and Finance",
+        "periodNeeded": "July 2029 onward",
+        "decisionNeededBy": "Before 2029/30 recurrent budgets and sourcing arrangements are fixed",
+        "fundingRoute": "TBC across Digital and IT standing services, external contracts, shared Staff Hub capacity and Student Hub recurrent funding",
+        "fundingStatus": "Worst-case recurrent risk envelope; sourcing and attribution unresolved",
+        "confidence": "high-water risk estimate",
+        "rationale": "Keeps the maximum currently visible specialist/service exposure explicit while preserving the expectation that shared, existing, external or out-of-scope routes will reduce the Student Hub liability.",
+        "riskIfMissing": "Specialist capacity may be assumed away in BAU planning before Digital and IT has identified a credible enduring route."
+      }
+    ],
+    "enablingConditions": [
+      {
+        "condition": "Confirm with Digital and IT / HR that Product Manager, Backend Engineer, Full-Stack Developer and UX/UI Designer can be created as permanent Digital and IT posts from the outset, with mobilisation funding through June 2029 and an explicit recurrent destination from July 2029.",
+        "owner": "James Costerton / Jon Ward with Mark Peace, HR and Finance",
+        "decisionNeededBy": "Before recruitment begins",
+        "confidence": "current planning assumption requiring workforce confirmation",
+        "riskIfMissing": "The programme may recruit its enduring core on artificially temporary terms and recreate the staffing cliff edge the mobilisation model is intended to avoid."
+      },
+      {
+        "condition": "For the remaining £277,224 annual high-water specialist/service capacity, classify each line as dedicated permanent capacity, existing protected service, shared new capacity, external service or out-of-scope programme cost before recurrent budgets are fixed.",
+        "owner": "Digital and IT with Mark Peace and Finance",
+        "decisionNeededBy": "During mobilisation, with an initial classification before final business-case submission",
+        "confidence": "open sourcing and attribution question",
+        "riskIfMissing": "A prudent high-water allowance may harden into an opaque BAU cost without a defensible operating model."
+      }
+    ]
+  },
+  "supersededResourceAskIds": [
+    "4.1.3-y2-y3-platform-high-water-hold",
+    "4.1.3-bau-platform-high-water",
+    "4.1.3-bau-worst-case-staffing"
+  ]
+}

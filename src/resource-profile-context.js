@@ -6,25 +6,71 @@ import {
   sharedResourceSummary
 } from './shared-resource-utils.js';
 
+function resourceLabelForAsk(ask, fallback) {
+  return ask?.label || ask?.item || ask?.role || ask?.condition || ask?.need || fallback;
+}
+
+function operatingCostStepsForDeliverable(deliverable) {
+  const model = deliverable?.operatingCostModel;
+  if (!model) return [];
+
+  const stepId = `${deliverable.id}-operating-cost-model`;
+  const withAskType = (ask, askType, index) => ({
+    ...ask,
+    id: ask.id || `${stepId}-${askType}-${index + 1}`,
+    askType,
+    label: resourceLabelForAsk(ask, askType === 'new-investment' ? 'Operating investment' : 'Operating condition'),
+    stepId,
+    periodNeeded: ask.periodNeeded || '2026/27 onward',
+    owner: ask.owner || '',
+    rationale: ask.rationale || ask.contribution || '',
+    riskIfMissing: ask.riskIfMissing || ''
+  });
+
+  const newInvestment = (model.newInvestment || []).map((ask, index) => withAskType(ask, 'new-investment', index));
+  const existingCapacity = (model.existingCapacity || []).map((ask, index) => withAskType(ask, 'existing-capacity', index));
+  const enablingConditions = (model.enablingConditions || []).map((ask, index) => withAskType(ask, 'enabling-condition', index));
+
+  if (!newInvestment.length && !existingCapacity.length && !enablingConditions.length) return [];
+
+  return [{
+    id: stepId,
+    title: model.title || 'Recurring product operating costs',
+    summary: model.summary || '',
+    period: model.period || 'jul-dec-2026',
+    resources: { existingCapacity, newInvestment, enablingConditions },
+    contextId: deliverable.id,
+    contextTitle: deliverable.title,
+    resourceOnly: true
+  }];
+}
+
+function resourceStepsForDeliverable(deliverable) {
+  const superseded = new Set(deliverable?.supersededResourceAskIds || []);
+  const authored = (deliverable?.steps || []).map((step) => ({
+    ...step,
+    resources: step.resources ? {
+      ...step.resources,
+      existingCapacity: (step.resources.existingCapacity || []).filter((ask) => !superseded.has(ask.id)),
+      newInvestment: (step.resources.newInvestment || []).filter((ask) => !superseded.has(ask.id)),
+      enablingConditions: (step.resources.enablingConditions || []).filter((ask) => !superseded.has(ask.id))
+    } : step.resources,
+    contextId: deliverable.id,
+    contextTitle: deliverable.title
+  }));
+
+  return [...authored, ...operatingCostStepsForDeliverable(deliverable)];
+}
+
 export function stepsForResourceContext(context) {
   if (!context?.item) return [];
 
   if (context.type === 'deliverable') {
-    return (context.item.steps || []).map((step) => ({
-      ...step,
-      contextId: context.item.id,
-      contextTitle: context.item.title
-    }));
+    return resourceStepsForDeliverable(context.item);
   }
 
   if (context.type === 'project') {
-    return (context.item.deliverables || []).flatMap((deliverable) =>
-      (deliverable.steps || []).map((step) => ({
-        ...step,
-        contextId: deliverable.id,
-        contextTitle: deliverable.title
-      }))
-    );
+    return (context.item.deliverables || []).flatMap(resourceStepsForDeliverable);
   }
 
   return [];
