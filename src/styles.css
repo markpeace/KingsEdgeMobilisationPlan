@@ -66,7 +66,6 @@
 }
 
 .section-heading h2,
-.sidebars-preview h2,
 .panel h2 {
   font-family: var(--font-brand);
   font-size: clamp(1.5rem, 2.5vw, 2.45rem);
@@ -77,7 +76,6 @@
 }
 
 .component-card p,
-.dependency-card p,
 .compact-list {
   color: var(--muted);
   line-height: 1.4;
@@ -93,8 +91,7 @@
   transition: background 150ms ease, color 150ms ease, border-color 150ms ease;
 }
 
-.component-card h3,
-.dependency-card h3 {
+.component-card h3 {
   margin: 0.75rem 0 0.5rem;
   color: var(--ink);
   font-family: var(--font-body);
@@ -102,49 +99,6 @@
   font-weight: 700;
   line-height: 1.15;
   letter-spacing: -0.01em;
-}
-
-.sidebars-preview {
-  margin-top: 2rem;
-  border-top: 6px solid var(--accent);
-  padding-top: 1rem;
-}
-
-.dependency-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1rem;
-}
-
-.dependency-grid.large {
-  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-}
-
-.dependency-card {
-  border-radius: 0;
-  padding: 1.25rem;
-}
-
-.dependency-card ul,
-.dependency-list {
-  padding-left: 1.1rem;
-}
-
-.secondary-button {
-  border: 2px solid var(--ink);
-  border-radius: 0;
-  padding: 0.8rem 1rem;
-  background: #ffffff;
-  color: var(--ink);
-  font: inherit;
-  font-weight: 700;
-  cursor: pointer;
-}
-
-.secondary-button:hover {
-  border-color: var(--accent);
-  background: var(--accent);
-  color: #ffffff;
 }
 
 .back-link {
@@ -175,14 +129,6 @@
   gap: 0.75rem;
 }
 
-.dependency-list li {
-  margin-bottom: 0.9rem;
-}
-
-.dependency-list p {
-  margin: 0.3rem 0 0;
-}
-
 .link-list {
   display: flex;
   flex-wrap: wrap;
@@ -211,7 +157,6 @@
 }
 
 @media (max-width: 760px) {
-  .dependency-grid,
   .detail-grid,
   .component-grid {
     grid-template-columns: 1fr;
