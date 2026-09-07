@@ -10,39 +10,69 @@ function RefLinks({ ids }) {
   return <span className="ask-refs" aria-label="Related deliverables">{ids.map((id) => <a key={id} href={deliverableHref(id)}>{id}</a>)}</span>;
 }
 
+function UserStories({ stories }) {
+  return <ul className="investment-user-stories">{stories.map((story) => <li key={`${story.label}-${story.text}`}><strong>{story.label}:</strong> “{story.text}”</li>)}</ul>;
+}
+
 const corePackages = [
   {
-    title: 'Student purpose, skills and recognition',
+    title: 'Student Purpose, Skills and Educational Recognition',
     refs: ['2.2.1', '2.1.3', '2.4.3'],
-    change: 'Students have a clearer way to connect their choices, skills and experiences across their time at King’s, and a more useful record of what they have developed. Course teams have a shared way to make skills visible while retaining disciplinary difference.',
-    yearOne: 'Test the purpose, shared skills and recognition approaches with students and course teams; decide what should be adopted or changed; and prepare a small group of trailblazers for the next phase.',
+    northStar: 'Every student can intentionally shape their development, understand and evidence the capabilities they are building through their whole King’s experience, and leave with a richer, trusted account of what they know, can do and contribute.',
+    stories: [
+      { label: 'Student', text: 'I can explore what matters to me without needing a fixed career destination, and use that evolving sense of purpose to make more intentional choices at King’s.' },
+      { label: 'Student', text: 'I can recognise the capabilities I am developing across my course and wider experience, understand the evidence behind them and decide what I want to strengthen next.' },
+      { label: 'Student / graduate', text: 'I can leave with a richer account of my learning that makes clear what King’s certifies or recognises, what I can evidence and what I claim about myself.' },
+      { label: 'Programme team / academic', text: 'I can make the distinctive capabilities of my discipline more visible using a shared language without flattening disciplinary difference.' }
+    ],
+    yearOne: 'By the end of Year 1, King’s has testable institutional propositions for purpose and self-direction, skills architecture and trusted recognition; an adopt / adapt / reconsider decision on the skills architecture; and a bounded set of deep trailblazers ready for 2027/28.',
     yearOneCost: '£53k',
     threeYearCost: '£252k',
     ongoing: 'c.£9k p.a. + costs to confirm'
   },
   {
-    title: 'Experiential learning in the curriculum',
+    title: 'Experiential Learning in the Curriculum',
     refs: ['2.1.2', '2.1.4', '2.2.3'],
-    change: 'King’s has a common approach to experiential learning and practical routes for programmes to add or strengthen it. Students on more courses can access projects, placements and other applied learning through or alongside the curriculum.',
-    yearOne: 'Agree the King’s model, map current provision, establish the sandwich-year policy route, validate a shared 15-credit capstone and identify the first programmes where implementation support is needed.',
+    northStar: 'Every student has meaningful access to purposeful experiential learning through or alongside their course, with King’s able to assure quality and inclusion, target growth where provision is weak, and reuse strong academic, regulatory and delivery models.',
+    stories: [
+      { label: 'Student', text: 'I can expect meaningful opportunities to learn through experience as part of a King’s education, not only if I happen to choose a course with established local provision.' },
+      { label: 'Course team', text: 'I can see where experiential learning is strong or weak and get practical support to strengthen it.' },
+      { label: 'Academic / educator', text: 'I have a clear King’s account of good experiential learning while retaining room for disciplinary difference.' },
+      { label: 'Professional staff / governance', text: 'We have reusable policy, validation and administrative routes for sandwich years and near-curriculum learning.' }
+    ],
+    yearOne: 'By the end of Year 1, King’s has an agreed experiential-learning North Star and entitlement direction, an initial curriculum baseline and growth priorities, a ratified sandwich-year policy and regulatory model, a validated shared 15-credit Level 6 capstone, and a sequenced implementation portfolio.',
     yearOneCost: '£58.8k',
     threeYearCost: '£341k',
     ongoing: 'c.£9k p.a. + costs to confirm'
   },
   {
-    title: 'Beyond-course opportunities and participation',
+    title: 'Beyond-Course Opportunity and Participation',
     refs: ['2.2.2', '2.2.4', '2.3.1', '2.3.2', '2.3.4'],
-    change: 'Students can find more opportunities beyond their course through a common shopfront, and King’s can commission new provision where gaps are identified. Participation data shows who is and is not taking part, so access can be improved and investment targeted.',
-    yearOne: 'Create the live participation dashboard and common shopfront requirements; commission a £150k opportunity portfolio designed to reach at least 2,500 students; build Student Life personas and participation principles; and define the partnership model needed for later scale.',
+    northStar: 'Every student can see and access a coherent, inclusive ecology of meaningful opportunity beyond the course, whatever their pattern of life and study, while King’s actively stewards that ecology using evidence, partnerships, commissioning and a shared student-year rhythm.',
+    stories: [
+      { label: 'Student', text: 'I can see a richer range of Beyond Course opportunities in one place and find things that fit my interests and circumstances.' },
+      { label: 'Student', text: 'My pattern of life and study is considered in how opportunities are designed, and practical barriers are less likely to determine whether I can participate.' },
+      { label: 'Opportunity provider', text: 'I can see who my provision reaches, where participation is unequal and what difference it appears to make.' },
+      { label: 'External partner / alumnus', text: 'I have clearer routes to create meaningful opportunities with King’s and encounter less fragmented brokerage and administration.' },
+      { label: 'The University', text: 'We can see the shape, reach, equity and emerging impact of our Beyond Course investment and make deliberate commissioning decisions.' }
+    ],
+    yearOne: 'By the end of Year 1, King’s has a live evidence base and common shopfront; a £150k commissioned opportunity portfolio intended to reach at least 2,500 distinct students and provide 26.5–33.5k student-hours; Student Life personas and participation prototypes; a shared student-year rhythm; and costed partnership and access options for 2027/28.',
     yearOneCost: '£278.5k',
     threeYearCost: '£1.8324m',
     ongoing: 'c.£647k p.a. + costs to confirm'
   },
   {
-    title: 'Graduate futures, outcomes and value',
+    title: 'Graduate Futures Intelligence and Value',
     refs: ['2.1.1', '2.4.1', '2.4.2', '2.4.4'],
-    change: 'Course teams receive usable evidence about graduate outcomes and graduate value and can act on it. Students get clearer evidence and language to describe the value of their course and wider experience. King’s can target Graduate Outcomes response work and test which external messages are supported by evidence.',
-    yearOne: 'Build the first course-level Graduate Futures Intelligence Pack and graduate premium exemplars; establish an external validation approach; and run targeted Graduate Outcomes response optimisation.',
+    northStar: 'King’s continuously understands, strengthens, proves and activates the distinctive graduate value of its education, using course-level evidence, external challenge and outcomes intelligence both to improve the offer and to make credible claims to students and the wider market.',
+    stories: [
+      { label: 'Student', text: 'I can recognise and articulate more of the value I am gaining from my course, wider experiences, skills and ambitions.' },
+      { label: 'Course team', text: 'I have trusted evidence to explain the graduate futures value of my course and take proportionate action to strengthen it.' },
+      { label: 'Employer / alumnus / external partner', text: 'There is a structured way for my insight to challenge and strengthen what King’s offers students.' },
+      { label: 'Recruitment / reputation colleague', text: 'I have credible, reusable evidence and content that I can activate with different audiences.' },
+      { label: 'The University', text: 'We can distinguish what we believe about the value of a King’s education from what the evidence and external challenge actually support.' }
+    ],
+    yearOne: 'By the end of Year 1, King’s has the first Graduate Futures evidence-and-action model, publication-ready graduate-premium exemplars and rich media, a common external-validation model, targeted Graduate Outcomes response optimisation, a strategic survey and reputation intelligence baseline, and flexible strategic partnership and profile capacity.',
     yearOneCost: '£169.9k',
     threeYearCost: '£764.8k',
     ongoing: 'c.£169.5k p.a. + costs to confirm'
@@ -95,7 +125,7 @@ function InvestmentCase() {
       <section className="hero investment-hero" aria-labelledby="investment-title">
         <p className="eyebrow">King’s Edge</p>
         <h1 id="investment-title">Investment case</h1>
-        <p className="investment-hero-copy">The recommended Core case is £560.2k in 2026/27 and £3.1902m over three years. It funds four areas of work. The table below sets out what changes if they are funded, what Year 1 pays for, and the resulting cost.</p>
+        <p className="investment-hero-copy">The recommended Core case is £560.2k in 2026/27 and £3.1902m over three years. For each investment area, the table below sets out the intended end state, what that means for students and staff, what should be in place by the end of Year 1, and the cost.</p>
         <div className="investment-metrics" aria-label="Recommended investment headline figures">
           <article><strong>£560.2k</strong><span>2026/27 investment</span></article>
           <article><strong>£3.1902m</strong><span>Three-year investment</span></article>
@@ -108,24 +138,28 @@ function InvestmentCase() {
         <div className="investment-section-heading">
           <p className="eyebrow">Core case</p>
           <h2>What the investment changes</h2>
-          <p>Core is the recommended planning case. Each row describes the change being funded, the first-year work required to get there, and the associated cost.</p>
+          <p>The North Star gives the intended end state. The user stories describe the practical change for the people who experience or deliver it. The Year 1 column shows the first gains the investment should leave in place.</p>
         </div>
 
         <div className="ds-table-wrap investment-table-wrap">
           <table className="ds-table investment-table">
             <thead>
               <tr>
-                <th>Investment area</th>
-                <th>What changes</th>
-                <th>2026/27 investment and work</th>
+                <th>Investment area and North Star</th>
+                <th>What changes for people</th>
+                <th>2026/27 early gains</th>
                 <th>Three-year cost</th>
                 <th>Indicative ongoing annual cost</th>
               </tr>
             </thead>
             <tbody>
               {corePackages.map((item) => <tr key={item.title}>
-                <td className="investment-package-cell"><h3>{item.title}</h3><RefLinks ids={item.refs} /></td>
-                <td>{item.change}</td>
+                <td className="investment-package-cell">
+                  <h3>{item.title}</h3>
+                  <RefLinks ids={item.refs} />
+                  <div className="investment-north-star"><span>North Star</span><p>{item.northStar}</p></div>
+                </td>
+                <td><UserStories stories={item.stories} /></td>
                 <td><strong className="year-one-price">{item.yearOneCost}</strong><p>{item.yearOne}</p></td>
                 <td className="investment-price-cell"><strong>{item.threeYearCost}</strong></td>
                 <td className="investment-ongoing-cell"><strong>{item.ongoing}</strong></td>
