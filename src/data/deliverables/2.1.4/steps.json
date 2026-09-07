@@ -79,7 +79,7 @@
       "id": "2.1.4-step-3",
       "title": "Agree the 2027/28 curriculum growth and assurance plan",
       "period": "jan-jun-2027:c",
-      "summary": "Combine the initial curriculum baseline with the ratified direction from 2.1.2 to select the first targeted implementation cohort for 2027/28. Define the support model, assurance expectations, evidence to collect and how the £75,000 Year 2 implementation envelope should be deployed. Preserve flexibility to fund programme redesign, academic development, curriculum prototyping, small delivery costs or other proportionate interventions where these are the most effective response.",
+      "summary": "Combine the initial curriculum baseline with the ratified direction from 2.1.2 to select the first targeted implementation cohort for 2027/28. Define the support model, assurance expectations, evidence to collect and how the £40,000 Year 2 core implementation envelope should be deployed. Preserve flexibility to fund programme redesign, academic development, curriculum prototyping, small delivery costs or other proportionate interventions where these are the most effective response.",
       "dependsOn": ["2.1.4-step-2", "2.1.2-step-2"],
       "outputs": [
         {
@@ -125,16 +125,16 @@
             "id": "2.1.4-y2-curriculum-implementation",
             "item": "Curriculum experiential-learning implementation and innovation fund",
             "category": "curriculum development and implementation",
-            "amount": 75000,
+            "amount": 40000,
             "currency": "GBP",
-            "yearlyProfile": [{"academicYear": "2027/28", "amount": 75000, "note": "Evidence-led portfolio envelope for targeted programme or faculty curriculum interventions."}],
-            "estimatedCost": "£75,000 Year 2 planning envelope.",
+            "yearlyProfile": [{"academicYear": "2027/28", "amount": 40000, "note": "Core evidence-led portfolio envelope for tightly targeted programme or faculty curriculum interventions."}],
+            "estimatedCost": "£40,000 Year 2 core planning envelope.",
             "periodNeeded": "2027/28",
             "decisionNeededBy": "Summer 2027",
             "fundingRoute": "King's Edge mobilisation investment request",
-            "fundingStatus": "planning envelope, subject to Year 1 prioritisation",
+            "fundingStatus": "core planning envelope, subject to Year 1 prioritisation",
             "confidence": "indicative",
-            "rationale": "Allows the programme to move from diagnosis to real curriculum change while preserving flexibility over the exact mix of interventions until the Year 1 baseline identifies where investment will have the greatest value.",
+            "rationale": "Provides enough central investment to move from diagnosis to a bounded set of real curriculum changes while relying primarily on normal curriculum and faculty capacity. Any larger implementation portfolio should be an explicit enhanced investment decision supported by Year 1 evidence.",
             "riskIfMissing": "The programme could establish a strong North Star and diagnose gaps without having a practical means to help programmes act on them."
           },
           {
@@ -159,7 +159,7 @@
       "id": "2.1.4-step-5",
       "title": "Scale evidence-led curriculum growth and settle the enduring assurance route",
       "period": {"start": "jul-dec-2028:a", "end": "jan-jun-2029:c"},
-      "summary": "Use Year 2 implementation evidence and the continuing curriculum baseline to broaden support to a second, larger portfolio of priority programmes or faculties. Concentrate the £150,000 Year 3 implementation envelope on approaches that have demonstrated educational value or address material access gaps, while refining the enduring route through which curriculum review and enhancement will continue to identify, support and assure experiential learning after mobilisation.",
+      "summary": "Use Year 2 implementation evidence and the continuing curriculum baseline to broaden support to a second, still deliberately targeted portfolio of priority programmes or faculties. Concentrate the £60,000 Year 3 core implementation envelope on approaches that have demonstrated educational value or address material access gaps, while refining the enduring route through which curriculum review and enhancement will continue to identify, support and assure experiential learning after mobilisation.",
       "dependsOn": ["2.1.4-step-4", "2.1.2-step-4"],
       "outputs": [
         {
@@ -177,16 +177,16 @@
             "id": "2.1.4-y3-curriculum-implementation",
             "item": "Scaled curriculum experiential-learning implementation and innovation fund",
             "category": "curriculum development and implementation",
-            "amount": 150000,
+            "amount": 60000,
             "currency": "GBP",
-            "yearlyProfile": [{"academicYear": "2028/29", "amount": 150000, "note": "Scaled evidence-led portfolio envelope, to be recalibrated using Year 2 implementation evidence."}],
-            "estimatedCost": "£150,000 Year 3 planning envelope.",
+            "yearlyProfile": [{"academicYear": "2028/29", "amount": 60000, "note": "Core evidence-led portfolio envelope, to be recalibrated using Year 2 implementation evidence."}],
+            "estimatedCost": "£60,000 Year 3 core planning envelope.",
             "periodNeeded": "2028/29",
             "decisionNeededBy": "Summer 2028",
             "fundingRoute": "King's Edge mobilisation investment request",
-            "fundingStatus": "planning envelope, subject to implementation evidence",
+            "fundingStatus": "core planning envelope, subject to implementation evidence",
             "confidence": "indicative",
-            "rationale": "Provides a credible scaling shape for the business case while making the final deployment explicitly evidence-led rather than pre-allocating funding to programmes before the first implementation cycle has been evaluated.",
+            "rationale": "Supports selective scaling of approaches that have already demonstrated value without creating a large central curriculum-change fund. Any broader rollout should be funded only through an explicit enhanced case or mainstream curriculum investment.",
             "riskIfMissing": "Successful Year 2 models may remain isolated pilots and priority curriculum gaps may persist without a mechanism to support broader adoption."
           },
           {
@@ -207,7 +207,7 @@
         ],
         "enablingConditions": [
           {
-            "condition": "The Year 3 portfolio is recalibrated using Year 2 evidence rather than treating the £150,000 envelope as an automatic spending target.",
+            "condition": "The Year 3 portfolio is recalibrated using Year 2 evidence rather than treating the £60,000 core envelope as an automatic spending target.",
             "whatItUnlocks": "A credible business-case planning shape without locking King's into weak or unnecessary interventions.",
             "confidence": "planning assumption",
             "riskIfMissing": "Mobilisation funding could become input-driven rather than evidence-led."
