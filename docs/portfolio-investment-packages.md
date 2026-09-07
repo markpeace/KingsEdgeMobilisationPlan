@@ -52,6 +52,23 @@ The former £3.9282m planning case is no longer the source-plan baseline. Enhanc
 
 ---
 
+## September–December 2026 acceleration bridge
+
+The Vice-President Education & Student Success has invited near-term funding asks that would prevent priority work from dragging while the substantive mobilisation decision is completed. The proposed **£100k bridge** is deliberately limited to spend that can be deployed productively before January. It is a **timing proposal, not approval of the full Core case**, and any bridge funding should be netted off subsequently approved Year 1 budgets rather than added on top.
+
+| Amount | What we are buying | Outputs enabled before January |
+|---|---|---|
+| **£60k** | **Externally commissioned student opportunities** | • First commissioning tranche, equivalent to **40% of the current £150k Core planning assumption** for the full Year 1 Beyond-Course portfolio. The full £150k remains subject to the wider mobilisation funding decision. (**2.2.4**)<br>• Prioritised **Final-Year Career Enhancement** interventions, including projects, mentoring, placements and other deeper experiences. (**2.2.4**)<br>• Initial commissioning across **Entrepreneurship & Enterprise**, **Belonging & Connection**, and **Service & Community-Engaged Experience**. (**2.2.4**) |
+| **£15k** | **Freelance video production** | • Produce the first small set of **Graduate Premium video/media exemplars** and establish the production approach. (**2.4.1**)<br>• Produce and test **promotional video and related assets to support Graduate Outcomes survey response**, focused on priority cohorts. (**2.4.4**) |
+| **£25k** | **Paid student time through King’s Talent** | • **Power BI / Microsoft Fabric engineering and analytics** for the Graduate Futures Intelligence Pack, Graduate Outcomes optimisation exercise and live Beyond Course dashboard. (**2.1.1, 2.4.4, 2.3.1**)<br>• Prototype **LLM-led course skills interrogation tooling**, testing curriculum evidence against the candidate skills architecture. (**2.1.3**)<br>• **Student insight, ideation and co-design** for Student Life personas and the Digital Student Experience Hub, including early visioning and prototype input. (**2.3.2, 4.1.2**) |
+| **£100k** | **Total acceleration ask** | Creates visible student-facing delivery, begins the Graduate Premium / Graduate Outcomes media work and keeps the highest-value technical, analytical and co-design activity moving until the substantive mobilisation decision. |
+
+The £60k opportunity tranche should therefore be understood only as an **accelerated first tranche against a current planning assumption**. It does not imply that the £150k full-Year-1 commissioning envelope has already been approved.
+
+The student-time line is grouped here as an operational purchasing route. Any element used for **4.1.2 Digital Student Experience Hub co-design remains attributable to the separate Digital Student Experience Hub investment**, preserving the established accounting boundary.
+
+---
+
 ## What the options mean for students: indicative opportunity modelling
 
 The most directly quantifiable difference between the options is the **Beyond-Course Opportunity Commissioning and Growth** portfolio. The Core source plan already models three things together:
@@ -246,6 +263,7 @@ For dependency and whole-system planning only, **Core King’s Edge plus the cur
 - Digital product implementation for purpose, skills and recognition sits in the **separate Digital Student Experience Hub** and is not rebilled into King’s Edge.
 - Partnership infrastructure is costed once in Beyond Course even where it enables curricular experiential learning.
 - The Strategic Partnerships, Profile & External Engagement Fund remains costed once in 2.4.4 and can be deployed across King’s Edge priorities.
+- Any approved **£100k September–December acceleration bridge is a timing mechanism, not an additional layer of programme funding**. Spend must be reconciled against later approved Year 1 budgets, and any 4.1.2 Hub co-design spend remains attributed to the separate Digital Student Experience Hub investment.
 - Economy / Core / Enhanced BAU figures are planning exposures, not approved recurrent budgets. TBC operating requirements can move them in either direction.
 
 ---
