@@ -96,7 +96,7 @@ Allowed values:
 - `resource-confirmation`
 - `approved-to-mobilise`
 
-Deliverables default to `proposition-development` unless explicitly moved to a later `planningStatus`. `2.1.3`, `2.2.1` and `2.4.3` are now at **Resource planning** following the 1 September 2026 delivery-lead sense-check and the 3 September 2026 package resource-planning pass. Their delivery routes and indicative mobilisation envelopes are authored, but no Board or resource approval is implied. `2.1.1` is conservatively at Plan validation.
+Deliverables default to `proposition-development` unless explicitly moved to a later `planningStatus`. `2.1.3`, `2.2.1` and `2.4.3` are at **Resource planning** following the 1 September 2026 delivery-lead sense-check and subsequent resource-planning passes. Their delivery routes and indicative mobilisation envelopes are authored, but no Board or resource approval is implied. `2.1.1` is conservatively at Plan validation.
 
 The canonical work, gate and UX behaviour for each stage are documented in `docs/deliverable-gates.md` and centralised in `src/planning-status.js`.
 
@@ -125,15 +125,50 @@ Substantive enduring digital implementation for all three should be carried thro
 
 ### Package 4 resource-planning basis
 
-The current Package 4 business-case planning shape is **£53k in 2026/27, £169.5k in 2027/28 and £119.5k in 2028/29: £342k across mobilisation**.
+**Settled 7 September 2026:** the source-plan baseline is now the recommended **Core** case. Package 4 is **£53k in 2026/27, £119.5k in 2027/28 and £79.5k in 2028/29: £252k across mobilisation**.
 
-Year 1 direct investment is £42.5k: £22.5k protected practitioner discovery/backfill for purpose; one £7.5k paid student discovery/co-design envelope held once for the connected package; £7.5k bounded student technical prototyping for the skills proof of concept; and £5k trusted-record discovery/prototype testing. The package also carries £10.5k of apportioned shared funded capacity in Year 1: £5.25k Deputy Director and £5.25k Project Officer.
+Year 1 remains unchanged. Direct investment is £42.5k: £22.5k protected practitioner discovery/backfill for purpose; one £7.5k paid student discovery/co-design envelope held once for the connected package; £7.5k bounded student technical prototyping for the skills proof of concept; and £5k trusted-record discovery/prototype testing. The package also carries £10.5k of apportioned shared funded capacity in Year 1: £5.25k Deputy Director and £5.25k Project Officer.
 
-Year 2 holds £150k of direct trailblazer capability envelopes: £45k purpose, £60k skills and £45k trusted record, plus £19.5k apportioned shared capacity. Year 3 holds £100k of conditional institutionalisation envelopes: £25k purpose, £40k skills and £35k trusted record, plus £19.5k apportioned shared capacity.
+Year 2 now holds **£100k** of direct trailblazer capability: £30k purpose, £40k skills and £30k trusted record, plus £19.5k apportioned shared capacity. Year 3 holds **£60k** of conditional institutionalisation: £15k purpose, £25k skills and £20k trusted record, plus £19.5k apportioned shared capacity.
 
-The later-year direct figures are planning envelopes rather than automatic spending targets. Year 2 should be recalibrated after discovery and trailblazer selection. Year 3 should be released only against elements that survive portability testing.
+The Core case intentionally uses a deliberately bounded trailblazer portfolio and expects mainstream curriculum, Registry, student-facing services and Digital Hub routes to carry more of eventual institutionalisation. A materially larger cohort or rollout belongs in an explicit Enhanced option.
 
 There is no current Package 4 allocation from the shared analytics or programme/project-management resources. The only presently identifiable recurrent BAU liability is approximately **£9k p.a.**, the package’s 0.10 share of the permanent Deputy Director post. Enduring practitioner, curriculum/skills governance and Registry/recognition operating requirements remain TBC until mobilisation evidence shows what needs to persist.
+
+### King’s Edge Core investment rebaseline
+
+**Settled 7 September 2026:** the actual King’s Edge plan has been rebased to the recommended **Core** investment case. Economy and Enhanced are option overlays for portfolio decision-making; they are not alternative source-plan baselines.
+
+The Core rebaseline protects Year 1 discovery, evidence, live testing and the first Beyond-Course opportunity portfolio. It reduces large later-year commitments that should only be released when evidence exists.
+
+The current King’s Edge Core profile is:
+
+- **2026/27: £560.2k**
+- **2027/28: £1.2675m**
+- **2028/29: £1.3625m**
+- **Three-year mobilisation: £3.1902m**
+
+This is **£738k below** the previous £3.9282m source-plan baseline.
+
+The four Core package profiles are:
+
+- **Student Purpose, Skills and Educational Recognition:** £53k / £119.5k / £79.5k = **£252k**.
+- **Experiential Learning in the Curriculum:** £58.8k / £131.1k / £151.1k = **£341k**.
+- **Beyond-Course Opportunity and Participation:** £278.5k / £751.95k / £801.95k = **£1.8324m**.
+- **Graduate Futures Intelligence and Value:** £169.9k / £264.95k / £329.95k = **£764.8k**.
+
+The main rebaseline decisions are:
+
+- partnership infrastructure: **£400k p.a. Core assumption** in Years 2 and 3, replacing the previous £600k holding assumption;
+- curriculum experiential implementation: **£40k Year 2 / £60k Year 3**, with separate £10k annual co-design/evaluation retained;
+- Purpose / Skills / Recognition direct scale envelopes: **£100k Year 2 / £60k Year 3**;
+- Student Life activation: **£30k Year 2 / £30k Year 3**;
+- Graduate Futures activation/reputation delivery: **0.5 FTE Year 1 and 0.75 FTE Years 2 and 3**, with activation/research envelopes of **£25k / £35k / £50k**;
+- Beyond-Course opportunity commissioning remains deliberately protected at **£150k / £200k / £250k**;
+- the Strategic Partnerships, Profile & External Engagement Fund remains **£25k / £35k / £45k**, with **£45k p.a. BAU**;
+- any new **Student Opportunities Fund award pot is outside the King’s Edge ask**. Design and consolidation work remains in `2.2.2`, but awards require a separate institutional, consolidated-fund, philanthropic or other funding route.
+
+The current identifiable King’s Edge Core recurrent exposure is approximately **£834.5k p.a. plus TBC**. It includes a £400k partnership-infrastructure Core assumption, £175k enduring opportunity commissioning, the relevant Deputy Director shares and the current Graduate Futures planning proxy. It is not an approved recurrent budget.
 
 ### King’s Edge and Digital investment boundary
 
@@ -141,19 +176,32 @@ The decision-support view is held in `docs/portfolio-investment-packages.md`.
 
 **Settled:** the Digital Student Experience Hub is a separate institutional investment and must not be rolled into the headline King’s Edge funding ask. King’s Edge is the first substantive native product domain and a critical proving use case for the Hub, but the Hub has broader institutional scope and value.
 
-The current reconciled **King’s Edge mobilisation** profile excludes the Digital Hub and is **£560.2k in 2026/27, £1.604m in 2027/28 and £1.764m in 2028/29: £3.9282m across three years**.
+The current **Digital Student Experience Hub high-water profile** is:
 
-The separate **Digital Student Experience Hub** profile is **£358k in 2026/27 and £429k in each of 2027/28 and 2028/29: £1.216m currently itemised**. The 4.1.2 decision log also retains a **£3m working three-year strategic envelope** for the Hub. The difference is evidence-led headroom for later integration/platform investment, not an itemised or approved commitment.
+- **2026/27: £593.360k**
+- **2027/28: £876.296k**
+- **2028/29: £926.296k**
+- **Three-year itemised high water: £2.395952m**
 
-For dependency and whole-system planning only, the currently itemised combined profile is **£918.2k / £2.033m / £2.193m = £5.1442m across three years**. Do **not** describe this combined figure as the King’s Edge ask.
+The Hub retains a **£3m working three-year strategic envelope**, leaving **£604.048k headroom** at the current high-water itemisation. This is a ceiling and planning guardrail, not a spending target.
 
-The current identifiable recurrent exposure is approximately **£1.076m p.a. plus TBC for King’s Edge**, and **at least c.£394k p.a. plus TBC platform/run costs for the Digital Hub**. Within the King’s Edge figure, £600k p.a. is explicitly a holding assumption for the future partnership-infrastructure model and must be tested during Year 1.
+For dependency and whole-system planning only, King’s Edge Core plus the current Digital Hub high-water case is **£1.15356m / £2.143796m / £2.288796m = £5.586152m across three years**. Do **not** describe this combined figure as the King’s Edge ask.
 
-The Graduate Futures package has been reconciled to the current shared PM registry and the new 2.4.4 strategic engagement fund: its Year 1 programme/project-management share is **0.20 FTE / £13.2k**, and its package profile is now **£169.9k / £296.45k / £371.45k = approximately £837.8k across mobilisation**.
+The current recurrent exposure views are approximately **£834.5k p.a. plus TBC for King’s Edge Core** and **c.£893.296k p.a. plus TBC knowledge/content operating cost for the Digital Hub**. The Digital figure is a high-water risk ceiling rather than a settled BAU budget.
 
-**Settled:** `2.4.4 Graduate Premium Adoption & Activation` is the accounting home for the **Strategic Partnerships, Profile & External Engagement Fund**: **£25k in 2026/27, £35k in 2027/28 and £45k in 2028/29**, with a **£45k p.a. recurrent BAU liability from 2029/30**. Budget control sits with King’s Edge programme leadership and the fund may be deployed across the King’s Edge portfolio where activity advances strategic partnership development, external profile, purposeful UK/international mobility, partner hosting or reciprocal visits, networks, convening or related external engagement. It is additional to the existing 2.4.4 activation, research and survey-intervention envelopes and must not be double counted elsewhere.
+The Digital Hub’s current evidence-backed reductions and qualifications include a 50/50 Student/Staff Hub Product Manager allocation, 0.75 FTE average Solution Architecture in Year 1, and explicit treatment of the former Dynamics Developer line as a D365 / Power Platform contingency. Digital remains under active validation and was deliberately not changed by the King’s Edge Core rebaseline.
 
-Deliverable **2.3.3 is deferred**. Its former 0.10 FTE Deputy Director allocation and 0.05 / 0.10 / 0.10 FTE Project Officer allocations have been redeployed to **2.3.4** so funded shared capacity is not parked against inactive work. This produces a reconciled Beyond-Course package profile of **£278.5k / £971.95k / £1.03195m = £2.2824m**, with current identifiable BAU of approximately **£847k p.a. plus TBC**. The reallocation does not increase the coherent shared-resource envelopes.
+### Graduate Futures and external engagement
+
+The Graduate Futures package uses a Year 1 programme/project-management share of **0.20 FTE / £13.2k** and now has a Core profile of **£169.9k / £264.95k / £329.95k = £764.8k across mobilisation**.
+
+`2.4.4 Graduate Premium Engagement, Reputation and Survey Performance` remains the accounting home for the **Strategic Partnerships, Profile & External Engagement Fund**: **£25k in 2026/27, £35k in 2027/28 and £45k in 2028/29**, with a **£45k p.a. recurrent BAU planning liability from 2029/30**. Budget control sits with King’s Edge programme leadership and the fund may be deployed across the King’s Edge portfolio where activity advances strategic partnership development, external profile, purposeful UK/international mobility, partner hosting or reciprocal visits, networks, convening or related external engagement. It must not be double counted elsewhere.
+
+### Deferred 2.3.3 and shared-resource reconciliation
+
+Deliverable **2.3.3 is deferred**. Its former 0.10 FTE Deputy Director allocation and 0.05 / 0.10 / 0.10 FTE Project Officer allocations have been redeployed to **2.3.4** so funded shared capacity is not parked against inactive work.
+
+The Core rebaseline does not alter the coherent shared-resource envelopes or their allocation. The Year 1 shared-resource registry remains **£181.5k**, attributed exactly once across active King’s Edge packages.
 
 ### Planning status is different from planning maturity
 
@@ -207,7 +255,11 @@ Measures and timeline sequencing appear from Delivery design. Timeline steps rem
 
 ## Current working assumptions
 
-- Package 4 has completed a first resource-planning pass and remains at `resource-planning` pending scrutiny and plan validation. Its cash envelopes are explicitly planning assumptions, especially in Years 2 and 3.
+- **Core is now the source-plan costing baseline.** Economy and Enhanced should be expressed as explicit option overlays rather than silently changing the plan when they are presented.
+- Package 4 remains at `resource-planning` pending scrutiny and plan validation. Its later-year cash envelopes remain conditional on evidence.
+- The £400k partnership-infrastructure figure is a Core planning assumption to test in Year 1, not a settled workforce model or BAU commitment.
+- The Student Opportunities Fund award pot is outside the King’s Edge ask.
+- Digital Student Experience Hub remains a separate investment and is under active Digital and IT validation.
 - Deliverable development follows the stages in `docs/deliverable-gates.md`, keeping delivery design separate from resource planning and both separate from later approval.
 - The plan should remain senior-leadership ready: clear, concise, defensible and not over-bureaucratic.
 - Benefits should be written as realised value, not disguised outputs.
