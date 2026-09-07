@@ -6,8 +6,10 @@
   "decisionLog": [
     {
       "date": "2026-09-07",
-      "title": "Front-load Power BI and Fabric engineering in Year 1",
-      "summary": "Use a two-stage student-engineering model in 2026/27: the already-funded £4,000 six-week summer internship creates the first working prototype, followed by part-time Power BI / Microsoft Fabric engineering through December to harden the reusable data model, measures, report build, refresh process and handover. The continuation is funded from 2.1.1's existing 0.25 FTE share of the £21,000 King's Edge Analytics & Data Capability Year 1 envelope and does not increase the Core Year 1 total."
+      "type": "decision",
+      "forum": "King's Edge mobilisation planning",
+      "outcome": "Front-load Power BI and Microsoft Fabric engineering in Year 1 using a two-stage student-engineering model: the already-funded £4,000 six-week summer internship creates the first working prototype, followed by part-time Power BI / Microsoft Fabric engineering through December to harden the reusable data model, measures, report build, refresh process and handover.",
+      "notes": "The continuation is funded from 2.1.1's existing 0.25 FTE share of the £21,000 King's Edge Analytics & Data Capability Year 1 envelope and does not increase the Core Year 1 total."
     }
   ]
 }
