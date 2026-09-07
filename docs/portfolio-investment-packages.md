@@ -2,18 +2,20 @@
 
 > **Working decision-support view**  
 > **Primary audience:** Mark Peace and ESS Portfolio colleagues  
-> **Status:** Recommended Core King’s Edge investment view reconciled; Digital Student Experience Hub shown separately  
+> **Status:** Single King’s Edge investment handover combining strategic proposition, Core baseline and Economy / Core / Enhanced options; Digital Student Experience Hub shown separately  
 > **Last updated:** 7 September 2026
 
 ## Purpose
 
-This document provides a portfolio-level investment view of the King’s Edge mobilisation plan for prioritisation and investment conversations. It groups the King’s Edge deliverables into four strategic investment packages and translates the underlying plan into an accessible account of strategic intent, Year 1 transformation, benefits, mobilisation investment and likely business-as-usual liability.
+This document is the single portfolio-level investment handover for King’s Edge. It combines the strategic proposition, North Stars, user-story hypotheses, Year 1 transformations and package costs with explicit Economy / Core / Enhanced investment choices.
 
-The underlying plan has now been **rebaselined to the recommended Core case**. The previous £3.9282m three-year King’s Edge planning position should no longer be used as the current plan baseline. Economy and Enhanced variants can be presented around Core as explicit investment options, but they are not the source-plan baseline.
+**Core is the recommended case and the source-plan baseline.** Economy and Enhanced are decision-support variants around it, not alternative source plans. The underlying deliverable resource profiles remain authored on the Core basis unless an investment decision changes that baseline.
 
 The **Digital Student Experience Hub remains a separate institutional investment**. It is not part of the King’s Edge funding ask, although King’s Edge is its first substantive native product domain and depends on it for enduring digital implementation.
 
-This is a **derived decision-support view, not a new source of truth**. Deliverable scope, benefits, resources, dependencies and costs remain owned by the underlying mobilisation-plan data. When this view and the source plan diverge, the source plan wins and this document should be refreshed.
+The **Student Opportunities Fund award pot is outside all three King’s Edge asks**. King’s Edge may design and test the operating proposition, but any new award pot requires a separate institutional, consolidated-fund, philanthropic or other funding route.
+
+This is a **derived decision-support view, not a new source of truth**. Deliverable scope, benefits, resources, dependencies and Core costs remain owned by the underlying mobilisation-plan data.
 
 ---
 
@@ -34,68 +36,30 @@ The Core rebaseline deliberately protects Year 1 discovery, evidence and live te
 
 ---
 
-## Headline investment position
+## Headline investment choices
 
-### King’s Edge: recommended Core case
+| King’s Edge option | 2026/27 | 2027/28 | 2028/29 | Three-year total | Difference from Core |
+|---|---:|---:|---:|---:|---:|
+| **Economy** | **£460.2k** | **£1.006m** | **£1.076m** | **£2.5422m** | **-£648k** |
+| **Core — recommended** | **£560.2k** | **£1.2675m** | **£1.3625m** | **£3.1902m** | — |
+| **Enhanced** | **£610.2k** | **£1.764m** | **£2.129m** | **£4.5032m** | **+£1.313m** |
 
-| | 2026/27 | 2027/28 | 2028/29 | Three-year total |
-|---|---:|---:|---:|---:|
-| **King’s Edge Core mobilisation** | **£560.2k** | **£1.2675m** | **£1.3625m** | **£3.1902m** |
-
-The current **identifiable Core BAU exposure is approximately £834.5k p.a., plus TBC elements**. This is a planning exposure rather than an approved recurrent budget.
-
-The principal recurrent assumptions are:
-
-- **£400k p.a.** partnership infrastructure, now the Core planning assumption to test rather than a pre-agreed answer;
-- **£175k p.a.** enduring Beyond-Course opportunity commissioning;
-- **£72k p.a.** Beyond-Course share of the permanent Deputy Director;
-- **c.£169.5k p.a.** Graduate Futures planning proxy;
-- **c.£9k p.a.** each for Purpose / Skills / Recognition and Experiential Learning through their Deputy Director shares;
-- further enduring Student Life, curriculum-support, recognition and other operating requirements remain TBC.
-
-**Student Opportunities Fund awards are outside the King’s Edge ask.** King’s Edge will design and test the operating proposition, but any new award pot requires a separate institutional, consolidated-fund, philanthropic or other funding route.
-
-### Separate investment: Digital Student Experience Hub
-
-| | 2026/27 | 2027/28 | 2028/29 | Three-year total |
-|---|---:|---:|---:|---:|
-| **Digital Hub current high-water baseline** | **£593.360k** | **£876.296k** | **£926.296k** | **£2.395952m** |
-
-The Hub continues to carry a **£3.0m working three-year strategic investment envelope**. £2.395952m is provisionally itemised on the current high-water basis, leaving **£604.048k headroom**. This remains a separate case and is not altered by the King’s Edge Core rebaseline.
-
-The separate Digital Hub currently carries a **c.£893.296k p.a. worst-case recurrent Student Hub risk envelope before any enduring 4.1.1 knowledge/content operating cost**. It is a risk ceiling rather than a settled BAU budget.
-
-For dependency and whole-system planning only, the two investments together currently give an itemised profile of **£1.15356m in 2026/27, £2.143796m in 2027/28 and £2.288796m in 2028/29: £5.586152m across three years**. This combined figure should **not** be presented as the King’s Edge funding ask.
+The former £3.9282m planning case is no longer the source-plan baseline. Enhanced is deliberately **£575k above that former case**, so it represents additional ambition rather than simply relabelling the old budget as a high option.
 
 ---
 
-## What changed in the Core rebaseline
+## King’s Edge strategic investment grid
 
-| Investment lever | Previous plan baseline | Recommended Core baseline | Three-year reduction |
-|---|---:|---:|---:|
-| Partnership infrastructure | £600k Y2 + £600k Y3 | **£400k Y2 + £400k Y3** | **£400k** |
-| Curriculum experiential implementation | £75k Y2 + £150k Y3 | **£40k Y2 + £60k Y3** | **£125k** |
-| Purpose / Skills / Recognition direct scale envelopes | £150k Y2 + £100k Y3 | **£100k Y2 + £60k Y3** | **£90k** |
-| Student Life activation | £50k Y2 + £60k Y3 | **£30k Y2 + £30k Y3** | **£50k** |
-| Graduate Futures activation / reputation | 1.0 FTE Y2/Y3 + £50k / £75k activation | **0.75 FTE Y2/Y3 + £35k / £50k activation** | **£73k** |
-| Beyond-Course opportunity commissioning | £150k / £200k / £250k | **unchanged** | £0 |
-| Student Opportunities Fund award pot | outside quantified plan | **explicitly outside King’s Edge ask** | n/a |
-| **Total King’s Edge reduction** |  |  | **£738k** |
-
-Year 1 remains **£560.2k** because Core protects the discovery, evidence, initial opportunity supply and live testing required to make later decisions intelligently.
-
----
-
-## King’s Edge investment grid
+This is the strategic proposition that applies across all three investment options. The options change **how much breadth, depth and institutional scaling is purchased**, not the underlying North Stars.
 
 <table>
   <thead>
     <tr valign="top">
       <th valign="top">Strategic package</th>
       <th valign="top">What changes for people</th>
-      <th valign="top">Year 1 investment &amp; early transformation</th>
+      <th valign="top">Year 1 Core investment &amp; early transformation</th>
       <th valign="top">Core mobilisation investment</th>
-      <th valign="top">Likely BAU liability</th>
+      <th valign="top">Likely Core BAU liability</th>
     </tr>
   </thead>
   <tbody>
@@ -132,6 +96,98 @@ Year 1 remains **£560.2k** because Core protects the discovery, evidence, initi
 
 ---
 
+## What the options mean
+
+### Economy — protect the architecture, narrow the footprint
+
+Economy keeps all four strategic packages alive and preserves the evidence needed to make later decisions, but reduces the amount of live activity and new capacity purchased before the model has proved itself.
+
+In Year 1 it:
+
+- retains the full £53k Purpose / Skills / Recognition discovery package;
+- reduces Beyond-Course opportunity commissioning from £150k to **£100k**;
+- retains the £10k Student Life insight/persona work but reduces the live prototype envelope from £20k to **£10k**;
+- reduces the specialist experiential-learning curriculum/policy provision from £40k to **£25k** while preserving the other Year 1 package resources;
+- retains the 0.5 FTE Graduate Futures delivery spine, but reduces the Year 1 activation/research envelope from £25k to **£15k** and the Strategic Partnerships, Profile & External Engagement Fund from £25k to **£10k**.
+
+In Years 2 and 3 it assumes a **£250k p.a. partnership-infrastructure envelope**, a smaller Purpose / Skills / Recognition scale envelope, more selective curriculum implementation, £15k p.a. Student Life activation and a 0.5 FTE Graduate Futures activation/reputation role.
+
+Economy therefore preserves the strategic model, but accepts slower institutionalisation, a smaller first-year student opportunity footprint, fewer live prototypes and materially greater reliance on repurposed existing capacity.
+
+### Core — recommended
+
+Core is the current source-plan baseline. It protects Year 1 discovery, evidence and live testing while avoiding large later-year commitments that should only be released once evidence exists.
+
+Its key choices are:
+
+- **£150k / £200k / £250k** Beyond-Course opportunity commissioning;
+- **£400k p.a.** partnership infrastructure in Years 2 and 3 as the central planning assumption to test during Year 1;
+- **£40k / £60k** curriculum experiential-learning implementation funds in Years 2 and 3, plus £10k annual co-design/evaluation;
+- **£100k / £60k** package-wide Purpose / Skills / Recognition scale envelopes in Years 2 and 3;
+- **£30k / £30k** Student Life scale funding in Years 2 and 3;
+- a **0.75 FTE** Graduate Futures activation/reputation role in Years 2 and 3, with £35k / £50k activation/research envelopes and the existing £25k / £35k / £45k Strategic Partnerships, Profile & External Engagement Fund.
+
+### Enhanced — accelerate opportunity, depth and institutional reach
+
+Enhanced is not simply Core with contingencies restored. It purchases a larger King’s Edge than the source plan currently scopes, particularly around the Beyond-Course offer.
+
+The central enhancement is an **Opportunity Accelerator**:
+
+- Beyond-Course opportunity commissioning rises to **£200k / £350k / £500k** across the three mobilisation years;
+- the larger portfolio supports a broader thematic mix than the initial four workpackages, more sustained projects, placements, service/community, enterprise and other high-intensity experiences, and greater capacity to respond to evidence of unmet student demand;
+- the Enhanced case should recalculate its own reach, student-hours and high-intensity-place ambitions from the expanded portfolio rather than inheriting Core targets mechanically.
+
+The Opportunity Accelerator is supported by a stronger institutional engine:
+
+- partnership infrastructure rises to **£600k in Year 2 and £700k in Year 3**;
+- Student Life scale/activation rises to **£75k in Year 2 and £100k in Year 3**;
+- Purpose / Skills / Recognition scale envelopes rise to **£150k in Year 2 and £125k in Year 3**;
+- curriculum experiential-learning implementation rises to **£60k in Year 2 and £100k in Year 3**;
+- Graduate Futures returns to **1.0 FTE in Years 2 and 3 with £50k / £75k activation/research envelopes**, while retaining the existing strategic external-engagement fund.
+
+Enhanced begins differentiating in Year 1 through a **£200k Beyond-Course opportunity portfolio**, £50k above Core.
+
+### Package-level comparison
+
+| Strategic package | Economy | Core — recommended | Enhanced |
+|---|---:|---:|---:|
+| Student Purpose, Skills and Educational Recognition | **£182.0k** | **£252.0k** | **£367.0k** |
+| Experiential Learning in the Curriculum | **£276.0k** | **£341.0k** | **£401.0k** |
+| Beyond-Course Opportunity and Participation | **£1.4424m** | **£1.8324m** | **£2.8974m** |
+| Graduate Futures Intelligence and Value | **£641.8k** | **£764.8k** | **£837.8k** |
+| **Three-year King’s Edge mobilisation** | **£2.5422m** | **£3.1902m** | **£4.5032m** |
+
+The options are intentionally asymmetric. **Beyond Course is protected in Core and expanded most strongly in Enhanced** because direct opportunity supply is one of the clearest places where additional cash creates additional student experience.
+
+### Investment levers
+
+| Lever | Economy | Core — recommended | Enhanced |
+|---|---:|---:|---:|
+| Partnership infrastructure Y2 / Y3 | £250k / £250k | **£400k / £400k** | £600k / £700k |
+| Beyond-Course commissioning Y1 / Y2 / Y3 | £100k / £200k / £250k | **£150k / £200k / £250k** | £200k / £350k / £500k |
+| Student Life direct investment Y1 / Y2 / Y3 | £20k / £15k / £15k | **£30k / £30k / £30k** | £30k / £75k / £100k |
+| Curriculum implementation Y2 / Y3 | £20k / £30k | **£40k / £60k** | £60k / £100k |
+| Purpose / Skills / Recognition direct scale Y2 / Y3 | £60k / £30k | **£100k / £60k** | £150k / £125k |
+| Graduate Futures dedicated role Y1 / Y2 / Y3 | 0.5 / 0.5 / 0.5 FTE | **0.5 / 0.75 / 0.75 FTE** | 0.5 / 1.0 / 1.0 FTE |
+| Graduate Futures activation/research Y1 / Y2 / Y3 | £15k / £25k / £25k | **£25k / £35k / £50k** | £25k / £50k / £75k |
+| Strategic Partnerships / Profile fund Y1 / Y2 / Y3 | £10k / £25k / £25k | **£25k / £35k / £45k** | £25k / £35k / £45k |
+| Student Opportunities Fund awards | outside ask | **outside ask** | outside ask |
+| Digital Student Experience Hub | separate | **separate** | separate |
+
+For Purpose / Skills / Recognition, Economy and Enhanced use **package-wide scale envelopes**. Allocation across purpose, skills and trusted recognition should be made from discovery and trailblazer evidence rather than pre-splitting the option into arbitrary deliverable budgets.
+
+### Indicative recurrent exposure
+
+| Option | Current identifiable BAU planning exposure | Interpretation |
+|---|---:|---|
+| **Economy** | **c.£623k p.a. + TBC** | Assumes £250k partnership infrastructure, the existing £175k mature opportunity-commissioning requirement, permanent Deputy Director shares and a leaner 0.5 FTE Graduate Futures model. |
+| **Core** | **c.£834.5k p.a. + TBC** | Current source-plan planning exposure, including £400k partnership infrastructure and the 0.75 FTE Graduate Futures model. |
+| **Enhanced** | **at least c.£1.176m p.a. + TBC** | Floor using £700k mature partnership infrastructure, the existing £175k opportunity-commissioning BAU requirement and the previous 1.0 FTE Graduate Futures model. It does not yet assume how much of the enlarged Enhanced opportunity portfolio should remain recurrent. |
+
+The Enhanced BAU figure is therefore a floor, not a mature-state estimate.
+
+---
+
 ## Separate institutional investment: Digital Student Experience Hub
 
 <table>
@@ -155,13 +211,15 @@ Year 1 remains **£560.2k** because Core protects the discovery, evidence, initi
   </tbody>
 </table>
 
+For dependency and whole-system planning only, **Core King’s Edge plus the current Digital Hub high-water itemisation** gives £1.15356m in 2026/27, £2.143796m in 2027/28 and £2.288796m in 2028/29: **£5.586152m across three years**. This combined figure should **not** be presented as the King’s Edge funding ask.
+
 ---
 
 ## Cost reconciliation and assumptions
 
 ### King’s Edge shared resources
 
-The current shared-resource registry contains **£181.5k** of coherent funded shared capacity in 2026/27. The package-attributed Year One shares still sum exactly to that total:
+The current shared-resource registry contains **£181.5k** of coherent funded shared capacity in 2026/27. The package-attributed Year 1 Core shares still sum exactly to that total:
 
 - Graduate Futures Intelligence and Value: **£41.2k**;
 - Beyond-Course Opportunity and Participation: **£76.0k**;
@@ -170,7 +228,7 @@ The current shared-resource registry contains **£181.5k** of coherent funded sh
 
 The Core rebaseline changes direct or cash-converted package assumptions only. It does not alter the coherent shared-resource registry.
 
-### Package profiles
+### Core package profiles
 
 | Package | 2026/27 | 2027/28 | 2028/29 | Three-year total |
 |---|---:|---:|---:|---:|
@@ -183,8 +241,8 @@ The Core rebaseline changes direct or cash-converted package assumptions only. I
 ### Key accounting boundaries
 
 - The **£400k partnership-infrastructure figure is a Core planning assumption**, not an approved recurrent settlement. Year 1 must still produce lean, Core and more ambitious operating-model options from evidence.
-- **Student Opportunities Fund awards are excluded from the King’s Edge ask.** Design and consolidation work remains in 2.2.2, but a new award pot requires a separate route.
-- **Beyond-Course opportunity commissioning remains £150k / £200k / £250k.** This is intentionally protected in Core.
+- **Student Opportunities Fund awards are excluded from all three King’s Edge asks.**
+- **Beyond-Course opportunity commissioning remains £150k / £200k / £250k in Core.**
 - Digital product implementation for purpose, skills and recognition sits in the **separate Digital Student Experience Hub** and is not rebilled into King’s Edge.
 - Partnership infrastructure is costed once in Beyond Course even where it enables curricular experiential learning.
 - The Strategic Partnerships, Profile & External Engagement Fund remains costed once in 2.4.4 and can be deployed across King’s Edge priorities.
@@ -193,13 +251,27 @@ The Core rebaseline changes direct or cash-converted package assumptions only. I
 
 ## What remains genuinely uncertain
 
-- **Partnership infrastructure:** £400k p.a. is now the Core assumption, but Year 1 discovery should still be capable of recommending a lower or higher operating model.
-- **Purpose, Skills and Recognition:** the £100k Year 2 and £60k Year 3 direct envelopes are bounded Core capability envelopes; release remains conditional on discovery and portability evidence.
-- **Experiential Learning:** £40k / £60k central curriculum implementation is deliberately selective. A broader institutional rollout would require an Enhanced option or mainstream curriculum funding.
-- **Student Life:** £30k / £30k is enough to retain a real scale-and-institutionalisation route while expecting more delivery to be absorbed into normal campus and service practice.
-- **Graduate Futures:** 0.75 FTE and £35k / £50k activation are Core planning assumptions. The final organisational home, analytical support and BAU design remain to be validated.
-- **Digital Hub:** its separate high-water model remains under active Digital and IT validation and is intentionally untouched by this King’s Edge rebaseline.
-- **BAU:** c.£834.5k p.a. is the current identifiable King’s Edge Core exposure, not a settled recurrent budget. TBC elements can move it in either direction.
+- **Economy / Enhanced:** these are option overlays, not source-plan resource profiles. Their package envelopes remain subject to investment choice and later evidence gates.
+- **Partnership infrastructure:** £400k p.a. is the Core assumption, but Year 1 discovery should still be capable of recommending a lower or higher operating model.
+- **Purpose, Skills and Recognition:** the £100k Year 2 and £60k Year 3 direct Core envelopes remain conditional on discovery and portability evidence.
+- **Experiential Learning:** £40k / £60k central curriculum implementation is deliberately selective. A broader institutional rollout would require Enhanced investment or mainstream curriculum funding.
+- **Student Life:** £30k / £30k is the Core scale route while expecting more delivery to be absorbed into normal campus and service practice.
+- **Graduate Futures:** 0.75 FTE and £35k / £50k activation are Core assumptions. The final organisational home, analytical support and BAU design remain to be validated.
+- **Enhanced Beyond Course:** the larger £200k / £350k / £500k commissioning trajectory requires its own reach, student-hours, depth and mature BAU model rather than mechanically applying the Core benefits assumptions.
+- **Digital Hub:** its separate high-water model remains under active Digital and IT validation and is intentionally untouched by the King’s Edge option set.
+- **BAU:** Economy / Core / Enhanced recurrent figures are planning exposures, not settled budgets, and TBC elements can move them in either direction.
+
+---
+
+## Decision framing
+
+The investment decision is a choice about **how much student opportunity and institutional scaling King’s wants to buy, and how much delivery risk it is willing to absorb through existing capacity**.
+
+- **Economy:** fund the architecture and prove the model, with a smaller first-year footprint and slower scaling.
+- **Core:** fund the recommended balance of substantive student opportunity, enabling capacity and evidence-led institutionalisation.
+- **Enhanced:** use King’s Edge as a larger institutional opportunity engine, accelerating supply, depth, partnership capacity and student-life activation beyond Core scope.
+
+Later-year envelopes should remain subject to evidence gates. Selecting a higher envelope creates authority to scale where evidence supports it, not an obligation to spend regardless of performance.
 
 ---
 
@@ -211,7 +283,8 @@ Before using this grid for a formal investment decision:
 2. Recalculate each King’s Edge package’s direct cash and share of funded shared capacity.
 3. Confirm that every coherent shared-resource cost is attributed exactly once and deferred work carries no parked capacity.
 4. Keep the Digital Student Experience Hub **outside the headline King’s Edge ask**.
-5. Keep Student Opportunities Fund awards **outside the King’s Edge ask** unless a separate funding decision explicitly changes that boundary.
+5. Keep Student Opportunities Fund awards **outside all King’s Edge asks** unless a separate funding decision explicitly changes that boundary.
 6. Refresh 4.1.1–4.1.4 and `docs/digital-student-experience-hub-funding-baseline.md` before quoting Digital Hub costs.
 7. Keep Core, Economy and Enhanced conceptually distinct: **Core is the source-plan baseline; Economy and Enhanced are explicit option overlays.**
-8. Keep estimates, assumptions, proxies and evidence-led future costs visibly qualified.
+8. Recalculate Enhanced Beyond-Course benefit targets before presenting that option as a quantified benefits case.
+9. Keep estimates, assumptions, proxies and evidence-led future costs visibly qualified.
