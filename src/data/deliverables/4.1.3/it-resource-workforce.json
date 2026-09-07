@@ -1,7 +1,7 @@
 {
   "workforceModel": {
-    "status": "Digital and IT mature-team high-water model with a four-post permanent institutional core, 50/50 Product Manager allocation across Student and Staff Hubs, a rolling sandwich-year placement and unresolved specialist workforce sourcing",
-    "summary": "The permanent institutional product core remains four Digital and IT posts from the outset: Product Manager, Backend Engineer, Full-Stack Developer and UX/UI Designer. Jon Ward has now confirmed that the 1.0 FTE Product Manager should be funded 50/50 between the Student and Staff Hubs to ring-fence costs and avoid cross-subsidisation. The Student Hub therefore carries 0.5 FTE / £47,784 p.a. of the Product Manager’s £95,568 full institutional annual cost, while the Staff Hub must carry the other half. The remaining three permanent posts are fully attributed to the Student Hub in the current model. Mobilisation investment carries the Student Hub shares to June 2029 and recurrent Digital and IT establishment takes over from July 2029. A rolling paid sandwich-year engineering placement is treated as a recurrent development and talent-pipeline commitment from BAU. Solution Architecture, DevOps, Dynamics, Cloud Infrastructure and IAM remain high-water specialist workforce capacity until Digital and IT confirms whether they are dedicated, shared or existing. Infuse QA is excluded from the workforce establishment because it is confirmed outsourced non-pay testing. Mark Peace as Product Owner and the expected existing IT Delivery Manager remain existing capacity rather than funded appointments.",
+    "status": "Digital and IT mature-team high-water model with a four-post permanent institutional core, 50/50 Product Manager allocation across Student and Staff Hubs, confirmed Year One architecture phasing, a rolling sandwich-year placement and unresolved specialist workforce sourcing",
+    "summary": "The permanent institutional product core remains four Digital and IT posts: Product Manager, Backend Engineer, Full-Stack Developer and UX/UI Designer. Jon Ward has confirmed that the 1.0 FTE Product Manager should be funded 50/50 between the Student and Staff Hubs. James Costerton has clarified that Solution Architect / Technical Lead input should average 0.75 FTE in Year One, front-loaded from full-time input and tapering through 0.5 and 0.25 as the architecture settles. Later-year architecture capacity remains high-water until the enduring service model is agreed. A rolling paid sandwich-year engineering placement remains a recurrent development and talent-pipeline commitment. DevOps, D365 / Power Platform, Cloud Infrastructure and IAM remain specialist high-water capacity pending further validation. The D365 line is explicitly a contingency rather than a settled dedicated Hub role: James advises that the requirement is not yet defined and may be partly or wholly supplied by the core R&C CRM team once the MVP shape is clearer. Infuse QA remains outsourced non-pay testing. Mark Peace as Product Owner and the expected existing IT Delivery Manager remain existing capacity rather than funded appointments.",
     "appointments": [
       {
         "resourceId": "4.1.3-operating-product-manager-student-share",
@@ -12,7 +12,7 @@
         "studentHubAllocatedFte": 0.5,
         "staffHubAllocatedFte": 0.5,
         "institutionalAnnualCost": 95568,
-        "fundingBasis": "One permanent institutional post. Student Hub mobilisation and BAU funding carries 50%; Staff Hub funding route carries the other 50%, following Jon Ward’s 4 September confirmation.",
+        "fundingBasis": "One permanent institutional post. Student Hub mobilisation and BAU funding carries 50%; Staff Hub funding route carries the other 50%, following Jon Ward’s confirmation.",
         "bauFrom": "July 2029",
         "bauOwner": "Digital and IT with explicit Student / Staff Hub cost allocation",
         "annualBauAmount": 47784
@@ -21,10 +21,11 @@
         "resourceId": "4.1.3-y1-role-solution-architect",
         "role": "Solution Architect / Technical Lead",
         "appointmentBasis": "other",
-        "appointmentLabel": "High-water mature-team provision pending architecture sourcing decision",
+        "appointmentLabel": "Front-loaded specialist architecture capacity with confirmed 0.75 FTE Year One average",
         "fte": 1.0,
-        "fundingBasis": "Full cash provision pending confirmation of dedicated, phased or existing architecture capacity",
-        "endState": "Set the enduring architecture model from actual demand and Digital and IT capacity; a permanent dedicated 1.0 FTE Student Hub post is not assumed until that model is confirmed."
+        "yearOneAverageFte": 0.75,
+        "fundingBasis": "Year One averages 0.75 FTE, front-loaded from full-time allocation and tapering through 0.5 and 0.25 as the architecture settles. Years Two and Three remain at 1.0 FTE high-water until the enduring architecture/service model is agreed.",
+        "endState": "Set the enduring architecture model from actual demand and Digital and IT capacity; a permanent dedicated 1.0 FTE Student Hub post is not assumed."
       },
       {
         "resourceId": "4.1.3-y1-role-backend",
@@ -65,17 +66,17 @@
         "appointmentBasis": "other",
         "appointmentLabel": "Fractional high-water specialist provision",
         "fte": 0.5,
-        "fundingBasis": "Cash provision until a protected existing/shared Digital and IT route is confirmed",
-        "endState": "Settle the enduring DevOps/platform service model and remove directly attributable Student Hub cost where standing Digital and IT capacity can supply it."
+        "fundingBasis": "Current high-water provision remains 0.5 FTE. James Costerton believes the average may be reducible, but no lower planning fraction is booked until quantified.",
+        "endState": "Settle the enduring DevOps/platform service model and reduce directly attributable Student Hub cost where standing Digital and IT capacity can supply it."
       },
       {
         "resourceId": "4.1.3-y1-role-dynamics",
-        "role": "Dynamics Developer",
+        "role": "D365 / Power Platform Developer contingency",
         "appointmentBasis": "other",
-        "appointmentLabel": "High-water provision pending scope attribution",
+        "appointmentLabel": "MVP-dependent high-water contingency, not a settled dedicated Hub role",
         "fte": 1.0,
-        "fundingBasis": "Full Student Hub cash provision pending confirmation of what work is genuinely attributable to the Hub",
-        "endState": "Retain, fractionally allocate or remove the role from the Student Hub operating model once its boundary with King’s Answers, CRM and wider enquiry management is clear."
+        "fundingBasis": "Full high-water cash cover is retained while the MVP identifies any concrete D365 / Power Platform requirements. James Costerton advises that some or all work may be deliverable through the core R&C CRM team.",
+        "endState": "Use the Student Hub / King’s Edge MVP to define any actual D365 / Power Platform requirement, then retain, fractionally allocate or remove this contingency according to the agreed delivery route."
       },
       {
         "resourceId": "4.1.3-y1-role-cloud-infrastructure",
