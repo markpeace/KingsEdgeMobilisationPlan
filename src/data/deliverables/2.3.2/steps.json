@@ -255,7 +255,7 @@
         "start": "jul-dec-2027:a",
         "end": "jan-jun-2028:c"
       },
-      "summary": "Across 2027/28, expand the strongest Year 1 activation approaches into a more recognisable programme of richer student-life environments across King's campuses and digital spaces. Connect physical and digital participation deliberately to the 2.3.4 student-year rhythm, use personas and 2.3.1 evidence to focus activity on underserved student forms, and use 2.3.4 moments and 2.3.2 gap analysis to shape commissioning through 2.2.4. Prioritise reusable formats and infrastructure over repeated one-off event spend.",
+      "summary": "Across 2027/28, expand the strongest Year 1 activation approaches into a bounded but recognisable programme of richer student-life environments across King's campuses and digital spaces. Connect physical and digital participation deliberately to the 2.3.4 student-year rhythm, use personas and 2.3.1 evidence to focus activity on underserved student forms, and use 2.3.4 moments and 2.3.2 gap analysis to shape commissioning through 2.2.4. Prioritise reusable formats and infrastructure over repeated one-off event spend.",
       "dependsOn": [
         "2.3.2-step-5"
       ],
@@ -299,22 +299,22 @@
             "id": "2.3.2-y2-activation",
             "item": "Year 2 Student Life activation and scale fund",
             "category": "participation design and activation",
-            "amount": 50000,
+            "amount": 30000,
             "currency": "GBP",
             "yearlyProfile": [
               {
                 "academicYear": "2027/28",
-                "amount": 50000
+                "amount": 30000
               }
             ],
-            "estimatedCost": "£50,000 Year 2 planning envelope.",
+            "estimatedCost": "£30,000 Year 2 core planning envelope.",
             "owner": "Steph White",
             "periodNeeded": "2027/28",
             "decisionNeededBy": "Summer 2027",
             "fundingRoute": "King's Edge Year 2 mobilisation investment request",
-            "fundingStatus": "indicative",
+            "fundingStatus": "core planning envelope, subject to Year 1 evidence",
             "confidence": "planning estimate",
-            "rationale": "Scales evidence-backed activation models and reusable infrastructure while substantive opportunity commissioning and digital build remain funded elsewhere.",
+            "rationale": "Provides enough resource to scale the strongest evidence-backed activation models and reusable infrastructure while relying on normal campus, faculty and service practice for broader adoption. Substantive opportunity commissioning and digital build remain funded elsewhere.",
             "riskIfMissing": "Successful Year 1 models will remain isolated pilots rather than becoming a recognisable part of student life."
           }
         ]
@@ -371,22 +371,22 @@
             "id": "2.3.2-y3-activation",
             "item": "Year 3 Student Life activation and institutionalisation fund",
             "category": "participation design and activation",
-            "amount": 60000,
+            "amount": 30000,
             "currency": "GBP",
             "yearlyProfile": [
               {
                 "academicYear": "2028/29",
-                "amount": 60000
+                "amount": 30000
               }
             ],
-            "estimatedCost": "£60,000 Year 3 planning envelope.",
+            "estimatedCost": "£30,000 Year 3 core planning envelope.",
             "owner": "Steph White",
             "periodNeeded": "2028/29",
             "decisionNeededBy": "Summer 2028",
             "fundingRoute": "King's Edge Year 3 mobilisation investment request",
-            "fundingStatus": "indicative",
+            "fundingStatus": "core planning envelope, subject to scale evidence",
             "confidence": "planning estimate",
-            "rationale": "Broadens the reusable activation model and supports transition into enduring local and programme ownership without duplicating substantive opportunity or digital product budgets.",
+            "rationale": "Maintains enough central capacity to institutionalise reusable activation models and refresh the assurance framework while expecting broader delivery to move into normal local practice. Any larger multi-campus activation programme should be an enhanced investment choice.",
             "riskIfMissing": "The model may remain dependent on isolated local enthusiasm and fail to establish a sustainable institution-wide practice."
           }
         ],
