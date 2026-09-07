@@ -14,13 +14,21 @@
   align-content: center;
 }
 
+.investment-header .brand::after {
+  content: 'INVESTMENT CASE';
+}
+
 .investment-hero {
   margin-bottom: clamp(2.5rem, 5vw, 4.5rem);
 }
 
+.investment-hero h1 {
+  font-size: var(--display-md);
+}
+
 .investment-hero-copy {
   max-width: 940px !important;
-  font-size: clamp(1.08rem, 1.45vw, 1.35rem) !important;
+  font-size: clamp(1.02rem, 1.25vw, 1.18rem) !important;
 }
 
 .investment-metrics {
@@ -84,7 +92,7 @@
 .investment-source-panel h2 {
   margin: 0;
   font-family: var(--font-brand);
-  font-size: clamp(2.5rem, 4.6vw, 4.8rem);
+  font-size: clamp(2.35rem, 4vw, 4.2rem);
   font-weight: 400;
   letter-spacing: -0.035em;
   line-height: 0.96;
@@ -144,12 +152,12 @@
 
 .investment-table th:nth-child(2),
 .investment-table td:nth-child(2) {
-  width: 26%;
+  width: 28%;
 }
 
 .investment-table th:nth-child(3),
 .investment-table td:nth-child(3) {
-  width: 30%;
+  width: 28%;
 }
 
 .investment-table th:nth-child(4),
@@ -308,13 +316,13 @@
 }
 
 .option-card h3 {
-  max-width: 31rem;
+  max-width: 36rem;
   margin: 0.35rem 0 1rem;
   font-family: var(--font-brand);
-  font-size: clamp(2rem, 3.2vw, 3.4rem);
+  font-size: clamp(1.65rem, 2.4vw, 2.55rem);
   font-weight: 400;
-  letter-spacing: -0.035em;
-  line-height: 0.96;
+  letter-spacing: -0.03em;
+  line-height: 1;
 }
 
 .option-card p:not(.option-label) {
@@ -336,11 +344,11 @@
 
 .enhanced-card {
   border-top-color: var(--color-accent);
-  border-top-width: 7px;
+  border-top-width: 5px;
 }
 
 .economy-card {
-  border-top-width: 7px;
+  border-top-width: 5px;
 }
 
 .early-section {
@@ -351,7 +359,7 @@
 }
 
 .early-heading h2 {
-  font-size: clamp(3rem, 6.5vw, 6.3rem);
+  font-size: clamp(2.35rem, 4vw, 4.2rem);
 }
 
 .early-table {
