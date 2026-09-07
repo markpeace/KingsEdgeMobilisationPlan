@@ -37,7 +37,7 @@
       "fundingBasis": "Mobilisation-funded student employment: £21,000 Year 1 planning envelope, then £35,000 per sandwich-year placement.",
       "bauDestination": "No automatic BAU continuation; evaluate the student analytics placement model from evidence.",
       "yearlyProfile": [
-        { "academicYear": "2026/27", "fte": 0.6, "amount": 21000, "currency": "GBP", "note": "Flexible King's Talent pool. The already-funded £4,000 six-week 2.1.1 internship counts within this envelope rather than in addition to it." },
+        { "academicYear": "2026/27", "fte": 0.6, "amount": 21000, "currency": "GBP", "note": "Flexible King's Talent pool. The already-funded £4,000 six-week 2.1.1 internship counts within this envelope rather than in addition to it. 2.1.1's existing 0.25 FTE Year 1 share is deliberately front-loaded: after the summer prototype, the balance supports part-time Power BI / Microsoft Fabric engineering through December." },
         { "academicYear": "2027/28", "fte": 1.0, "amount": 35000, "currency": "GBP", "note": "One full-time sandwich-year analytics/data placement." },
         { "academicYear": "2028/29", "fte": 1.0, "amount": 35000, "currency": "GBP", "note": "One full-time sandwich-year analytics/data placement." }
       ],
