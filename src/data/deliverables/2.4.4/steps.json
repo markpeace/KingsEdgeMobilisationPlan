@@ -215,24 +215,24 @@
           {
             "item": "Dedicated graduate premium activation and reputation delivery capacity",
             "category": "workforce",
-            "fte": 1.0,
+            "fte": 0.75,
             "owner": "Project 2.4 / institutional home to confirm",
             "fundingRoute": "King’s Edge mobilisation funding request or agreed institutional capacity",
             "fundingStatus": "route to confirm",
-            "confidence": "headline planning assumption",
-            "rationale": "Provides full-time delivery leadership as student adoption, survey optimisation and targeted external activation all move beyond pilot scale.",
+            "confidence": "core planning assumption",
+            "rationale": "Provides a substantial but deliberately bounded delivery spine as student adoption, survey optimisation and targeted external activation move beyond pilot scale, while relying on existing institutional channels and specialist teams for broader campaign and reputation activity.",
             "riskIfMissing": "Scaling will depend on fragmented part-time contributions and the external reputation programme is unlikely to develop with sufficient coherence."
           },
           {
             "item": "Year 2 activation, research and survey-intervention envelope",
             "category": "activation and research",
-            "amount": 50000,
+            "amount": 35000,
             "currency": "GBP",
             "owner": "2.4.4 delivery lead",
             "fundingRoute": "King’s Edge mobilisation funding request",
-            "fundingStatus": "requested",
+            "fundingStatus": "core planning envelope",
             "confidence": "indicative",
-            "rationale": "Supports scaled student activation, targeted Graduate Outcomes interventions, audience and perception research, external reputation pilots and evaluation. Content and rich-media commissioning remain in 2.4.1.",
+            "rationale": "Supports targeted student activation, Graduate Outcomes interventions, audience and perception research, selected external reputation pilots and evaluation while expecting existing institutional channels to carry broader activation. Content and rich-media commissioning remain in 2.4.1.",
             "riskIfMissing": "The work can coordinate existing channels but will have limited ability to test or scale new interventions against priority audiences."
           },
           {
@@ -343,24 +343,24 @@
           {
             "item": "Dedicated graduate premium activation and reputation delivery capacity",
             "category": "workforce",
-            "fte": 1.0,
+            "fte": 0.75,
             "owner": "Project 2.4 / institutional home to confirm",
             "fundingRoute": "King’s Edge mobilisation funding request or agreed institutional capacity",
             "fundingStatus": "route to confirm",
-            "confidence": "headline planning assumption",
-            "rationale": "Maintains a coherent delivery and stewardship function while the model is embedded and the business-as-usual destination is settled.",
+            "confidence": "core planning assumption",
+            "rationale": "Maintains a coherent delivery and stewardship function while the strongest approaches are embedded, with broader campaign and reputation activity expected to sit increasingly in normal institutional channels.",
             "riskIfMissing": "The final mobilisation year may generate activity without securing enduring ownership or consistent practice."
           },
           {
             "item": "Year 3 activation, research and survey-intervention envelope",
             "category": "activation and research",
-            "amount": 75000,
+            "amount": 50000,
             "currency": "GBP",
             "owner": "2.4.4 delivery lead",
             "fundingRoute": "King’s Edge mobilisation funding request",
-            "fundingStatus": "requested",
+            "fundingStatus": "core planning envelope",
             "confidence": "indicative",
-            "rationale": "Supports the mature portfolio of targeted reputation activity, survey-performance interventions, audience research and evaluation while continuing to exclude content production already funded through 2.4.1.",
+            "rationale": "Supports the mature core portfolio of targeted reputation activity, survey-performance interventions, audience research and evaluation while continuing to exclude content production already funded through 2.4.1. A materially larger campaign or activation programme should be an explicit enhanced investment choice.",
             "riskIfMissing": "The programme will be able to embed low-cost activity but will have limited capacity to sustain or scale reputation interventions that require paid research, activation or partnership support."
           },
           {
