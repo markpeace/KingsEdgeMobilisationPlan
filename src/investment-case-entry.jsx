@@ -107,37 +107,37 @@ const earlyAsk = [
   {
     amount: '£60k',
     buying: 'Externally commissioned student opportunities',
-    outputs: <>
-      <p>Release the first 40% of the proposed £150k Year 1 commissioning portfolio. Start final-year career-enhancing projects, mentoring, placements and other deeper experiences, while beginning entrepreneurship, belonging and community-engaged opportunities. <RefLinks ids={['2.2.4']} /></p>
-    </>
+    outputs: <ul className="early-output-list">
+      <li>Release the first 40% of the proposed £150k Year 1 commissioning portfolio. <RefLinks ids={['2.2.4']} /></li>
+      <li>Start final-year career-enhancing projects, mentoring, placements and other deeper experiences, while beginning entrepreneurship, belonging and community-engaged opportunities. <RefLinks ids={['2.2.4']} /></li>
+    </ul>
   },
   {
     amount: '£15k',
     buying: 'Freelance video production',
-    outputs: <>
-      <p>Produce the first Graduate Premium video exemplars and promotional video and related assets to support Graduate Outcomes survey response. <RefLinks ids={['2.4.1', '2.4.4']} /></p>
-    </>
+    outputs: <ul className="early-output-list">
+      <li>Produce the first Graduate Premium video exemplars. <RefLinks ids={['2.4.1']} /></li>
+      <li>Produce promotional video and related assets to support Graduate Outcomes survey response. <RefLinks ids={['2.4.4']} /></li>
+    </ul>
   },
   {
     amount: '£25k',
     buying: 'Paid student time through King’s Talent',
-    outputs: <>
-      <ul>
-        <li>Power BI and Microsoft Fabric engineering for the Graduate Futures Intelligence Pack, Graduate Outcomes optimisation and Beyond Course dashboard. <RefLinks ids={['2.1.1', '2.4.4', '2.3.1']} /></li>
-        <li>Prototype LLM-led course skills interrogation tooling. <RefLinks ids={['2.1.3']} /></li>
-        <li>Student Life persona co-design and Student Experience Hub ideation and prototype input. <RefLinks ids={['2.3.2', '4.1.2']} /></li>
-      </ul>
-    </>
+    outputs: <ul className="early-output-list">
+      <li>Power BI and Microsoft Fabric engineering for the Graduate Futures Intelligence Pack, Graduate Outcomes optimisation and Beyond Course dashboard. <RefLinks ids={['2.1.1', '2.4.4', '2.3.1']} /></li>
+      <li>Prototype LLM-led course skills interrogation tooling. <RefLinks ids={['2.1.3']} /></li>
+      <li>Student Life persona co-design and Student Experience Hub ideation and prototype input. <RefLinks ids={['2.3.2', '4.1.2']} /></li>
+    </ul>
   }
 ];
 
 function Header() {
   return <header className="site-header investment-header">
-    <a href="./index.html#/" className="brand">King's Edge Investment Case</a>
-    <nav aria-label="Investment case navigation">
-      <a href="#case">Investment options</a>
-      <a href="#core">Core case</a>
-      <a href="#options">Options to vary</a>
+    <a href="./index.html#/" className="brand">King's Edge Investment Ask</a>
+    <nav aria-label="Investment ask navigation">
+      <a href="#case">Investment ask</a>
+      <a href="#core">Investment case</a>
+      <a href="#options">Alternative options</a>
       <a href="#early">Pre-Business Case</a>
     </nav>
   </header>;
@@ -149,8 +149,7 @@ function InvestmentCase() {
     <main className="investment-case-page">
       <section id="case" className="hero investment-hero" aria-labelledby="investment-title">
         <p className="eyebrow">King’s Edge</p>
-        <h1 id="investment-title">Investment case</h1>
-        <p className="investment-hero-copy"><strong>Core is the recommended planning case.</strong> Economy and Enhanced show lower- and higher-investment variants around it. The figures for 2026/27 to 2028/29 are the establishment period, so the table distinguishes the <strong>three-year establishment cost</strong> from the indicative annual cost once the model is established.</p>
+        <h1 id="investment-title">Investment ask</h1>
         <div className="ds-table-wrap option-summary-wrap">
           <table className="ds-table option-summary-table" aria-label="King's Edge investment options">
             <thead>
@@ -191,14 +190,16 @@ function InvestmentCase() {
             </tbody>
           </table>
         </div>
-        <p className="ds-subtle investment-boundary">This is the investment case for King’s Edge. The Digital Student Experience Hub / Digital Front Door has a separate investment case.</p>
+        <div className="ds-stack investment-ask-context">
+          <p><strong>Core is the recommended planning case.</strong> Economy and Enhanced show lower- and higher-investment variants around it. <a href="#options">See the alternative options below</a> for the practical effect of reducing spend or increasing pace and impact.</p>
+          <p className="ds-subtle investment-boundary">The figures for 2026/27 to 2028/29 cover the establishment period. The Digital Student Experience Hub / Digital Front Door has a separate investment ask.</p>
+        </div>
       </section>
 
       <section id="core" className="investment-section">
         <div className="ds-stack investment-section-heading">
-          <p className="eyebrow">Core case</p>
-          <h2 className="ds-section-heading">What the Core case brings</h2>
-          <p className="ds-subtle">The North Star gives the intended end state. The user stories describe the practical change for the people who experience or deliver it. The investment profile shows the first-year ask and early gains first, with the longer-term establishment and ongoing costs beneath them.</p>
+          <p className="eyebrow">Investment case</p>
+          <h2 className="ds-section-heading">What implementation brings to the institution</h2>
         </div>
 
         <div className="ds-table-wrap">
@@ -221,44 +222,52 @@ function InvestmentCase() {
                 <td className="investment-profile-cell"><InvestmentProfile item={item} /></td>
               </tr>)}
             </tbody>
-            <tfoot>
-              <tr>
-                <th colSpan="2">King’s Edge Core case</th>
-                <td className="investment-total-profile">
-                  <div>
-                    <span className="investment-profile-label">2026/27 investment</span>
-                    <strong className="investment-total-primary">£560.2k</strong>
-                  </div>
-                  <div className="investment-total-secondary">
-                    <div><span className="investment-profile-label">Three-year establishment cost</span><strong>£3.1902m</strong></div>
-                    <div><span className="investment-profile-label">Indicative ongoing annual cost</span><strong>c.£834.5k p.a. + TBC</strong></div>
-                  </div>
-                </td>
-              </tr>
-            </tfoot>
           </table>
         </div>
       </section>
 
       <section id="options" className="investment-section option-section">
         <div className="ds-stack investment-section-heading">
-          <p className="eyebrow">Options to vary</p>
-          <h2 className="ds-section-heading">Options to vary the Core case</h2>
-          <p className="ds-subtle">Economy reduces the amount of new capacity and activity funded. Enhanced increases the scale and pace of delivery. Both are variations around the Core case rather than separate delivery plans.</p>
+          <p className="eyebrow">Alternative options</p>
+          <h2 className="ds-section-heading">Levers to reduce spend or increase pace and impact</h2>
         </div>
 
         <div className="ds-editorial-grid option-narratives">
           <article className="ds-editorial-card option-card">
-            <p className="ds-sequence-kicker">Economy</p>
-            <h3>Lower cost, narrower implementation.</h3>
-            <p>Compared with Core, Economy reduces Year 1 Beyond Course commissioning, leaves more curriculum implementation and Student Life activity to existing teams, and requires Graduate Futures work to concentrate on the highest-priority intelligence and interventions.</p>
-            <p>By Year 3 the Beyond Course portfolio is modelled to reach around 6,000 to 6,500 students, close to Core on headline reach, but with fewer total student-hours and fewer sustained projects, placements, mentoring and other high-intensity experiences.</p>
+            <div className="option-card-heading">
+              <span className="ds-tag option-direction" aria-hidden="true">↓</span>
+              <div>
+                <p className="ds-sequence-kicker">Economy</p>
+                <h3>Lower cost, narrower implementation.</h3>
+              </div>
+            </div>
+            <div className="ds-metric-grid option-metrics" aria-label="Economy option figures">
+              <div className="ds-metric-card"><span>2026/27</span><strong>£460.2k</strong></div>
+              <div className="ds-metric-card"><span>Three-year establishment</span><strong>£2.5422m</strong></div>
+              <div className="ds-metric-card"><span>Difference from Core</span><strong>£648k less</strong></div>
+            </div>
+            <div className="option-card-copy">
+              <p>Compared with Core, Economy reduces Year 1 Beyond Course commissioning, leaves more curriculum implementation and Student Life activity to existing teams, and requires Graduate Futures work to concentrate on the highest-priority intelligence and interventions.</p>
+              <p>By Year 3 the Beyond Course portfolio is modelled to reach around 6,000 to 6,500 students, close to Core on headline reach, but with fewer total student-hours and fewer sustained projects, placements, mentoring and other high-intensity experiences.</p>
+            </div>
           </article>
           <article className="ds-editorial-card option-card">
-            <p className="ds-sequence-kicker">Enhanced</p>
-            <h3>Higher cost, wider and faster implementation.</h3>
-            <p>Compared with Core, Enhanced funds a larger Beyond Course commissioning portfolio, more partnership capacity, a wider curriculum implementation cohort, broader adoption of purpose and skills work, and more Graduate Futures activity running in parallel.</p>
-            <p>By Year 3 the Beyond Course portfolio is modelled to reach around 9,000 to 10,000 students, generate 170,000 to 200,000 student-hours and support around 1,000 to 1,200 sustained high-intensity places.</p>
+            <div className="option-card-heading">
+              <span className="ds-tag option-direction" aria-hidden="true">↑</span>
+              <div>
+                <p className="ds-sequence-kicker">Enhanced</p>
+                <h3>Higher cost, wider and faster implementation.</h3>
+              </div>
+            </div>
+            <div className="ds-metric-grid option-metrics" aria-label="Enhanced option figures">
+              <div className="ds-metric-card"><span>2026/27</span><strong>£610.2k</strong></div>
+              <div className="ds-metric-card"><span>Three-year establishment</span><strong>£4.5032m</strong></div>
+              <div className="ds-metric-card"><span>Difference from Core</span><strong>£1.313m more</strong></div>
+            </div>
+            <div className="option-card-copy">
+              <p>Compared with Core, Enhanced funds a larger Beyond Course commissioning portfolio, more partnership capacity, a wider curriculum implementation cohort, broader adoption of purpose and skills work, and more Graduate Futures activity running in parallel.</p>
+              <p>By Year 3 the Beyond Course portfolio is modelled to reach around 9,000 to 10,000 students, generate 170,000 to 200,000 student-hours and support around 1,000 to 1,200 sustained high-intensity places.</p>
+            </div>
           </article>
         </div>
       </section>
@@ -288,6 +297,18 @@ function InvestmentCase() {
           </table>
         </div>
         <p className="ds-subtle early-note">The £100k is an early release against the relevant Year 1 planning assumptions, rather than an additional layer of programme cost. Digital Student Experience Hub co-design remains attributable to the separate Digital investment case.</p>
+        <div className="ds-editorial-grid early-outcomes">
+          <article className="ds-editorial-card">
+            <p className="ds-sequence-kicker">What we gain</p>
+            <h3>Useful delivery and evidence before January.</h3>
+            <p>An autumn tranche of student opportunities, first media assets to test, and continued analytics, engineering and student co-design. The substantive business case therefore starts from live delivery, evidence and prototypes rather than a standing start.</p>
+          </article>
+          <article className="ds-editorial-card">
+            <p className="ds-sequence-kicker">What we lose without it</p>
+            <h3>The September to December delivery and testing window.</h3>
+            <p>Opportunity commissioning, media production and technical and co-design work would largely wait for the substantive decision, pushing learning and delivery into the main mobilisation period.</p>
+          </article>
+        </div>
       </section>
 
       <section className="ds-cluster investment-source-panel">
