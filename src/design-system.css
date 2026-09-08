@@ -315,6 +315,17 @@ main {
   text-transform: uppercase;
 }
 
+/* Framed surfaces also style paragraph text, so preserve eyebrow contrast when
+   an eyebrow is authored as a paragraph inside a hero or section heading. */
+.hero .eyebrow,
+.hero .ds-eyebrow,
+.detail-hero .eyebrow,
+.detail-hero .ds-eyebrow,
+.section-heading .eyebrow,
+.section-heading .ds-eyebrow {
+  color: var(--color-paper);
+}
+
 /* Interactive controls */
 .ds-control,
 .ds-button,
