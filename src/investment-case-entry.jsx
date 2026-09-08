@@ -265,7 +265,7 @@ function InvestmentCase() {
       <section id="early" className="investment-section early-section">
         <div className="investment-section-heading early-heading">
           <p className="eyebrow">Early investment</p>
-          <h2>£100k for September to December 2026</h2>
+          <h2>Pre-Business Case Investment Need</h2>
           <p>If funding can be released before the full mobilisation decision, £100k can be used on work that can be commissioned and delivered before January.</p>
         </div>
 
