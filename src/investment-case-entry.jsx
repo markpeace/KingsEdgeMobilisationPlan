@@ -18,17 +18,17 @@ function UserStories({ stories }) {
 function InvestmentProfile({ item }) {
   return <div className="investment-profile">
     <div className="investment-profile-primary">
-      <span className="investment-profile-label">2026/27 investment</span>
-      <strong className="year-one-price">{item.yearOneCost}</strong>
-      <div className="investment-early-gain">
-        <span className="investment-profile-label">By the end of Year 1</span>
-        <p>{item.yearOne}</p>
-      </div>
+      <span className="investment-profile-label">Three-year establishment cost</span>
+      <strong className="year-one-price">{item.threeYearCost}</strong>
     </div>
     <div className="investment-profile-secondary">
       <div>
-        <span className="investment-profile-label">Three-year establishment cost</span>
-        <strong className="investment-profile-three-year">{item.threeYearCost}</strong>
+        <span className="investment-profile-label">Of which, 2026/27 investment</span>
+        <strong className="investment-profile-three-year">{item.yearOneCost}</strong>
+        <div className="investment-early-gain">
+          <span className="investment-profile-label">By the end of Year 1</span>
+          <p>{item.yearOne}</p>
+        </div>
       </div>
       <div>
         <span className="investment-profile-label">Indicative ongoing annual cost</span>
@@ -65,7 +65,7 @@ const corePackages = [
       { label: 'Professional staff / governance', text: 'We have reusable policy, validation and administrative routes for sandwich years and near-curriculum learning.' }
     ],
     yearOne: 'King’s has an agreed experiential-learning North Star and entitlement direction, an initial curriculum baseline and growth priorities, a ratified sandwich-year policy and regulatory model, a validated shared 15-credit Level 6 capstone, and a sequenced implementation portfolio.',
-    yearOneCost: '£58.8k',
+    yearOneCost: '£59k',
     threeYearCost: '£341k',
     ongoing: 'c.£9k p.a. + costs to confirm'
   },
@@ -81,8 +81,8 @@ const corePackages = [
       { label: 'The University', text: 'We can see the shape, reach, equity and emerging impact of our Beyond Course investment and make deliberate commissioning decisions.' }
     ],
     yearOne: 'King’s has a live evidence base and common shopfront; a £150k commissioned opportunity portfolio intended to reach at least 2,500 distinct students and provide 26.5–33.5k student-hours; Student Life personas and participation prototypes; a shared student-year rhythm; and costed partnership and access options for 2027/28.',
-    yearOneCost: '£278.5k',
-    threeYearCost: '£1.8324m',
+    yearOneCost: '£279k',
+    threeYearCost: '£1.8m',
     ongoing: 'c.£647k p.a. + costs to confirm'
   },
   {
@@ -97,9 +97,9 @@ const corePackages = [
       { label: 'The University', text: 'We can distinguish what we believe about the value of a King’s education from what the evidence and external challenge actually support.' }
     ],
     yearOne: 'King’s has the first Graduate Futures evidence-and-action model, publication-ready graduate-premium exemplars and rich media, a common external-validation model, targeted Graduate Outcomes response optimisation, a strategic survey and reputation intelligence baseline, and flexible strategic partnership and profile capacity.',
-    yearOneCost: '£169.9k',
-    threeYearCost: '£764.8k',
-    ongoing: 'c.£169.5k p.a. + costs to confirm'
+    yearOneCost: '£170k',
+    threeYearCost: '£765k',
+    ongoing: 'c.£170k p.a. + costs to confirm'
   }
 ];
 
@@ -109,15 +109,14 @@ const earlyAsk = [
     buying: 'Externally commissioned student opportunities',
     outputs: [
       { text: 'Release the first 40% of the proposed £150k Year 1 commissioning portfolio.', refs: ['2.2.4'] },
-      { text: 'Start final-year career-enhancing projects, mentoring, placements and other deeper experiences.', refs: ['2.2.4'] },
-      { text: 'Begin commissioning across entrepreneurship and enterprise, belonging and connection, and service and community-engaged experience.', refs: ['2.2.4'] }
+      { text: 'Start final-year career-enhancing projects, mentoring, placements and other deeper experiences, while beginning entrepreneurship, belonging and community-engaged opportunities.', refs: ['2.2.4'] }
     ]
   },
   {
     amount: '£15k',
     buying: 'Freelance video production',
     outputs: [
-      { text: 'Produce the first Graduate Premium video exemplars and establish the production approach.', refs: ['2.4.1'] },
+      { text: 'Produce the first Graduate Premium video exemplars.', refs: ['2.4.1'] },
       { text: 'Produce promotional video and related assets to support Graduate Outcomes survey response.', refs: ['2.4.4'] }
     ]
   },
@@ -166,27 +165,27 @@ function InvestmentCase() {
             <tbody>
               <tr>
                 <th scope="row">Economy</th>
-                <td>£460.2k</td>
-                <td>£1.006m</td>
-                <td>£1.076m</td>
-                <td><strong>£2.5422m</strong></td>
+                <td>£460k</td>
+                <td>£1.0m</td>
+                <td>£1.1m</td>
+                <td><strong>£2.5m</strong></td>
                 <td>c.£623k p.a. + TBC</td>
               </tr>
               <tr className="recommended-option-row">
                 <th scope="row"><span className="ds-section-heading recommended-option-name">Core</span><span className="ds-eyebrow">Recommended</span></th>
-                <td><strong>£560.2k</strong></td>
-                <td><strong>£1.2675m</strong></td>
-                <td><strong>£1.3625m</strong></td>
-                <td><strong>£3.1902m</strong></td>
-                <td><strong>c.£834.5k p.a. + TBC</strong></td>
+                <td><strong>£560k</strong></td>
+                <td><strong>£1.3m</strong></td>
+                <td><strong>£1.4m</strong></td>
+                <td><strong>£3.2m</strong></td>
+                <td><strong>c.£835k p.a. + TBC</strong></td>
               </tr>
               <tr>
                 <th scope="row">Enhanced</th>
-                <td>£610.2k</td>
-                <td>£1.764m</td>
-                <td>£2.129m</td>
-                <td><strong>£4.5032m</strong></td>
-                <td>at least c.£1.176m p.a. + TBC</td>
+                <td>£610k</td>
+                <td>£1.8m</td>
+                <td>£2.1m</td>
+                <td><strong>£4.5m</strong></td>
+                <td>at least c.£1.2m p.a. + TBC</td>
               </tr>
             </tbody>
           </table>
@@ -241,8 +240,8 @@ function InvestmentCase() {
               <h3>Lower cost, narrower implementation.</h3>
             </div>
             <div className="ds-metric-grid option-metrics" aria-label="Economy option figures">
-              <div className="ds-metric-card"><span>2026/27</span><strong>£460.2k</strong></div>
-              <div className="ds-metric-card"><span>Three-year establishment</span><strong>£2.5422m</strong></div>
+              <div className="ds-metric-card"><span>2026/27</span><strong>£460k</strong></div>
+              <div className="ds-metric-card"><span>Three-year establishment</span><strong>£2.5m</strong></div>
               <div className="ds-metric-card"><span>Difference from Core</span><strong>£648k less</strong></div>
             </div>
             <div className="option-card-copy">
@@ -263,9 +262,9 @@ function InvestmentCase() {
               <h3>Higher cost, wider and faster implementation.</h3>
             </div>
             <div className="ds-metric-grid option-metrics" aria-label="Enhanced option figures">
-              <div className="ds-metric-card"><span>2026/27</span><strong>£610.2k</strong></div>
-              <div className="ds-metric-card"><span>Three-year establishment</span><strong>£4.5032m</strong></div>
-              <div className="ds-metric-card"><span>Difference from Core</span><strong>£1.313m more</strong></div>
+              <div className="ds-metric-card"><span>2026/27</span><strong>£610k</strong></div>
+              <div className="ds-metric-card"><span>Three-year establishment</span><strong>£4.5m</strong></div>
+              <div className="ds-metric-card"><span>Difference from Core</span><strong>£1.3m more</strong></div>
             </div>
             <div className="option-card-copy">
               <p>Enhanced buys a materially larger King’s Edge, with more opportunity, more delivery capacity and faster institutional adoption rather than simply restoring the previous plan.</p>
@@ -285,7 +284,7 @@ function InvestmentCase() {
         <div className="ds-stack investment-section-heading">
           <p className="eyebrow">Early investment</p>
           <h2 className="ds-section-heading">Pre-Business Case Investment Need</h2>
-          <p className="ds-subtle">If funding can be released before the full mobilisation decision, £100k can be used on work that can be commissioned and delivered before January.</p>
+          <p className="ds-subtle"><strong>£100k is the total early investment need.</strong> If funding can be released before the full mobilisation decision, it can be deployed on work that can be commissioned and delivered before January.</p>
         </div>
 
         <div className="ds-table-wrap">
@@ -301,24 +300,9 @@ function InvestmentCase() {
                 <td className="early-refs"><RefLinks ids={output.refs} /></td>
               </tr>))}
             </tbody>
-            <tfoot>
-              <tr><th><strong>£100k</strong></th><th>Total early investment</th><th>Student opportunities, first Graduate Premium and Graduate Outcomes assets, and continued analytics, engineering and student co-design work before January.</th><th>—</th></tr>
-            </tfoot>
           </table>
         </div>
         <p className="ds-subtle early-note">The £100k is an early release against the relevant Year 1 planning assumptions, rather than an additional layer of programme cost. Digital Student Experience Hub co-design remains attributable to the separate Digital investment case.</p>
-        <div className="ds-editorial-grid early-outcomes">
-          <article className="ds-editorial-card">
-            <p className="ds-sequence-kicker">What we gain</p>
-            <h3>Useful delivery and evidence before January.</h3>
-            <p>An autumn tranche of student opportunities, first media assets to test, and continued analytics, engineering and student co-design. The substantive business case therefore starts from live delivery, evidence and prototypes rather than a standing start.</p>
-          </article>
-          <article className="ds-editorial-card">
-            <p className="ds-sequence-kicker">What we lose without it</p>
-            <h3>The September to December delivery and testing window.</h3>
-            <p>Opportunity commissioning, media production and technical and co-design work would largely wait for the substantive decision, pushing learning and delivery into the main mobilisation period.</p>
-          </article>
-        </div>
       </section>
 
       <section className="ds-cluster investment-source-panel">
