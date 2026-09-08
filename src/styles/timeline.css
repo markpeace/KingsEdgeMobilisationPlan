@@ -5,10 +5,6 @@
   scroll-margin-top: 7rem;
 }
 
-.ke-timeline-page .section-heading {
-  margin-bottom: 1rem;
-}
-
 .ke-timeline-toolbar {
   display: grid;
   grid-template-columns: minmax(180px, 0.8fr) minmax(260px, 1.5fr) minmax(170px, 0.75fr) minmax(180px, 0.8fr);

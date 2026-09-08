@@ -76,6 +76,23 @@ for (const contract of requiredSharedHeroContracts) {
   }
 }
 
+if (/(^|\n)\.section-heading\s*\{/m.test(siteStyles)) {
+  fail('src/styles.css must not own the shared section-heading frame; use src/design-system.css');
+}
+
+const requiredSectionHeadingFrame = [
+  '.section-heading {',
+  'margin: clamp(0.9rem, 1.5vw, 1.35rem) 0 clamp(0.85rem, 1.4vw, 1.15rem);',
+  'padding: 0 0 1rem;',
+  'border-bottom: var(--border-width) solid var(--color-ink);',
+  'background: transparent;'
+];
+for (const contract of requiredSectionHeadingFrame) {
+  if (!designSystem.includes(contract)) {
+    fail(`src/design-system.css is missing effective section-heading frame contract ${contract}`);
+  }
+}
+
 const residualSectionHeadingTypography = [
   ['section-heading h1', /(^|\n)\.section-heading\s+h1(?:\s|,|\{|[.:])/m],
   ['section-heading h2', /(^|\n)\.section-heading\s+h2(?:\s|,|\{|[.:])/m],
@@ -99,8 +116,37 @@ for (const contract of requiredSectionHeadingTypography) {
   }
 }
 
+if (/(^|\n)\.projects-heading\s*\{/m.test(portfolioStyles)) {
+  fail('src/styles/portfolio-overview.css must not restore the shadowed Projects section-heading frame; the shared frame belongs in src/design-system.css');
+}
+
 if (/(^|\n)\.projects-heading\s+h1(?:\s|\{|[.:])/m.test(portfolioStyles)) {
   fail('src/styles/portfolio-overview.css must not restore the shadowed Projects h1 variant; shared section-heading typography owns that contract');
+}
+
+if (timelineStyles.includes('.ke-timeline-page .section-heading')) {
+  fail('src/styles/timeline.css must not restore the shadowed Timeline section-heading margin; the shared frame belongs in src/design-system.css');
+}
+
+const residualSharedDetailFoundations = [
+  ['generic back-link spacing', /(^|\n)\.back-link\s*\{/m],
+  ['detail metadata layout', /(^|\n)\.detail-meta\s*\{/m],
+  ['panel heading normalization', /(^|\n)\.panel\s+h2(?:\s|,|\{|[.:])/m]
+];
+for (const [label, pattern] of residualSharedDetailFoundations) {
+  if (pattern.test(siteStyles)) {
+    fail(`src/styles.css contains ${label}; shared screen foundations belong in src/design-system.css or their feature owner`);
+  }
+}
+
+const requiredSharedDetailFoundations = [
+  '.detail-meta {\n  display: flex;\n  flex-wrap: wrap;\n}',
+  '.panel h2 {\n  margin: 0 0 0.75rem;\n  font-family: var(--font-brand);\n  font-size: var(--heading-lg);'
+];
+for (const contract of requiredSharedDetailFoundations) {
+  if (!designSystem.includes(contract)) {
+    fail(`src/design-system.css is missing shared detail foundation ${contract}`);
+  }
 }
 
 const residualChromeOwners = [
@@ -189,6 +235,15 @@ const printMediaIndex = siteStyles.search(/@media\s+print\s*\{/m);
 const screenSiteStyles = printMediaIndex >= 0 ? siteStyles.slice(0, printMediaIndex) : siteStyles;
 if (/\b!important\b/.test(screenSiteStyles)) {
   fail('src/styles.css must not use !important in screen presentation; print-only isolation is the sole residual exception');
+}
+
+const a3ScreenVisibilityPattern = /\.a3-print-sheet\s*\{\s*display:\s*none;\s*\}/m;
+if (!a3ScreenVisibilityPattern.test(screenSiteStyles)) {
+  fail('src/styles.css must keep the dedicated A3 print sheet hidden during normal screen rendering');
+}
+const nonPrintResidualStyles = screenSiteStyles.replace(a3ScreenVisibilityPattern, '').trim();
+if (nonPrintResidualStyles) {
+  fail('src/styles.css is now reserved for A3 print composition; ordinary screen presentation belongs in the design system or a feature owner');
 }
 
 for (const [file, styles] of [
@@ -374,7 +429,7 @@ for (const selector of retiredSelectorTokens) {
 
 const escapeRegExp = (value) => value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 for (const selector of exactlyRetiredSelectors) {
-  const exactSelectorPattern = new RegExp(`(^|[},\\n])\\s*${escapeRegExp(selector)}\\s*(?:,|\\{)`, 'm');
+  const exactSelectorPattern = new RegExp(`(^|[},\n])\\s*${escapeRegExp(selector)}\\s*(?:,|\\{)`, 'm');
   if (exactSelectorPattern.test(generatedLegacyBody)) {
     fail(`generated legacy bundle still contains exact retired selector ${selector}`);
   }

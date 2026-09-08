@@ -1,15 +1,6 @@
 /* Canonical Projects index composition.
    The index is a portfolio-navigation surface with a horizontal comparative board. */
 
-.projects-heading {
-  margin: clamp(1rem, 1.8vw, 1.5rem) 0 clamp(1.2rem, 2vw, 1.75rem);
-  padding: clamp(1rem, 1.6vw, 1.35rem) 0 clamp(1.15rem, 1.8vw, 1.5rem);
-  border: 0;
-  border-top: var(--border-width-strong) solid var(--color-ink);
-  border-bottom: 1px solid var(--color-border);
-  background: transparent;
-}
-
 .projects-heading p {
   font-weight: 600;
 }
