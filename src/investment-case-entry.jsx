@@ -15,6 +15,22 @@ function UserStories({ stories }) {
   return <ul className="ds-stack investment-user-stories">{stories.map((story) => <li key={`${story.label}-${story.text}`}><strong>{story.label}:</strong> “{story.text}”</li>)}</ul>;
 }
 
+function CapabilityList({ capabilities }) {
+  return <div className="investment-capabilities">
+    <span className="ds-sequence-kicker">What King’s can do differently</span>
+    <ul>{capabilities.map((capability) => <li key={capability}>{capability}</li>)}</ul>
+  </div>;
+}
+
+function YearOneProgress({ steps }) {
+  return <div className="investment-year-one-list">
+    {steps.map((step) => <div className="investment-year-one-step" key={`${step.label}-${step.text}`}>
+      <strong>{step.label}</strong>
+      <p>{step.text}</p>
+    </div>)}
+  </div>;
+}
+
 function InvestmentProfile({ item }) {
   return <div className="investment-profile">
     <div className="investment-profile-primary">
@@ -27,7 +43,7 @@ function InvestmentProfile({ item }) {
         <strong className="year-one-price">{item.yearOneCost}</strong>
         <div className="investment-early-gain">
           <span className="investment-profile-label">By the end of Year 1</span>
-          <p>{item.yearOne}</p>
+          <YearOneProgress steps={item.yearOne} />
         </div>
       </div>
       <div>
@@ -44,6 +60,11 @@ const corePackages = [
     refs: ['2.2.1', '2.1.3', '2.4.3'],
     northStar: 'Every student has a developmental relationship with King’s shaped by purpose as well as discipline. King’s helps them explore what matters, connect their course, wider experiences, relationships and ambitions, make intentional choices, and build a trusted account of what they are learning and becoming.',
     proposition: 'This changes the contract between student and university. King’s takes greater responsibility for connecting the parts of the student experience around individual development, while students are supported to take active ownership of the choices, experiences and evidence that shape their future.',
+    capabilities: [
+      'Organise student development around individual purpose alongside the disciplinary journey, rather than leaving purpose primarily to optional careers activity or student initiative.',
+      'Connect course learning, wider opportunity, skills, recognition and future planning through a common developmental model while retaining disciplinary difference.',
+      'Offer students a clearer reciprocal proposition: King’s helps make the whole experience coherent, while students actively shape, test and evidence their own development.'
+    ],
     stories: [
       { label: 'Student', text: 'I do not need to arrive at King’s knowing exactly what I want to do. I am actively helped to explore what matters to me and how my ambitions are changing.' },
       { label: 'Student', text: 'I can see how my course, wider opportunities, relationships and support fit together around what I am trying to develop.' },
@@ -53,7 +74,11 @@ const corePackages = [
       { label: 'Programme team / academic', text: 'I can make the distinctive developmental value of my discipline visible without reducing it to a generic employability framework.' },
       { label: 'The University', text: 'We can design more deliberately around individual development rather than expecting students to assemble a coherent journey across separate courses, services and opportunities.' }
     ],
-    yearOne: 'King’s has a tested institutional proposition for purpose and self-direction; a candidate skills architecture with an adopt / adapt / reconsider decision; a clearer proposition and requirements for trusted educational recognition; and a bounded set of deep trailblazers with agreed contexts, evidence needs and implementation questions ready for 2027/28.',
+    yearOne: [
+      { label: 'Established', text: 'A tested institutional proposition for purpose and self-direction, alongside clearer requirements for trusted educational recognition and the student-facing relationship King’s is seeking to create.' },
+      { label: 'Tested', text: 'A candidate skills architecture examined across selected contexts, with an adopt / adapt / reconsider decision and evidence about how it can connect disciplinary learning, wider experience and future-facing capability.' },
+      { label: 'Ready for Year 2', text: 'A bounded set of deep trailblazers with agreed contexts, evidence needs and implementation questions, ready to move from proposition design into live institutional practice in 2027/28.' }
+    ],
     yearOneCost: '£53k',
     threeYearCost: '£252k',
     ongoing: 'c.£9k p.a. + costs to confirm'
@@ -63,6 +88,11 @@ const corePackages = [
     refs: ['2.1.2', '2.1.4', '2.2.3'],
     northStar: 'Every student can expect purposeful experiential learning through or alongside their course, with King’s able to identify where access or quality is weak, intervene deliberately, and reuse strong academic, regulatory and delivery models across disciplines.',
     proposition: 'King’s builds an institution-wide capability for designing, assuring and growing experiential learning. Strong local practice becomes easier to reuse, and gaps in access can be identified and acted on rather than left to develop unevenly.',
+    capabilities: [
+      'See where meaningful experiential learning is strong, weak or absent across the curriculum rather than relying on anecdote or local visibility.',
+      'Support priority programmes with reusable academic, policy, validation and delivery routes instead of asking each team to solve the same implementation problems again.',
+      'Scale proven models such as sandwich-year routes and shared capstone provision while preserving appropriate disciplinary variation in learning design.'
+    ],
     stories: [
       { label: 'Student', text: 'I can expect meaningful opportunities to apply and test my learning as part of a King’s education, whatever course I study.' },
       { label: 'Student', text: 'I can connect what I learn in my discipline with real challenges, unfamiliar settings and people beyond the classroom.' },
@@ -72,7 +102,11 @@ const corePackages = [
       { label: 'Education leader / quality colleague', text: 'I can see which models are working across disciplines and use that evidence to support proportionate, scalable implementation rather than isolated local fixes.' },
       { label: 'The University', text: 'We can target investment at gaps in experiential learning and know whether that investment is changing the student experience.' }
     ],
-    yearOne: 'King’s has an agreed experiential-learning North Star and entitlement direction; an initial curriculum baseline showing where provision is strong, weak or absent and where growth should be prioritised; a ratified sandwich-year policy and regulatory model; a validated shared 15-credit Level 6 capstone; and a sequenced implementation portfolio with reusable academic, policy and delivery routes ready to take into priority programmes.',
+    yearOne: [
+      { label: 'Established', text: 'An agreed experiential-learning North Star and entitlement direction, plus an initial curriculum baseline showing where provision is strong, weak or absent and where growth should be prioritised.' },
+      { label: 'Put in place', text: 'A ratified sandwich-year policy and regulatory model, a validated shared 15-credit Level 6 capstone, and reusable academic, policy and delivery routes that remove avoidable friction for course teams.' },
+      { label: 'Ready for Year 2', text: 'A sequenced implementation portfolio identifying priority programmes and the practical support needed to move a bounded cohort from diagnosis into changed curriculum in 2027/28.' }
+    ],
     yearOneCost: '£59k',
     threeYearCost: '£341k',
     ongoing: 'c.£9k p.a. + costs to confirm'
@@ -82,6 +116,11 @@ const corePackages = [
     refs: ['2.2.2', '2.2.4', '2.3.1', '2.3.2', '2.3.4'],
     northStar: 'Every student can see and access a rich, coherent and inclusive opportunity environment beyond the course, with King’s actively shaping what exists, who can access it and where new opportunity is needed.',
     proposition: 'King’s moves from aggregating a fragmented offer to actively stewarding the opportunity ecology. Commissioning, partnerships, participation evidence and a shared student-year rhythm are used to grow both the breadth and the depth of opportunity available to students.',
+    capabilities: [
+      'See the shape, reach, equity and depth of the wider opportunity portfolio as one institutional system rather than a collection of disconnected local offers.',
+      'Commission additional supply deliberately where evidence shows gaps in reach, developmental depth or student need, including sustained projects, mentoring and placements.',
+      'Coordinate participation design, timing and partnership activity around different patterns of student life so access is shaped rather than left to chance.'
+    ],
     stories: [
       { label: 'Student', text: 'I can see a richer range of opportunities in one place and understand which ones are relevant to my interests, ambitions and stage of development.' },
       { label: 'Student', text: 'My pattern of life and study is considered in how opportunities are designed, so practical barriers are less likely to decide whether I can participate.' },
@@ -91,7 +130,11 @@ const corePackages = [
       { label: 'Faculty / professional staff', text: 'I can see how local provision fits into the wider opportunity landscape and where collaboration or additional supply would add value.' },
       { label: 'The University', text: 'We can see the shape, reach, equity and emerging impact of the opportunity portfolio and commission deliberately where the student experience needs to be stronger.' }
     ],
-    yearOne: 'King’s has a live evidence base and common shopfront; a £150k commissioned opportunity portfolio intended to reach at least 2,500 distinct students and provide 26.5–33.5k student-hours, including deeper sustained experiences; Student Life personas and participation prototypes tested against different patterns of life and study; a shared student-year rhythm; and costed partnership and access options that give a clearer basis for 2027/28 commissioning and growth.',
+    yearOne: [
+      { label: 'Live in Year 1', text: 'A common shopfront and live evidence base, alongside a £150k commissioned portfolio intended to reach at least 2,500 distinct students and provide 26.5–33.5k student-hours, including deeper sustained experiences.' },
+      { label: 'Learned in Year 1', text: 'Student Life personas and participation prototypes tested against different patterns of life and study, with better evidence about barriers, participation, provider reach and how the shared student-year rhythm can improve access.' },
+      { label: 'Ready for Year 2', text: 'Costed partnership and access options, clearer commissioning priorities and an evidence base that can be used to decide where to grow supply, deepen experiences and target participation in 2027/28.' }
+    ],
     yearOneCost: '£279k',
     threeYearCost: '£1.8m',
     ongoing: 'c.£647k p.a. + costs to confirm'
@@ -101,6 +144,11 @@ const corePackages = [
     refs: ['2.1.1', '2.4.1', '2.4.2', '2.4.4'],
     northStar: 'King’s can continuously see where graduate value is strong, uneven or changing, act on that evidence, and turn credible learning into stronger student articulation, outcomes and external recognition.',
     proposition: 'Graduate Futures becomes an institutional learning and improvement function. Course evidence, student experience, outcomes data and external challenge feed decisions about what King’s should strengthen, where it should intervene and what it can credibly claim about the value of its education.',
+    capabilities: [
+      'Bring course evidence, student experience, graduate outcomes and external insight together into a routine institutional view of where graduate value is strong, uneven or changing.',
+      'Target improvement activity at the courses, cohorts or issues where evidence shows the greatest need or opportunity rather than relying on broad untargeted intervention.',
+      'Turn credible evidence into student articulation, recruitment, reputation and partner-facing claims while maintaining a clear distinction between what King’s believes and what the evidence supports.'
+    ],
     stories: [
       { label: 'Student', text: 'I can recognise and articulate more of the value I am gaining from my course, wider experiences, skills and ambitions.' },
       { label: 'Course team', text: 'I have trusted evidence to understand the graduate futures value of my course and take proportionate action where it could be stronger.' },
@@ -110,7 +158,11 @@ const corePackages = [
       { label: 'Student-success / careers colleague', text: 'I can connect outcomes intelligence with earlier student experience and use it to target interventions more intelligently.' },
       { label: 'The University', text: 'We can learn continuously from student journeys and graduate outcomes, improve the education in response, and make a clearer evidence-based claim for the lasting value of King’s.' }
     ],
-    yearOne: 'King’s has the first Graduate Futures evidence-and-action model linking course-level evidence, student experience and outcomes intelligence; publication-ready graduate-premium exemplars and rich media; a common external-validation model; targeted Graduate Outcomes response optimisation; a strategic survey and reputation-intelligence baseline; and enough flexible partnership and profile capacity to turn the highest-priority findings into a repeatable improvement and activation cycle for 2027/28.',
+    yearOne: [
+      { label: 'Established', text: 'The first Graduate Futures evidence-and-action model linking course-level evidence, student experience and outcomes intelligence, together with a strategic survey and reputation-intelligence baseline.' },
+      { label: 'Activated', text: 'Publication-ready graduate-premium exemplars and rich media, a common external-validation model and targeted Graduate Outcomes response optimisation, allowing priority evidence to move into live improvement and communication activity.' },
+      { label: 'Ready for Year 2', text: 'A repeatable improvement and activation cycle, with flexible partnership and profile capacity to carry the highest-priority findings into course action, student articulation, outcomes work and external positioning in 2027/28.' }
+    ],
     yearOneCost: '£170k',
     threeYearCost: '£765k',
     ongoing: 'c.£170k p.a. + costs to confirm'
@@ -233,6 +285,7 @@ function InvestmentCase() {
                   <RefLinks ids={item.refs} />
                   <div className="investment-north-star"><span className="ds-sequence-kicker">North Star</span><p>{item.northStar}</p></div>
                   <div className="investment-proposition"><span className="ds-sequence-kicker">What this changes</span><p>{item.proposition}</p></div>
+                  <CapabilityList capabilities={item.capabilities} />
                 </td>
                 <td><UserStories stories={item.stories} /></td>
                 <td className="investment-profile-cell"><InvestmentProfile item={item} /></td>
