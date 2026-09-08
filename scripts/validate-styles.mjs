@@ -68,7 +68,7 @@ const requiredSharedHeroContracts = [
   '.hero,\n.detail-hero {',
   '.hero::after,\n.detail-hero::after',
   '.hero h1,\n.detail-hero h1',
-  '.hero p,\n.detail-hero p'
+  '.hero > p,\n.detail-hero > p'
 ];
 for (const contract of requiredSharedHeroContracts) {
   if (!designSystem.includes(contract)) {
@@ -106,7 +106,7 @@ for (const [label, pattern] of residualSectionHeadingTypography) {
 
 const requiredSectionHeadingTypography = [
   '.section-heading h1 {',
-  '.section-heading p {',
+  '.section-heading > p {',
   '.section-heading h2 {',
   'font-size: clamp(2.3rem, 12vw, 3.2rem);'
 ];
