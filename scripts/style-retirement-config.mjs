@@ -55,6 +55,7 @@ export const explicitlyRetiredSelectorTokens = [
   '.dependency-list',
   '.sidebars-preview',
   '.secondary-button',
+  '.section-heading',
   '#resource-investment-profile',
   '.resource-investment-profile',
   '.resource-profile-',
@@ -64,9 +65,7 @@ export const explicitlyRetiredSelectorTokens = [
 /* These generic selectors conflict with migrated consumers but must not retire
    more-specific variants that still belong to legacy features. */
 export const exactlyRetiredSelectors = [
-  '.schema-card h3',
-  '.section-heading h1',
-  '.section-heading p'
+  '.schema-card h3'
 ];
 
 export const retiredSelectorTokens = [

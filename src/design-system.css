@@ -165,7 +165,6 @@ main {
 .panel,
 .hero,
 .detail-hero,
-.section-heading,
 .project-column {
   background: var(--color-surface);
   border: var(--border-width) solid var(--color-ink);
@@ -177,6 +176,15 @@ main {
 .panel {
   padding: var(--panel-padding);
   margin-block: var(--space-4);
+}
+
+.panel h2 {
+  margin: 0 0 0.75rem;
+  font-family: var(--font-brand);
+  font-size: var(--heading-lg);
+  font-weight: 400;
+  line-height: 1.02;
+  letter-spacing: -0.025em;
 }
 
 .ds-card {
@@ -241,8 +249,20 @@ main {
   line-height: var(--line-body);
 }
 
-/* Shared section-heading typography. Values preserve the effective legacy
-   contract rather than the shadowed declarations that remained in styles.css. */
+/* Shared section-heading frame and typography. Values preserve the effective
+   legacy contract rather than the shadowed declarations that remained in
+   residual and feature stylesheets. */
+.section-heading {
+  position: relative;
+  margin: clamp(0.9rem, 1.5vw, 1.35rem) 0 clamp(0.85rem, 1.4vw, 1.15rem);
+  padding: 0 0 1rem;
+  border: 0;
+  border-bottom: var(--border-width) solid var(--color-ink);
+  border-radius: var(--radius-none);
+  background: transparent;
+  box-shadow: var(--shadow-none);
+}
+
 .section-heading h1 {
   position: relative;
   z-index: 1;
@@ -361,6 +381,12 @@ button.ds-control {
   border-color: var(--color-accent);
   background: var(--color-accent);
   color: var(--color-paper);
+}
+
+/* Shared detail metadata container */
+.detail-meta {
+  display: flex;
+  flex-wrap: wrap;
 }
 
 /* Compact tags */
