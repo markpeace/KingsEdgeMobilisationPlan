@@ -19,12 +19,12 @@ function InvestmentProfile({ item }) {
   return <div className="investment-profile">
     <div className="investment-profile-primary">
       <span className="investment-profile-label">Three-year establishment cost</span>
-      <strong className="year-one-price">{item.threeYearCost}</strong>
+      <strong className="investment-profile-three-year">{item.threeYearCost}</strong>
     </div>
     <div className="investment-profile-secondary">
       <div>
         <span className="investment-profile-label">Of which, 2026/27 investment</span>
-        <strong className="investment-profile-three-year">{item.yearOneCost}</strong>
+        <strong className="year-one-price">{item.yearOneCost}</strong>
         <div className="investment-early-gain">
           <span className="investment-profile-label">By the end of Year 1</span>
           <p>{item.yearOne}</p>
