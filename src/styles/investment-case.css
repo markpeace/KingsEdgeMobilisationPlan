@@ -69,7 +69,6 @@
 
 .investment-ask-context {
   --stack-gap: var(--space-2);
-  max-width: 64rem;
   margin-top: var(--space-5);
   padding-top: var(--space-3);
   border-top: 1px solid var(--color-border);
@@ -86,7 +85,6 @@
 }
 
 .investment-boundary {
-  max-width: 61rem;
   font-size: var(--text-sm);
 }
 
@@ -97,12 +95,10 @@
 
 .investment-section-heading {
   --stack-gap: var(--space-2);
-  max-width: 64rem;
   margin-bottom: var(--space-6);
 }
 
 .investment-section-heading > p:last-child {
-  max-width: 58rem;
   margin: 0;
 }
 
@@ -285,29 +281,12 @@
   gap: var(--space-5);
 }
 
-.option-card-heading {
-  display: grid;
-  grid-template-columns: auto minmax(0, 1fr);
-  gap: var(--space-3);
-  align-items: start;
+.option-card > div:first-child .ds-sequence-kicker {
+  margin: 0 0 var(--space-2);
 }
 
-.option-card-heading .ds-sequence-kicker {
-  margin-bottom: var(--space-2);
-}
-
-.option-card-heading h3 {
-  margin-bottom: 0;
-}
-
-.option-direction {
-  justify-content: center;
-  min-width: 2rem;
-  min-height: 2rem;
-  padding: var(--space-1);
-  font-family: var(--font-brand);
-  font-size: 1.25rem;
-  line-height: 1;
+.option-card > div:first-child h3 {
+  margin: 0;
 }
 
 .option-metrics {
@@ -341,11 +320,27 @@
 
 .option-card-copy {
   display: grid;
-  gap: var(--space-3);
+  gap: var(--space-4);
 }
 
 .option-card-copy p {
   margin: 0;
+}
+
+.option-detail-list {
+  display: grid;
+  gap: var(--space-3);
+  margin: 0;
+  padding-left: var(--space-5);
+}
+
+.option-detail-list li {
+  padding-left: var(--space-1);
+  line-height: 1.5;
+}
+
+.option-detail-list strong {
+  color: var(--color-ink);
 }
 
 .early-section {
@@ -353,36 +348,47 @@
 }
 
 .early-table {
-  min-width: 58rem;
+  min-width: 64rem;
   background: var(--color-paper);
 }
 
 .early-table th:nth-child(1),
 .early-table td:nth-child(1) {
-  width: 12%;
+  width: 10%;
 }
 
 .early-table th:nth-child(2),
 .early-table td:nth-child(2) {
-  width: 27%;
+  width: 22%;
 }
 
 .early-table th:nth-child(3),
 .early-table td:nth-child(3) {
-  width: 61%;
+  width: 53%;
 }
 
-.early-output-list {
-  margin: 0;
-  padding-left: var(--space-5);
+.early-table th:nth-child(4),
+.early-table td:nth-child(4) {
+  width: 15%;
 }
 
-.early-output-list li + li {
-  margin-top: var(--space-2);
+.early-table td[rowspan] {
+  background: var(--color-surface-softest);
+}
+
+.early-group-start > * {
+  border-top: 1px solid var(--color-ink);
+}
+
+.early-group-start:first-child > * {
+  border-top: 0;
+}
+
+.early-refs .ask-refs {
+  margin-top: 0;
 }
 
 .early-note {
-  max-width: 61rem;
   margin: var(--space-4) 0 0;
   font-size: var(--text-sm);
 }
@@ -411,7 +417,6 @@
 
 .investment-source-copy {
   --stack-gap: var(--space-2);
-  max-width: 58rem;
 }
 
 .investment-source-copy > p:last-child {
