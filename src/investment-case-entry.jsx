@@ -200,6 +200,7 @@ function InvestmentCase() {
         <div className="ds-stack investment-section-heading">
           <p className="eyebrow">Investment case</p>
           <h2 className="ds-section-heading">What implementation brings to the institution</h2>
+          <p><strong>Investing in King’s Edge moves purpose and graduate futures to the organising core of the student experience.</strong> It connects curriculum, skills, opportunities and wider student life, while deepening the opportunity structure available to students. For King’s, that means a more coherent student experience, more deliberate use of investment and a stronger account of the value of a King’s education.</p>
         </div>
 
         <div className="ds-table-wrap">
