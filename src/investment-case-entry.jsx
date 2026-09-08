@@ -3,6 +3,7 @@ import { createRoot } from 'react-dom/client';
 import './design-system.css';
 import './styles/global-chrome.css';
 import './styles/investment-case.css';
+import './styles/investment-case-emphasis.css';
 
 const deliverableHref = (id) => `./index.html#/deliverables/${id}`;
 
@@ -26,7 +27,7 @@ function InvestmentProfile({ item }) {
     </div>
     <div className="investment-profile-secondary">
       <div>
-        <span className="investment-profile-label">Three-year cost</span>
+        <span className="investment-profile-label">Three-year establishment cost</span>
         <strong className="investment-profile-three-year">{item.threeYearCost}</strong>
       </div>
       <div>
@@ -137,7 +138,7 @@ function Header() {
       <a href="#case">Investment options</a>
       <a href="#core">Core case</a>
       <a href="#options">Options to vary</a>
-      <a href="#early">Early investment</a>
+      <a href="#early">Pre-Business Case</a>
     </nav>
   </header>;
 }
@@ -149,8 +150,8 @@ function InvestmentCase() {
       <section id="case" className="hero investment-hero" aria-labelledby="investment-title">
         <p className="eyebrow">King’s Edge</p>
         <h1 id="investment-title">Investment case</h1>
-        <p className="investment-hero-copy">Core is the recommended planning case. Economy and Enhanced show lower- and higher-investment variants around it. The table gives the cost of each option before the page sets out what the Core case would bring and how it could be varied.</p>
-        <div className="ds-table-wrap investment-table-wrap">
+        <p className="investment-hero-copy"><strong>Core is the recommended planning case.</strong> Economy and Enhanced show lower- and higher-investment variants around it. The figures for 2026/27 to 2028/29 are the establishment period, so the table distinguishes the <strong>three-year establishment cost</strong> from the indicative annual cost once the model is established.</p>
+        <div className="ds-table-wrap investment-table-wrap option-summary-wrap">
           <table className="ds-table option-summary-table" aria-label="King's Edge investment options">
             <thead>
               <tr>
@@ -158,7 +159,7 @@ function InvestmentCase() {
                 <th>2026/27</th>
                 <th>2027/28</th>
                 <th>2028/29</th>
-                <th>Three-year investment</th>
+                <th>Three-year establishment cost</th>
                 <th>Indicative ongoing annual cost</th>
               </tr>
             </thead>
@@ -172,7 +173,7 @@ function InvestmentCase() {
                 <td>c.£623k p.a. + TBC</td>
               </tr>
               <tr className="recommended-option-row">
-                <th scope="row">Core <span>recommended</span></th>
+                <th scope="row"><span className="recommended-option-name">Core</span><span className="recommended-option-badge">Recommended</span></th>
                 <td><strong>£560.2k</strong></td>
                 <td><strong>£1.2675m</strong></td>
                 <td><strong>£1.3625m</strong></td>
@@ -197,7 +198,7 @@ function InvestmentCase() {
         <div className="investment-section-heading">
           <p className="eyebrow">Core case</p>
           <h2>What the Core case brings</h2>
-          <p>The North Star gives the intended end state. The user stories describe the practical change for the people who experience or deliver it. The investment profile shows the first-year ask and early gains first, with the longer-term cost beneath them.</p>
+          <p>The North Star gives the intended end state. The user stories describe the practical change for the people who experience or deliver it. The investment profile shows the first-year ask and early gains first, with the longer-term establishment and ongoing costs beneath them.</p>
         </div>
 
         <div className="ds-table-wrap investment-table-wrap">
@@ -229,7 +230,7 @@ function InvestmentCase() {
                     <strong className="investment-total-primary">£560.2k</strong>
                   </div>
                   <div className="investment-total-secondary">
-                    <div><span className="investment-profile-label">Three-year investment</span><strong>£3.1902m</strong></div>
+                    <div><span className="investment-profile-label">Three-year establishment cost</span><strong>£3.1902m</strong></div>
                     <div><span className="investment-profile-label">Indicative ongoing annual cost</span><strong>c.£834.5k p.a. + TBC</strong></div>
                   </div>
                 </td>
