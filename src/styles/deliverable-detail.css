@@ -54,8 +54,8 @@ main:has(> .detail-hero:not(.project-detail-hero)) > .back-link {
 }
 
 .detail-hero:not(.project-detail-hero) > p:not(.detail-summary) {
-  width: auto;
-  max-width: 78ch;
+  width: 100%;
+  max-width: var(--measure-planning-wide);
   margin: 0;
   color: var(--color-ink);
   font-size: clamp(1.04rem, 1.22vw, 1.22rem);
@@ -69,7 +69,8 @@ main:has(> .detail-hero:not(.project-detail-hero)) > .back-link {
 }
 
 .hero-proposition-detail {
-  max-width: 88ch;
+  width: 100%;
+  max-width: none;
   margin-top: 0.9rem;
   padding-top: 0.72rem;
   border-top: 1px solid var(--color-border);
@@ -105,7 +106,8 @@ main:has(> .detail-hero:not(.project-detail-hero)) > .back-link {
 }
 
 .hero-proposition-detail p {
-  max-width: 86ch;
+  width: 100%;
+  max-width: var(--measure-planning-wide);
   margin: 0.72rem 0 0;
   color: var(--color-muted);
   font-size: clamp(0.94rem, 0.98vw, 1.02rem);
@@ -197,7 +199,8 @@ main:has(> .detail-hero:not(.project-detail-hero)) > .back-link {
 .deliverable-main-flow .case-panel > p,
 .deliverable-main-flow .route-through-panel > p,
 .value-evidence-explainer {
-  max-width: 82ch;
+  width: 100%;
+  max-width: var(--measure-planning-wide);
   margin: 0;
   color: var(--color-muted);
   font-size: clamp(0.9rem, 0.96vw, 1rem);
@@ -222,7 +225,7 @@ main:has(> .detail-hero:not(.project-detail-hero)) > .back-link {
 
 .benefit-realisation-list {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 22rem), 1fr));
   gap: clamp(1rem, 1.6vw, 1.4rem);
 }
 

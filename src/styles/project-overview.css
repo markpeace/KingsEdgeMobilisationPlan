@@ -54,7 +54,8 @@ main:has(> .project-detail-hero) > .back-link {
 }
 
 .project-detail-hero > h1 + p {
-  max-width: 78ch;
+  width: 100%;
+  max-width: var(--measure-planning-wide);
   margin: 0;
   color: var(--color-ink);
   font-size: clamp(1.04rem, 1.22vw, 1.22rem);
@@ -63,7 +64,8 @@ main:has(> .project-detail-hero) > .back-link {
 }
 
 .project-detail-hero .detail-summary {
-  max-width: 88ch;
+  width: 100%;
+  max-width: var(--measure-planning-wide);
   margin: 0.9rem 0 0;
   padding-top: 0.78rem;
   border-top: 1px solid var(--color-border);
@@ -75,7 +77,8 @@ main:has(> .project-detail-hero) > .back-link {
 }
 
 .project-detail-hero .detail-summary + p {
-  max-width: 88ch;
+  width: 100%;
+  max-width: var(--measure-planning-wide);
   margin: 0.72rem 0 0;
   color: var(--color-muted);
   font-size: 0.94rem;
@@ -124,7 +127,8 @@ main:has(> .project-detail-hero) > .back-link {
 }
 
 .project-deliverable-panel > .subtle {
-  max-width: 72ch;
+  width: 100%;
+  max-width: var(--measure-planning-wide);
   margin: 0 0 var(--space-5);
   color: var(--color-muted);
   font-size: clamp(0.9rem, 0.96vw, 1rem);

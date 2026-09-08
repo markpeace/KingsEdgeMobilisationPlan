@@ -28,6 +28,7 @@
   --heading-lg: clamp(1.5rem, 2.5vw, 2.45rem);
   --line-body: 1.45;
   --line-tight: 1.05;
+  --measure-planning-wide: 68rem;
 
   /* Palette */
   --color-ink: #090909;

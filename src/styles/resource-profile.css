@@ -134,7 +134,8 @@
 }
 
 #resource-investment-profile .resource-workforce-callout p {
-  max-width: 100ch;
+  width: 100%;
+  max-width: var(--measure-planning-wide);
   margin: 0;
   color: var(--ink);
   font-size: 0.94rem;
@@ -244,7 +245,8 @@
 }
 
 #resource-investment-profile .resource-readable-heading p {
-  max-width: 82ch;
+  width: 100%;
+  max-width: var(--measure-planning-wide);
   margin: var(--space-1) 0 0;
   color: var(--muted);
   font-size: 0.86rem;
@@ -295,7 +297,8 @@
 }
 
 #resource-investment-profile .resource-subheading p {
-  max-width: 86ch;
+  width: 100%;
+  max-width: var(--measure-planning-wide);
   margin: 0.15rem 0 0;
   color: var(--muted);
   font-size: 0.78rem;
