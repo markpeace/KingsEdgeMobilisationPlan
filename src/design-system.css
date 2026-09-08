@@ -240,8 +240,10 @@ main {
   letter-spacing: -0.035em;
 }
 
-.hero p,
-.detail-hero p {
+/* Only direct hero standfirst copy inherits the hero measure. Nested content
+   should use its own layout primitive rather than being silently constrained. */
+.hero > p,
+.detail-hero > p {
   position: relative;
   z-index: 1;
   max-width: 850px;
@@ -276,7 +278,9 @@ main {
   letter-spacing: -0.033em;
 }
 
-.section-heading p {
+/* Keep the reading measure on authored section standfirsts, not on paragraphs
+   nested inside section-heading compositions. */
+.section-heading > p {
   position: relative;
   z-index: 1;
   max-width: 920px;
