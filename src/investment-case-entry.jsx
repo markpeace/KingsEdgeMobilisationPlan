@@ -134,8 +134,9 @@ function Header() {
   return <header className="site-header investment-header">
     <a href="./index.html#/" className="brand">King's Edge Investment Case</a>
     <nav aria-label="Investment case navigation">
+      <a href="#case">Investment options</a>
       <a href="#core">Core case</a>
-      <a href="#options">Economy / Enhanced</a>
+      <a href="#options">Options to vary</a>
       <a href="#early">Early investment</a>
     </nav>
   </header>;
@@ -145,14 +146,49 @@ function InvestmentCase() {
   return <>
     <Header />
     <main className="investment-case-page">
-      <section className="hero investment-hero" aria-labelledby="investment-title">
+      <section id="case" className="hero investment-hero" aria-labelledby="investment-title">
         <p className="eyebrow">King’s Edge</p>
         <h1 id="investment-title">Investment case</h1>
-        <p className="investment-hero-copy">The recommended Core case is £560.2k in 2026/27 and £3.1902m over three years. For each investment area, the table below sets out the intended end state, what that means for students and staff, what should be in place by the end of Year 1, and the cost.</p>
-        <div className="investment-metrics" aria-label="Recommended investment headline figures">
-          <article><strong>£560.2k</strong><span>2026/27 investment</span></article>
-          <article><strong>£3.1902m</strong><span>Three-year investment</span></article>
-          <article><strong>c.£834.5k</strong><span>Indicative annual cost once established, plus costs still to confirm</span></article>
+        <p className="investment-hero-copy">Core is the recommended planning case. Economy and Enhanced show lower- and higher-investment variants around it. The table gives the cost of each option before the page sets out what the Core case would bring and how it could be varied.</p>
+        <div className="ds-table-wrap investment-table-wrap">
+          <table className="ds-table option-summary-table" aria-label="King's Edge investment options">
+            <thead>
+              <tr>
+                <th>Option</th>
+                <th>2026/27</th>
+                <th>2027/28</th>
+                <th>2028/29</th>
+                <th>Three-year investment</th>
+                <th>Indicative ongoing annual cost</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Economy</th>
+                <td>£460.2k</td>
+                <td>£1.006m</td>
+                <td>£1.076m</td>
+                <td><strong>£2.5422m</strong></td>
+                <td>c.£623k p.a. + TBC</td>
+              </tr>
+              <tr className="recommended-option-row">
+                <th scope="row">Core <span>recommended</span></th>
+                <td><strong>£560.2k</strong></td>
+                <td><strong>£1.2675m</strong></td>
+                <td><strong>£1.3625m</strong></td>
+                <td><strong>£3.1902m</strong></td>
+                <td><strong>c.£834.5k p.a. + TBC</strong></td>
+              </tr>
+              <tr>
+                <th scope="row">Enhanced</th>
+                <td>£610.2k</td>
+                <td>£1.764m</td>
+                <td>£2.129m</td>
+                <td><strong>£4.5032m</strong></td>
+                <td>at least c.£1.176m p.a. + TBC</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
         <p className="investment-boundary">This is the investment case for King’s Edge. The Digital Student Experience Hub / Digital Front Door has a separate investment case.</p>
       </section>
@@ -160,7 +196,7 @@ function InvestmentCase() {
       <section id="core" className="investment-section">
         <div className="investment-section-heading">
           <p className="eyebrow">Core case</p>
-          <h2>What the investment changes</h2>
+          <h2>What the Core case brings</h2>
           <p>The North Star gives the intended end state. The user stories describe the practical change for the people who experience or deliver it. The investment profile shows the first-year ask and early gains first, with the longer-term cost beneath them.</p>
         </div>
 
@@ -205,15 +241,9 @@ function InvestmentCase() {
 
       <section id="options" className="investment-section option-section">
         <div className="investment-section-heading">
-          <p className="eyebrow">Investment options</p>
-          <h2>Economy and Enhanced</h2>
-          <p>Economy reduces the amount of new capacity and activity funded. Enhanced increases the scale and pace of delivery. Core remains the recommended reference point.</p>
-        </div>
-
-        <div className="option-price-band" aria-label="Three year investment options">
-          <article><span>Economy</span><strong>£2.5422m</strong><em>£648k below Core</em></article>
-          <article className="recommended-option"><span>Core · recommended</span><strong>£3.1902m</strong><em>Recommended planning case</em></article>
-          <article><span>Enhanced</span><strong>£4.5032m</strong><em>£1.313m above Core</em></article>
+          <p className="eyebrow">Options to vary</p>
+          <h2>Options to vary the Core case</h2>
+          <p>Economy reduces the amount of new capacity and activity funded. Enhanced increases the scale and pace of delivery. Both are variations around the Core case rather than separate delivery plans.</p>
         </div>
 
         <div className="option-narratives">
