@@ -2,17 +2,17 @@ import React from 'react';
 import { createRoot } from 'react-dom/client';
 import './design-system.css';
 import './styles/global-chrome.css';
+import './styles/detail-primitives.css';
 import './styles/investment-case.css';
-import './styles/investment-case-emphasis.css';
 
 const deliverableHref = (id) => `./index.html#/deliverables/${id}`;
 
 function RefLinks({ ids }) {
-  return <span className="ask-refs" aria-label="Related deliverables">{ids.map((id) => <a key={id} href={deliverableHref(id)}>{id}</a>)}</span>;
+  return <span className="ds-cluster ask-refs" aria-label="Related deliverables">{ids.map((id) => <a className="ds-tag" key={id} href={deliverableHref(id)}>{id}</a>)}</span>;
 }
 
 function UserStories({ stories }) {
-  return <ul className="investment-user-stories">{stories.map((story) => <li key={`${story.label}-${story.text}`}><strong>{story.label}:</strong> “{story.text}”</li>)}</ul>;
+  return <ul className="ds-stack investment-user-stories">{stories.map((story) => <li key={`${story.label}-${story.text}`}><strong>{story.label}:</strong> “{story.text}”</li>)}</ul>;
 }
 
 function InvestmentProfile({ item }) {
@@ -151,7 +151,7 @@ function InvestmentCase() {
         <p className="eyebrow">King’s Edge</p>
         <h1 id="investment-title">Investment case</h1>
         <p className="investment-hero-copy"><strong>Core is the recommended planning case.</strong> Economy and Enhanced show lower- and higher-investment variants around it. The figures for 2026/27 to 2028/29 are the establishment period, so the table distinguishes the <strong>three-year establishment cost</strong> from the indicative annual cost once the model is established.</p>
-        <div className="ds-table-wrap investment-table-wrap option-summary-wrap">
+        <div className="ds-table-wrap option-summary-wrap">
           <table className="ds-table option-summary-table" aria-label="King's Edge investment options">
             <thead>
               <tr>
@@ -173,7 +173,7 @@ function InvestmentCase() {
                 <td>c.£623k p.a. + TBC</td>
               </tr>
               <tr className="recommended-option-row">
-                <th scope="row"><span className="recommended-option-name">Core</span><span className="recommended-option-badge">Recommended</span></th>
+                <th scope="row"><span className="ds-section-heading recommended-option-name">Core</span><span className="ds-eyebrow">Recommended</span></th>
                 <td><strong>£560.2k</strong></td>
                 <td><strong>£1.2675m</strong></td>
                 <td><strong>£1.3625m</strong></td>
@@ -191,17 +191,17 @@ function InvestmentCase() {
             </tbody>
           </table>
         </div>
-        <p className="investment-boundary">This is the investment case for King’s Edge. The Digital Student Experience Hub / Digital Front Door has a separate investment case.</p>
+        <p className="ds-subtle investment-boundary">This is the investment case for King’s Edge. The Digital Student Experience Hub / Digital Front Door has a separate investment case.</p>
       </section>
 
       <section id="core" className="investment-section">
-        <div className="investment-section-heading">
+        <div className="ds-stack investment-section-heading">
           <p className="eyebrow">Core case</p>
-          <h2>What the Core case brings</h2>
-          <p>The North Star gives the intended end state. The user stories describe the practical change for the people who experience or deliver it. The investment profile shows the first-year ask and early gains first, with the longer-term establishment and ongoing costs beneath them.</p>
+          <h2 className="ds-section-heading">What the Core case brings</h2>
+          <p className="ds-subtle">The North Star gives the intended end state. The user stories describe the practical change for the people who experience or deliver it. The investment profile shows the first-year ask and early gains first, with the longer-term establishment and ongoing costs beneath them.</p>
         </div>
 
-        <div className="ds-table-wrap investment-table-wrap">
+        <div className="ds-table-wrap">
           <table className="ds-table investment-table">
             <thead>
               <tr>
@@ -215,7 +215,7 @@ function InvestmentCase() {
                 <td className="investment-package-cell">
                   <h3>{item.title}</h3>
                   <RefLinks ids={item.refs} />
-                  <div className="investment-north-star"><span>North Star</span><p>{item.northStar}</p></div>
+                  <div className="investment-north-star"><span className="ds-sequence-kicker">North Star</span><p>{item.northStar}</p></div>
                 </td>
                 <td><UserStories stories={item.stories} /></td>
                 <td className="investment-profile-cell"><InvestmentProfile item={item} /></td>
@@ -241,21 +241,21 @@ function InvestmentCase() {
       </section>
 
       <section id="options" className="investment-section option-section">
-        <div className="investment-section-heading">
+        <div className="ds-stack investment-section-heading">
           <p className="eyebrow">Options to vary</p>
-          <h2>Options to vary the Core case</h2>
-          <p>Economy reduces the amount of new capacity and activity funded. Enhanced increases the scale and pace of delivery. Both are variations around the Core case rather than separate delivery plans.</p>
+          <h2 className="ds-section-heading">Options to vary the Core case</h2>
+          <p className="ds-subtle">Economy reduces the amount of new capacity and activity funded. Enhanced increases the scale and pace of delivery. Both are variations around the Core case rather than separate delivery plans.</p>
         </div>
 
-        <div className="option-narratives">
-          <article className="option-card economy-card">
-            <p className="option-label">Economy</p>
+        <div className="ds-editorial-grid option-narratives">
+          <article className="ds-editorial-card option-card">
+            <p className="ds-sequence-kicker">Economy</p>
             <h3>Lower cost, narrower implementation.</h3>
             <p>Compared with Core, Economy reduces Year 1 Beyond Course commissioning, leaves more curriculum implementation and Student Life activity to existing teams, and requires Graduate Futures work to concentrate on the highest-priority intelligence and interventions.</p>
             <p>By Year 3 the Beyond Course portfolio is modelled to reach around 6,000 to 6,500 students, close to Core on headline reach, but with fewer total student-hours and fewer sustained projects, placements, mentoring and other high-intensity experiences.</p>
           </article>
-          <article className="option-card enhanced-card">
-            <p className="option-label">Enhanced</p>
+          <article className="ds-editorial-card option-card">
+            <p className="ds-sequence-kicker">Enhanced</p>
             <h3>Higher cost, wider and faster implementation.</h3>
             <p>Compared with Core, Enhanced funds a larger Beyond Course commissioning portfolio, more partnership capacity, a wider curriculum implementation cohort, broader adoption of purpose and skills work, and more Graduate Futures activity running in parallel.</p>
             <p>By Year 3 the Beyond Course portfolio is modelled to reach around 9,000 to 10,000 students, generate 170,000 to 200,000 student-hours and support around 1,000 to 1,200 sustained high-intensity places.</p>
@@ -263,14 +263,14 @@ function InvestmentCase() {
         </div>
       </section>
 
-      <section id="early" className="investment-section early-section">
-        <div className="investment-section-heading early-heading">
+      <section id="early" className="investment-section ds-callout early-section">
+        <div className="ds-stack investment-section-heading">
           <p className="eyebrow">Early investment</p>
-          <h2>Pre-Business Case Investment Need</h2>
-          <p>If funding can be released before the full mobilisation decision, £100k can be used on work that can be commissioned and delivered before January.</p>
+          <h2 className="ds-section-heading">Pre-Business Case Investment Need</h2>
+          <p className="ds-subtle">If funding can be released before the full mobilisation decision, £100k can be used on work that can be commissioned and delivered before January.</p>
         </div>
 
-        <div className="ds-table-wrap early-table-wrap">
+        <div className="ds-table-wrap">
           <table className="ds-table early-table">
             <thead>
               <tr><th>Amount</th><th>What we are buying</th><th>What it delivers before January</th></tr>
@@ -287,14 +287,14 @@ function InvestmentCase() {
             </tfoot>
           </table>
         </div>
-        <p className="early-note">The £100k is an early release against the relevant Year 1 planning assumptions, rather than an additional layer of programme cost. Digital Student Experience Hub co-design remains attributable to the separate Digital investment case.</p>
+        <p className="ds-subtle early-note">The £100k is an early release against the relevant Year 1 planning assumptions, rather than an additional layer of programme cost. Digital Student Experience Hub co-design remains attributable to the separate Digital investment case.</p>
       </section>
 
-      <section className="investment-source-panel">
-        <div>
+      <section className="ds-cluster investment-source-panel">
+        <div className="ds-stack investment-source-copy">
           <p className="eyebrow">Detailed handover</p>
-          <h2>Assumptions and workings</h2>
-          <p>The full handover contains the option calculations, benefit modelling, accounting boundaries and package-level cost assumptions behind this page.</p>
+          <h2 className="ds-section-heading">Assumptions and workings</h2>
+          <p className="ds-subtle">The full handover contains the option calculations, benefit modelling, accounting boundaries and package-level cost assumptions behind this page.</p>
         </div>
         <a className="ds-button" href="https://github.com/markpeace/KingsEdgeMobilisationPlan/blob/main/docs/portfolio-investment-packages.md" target="_blank" rel="noreferrer">Open detailed handover</a>
       </section>
