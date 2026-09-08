@@ -113,7 +113,7 @@
 }
 
 .investment-table {
-  min-width: 1320px;
+  min-width: 1080px;
 }
 
 .investment-table th,
@@ -147,27 +147,17 @@
 
 .investment-table th:nth-child(1),
 .investment-table td:nth-child(1) {
-  width: 24%;
+  width: 29%;
 }
 
 .investment-table th:nth-child(2),
 .investment-table td:nth-child(2) {
-  width: 31%;
+  width: 41%;
 }
 
 .investment-table th:nth-child(3),
 .investment-table td:nth-child(3) {
-  width: 25%;
-}
-
-.investment-table th:nth-child(4),
-.investment-table td:nth-child(4) {
-  width: 9%;
-}
-
-.investment-table th:nth-child(5),
-.investment-table td:nth-child(5) {
-  width: 11%;
+  width: 30%;
 }
 
 .investment-package-cell h3 {
@@ -262,26 +252,90 @@
   margin: 0.45rem 0 0;
 }
 
+.investment-profile-cell {
+  background: color-mix(in srgb, var(--color-accent-soft) 58%, var(--color-paper));
+}
+
+.investment-profile {
+  display: grid;
+  gap: 1rem;
+}
+
+.investment-profile-primary {
+  display: grid;
+  gap: 0.48rem;
+}
+
+.investment-profile-label {
+  display: block;
+  color: var(--color-muted);
+  font-size: 0.66rem;
+  font-weight: 900;
+  letter-spacing: 0.065em;
+  line-height: 1.15;
+  text-transform: uppercase;
+}
+
 .year-one-price,
-.investment-price-cell strong,
 .early-amount strong {
   display: block;
+  margin-top: 0.08rem;
   color: var(--color-ink);
   font-family: var(--font-brand);
-  font-size: clamp(1.65rem, 2vw, 2.35rem);
+  font-size: clamp(2.2rem, 3vw, 3.35rem);
+  font-weight: 400;
+  letter-spacing: -0.035em;
+  line-height: 0.95;
+}
+
+.investment-early-gain {
+  margin-top: 0.38rem;
+}
+
+.investment-early-gain p {
+  margin-top: 0.34rem;
+  color: #292929;
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+.investment-profile-secondary {
+  display: grid;
+  gap: 0;
+  border-top: 1px solid var(--color-border);
+}
+
+.investment-profile-secondary > div {
+  display: grid;
+  gap: 0.3rem;
+  padding: 0.72rem 0 0.7rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.investment-profile-secondary > div:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+.investment-profile-three-year {
+  color: var(--color-ink);
+  font-family: var(--font-brand);
+  font-size: clamp(1.45rem, 1.9vw, 2rem);
   font-weight: 400;
   letter-spacing: -0.025em;
   line-height: 1;
 }
 
-.investment-ongoing-cell strong {
+.investment-profile-ongoing {
   color: var(--color-ink);
-  font-size: 0.87rem;
+  font-size: 0.88rem;
+  font-weight: 800;
   line-height: 1.35;
 }
 
 .investment-table tfoot th,
-.early-table tfoot th {
+.early-table tfoot th,
+.investment-table tfoot td {
   padding: 0.95rem 0.9rem;
   border-top: 3px solid var(--color-ink);
   border-bottom: 0;
@@ -289,6 +343,38 @@
   color: var(--color-ink);
   font-size: 0.84rem;
   vertical-align: top;
+}
+
+.investment-total-profile {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.investment-total-primary {
+  display: block;
+  margin-top: 0.2rem;
+  font-family: var(--font-brand);
+  font-size: clamp(2rem, 2.7vw, 3rem);
+  font-weight: 400;
+  letter-spacing: -0.035em;
+  line-height: 0.95;
+}
+
+.investment-total-secondary {
+  display: grid;
+  gap: 0.6rem;
+  padding-top: 0.7rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.investment-total-secondary > div {
+  display: grid;
+  gap: 0.18rem;
+}
+
+.investment-total-secondary strong {
+  font-size: 0.92rem;
+  line-height: 1.35;
 }
 
 .option-section {
