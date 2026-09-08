@@ -53,7 +53,7 @@ const corePackages = [
       { label: 'Programme team / academic', text: 'I can make the distinctive developmental value of my discipline visible without reducing it to a generic employability framework.' },
       { label: 'The University', text: 'We can design more deliberately around individual development rather than expecting students to assemble a coherent journey across separate courses, services and opportunities.' }
     ],
-    yearOne: 'King’s has testable institutional propositions for purpose and self-direction, skills architecture and trusted recognition; an adopt / adapt / reconsider decision on the skills architecture; and a bounded set of deep trailblazers ready for 2027/28.',
+    yearOne: 'King’s has a tested institutional proposition for purpose and self-direction; a candidate skills architecture with an adopt / adapt / reconsider decision; a clearer proposition and requirements for trusted educational recognition; and a bounded set of deep trailblazers with agreed contexts, evidence needs and implementation questions ready for 2027/28.',
     yearOneCost: '£53k',
     threeYearCost: '£252k',
     ongoing: 'c.£9k p.a. + costs to confirm'
@@ -69,9 +69,10 @@ const corePackages = [
       { label: 'Course team', text: 'I can see where experiential learning is strong or weak in my programme and get practical support to improve it.' },
       { label: 'Academic / educator', text: 'I have a clear King’s account of good experiential learning, with room to design it in ways that make sense for my discipline.' },
       { label: 'Faculty / professional staff', text: 'We can reuse policy, validation and administrative routes rather than solving the same delivery problems repeatedly.' },
+      { label: 'Education leader / quality colleague', text: 'I can see which models are working across disciplines and use that evidence to support proportionate, scalable implementation rather than isolated local fixes.' },
       { label: 'The University', text: 'We can target investment at gaps in experiential learning and know whether that investment is changing the student experience.' }
     ],
-    yearOne: 'King’s has an agreed experiential-learning North Star and entitlement direction, an initial curriculum baseline and growth priorities, a ratified sandwich-year policy and regulatory model, a validated shared 15-credit Level 6 capstone, and a sequenced implementation portfolio.',
+    yearOne: 'King’s has an agreed experiential-learning North Star and entitlement direction; an initial curriculum baseline showing where provision is strong, weak or absent and where growth should be prioritised; a ratified sandwich-year policy and regulatory model; a validated shared 15-credit Level 6 capstone; and a sequenced implementation portfolio with reusable academic, policy and delivery routes ready to take into priority programmes.',
     yearOneCost: '£59k',
     threeYearCost: '£341k',
     ongoing: 'c.£9k p.a. + costs to confirm'
@@ -90,7 +91,7 @@ const corePackages = [
       { label: 'Faculty / professional staff', text: 'I can see how local provision fits into the wider opportunity landscape and where collaboration or additional supply would add value.' },
       { label: 'The University', text: 'We can see the shape, reach, equity and emerging impact of the opportunity portfolio and commission deliberately where the student experience needs to be stronger.' }
     ],
-    yearOne: 'King’s has a live evidence base and common shopfront; a £150k commissioned opportunity portfolio intended to reach at least 2,500 distinct students and provide 26.5–33.5k student-hours; Student Life personas and participation prototypes; a shared student-year rhythm; and costed partnership and access options for 2027/28.',
+    yearOne: 'King’s has a live evidence base and common shopfront; a £150k commissioned opportunity portfolio intended to reach at least 2,500 distinct students and provide 26.5–33.5k student-hours, including deeper sustained experiences; Student Life personas and participation prototypes tested against different patterns of life and study; a shared student-year rhythm; and costed partnership and access options that give a clearer basis for 2027/28 commissioning and growth.',
     yearOneCost: '£279k',
     threeYearCost: '£1.8m',
     ongoing: 'c.£647k p.a. + costs to confirm'
@@ -109,7 +110,7 @@ const corePackages = [
       { label: 'Student-success / careers colleague', text: 'I can connect outcomes intelligence with earlier student experience and use it to target interventions more intelligently.' },
       { label: 'The University', text: 'We can learn continuously from student journeys and graduate outcomes, improve the education in response, and make a clearer evidence-based claim for the lasting value of King’s.' }
     ],
-    yearOne: 'King’s has the first Graduate Futures evidence-and-action model, publication-ready graduate-premium exemplars and rich media, a common external-validation model, targeted Graduate Outcomes response optimisation, a strategic survey and reputation intelligence baseline, and flexible strategic partnership and profile capacity.',
+    yearOne: 'King’s has the first Graduate Futures evidence-and-action model linking course-level evidence, student experience and outcomes intelligence; publication-ready graduate-premium exemplars and rich media; a common external-validation model; targeted Graduate Outcomes response optimisation; a strategic survey and reputation-intelligence baseline; and enough flexible partnership and profile capacity to turn the highest-priority findings into a repeatable improvement and activation cycle for 2027/28.',
     yearOneCost: '£170k',
     threeYearCost: '£765k',
     ongoing: 'c.£170k p.a. + costs to confirm'
