@@ -149,8 +149,7 @@
 }
 
 .investment-north-star .ds-sequence-kicker,
-.investment-proposition .ds-sequence-kicker,
-.investment-capabilities .ds-sequence-kicker {
+.investment-proposition .ds-sequence-kicker {
   display: block;
   margin-bottom: var(--space-2);
 }
@@ -175,26 +174,6 @@
   color: var(--color-ink);
   font-size: var(--text-sm);
   line-height: 1.5;
-}
-
-.investment-capabilities {
-  margin-top: var(--space-4);
-  padding-top: var(--space-3);
-  border-top: 1px solid var(--color-border);
-}
-
-.investment-capabilities ul {
-  display: grid;
-  gap: var(--space-2);
-  margin: 0;
-  padding-left: var(--space-5);
-}
-
-.investment-capabilities li {
-  padding-left: var(--space-1);
-  color: var(--color-ink);
-  font-size: var(--text-sm);
-  line-height: 1.45;
 }
 
 .investment-user-stories {
