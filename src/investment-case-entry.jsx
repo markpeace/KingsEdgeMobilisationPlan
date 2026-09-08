@@ -42,12 +42,16 @@ const corePackages = [
   {
     title: 'Student Purpose, Skills and Educational Recognition',
     refs: ['2.2.1', '2.1.3', '2.4.3'],
-    northStar: 'Every student can intentionally shape their development, understand and evidence the capabilities they are building through their whole King’s experience, and leave with a richer, trusted account of what they know, can do and contribute.',
+    northStar: 'Every student has a developmental relationship with King’s shaped by purpose as well as discipline. King’s helps them explore what matters, connect their course, wider experiences, relationships and ambitions, make intentional choices, and build a trusted account of what they are learning and becoming.',
+    proposition: 'This changes the contract between student and university. King’s takes greater responsibility for connecting the parts of the student experience around individual development, while students are supported to take active ownership of the choices, experiences and evidence that shape their future.',
     stories: [
-      { label: 'Student', text: 'I can explore what matters to me without needing a fixed career destination, and use that evolving sense of purpose to make more intentional choices at King’s.' },
-      { label: 'Student', text: 'I can recognise the capabilities I am developing across my course and wider experience, understand the evidence behind them and decide what I want to strengthen next.' },
-      { label: 'Student / graduate', text: 'I can leave with a richer account of my learning that makes clear what King’s certifies or recognises, what I can evidence and what I claim about myself.' },
-      { label: 'Programme team / academic', text: 'I can make the distinctive capabilities of my discipline more visible using a shared language without flattening disciplinary difference.' }
+      { label: 'Student', text: 'I do not need to arrive at King’s knowing exactly what I want to do. I am actively helped to explore what matters to me and how my ambitions are changing.' },
+      { label: 'Student', text: 'I can see how my course, wider opportunities, relationships and support fit together around what I am trying to develop.' },
+      { label: 'Student', text: 'As I learn more about myself, I can make more intentional choices about what to study, try, join and pursue next.' },
+      { label: 'Student', text: 'I can understand the capabilities I am actually developing through my particular King’s experience, rather than relying on a generic list of graduate attributes.' },
+      { label: 'Student / graduate', text: 'I leave with a richer, trusted account of what I know, can do and contribute, with evidence behind it.' },
+      { label: 'Programme team / academic', text: 'I can make the distinctive developmental value of my discipline visible without reducing it to a generic employability framework.' },
+      { label: 'The University', text: 'We can design more deliberately around individual development rather than expecting students to assemble a coherent journey across separate courses, services and opportunities.' }
     ],
     yearOne: 'King’s has testable institutional propositions for purpose and self-direction, skills architecture and trusted recognition; an adopt / adapt / reconsider decision on the skills architecture; and a bounded set of deep trailblazers ready for 2027/28.',
     yearOneCost: '£53k',
@@ -57,12 +61,15 @@ const corePackages = [
   {
     title: 'Experiential Learning in the Curriculum',
     refs: ['2.1.2', '2.1.4', '2.2.3'],
-    northStar: 'Every student has meaningful access to purposeful experiential learning through or alongside their course, with King’s able to assure quality and inclusion, target growth where provision is weak, and reuse strong academic, regulatory and delivery models.',
+    northStar: 'Every student can expect purposeful experiential learning through or alongside their course, with King’s able to identify where access or quality is weak, intervene deliberately, and reuse strong academic, regulatory and delivery models across disciplines.',
+    proposition: 'King’s builds an institution-wide capability for designing, assuring and growing experiential learning. Strong local practice becomes easier to reuse, and gaps in access can be identified and acted on rather than left to develop unevenly.',
     stories: [
-      { label: 'Student', text: 'I can expect meaningful opportunities to learn through experience as part of a King’s education, not only if I happen to choose a course with established local provision.' },
-      { label: 'Course team', text: 'I can see where experiential learning is strong or weak and get practical support to strengthen it.' },
-      { label: 'Academic / educator', text: 'I have a clear King’s account of good experiential learning while retaining room for disciplinary difference.' },
-      { label: 'Professional staff / governance', text: 'We have reusable policy, validation and administrative routes for sandwich years and near-curriculum learning.' }
+      { label: 'Student', text: 'I can expect meaningful opportunities to apply and test my learning as part of a King’s education, whatever course I study.' },
+      { label: 'Student', text: 'I can connect what I learn in my discipline with real challenges, unfamiliar settings and people beyond the classroom.' },
+      { label: 'Course team', text: 'I can see where experiential learning is strong or weak in my programme and get practical support to improve it.' },
+      { label: 'Academic / educator', text: 'I have a clear King’s account of good experiential learning, with room to design it in ways that make sense for my discipline.' },
+      { label: 'Faculty / professional staff', text: 'We can reuse policy, validation and administrative routes rather than solving the same delivery problems repeatedly.' },
+      { label: 'The University', text: 'We can target investment at gaps in experiential learning and know whether that investment is changing the student experience.' }
     ],
     yearOne: 'King’s has an agreed experiential-learning North Star and entitlement direction, an initial curriculum baseline and growth priorities, a ratified sandwich-year policy and regulatory model, a validated shared 15-credit Level 6 capstone, and a sequenced implementation portfolio.',
     yearOneCost: '£59k',
@@ -72,13 +79,16 @@ const corePackages = [
   {
     title: 'Beyond-Course Opportunity and Participation',
     refs: ['2.2.2', '2.2.4', '2.3.1', '2.3.2', '2.3.4'],
-    northStar: 'Every student can see and access a coherent, inclusive ecology of meaningful opportunity beyond the course, whatever their pattern of life and study, while King’s actively stewards that ecology using evidence, partnerships, commissioning and a shared student-year rhythm.',
+    northStar: 'Every student can see and access a rich, coherent and inclusive opportunity environment beyond the course, with King’s actively shaping what exists, who can access it and where new opportunity is needed.',
+    proposition: 'King’s moves from aggregating a fragmented offer to actively stewarding the opportunity ecology. Commissioning, partnerships, participation evidence and a shared student-year rhythm are used to grow both the breadth and the depth of opportunity available to students.',
     stories: [
-      { label: 'Student', text: 'I can see a richer range of Beyond Course opportunities in one place and find things that fit my interests and circumstances.' },
-      { label: 'Student', text: 'My pattern of life and study is considered in how opportunities are designed, and practical barriers are less likely to determine whether I can participate.' },
-      { label: 'Opportunity provider', text: 'I can see who my provision reaches, where participation is unequal and what difference it appears to make.' },
-      { label: 'External partner / alumnus', text: 'I have clearer routes to create meaningful opportunities with King’s and encounter less fragmented brokerage and administration.' },
-      { label: 'The University', text: 'We can see the shape, reach, equity and emerging impact of our Beyond Course investment and make deliberate commissioning decisions.' }
+      { label: 'Student', text: 'I can see a richer range of opportunities in one place and understand which ones are relevant to my interests, ambitions and stage of development.' },
+      { label: 'Student', text: 'My pattern of life and study is considered in how opportunities are designed, so practical barriers are less likely to decide whether I can participate.' },
+      { label: 'Student', text: 'I can move beyond one-off participation into deeper projects, mentoring, placements and other sustained experiences when I want to.' },
+      { label: 'Opportunity provider', text: 'I can see who my provision reaches, where participation is unequal and whether the experience appears to be doing what we intended.' },
+      { label: 'External partner / alumnus', text: 'I have clearer routes to create meaningful opportunities with King’s and less fragmented brokerage and administration.' },
+      { label: 'Faculty / professional staff', text: 'I can see how local provision fits into the wider opportunity landscape and where collaboration or additional supply would add value.' },
+      { label: 'The University', text: 'We can see the shape, reach, equity and emerging impact of the opportunity portfolio and commission deliberately where the student experience needs to be stronger.' }
     ],
     yearOne: 'King’s has a live evidence base and common shopfront; a £150k commissioned opportunity portfolio intended to reach at least 2,500 distinct students and provide 26.5–33.5k student-hours; Student Life personas and participation prototypes; a shared student-year rhythm; and costed partnership and access options for 2027/28.',
     yearOneCost: '£279k',
@@ -88,13 +98,16 @@ const corePackages = [
   {
     title: 'Graduate Futures Intelligence and Value',
     refs: ['2.1.1', '2.4.1', '2.4.2', '2.4.4'],
-    northStar: 'King’s continuously understands, strengthens, proves and activates the distinctive graduate value of its education, using course-level evidence, external challenge and outcomes intelligence both to improve the offer and to make credible claims to students and the wider market.',
+    northStar: 'King’s can continuously see where graduate value is strong, uneven or changing, act on that evidence, and turn credible learning into stronger student articulation, outcomes and external recognition.',
+    proposition: 'Graduate Futures becomes an institutional learning and improvement function. Course evidence, student experience, outcomes data and external challenge feed decisions about what King’s should strengthen, where it should intervene and what it can credibly claim about the value of its education.',
     stories: [
       { label: 'Student', text: 'I can recognise and articulate more of the value I am gaining from my course, wider experiences, skills and ambitions.' },
-      { label: 'Course team', text: 'I have trusted evidence to explain the graduate futures value of my course and take proportionate action to strengthen it.' },
+      { label: 'Course team', text: 'I have trusted evidence to understand the graduate futures value of my course and take proportionate action where it could be stronger.' },
+      { label: 'Faculty leader', text: 'I can see patterns across programmes, distinguish isolated issues from structural ones and target attention where it matters most.' },
       { label: 'Employer / alumnus / external partner', text: 'There is a structured way for my insight to challenge and strengthen what King’s offers students.' },
-      { label: 'Recruitment / reputation colleague', text: 'I have credible, reusable evidence and content that I can activate with different audiences.' },
-      { label: 'The University', text: 'We can distinguish what we believe about the value of a King’s education from what the evidence and external challenge actually support.' }
+      { label: 'Recruitment / reputation colleague', text: 'I have credible, reusable evidence and content that I can activate with different audiences without overstating the case.' },
+      { label: 'Student-success / careers colleague', text: 'I can connect outcomes intelligence with earlier student experience and use it to target interventions more intelligently.' },
+      { label: 'The University', text: 'We can learn continuously from student journeys and graduate outcomes, improve the education in response, and make a clearer evidence-based claim for the lasting value of King’s.' }
     ],
     yearOne: 'King’s has the first Graduate Futures evidence-and-action model, publication-ready graduate-premium exemplars and rich media, a common external-validation model, targeted Graduate Outcomes response optimisation, a strategic survey and reputation intelligence baseline, and flexible strategic partnership and profile capacity.',
     yearOneCost: '£170k',
@@ -200,7 +213,7 @@ function InvestmentCase() {
         <div className="ds-stack investment-section-heading">
           <p className="eyebrow">Investment case</p>
           <h2 className="ds-section-heading">What implementation brings to the institution</h2>
-          <p><strong>Investing in King’s Edge moves purpose and graduate futures to the organising core of the student experience.</strong> It connects curriculum, skills, opportunities and wider student life, while deepening the opportunity structure available to students. For King’s, that means a more coherent student experience, more deliberate use of investment and a stronger account of the value of a King’s education.</p>
+          <p><strong>Investing in King’s Edge moves purpose and graduate futures to the organising core of the student experience.</strong> It connects curriculum, skills, opportunities, relationships and wider student life around the individual student, while deepening opportunity and building the institutional capability to learn from participation and outcomes. Together, the four investment areas give King’s a more coherent student experience, a stronger developmental relationship with students, more deliberate use of investment and a clearer account of graduate value.</p>
         </div>
 
         <div className="ds-table-wrap">
@@ -218,6 +231,7 @@ function InvestmentCase() {
                   <h3>{item.title}</h3>
                   <RefLinks ids={item.refs} />
                   <div className="investment-north-star"><span className="ds-sequence-kicker">North Star</span><p>{item.northStar}</p></div>
+                  <div className="investment-proposition"><span className="ds-sequence-kicker">What this changes</span><p>{item.proposition}</p></div>
                 </td>
                 <td><UserStories stories={item.stories} /></td>
                 <td className="investment-profile-cell"><InvestmentProfile item={item} /></td>
