@@ -15,13 +15,6 @@ function UserStories({ stories }) {
   return <ul className="ds-stack investment-user-stories">{stories.map((story) => <li key={`${story.label}-${story.text}`}><strong>{story.label}:</strong> “{story.text}”</li>)}</ul>;
 }
 
-function CapabilityList({ capabilities }) {
-  return <div className="investment-capabilities">
-    <span className="ds-sequence-kicker">What King’s can do differently</span>
-    <ul>{capabilities.map((capability) => <li key={capability}>{capability}</li>)}</ul>
-  </div>;
-}
-
 function YearOneProgress({ steps }) {
   return <div className="investment-year-one-list">
     {steps.map((step) => <div className="investment-year-one-step" key={`${step.label}-${step.text}`}>
@@ -59,12 +52,7 @@ const corePackages = [
     title: 'Student Purpose, Skills and Educational Recognition',
     refs: ['2.2.1', '2.1.3', '2.4.3'],
     northStar: 'Every student has a developmental relationship with King’s shaped by purpose as well as discipline. King’s helps them explore what matters, connect their course, wider experiences, relationships and ambitions, make intentional choices, and build a trusted account of what they are learning and becoming.',
-    proposition: 'This changes the contract between student and university. King’s takes greater responsibility for connecting the parts of the student experience around individual development, while students are supported to take active ownership of the choices, experiences and evidence that shape their future.',
-    capabilities: [
-      'Organise student development around individual purpose alongside the disciplinary journey, rather than leaving purpose primarily to optional careers activity or student initiative.',
-      'Connect course learning, wider opportunity, skills, recognition and future planning through a common developmental model while retaining disciplinary difference.',
-      'Offer students a clearer reciprocal proposition: King’s helps make the whole experience coherent, while students actively shape, test and evidence their own development.'
-    ],
+    proposition: 'This changes the contract between student and university. King’s takes greater responsibility for connecting the parts of the student experience around individual development, while students are supported to take active ownership of the choices, experiences and evidence that shape their future. Purpose becomes an organising principle alongside the disciplinary journey, with course learning, wider opportunity, skills, recognition and future planning connected through a common developmental model. The result is a clearer reciprocal proposition: King’s helps make the whole experience coherent, while students actively shape, test and evidence their own development.',
     stories: [
       { label: 'Student', text: 'I do not need to arrive at King’s knowing exactly what I want to do. I am actively helped to explore what matters to me and how my ambitions are changing.' },
       { label: 'Student', text: 'I can see how my course, wider opportunities, relationships and support fit together around what I am trying to develop.' },
@@ -87,12 +75,7 @@ const corePackages = [
     title: 'Experiential Learning in the Curriculum',
     refs: ['2.1.2', '2.1.4', '2.2.3'],
     northStar: 'Every student can expect purposeful experiential learning through or alongside their course, with King’s able to identify where access or quality is weak, intervene deliberately, and reuse strong academic, regulatory and delivery models across disciplines.',
-    proposition: 'King’s builds an institution-wide capability for designing, assuring and growing experiential learning. Strong local practice becomes easier to reuse, and gaps in access can be identified and acted on rather than left to develop unevenly.',
-    capabilities: [
-      'See where meaningful experiential learning is strong, weak or absent across the curriculum rather than relying on anecdote or local visibility.',
-      'Support priority programmes with reusable academic, policy, validation and delivery routes instead of asking each team to solve the same implementation problems again.',
-      'Scale proven models such as sandwich-year routes and shared capstone provision while preserving appropriate disciplinary variation in learning design.'
-    ],
+    proposition: 'King’s builds an institution-wide capability for designing, assuring and growing experiential learning. Strong local practice becomes easier to reuse, and gaps in access can be identified and acted on rather than left to develop unevenly. The institution can see where meaningful experiential learning is strong, weak or absent, support priority programmes through reusable academic, policy, validation and delivery routes, and scale proven models such as sandwich years and shared capstone provision without flattening disciplinary difference.',
     stories: [
       { label: 'Student', text: 'I can expect meaningful opportunities to apply and test my learning as part of a King’s education, whatever course I study.' },
       { label: 'Student', text: 'I can connect what I learn in my discipline with real challenges, unfamiliar settings and people beyond the classroom.' },
@@ -115,12 +98,7 @@ const corePackages = [
     title: 'Beyond-Course Opportunity and Participation',
     refs: ['2.2.2', '2.2.4', '2.3.1', '2.3.2', '2.3.4'],
     northStar: 'Every student can see and access a rich, coherent and inclusive opportunity environment beyond the course, with King’s actively shaping what exists, who can access it and where new opportunity is needed.',
-    proposition: 'King’s moves from aggregating a fragmented offer to actively stewarding the opportunity ecology. Commissioning, partnerships, participation evidence and a shared student-year rhythm are used to grow both the breadth and the depth of opportunity available to students.',
-    capabilities: [
-      'See the shape, reach, equity and depth of the wider opportunity portfolio as one institutional system rather than a collection of disconnected local offers.',
-      'Commission additional supply deliberately where evidence shows gaps in reach, developmental depth or student need, including sustained projects, mentoring and placements.',
-      'Coordinate participation design, timing and partnership activity around different patterns of student life so access is shaped rather than left to chance.'
-    ],
+    proposition: 'King’s moves from aggregating a fragmented offer to actively stewarding the opportunity ecology. Commissioning, partnerships, participation evidence and a shared student-year rhythm are used to grow both the breadth and the depth of opportunity available to students. King’s can see the wider portfolio as one institutional system, commission additional supply where evidence shows gaps in reach or developmental depth, and coordinate timing, access and partnership activity around different patterns of student life rather than leaving participation to chance.',
     stories: [
       { label: 'Student', text: 'I can see a richer range of opportunities in one place and understand which ones are relevant to my interests, ambitions and stage of development.' },
       { label: 'Student', text: 'My pattern of life and study is considered in how opportunities are designed, so practical barriers are less likely to decide whether I can participate.' },
@@ -143,12 +121,7 @@ const corePackages = [
     title: 'Graduate Futures Intelligence and Value',
     refs: ['2.1.1', '2.4.1', '2.4.2', '2.4.4'],
     northStar: 'King’s can continuously see where graduate value is strong, uneven or changing, act on that evidence, and turn credible learning into stronger student articulation, outcomes and external recognition.',
-    proposition: 'Graduate Futures becomes an institutional learning and improvement function. Course evidence, student experience, outcomes data and external challenge feed decisions about what King’s should strengthen, where it should intervene and what it can credibly claim about the value of its education.',
-    capabilities: [
-      'Bring course evidence, student experience, graduate outcomes and external insight together into a routine institutional view of where graduate value is strong, uneven or changing.',
-      'Target improvement activity at the courses, cohorts or issues where evidence shows the greatest need or opportunity rather than relying on broad untargeted intervention.',
-      'Turn credible evidence into student articulation, recruitment, reputation and partner-facing claims while maintaining a clear distinction between what King’s believes and what the evidence supports.'
-    ],
+    proposition: 'Graduate Futures becomes an institutional learning and improvement function. Course evidence, student experience, outcomes data and external challenge feed decisions about what King’s should strengthen, where it should intervene and what it can credibly claim about the value of its education. That gives King’s a routine view of where graduate value is strong, uneven or changing, allows improvement activity to be targeted at the courses and cohorts where it matters most, and turns credible evidence into student, recruitment, reputation and partner-facing claims without overstating what the evidence supports.',
     stories: [
       { label: 'Student', text: 'I can recognise and articulate more of the value I am gaining from my course, wider experiences, skills and ambitions.' },
       { label: 'Course team', text: 'I have trusted evidence to understand the graduate futures value of my course and take proportionate action where it could be stronger.' },
@@ -285,7 +258,6 @@ function InvestmentCase() {
                   <RefLinks ids={item.refs} />
                   <div className="investment-north-star"><span className="ds-sequence-kicker">North Star</span><p>{item.northStar}</p></div>
                   <div className="investment-proposition"><span className="ds-sequence-kicker">What this changes</span><p>{item.proposition}</p></div>
-                  <CapabilityList capabilities={item.capabilities} />
                 </td>
                 <td><UserStories stories={item.stories} /></td>
                 <td className="investment-profile-cell"><InvestmentProfile item={item} /></td>
