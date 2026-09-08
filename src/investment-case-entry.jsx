@@ -107,27 +107,28 @@ const earlyAsk = [
   {
     amount: '£60k',
     buying: 'Externally commissioned student opportunities',
-    outputs: <ul className="early-output-list">
-      <li>Release the first 40% of the proposed £150k Year 1 commissioning portfolio. <RefLinks ids={['2.2.4']} /></li>
-      <li>Start final-year career-enhancing projects, mentoring, placements and other deeper experiences, while beginning entrepreneurship, belonging and community-engaged opportunities. <RefLinks ids={['2.2.4']} /></li>
-    </ul>
+    outputs: [
+      { text: 'Release the first 40% of the proposed £150k Year 1 commissioning portfolio.', refs: ['2.2.4'] },
+      { text: 'Start final-year career-enhancing projects, mentoring, placements and other deeper experiences.', refs: ['2.2.4'] },
+      { text: 'Begin commissioning across entrepreneurship and enterprise, belonging and connection, and service and community-engaged experience.', refs: ['2.2.4'] }
+    ]
   },
   {
     amount: '£15k',
     buying: 'Freelance video production',
-    outputs: <ul className="early-output-list">
-      <li>Produce the first Graduate Premium video exemplars. <RefLinks ids={['2.4.1']} /></li>
-      <li>Produce promotional video and related assets to support Graduate Outcomes survey response. <RefLinks ids={['2.4.4']} /></li>
-    </ul>
+    outputs: [
+      { text: 'Produce the first Graduate Premium video exemplars and establish the production approach.', refs: ['2.4.1'] },
+      { text: 'Produce promotional video and related assets to support Graduate Outcomes survey response.', refs: ['2.4.4'] }
+    ]
   },
   {
     amount: '£25k',
     buying: 'Paid student time through King’s Talent',
-    outputs: <ul className="early-output-list">
-      <li>Power BI and Microsoft Fabric engineering for the Graduate Futures Intelligence Pack, Graduate Outcomes optimisation and Beyond Course dashboard. <RefLinks ids={['2.1.1', '2.4.4', '2.3.1']} /></li>
-      <li>Prototype LLM-led course skills interrogation tooling. <RefLinks ids={['2.1.3']} /></li>
-      <li>Student Life persona co-design and Student Experience Hub ideation and prototype input. <RefLinks ids={['2.3.2', '4.1.2']} /></li>
-    </ul>
+    outputs: [
+      { text: 'Power BI and Microsoft Fabric engineering for the Graduate Futures Intelligence Pack, Graduate Outcomes optimisation and Beyond Course dashboard.', refs: ['2.1.1', '2.4.4', '2.3.1'] },
+      { text: 'Prototype LLM-led course skills interrogation tooling.', refs: ['2.1.3'] },
+      { text: 'Student Life persona co-design and Student Experience Hub ideation and prototype input.', refs: ['2.3.2', '4.1.2'] }
+    ]
   }
 ];
 
@@ -235,12 +236,9 @@ function InvestmentCase() {
 
         <div className="ds-editorial-grid option-narratives">
           <article className="ds-editorial-card option-card">
-            <div className="option-card-heading">
-              <span className="ds-tag option-direction" aria-hidden="true">↓</span>
-              <div>
-                <p className="ds-sequence-kicker">Economy</p>
-                <h3>Lower cost, narrower implementation.</h3>
-              </div>
+            <div>
+              <p className="ds-sequence-kicker">Economy</p>
+              <h3>Lower cost, narrower implementation.</h3>
             </div>
             <div className="ds-metric-grid option-metrics" aria-label="Economy option figures">
               <div className="ds-metric-card"><span>2026/27</span><strong>£460.2k</strong></div>
@@ -248,17 +246,21 @@ function InvestmentCase() {
               <div className="ds-metric-card"><span>Difference from Core</span><strong>£648k less</strong></div>
             </div>
             <div className="option-card-copy">
-              <p>Compared with Core, Economy reduces Year 1 Beyond Course commissioning, leaves more curriculum implementation and Student Life activity to existing teams, and requires Graduate Futures work to concentrate on the highest-priority intelligence and interventions.</p>
-              <p>By Year 3 the Beyond Course portfolio is modelled to reach around 6,000 to 6,500 students, close to Core on headline reach, but with fewer total student-hours and fewer sustained projects, placements, mentoring and other high-intensity experiences.</p>
+              <p>Economy keeps the architecture and proof of concept, but accepts a more uneven and breadth-first implementation with greater dependence on existing institutional capacity.</p>
+              <ul className="option-detail-list">
+                <li><strong>Beyond Course:</strong> Year 1 commissioning reduces to £100k rather than £150k. Indicative Year 1 reach falls to around 1,600–1,900 students, with 16–22k student-hours and around 200–250 sustained places. By Year 3 headline reach can recover towards Core, but depth remains lower.</li>
+                <li><strong>Curriculum, purpose and skills:</strong> King’s still gets the common experiential-learning model, curriculum baseline, sandwich-year route and shared capstone, while purpose and skills work is tested across fewer contexts. More implementation has to travel through existing faculty capacity and strong local adopters.</li>
+                <li><strong>Participation and partnerships:</strong> fewer Student Life prototypes and less central partnership capacity mean more reliance on local teams for brokerage, contracting, partner support and participation activity.</li>
+                <li><strong>Graduate Futures:</strong> the evidence engine remains, but activity has to concentrate on intelligence and targeted interventions rather than sustaining course improvement, student activation, outcomes optimisation, external engagement and reputation work in parallel.</li>
+                <li><strong>Institutional consequence:</strong> King’s can still prove the model, but carries a higher risk of partial institutionalisation and uneven delivery across faculties and campuses.</li>
+              </ul>
             </div>
           </article>
+
           <article className="ds-editorial-card option-card">
-            <div className="option-card-heading">
-              <span className="ds-tag option-direction" aria-hidden="true">↑</span>
-              <div>
-                <p className="ds-sequence-kicker">Enhanced</p>
-                <h3>Higher cost, wider and faster implementation.</h3>
-              </div>
+            <div>
+              <p className="ds-sequence-kicker">Enhanced</p>
+              <h3>Higher cost, wider and faster implementation.</h3>
             </div>
             <div className="ds-metric-grid option-metrics" aria-label="Enhanced option figures">
               <div className="ds-metric-card"><span>2026/27</span><strong>£610.2k</strong></div>
@@ -266,8 +268,14 @@ function InvestmentCase() {
               <div className="ds-metric-card"><span>Difference from Core</span><strong>£1.313m more</strong></div>
             </div>
             <div className="option-card-copy">
-              <p>Compared with Core, Enhanced funds a larger Beyond Course commissioning portfolio, more partnership capacity, a wider curriculum implementation cohort, broader adoption of purpose and skills work, and more Graduate Futures activity running in parallel.</p>
-              <p>By Year 3 the Beyond Course portfolio is modelled to reach around 9,000 to 10,000 students, generate 170,000 to 200,000 student-hours and support around 1,000 to 1,200 sustained high-intensity places.</p>
+              <p>Enhanced buys a materially larger King’s Edge, with more opportunity, more delivery capacity and faster institutional adoption rather than simply restoring the previous plan.</p>
+              <ul className="option-detail-list">
+                <li><strong>Beyond Course:</strong> commissioning rises to £200k, £350k and £500k across the three years. By Year 3 the portfolio is modelled to reach around 9,000–10,000 students, generate 170–200k student-hours and support around 1,000–1,200 sustained high-intensity places.</li>
+                <li><strong>Curriculum, purpose and skills:</strong> a wider implementation cohort and broader trailblazer footprint allow King’s to support more programmes and disciplines directly, producing more exemplars and a faster route into mainstream practice.</li>
+                <li><strong>Participation and partnerships:</strong> stronger partnership and Student Life capacity supports more faculties, more complex opportunities and more deliberate responses to participation gaps across campuses and student moments.</li>
+                <li><strong>Graduate Futures:</strong> enough sustained capacity exists to run course improvement, student adoption, Graduate Outcomes optimisation, employer and alumni engagement, and external reputation work in parallel at greater scale.</li>
+                <li><strong>Institutional consequence:</strong> more of the transformation becomes visible within the mobilisation period, with the trade-off of a larger recurrent operating model and greater risk of creating capacity ahead of demonstrated demand.</li>
+              </ul>
             </div>
           </article>
         </div>
@@ -283,17 +291,18 @@ function InvestmentCase() {
         <div className="ds-table-wrap">
           <table className="ds-table early-table">
             <thead>
-              <tr><th>Amount</th><th>What we are buying</th><th>What it delivers before January</th></tr>
+              <tr><th>Amount</th><th>What we are buying</th><th>What it delivers before January</th><th>Project refs</th></tr>
             </thead>
             <tbody>
-              {earlyAsk.map((item) => <tr key={item.amount}>
-                <td className="early-amount"><strong>{item.amount}</strong></td>
-                <td><strong>{item.buying}</strong></td>
-                <td>{item.outputs}</td>
-              </tr>)}
+              {earlyAsk.flatMap((item) => item.outputs.map((output, outputIndex) => <tr key={`${item.amount}-${outputIndex}`} className={outputIndex === 0 ? 'early-group-start' : undefined}>
+                {outputIndex === 0 && <td className="early-amount" rowSpan={item.outputs.length}><strong>{item.amount}</strong></td>}
+                {outputIndex === 0 && <td rowSpan={item.outputs.length}><strong>{item.buying}</strong></td>}
+                <td>{output.text}</td>
+                <td className="early-refs"><RefLinks ids={output.refs} /></td>
+              </tr>))}
             </tbody>
             <tfoot>
-              <tr><th><strong>£100k</strong></th><th>Total early investment</th><th>Student opportunities, first Graduate Premium and Graduate Outcomes assets, and continued analytics, engineering and student co-design work before January.</th></tr>
+              <tr><th><strong>£100k</strong></th><th>Total early investment</th><th>Student opportunities, first Graduate Premium and Graduate Outcomes assets, and continued analytics, engineering and student co-design work before January.</th><th>—</th></tr>
             </tfoot>
           </table>
         </div>
