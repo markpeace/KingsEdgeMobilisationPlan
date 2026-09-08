@@ -14,6 +14,29 @@ function UserStories({ stories }) {
   return <ul className="investment-user-stories">{stories.map((story) => <li key={`${story.label}-${story.text}`}><strong>{story.label}:</strong> “{story.text}”</li>)}</ul>;
 }
 
+function InvestmentProfile({ item }) {
+  return <div className="investment-profile">
+    <div className="investment-profile-primary">
+      <span className="investment-profile-label">2026/27 investment</span>
+      <strong className="year-one-price">{item.yearOneCost}</strong>
+      <div className="investment-early-gain">
+        <span className="investment-profile-label">By the end of Year 1</span>
+        <p>{item.yearOne}</p>
+      </div>
+    </div>
+    <div className="investment-profile-secondary">
+      <div>
+        <span className="investment-profile-label">Three-year cost</span>
+        <strong className="investment-profile-three-year">{item.threeYearCost}</strong>
+      </div>
+      <div>
+        <span className="investment-profile-label">Indicative ongoing annual cost</span>
+        <strong className="investment-profile-ongoing">{item.ongoing}</strong>
+      </div>
+    </div>
+  </div>;
+}
+
 const corePackages = [
   {
     title: 'Student Purpose, Skills and Educational Recognition',
@@ -25,7 +48,7 @@ const corePackages = [
       { label: 'Student / graduate', text: 'I can leave with a richer account of my learning that makes clear what King’s certifies or recognises, what I can evidence and what I claim about myself.' },
       { label: 'Programme team / academic', text: 'I can make the distinctive capabilities of my discipline more visible using a shared language without flattening disciplinary difference.' }
     ],
-    yearOne: 'By the end of Year 1, King’s has testable institutional propositions for purpose and self-direction, skills architecture and trusted recognition; an adopt / adapt / reconsider decision on the skills architecture; and a bounded set of deep trailblazers ready for 2027/28.',
+    yearOne: 'King’s has testable institutional propositions for purpose and self-direction, skills architecture and trusted recognition; an adopt / adapt / reconsider decision on the skills architecture; and a bounded set of deep trailblazers ready for 2027/28.',
     yearOneCost: '£53k',
     threeYearCost: '£252k',
     ongoing: 'c.£9k p.a. + costs to confirm'
@@ -40,7 +63,7 @@ const corePackages = [
       { label: 'Academic / educator', text: 'I have a clear King’s account of good experiential learning while retaining room for disciplinary difference.' },
       { label: 'Professional staff / governance', text: 'We have reusable policy, validation and administrative routes for sandwich years and near-curriculum learning.' }
     ],
-    yearOne: 'By the end of Year 1, King’s has an agreed experiential-learning North Star and entitlement direction, an initial curriculum baseline and growth priorities, a ratified sandwich-year policy and regulatory model, a validated shared 15-credit Level 6 capstone, and a sequenced implementation portfolio.',
+    yearOne: 'King’s has an agreed experiential-learning North Star and entitlement direction, an initial curriculum baseline and growth priorities, a ratified sandwich-year policy and regulatory model, a validated shared 15-credit Level 6 capstone, and a sequenced implementation portfolio.',
     yearOneCost: '£58.8k',
     threeYearCost: '£341k',
     ongoing: 'c.£9k p.a. + costs to confirm'
@@ -56,7 +79,7 @@ const corePackages = [
       { label: 'External partner / alumnus', text: 'I have clearer routes to create meaningful opportunities with King’s and encounter less fragmented brokerage and administration.' },
       { label: 'The University', text: 'We can see the shape, reach, equity and emerging impact of our Beyond Course investment and make deliberate commissioning decisions.' }
     ],
-    yearOne: 'By the end of Year 1, King’s has a live evidence base and common shopfront; a £150k commissioned opportunity portfolio intended to reach at least 2,500 distinct students and provide 26.5–33.5k student-hours; Student Life personas and participation prototypes; a shared student-year rhythm; and costed partnership and access options for 2027/28.',
+    yearOne: 'King’s has a live evidence base and common shopfront; a £150k commissioned opportunity portfolio intended to reach at least 2,500 distinct students and provide 26.5–33.5k student-hours; Student Life personas and participation prototypes; a shared student-year rhythm; and costed partnership and access options for 2027/28.',
     yearOneCost: '£278.5k',
     threeYearCost: '£1.8324m',
     ongoing: 'c.£647k p.a. + costs to confirm'
@@ -72,7 +95,7 @@ const corePackages = [
       { label: 'Recruitment / reputation colleague', text: 'I have credible, reusable evidence and content that I can activate with different audiences.' },
       { label: 'The University', text: 'We can distinguish what we believe about the value of a King’s education from what the evidence and external challenge actually support.' }
     ],
-    yearOne: 'By the end of Year 1, King’s has the first Graduate Futures evidence-and-action model, publication-ready graduate-premium exemplars and rich media, a common external-validation model, targeted Graduate Outcomes response optimisation, a strategic survey and reputation intelligence baseline, and flexible strategic partnership and profile capacity.',
+    yearOne: 'King’s has the first Graduate Futures evidence-and-action model, publication-ready graduate-premium exemplars and rich media, a common external-validation model, targeted Graduate Outcomes response optimisation, a strategic survey and reputation intelligence baseline, and flexible strategic partnership and profile capacity.',
     yearOneCost: '£169.9k',
     threeYearCost: '£764.8k',
     ongoing: 'c.£169.5k p.a. + costs to confirm'
@@ -138,7 +161,7 @@ function InvestmentCase() {
         <div className="investment-section-heading">
           <p className="eyebrow">Core case</p>
           <h2>What the investment changes</h2>
-          <p>The North Star gives the intended end state. The user stories describe the practical change for the people who experience or deliver it. The Year 1 column shows the first gains the investment should leave in place.</p>
+          <p>The North Star gives the intended end state. The user stories describe the practical change for the people who experience or deliver it. The investment profile shows the first-year ask and early gains first, with the longer-term cost beneath them.</p>
         </div>
 
         <div className="ds-table-wrap investment-table-wrap">
@@ -147,9 +170,7 @@ function InvestmentCase() {
               <tr>
                 <th>Investment area and North Star</th>
                 <th>What changes for people</th>
-                <th>2026/27 early gains</th>
-                <th>Three-year cost</th>
-                <th>Indicative ongoing annual cost</th>
+                <th>Investment profile</th>
               </tr>
             </thead>
             <tbody>
@@ -160,17 +181,22 @@ function InvestmentCase() {
                   <div className="investment-north-star"><span>North Star</span><p>{item.northStar}</p></div>
                 </td>
                 <td><UserStories stories={item.stories} /></td>
-                <td><strong className="year-one-price">{item.yearOneCost}</strong><p>{item.yearOne}</p></td>
-                <td className="investment-price-cell"><strong>{item.threeYearCost}</strong></td>
-                <td className="investment-ongoing-cell"><strong>{item.ongoing}</strong></td>
+                <td className="investment-profile-cell"><InvestmentProfile item={item} /></td>
               </tr>)}
             </tbody>
             <tfoot>
               <tr>
                 <th colSpan="2">King’s Edge Core case</th>
-                <th><strong>£560.2k in 2026/27</strong></th>
-                <th><strong>£3.1902m</strong></th>
-                <th><strong>c.£834.5k p.a. + TBC</strong></th>
+                <td className="investment-total-profile">
+                  <div>
+                    <span className="investment-profile-label">2026/27 investment</span>
+                    <strong className="investment-total-primary">£560.2k</strong>
+                  </div>
+                  <div className="investment-total-secondary">
+                    <div><span className="investment-profile-label">Three-year investment</span><strong>£3.1902m</strong></div>
+                    <div><span className="investment-profile-label">Indicative ongoing annual cost</span><strong>c.£834.5k p.a. + TBC</strong></div>
+                  </div>
+                </td>
               </tr>
             </tfoot>
           </table>
