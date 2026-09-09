@@ -18,6 +18,13 @@
       "forum": "King's Edge resource-planning pass",
       "outcome": "Advance to resource planning using explicit mobilisation envelopes for protected practitioner discovery, paid student partnership, deep trailblazer implementation and evidence-led institutionalisation. These are planning assumptions for the business case, not pre-allocated budgets.",
       "notes": "Digital build remains costed through the Digital Student Experience Hub. Later-year envelopes must be recalibrated from discovery, trailblazer and portability evidence."
+    },
+    {
+      "date": "2026-09-09",
+      "type": "decision",
+      "forum": "Pre-business-case investment reconciliation",
+      "outcome": "Added an explicit Year 1 exploratory King's Canvas proof of concept as a discovery instrument within the purpose and self-direction work. The prototype should test an LLM-supported way for students to map aspirations, interests and needs and connect them to relevant opportunities across King's. It is intended to make the proposition tangible enough to test with students, expose useful prompts and failure modes, and generate evidence-led journey and product requirements for the Digital Student Experience Hub.",
+      "notes": "The proof of concept is deliberately disposable and must not pre-empt the educational model or commit King's to a production solution. Enduring product build remains a Digital Student Experience Hub responsibility. Any pre-business-case King's Talent capacity used here should substitute for part of the existing paid student discovery/co-design or agreed shared Year 1 capacity and must not create an unrecorded additional Core cost."
     }
   ]
 }
