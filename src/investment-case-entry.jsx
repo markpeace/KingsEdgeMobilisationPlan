@@ -145,27 +145,29 @@ const corePackages = [
 const earlyAsk = [
   {
     amount: '£60k',
-    buying: 'Externally commissioned student opportunities',
+    buying: 'Seed funding for a broader £150k Year 1 investment in new student opportunity',
     outputs: [
-      { text: 'Release the first 40% of the proposed £150k Year 1 commissioning portfolio.', refs: ['2.2.4'] },
-      { text: 'Start final-year career-enhancing projects, mentoring, placements and other deeper experiences, while beginning entrepreneurship, belonging and community-engaged opportunities.', refs: ['2.2.4'] }
+      { text: 'A targeted package of substantive new opportunities for final-year students, bringing together Careers, Entrepreneurship and colleagues in IES working on community-engaged experience. The focus is on helping students translate their talents into experience and gain the final adjunct skills, relationships and evidence they need for the transition beyond King’s.', refs: ['2.2.4'] },
+      { text: 'An ambition to engage around 700 final-year undergraduates, approximately 10% of the graduating undergraduate population, generating c.10,000–12,000 student-hours and around 150 sustained places providing internship-like experience, alongside shorter and more scalable opportunities. Delivery can include projects, placements, mentoring, enterprise activity and community-engaged experience.', refs: ['2.2.4'] },
+      { text: 'The £60k seeds activity across the new-opportunity portfolio throughout the academic year. The broader £150k Year 1 investment, subject to the main business case, grows this into a portfolio reaching at least 2,500 distinct students, 26,500–33,500 student-hours and around 350 sustained high-depth places.', refs: ['2.2.4'] }
     ]
   },
   {
     amount: '£15k',
-    buying: 'Freelance video production',
+    buying: 'Graduate Premium video production and Graduate Outcomes Survey campaign funding',
     outputs: [
-      { text: 'Produce the first Graduate Premium video exemplars.', refs: ['2.4.1'] },
-      { text: 'Produce promotional video and related assets to support Graduate Outcomes survey response.', refs: ['2.4.4'] }
+      { text: 'Six proof-of-concept video exemplars showing, at disciplinary level, how the distinctive features of a King’s education translate into employability advantage. They establish a repeatable approach to bringing together graduate outcomes, disciplinary strengths, student and alumni stories, employer insight and distinctive King’s experiences to evidence the Graduate Premium.', refs: ['2.4.1'] },
+      { text: 'Funding for Graduate Outcomes Survey promotion, including production of ten campaign video assets and paid investment in targeted LinkedIn campaigns focused on priority graduate cohorts.', refs: ['2.4.4'] }
     ]
   },
   {
     amount: '£25k',
-    buying: 'Paid student time through King’s Talent',
+    buying: 'Paid student data, AI and prototyping capacity through King’s Talent',
     outputs: [
-      { text: 'Power BI and Microsoft Fabric engineering for the Graduate Futures Intelligence Pack, Graduate Outcomes optimisation and Beyond Course dashboard.', refs: ['2.1.1', '2.4.4', '2.3.1'] },
-      { text: 'Prototype LLM-led course skills interrogation tooling.', refs: ['2.1.3'] },
-      { text: 'Student Life persona co-design and Student Experience Hub ideation and prototype input.', refs: ['2.3.2', '4.1.2'] }
+      { text: 'A live, wide-ranging Graduate Futures data pack giving King’s a clearer institutional view of where graduate strengths are concentrated, where outcomes are uneven and where there is potential for development, while allowing course teams to interrogate the graduate premium of their own provision. It brings together graduate outcomes, destinations, comparator evidence, student aspirations and relevant course context.', refs: ['2.1.1', '2.4.4'] },
+      { text: 'A working AI-supported curriculum skills audit, using LLMs to interrogate curriculum materials such as module descriptions, assessment briefs and teaching materials and identify capabilities aligned to the UK Standard Skills Classification, while testing where academic interpretation remains necessary.', refs: ['2.1.3'] },
+      { text: 'A working proof of concept for King’s Canvas, testing an LLM-supported way for students to map their aspirations, interests and needs and connect them to relevant opportunities across King’s. The prototype gives us something tangible to test with students while generating evidence and requirements for later development through the Digital Student Experience Hub.', refs: ['2.2.1', '4.1.2'] },
+      { text: 'A usable first set of Student Life personas and tested design outputs, giving King’s a stronger evidence base about different patterns of student life, participation and need, and informing both King’s Edge design and the separate Digital Student Experience Hub proposition.', refs: ['2.3.2', '4.1.2'] }
     ]
   }
 ];
@@ -324,13 +326,13 @@ function InvestmentCase() {
         <div className="ds-stack investment-section-heading">
           <p className="eyebrow">Early investment</p>
           <h2 className="ds-section-heading">Pre-Business Case Investment Need</h2>
-          <p className="ds-subtle"><strong>£100k is the total early investment need.</strong> If funding can be released before the full mobilisation decision, it can be deployed on work that can be commissioned and delivered before January.</p>
+          <p className="ds-subtle"><strong>£100k is the total early investment need.</strong> If funding can be released before the full mobilisation decision, it can be committed immediately to new opportunity, video production, data and prototyping work that would otherwise wait for the main business case.</p>
         </div>
 
         <div className="ds-table-wrap">
           <table className="ds-table early-table">
             <thead>
-              <tr><th>Amount</th><th>What we are buying</th><th>What it delivers before January</th><th>Project refs</th></tr>
+              <tr><th>Amount</th><th>What we are buying</th><th>What King’s will have from the immediate investment</th><th>Project refs</th></tr>
             </thead>
             <tbody>
               {earlyAsk.flatMap((item) => item.outputs.map((output, outputIndex) => <tr key={`${item.amount}-${outputIndex}`} className={outputIndex === 0 ? 'early-group-start' : undefined}>
@@ -342,7 +344,7 @@ function InvestmentCase() {
             </tbody>
           </table>
         </div>
-        <p className="ds-subtle early-note">The £100k is an early release against the relevant Year 1 planning assumptions, rather than an additional layer of programme cost. Digital Student Experience Hub co-design remains attributable to the separate Digital investment case.</p>
+        <p className="ds-subtle early-note">The £100k is an early release against the relevant Year 1 planning assumptions, rather than an additional layer of programme cost. The £60k opportunity seed funds activity that can run across the academic year; the wider £150k Year 1 opportunity envelope remains subject to the main business case. Digital Student Experience Hub development remains a separate Digital investment, with the King’s Canvas and Student Life work here limited to evidence, co-design and proof-of-concept activity.</p>
       </section>
 
       <section className="ds-cluster investment-source-panel">
