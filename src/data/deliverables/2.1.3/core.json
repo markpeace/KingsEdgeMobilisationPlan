@@ -18,6 +18,13 @@
       "forum": "King's Edge resource-planning pass",
       "outcome": "Advance to resource planning with a bounded Year 1 technical proof-of-concept budget, a larger Year 2 trailblazer capability envelope and an evidence-led Year 3 institutionalisation envelope.",
       "notes": "The technical prototype tests the proposition and does not fund a separate production platform. Student-facing digital implementation remains a Digital Student Experience Hub dependency."
+    },
+    {
+      "date": "2026-09-09",
+      "type": "decision",
+      "forum": "Pre-business-case investment reconciliation",
+      "outcome": "Clarified the Year 1 technical proof of concept as an AI-supported curriculum skills audit: use LLMs to interrogate curriculum evidence including module descriptions, assessment briefs, KEATS content and richer teaching materials, and test whether meaningful capabilities can be surfaced against the UK Standard Skills Classification. Outputs must be reviewed with disciplinary experts and should explicitly record false positives, omissions and places where human interpretation remains necessary.",
+      "notes": "The UK Standard Skills Classification remains the leading candidate shared language, not an adopted King's framework. Any pre-business-case King's Talent capacity used to accelerate the proof of concept must be reconciled against the existing Year 1 technical prototyping/shared-capacity assumptions rather than added as a second cost."
     }
   ]
 }
