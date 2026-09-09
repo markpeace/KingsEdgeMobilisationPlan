@@ -10,6 +10,13 @@
       "forum": "King's Edge mobilisation planning",
       "outcome": "Front-load Power BI and Microsoft Fabric engineering in Year 1 using a two-stage student-engineering model: the already-funded £4,000 six-week summer internship creates the first working prototype, followed by part-time Power BI / Microsoft Fabric engineering through December to harden the reusable data model, measures, report build, refresh process and handover.",
       "notes": "The continuation is funded from 2.1.1's existing 0.25 FTE share of the £21,000 King's Edge Analytics & Data Capability Year 1 envelope and does not increase the Core Year 1 total."
+    },
+    {
+      "date": "2026-09-09",
+      "type": "decision",
+      "forum": "Pre-business-case investment reconciliation",
+      "outcome": "Clarified that the Year 1 Graduate Futures product should be a live, wide-ranging data pack that supports both course-level interrogation of graduate value and a clearer institutional view of where graduate strengths are concentrated, where outcomes are uneven and where there may be potential for development or targeted action. The product should bring together graduate outcomes and destinations, comparator evidence, student aspiration evidence and relevant course context, with responsible drill-down and aggregation from institutional and faculty patterns to course-level evidence where the data supports it.",
+      "notes": "The institutional view is for developmental insight and prioritisation, not course ranking. It extends the existing faculty conversations and institutional synthesis already in the plan. Any pre-business-case paid student engineering is a timing acceleration within the existing Year 1 Analytics & Data Capability and related approved/residual envelopes, not additional Core cost."
     }
   ]
 }
