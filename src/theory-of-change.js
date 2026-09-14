@@ -184,6 +184,29 @@ function createTheoryHeader() {
   return header;
 }
 
+function createExternalValidation() {
+  if (!theory.externalValidation) return null;
+
+  const aside = document.createElement('aside');
+  aside.className = 'ds-callout theory-external-validation';
+  aside.setAttribute('aria-label', theory.externalValidation.label);
+
+  const meta = document.createElement('p');
+  meta.className = 'eyebrow';
+  meta.textContent = `${theory.externalValidation.label} · ${theory.externalValidation.date}`;
+
+  const title = document.createElement('h3');
+  title.textContent = theory.externalValidation.title;
+
+  const tldr = document.createElement('p');
+  tldr.className = 'theory-external-validation-summary';
+  tldr.textContent = theory.externalValidation.tldr;
+
+  aside.append(meta, title, tldr);
+  appendParagraphs(aside, theory.externalValidation.paragraphs);
+  return aside;
+}
+
 function createTransformations() {
   const section = document.createElement('section');
   section.className = 'theory-scan-section theory-transformations';
@@ -337,6 +360,7 @@ function createTheoryOfChange() {
 
   section.append(
     createTheoryHeader(),
+    createExternalValidation(),
     createTransformations(),
     createCausalChain(),
     createWhyNow(),
