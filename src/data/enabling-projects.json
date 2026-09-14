@@ -63,8 +63,9 @@
     "title": "Curriculum Framework and Review",
     "owner": "TBC",
     "deliveryContext": "out-of-programme",
-    "summary": "Provides the route through which King's Edge requirements are embedded in curriculum audit, review and enhancement.",
-    "edgeRole": "Carries the curriculum audit and review mechanism that surfaces skills, experiential learning, graduate premium contribution and growth priorities.",
+    "summary": "Provides the main curriculum route through which King's Edge requirements and wider Education Delivery Framework priorities are embedded in audit, review and enhancement.",
+    "detailSummary": "Curriculum Framework and Review is the principal institutional mechanism for making graduate-futures requirements part of normal academic curriculum development rather than creating parallel course-level processes. It can surface experiential learning, skills and graduate-premium contribution, provide the baseline for targeted enhancement, and carry proven approaches into mainstream curriculum practice.\n\nIt is also the appropriate principal route for discipline-contextualised AI capability under the wider Education Delivery Framework. Universities UK’s Future Jobs Roadmap reinforces the expectation that AI capability should be developed at course level. King’s Edge does not currently own a universal AI entitlement; where useful, its skills, opportunity, evidence and recognition infrastructure can support the wider curriculum response once the educational model is established.",
+    "edgeRole": "Carries the curriculum audit and review mechanism that surfaces skills, experiential learning, graduate premium contribution and growth priorities. It also provides the principal curriculum route for wider discipline-contextualised AI capability, with King's Edge supporting connection to skills, opportunity, evidence and recognition rather than owning the AI entitlement itself.",
     "deliverables": [],
     "servesDeliverables": [
       "2.1.1",
