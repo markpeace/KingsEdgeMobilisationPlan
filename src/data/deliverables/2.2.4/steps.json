@@ -64,7 +64,7 @@
         "start": "jul-dec-2026:c",
         "end": "jul-dec-2027:ab"
       },
-      "summary": "Deliver the four Year 1 thematic workpackages against a single portfolio-level ambition, creating new learning opportunities for students while building the first reusable evergreen asset base. Workpackage owners hold devolved responsibility for their agreed contribution, while 2.2.4 tracks deduplicated reach, student-hours, repeat participation, delivery quality, access and the balance of scalable evergreen, short active and sustained intensive provision. Use what is learned about participation, demand and strategic need to shape the next annual portfolio.",
+      "summary": "Deliver the four Year 1 thematic workpackages against a single portfolio-level ambition, creating new learning opportunities for students while building the first reusable evergreen asset base. Workpackage owners hold devolved responsibility for their agreed contribution, while 2.2.4 tracks deduplicated reach, student-hours, repeat participation, delivery quality, access and the balance of scalable evergreen, short active and sustained intensive provision. Use what is learned about participation, demand and strategic need to shape the next annual portfolio. In parallel, prepare the reporting model needed to distinguish overall opportunity participation from the subset that will qualify towards the 2.1.2 experiential-learning entitlement once that definition is ratified.",
       "dependsOn": [
         "2.2.4-step-1"
       ],
@@ -78,7 +78,7 @@
         },
         {
           "title": "Year 1 portfolio review and Year 2 opportunity plan",
-          "summary": "A concise evidence-led review of reach, repeat participation, student-hours, delivery mix, access, evergreen asset creation, strategic demand and unmet need, followed by a Year 2 portfolio that directs the £200,000 envelope towards the thematic workpackages best suited to the next year’s priorities."
+          "summary": "A concise evidence-led review of reach, repeat participation, student-hours, delivery mix, access, evergreen asset creation, strategic demand and unmet need, followed by a Year 2 portfolio that directs the £200,000 envelope towards the thematic workpackages best suited to the next year’s priorities. The review also establishes how later reporting will distinguish total portfolio reach from provision that meets the agreed experiential-learning entitlement threshold."
         }
       ]
     },
@@ -89,7 +89,7 @@
         "start": "jul-dec-2027:c",
         "end": "jul-dec-2028:b"
       },
-      "summary": "Use Year 1 evidence and new strategic drivers from across King’s Edge to refresh the thematic portfolio and grow the supply of beyond-course learning. Reuse and improve the evergreen courses, projects and other scalable assets already created, commission new provision where priorities or gaps require it, and devolve responsibility for contributions to the overall £200,000 investment, reach, student-hours and depth ambition. Increase low-friction entry points and short active participation while expanding sustained intensive capacity where evidence and partner capacity support it.",
+      "summary": "Use Year 1 evidence and new strategic drivers from across King’s Edge to refresh the thematic portfolio and grow the supply of beyond-course learning. Reuse and improve the evergreen courses, projects and other scalable assets already created, commission new provision where priorities or gaps require it, and devolve responsibility for contributions to the overall £200,000 investment, reach, student-hours and depth ambition. Increase low-friction entry points and short active participation while expanding sustained intensive capacity where evidence and partner capacity support it. Once the 2.1.2 entitlement definition is settled, track qualifying experiential provision separately from overall portfolio reach so that growth in headline participation is not mistaken for growth in meaningful work-based or experiential access.",
       "dependsOn": [
         "2.2.4-step-2"
       ],
