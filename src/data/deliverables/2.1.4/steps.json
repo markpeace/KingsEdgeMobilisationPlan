@@ -4,12 +4,12 @@
       "id": "2.1.4-step-1",
       "title": "Define the experiential-learning evidence requirements for curriculum review",
       "period": "jul-dec-2026:bc",
-      "summary": "Work with the Curriculum Framework review to define the minimum evidence needed to understand curriculum-embedded experiential learning across King's. Cover presence and type of experiential learning, learning purpose, inclusion and access, reflection and assessment, support requirements, visibility to students and the extent to which current provision aligns with the emerging 2.1.2 North Star.",
+      "summary": "Work with the Curriculum Framework review to define the minimum evidence needed to understand curriculum-embedded experiential learning across King’s. Cover presence and type of experiential learning, learning purpose, inclusion and access, reflection and assessment, support requirements, visibility to students and the extent to which current provision aligns with the emerging 2.1.2 North Star. Design the evidence model so that, once 2.1.2 defines qualifying provision, King’s can distinguish broad experiential-learning activity from provision that counts towards the future entitlement and can establish a credible coverage baseline against the UUK 2030 and 2035 benchmarks.",
       "dependsOn": ["curriculum-framework-review"],
       "outputs": [
         {
           "title": "Experiential-learning curriculum review requirements",
-          "summary": "A concise set of questions and evidence requirements that allow curriculum review to surface existing provision, hidden practice, material gaps, access issues and assurance needs."
+          "summary": "A concise set of questions and evidence requirements that allow curriculum review to surface existing provision, hidden practice, material gaps, access issues and assurance needs, while supporting later identification of provision that qualifies towards the agreed experiential-learning entitlement."
         }
       ],
       "resources": {
@@ -57,7 +57,7 @@
       "outputs": [
         {
           "title": "Initial curriculum-embedded experiential-learning baseline",
-          "summary": "An institution-level view of current provision, strengths, gaps and unevenness using the best available curriculum-review evidence."
+          "summary": "An institution-level view of current provision, strengths, gaps and unevenness using the best available curriculum-review evidence. Once the 2.1.2 qualification criteria are settled, the baseline should also support a defensible estimate of student access to provision that counts towards the future entitlement rather than treating all experiential activity as equivalent."
         },
         {
           "title": "Prioritised growth and assurance opportunity set",
@@ -79,7 +79,7 @@
       "id": "2.1.4-step-3",
       "title": "Agree the 2027/28 curriculum growth and assurance plan",
       "period": "jan-jun-2027:c",
-      "summary": "Combine the initial curriculum baseline with the ratified direction from 2.1.2 to select the first targeted implementation cohort for 2027/28. Define the support model, assurance expectations, evidence to collect and how the £40,000 Year 2 core implementation envelope should be deployed. Preserve flexibility to fund programme redesign, academic development, curriculum prototyping, small delivery costs or other proportionate interventions where these are the most effective response.",
+      "summary": "Combine the initial curriculum baseline with the ratified direction from 2.1.2 to select the first targeted implementation cohort for 2027/28. Use the agreed entitlement definition and coverage trajectory to identify where curriculum growth can make the most material contribution to closing access gaps, while preserving the wider educational and disciplinary purposes of experiential learning. Define the support model, assurance expectations, evidence to collect and how the £40,000 Year 2 core implementation envelope should be deployed. Preserve flexibility to fund programme redesign, academic development, curriculum prototyping, small delivery costs or other proportionate interventions where these are the most effective response.",
       "dependsOn": ["2.1.4-step-2", "2.1.2-step-2"],
       "outputs": [
         {
