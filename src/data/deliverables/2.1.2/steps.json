@@ -61,7 +61,7 @@
         "start": "jul-dec-2026:b",
         "end": "jan-jun-2027:b"
       },
-      "summary": "Translate the practice synthesis and theoretical basis into a distinctive institutional proposition. Define the learning-design, reflection, assessment, inclusion, support and assurance principles that should characterise experiential learning at King's, and develop a credible future student-entitlement ambition. Test the proposition with students, educators, professional services and the live policy and module work in 2.2.3 so that the North Star is ambitious but operationally meaningful.",
+      "summary": "Translate the practice synthesis and theoretical basis into a distinctive institutional proposition. Define the learning-design, reflection, assessment, inclusion, support and assurance principles that should characterise experiential learning at King's, and develop a credible future student-entitlement ambition. Use Universities UK's Future Jobs Roadmap milestones of 50% access to meaningful work-based learning by 2030 and universal access by 2035 as an external comparator, while explicitly testing how King's broader experiential-learning typology relates to that category and which forms of provision are sufficiently meaningful to count. Test the proposition with students, educators, professional services and the live policy and module work in 2.2.3 so that the North Star is ambitious but operationally meaningful.",
       "dependsOn": [
         "2.1.2-step-1"
       ],
@@ -72,7 +72,7 @@
         },
         {
           "title": "Draft future student-entitlement ambition",
-          "summary": "A clear statement of the experiential learning students should ultimately be able to expect through a King's education, framed as a future implementation ambition rather than a claim of current universal provision."
+          "summary": "A clear statement of the experiential learning students should ultimately be able to expect through a King's education, including a tested interpretation of which forms of provision should count towards that entitlement and an explicit comparison with the UUK 2030 and 2035 milestones. The draft should frame a future implementation ambition rather than a claim of current universal provision."
         },
         {
           "title": "Stakeholder and student testing record",
@@ -119,7 +119,7 @@
       "id": "2.1.2-step-3",
       "title": "Ratify the North Star and set the forward implementation trajectory",
       "period": "jan-jun-2027:c",
-      "summary": "Finalize the institutional North Star and future entitlement ambition, incorporating learning from the curriculum baseline in 2.1.4 and the sandwich-year and Level 6 capstone work in 2.2.3. Establish the forward implementation trajectory, including the requirements that later curriculum growth, near-curriculum provision, partnership infrastructure and assurance activity should meet.",
+      "summary": "Finalize the institutional North Star and future entitlement ambition, incorporating learning from the curriculum baseline in 2.1.4 and the sandwich-year and Level 6 capstone work in 2.2.3. Set a measurable forward implementation trajectory, using the UUK 2030 and 2035 milestones as external reference points while deciding what level of pace and ambition is credible for King's across curriculum, near-curriculum and qualifying co-curricular provision. Establish the requirements that later curriculum growth, near-curriculum provision, partnership infrastructure, measurement and assurance activity should meet.",
       "dependsOn": [
         "2.1.2-step-2",
         "2.1.4-step-2",
@@ -133,11 +133,11 @@
         },
         {
           "title": "Future student-entitlement statement",
-          "summary": "The agreed direction of travel for the experiential learning students should ultimately expect, with implementation staged rather than overclaimed in Year 1."
+          "summary": "The agreed direction of travel for the experiential learning students should ultimately expect, including a clear definition of qualifying provision and a measurable coverage trajectory benchmarked against the UUK 50% by 2030 and universal-access-by-2035 milestones, without overclaiming current provision."
         },
         {
           "title": "2027/28 onward implementation roadmap",
-          "summary": "A sequenced plan linking the North Star to curriculum growth, near-curriculum routes, assurance, enabling infrastructure and the next institutional decisions."
+          "summary": "A sequenced plan linking the North Star to curriculum growth, near-curriculum routes, assurance, enabling infrastructure and the next institutional decisions, including the baseline and measurement approach needed to track progress against the agreed entitlement trajectory."
         }
       ],
       "resources": {
