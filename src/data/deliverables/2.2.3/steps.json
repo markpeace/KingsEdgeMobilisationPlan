@@ -108,7 +108,7 @@
       "id": "2.2.3-step-3",
       "title": "Consolidate the reusable near-curriculum architecture and next priorities",
       "period": "jan-jun-2027:c",
-      "summary": "Use the sandwich-year and capstone work as live proofs of the wider near-curriculum proposition. Identify the common approval, administration, timetabling, recognition, student-journey and governance requirements that should become reusable institutional architecture. Decide which additional near-curriculum routes are worth developing next, if any, based on curriculum evidence, student demand and strategic value rather than assuming a large predefined suite of modules.",
+      "summary": "Use the sandwich-year and capstone work as live proofs of the wider near-curriculum proposition. Identify the common approval, administration, timetabling, recognition, student-journey and governance requirements that should become reusable institutional architecture. Decide which additional near-curriculum routes are worth developing next, if any, based on curriculum evidence, student demand and strategic value rather than assuming a large predefined suite of modules. As part of that decision, test whether employer co-designed, bite-sized or other modular learning routes would add distinctive value and can use the common architecture without creating unnecessary new provision.",
       "dependsOn": ["2.2.3-step-1", "2.2.3-step-2", "2.1.2-step-2"],
       "outputs": [
         {
@@ -117,7 +117,7 @@
         },
         {
           "title": "Prioritised 2027/28 near-curriculum roadmap",
-          "summary": "A bounded set of next implementation priorities, including any additional shared module or pathway development justified by evidence."
+          "summary": "A bounded set of next implementation priorities, including any additional shared module, employer co-designed or modular pathway development justified by evidence. Inclusion in the roadmap should reflect student need and educational value, not simply alignment with the national policy agenda."
         }
       ],
       "resources": {
