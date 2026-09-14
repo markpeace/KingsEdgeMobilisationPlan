@@ -7,7 +7,7 @@
         "start": "jul-dec-2026:a",
         "end": "jan-jun-2027:c"
       },
-      "summary": "Map the employer, alumni, professional, industry and other external insight structures already operating across King’s, then define a common model that can work at university, faculty and departmental level without displacing local ownership. Agree the minimum standard for purpose, membership, cadence, evidence presented, core validation questions, recording insight and tracing action. Test the framework with a deliberately varied set of existing groups and use those pilots to produce the first consolidated external insight and validation report across both the student offer and graduate premium or reputational claims.",
+      "summary": "Map the employer, alumni, professional, industry and other external insight structures already operating across King’s, then define a common model that can work at university, faculty and departmental level without displacing local ownership. Agree the minimum standard for purpose, membership, cadence, evidence presented, core validation questions, recording insight and tracing action. Use relevant national evidence, including the Universities UK Future Jobs Roadmap and employer findings, as contextual intelligence alongside direct King’s relationships while keeping the two forms of evidence distinct. Test the framework with a deliberately varied set of existing groups and use those pilots to produce the first consolidated external insight and validation report across both the student offer and graduate premium or reputational claims.",
       "dependsOn": [],
       "outputs": [
         {
@@ -20,7 +20,7 @@
         },
         {
           "title": "Year 1 pilot cycle and consolidated insight report",
-          "summary": "A representative set of university, faculty and departmental pilots demonstrating the model in practice, followed by a synthesis of what has been validated, what should change and what requires further evidence."
+          "summary": "A representative set of university, faculty and departmental pilots demonstrating the model in practice, followed by a synthesis of what has been validated, what should change and what requires further evidence. The report should place direct King’s external insight alongside relevant national intelligence, including Future Jobs, without treating national survey or policy evidence as a substitute for discipline- and institution-specific challenge."
         }
       ],
       "resources": {
