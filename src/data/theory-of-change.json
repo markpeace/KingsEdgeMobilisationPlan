@@ -1,6 +1,17 @@
 {
   "status": "Approved",
   "approvedDate": "5 August 2026",
+  "externalValidation": {
+    "label": "External validation after approval",
+    "date": "14 September 2026",
+    "title": "The Future Jobs Roadmap reinforces the direction of the approved theory",
+    "tldr": "Universities UK’s Future Jobs Roadmap, published after this theory was approved, independently reinforces several of its central assumptions while also identifying institutional commitments that sit beyond the current King’s Edge boundary.",
+    "paragraphs": [
+      "The King’s Edge Theory of Change was approved on 5 August 2026. Universities UK published its Future Jobs Roadmap on 10 September 2026. The roadmap is therefore recorded here as subsequent external validation, not as the source of or an amendment to the approved theory.",
+      "The roadmap materially reinforces the direction already taken on meaningful work-based and experiential learning, stronger connections between education and future work, closer employer engagement and clearer articulation of the capabilities graduates develop. Its national work-based-learning milestones now provide an external benchmark for the experiential-learning entitlement work, while the wider skills agenda strengthens the significance of King’s work on a more externally meaningful skills language.",
+      "The roadmap also includes commitments that King’s Edge does not currently own. In particular, universal access to AI tools and course-level AI capability should be addressed through the wider Education Delivery Framework, with discipline-contextualised educational practice carried principally through Curriculum Framework and Review and supported by relevant education-culture work. King’s Edge can support that institutional response through its skills, opportunity, evidence and recognition infrastructure where useful, without creating a parallel AI proposition. Lifetime careers support likewise remains a wider institutional question rather than an implicit King’s Edge commitment."
+    ]
+  },
   "title": "How King's Edge creates lasting graduate value",
   "standfirst": "King’s Edge connects the course, purpose and opportunity so every student can build, recognise and use the full value of their King’s education.",
   "strategicChallenge": {
