@@ -6,6 +6,17 @@
 
 This document replaces the previous working theory of change. It sets out the approved strategic challenge, proposition, innovation anchors, causal hypothesis and programme transformations for King's Edge.
 
+## Post-approval external validation
+
+**Recorded: 14 September 2026**  
+**External development: Universities UK Future Jobs Roadmap, published 10 September 2026**
+
+The King’s Edge Theory of Change was approved before publication of the Future Jobs Roadmap. The roadmap is therefore recorded as subsequent external validation, rather than retrospectively written into the approved theory or presented as its source.
+
+The roadmap materially reinforces several directions already present here: meaningful work-based and experiential learning; stronger connections between education and future work; closer employer engagement; and clearer articulation of the capabilities graduates develop. Its national work-based-learning milestones now provide an external benchmark for the experiential-learning entitlement work, while the wider skills agenda strengthens the significance of King’s work on an externally meaningful skills language.
+
+It also contains commitments that sit beyond the current King’s Edge boundary. Universal access to AI tools and course-level AI capability should be addressed through the wider Education Delivery Framework, with discipline-contextualised educational practice carried principally through Curriculum Framework and Review and supported by relevant education-culture work. King’s Edge can support that response through its skills, opportunity, evidence and recognition infrastructure where useful, without creating a parallel AI proposition. Lifetime careers support likewise remains a wider institutional question rather than an implicit King’s Edge commitment.
+
 ## The strategic challenge
 
 The traditional graduate premium is becoming less secure. Graduate employment is under pressure, artificial intelligence is reshaping early-career work, and students are asking more exacting questions about the value and return on investment of higher education.
