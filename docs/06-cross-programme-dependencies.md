@@ -12,7 +12,7 @@ Important distinction:
 
 ## Future Jobs and the AI boundary
 
-Universities UK’s Future Jobs Roadmap adds an important institutional expectation around AI: AI tools should be accessible to every undergraduate and every course should have an AI trailblazer. The roadmap and the discipline-specific models it highlights reinforce that this is principally an educational and curriculum question, rather than a new King’s Edge deliverable.
+[Universities UK’s Future Jobs Roadmap](https://www.universitiesuk.ac.uk/latest/news/work-based-learning-every-undergraduate) adds an important institutional expectation around AI: AI tools should be accessible to every undergraduate and every course should have an AI trailblazer. The roadmap and the discipline-specific models it highlights reinforce that this is principally an educational and curriculum question, rather than a new King’s Edge deliverable.
 
 Within the Education Delivery Framework, **Curriculum Framework and Review should be the principal route through which discipline-contextualised AI capability is made a normal part of courses**. Education Cultures can support the educator practice, experimentation and shared learning needed to make that work well. King’s Edge should remain focused on graduate futures and provide supporting infrastructure where it adds value: a skills language capable of making relevant capability visible, access to wider developmental opportunities, and trusted evidence and recognition of what students have developed. The Digital Student Experience Hub can help students discover and navigate relevant provision, but should not become the owner of universal AI-tool access or the curriculum entitlement itself.
 
