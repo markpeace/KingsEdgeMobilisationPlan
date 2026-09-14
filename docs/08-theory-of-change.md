@@ -9,7 +9,7 @@ This document replaces the previous working theory of change. It sets out the ap
 ## Post-approval external validation
 
 **Recorded: 14 September 2026**  
-**External development: Universities UK Future Jobs Roadmap, published 10 September 2026**
+**External development: [Universities UK Future Jobs Roadmap](https://www.universitiesuk.ac.uk/latest/news/work-based-learning-every-undergraduate), published 10 September 2026**
 
 The King’s Edge Theory of Change was approved before publication of the Future Jobs Roadmap. The roadmap is therefore recorded as subsequent external validation, rather than retrospectively written into the approved theory or presented as its source.
 
