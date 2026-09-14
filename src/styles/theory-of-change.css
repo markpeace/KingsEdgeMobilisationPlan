@@ -156,6 +156,12 @@
   line-height: 1.6;
 }
 
+.theory-external-validation-source {
+  display: inline-block;
+  margin-top: var(--space-5);
+  font-weight: 800;
+}
+
 .theory-scan-section {
   padding: clamp(3rem, 6vw, 5.5rem) 0;
   border-top: var(--border-width) solid var(--color-ink);
