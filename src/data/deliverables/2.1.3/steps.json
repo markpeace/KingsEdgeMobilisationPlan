@@ -5,9 +5,7 @@
       "title": "Frame the skills discovery and hold a common institutional space",
       "period": "jul-dec-2026:b",
       "summary": "Bring together the early interested faculties and relevant Careers, curriculum and education colleagues to define the questions that discovery must answer. Frame the work explicitly against the emerging national skills context, including Skills England's UK Standard Skills Classification and the Universities UK Future Jobs agenda, while maintaining holding relationships with areas already developing local skills approaches so that King's can investigate a common route without asking them to pause useful local thinking.",
-      "dependsOn": [
-        "curriculum-framework-review"
-      ],
+      "dependsOn": ["curriculum-framework-review"],
       "outputs": [
         {
           "title": "Skills discovery brief and reference group",
@@ -21,10 +19,7 @@
             "role": "King’s Edge Project Officer capacity",
             "owner": "Transformation Office shared resource",
             "sharedResourceId": "edge-project-officer-capacity",
-            "sharedResourceAllocation": {
-              "fte": 0.05,
-              "note": "Year 1 allocation for coordination, reference-group administration and evidence collation."
-            },
+            "sharedResourceAllocation": {"fte": 0.05, "note": "Year 1 allocation for coordination, reference-group administration and evidence collation."},
             "confidence": "planned shared capacity"
           }
         ]
@@ -33,14 +28,9 @@
     {
       "id": "2.1.3-step-2",
       "title": "Build and test the curriculum skills-mapping proof of concept",
-      "period": {
-        "start": "jul-dec-2026:c",
-        "end": "jan-jun-2027:b"
-      },
+      "period": {"start": "jul-dec-2026:c", "end": "jan-jun-2027:b"},
       "summary": "Develop a deliberately narrow technical prototype that tests how the UKSSC can be queried and mediated and whether curriculum evidence can be used to surface meaningful capabilities. Compare different source material such as module descriptors, KEATS content, assessment briefs and richer teaching documentation where available. Review outputs with disciplinary experts rather than treating model extraction as ground truth.",
-      "dependsOn": [
-        "2.1.3-step-1"
-      ],
+      "dependsOn": ["2.1.3-step-1"],
       "outputs": [
         {
           "title": "Curriculum skills-mapping proof of concept",
@@ -61,13 +51,7 @@
             "category": "student technical project",
             "amount": 7500,
             "currency": "GBP",
-            "yearlyProfile": [
-              {
-                "academicYear": "2026/27",
-                "amount": 7500,
-                "note": "Bounded technical proof-of-concept assignment, sized above the existing six-week internship benchmark while remaining deliberately short of a production-development ask."
-              }
-            ],
+            "yearlyProfile": [{"academicYear": "2026/27", "amount": 7500, "note": "Bounded technical proof-of-concept assignment, sized above the existing six-week internship benchmark while remaining deliberately short of a production-development ask."}],
             "estimatedCost": "£7,500 Year 1 planning envelope.",
             "owner": "King’s Edge",
             "decisionNeededBy": "Autumn 2026",
@@ -93,9 +77,7 @@
       "title": "Decide the candidate architecture and select trailblazer partners",
       "period": "jan-jun-2027:c",
       "summary": "Synthesize technical, disciplinary, student and external-user evidence to decide whether UKSSC should remain the foundation, be materially curated or extended, or be reconsidered. Test the judgement against the emerging national Future Jobs and skills context without allowing external momentum to substitute for evidence of higher-education fit. Define the shared evidence semantics and select a small number of programmes, departments or faculties willing to go all in during 2027/28.",
-      "dependsOn": [
-        "2.1.3-step-2"
-      ],
+      "dependsOn": ["2.1.3-step-2"],
       "outputs": [
         {
           "title": "Skills architecture discovery decision",
@@ -122,14 +104,9 @@
     {
       "id": "2.1.3-step-4",
       "title": "Build capability through deep skills trailblazers",
-      "period": {
-        "start": "jul-dec-2027:a",
-        "end": "jan-jun-2028:b"
-      },
+      "period": {"start": "jul-dec-2027:a", "end": "jan-jun-2028:b"},
       "summary": "Support trailblazer partners to use the candidate skills architecture deeply: surface capabilities across selected curriculum, examine where learning design and assessment provide credible evidence, make the language meaningful to students and test how it connects to purpose and wider experiences. Build local capability rather than treating the trailblazers as passive sites for a central product.",
-      "dependsOn": [
-        "2.1.3-step-3"
-      ],
+      "dependsOn": ["2.1.3-step-3"],
       "outputs": [
         {
           "title": "Implemented skills trailblazers",
@@ -150,13 +127,7 @@
             "category": "academic and professional capacity building",
             "amount": 40000,
             "currency": "GBP",
-            "yearlyProfile": [
-              {
-                "academicYear": "2027/28",
-                "amount": 40000,
-                "note": "Core Package 4 skills trailblazer envelope: enough for deep testing across a deliberately bounded set of contexts, with any wider cohort treated as an enhanced investment option."
-              }
-            ],
+            "yearlyProfile": [{"academicYear": "2027/28", "amount": 40000, "note": "Core Package 4 skills trailblazer envelope: enough for deep testing across a deliberately bounded set of contexts, with any wider cohort treated as an enhanced investment option."}],
             "estimatedCost": "£40,000 Year 2 core planning envelope.",
             "owner": "King’s Edge / trailblazer partners",
             "decisionNeededBy": "Summer 2027",
@@ -174,9 +145,7 @@
       "title": "Test portability and settle the shared skills architecture",
       "period": "jan-jun-2028:c",
       "summary": "Compare the trailblazer implementations to determine which elements are genuinely portable, which need disciplinary variation and which created too much burden or too little value. Settle the common architecture, curation and evidence principles and define what should move into institutional curriculum and digital routes.",
-      "dependsOn": [
-        "2.1.3-step-4"
-      ],
+      "dependsOn": ["2.1.3-step-4"],
       "outputs": [
         {
           "title": "Skills architecture portability review",
@@ -198,16 +167,9 @@
     {
       "id": "2.1.3-step-6",
       "title": "Institutionalise the proven skills architecture",
-      "period": {
-        "start": "jul-dec-2028:a",
-        "end": "jan-jun-2029:c"
-      },
+      "period": {"start": "jul-dec-2028:a", "end": "jan-jun-2029:c"},
       "summary": "Embed the proven common architecture into Curriculum Framework review and enhancement, relevant opportunity data and the Digital Student Experience Hub. Scale support and guidance around the parts that demonstrated value, while maintaining governance for taxonomy change, disciplinary extension and the distinction between mapped, evidenced and assured capabilities.",
-      "dependsOn": [
-        "2.1.3-step-5",
-        "curriculum-framework-review",
-        "4.1"
-      ],
+      "dependsOn": ["2.1.3-step-5", "curriculum-framework-review", "4.1"],
       "outputs": [
         {
           "title": "Institutional skills implementation",
@@ -223,13 +185,7 @@
             "category": "curriculum implementation and capability transfer",
             "amount": 25000,
             "currency": "GBP",
-            "yearlyProfile": [
-              {
-                "academicYear": "2028/29",
-                "amount": 25000,
-                "note": "Core evidence-led Year 3 planning reserve for curriculum guidance, capability transfer, curation and implementation support after portability testing."
-              }
-            ],
+            "yearlyProfile": [{"academicYear": "2028/29", "amount": 25000, "note": "Core evidence-led Year 3 planning reserve for curriculum guidance, capability transfer, curation and implementation support after portability testing."}],
             "estimatedCost": "£25,000 Year 3 core planning envelope.",
             "owner": "King’s Edge / Curriculum Framework and enduring skills owners TBC",
             "decisionNeededBy": "Summer 2028",
