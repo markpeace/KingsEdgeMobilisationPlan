@@ -135,6 +135,36 @@ The Core case intentionally uses a deliberately bounded trailblazer portfolio an
 
 There is no current Package 4 allocation from the shared analytics or programme/project-management resources. The only presently identifiable recurrent BAU liability is approximately **£9k p.a.**, the package’s 0.10 share of the permanent Deputy Director post. Enduring practitioner, curriculum/skills governance and Registry/recognition operating requirements remain TBC until mobilisation evidence shows what needs to persist.
 
+### Future Jobs Roadmap external validation and boundaries
+
+**Settled 14 September 2026:** Universities UK’s [Future Jobs Roadmap](https://www.universitiesuk.ac.uk/latest/news/work-based-learning-every-undergraduate), published on **10 September 2026**, should be treated as **subsequent external validation of the King’s Edge direction**, not as the origin of the programme or a reason to retrospectively rewrite the approved 5 August 2026 Theory of Change.
+
+The strongest substantive alignment is in:
+
+- meaningful work-based and experiential learning at scale;
+- clearer articulation of graduate capability and the emerging national skills language;
+- stronger employer connection and easier partner engagement;
+- evidence and recognition that help students understand and carry what they have developed.
+
+The roadmap’s work-based-learning milestones, **50% undergraduate access by 2030 and universal access by 2035**, are an external benchmark for `2.1.2`, not a ready-made King’s definition or an automatic King’s commitment. `2.1.2` must define which forms of curriculum, near-curriculum and co-curricular experiential learning are sufficiently meaningful to qualify. `2.1.4` should then establish a defensible estimate of **student access to qualifying provision**, while `2.2.4` must continue to report **total opportunity reach separately from the subset that qualifies towards the experiential-learning entitlement**. Do not use aggregate King’s Edge participation as a proxy for progress against the UUK milestones.
+
+For skills, `2.1.3` should continue to treat the **UK Standard Skills Classification as the leading candidate, not a settled institutional choice**. The national Future Jobs and UKSSC context makes the experiment more strategically important, but the decision remains adopt / adapt / reconsider on the basis of technical, disciplinary, student and external-user evidence. If the work survives trailblazer and portability testing, King’s may have useful sector learning to share with Skills England, Universities UK and others.
+
+The UUK AI commitments sit principally **outside the current King’s Edge boundary**. Discipline-contextualised AI capability should be carried through the wider Education Delivery Framework, with **Curriculum Framework and Review as the principal curriculum route** and Education Cultures able to support educator practice and experimentation. King’s Edge may support the institutional response through skills, opportunity, evidence and recognition infrastructure, and the Digital Student Experience Hub may help students discover and navigate relevant provision. Neither Edge nor the Hub should be described as owning universal AI-tool access or the curriculum AI entitlement.
+
+Secondary consequences are deliberately bounded:
+
+- `2.2.2` should test how easy King’s is for external partners to understand and work with, including entry points, handoffs, contracting and administrative friction;
+- `2.2.3` should test whether employer co-designed, bite-sized or other modular learning deserves a place in the later near-curriculum roadmap, without presuming that it does;
+- `2.1.1` may use UUK employer findings as **national contextual evidence**, clearly distinguished from evidence about the value or performance of an individual King’s course;
+- `2.4.2` may use Future Jobs and its employer evidence as **one input to the external-intelligence cycle**, without allowing national policy or survey evidence to substitute for direct King’s employer, alumni, professional and disciplinary challenge.
+
+The current King’s Edge plan does **not** contain developed responses to lifetime careers support or regional SME graduate schemes. These remain genuine wider institutional questions and should not be retrofitted into existing deliverables merely to create apparent roadmap coverage.
+
+The investment case may use Future Jobs to increase confidence in the strategic direction and urgency of investment. It must **not** imply that UUK determines the £3.1902m Core arithmetic, that all Beyond-Course activity is work-based learning, or that the King’s Edge ask represents the complete institutional response to the roadmap.
+
+Avoid creating a generic UUK-alignment layer across the repository. Reference Future Jobs only where it provides material external validation, a meaningful benchmark, a design requirement or a relevant evidence source. Publication of the roadmap is not itself a King’s decision and should not be added to deliverable `decisionLog` entries.
+
 ### King’s Edge Core investment rebaseline
 
 **Settled 7 September 2026:** the actual King’s Edge plan has been rebased to the recommended **Core** investment case. Economy and Enhanced are option overlays for portfolio decision-making; they are not alternative source-plan baselines.
