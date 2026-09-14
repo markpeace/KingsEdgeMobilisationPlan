@@ -6,6 +6,7 @@ import './styles/detail-primitives.css';
 import './styles/investment-case.css';
 
 const deliverableHref = (id) => `./index.html#/deliverables/${id}`;
+const futureJobsUrl = 'https://www.universitiesuk.ac.uk/latest/news/work-based-learning-every-undergraduate';
 
 function RefLinks({ ids }) {
   return <span className="ds-cluster ask-refs" aria-label="Related deliverables">{ids.map((id) => <a className="ds-tag" key={id} href={deliverableHref(id)}>{id}</a>)}</span>;
@@ -64,7 +65,7 @@ const corePackages = [
     ],
     yearOne: [
       { label: 'Established', text: 'A tested institutional proposition for purpose and self-direction, alongside clearer requirements for trusted educational recognition and the student-facing relationship King’s is seeking to create.' },
-      { label: 'Tested', text: 'A candidate skills architecture examined across selected contexts, with an adopt / adapt / reconsider decision and evidence about how it can connect disciplinary learning, wider experience and future-facing capability.' },
+      { label: 'Tested', text: 'A candidate skills architecture examined across selected contexts in the emerging national Future Jobs and UKSSC context, with an adopt / adapt / reconsider decision and evidence about how it can connect disciplinary learning, wider experience and future-facing capability.' },
       { label: 'Ready for Year 2', text: 'A bounded set of deep trailblazers with agreed contexts, evidence needs and implementation questions, ready to move from proposition design into live institutional practice in 2027/28.' }
     ],
     yearOneCost: '£53k',
@@ -74,7 +75,7 @@ const corePackages = [
   {
     title: 'Experiential Learning in the Curriculum',
     refs: ['2.1.2', '2.1.4', '2.2.3'],
-    northStar: 'Every student can expect purposeful experiential learning through or alongside their course, with King’s able to identify where access or quality is weak, intervene deliberately, and reuse strong academic, regulatory and delivery models across disciplines.',
+    northStar: 'Every student can expect purposeful experiential learning through or alongside their course, with a defined future entitlement and measurable trajectory, and with King’s able to identify where access or quality is weak, intervene deliberately, and reuse strong academic, regulatory and delivery models across disciplines.',
     proposition: 'King’s builds an institution-wide capability for designing, assuring and growing experiential learning. Strong local practice becomes easier to reuse, and gaps in access can be identified and acted on rather than left to develop unevenly. The institution can see where meaningful experiential learning is strong, weak or absent, support priority programmes through reusable academic, policy, validation and delivery routes, and scale proven models such as sandwich years and shared capstone provision without flattening disciplinary difference.',
     stories: [
       { label: 'Student', text: 'I can expect to apply, test and extend my learning through meaningful experience as part of a King’s education, not only if my course already happens to offer it.' },
@@ -86,7 +87,7 @@ const corePackages = [
       { label: 'The University', text: 'We can make meaningful experiential learning a more dependable part of a King’s education and target investment where students currently have the least access.' }
     ],
     yearOne: [
-      { label: 'Established', text: 'An agreed experiential-learning North Star and entitlement direction, plus an initial curriculum baseline showing where provision is strong, weak or absent and where growth should be prioritised.' },
+      { label: 'Established', text: 'An agreed experiential-learning North Star and entitlement direction, benchmarked against the UUK 2030 and 2035 milestones, plus an initial curriculum baseline showing where provision is strong, weak or absent and where growth should be prioritised.' },
       { label: 'Put in place', text: 'A ratified sandwich-year policy and regulatory model, a validated shared 15-credit Level 6 capstone, and reusable academic, policy and delivery routes that remove avoidable friction for course teams.' },
       { label: 'Ready for Year 2', text: 'A sequenced implementation portfolio identifying priority programmes and the practical support needed to move a bounded cohort from diagnosis into changed curriculum in 2027/28.' }
     ],
@@ -147,8 +148,8 @@ const earlyAsk = [
     amount: '£60k',
     buying: 'Seed funding for a broader £150k Year 1 investment in new student opportunity',
     outputs: [
-      { text: 'A targeted package of substantive new opportunities for final-year students, bringing together Careers, Entrepreneurship and colleagues in IES working on community-engaged experience. The focus is on helping students translate their talents into experience and gain the final adjunct skills, relationships and evidence they need for the transition beyond King’s.', refs: ['2.2.4'] },
-      { text: 'An ambition to engage around 700 final-year undergraduates, approximately 10% of the graduating undergraduate population, generating c.10,000–12,000 student-hours and around 150 sustained places providing internship-like experience, alongside shorter and more scalable opportunities. Delivery can include projects, placements, mentoring, enterprise activity and community-engaged experience.', refs: ['2.2.4'] },
+      { text: 'A targeted package of substantive new opportunities for final-year students, bringing together Careers, Entrepreneurship and colleagues in IES working on community-engaged experience. The focus is on helping students translate their talents into experience and gain the final adjunct skills, relationships and evidence they need for the transition beyond King’s. This creates immediate delivery in the same broad direction as the Future Jobs emphasis on stronger experience before graduation, while the King’s definition of qualifying experiential learning is still being settled through 2.1.2.', refs: ['2.2.4'] },
+      { text: 'An ambition to engage around 700 final-year undergraduates, approximately 10% of the graduating undergraduate population, generating c.10,000–12,000 student-hours and around 150 sustained places providing internship-like experience, alongside shorter and more scalable opportunities. Delivery can include projects, placements, mentoring, enterprise activity and community-engaged experience. The sustained layer provides an immediate test bed for deeper forms of provision; the full 700-student package should not be counted automatically as work-based learning.', refs: ['2.2.4'] },
       { text: 'The £60k seeds activity across the new-opportunity portfolio throughout the academic year. The broader £150k Year 1 investment, subject to the main business case, grows this into a portfolio reaching at least 2,500 distinct students, 26,500–33,500 student-hours and around 350 sustained high-depth places.', refs: ['2.2.4'] }
     ]
   },
@@ -165,7 +166,7 @@ const earlyAsk = [
     buying: 'Paid student data, AI and prototyping capacity through King’s Talent',
     outputs: [
       { text: 'A live, wide-ranging Graduate Futures data pack giving King’s a clearer institutional view of where graduate strengths are concentrated, where outcomes are uneven and where there is potential for development, while allowing course teams to interrogate the graduate premium of their own provision. It brings together graduate outcomes, destinations, comparator evidence, student aspirations and relevant course context.', refs: ['2.1.1', '2.4.4'] },
-      { text: 'A working AI-supported curriculum skills audit, using LLMs to interrogate curriculum materials such as module descriptions, assessment briefs and teaching materials and identify capabilities aligned to the UK Standard Skills Classification, while testing where academic interpretation remains necessary.', refs: ['2.1.3'] },
+      { text: 'A working AI-supported curriculum skills audit, using LLMs to interrogate curriculum materials such as module descriptions, assessment briefs and teaching materials and identify capabilities aligned to the UK Standard Skills Classification, while testing where academic interpretation remains necessary. The national Future Jobs and skills agenda makes this especially timely, but it remains an adopt / adapt / reconsider experiment rather than a commitment to institutional adoption.', refs: ['2.1.3'] },
       { text: 'A working proof of concept for King’s Canvas, testing an LLM-supported way for students to map their aspirations, interests and needs and connect them to relevant opportunities across King’s. The prototype gives us something tangible to test with students while generating evidence and requirements for later development through the Digital Student Experience Hub.', refs: ['2.2.1', '4.1.2'] },
       { text: 'A usable first set of Student Life personas and tested design outputs, giving King’s a stronger evidence base about different patterns of student life, participation and need, and informing both King’s Edge design and the separate Digital Student Experience Hub proposition.', refs: ['2.3.2', '4.1.2'] }
     ]
@@ -243,6 +244,14 @@ function InvestmentCase() {
           <h2 className="ds-section-heading">What implementation brings to the institution</h2>
           <p><strong>Investing in King’s Edge moves purpose and graduate futures to the organising core of the student experience.</strong> It connects curriculum, skills, opportunities, relationships and wider student life around the individual student, while deepening opportunity and building the institutional capability to learn from participation and outcomes. Together, the four investment areas give King’s a more coherent student experience, a stronger developmental relationship with students, more deliberate use of investment and a clearer account of graduate value.</p>
         </div>
+
+        <aside className="ds-callout ds-stack" aria-labelledby="future-jobs-investment-title">
+          <p className="eyebrow">External validation · September 2026</p>
+          <h3 id="future-jobs-investment-title">The Future Jobs Roadmap strengthens the case for the direction already taken.</h3>
+          <p>The Universities UK roadmap was published after the current King’s Edge proposition and investment architecture had been developed. Its emphasis on meaningful work-based learning at scale, employer connection, clearer articulation of graduate capability and flexible learning materially reinforces several assumptions already built into this case.</p>
+          <p><strong>The strongest alignment is in experiential learning, skills and the evidence and recognition of graduate capability.</strong> The roadmap increases confidence in investing in those areas without expanding King’s Edge retrospectively to cover every national commitment.</p>
+          <p className="ds-subtle">Universal AI capability is principally a wider Education Delivery Framework and Curriculum Framework responsibility. Lifetime careers support and regional SME graduate schemes are not currently developed King’s Edge propositions. <a href={futureJobsUrl} target="_blank" rel="noreferrer">Read the Universities UK Future Jobs source</a>.</p>
+        </aside>
 
         <div className="ds-table-wrap">
           <table className="ds-table investment-table">
@@ -345,6 +354,7 @@ function InvestmentCase() {
           </table>
         </div>
         <p className="ds-subtle early-note">The £100k is an early release against the relevant Year 1 planning assumptions, rather than an additional layer of programme cost. The £60k opportunity seed funds activity that can run across the academic year; the wider £150k Year 1 opportunity envelope remains subject to the main business case. Digital Student Experience Hub development remains a separate Digital investment, with the King’s Canvas and Student Life work here limited to evidence, co-design and proof-of-concept activity.</p>
+        <p className="ds-subtle early-note">This bridge accelerates specific areas where King’s Edge is already strongly aligned with the Future Jobs direction, particularly opportunity growth and the skills-classification experiment. It should not be read as the full institutional response: discipline-specific AI capability sits elsewhere in the Education Delivery Framework, while lifetime careers support and regional SME pathways remain wider institutional questions.</p>
       </section>
 
       <section className="ds-cluster investment-source-panel">
