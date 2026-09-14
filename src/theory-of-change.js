@@ -204,6 +204,17 @@ function createExternalValidation() {
 
   aside.append(meta, title, tldr);
   appendParagraphs(aside, theory.externalValidation.paragraphs);
+
+  if (theory.externalValidation.sourceUrl) {
+    const source = document.createElement('a');
+    source.className = 'theory-external-validation-source';
+    source.href = theory.externalValidation.sourceUrl;
+    source.target = '_blank';
+    source.rel = 'noreferrer';
+    source.textContent = theory.externalValidation.sourceLabel || 'Read the external source';
+    aside.append(source);
+  }
+
   return aside;
 }
 
