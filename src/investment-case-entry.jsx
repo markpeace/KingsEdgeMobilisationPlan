@@ -6,7 +6,6 @@ import './styles/detail-primitives.css';
 import './styles/investment-case.css';
 
 const deliverableHref = (id) => `./index.html#/deliverables/${id}`;
-const futureJobsUrl = 'https://www.universitiesuk.ac.uk/latest/news/work-based-learning-every-undergraduate';
 
 function RefLinks({ ids }) {
   return <span className="ds-cluster ask-refs" aria-label="Related deliverables">{ids.map((id) => <a className="ds-tag" key={id} href={deliverableHref(id)}>{id}</a>)}</span>;
@@ -244,14 +243,6 @@ function InvestmentCase() {
           <h2 className="ds-section-heading">What implementation brings to the institution</h2>
           <p><strong>Investing in King’s Edge moves purpose and graduate futures to the organising core of the student experience.</strong> It connects curriculum, skills, opportunities, relationships and wider student life around the individual student, while deepening opportunity and building the institutional capability to learn from participation and outcomes. Together, the four investment areas give King’s a more coherent student experience, a stronger developmental relationship with students, more deliberate use of investment and a clearer account of graduate value.</p>
         </div>
-
-        <aside className="ds-callout ds-stack" aria-labelledby="future-jobs-investment-title">
-          <p className="eyebrow">External validation · September 2026</p>
-          <h3 id="future-jobs-investment-title">The Future Jobs Roadmap strengthens the case for the direction already taken.</h3>
-          <p>The Universities UK roadmap was published after the current King’s Edge proposition and investment architecture had been developed. Its emphasis on meaningful work-based learning at scale, employer connection, clearer articulation of graduate capability and flexible learning materially reinforces several assumptions already built into this case.</p>
-          <p><strong>The strongest alignment is in experiential learning, skills and the evidence and recognition of graduate capability.</strong> The roadmap increases confidence in investing in those areas without expanding King’s Edge retrospectively to cover every national commitment.</p>
-          <p className="ds-subtle">Universal AI capability is principally a wider Education Delivery Framework and Curriculum Framework responsibility. Lifetime careers support and regional SME graduate schemes are not currently developed King’s Edge propositions. <a href={futureJobsUrl} target="_blank" rel="noreferrer">Read the Universities UK Future Jobs source</a>.</p>
-        </aside>
 
         <div className="ds-table-wrap">
           <table className="ds-table investment-table">
