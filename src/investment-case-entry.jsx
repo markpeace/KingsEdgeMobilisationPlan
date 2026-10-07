@@ -99,7 +99,7 @@ const corePackages = [
     title: 'Future-Proofed Employability & Experiential Infrastructure',
     refs: ['2.2.2'],
     northStar: 'King’s has the people, partnerships and operating infrastructure to turn external relationships into high-quality experiential opportunity, connect students and graduates with employers in the UK and internationally, widen purposeful global experience, and support successful transition into graduate futures.',
-    proposition: 'This becomes a distinct institutional capability rather than a hidden support cost inside Beyond Course. International employer engagement is protected immediately in 2026/27, a four-post UK Experiential Partnerships & Opportunity Development team then translates employer, alumni, civic, cultural and community relationships into student-ready opportunities from 2027/28, Global Mobility gains dedicated opportunity-development capacity, and a small Graduate Transitions function moves post-completion support from principally reactive access towards targeted intervention. The common experiential operating model governs sourcing, design, approval, promotion, delivery, support and evaluation, so new capacity strengthens distributed delivery rather than centralising every relationship or opportunity.',
+    proposition: 'This becomes a distinct institutional capability rather than a hidden support cost inside Beyond Course. International employer engagement is protected immediately in 2026/27 and Global Mobility opportunity development begins from January 2027; a four-post UK Experiential Partnerships & Opportunity Development team then translates employer, alumni, civic, cultural and community relationships into student-ready opportunities from 2027/28, the second Global Mobility post completes that opportunity-development capability, and a small Graduate Transitions function moves post-completion support from principally reactive access towards targeted intervention. The common experiential operating model governs sourcing, design, approval, promotion, delivery, support and evaluation, so new capacity strengthens distributed delivery rather than centralising every relationship or opportunity.',
     stories: [
       { label: 'Student', text: 'I can benefit from meaningful external opportunities without needing to know which part of King’s holds the relationship or how the administration works behind it.' },
       { label: 'International student / graduate', text: 'I can access employer relationships and labour-market insight relevant to the countries and markets in which I may want to work.' },
@@ -111,12 +111,12 @@ const corePackages = [
     ],
     yearOne: [
       { label: 'Protected', text: 'Existing international employability activity is put onto dedicated footing through a G6 International Employer Relations & Insights Manager from October 2026, a G5 East Asia Adviser from January 2027 and £15k of employer-facing / in-country activity funding.' },
-      { label: 'Designed', text: 'A common experiential operating model and institutional partnership baseline, preserving distributed delivery while clarifying standards, processes, partner routes and data.' },
-      { label: 'Ready for 2027/28', text: 'The UK opportunity-development workforce, Global Mobility growth roles and Graduate Transitions operating model are specified for staged mobilisation.' }
+      { label: 'Started', text: 'Purposeful global-opportunity development begins through a G6 Global Mobility Opportunity Development Manager from January 2027, ahead of the second Global Mobility post in 2027/28.' },
+      { label: 'Designed', text: 'A common experiential operating model and institutional partnership baseline is established, and the UK opportunity-development workforce and Graduate Transitions model are specified for later mobilisation.' }
     ],
-    yearOneCost: '£84k',
-    threeYearCost: '£1.154m',
-    profileNote: 'In-year planning budget: £84.153k in 2026/27, £429.369k in 2027/28 and £640.777k in 2028/29. The first year includes the international G6 from October, East Asia G5 from January and £15k non-pay. The fully mobilised annualised exit run-rate is £714.058k by June 2029.',
+    yearOneCost: '£113k',
+    threeYearCost: '£1.193m',
+    profileNote: 'In-year planning budget: £112.842k in 2026/27, £438.932k in 2027/28 and £640.777k in 2028/29. The first year includes the international G6 from October, East Asia G5 and Global Mobility G6 from January, plus £15k international non-pay. The fully mobilised annualised exit run-rate remains £714.058k by June 2029.',
     ongoing: '£714k p.a. fully mobilised; BAU TBC'
   },
   {
@@ -237,26 +237,26 @@ function InvestmentCase() {
             <tbody>
               <tr>
                 <th scope="row">Economy</th>
-                <td>£544k</td>
-                <td>£1.185m</td>
+                <td>£573k</td>
+                <td>£1.195m</td>
                 <td>£1.467m</td>
-                <td><strong>£3.196m</strong></td>
+                <td><strong>£3.235m</strong></td>
                 <td>c.£1.087m p.a. + TBC at full 2.2.2 run-rate</td>
               </tr>
               <tr className="recommended-option-row">
                 <th scope="row"><span className="ds-section-heading recommended-option-name">Core</span><span className="ds-eyebrow">Recommended</span></th>
-                <td><strong>£644k</strong></td>
-                <td><strong>£1.297m</strong></td>
+                <td><strong>£673k</strong></td>
+                <td><strong>£1.306m</strong></td>
                 <td><strong>£1.603m</strong></td>
-                <td><strong>£3.544m</strong></td>
+                <td><strong>£3.583m</strong></td>
                 <td><strong>c.£1.149m p.a. + TBC at full 2.2.2 run-rate</strong></td>
               </tr>
               <tr>
                 <th scope="row">Enhanced</th>
-                <td>£694k</td>
-                <td>£1.593m</td>
+                <td>£723k</td>
+                <td>£1.603m</td>
                 <td>£2.070m</td>
-                <td><strong>£4.357m</strong></td>
+                <td><strong>£4.396m</strong></td>
                 <td>at least c.£1.190m p.a. + TBC at full 2.2.2 run-rate</td>
               </tr>
             </tbody>
@@ -264,7 +264,7 @@ function InvestmentCase() {
         </div>
         <div className="ds-stack investment-ask-context">
           <p><strong>Core is the recommended planning case.</strong> Economy and Enhanced show lower- and higher-investment variants around it. The Future-Proofed Employability & Experiential Infrastructure area is currently protected across all three options rather than arbitrarily flexed before an explicit alternative workforce model has been designed. <a href="#options">See the alternative options below</a> for the practical effect of flexing the remaining levers.</p>
-          <p className="ds-subtle investment-boundary">The headline table uses in-year planning budgets across the fixed 2026/27 to 2028/29 investment window. For 2.2.2, the international G6 is modelled from October 2026, East Asia G5 from January 2027, later September starts at ten months and January 2029 starts at six months. The full operating model is live by June 2029 with a £714.058k annualised exit run-rate. Exact payroll and on-costs remain subject to Finance/HR validation. The Digital Student Experience Hub / Digital Front Door remains a separate investment ask.</p>
+          <p className="ds-subtle investment-boundary">The headline table uses in-year planning budgets across the fixed 2026/27 to 2028/29 investment window. For 2.2.2, the international G6 is modelled from October 2026, the East Asia G5 and Global Mobility G6 from January 2027, later September starts at ten months and January 2029 starts at six months. The full operating model is live by June 2029 with a £714.058k annualised exit run-rate. Exact payroll and on-costs remain subject to Finance/HR validation. The Digital Student Experience Hub / Digital Front Door remains a separate investment ask.</p>
         </div>
       </section>
 
@@ -307,8 +307,8 @@ function InvestmentCase() {
           <article className="ds-editorial-card option-card">
             <div><p className="ds-sequence-kicker">Economy</p><h3>Lower cost, narrower implementation.</h3></div>
             <div className="ds-metric-grid option-metrics" aria-label="Economy option figures">
-              <div className="ds-metric-card"><span>2026/27</span><strong>£544k</strong></div>
-              <div className="ds-metric-card"><span>Three-year in-year budget</span><strong>£3.196m</strong></div>
+              <div className="ds-metric-card"><span>2026/27</span><strong>£573k</strong></div>
+              <div className="ds-metric-card"><span>Three-year in-year budget</span><strong>£3.235m</strong></div>
               <div className="ds-metric-card"><span>Difference from Core</span><strong>£348k less</strong></div>
             </div>
             <div className="option-card-copy">
@@ -316,7 +316,7 @@ function InvestmentCase() {
               <ul className="option-detail-list">
                 <li><strong>Beyond Course:</strong> Year 1 commissioning reduces to £100k rather than £150k. Indicative Year 1 reach falls to around 1,600–1,900 students.</li>
                 <li><strong>Curriculum, purpose and skills:</strong> King’s still gets the common experiential-learning model and core discovery, but across fewer contexts.</li>
-                <li><strong>Employability and experiential infrastructure:</strong> urgent international continuity, the UK opportunity-development team, Global Mobility growth posts and Graduate Transitions capability remain protected at the Core planning level.</li>
+                <li><strong>Employability and experiential infrastructure:</strong> urgent international continuity, early Global Mobility development, the UK opportunity-development team and Graduate Transitions capability remain protected at the Core planning level.</li>
                 <li><strong>Participation:</strong> fewer Student Life prototypes and lower direct activation investment mean more reliance on local teams.</li>
                 <li><strong>Graduate Futures:</strong> the evidence engine remains, but activity concentrates on intelligence and targeted interventions.</li>
               </ul>
@@ -326,8 +326,8 @@ function InvestmentCase() {
           <article className="ds-editorial-card option-card">
             <div><p className="ds-sequence-kicker">Enhanced</p><h3>Higher cost, wider and faster implementation.</h3></div>
             <div className="ds-metric-grid option-metrics" aria-label="Enhanced option figures">
-              <div className="ds-metric-card"><span>2026/27</span><strong>£694k</strong></div>
-              <div className="ds-metric-card"><span>Three-year in-year budget</span><strong>£4.357m</strong></div>
+              <div className="ds-metric-card"><span>2026/27</span><strong>£723k</strong></div>
+              <div className="ds-metric-card"><span>Three-year in-year budget</span><strong>£4.396m</strong></div>
               <div className="ds-metric-card"><span>Difference from Core</span><strong>£813k more</strong></div>
             </div>
             <div className="option-card-copy">
@@ -348,7 +348,7 @@ function InvestmentCase() {
         <div className="ds-stack investment-section-heading">
           <p className="eyebrow">Early investment</p>
           <h2 className="ds-section-heading">Pre-Business Case Investment Need</h2>
-          <p className="ds-subtle"><strong>£184.153k is the current early investment need.</strong> It combines the existing £100k acceleration bridge with £84.153k of urgent 2026/27 international employability continuity. All of it is already included within the 2026/27 Core planning profile rather than being additional to it.</p>
+          <p className="ds-subtle"><strong>£184.153k remains the immediate pre-Business Case investment need.</strong> It combines the existing £100k acceleration bridge with £84.153k of urgent 2026/27 international employability continuity. The additional £28.689k for the Global Mobility G6 is planned from January 2027 within the 2026/27 Core case, rather than being added to the immediate pre-January bridge.</p>
         </div>
 
         <div className="ds-table-wrap">
@@ -364,7 +364,7 @@ function InvestmentCase() {
             </tbody>
           </table>
         </div>
-        <p className="ds-subtle early-note">The early release is a timing proposal against the relevant 2026/27 planning assumptions, not an additional layer of programme cost. The £84.153k international line protects already-established activity; the £100k bridge accelerates opportunity, evidence and prototyping work. Digital Student Experience Hub development remains a separate Digital investment.</p>
+        <p className="ds-subtle early-note">The early release is a timing proposal against the relevant 2026/27 planning assumptions, not an additional layer of programme cost. The £84.153k international line protects already-established activity; the £100k bridge accelerates opportunity, evidence and prototyping work. The January 2027 Global Mobility G6 is a separate in-year mobilisation line within the Core case. Digital Student Experience Hub development remains a separate Digital investment.</p>
         <p className="ds-subtle early-note">This bridge accelerates areas where King’s Edge is already strategically aligned, particularly opportunity growth, international employer engagement and the skills-classification experiment. It should not be read as the full institutional response to Future Jobs.</p>
       </section>
 
