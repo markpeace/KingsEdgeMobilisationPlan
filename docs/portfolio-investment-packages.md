@@ -11,7 +11,7 @@ This is the portfolio-level investment handover for King’s Edge. It combines t
 
 **Core is the recommended case and the source-plan baseline.** Economy and Enhanced are decision-support variants around it, not alternative source plans. The underlying deliverable resource profiles remain authored on the Core basis unless an investment decision changes that baseline.
 
-The investment architecture now contains **five investment areas**. Deliverable `2.2.2`, **Future-Proofed Employability & Experiential Infrastructure**, is shown as its own investment area rather than being hidden inside Beyond-Course Opportunity and Participation. This reflects its material scale, distinct workforce model, staged mobilisation, cross-institutional benefits and the fact that it enables curriculum, near-curriculum and wider opportunity rather than serving only the Beyond-Course portfolio.
+The current investment display contains **five investment areas**. Deliverable `2.2.2`, **Future-Proofed Employability & Experiential Infrastructure**, is temporarily shown as its own area because its scale and workforce model are material. A subsequent narrative rewrite will test the stronger **King’s Architecture for Employability** framing, which would combine the philosophical/developmental architecture with the staffing and partnership infrastructure without changing the underlying deliverable IDs.
 
 The **Digital Student Experience Hub remains a separate institutional investment**. It is not part of the King’s Edge funding ask, although King’s Edge is its first substantive native product domain and depends on it for enduring digital implementation.
 
@@ -33,7 +33,7 @@ The strongest resonance is in **experiential learning, skills, employer connecti
 
 The alignment is deliberately bounded. Universal AI capability belongs principally in the wider Education Delivery Framework and Curriculum Framework and Review. Lifetime careers support and regional SME graduate schemes are not current King’s Edge propositions. The investment case should therefore be read as accelerating the areas where Edge has a strong and increasingly nationally relevant proposition, rather than as the complete institutional response to Future Jobs.
 
-### The five investment areas
+### The current five investment areas
 
 | Strategic role | King’s Edge investment area | What it changes |
 |---|---|---|
@@ -43,21 +43,68 @@ The alignment is deliberately bounded. Universal AI capability belongs principal
 | **Build around the course** | **Beyond-Course Opportunity and Participation** | King’s actively stewards a richer, more inclusive opportunity ecology using commissioning, participation evidence and a shared rhythm. |
 | **Learn and Carry** | **Graduate Futures Intelligence and Value** | King’s understands where graduate value is strong or uneven, uses evidence and external challenge to strengthen it, and turns credible evidence into student articulation, outcomes improvement and external recognition. |
 
-Separating `2.2.2` improves the investment logic. The package is large enough to require its own scrutiny, it contains a specific workforce model rather than a generic partnership pot, and its benefits flow beyond Education and Student Success into international recruitment, conversion, employer relationships and reputation.
+The current five-area treatment is an interim decision-support structure. It should not be read as a change to the 4 x 4 delivery-plan architecture.
 
 ---
 
 ## The decision in one table
 
-The headline table retains the existing **2026/27 to 2028/29 investment window** so that the revised case remains comparable with the September decision-support view. The new `2.2.2` package begins its funded mobilisation in 2027/28 and continues into 2029/30. The 2029/30 final international staffing wave is therefore shown separately below rather than silently folded into a three-year total with a different time horizon.
+The investment case has a fixed **2026/27 to 2028/29 mobilisation window**. All mobilisation investment must sit within those three academic years. Activity after June 2029 is either explicit BAU/recurrent exposure, benefits realisation, or a separate institutional investment.
 
-| King’s Edge option | 2026/27 | 2027/28 | 2028/29 | Current three-year profile | Indicative fully mobilised annual operating exposure* |
+The headline figures now use **in-year planning budgets**, not annualised staffing run-rates.
+
+| King’s Edge option | 2026/27 | 2027/28 | 2028/29 | Three-year in-year budget | Indicative fully mobilised annual operating exposure* |
 |---|---:|---:|---:|---:|---:|
-| **Economy** | **£460.2k** | **£1.187082m** | **£1.435584m** | **£3.082866m** | **c.£1.087m p.a. + TBC** |
-| **Core, recommended** | **£560.2k** | **£1.298582m** | **£1.572084m** | **£3.430866m** | **c.£1.149m p.a. + TBC** |
-| **Enhanced** | **£610.2k** | **£1.595082m** | **£2.038584m** | **£4.243866m** | **at least c.£1.190m p.a. + TBC** |
+| **Economy** | **£460.2k** | **£1.123569m** | **£1.458071m** | **£3.041840m** | **c.£1.087m p.a. + TBC** |
+| **Core, recommended** | **£560.2k** | **£1.235069m** | **£1.594571m** | **£3.389840m** | **c.£1.149m p.a. + TBC** |
+| **Enhanced** | **£610.2k** | **£1.531569m** | **£2.061071m** | **£4.202840m** | **at least c.£1.190m p.a. + TBC** |
 
 \* The annual operating-exposure figures show the scale of the model if the fully mobilised `2.2.2` capability is retained. They are not approved recurrent budgets. Several `2.2.2` posts are currently framed as mobilisation / fixed-term capability, and the enduring BAU settlement must be determined from evidence and institutional decisions.
+
+### Cash-profiling method
+
+For current planning purposes:
+
+- academic years run July to June;
+- staffing beginning in **September** is budgeted for **10 months** in the first academic year;
+- staffing beginning in **January 2029** is budgeted for **6 months** in 2028/29;
+- existing staff retained into a subsequent mobilisation year are budgeted at the full annual planning cost;
+- the **£50,000 international employer-engagement non-pay envelope** is budgeted in full in each active academic year;
+- grade-based role costs are treated as fully loaded planning costs, subject to Finance/HR validation;
+- recurrent costs beginning from July 2029 are shown separately and are not added to the three-year mobilisation total.
+
+This creates a defensible planning cash profile while preserving the distinction between **in-year budget**, **exit run-rate** and **eventual BAU liability**.
+
+---
+
+## `2.2.2` in-year budget profile
+
+The previous investment view used annualised run-rates inside the three-year arithmetic. That overstated some early-year payroll and simultaneously pushed the final international wave outside the investment window. The revised position profiles actual planning months and brings the entire mobilisation model on stream by June 2029.
+
+### Direct in-year budget
+
+| `2.2.2` capability | 2026/27 | 2027/28 | 2028/29 | Three-year budget |
+|---|---:|---:|---:|---:|
+| UK Experiential Partnerships & Opportunity Development | £0 | £178,408 | £214,089 | £392,497 |
+| International G6 manager | £0 | £47,815 | £57,378 | £105,193 |
+| East Asia G5 adviser | £0 | £0 | £43,531 | £43,531 |
+| Final two international G5 advisers | £0 | £0 | £52,237 | £52,237 |
+| Global Mobility G6 + G5 | £0 | £91,346 | £109,615 | £200,961 |
+| Graduate Transitions G7 + G6 | £0 | £0 | £105,221 | £105,221 |
+| International employer-engagement non-pay | £0 | £50,000 | £50,000 | £100,000 |
+| **Total direct `2.2.2` budget** | **£0** | **£367,569** | **£632,071** | **£999,640** |
+
+The **£714,058** figure remains important, but it is now used correctly: it is the **fully mobilised annualised exit run-rate by June 2029**, not a fourth-year budget and not the amount charged to 2028/29.
+
+### Workforce phasing
+
+| Timing | Capability brought on stream | Annualised run-rate after the wave |
+|---|---|---:|
+| **September 2027** | UK four-post team; international G6; Global Mobility G6 + G5; £50k international non-pay envelope | **£431,082** |
+| **September 2028** | East Asia G5; Graduate Transitions G7 + G6 | **£609,584** |
+| **January 2029** | South & South East Asia G5; Europe & North America G5 | **£714,058** |
+
+This means the entire proposed operating model is mobilised **inside** the investment case window.
 
 ### What changed from the September Core case
 
@@ -65,22 +112,11 @@ The previous Core case held **£400k p.a. of generic partnership infrastructure*
 
 That generic assumption is now replaced by a specific `2.2.2` capability model:
 
-- a four-post **UK Experiential Partnerships & Opportunity Development** team from 2027/28, £214,089 annualised;
-- staged **international employer engagement**, beginning with one G6 in 2027/28, adding one G5 in 2028/29 and two further G5s in 2029/30;
+- a four-post **UK Experiential Partnerships & Opportunity Development** team from September 2027, £214,089 annualised;
+- staged **international employer engagement**, beginning with one G6 in September 2027, adding the East Asia G5 in September 2028 and the final two G5s in January 2029;
 - two additional **Global Mobility opportunity-development** posts from September 2027, £109,615 annualised;
 - a **Graduate Transitions / Early Careers** team from September 2028, one G7 and one G6, £126,265 annualised;
-- a **£50,000 p.a. international employer-engagement non-pay envelope** from 2027/28.
-
-The current annualised `2.2.2` run-rate is therefore:
-
-| Delivery year | `2.2.2` annualised planning run-rate | What is on stream |
-|---|---:|---|
-| **2026/27** | **£0 new direct staffing** | Operating-model, workforce and benefit design through existing capacity. |
-| **2027/28** | **£431,082** | UK opportunity-development team; first international G6; Global Mobility G6 + G5; £50k international non-pay. |
-| **2028/29** | **£609,584** | Retains 2027/28 capability; adds East Asia G5 and Graduate Transitions G7 + G6 from September 2028. |
-| **2029/30** | **£714,058** | Adds final two international G5 advisers; full international team reaches G6 + 3 x G5. |
-
-These are **annualised planning run-rates**, not exact payroll cashflows. Finance / HR should convert them into in-year budget requirements using confirmed appointment dates.
+- a **£50,000 p.a. international employer-engagement non-pay envelope** in 2027/28 and 2028/29.
 
 ### Option treatment of the new investment area
 
@@ -135,64 +171,53 @@ The Future Jobs work-based-learning ambition makes the balance of reach and dept
 
 Core figures are source-plan ambitions. Economy and Enhanced remain scenario ranges rather than delivery targets.
 
-### What changes in the intensity balance
+### Beyond-Course mobilisation and BAU boundary
 
-Using the midpoint of the scenario ranges as an indicative intensity check:
+The Core commissioning portfolio is now explicitly:
 
-| 2028/29 indicator | Economy | Core | Enhanced |
-|---|---:|---:|---:|
-| Annual reach | c.6,250 | 6,500 | c.9,500 |
-| Student-hours per reached student | c.14.8 hrs | c.16.5 hrs | c.19.5 hrs |
-| Sustained high-intensity places as a share of annual reach | c.7% | c.9% | c.12% |
+- **2026/27: £150k**
+- **2027/28: £200k**
+- **2028/29: £250k**
+- **three-year mobilisation envelope: £600k**
+- **from July 2029: £175k p.a. BAU planning liability**, shown separately from mobilisation.
 
-Economy increasingly prioritises breadth. Core protects a deliberate balance of breadth and depth. Enhanced grows both together.
+There is no fourth mobilisation year hidden in the 2028/29 budget.
 
 ---
 
 ## Strategic investment grid: the Core proposition
 
-| Investment area | Plan refs | 2026/27 | 2027/28 | 2028/29 | Current profile | Ongoing / full run-rate view |
+| Investment area | Plan refs | 2026/27 | 2027/28 | 2028/29 | Three-year in-year budget | Ongoing / full run-rate view |
 |---|---|---:|---:|---:|---:|---:|
 | **Student Purpose, Skills and Educational Recognition** | `2.2.1`, `2.1.3`, `2.4.3` | £53k | £119.5k | £79.5k | **£252k** | c.£9k p.a. + TBC |
 | **Experiential Learning in the Curriculum** | `2.1.2`, `2.1.4`, `2.2.3` | £58.8k | £131.1k | £151.1k | **£341k** | c.£9k p.a. + TBC |
-| **Future-Proofed Employability & Experiential Infrastructure** | `2.2.2` | existing capacity | £431.082k | £609.584k | **£1.040666m** | **£714.058k p.a. fully mobilised in 2029/30; BAU TBC** |
+| **Future-Proofed Employability & Experiential Infrastructure** | `2.2.2` | existing capacity | £367.569k | £632.071k | **£999.640k** | **£714.058k p.a. fully mobilised by June 2029; BAU TBC** |
 | **Beyond-Course Opportunity and Participation** | `2.2.4`, `2.3.1`, `2.3.2`, `2.3.4` | £278.5k | £351.95k | £401.95k | **£1.0324m** | c.£247k p.a. + TBC |
 | **Graduate Futures Intelligence and Value** | `2.1.1`, `2.4.1`, `2.4.2`, `2.4.4` | £169.9k | £264.95k | £329.95k | **£764.8k** | c.£169.5k p.a. + TBC |
-| **Total Core** |  | **£560.2k** | **£1.298582m** | **£1.572084m** | **£3.430866m** | **c.£1.149m p.a. + TBC at full `2.2.2` run-rate** |
+| **Total Core** |  | **£560.2k** | **£1.235069m** | **£1.594571m** | **£3.389840m** | **c.£1.149m p.a. + TBC at full `2.2.2` run-rate** |
 
 ### `2.2.2` workforce model
 
-The first funded year, 2027/28, contains a specific capability model rather than a generic domestic partnership pot.
-
-| Capability | Role / resource | Annualised fully loaded planning cost | Timing |
+| Capability | Role / resource | Annualised fully loaded planning cost | Planning start |
 |---|---|---:|---|
-| **UK Experiential Partnerships & Opportunity Development** | G6 Experiential Partnerships & Opportunity Development Manager | £57,378 | 2027/28 |
-|  | 2 x G5 Experiential Opportunity Development Advisers | £104,474 | 2027/28 |
-|  | G5 Experiential Partnerships Operations & Intelligence Adviser | £52,237 | 2027/28 |
-| **International employer engagement** | G6 Employer Relations & Insights Manager (International) | £57,378 | 2027/28 |
-|  | G5 Employer Relations & Insights Adviser, East Asia | £52,237 | 2028/29 |
-|  | G5 Employer Relations & Insights Adviser, South & South East Asia | £52,237 | 2029/30 |
-|  | G5 Employer Relations & Insights Adviser, Europe & North America | £52,237 | 2029/30 |
+| **UK Experiential Partnerships & Opportunity Development** | G6 Experiential Partnerships & Opportunity Development Manager | £57,378 | September 2027 |
+|  | 2 x G5 Experiential Opportunity Development Advisers | £104,474 | September 2027 |
+|  | G5 Experiential Partnerships Operations & Intelligence Adviser | £52,237 | September 2027 |
+| **International employer engagement** | G6 Employer Relations & Insights Manager (International) | £57,378 | September 2027 |
+|  | G5 Employer Relations & Insights Adviser, East Asia | £52,237 | September 2028 |
+|  | G5 Employer Relations & Insights Adviser, South & South East Asia | £52,237 | January 2029 |
+|  | G5 Employer Relations & Insights Adviser, Europe & North America | £52,237 | January 2029 |
 | **Global Mobility opportunity development** | G6 Global Mobility Opportunity Development Manager | £57,378 | September 2027 |
 |  | G5 Global Mobility Opportunity Development Officer | £52,237 | September 2027 |
 | **Graduate Transitions / Early Careers** | G7 Head of Graduate Transitions | £68,887 | September 2028 |
 |  | G6 Graduate Transitions Coach | £57,378 | September 2028 |
-| **International activity** | Employer-facing / in-country non-pay envelope | £50,000 | 2027/28 onward |
+| **International activity** | Employer-facing / in-country non-pay envelope | £50,000 | 2027/28 and 2028/29 |
 
 The UK team deliberately separates **opportunity creation and brokerage** from the **shared operational backbone** needed for partner onboarding, contracting and payment coordination, opportunity intelligence, QA and evaluation. The two G5 opportunity-development advisers remain deployable across faculty / sector portfolios according to demand rather than being hard-coded prematurely.
 
 ### Wider institutional benefits from `2.2.2`
 
-The benefits are not confined to Education and Student Success. The investment is intended to contribute to:
-
-- higher-quality and more dependable experiential opportunity supply;
-- stronger transition into positive and highly skilled graduate outcomes;
-- improved international graduate employment support;
-- international student attraction and conversion in strategically important markets;
-- a stronger employability and global-opportunity proposition for prospective students;
-- deeper employer and external-partner relationships;
-- stronger institutional reputation for graduate employability;
-- clearer articulation of the return on a King’s education.
+The benefits are not confined to Education and Student Success. The investment is intended to contribute to higher-quality experiential opportunity supply, stronger graduate outcomes, improved international graduate employment support, international student attraction and conversion, a stronger global-opportunity proposition, deeper employer relationships, and stronger institutional reputation for graduate employability.
 
 Recruitment, conversion and reputation should be treated as **contributory benefits with shared ownership**, not as outcomes solely attributable to this investment.
 
@@ -200,16 +225,16 @@ Recruitment, conversion and reputation should be treated as **contributory benef
 
 ## Package-level comparison
 
-The current option architecture holds the new `2.2.2` area at the same specified profile across all three options. Other established levers continue to flex.
+The current option architecture holds the new `2.2.2` area at the same specified in-year profile across all three options. Other established levers continue to flex.
 
 | Strategic package | Economy | Core, recommended | Enhanced |
 |---|---:|---:|---:|
 | Student Purpose, Skills and Educational Recognition | **£182.0k** | **£252.0k** | **£367.0k** |
 | Experiential Learning in the Curriculum | **£276.0k** | **£341.0k** | **£401.0k** |
-| Future-Proofed Employability & Experiential Infrastructure | **£1.040666m** | **£1.040666m** | **£1.040666m** |
+| Future-Proofed Employability & Experiential Infrastructure | **£999.640k** | **£999.640k** | **£999.640k** |
 | Beyond-Course Opportunity and Participation | **£942.4k** | **£1.0324m** | **£1.5974m** |
 | Graduate Futures Intelligence and Value | **£641.8k** | **£764.8k** | **£837.8k** |
-| **Current three-year King’s Edge profile** | **£3.082866m** | **£3.430866m** | **£4.243866m** |
+| **Three-year King’s Edge in-year budget** | **£3.041840m** | **£3.389840m** | **£4.202840m** |
 
 ### Principal investment levers
 
@@ -242,16 +267,16 @@ The current Digital high-water profile remains:
 - **Three-year itemised high water: £2.395952m**
 - **Working strategic envelope: £3m**, leaving £604.048k headroom at current itemisation.
 
-For dependency and whole-system planning only, the revised King’s Edge Core current-window profile plus the Digital Hub high-water case is approximately:
+For dependency and whole-system planning only, the revised King’s Edge Core in-year budget plus the Digital Hub high-water case is approximately:
 
 | Year | King’s Edge Core | Digital Hub high water | Combined planning view |
 |---|---:|---:|---:|
 | 2026/27 | £560.2k | £593.360k | **£1.153560m** |
-| 2027/28 | £1.298582m | £876.296k | **£2.174878m** |
-| 2028/29 | £1.572084m | £926.296k | **£2.498380m** |
-| **Current three-year view** | **£3.430866m** | **£2.395952m** | **£5.826818m** |
+| 2027/28 | £1.235069m | £876.296k | **£2.111365m** |
+| 2028/29 | £1.594571m | £926.296k | **£2.520867m** |
+| **Three-year view** | **£3.389840m** | **£2.395952m** | **£5.785792m** |
 
-Do not describe the combined figure as the King’s Edge ask. The `2.2.2` figures are annualised planning run-rates rather than precise pro-rata payroll cashflows, so the combined view remains a planning comparison rather than a final budget submission.
+Do not describe the combined figure as the King’s Edge ask.
 
 ---
 
@@ -259,11 +284,12 @@ Do not describe the combined figure as the King’s Edge ask. The `2.2.2` figure
 
 1. **Digital is separate.** The Digital Student Experience Hub is an enabling institutional investment, not part of the King’s Edge headline ask.
 2. **Student Opportunities Fund awards are separate.** Design and consolidation sit within `2.2.2`, but any new award pot requires its own approved funding route.
-3. **The new `2.2.2` package is a staged capability investment.** The fully mobilised annualised run-rate is £714,058 in 2029/30, but the enduring BAU settlement is not yet approved.
-4. **On-costs are included in current grade-based planning figures.** Finance / HR must validate this before approval.
-5. **Current package totals use annualised planning run-rates for `2.2.2`.** Exact in-year staffing cashflows depend on appointment dates and should be profiled separately before the business case is finalised.
+3. **All mobilisation investment must sit inside 2026/27 to 2028/29.** Any activity after June 2029 must be explicitly BAU, benefits realisation or separate institutional investment.
+4. **`2.2.2` now uses in-year budgets in the investment arithmetic.** September starts are modelled at ten months; January 2029 starts at six months. The £714,058 figure is the exit run-rate.
+5. **On-costs are included in current grade-based planning figures.** Finance / HR must validate this before approval.
 6. **Recruitment and reputation benefits are shared institutional benefits.** They should be evidenced and co-owned with the relevant functions rather than attributed solely to Education and Student Success.
 7. **Economy and Enhanced do not currently flex `2.2.2`.** Any alternative version should be built as a coherent service model with explicit consequences, not a percentage haircut.
+8. **BAU liabilities are visible but excluded from mobilisation arithmetic.** This includes the £175k p.a. Beyond-Course commissioning requirement, £15k p.a. Beyond-Course analytical capacity, £45k p.a. Strategic Partnerships / Profile fund and other explicitly marked recurrent commitments from July 2029.
 
 ---
 
@@ -271,11 +297,10 @@ Do not describe the combined figure as the King’s Edge ask. The `2.2.2` figure
 
 The rebaseline creates a clearer set of investment decisions:
 
-- whether to recognise **Future-Proofed Employability & Experiential Infrastructure as a fifth investment area** in the formal business case;
-- whether to fund the **£431,082 annualised 2027/28 `2.2.2` first-wave capability**, including the specific UK team, first international G6, Global Mobility posts and £50k non-pay envelope;
-- whether to accept the planned **2028/29 Graduate Transitions and East Asia expansion** subject to evidence and mobilisation gates;
-- whether to retain the **2029/30 final international expansion** as a conditional third delivery-year commitment;
-- whether recruitment / international / reputation functions should co-own benefits and potentially contribute to funding for the capability from which they benefit;
-- whether Economy and Enhanced variants of `2.2.2` are needed before approval, or whether the specified capability should remain a protected minimum service model.
+- whether to support the specified UK opportunity-development, international employer, Global Mobility and Graduate Transitions operating model;
+- whether the September 2027, September 2028 and January 2029 staffing waves are the right affordability and delivery sequence;
+- whether recruitment / international / reputation functions should co-own benefits and potentially contribute to funding for capability from which they benefit;
+- whether Economy and Enhanced variants of `2.2.2` are needed before approval, or whether the specified capability should remain a protected minimum service model;
+- how the current five-area investment display should be rewritten around the proposed **King’s Architecture for Employability** without changing the underlying delivery-plan architecture.
 
-The current recommendation is to treat `2.2.2` as a **distinct, visible investment area with staged release**, because its scale, workforce specificity, cross-portfolio enabling role and institutional benefits are now too significant to remain embedded as a generic partnership line inside Beyond-Course Opportunity and Participation.
+The current recommendation is to use the **£3.389840m Core three-year in-year budget** as the working financial baseline for the next investment-case rewrite, with the `2.2.2` exit run-rate and post-June-2029 BAU liabilities shown separately rather than mixed into mobilisation expenditure.
