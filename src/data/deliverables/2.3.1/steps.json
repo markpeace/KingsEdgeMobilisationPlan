@@ -384,9 +384,9 @@
       "title": "Embed Beyond Course portfolio stewardship into business as usual",
       "period": {
         "start": "jul-dec-2028:c",
-        "end": "jul-dec-2029:c"
+        "end": "jan-jun-2029:c"
       },
-      "summary": "By the end of mobilisation, establish an enduring institutional cycle through which King’s understands the Beyond Course offer, its participation, equity and impact and uses that evidence to shape future provision and investment. The dashboard, King’s Edge coverage standard, evaluation approach and provider review cycle become normal institutional infrastructure rather than mobilisation products.",
+      "summary": "By June 2029, establish an enduring institutional cycle through which King’s understands the Beyond Course offer, its participation, equity and impact and uses that evidence to shape future provision and investment. The dashboard, King’s Edge coverage standard, evaluation approach and provider review cycle become normal institutional infrastructure rather than mobilisation products. From July 2029 onward the £15,000 analytical requirement is treated as an explicit business-as-usual liability rather than an extension of mobilisation.",
       "dependsOn": [
         "2.3.1-step-5"
       ],
@@ -405,7 +405,7 @@
         },
         {
           "title": "Business-as-usual data and product support",
-          "summary": "Dashboard refresh, data quality and platform support are incorporated into enduring institutional data and digital service arrangements."
+          "summary": "Dashboard refresh, data quality and platform support are incorporated into enduring institutional data and digital service arrangements by the end of June 2029."
         }
       ],
       "resources": {
@@ -430,7 +430,7 @@
           {
             "condition": "Confirm the enduring organisational home and funding route for approximately 0.2 FTE analytical capacity, while absorbing technical dashboard and platform support into the relevant institutional services.",
             "owner": "Steph White with King’s Edge programme leadership",
-            "decisionNeededBy": "Before the end of the three-year mobilisation",
+            "decisionNeededBy": "Before the end of June 2029",
             "confidence": "developing",
             "riskIfMissing": "The deliverable will reach the end of mobilisation without a sustainable stewardship model."
           }
