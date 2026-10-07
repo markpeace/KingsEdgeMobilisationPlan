@@ -379,7 +379,7 @@ function InvestmentCase() {
           <h2 className="ds-section-heading">Assumptions and workings</h2>
           <p className="ds-subtle">The full handover contains the option calculations, benefit modelling, accounting boundaries and package-level cost assumptions behind this page.</p>
         </div>
-        <a className="ds-button" href="https://github.com/markpeace/KingsEdgeMobilisationPlan/blob/agent/update-2-2-2-future-proofed-employability/docs/portfolio-investment-packages.md" target="_blank" rel="noreferrer">Open detailed handover</a>
+        <a className="ds-button" href="https://github.com/markpeace/KingsEdgeMobilisationPlan/blob/main/docs/portfolio-investment-packages.md" target="_blank" rel="noreferrer">Open detailed handover</a>
       </section>
     </main>
   </>;
