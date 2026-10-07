@@ -20,7 +20,7 @@
         },
         {
           "title": "Future-demand scenarios",
-          "summary": "Volume and complexity scenarios showing how partnership and operational demand could change as 2.1.4, 2.2.3 and 2.2.4 mature, so the £300,000 domestic experiential-infrastructure envelope can be translated into an appropriate workforce and operating model."
+          "summary": "Volume and complexity scenarios showing how partnership and operational demand could change as 2.1.4, 2.2.3 and 2.2.4 mature, so the domestic experiential staffing assumption, set at £214,089 annualised and equivalent to 1 x G6 plus 3 x G5 on the current fully loaded role-cost basis, can be translated into the most effective workforce and operating model."
         }
       ],
       "resources": {
@@ -357,7 +357,7 @@
       "assumptions": [
         {
           "title": "Specified international, mobility and graduate-transition staffing is £449,969 annualised",
-          "summary": "On the current fully loaded role-cost basis, international employer engagement is £214,089, Graduate Transitions is £126,265 and the two Global Mobility opportunity-development posts are £109,615, giving £449,969 annualised staffing. Together with the £50,000 international employer-engagement non-pay envelope, the specified package is £499,969. This sits alongside, rather than replacing, the £300,000 p.a. domestic experiential opportunity translation and partnership-infrastructure envelope."
+          "summary": "On the current fully loaded role-cost basis, international employer engagement is £214,089, Graduate Transitions is £126,265 and the two Global Mobility opportunity-development posts are £109,615, giving £449,969 annualised staffing. Together with the £50,000 international employer-engagement non-pay envelope, this part of the package is £499,969. Domestic experiential opportunity translation is planned separately at the same £214,089 staffing level as the international employer-engagement team."
         },
         {
           "title": "All grade-based staffing costs include employer on-costs",
@@ -372,7 +372,7 @@
         "start": "jul-dec-2027:c",
         "end": "jul-dec-2029:b"
       },
-      "summary": "From 2027/28, mobilise a reduced £300,000 p.a. Core envelope for general domestic experiential opportunity translation and partnership infrastructure. Use the Year 1 operating-model and demand work to determine the most effective mix of faculty-facing brokerage and shared operational capacity. The purpose is to turn UK employer, alumni, civic, cultural, community and other external relationships into student-ready experiential opportunities by supporting scoping, brokerage, learning-design translation, contracting, partner onboarding, payments, administration and handover into 2.1.4, 2.2.3 and 2.2.4. Alongside mobilisation, operate and evaluate the combined infrastructure through the principal growth years of King’s Edge, tracking partner experience, opportunity throughput, international employer relationships, Global Mobility opportunity growth, Graduate Transitions progression, financial-access demand and wider recruitment and reputation benefits. Grow alumni and philanthropic contribution and expand any separately funded Student Opportunities Fund where evidence supports it.",
+      "summary": "From 2027/28, mobilise £214,089 annualised domestic experiential opportunity-translation and partnership-infrastructure staffing, deliberately set at parity with the international employer-engagement team and equivalent on the current fully loaded role-cost basis to 1 x G6 and 3 x G5. Use the Year 1 operating-model and demand work to determine the most effective domestic portfolio and allocation of those posts while retaining the agreed resource level. The purpose is to turn UK employer, alumni, civic, cultural, community and other external relationships into student-ready experiential opportunities by supporting scoping, brokerage, learning-design translation, contracting, partner onboarding, payments, administration and handover into 2.1.4, 2.2.3 and 2.2.4. Alongside mobilisation, operate and evaluate the combined infrastructure through the principal growth years of King’s Edge, tracking partner experience, opportunity throughput, international employer relationships, Global Mobility opportunity growth, Graduate Transitions progression, financial-access demand and wider recruitment and reputation benefits. Grow alumni and philanthropic contribution and expand any separately funded Student Opportunities Fund where evidence supports it.",
       "dependsOn": [
         "2.2.2-step-1",
         "2.2.2-step-3",
@@ -382,7 +382,7 @@
       "outputs": [
         {
           "title": "Domestic experiential opportunity translation capacity mobilised",
-          "summary": "A demand-informed mix of faculty-facing and shared operational capability is in place to convert domestic external relationships and propositions into well-formed student opportunities."
+          "summary": "Four-post-equivalent domestic capacity, planned at 1 x G6 plus 3 x G5 on the current role-cost basis, is in place to convert domestic external relationships and propositions into well-formed student opportunities; the exact portfolios are informed by Year 1 demand evidence."
         },
         {
           "title": "Integrated employability and experiential infrastructure review",
@@ -390,7 +390,7 @@
         },
         {
           "title": "Evidence-led recurrent operating model",
-          "summary": "King’s confirms the enduring workforce and service model, including what should transfer into business as usual, what can be repurposed and whether the £300,000 domestic envelope remains the right level as demand matures."
+          "summary": "King’s confirms the enduring workforce and service model, including what should transfer into business as usual, what can be repurposed and how the domestic team should be deployed within the £214,089 annualised staffing assumption."
         },
         {
           "title": "Scaled access and philanthropic mechanisms",
@@ -401,7 +401,7 @@
         "existingCapacity": [
           {
             "role": "Existing partnership, Work-Based Experience, Global Mobility and specialist-service capacity",
-            "contribution": "Operate alongside the new domestic translation envelope and targeted international, mobility and graduate-transition investment, ensuring the investment builds on and aligns existing capability rather than duplicating it.",
+            "contribution": "Operate alongside the new domestic translation staffing and targeted international, mobility and graduate-transition investment, ensuring the investment builds on and aligns existing capability rather than duplicating it.",
             "owner": "Careers & Employability, Global Mobility, SASD, faculties and relevant institutional partners",
             "confidence": "developing",
             "riskIfMissing": "The new investment will buy less incremental capability if it has to recreate functions and expertise that already exist elsewhere in King’s."
@@ -409,25 +409,26 @@
         ],
         "newInvestment": [
           {
-            "item": "Domestic experiential opportunity translation and partnership-infrastructure envelope",
-            "category": "domestic experiential partnership and operational capacity",
-            "amount": 300000,
+            "item": "Domestic experiential opportunity translation and partnership-infrastructure staffing",
+            "category": "domestic experiential partnership and operational staffing",
+            "amount": 214089,
             "currency": "GBP",
+            "fte": 4,
             "periodNeeded": "2027/28 onward; mobilisation-funded in 2027/28 and 2028/29, with intended transfer into business as usual thereafter",
             "decisionNeededBy": "Summer 2027",
             "fundingRoute": "King’s Edge mobilisation investment for Years 2 and 3, with intended recurrent BAU settlement thereafter",
             "fundingStatus": "Core planning assumption, subject to review and approval",
             "bauLiability": true,
-            "confidence": "indicative",
-            "costBasis": "All-in annual envelope. Any staffing purchased within it must be budgeted at fully loaded cost including employer National Insurance and pension/superannuation.",
-            "rationale": "Provides general domestic faculty-facing brokerage and shared operational capacity to translate UK employer and other external relationships into student-ready experiential opportunities. The exact grade and role mix should be recommended from the Year 1 capability review and tested against demand from 2.1.4, 2.2.3 and 2.2.4.",
+            "confidence": "costed planning comparator",
+            "costBasis": "Annualised fully loaded staffing assumption set at parity with the international employer-engagement team: 1 x G6 plus 3 x G5 on the current role-cost basis, including employer National Insurance and pension/superannuation. Finance/HR validation required before approval.",
+            "rationale": "Provides domestic faculty-facing brokerage and shared operational capacity at the same planned staffing level as international employer engagement, translating UK employer and other external relationships into student-ready experiential opportunities. Year 1 review should determine the most effective domestic portfolios and allocation of the four-post-equivalent resource.",
             "riskIfMissing": "King’s may grow curricular, near-curriculum and flexible experiential ambition without sufficient domestic capacity to source, scope, broker, contract, administer and sustain the external opportunities required to deliver it."
           }
         ],
         "enablingConditions": [
           {
             "condition": "Authority to align or repurpose existing partnership and specialist-service capacity around the common operating model",
-            "whatItUnlocks": "A stronger domestic opportunity-translation model within the £300,000 envelope by combining new investment with existing institutional capability.",
+            "whatItUnlocks": "A stronger domestic opportunity-translation model by combining the new £214,089 staffing assumption with existing institutional capability.",
             "confidence": "developing",
             "riskIfMissing": "The same investment will buy less partnership-facing and opportunity-translation capacity."
           },
@@ -441,12 +442,12 @@
       },
       "assumptions": [
         {
-          "title": "Fully mobilised annualised 2.2.2 Core ask is £799,969",
-          "summary": "The £300,000 p.a. domestic experiential opportunity translation and partnership-infrastructure envelope sits alongside £449,969 annualised specified staffing for international employer engagement, Graduate Transitions and Global Mobility opportunity development and a £50,000 international employer-engagement non-pay envelope, giving a fully mobilised annualised Core ask of £799,969. Any Student Opportunities Fund award pot remains separate and is not included."
+          "title": "Fully mobilised annualised 2.2.2 Core ask is £714,058",
+          "summary": "Domestic experiential opportunity translation is £214,089 annualised, matching the international employer-engagement staffing level of £214,089. Together with £126,265 Graduate Transitions staffing, £109,615 Global Mobility opportunity-development staffing and the £50,000 international employer-engagement non-pay envelope, the fully mobilised annualised Core ask is £714,058. Any Student Opportunities Fund award pot remains separate and is not included."
         },
         {
           "title": "Finance validation is required before portfolio approval",
-          "summary": "The current grade-based role costs are treated as fully loaded planning figures including employer National Insurance and pension/superannuation. Finance/HR should validate the cost basis and the eventual grade mix within the £300,000 domestic envelope before the portfolio is presented for approval."
+          "summary": "The current grade-based role costs are treated as fully loaded planning figures including employer National Insurance and pension/superannuation. Finance/HR should validate the cost basis and confirm that the domestic parity assumption remains correctly costed before the portfolio is presented for approval."
         }
       ]
     }
