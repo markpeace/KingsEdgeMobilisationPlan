@@ -20,14 +20,14 @@
         },
         {
           "title": "Future-demand scenarios",
-          "summary": "Volume and complexity scenarios showing how partnership and operational demand could change as 2.1.4, 2.2.3 and 2.2.4 mature, so the domestic experiential staffing assumption, set at £214,089 annualised and equivalent to 1 x G6 plus 3 x G5 on the current fully loaded role-cost basis, can be translated into the most effective workforce and operating model."
+          "summary": "Volume and complexity scenarios showing how partnership and operational demand could change as 2.1.4, 2.2.3 and 2.2.4 mature, so the proposed UK Experiential Partnerships & Opportunity Development team can be deployed against the strongest faculty and opportunity-development demand while retaining the agreed four-post model."
         }
       ],
       "resources": {
         "existingCapacity": [
           {
             "role": "Existing Careers & Employability, Work-Based Experience and partnership teams",
-            "contribution": "Provide operational knowledge, relationship intelligence and access to current processes, including domestic and international employer engagement, experiential delivery and existing faculty-facing support.",
+            "contribution": "Provide operational knowledge, workforce context, relationship intelligence and access to current processes, including domestic and international employer engagement, experiential delivery and existing faculty-facing support. The new UK team should build on this leadership and capability rather than duplicate it.",
             "owner": "Careers & Employability, SASD, faculties and other relevant relationship-holding teams",
             "confidence": "developing",
             "riskIfMissing": "The operating model will not establish a sufficiently complete picture of current capability or the capacity that can be aligned before further investment is mobilised."
@@ -57,14 +57,14 @@
         "start": "jul-dec-2027:c",
         "end": "jan-jun-2028:b"
       },
-      "summary": "Use 2027/28 as the first cost year for the opportunity-generation infrastructure rather than for Graduate Transitions. Mobilise the agreed domestic experiential opportunity-translation team at the same fully developed staffing level as international employer engagement, equivalent on the current role-cost basis to 1 x G6 plus 3 x G5. Begin the international employer-engagement build with one G6 Employer Relations & Insights Manager (International), who will protect existing relationships, coordinate the portfolio and establish the model for later regional growth. Add one G6 and one G5 to Global Mobility as incremental opportunity-development capacity from September 2027, focused on growing and translating shorter-form, experiential, work-related and other accessible outward opportunities rather than duplicating the existing team’s core exchange administration. Introduce the £50,000 international employer-engagement non-pay envelope from 2027/28. The annualised Core run-rate at this stage is £431,082.",
+      "summary": "Use 2027/28 as the first cost year for opportunity-generation infrastructure rather than for Graduate Transitions. Establish a UK Experiential Partnerships & Opportunity Development team comprising one G6 Experiential Partnerships & Opportunity Development Manager, two G5 Experiential Opportunity Development Advisers and one G5 Experiential Partnerships Operations & Intelligence Adviser. The manager owns the UK experiential opportunity pipeline, triage, team coordination and complex cross-faculty brokerage; the two development advisers work faculty-facing to turn employer, alumni, civic, cultural, community and other external propositions into viable projects, placements, live briefs, challenges and related experiences; and the operations-and-intelligence adviser provides the shared partner-pipeline, onboarding, contracting and payment coordination, data, QA and evaluation backbone. Begin the international employer-engagement build with one G6 Employer Relations & Insights Manager (International), who will protect existing relationships, coordinate the portfolio and establish the model for later regional growth. Add one G6 and one G5 to Global Mobility as incremental opportunity-development capacity from September 2027, focused on growing and translating shorter-form, experiential, work-related and other accessible outward opportunities rather than duplicating the existing team’s core exchange administration. Introduce the £50,000 international employer-engagement non-pay envelope from 2027/28. The annualised Core run-rate at this stage remains £431,082.",
       "dependsOn": [
         "2.2.2-step-1"
       ],
       "outputs": [
         {
-          "title": "Domestic experiential opportunity translation capacity mobilised",
-          "summary": "Four-post-equivalent domestic capacity, planned at 1 x G6 plus 3 x G5 on the current role-cost basis, is in place to convert UK employer, alumni, civic, cultural, community and other external relationships into well-formed student opportunities; exact portfolios are informed by the Year 1 capability review."
+          "title": "UK Experiential Partnerships & Opportunity Development team mobilised",
+          "summary": "A four-post team is in place from 2027/28: one G6 manager, two G5 opportunity-development advisers and one G5 operations-and-intelligence adviser. The team converts UK external relationships into student-ready experiential opportunities while providing the shared operational infrastructure required for those opportunities to scale."
         },
         {
           "title": "International employer-engagement leadership established",
@@ -78,20 +78,52 @@
       "resources": {
         "newInvestment": [
           {
-            "item": "Domestic experiential opportunity translation and partnership-infrastructure staffing",
-            "category": "domestic experiential partnership and operational staffing",
-            "amount": 214089,
+            "item": "G6 Experiential Partnerships & Opportunity Development Manager",
+            "category": "UK experiential partnership and opportunity-development staffing",
+            "amount": 57378,
             "currency": "GBP",
-            "fte": 4,
-            "periodNeeded": "From 2027/28; annualised cost shown",
+            "fte": 1,
+            "periodNeeded": "From September 2027; annualised cost shown",
             "decisionNeededBy": "Summer 2027",
             "fundingRoute": "King’s Edge mobilisation investment, with intended recurrent BAU settlement thereafter",
-            "fundingStatus": "Core planning assumption, subject to review and approval",
+            "fundingStatus": "new ask; first-year mobilisation",
             "bauLiability": true,
-            "confidence": "costed planning comparator",
-            "costBasis": "Annualised fully loaded staffing assumption set at parity with the fully developed international employer-engagement team: 1 x G6 plus 3 x G5 on the current role-cost basis, including employer National Insurance and pension/superannuation. Finance/HR validation required before approval.",
-            "rationale": "Provides domestic faculty-facing brokerage and shared operational capacity to translate UK employer and other external relationships into student-ready experiential opportunities. Year 1 review should determine the most effective domestic portfolios and allocation of the four-post-equivalent resource.",
-            "riskIfMissing": "King’s may grow curricular, near-curriculum and flexible experiential ambition without sufficient domestic capacity to source, scope, broker, contract, administer and sustain the external opportunities required to deliver it."
+            "confidence": "costed planning model",
+            "costBasis": "Fully loaded planning cost including employer National Insurance and pension/superannuation; Finance/HR validation and final grading required before approval.",
+            "rationale": "Provides operational leadership for the UK experiential opportunity pipeline, including triage, portfolio management, complex brokerage, faculty coordination and management of the opportunity-development and operations-and-intelligence functions. The role is intended to operate within existing Work-Based Experience and partnership leadership rather than create a duplicate head-of-function layer.",
+            "riskIfMissing": "The expanded opportunity-development team would lack day-to-day ownership of the pipeline, allocation decisions and complex brokerage, reducing throughput and increasing reliance on existing leadership capacity."
+          },
+          {
+            "item": "2 x G5 Experiential Opportunity Development Advisers",
+            "category": "UK experiential opportunity-development staffing",
+            "amount": 104474,
+            "currency": "GBP",
+            "fte": 2,
+            "periodNeeded": "From September 2027; annualised cost shown",
+            "decisionNeededBy": "Summer 2027",
+            "fundingRoute": "King’s Edge mobilisation investment, with intended recurrent BAU settlement thereafter",
+            "fundingStatus": "new ask; first-year mobilisation",
+            "bauLiability": true,
+            "confidence": "costed planning model",
+            "costBasis": "Two fully loaded G5 planning costs including employer National Insurance and pension/superannuation; Finance/HR validation and final grading required before approval.",
+            "rationale": "Provides the faculty-facing brokerage and opportunity-design capacity needed to convert UK employer, alumni, civic, cultural, community and other external propositions into viable projects, placements, live briefs, challenges and related experiential opportunities. The precise faculty or sector portfolios should be informed by the first-year capability review and emerging demand.",
+            "riskIfMissing": "External interest may continue to outstrip King’s capacity to scope, translate and broker propositions into student-ready opportunities, constraining 2.1.4, 2.2.3 and 2.2.4."
+          },
+          {
+            "item": "G5 Experiential Partnerships Operations & Intelligence Adviser",
+            "category": "UK experiential partnership operations and intelligence staffing",
+            "amount": 52237,
+            "currency": "GBP",
+            "fte": 1,
+            "periodNeeded": "From September 2027; annualised cost shown",
+            "decisionNeededBy": "Summer 2027",
+            "fundingRoute": "King’s Edge mobilisation investment, with intended recurrent BAU settlement thereafter",
+            "fundingStatus": "new ask; first-year mobilisation",
+            "bauLiability": true,
+            "confidence": "costed planning model",
+            "costBasis": "Fully loaded planning cost including employer National Insurance and pension/superannuation; Finance/HR validation and final grading required before approval.",
+            "rationale": "Provides the shared operational backbone for the UK experiential pipeline, including partner and opportunity intelligence, templates, onboarding, coordination of contracts and payments, risk and support hand-offs, data quality, QA and evaluation. This protects the two opportunity-development advisers from absorbing a disproportionate administrative workload.",
+            "riskIfMissing": "Opportunity developers may spend substantial time on operational administration, limiting the volume of partner propositions that can be converted into live student opportunities and recreating fragmented local processes."
           },
           {
             "item": "G6 Employer Relations & Insights Manager (International)",
@@ -161,16 +193,20 @@
           },
           {
             "condition": "Authority to align or repurpose existing partnership and specialist-service capacity around the common operating model",
-            "whatItUnlocks": "A stronger domestic opportunity-translation model by combining new staffing with existing institutional capability.",
+            "whatItUnlocks": "A stronger UK opportunity-development model by combining the four new posts with existing institutional leadership, relationships and specialist capability.",
             "confidence": "developing",
-            "riskIfMissing": "The same investment will buy less partnership-facing and opportunity-translation capacity."
+            "riskIfMissing": "The same investment will buy less partnership-facing and opportunity-development capacity."
           }
         ]
       },
       "assumptions": [
         {
           "title": "2027/28 annualised Core run-rate is £431,082",
-          "summary": "The first cost year comprises £214,089 domestic experiential staffing, £57,378 for the first international G6, £109,615 Global Mobility opportunity-development staffing and the £50,000 international non-pay envelope. Graduate Transitions is not included in the first cost year."
+          "summary": "The first cost year comprises £214,089 for the four-post UK Experiential Partnerships & Opportunity Development team, £57,378 for the first international G6, £109,615 Global Mobility opportunity-development staffing and the £50,000 international non-pay envelope. Graduate Transitions is not included in the first cost year."
+        },
+        {
+          "title": "UK experiential role model is specified for planning but remains subject to HR validation",
+          "summary": "The £214,089 UK team is modelled as 1 x G6 manager, 2 x G5 opportunity-development advisers and 1 x G5 operations-and-intelligence adviser. The function and overall resource quantum are the current Core planning model; HR should confirm final job design and grading before recruitment."
         }
       ]
     },
@@ -353,7 +389,7 @@
         "start": "jul-dec-2029:c",
         "end": "jan-jun-2030:b"
       },
-      "summary": "In 2029/30, complete the international employer-engagement model by adding the final two G5 Employer Relations & Insights Advisers, covering South and South East Asia and Europe and North America. This brings the international team to its planned structure of one G6 and three G5 roles and brings domestic and international employer-facing staffing into full parity at £214,089 annualised each. Use evidence from the first two delivery years to refine regional priorities, employer pipelines and activity while connecting international opportunity explicitly to graduate-success, recruitment and reputation priorities. The fully mobilised annualised Core run-rate for 2.2.2 is then £714,058.",
+      "summary": "In 2029/30, complete the international employer-engagement model by adding the final two G5 Employer Relations & Insights Advisers, covering South and South East Asia and Europe and North America. This brings the international team to its planned structure of one G6 and three G5 roles and brings UK experiential opportunity-development and international employer-engagement staffing into full parity at £214,089 annualised each. Use evidence from the first two delivery years to refine regional priorities, employer pipelines and activity while connecting international opportunity explicitly to graduate-success, recruitment and reputation priorities. The fully mobilised annualised Core run-rate for 2.2.2 is then £714,058.",
       "dependsOn": [
         "2.2.2-step-5"
       ],
@@ -363,8 +399,8 @@
           "summary": "The international employer-engagement team reaches its planned structure of one G6 and three G5 roles, with defined regional portfolios and a common approach to employer relations, market insight and student/graduate opportunity."
         },
         {
-          "title": "Domestic and international employer-facing capacity at parity",
-          "summary": "Domestic experiential opportunity translation and international employer engagement each operate at a planned annualised staffing level of £214,089, while remaining distinct in purpose and portfolio."
+          "title": "UK and international opportunity-development capacity at parity",
+          "summary": "The UK Experiential Partnerships & Opportunity Development team and international employer engagement each operate at a planned annualised staffing level of £214,089, while remaining distinct in purpose and portfolio."
         },
         {
           "title": "Cross-institutional international opportunity benefits framework",
@@ -408,7 +444,7 @@
       "assumptions": [
         {
           "title": "Fully mobilised annualised 2.2.2 Core ask is £714,058",
-          "summary": "Domestic experiential opportunity translation is £214,089 annualised, international employer engagement reaches £214,089, Graduate Transitions is £126,265, Global Mobility opportunity development is £109,615 and the international non-pay envelope is £50,000. Any Student Opportunities Fund award pot remains separate and is not included."
+          "summary": "UK Experiential Partnerships & Opportunity Development staffing is £214,089 annualised, international employer engagement reaches £214,089, Graduate Transitions is £126,265, Global Mobility opportunity development is £109,615 and the international non-pay envelope is £50,000. Any Student Opportunities Fund award pot remains separate and is not included."
         },
         {
           "title": "All grade-based staffing costs include employer on-costs",
@@ -423,7 +459,7 @@
         "start": "jul-dec-2027:c",
         "end": "jul-dec-2030:b"
       },
-      "summary": "Operate and evaluate the infrastructure throughout the three-year mobilisation rather than waiting for the full team to be in place. Track domestic opportunity throughput, partner experience, international employer relationships and activity, Global Mobility opportunity growth, Graduate Transitions reach and progression once live, financial-access demand and wider recruitment and reputation benefits. Use evidence to refine domestic portfolios, international regional priorities, common processes and the longer-term recurrent operating model. Grow alumni and philanthropic contribution and expand any separately funded Student Opportunities Fund where evidence supports it. Convert the annualised planning run-rates into precise in-year cash requirements once appointment dates are confirmed.",
+      "summary": "Operate and evaluate the infrastructure throughout the three-year mobilisation rather than waiting for the full team to be in place. Track UK experiential opportunity throughput, partner experience, international employer relationships and activity, Global Mobility opportunity growth, Graduate Transitions reach and progression once live, financial-access demand and wider recruitment and reputation benefits. Use evidence to refine the faculty or sector portfolios of the two UK opportunity-development advisers, international regional priorities, common processes and the longer-term recurrent operating model. Grow alumni and philanthropic contribution and expand any separately funded Student Opportunities Fund where evidence supports it. Convert the annualised planning run-rates into precise in-year cash requirements once appointment dates are confirmed.",
       "dependsOn": [
         "2.2.2-step-1",
         "2.2.2-step-2",
@@ -451,7 +487,7 @@
         "existingCapacity": [
           {
             "role": "Existing partnership, Work-Based Experience, Global Mobility and specialist-service capacity",
-            "contribution": "Operate alongside the new domestic translation staffing and staged international, mobility and graduate-transition investment, ensuring the investment builds on and aligns existing capability rather than duplicating it.",
+            "contribution": "Operate alongside the new UK Experiential Partnerships & Opportunity Development team and staged international, mobility and graduate-transition investment, ensuring the investment builds on and aligns existing capability rather than duplicating it.",
             "owner": "Careers & Employability, Global Mobility, SASD, faculties and relevant institutional partners",
             "confidence": "developing",
             "riskIfMissing": "The new investment will buy less incremental capability if it has to recreate functions and expertise that already exist elsewhere in King’s."
