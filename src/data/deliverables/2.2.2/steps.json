@@ -52,63 +52,103 @@
     },
     {
       "id": "2.2.2-step-2",
-      "title": "Mobilise the first phase of international employer engagement",
-      "period": "jul-dec-2026:c",
-      "summary": "Recruit and bring on stream the first two dedicated international employer-engagement roles: a G6 Employer Relations & Insights Manager (International) and a G5 Employer Relations & Insights Adviser focused on East Asia. Protect the existing East Asia portfolio, preserve hard-won employer relationships and consortium participation, maintain in-country activity and market intelligence, and build the management and operating foundations for later regional expansion. Introduce the £50,000 annual international non-pay envelope in step with the activity plan, with use tied to employer-facing and in-country activity rather than treated as a general travel budget.",
-      "dependsOn": [],
+      "title": "Mobilise first-year employability and experiential infrastructure",
+      "period": {
+        "start": "jul-dec-2027:c",
+        "end": "jan-jun-2028:b"
+      },
+      "summary": "Use 2027/28 as the first cost year for the opportunity-generation infrastructure rather than for Graduate Transitions. Mobilise the agreed domestic experiential opportunity-translation team at the same fully developed staffing level as international employer engagement, equivalent on the current role-cost basis to 1 x G6 plus 3 x G5. Begin the international employer-engagement build with one G6 Employer Relations & Insights Manager (International), who will protect existing relationships, coordinate the portfolio and establish the model for later regional growth. Add one G6 and one G5 to Global Mobility as incremental opportunity-development capacity from September 2027, focused on growing and translating shorter-form, experiential, work-related and other accessible outward opportunities rather than duplicating the existing team’s core exchange administration. Introduce the £50,000 international employer-engagement non-pay envelope from 2027/28. The annualised Core run-rate at this stage is £431,082.",
+      "dependsOn": [
+        "2.2.2-step-1"
+      ],
       "outputs": [
         {
-          "title": "Protected East Asia employer-engagement capability",
-          "summary": "Dedicated staff own and sustain the existing East Asia employer portfolio, market intelligence, employer activity and international-student employment support."
+          "title": "Domestic experiential opportunity translation capacity mobilised",
+          "summary": "Four-post-equivalent domestic capacity, planned at 1 x G6 plus 3 x G5 on the current role-cost basis, is in place to convert UK employer, alumni, civic, cultural, community and other external relationships into well-formed student opportunities; exact portfolios are informed by the Year 1 capability review."
         },
         {
-          "title": "International employer-engagement plan and pipeline",
-          "summary": "A regional employer pipeline, relationship plan, activity calendar and evidence framework ready to support later expansion into South and South East Asia, Europe and North America."
+          "title": "International employer-engagement leadership established",
+          "summary": "A dedicated G6 leads international employer engagement, protects current relationships and activity, establishes market and employer intelligence, and prepares the portfolio for staged regional expansion in 2028/29 and 2029/30."
+        },
+        {
+          "title": "Expanded Global Mobility opportunity-development capability",
+          "summary": "A G6 and G5 provide additional capacity to develop, broker and translate purposeful outward mobility into student-ready opportunities, with an explicit focus on growth, accessibility, shorter-form and experiential formats, and connection to skills and graduate futures."
         }
       ],
       "resources": {
         "newInvestment": [
+          {
+            "item": "Domestic experiential opportunity translation and partnership-infrastructure staffing",
+            "category": "domestic experiential partnership and operational staffing",
+            "amount": 214089,
+            "currency": "GBP",
+            "fte": 4,
+            "periodNeeded": "From 2027/28; annualised cost shown",
+            "decisionNeededBy": "Summer 2027",
+            "fundingRoute": "King’s Edge mobilisation investment, with intended recurrent BAU settlement thereafter",
+            "fundingStatus": "Core planning assumption, subject to review and approval",
+            "bauLiability": true,
+            "confidence": "costed planning comparator",
+            "costBasis": "Annualised fully loaded staffing assumption set at parity with the fully developed international employer-engagement team: 1 x G6 plus 3 x G5 on the current role-cost basis, including employer National Insurance and pension/superannuation. Finance/HR validation required before approval.",
+            "rationale": "Provides domestic faculty-facing brokerage and shared operational capacity to translate UK employer and other external relationships into student-ready experiential opportunities. Year 1 review should determine the most effective domestic portfolios and allocation of the four-post-equivalent resource.",
+            "riskIfMissing": "King’s may grow curricular, near-curriculum and flexible experiential ambition without sufficient domestic capacity to source, scope, broker, contract, administer and sustain the external opportunities required to deliver it."
+          },
           {
             "item": "G6 Employer Relations & Insights Manager (International)",
             "category": "international employer engagement staffing",
             "amount": 57378,
             "currency": "GBP",
             "fte": 1,
-            "periodNeeded": "Immediate mobilisation from October 2026; annualised cost shown",
-            "decisionNeededBy": "October 2026",
+            "periodNeeded": "From 2027/28; annualised cost shown",
+            "decisionNeededBy": "Summer 2027",
             "fundingRoute": "King’s Edge / Education and Student Success mobilisation investment, with wider recruitment and reputation benefits recognised outside the portfolio",
-            "fundingStatus": "new ask; initial fixed-term mobilisation",
+            "fundingStatus": "new ask; first international mobilisation wave",
             "confidence": "costed",
             "costBasis": "Fully loaded planning cost including employer National Insurance and pension/superannuation; Finance/HR validation required before approval.",
-            "rationale": "Provides dedicated leadership, coordination, market insight and relationship ownership for international employer engagement, protecting existing East Asia activity and preparing regional expansion.",
-            "riskIfMissing": "Existing international employer relationships and market presence remain fragile, current activity continues to displace domestic capacity, and King’s risks losing momentum in strategically important markets."
+            "rationale": "Provides dedicated leadership, coordination, market insight and relationship ownership for international employer engagement while creating the operating base for later regional posts.",
+            "riskIfMissing": "Existing international employer relationships and market presence remain fragile and King’s lacks clear ownership for building the international model over the delivery period."
           },
           {
-            "item": "G5 Employer Relations & Insights Adviser (East Asia)",
-            "category": "international employer engagement staffing",
+            "item": "G6 Global Mobility Opportunity Development Manager",
+            "category": "global mobility opportunity development staffing",
+            "amount": 57378,
+            "currency": "GBP",
+            "fte": 1,
+            "periodNeeded": "From September 2027; annualised cost shown",
+            "decisionNeededBy": "Summer 2027",
+            "fundingRoute": "King’s Edge / Education and Student Success mobilisation investment, aligned with the existing Global Mobility service",
+            "fundingStatus": "new ask; fixed-term mobilisation",
+            "confidence": "costed planning assumption",
+            "costBasis": "Fully loaded planning cost including employer National Insurance and pension/superannuation; Finance/HR validation required before approval.",
+            "rationale": "Provides dedicated development leadership to grow and translate purposeful outward mobility, connect global opportunities to King’s Edge and graduate futures, and ensure growth complements rather than displaces existing Global Mobility responsibilities.",
+            "riskIfMissing": "Global opportunity remains primarily dependent on existing exchange capacity, limiting King’s ability to grow shorter-form, experiential and more accessible international opportunities."
+          },
+          {
+            "item": "G5 Global Mobility Opportunity Development Officer",
+            "category": "global mobility opportunity development staffing",
             "amount": 52237,
             "currency": "GBP",
             "fte": 1,
-            "periodNeeded": "Immediate mobilisation from October 2026; annualised cost shown",
-            "decisionNeededBy": "October 2026",
-            "fundingRoute": "King’s Edge / Education and Student Success mobilisation investment, with wider recruitment and reputation benefits recognised outside the portfolio",
-            "fundingStatus": "new ask; initial fixed-term mobilisation",
-            "confidence": "costed",
+            "periodNeeded": "From September 2027; annualised cost shown",
+            "decisionNeededBy": "Summer 2027",
+            "fundingRoute": "King’s Edge / Education and Student Success mobilisation investment, aligned with the existing Global Mobility service",
+            "fundingStatus": "new ask; fixed-term mobilisation",
+            "confidence": "costed planning assumption",
             "costBasis": "Fully loaded planning cost including employer National Insurance and pension/superannuation; Finance/HR validation required before approval.",
-            "rationale": "Provides dedicated regional capacity to sustain and deepen the proven East Asia portfolio and support students and graduates seeking employment outcomes in that market.",
-            "riskIfMissing": "East Asia activity remains dependent on discretionary capacity and hard-won employer relationships and market credibility may be lost."
+            "rationale": "Provides delivery and brokerage capacity to develop partner and faculty propositions into student-ready global opportunities and coordinate shorter-form and experiential outward mobility.",
+            "riskIfMissing": "The G6 role would have insufficient delivery capacity to convert development work into a meaningful increase in student-facing global opportunities."
           },
           {
             "item": "International employer-engagement non-pay envelope",
             "category": "international employer engagement activity",
             "amount": 50000,
             "currency": "GBP",
-            "periodNeeded": "2026/27 onward, phased with international activity",
-            "decisionNeededBy": "October 2026",
+            "periodNeeded": "From 2027/28 onward",
+            "decisionNeededBy": "Summer 2027",
             "fundingRoute": "King’s Edge / Education and Student Success mobilisation investment, with activity coordinated with Global Student Recruitment and Admissions",
             "fundingStatus": "new ask",
             "confidence": "minimum",
-            "rationale": "Funds the employer-facing and in-country activity required to make the international staffing capability productive across priority markets.",
+            "rationale": "Funds the employer-facing and in-country activity required to make the developing international staffing capability productive across priority markets.",
             "riskIfMissing": "Dedicated staff will have limited ability to convert relationships and market intelligence into visible employer activity, opportunities and recruitment-facing value."
           }
         ],
@@ -118,9 +158,21 @@
             "whatItUnlocks": "A shared market strategy and explicit tracking of benefits that flow into attraction, conversion and reputation as well as graduate outcomes.",
             "confidence": "developing",
             "riskIfMissing": "International employability activity may become disconnected from wider institutional market priorities and shared benefits will be harder to evidence."
+          },
+          {
+            "condition": "Authority to align or repurpose existing partnership and specialist-service capacity around the common operating model",
+            "whatItUnlocks": "A stronger domestic opportunity-translation model by combining new staffing with existing institutional capability.",
+            "confidence": "developing",
+            "riskIfMissing": "The same investment will buy less partnership-facing and opportunity-translation capacity."
           }
         ]
-      }
+      },
+      "assumptions": [
+        {
+          "title": "2027/28 annualised Core run-rate is £431,082",
+          "summary": "The first cost year comprises £214,089 domestic experiential staffing, £57,378 for the first international G6, £109,615 Global Mobility opportunity-development staffing and the £50,000 international non-pay envelope. Graduate Transitions is not included in the first cost year."
+        }
+      ]
     },
     {
       "id": "2.2.2-step-3",
@@ -175,10 +227,10 @@
       "id": "2.2.2-step-4",
       "title": "Design the proactive Graduate Transitions operating model",
       "period": {
-        "start": "jan-jun-2027:ab",
-        "end": "jan-jun-2027:ab"
+        "start": "jul-dec-2027:ab",
+        "end": "jan-jun-2028:ab"
       },
-      "summary": "Design the operating model for a small Graduate Transitions function ahead of a May 2027 launch. Define priority graduate cohorts and targeting logic, agree how Careers Readiness and other relevant evidence will identify graduates who may benefit from intervention, establish handover and referral routes from student-facing careers support, define coaching and case-management approaches, connect employer-referral and international-graduate routes, and agree a proportionate benefits and evaluation framework.",
+      "summary": "Use 2027/28 to design and prepare the Graduate Transitions operating model without incurring the new team cost in the first delivery year. Define priority graduate cohorts and targeting logic, agree how Careers Readiness and other relevant evidence will identify graduates who may benefit from intervention, establish handover and referral routes from student-facing careers support, define coaching and case-management approaches, connect employer-referral and international-graduate routes, and agree a proportionate benefits and evaluation framework ahead of a September 2028 launch.",
       "dependsOn": [
         "2.2.2-step-1"
       ],
@@ -214,19 +266,24 @@
     },
     {
       "id": "2.2.2-step-5",
-      "title": "Launch the Graduate Transitions / Early Careers team",
+      "title": "Second-year mobilisation: deepen East Asia and launch Graduate Transitions",
       "period": {
-        "start": "jan-jun-2027:c",
-        "end": "jul-dec-2027:ab"
+        "start": "jul-dec-2028:c",
+        "end": "jan-jun-2029:b"
       },
-      "summary": "Bring the Graduate Transitions capability on stream from May 2027 with a deliberately bounded initial team of one G7 Head of Graduate Transitions and one G6 Graduate Transitions Coach. Use proactive outreach to priority graduates, personalised career planning and coaching, job-search and recruitment support, employer referrals and targeted interventions for graduates facing additional barriers. Use evidence from delivery to determine the scale and shape of any longer-term model rather than assuming the larger four-post structure originally proposed.",
+      "summary": "In 2028/29, add the second international employer-engagement post, a G5 Employer Relations & Insights Adviser focused on East Asia, to deepen and protect the established East Asia portfolio. From September 2028, also bring the Graduate Transitions capability on stream with a deliberately bounded team of one G7 Head of Graduate Transitions and one G6 Graduate Transitions Coach. Use proactive outreach to priority graduates, personalised career planning and coaching, job-search and recruitment support, employer referrals and targeted interventions for graduates facing additional barriers. This raises the annualised Core run-rate to £609,584 while keeping the final two international posts for the third delivery year.",
       "dependsOn": [
+        "2.2.2-step-2",
         "2.2.2-step-4"
       ],
       "outputs": [
         {
+          "title": "Dedicated East Asia adviser in place",
+          "summary": "The G5 East Asia Adviser adds dedicated regional capacity alongside the international G6, strengthening employer relationships, market intelligence and support for students and graduates seeking outcomes in East Asia."
+        },
+        {
           "title": "Operational Graduate Transitions service",
-          "summary": "A two-person team is live from May 2027 and actively supports priority graduates through the post-completion transition."
+          "summary": "A two-person team is live from September 2028 and actively supports priority graduates through the post-completion transition."
         },
         {
           "title": "Graduate transition insight loop",
@@ -236,15 +293,30 @@
       "resources": {
         "newInvestment": [
           {
+            "item": "G5 Employer Relations & Insights Adviser (East Asia)",
+            "category": "international employer engagement staffing",
+            "amount": 52237,
+            "currency": "GBP",
+            "fte": 1,
+            "periodNeeded": "From 2028/29; annualised cost shown",
+            "decisionNeededBy": "Spring 2028",
+            "fundingRoute": "King’s Edge / Education and Student Success mobilisation investment, with wider recruitment and reputation benefits recognised outside the portfolio",
+            "fundingStatus": "new ask; second international mobilisation wave",
+            "confidence": "costed",
+            "costBasis": "Fully loaded planning cost including employer National Insurance and pension/superannuation; Finance/HR validation required before approval.",
+            "rationale": "Provides dedicated regional capacity to sustain and deepen the proven East Asia portfolio and support students and graduates seeking employment outcomes in that market.",
+            "riskIfMissing": "East Asia activity remains dependent on broad manager capacity and hard-won employer relationships and market credibility may not be developed at the intended scale."
+          },
+          {
             "item": "G7 Head of Graduate Transitions",
             "category": "graduate transitions staffing",
             "amount": 68887,
             "currency": "GBP",
             "fte": 1,
-            "periodNeeded": "From May 2027; annualised cost shown",
-            "decisionNeededBy": "January 2027",
+            "periodNeeded": "From September 2028; annualised cost shown",
+            "decisionNeededBy": "Spring 2028",
             "fundingRoute": "King’s Edge / Education and Student Success mobilisation investment",
-            "fundingStatus": "new ask; initial fixed-term mobilisation",
+            "fundingStatus": "new ask; second-year mobilisation",
             "confidence": "costed",
             "costBasis": "Fully loaded planning cost including employer National Insurance and pension/superannuation; Finance/HR validation required before approval.",
             "rationale": "Creates accountable leadership for the proactive graduate-success model, targeting, case-management approach, employer referral and evidence of impact.",
@@ -256,25 +328,34 @@
             "amount": 57378,
             "currency": "GBP",
             "fte": 1,
-            "periodNeeded": "From May 2027; annualised cost shown",
-            "decisionNeededBy": "January 2027",
+            "periodNeeded": "From September 2028; annualised cost shown",
+            "decisionNeededBy": "Spring 2028",
             "fundingRoute": "King’s Edge / Education and Student Success mobilisation investment",
-            "fundingStatus": "new ask; initial fixed-term mobilisation",
+            "fundingStatus": "new ask; second-year mobilisation",
             "confidence": "costed",
             "costBasis": "Fully loaded planning cost including employer National Insurance and pension/superannuation; Finance/HR validation required before approval.",
             "rationale": "Provides direct coaching, job-search, recruitment and employer-referral capacity for graduates identified through the proactive model.",
             "riskIfMissing": "The service will have leadership but insufficient direct delivery capacity to support priority graduates at useful scale."
           }
         ]
-      }
+      },
+      "assumptions": [
+        {
+          "title": "2028/29 annualised Core run-rate is £609,584",
+          "summary": "The second cost year retains the £431,082 first-year infrastructure and adds £52,237 for the East Asia G5 plus £126,265 for the Graduate Transitions team."
+        }
+      ]
     },
     {
       "id": "2.2.2-step-6",
-      "title": "Complete international employer engagement and strengthen global mobility opportunity development",
-      "period": "jul-dec-2027:c",
-      "summary": "From September 2027, add two further G5 Employer Relations & Insights Advisers to extend the international employer-engagement model into South and South East Asia and Europe and North America. At the same point, add one G6 and one G5 to the established Global Mobility service as incremental opportunity-development capacity. The Global Mobility posts should focus on growing and translating purposeful outward opportunities, particularly shorter-form, experiential, work-related and other accessible formats linked to King’s Edge, rather than duplicating the existing team’s core incoming/outgoing exchange administration. Use the Phase 1 employer pipeline, mobility partnership base and common experiential operating model to connect international opportunity explicitly to graduate-success, access and institutional recruitment priorities.",
+      "title": "Third-year mobilisation: complete the international employer-engagement team",
+      "period": {
+        "start": "jul-dec-2029:c",
+        "end": "jan-jun-2030:b"
+      },
+      "summary": "In 2029/30, complete the international employer-engagement model by adding the final two G5 Employer Relations & Insights Advisers, covering South and South East Asia and Europe and North America. This brings the international team to its planned structure of one G6 and three G5 roles and brings domestic and international employer-facing staffing into full parity at £214,089 annualised each. Use evidence from the first two delivery years to refine regional priorities, employer pipelines and activity while connecting international opportunity explicitly to graduate-success, recruitment and reputation priorities. The fully mobilised annualised Core run-rate for 2.2.2 is then £714,058.",
       "dependsOn": [
-        "2.2.2-step-2"
+        "2.2.2-step-5"
       ],
       "outputs": [
         {
@@ -282,8 +363,8 @@
           "summary": "The international employer-engagement team reaches its planned structure of one G6 and three G5 roles, with defined regional portfolios and a common approach to employer relations, market insight and student/graduate opportunity."
         },
         {
-          "title": "Expanded Global Mobility opportunity-development capability",
-          "summary": "A G6 and G5 provide additional capacity to develop, broker and translate purposeful outward mobility into student-ready opportunities, with an explicit focus on growth, accessibility, shorter-form and experiential formats, and connection to skills and graduate futures."
+          "title": "Domestic and international employer-facing capacity at parity",
+          "summary": "Domestic experiential opportunity translation and international employer engagement each operate at a planned annualised staffing level of £214,089, while remaining distinct in purpose and portfolio."
         },
         {
           "title": "Cross-institutional international opportunity benefits framework",
@@ -298,13 +379,13 @@
             "amount": 52237,
             "currency": "GBP",
             "fte": 1,
-            "periodNeeded": "From September 2027; annualised cost shown",
-            "decisionNeededBy": "Spring 2027",
+            "periodNeeded": "From 2029/30; annualised cost shown",
+            "decisionNeededBy": "Spring 2029",
             "fundingRoute": "King’s Edge / Education and Student Success mobilisation investment, with wider recruitment and reputation benefits recognised outside the portfolio",
-            "fundingStatus": "new ask; second-phase fixed-term mobilisation",
+            "fundingStatus": "new ask; final international mobilisation wave",
             "confidence": "costed",
             "costBasis": "Fully loaded planning cost including employer National Insurance and pension/superannuation; Finance/HR validation required before approval.",
-            "rationale": "Extends dedicated employer-engagement and market-intelligence capacity into a priority set of international markets, including India and wider South and South East Asia.",
+            "rationale": "Extends dedicated employer-engagement and market-intelligence capacity into South and South East Asia after the first two years have established the operating model and evidence base.",
             "riskIfMissing": "The international proposition remains concentrated in East Asia and King’s underuses employability as part of its recruitment and graduate-success strategy in other priority markets."
           },
           {
@@ -313,51 +394,21 @@
             "amount": 52237,
             "currency": "GBP",
             "fte": 1,
-            "periodNeeded": "From September 2027; annualised cost shown",
-            "decisionNeededBy": "Spring 2027",
+            "periodNeeded": "From 2029/30; annualised cost shown",
+            "decisionNeededBy": "Spring 2029",
             "fundingRoute": "King’s Edge / Education and Student Success mobilisation investment, with wider recruitment and reputation benefits recognised outside the portfolio",
-            "fundingStatus": "new ask; second-phase fixed-term mobilisation",
+            "fundingStatus": "new ask; final international mobilisation wave",
             "confidence": "costed",
             "costBasis": "Fully loaded planning cost including employer National Insurance and pension/superannuation; Finance/HR validation required before approval.",
-            "rationale": "Extends employer relationship, opportunity development and market intelligence across Europe and North America.",
+            "rationale": "Extends employer relationship, opportunity development and market intelligence across Europe and North America once the international function has established its core operating model.",
             "riskIfMissing": "King’s lacks dedicated capacity to develop and sustain employer relationships in these markets and cannot realise the full strategic benefit of the international employability model."
-          },
-          {
-            "item": "G6 Global Mobility Opportunity Development Manager",
-            "category": "global mobility opportunity development staffing",
-            "amount": 57378,
-            "currency": "GBP",
-            "fte": 1,
-            "periodNeeded": "From September 2027; annualised cost shown",
-            "decisionNeededBy": "Spring 2027",
-            "fundingRoute": "King’s Edge / Education and Student Success mobilisation investment, aligned with the existing Global Mobility service",
-            "fundingStatus": "new ask; fixed-term mobilisation",
-            "confidence": "costed planning assumption",
-            "costBasis": "Fully loaded planning cost including employer National Insurance and pension/superannuation; Finance/HR validation required before approval.",
-            "rationale": "Provides dedicated development leadership to grow and translate purposeful outward mobility, connect global opportunities to King’s Edge and graduate futures, work with faculties and partners on new formats, and ensure growth complements rather than displaces the existing Global Mobility team’s core operational responsibilities.",
-            "riskIfMissing": "Global opportunity remains primarily dependent on existing exchange capacity, limiting King’s ability to grow shorter-form, experiential and more accessible international opportunities at the pace envisaged by King’s Edge."
-          },
-          {
-            "item": "G5 Global Mobility Opportunity Development Officer",
-            "category": "global mobility opportunity development staffing",
-            "amount": 52237,
-            "currency": "GBP",
-            "fte": 1,
-            "periodNeeded": "From September 2027; annualised cost shown",
-            "decisionNeededBy": "Spring 2027",
-            "fundingRoute": "King’s Edge / Education and Student Success mobilisation investment, aligned with the existing Global Mobility service",
-            "fundingStatus": "new ask; fixed-term mobilisation",
-            "confidence": "costed planning assumption",
-            "costBasis": "Fully loaded planning cost including employer National Insurance and pension/superannuation; Finance/HR validation required before approval.",
-            "rationale": "Provides delivery and brokerage capacity to develop partner and faculty propositions into student-ready global opportunities, coordinate pilots and support growth in shorter-form and experiential outward mobility.",
-            "riskIfMissing": "The G6 role would have insufficient delivery capacity to convert development work into a meaningful increase in student-facing global opportunities."
           }
         ]
       },
       "assumptions": [
         {
-          "title": "Specified international, mobility and graduate-transition staffing is £449,969 annualised",
-          "summary": "On the current fully loaded role-cost basis, international employer engagement is £214,089, Graduate Transitions is £126,265 and the two Global Mobility opportunity-development posts are £109,615, giving £449,969 annualised staffing. Together with the £50,000 international employer-engagement non-pay envelope, this part of the package is £499,969. Domestic experiential opportunity translation is planned separately at the same £214,089 staffing level as the international employer-engagement team."
+          "title": "Fully mobilised annualised 2.2.2 Core ask is £714,058",
+          "summary": "Domestic experiential opportunity translation is £214,089 annualised, international employer engagement reaches £214,089, Graduate Transitions is £126,265, Global Mobility opportunity development is £109,615 and the international non-pay envelope is £50,000. Any Student Opportunities Fund award pot remains separate and is not included."
         },
         {
           "title": "All grade-based staffing costs include employer on-costs",
@@ -367,87 +418,68 @@
     },
     {
       "id": "2.2.2-step-7",
-      "title": "Mobilise and mature domestic experiential opportunity translation infrastructure",
+      "title": "Mature, evaluate and recalibrate the employability and experiential infrastructure",
       "period": {
         "start": "jul-dec-2027:c",
-        "end": "jul-dec-2029:b"
+        "end": "jul-dec-2030:b"
       },
-      "summary": "From 2027/28, mobilise £214,089 annualised domestic experiential opportunity-translation and partnership-infrastructure staffing, deliberately set at parity with the international employer-engagement team and equivalent on the current fully loaded role-cost basis to 1 x G6 and 3 x G5. Use the Year 1 operating-model and demand work to determine the most effective domestic portfolio and allocation of those posts while retaining the agreed resource level. The purpose is to turn UK employer, alumni, civic, cultural, community and other external relationships into student-ready experiential opportunities by supporting scoping, brokerage, learning-design translation, contracting, partner onboarding, payments, administration and handover into 2.1.4, 2.2.3 and 2.2.4. Alongside mobilisation, operate and evaluate the combined infrastructure through the principal growth years of King’s Edge, tracking partner experience, opportunity throughput, international employer relationships, Global Mobility opportunity growth, Graduate Transitions progression, financial-access demand and wider recruitment and reputation benefits. Grow alumni and philanthropic contribution and expand any separately funded Student Opportunities Fund where evidence supports it.",
+      "summary": "Operate and evaluate the infrastructure throughout the three-year mobilisation rather than waiting for the full team to be in place. Track domestic opportunity throughput, partner experience, international employer relationships and activity, Global Mobility opportunity growth, Graduate Transitions reach and progression once live, financial-access demand and wider recruitment and reputation benefits. Use evidence to refine domestic portfolios, international regional priorities, common processes and the longer-term recurrent operating model. Grow alumni and philanthropic contribution and expand any separately funded Student Opportunities Fund where evidence supports it. Convert the annualised planning run-rates into precise in-year cash requirements once appointment dates are confirmed.",
       "dependsOn": [
         "2.2.2-step-1",
-        "2.2.2-step-3",
-        "2.2.2-step-5",
-        "2.2.2-step-6"
+        "2.2.2-step-2",
+        "2.2.2-step-3"
       ],
       "outputs": [
         {
-          "title": "Domestic experiential opportunity translation capacity mobilised",
-          "summary": "Four-post-equivalent domestic capacity, planned at 1 x G6 plus 3 x G5 on the current role-cost basis, is in place to convert domestic external relationships and propositions into well-formed student opportunities; the exact portfolios are informed by Year 1 demand evidence."
-        },
-        {
           "title": "Integrated employability and experiential infrastructure review",
-          "summary": "Regular evidence reviews compare opportunity throughput, partner and graduate outcomes, global mobility growth, operational friction and cross-institutional benefits against the capacity in place."
+          "summary": "Regular evidence reviews compare opportunity throughput, partner and graduate outcomes, global mobility growth, operational friction and cross-institutional benefits against the staged capacity in place."
         },
         {
           "title": "Evidence-led recurrent operating model",
-          "summary": "King’s confirms the enduring workforce and service model, including what should transfer into business as usual, what can be repurposed and how the domestic team should be deployed within the £214,089 annualised staffing assumption."
+          "summary": "King’s confirms the enduring workforce and service model, including what should transfer into business as usual, what can be repurposed and whether the staged staffing model remains proportionate to demonstrated demand and benefit."
         },
         {
           "title": "Scaled access and philanthropic mechanisms",
           "summary": "Any separately funded Student Opportunities Fund, alumni contribution and philanthropic opportunity-creation mechanisms grow in response to evidence, with repeatable models retained where they demonstrate value."
+        },
+        {
+          "title": "Validated multi-year cost profile",
+          "summary": "Finance/HR converts the annualised planning run-rates of £431,082 in 2027/28, £609,584 in 2028/29 and £714,058 in 2029/30 into precise in-year cash requirements using confirmed appointment dates and validated fully loaded role costs."
         }
       ],
       "resources": {
         "existingCapacity": [
           {
             "role": "Existing partnership, Work-Based Experience, Global Mobility and specialist-service capacity",
-            "contribution": "Operate alongside the new domestic translation staffing and targeted international, mobility and graduate-transition investment, ensuring the investment builds on and aligns existing capability rather than duplicating it.",
+            "contribution": "Operate alongside the new domestic translation staffing and staged international, mobility and graduate-transition investment, ensuring the investment builds on and aligns existing capability rather than duplicating it.",
             "owner": "Careers & Employability, Global Mobility, SASD, faculties and relevant institutional partners",
             "confidence": "developing",
             "riskIfMissing": "The new investment will buy less incremental capability if it has to recreate functions and expertise that already exist elsewhere in King’s."
           }
         ],
-        "newInvestment": [
-          {
-            "item": "Domestic experiential opportunity translation and partnership-infrastructure staffing",
-            "category": "domestic experiential partnership and operational staffing",
-            "amount": 214089,
-            "currency": "GBP",
-            "fte": 4,
-            "periodNeeded": "2027/28 onward; mobilisation-funded in 2027/28 and 2028/29, with intended transfer into business as usual thereafter",
-            "decisionNeededBy": "Summer 2027",
-            "fundingRoute": "King’s Edge mobilisation investment for Years 2 and 3, with intended recurrent BAU settlement thereafter",
-            "fundingStatus": "Core planning assumption, subject to review and approval",
-            "bauLiability": true,
-            "confidence": "costed planning comparator",
-            "costBasis": "Annualised fully loaded staffing assumption set at parity with the international employer-engagement team: 1 x G6 plus 3 x G5 on the current role-cost basis, including employer National Insurance and pension/superannuation. Finance/HR validation required before approval.",
-            "rationale": "Provides domestic faculty-facing brokerage and shared operational capacity at the same planned staffing level as international employer engagement, translating UK employer and other external relationships into student-ready experiential opportunities. Year 1 review should determine the most effective domestic portfolios and allocation of the four-post-equivalent resource.",
-            "riskIfMissing": "King’s may grow curricular, near-curriculum and flexible experiential ambition without sufficient domestic capacity to source, scope, broker, contract, administer and sustain the external opportunities required to deliver it."
-          }
-        ],
         "enablingConditions": [
-          {
-            "condition": "Authority to align or repurpose existing partnership and specialist-service capacity around the common operating model",
-            "whatItUnlocks": "A stronger domestic opportunity-translation model by combining the new £214,089 staffing assumption with existing institutional capability.",
-            "confidence": "developing",
-            "riskIfMissing": "The same investment will buy less partnership-facing and opportunity-translation capacity."
-          },
           {
             "condition": "Benefits data can distinguish Education and Student Success outcomes from wider recruitment, conversion and reputation effects",
             "whatItUnlocks": "A more credible institutional value case and clearer shared ownership of benefits that sit outside the funding portfolio.",
             "confidence": "developing",
             "riskIfMissing": "The full institutional return may be under-recognised and the investment may be judged only against a subset of the benefits it creates."
+          },
+          {
+            "condition": "Finance/HR validation of fully loaded staffing costs and exact appointment dates",
+            "whatItUnlocks": "A precise three-year cash profile that preserves the agreed sequencing while distinguishing annualised run-rate from actual in-year spend.",
+            "confidence": "developing",
+            "riskIfMissing": "Portfolio totals may inadvertently mix annualised role costs and partial-year cash requirements."
           }
         ]
       },
       "assumptions": [
         {
-          "title": "Fully mobilised annualised 2.2.2 Core ask is £714,058",
-          "summary": "Domestic experiential opportunity translation is £214,089 annualised, matching the international employer-engagement staffing level of £214,089. Together with £126,265 Graduate Transitions staffing, £109,615 Global Mobility opportunity-development staffing and the £50,000 international employer-engagement non-pay envelope, the fully mobilised annualised Core ask is £714,058. Any Student Opportunities Fund award pot remains separate and is not included."
+          "title": "Annualised planning run-rate by delivery year",
+          "summary": "The planned annualised Core run-rate is £431,082 in 2027/28, £609,584 in 2028/29 and £714,058 in 2029/30. These are not pro-rata payroll cashflows; exact in-year budget requirements depend on appointment dates."
         },
         {
           "title": "Finance validation is required before portfolio approval",
-          "summary": "The current grade-based role costs are treated as fully loaded planning figures including employer National Insurance and pension/superannuation. Finance/HR should validate the cost basis and confirm that the domestic parity assumption remains correctly costed before the portfolio is presented for approval."
+          "summary": "The current grade-based role costs are treated as fully loaded planning figures including employer National Insurance and pension/superannuation. Finance/HR should validate the cost basis before the portfolio is presented for approval."
         }
       ]
     }
