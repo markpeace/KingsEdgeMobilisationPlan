@@ -229,7 +229,7 @@ The immediate requirement remains **£184.153k**, all already contained within t
 | **£25k** | Paid student data, AI and prototyping capacity through King’s Talent. |
 | **£184.153k** | **Total immediate requirement.** |
 
-The January 2027 Global Mobility G6 is protected in all three substantive investment options but remains outside the immediate pre-January bridge. Under Enhanced, the additional January 2027 Global Mobility G5 and higher non-pay envelope would also require the substantive option decision.
+The January 2027 Global Mobility G6 is protected in all three substantive investment options but remains outside the immediate pre-January bridge. Under Enhanced, the additional January 2027 Global Mobility G5 and higher Year 1 international non-pay would also require the substantive option decision.
 
 ---
 
