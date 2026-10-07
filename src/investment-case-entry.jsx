@@ -50,33 +50,34 @@ function InvestmentProfile({ item }) {
 
 const corePackages = [
   {
-    title: 'Student Purpose, Skills and Educational Recognition',
-    refs: ['2.2.1', '2.1.3', '2.4.3'],
-    northStar: 'Every student has a developmental relationship with King’s shaped by purpose as well as discipline. King’s helps them explore what matters, connect their course, wider experiences, relationships and ambitions, make intentional choices, and build a trusted account of what they are learning and becoming. In doing so, King’s develops a distinctive model for connecting purpose, disciplinary education, capability and evidence around the individual student.',
-    proposition: 'This changes the contract between student and university. King’s takes greater responsibility for connecting the parts of the student experience around individual development, while students are supported to take active ownership of the choices, experiences and evidence that shape their future. Purpose becomes an organising principle alongside the disciplinary journey, with course learning, wider opportunity, skills, recognition and future planning connected through a common developmental model. The result is a model King’s can institutionalise at scale and contribute to the sector: one that preserves the richness of disciplinary education while making individual development more intentional, visible and credible.',
+    title: 'King’s Architecture for Employability',
+    refs: ['2.2.1', '2.1.3', '2.4.3', '2.2.2'],
+    northStar: 'Every student can understand what matters to them, recognise what they are developing, access experiences and relationships that help them grow, evidence their development credibly and make a purposeful transition beyond the degree, supported by the people, partnerships and operating infrastructure needed to make that possible at institutional scale.',
+    proposition: 'King’s establishes a distinctive architecture for employability that joins the developmental proposition to the infrastructure required to make it real. Purpose, disciplinary learning, capabilities and trusted evidence give students a framework for understanding what they are becoming. UK and international employer relationships, Global Mobility, common experiential operating infrastructure and opportunity-development capacity create routes through which students can apply and extend that development. Graduate Transitions then supports the move beyond the degree. Employability is therefore treated as broader than preparation for employment: it is the capacity to understand what matters, develop and apply disciplinary and wider capabilities, build relationships and experience, evidence learning credibly and make purposeful transitions. Positive employment and further-study outcomes are important consequences of that architecture, but not its only educational purpose.',
     stories: [
-      { label: 'Student', text: 'I can arrive without a fixed destination and use my time at King’s to explore what matters to me, test different possibilities and develop a clearer sense of where I want to go.' },
-      { label: 'Student', text: 'I can use my goals and interests to shape choices across my course and wider King’s experience, rather than treating them as separate parts of university life.' },
-      { label: 'Student', text: 'When my ambitions change, I can make a new choice, find a relevant next experience and keep building a journey that still feels like mine.' },
-      { label: 'Student / graduate', text: 'I leave with a trusted account of the knowledge, capabilities and experiences I have actually developed, with evidence I can use beyond King’s.' },
-      { label: 'Programme team / academic', text: 'I can help students connect the distinctive learning in my discipline with the capabilities, questions and futures they want to pursue.' },
-      { label: 'Professional services colleague', text: 'I can connect a student to opportunities and support in the context of what they are trying to achieve, rather than handing them between separate services.' },
-      { label: 'The University', text: 'We can respond boldly to the Future Jobs agenda by connecting purpose, disciplinary learning, skills, experience and trusted evidence around the individual student, and build a model that can influence how the sector thinks about graduate development.' }
+      { label: 'Student', text: 'I can understand what matters to me, recognise what I am developing, find experiences and relationships that help me grow, and make a confident next move.' },
+      { label: 'Academic / programme team', text: 'I can connect the distinctive capabilities of my discipline to the wider developmental journey without turning my course into generic employability training.' },
+      { label: 'External partner / alumnus', text: 'I have a clear route into King’s and can turn an idea into a meaningful student opportunity without navigating multiple disconnected teams.' },
+      { label: 'International student / graduate', text: 'I can access employer relationships, labour-market insight and purposeful global experience relevant to the markets in which I may want to live and work.' },
+      { label: 'Graduate', text: 'King’s does not disappear at graduation if I am struggling to make the transition. I can be identified and supported through that next step.' },
+      { label: 'Recruitment / reputation colleague', text: 'I can evidence a credible employability proposition that goes beyond claims about rankings or a conventional careers service.' },
+      { label: 'The University', text: 'We have one coherent architecture connecting educational philosophy, experience, relationships and graduate transition rather than separate interventions around the edges of the degree.' }
     ],
     yearOne: [
-      { label: 'Established', text: 'A tested institutional proposition for purpose and self-direction, alongside clearer requirements for trusted educational recognition and the student-facing relationship King’s is seeking to create.' },
-      { label: 'Tested', text: 'A candidate skills architecture examined across contrasting disciplinary contexts against the emerging national Future Jobs and UKSSC agenda, producing an adopt / adapt / reconsider decision.' },
-      { label: 'Ready for 2027/28', text: 'A bounded set of deep trailblazers with agreed contexts, evidence needs and implementation questions, ready to move from proposition design into live institutional practice.' }
+      { label: 'Established', text: 'A tested institutional proposition for purpose and self-direction, a candidate skills architecture and clearer requirements for trusted educational recognition, giving King’s a developmental language for employability.' },
+      { label: 'Protected and started', text: 'International employer engagement is put onto dedicated footing through a G6 from October 2026, East Asia G5 from January 2027 and £15k activity funding, while purposeful Global Mobility opportunity development begins through a G6 from January 2027.' },
+      { label: 'Designed for scale', text: 'A common experiential operating model and institutional partnership baseline are established, with the UK opportunity-development workforce, second Global Mobility post and Graduate Transitions model specified for later mobilisation.' }
     ],
-    yearOneCost: '£53k',
-    threeYearCost: '£252k',
-    ongoing: 'c.£9k p.a. + costs to confirm'
+    yearOneCost: '£166k',
+    threeYearCost: '£1.445m',
+    profileNote: 'Core in-year profile: £165.842k in 2026/27, £558.432k in 2027/28 and £720.277k in 2028/29, or £1.444551m across mobilisation. Of this, 2.2.2 contributes £1.192551m and reaches a £714.058k annualised exit run-rate by June 2029.',
+    ongoing: 'c.£723k p.a. + other enduring costs TBC'
   },
   {
     title: 'Experiential Learning in the Curriculum',
     refs: ['2.1.2', '2.1.4', '2.2.3'],
     northStar: 'Every student can expect purposeful experiential learning through or alongside their course, with a defined future entitlement and measurable trajectory, and with King’s able to identify where access or quality is weak, intervene deliberately, and reuse strong academic, regulatory and delivery models across disciplines.',
-    proposition: 'King’s builds an institution-wide capability for designing, assuring and growing experiential learning. Strong local practice becomes easier to reuse, and gaps in access can be identified and acted on rather than left to develop unevenly. The institution can see where meaningful experiential learning is strong, weak or absent, support priority programmes through reusable academic, policy, validation and delivery routes, and scale proven models such as sandwich years and shared capstone provision without flattening disciplinary difference.',
+    proposition: 'King’s builds an institution-wide capability for designing, assuring and growing experiential learning. Strong local practice becomes easier to reuse, and gaps in access can be identified and acted on rather than left to develop unevenly. The institution can see where meaningful experiential learning is strong, weak or absent, support priority programmes through reusable academic, policy, validation and delivery routes, and scale proven models such as sandwich years and shared capstone provision without flattening disciplinary difference. The relationship infrastructure in the King’s Architecture for Employability can source and develop external propositions; this area changes curriculum and near-curriculum educational practice.',
     stories: [
       { label: 'Student', text: 'I can expect to apply, test and extend my learning through meaningful experience as part of a King’s education, not only if my course already happens to offer it.' },
       { label: 'Student', text: 'I can take on real challenges, work with people beyond my usual academic setting and use those experiences to deepen what I learn in my discipline.' },
@@ -96,34 +97,10 @@ const corePackages = [
     ongoing: 'c.£9k p.a. + costs to confirm'
   },
   {
-    title: 'Future-Proofed Employability & Experiential Infrastructure',
-    refs: ['2.2.2'],
-    northStar: 'King’s has the people, partnerships and operating infrastructure to turn external relationships into high-quality experiential opportunity, connect students and graduates with employers in the UK and internationally, widen purposeful global experience, and support successful transition into graduate futures.',
-    proposition: 'This becomes a distinct institutional capability rather than a hidden support cost inside Beyond Course. International employer engagement is protected immediately in 2026/27 and Global Mobility opportunity development begins from January 2027; a four-post UK Experiential Partnerships & Opportunity Development team then translates employer, alumni, civic, cultural and community relationships into student-ready opportunities from 2027/28, the second Global Mobility post completes that opportunity-development capability, and a small Graduate Transitions function moves post-completion support from principally reactive access towards targeted intervention. The common experiential operating model governs sourcing, design, approval, promotion, delivery, support and evaluation, so new capacity strengthens distributed delivery rather than centralising every relationship or opportunity.',
-    stories: [
-      { label: 'Student', text: 'I can benefit from meaningful external opportunities without needing to know which part of King’s holds the relationship or how the administration works behind it.' },
-      { label: 'International student / graduate', text: 'I can access employer relationships and labour-market insight relevant to the countries and markets in which I may want to work.' },
-      { label: 'Graduate', text: 'If I leave King’s without a positive destination, support does not depend entirely on me finding my way back to the service.' },
-      { label: 'Faculty / programme team', text: 'I can bring a partner idea or relationship and get practical help to scope it into a viable project, placement, challenge, live brief or other experiential opportunity.' },
-      { label: 'External partner / alumnus', text: 'I have a clearer route into King’s, encounter less duplicated administration and can repeat successful activity more easily.' },
-      { label: 'Recruitment / reputation colleague', text: 'I can draw on credible employer, mobility and graduate-success capability when explaining the value and return of a King’s education.' },
-      { label: 'The University', text: 'We have visible capacity behind graduate success, rather than relying on dispersed relationships and discretionary staff effort to generate opportunity and support transition.' }
-    ],
-    yearOne: [
-      { label: 'Protected', text: 'Existing international employability activity is put onto dedicated footing through a G6 International Employer Relations & Insights Manager from October 2026, a G5 East Asia Adviser from January 2027 and £15k of employer-facing / in-country activity funding.' },
-      { label: 'Started', text: 'Purposeful global-opportunity development begins through a G6 Global Mobility Opportunity Development Manager from January 2027, ahead of the second Global Mobility post in 2027/28.' },
-      { label: 'Designed', text: 'A common experiential operating model and institutional partnership baseline is established, and the UK opportunity-development workforce and Graduate Transitions model are specified for later mobilisation.' }
-    ],
-    yearOneCost: '£113k',
-    threeYearCost: '£1.193m',
-    profileNote: 'In-year planning budget: £112.842k in 2026/27, £438.932k in 2027/28 and £640.777k in 2028/29. The first year includes the international G6 from October, East Asia G5 and Global Mobility G6 from January, plus £15k international non-pay. The fully mobilised annualised exit run-rate remains £714.058k by June 2029.',
-    ongoing: '£714k p.a. fully mobilised; BAU TBC'
-  },
-  {
     title: 'Beyond-Course Opportunity and Participation',
     refs: ['2.2.4', '2.3.1', '2.3.2', '2.3.4'],
     northStar: 'Every student can see and access a rich, coherent and inclusive opportunity environment beyond the course, with King’s actively shaping what exists, who can access it and where new opportunity is needed.',
-    proposition: 'King’s moves from aggregating a fragmented offer to actively stewarding the opportunity ecology. Commissioning, participation evidence and a shared student-year rhythm are used to grow both the breadth and the depth of opportunity available to students. The package now concentrates on the student-facing opportunity portfolio and participation system; the substantial partnership, employer, mobility and graduate-transition infrastructure required to generate and sustain opportunity is shown separately in 2.2.2 rather than hidden inside this package.',
+    proposition: 'King’s moves from aggregating a fragmented offer to actively stewarding the opportunity ecology. Commissioning, participation evidence and a shared student-year rhythm are used to grow both the breadth and the depth of opportunity available to students. This area is the portfolio-and-participation layer: the King’s Architecture for Employability provides the relationship and opportunity-development infrastructure that can feed it, while this investment determines what King’s commissions, grows and makes accessible beyond the course.',
     stories: [
       { label: 'Student', text: 'I can build a sequence of experiences over time, from trying something new through to sustained projects, mentoring, placements and other deeper opportunities.' },
       { label: 'Student', text: 'I can take part in worthwhile opportunities that fit around the realities of my life and study, including commuting, caring, paid work or limited time on campus.' },
@@ -135,7 +112,7 @@ const corePackages = [
     yearOne: [
       { label: 'Live in Year 1', text: 'A common shopfront and live evidence base, alongside a £150k commissioned portfolio intended to reach at least 2,500 distinct students and provide 26.5–33.5k student-hours, including deeper sustained experiences.' },
       { label: 'Learned in Year 1', text: 'Student Life personas and participation prototypes tested against different patterns of life and study, with better evidence about barriers, participation, provider reach and how the shared student-year rhythm can improve access.' },
-      { label: 'Ready for 2027/28', text: 'Clearer commissioning priorities and an evidence base that can be used to decide where to grow supply, deepen experiences and target participation, with partnership translation supported through the separate 2.2.2 investment area.' }
+      { label: 'Ready for 2027/28', text: 'Clearer commissioning priorities and an evidence base that can be used to decide where to grow supply, deepen experiences and target participation.' }
     ],
     yearOneCost: '£279k',
     threeYearCost: '£1.032m',
@@ -241,7 +218,7 @@ function InvestmentCase() {
                 <td>£1.195m</td>
                 <td>£1.467m</td>
                 <td><strong>£3.235m</strong></td>
-                <td>c.£1.087m p.a. + TBC at full 2.2.2 run-rate</td>
+                <td>c.£1.087m p.a. + TBC</td>
               </tr>
               <tr className="recommended-option-row">
                 <th scope="row"><span className="ds-section-heading recommended-option-name">Core</span><span className="ds-eyebrow">Recommended</span></th>
@@ -249,7 +226,7 @@ function InvestmentCase() {
                 <td><strong>£1.306m</strong></td>
                 <td><strong>£1.603m</strong></td>
                 <td><strong>£3.583m</strong></td>
-                <td><strong>c.£1.149m p.a. + TBC at full 2.2.2 run-rate</strong></td>
+                <td><strong>c.£1.149m p.a. + TBC</strong></td>
               </tr>
               <tr>
                 <th scope="row">Enhanced</th>
@@ -257,22 +234,23 @@ function InvestmentCase() {
                 <td>£1.603m</td>
                 <td>£2.070m</td>
                 <td><strong>£4.396m</strong></td>
-                <td>at least c.£1.190m p.a. + TBC at full 2.2.2 run-rate</td>
+                <td>at least c.£1.190m p.a. + TBC</td>
               </tr>
             </tbody>
           </table>
         </div>
         <div className="ds-stack investment-ask-context">
-          <p><strong>Core is the recommended planning case.</strong> Economy and Enhanced show lower- and higher-investment variants around it. The Future-Proofed Employability & Experiential Infrastructure area is currently protected across all three options rather than arbitrarily flexed before an explicit alternative workforce model has been designed. <a href="#options">See the alternative options below</a> for the practical effect of flexing the remaining levers.</p>
-          <p className="ds-subtle investment-boundary">The headline table uses in-year planning budgets across the fixed 2026/27 to 2028/29 investment window. For 2.2.2, the international G6 is modelled from October 2026, the East Asia G5 and Global Mobility G6 from January 2027, later September starts at ten months and January 2029 starts at six months. The full operating model is live by June 2029 with a £714.058k annualised exit run-rate. Exact payroll and on-costs remain subject to Finance/HR validation. The Digital Student Experience Hub / Digital Front Door remains a separate investment ask.</p>
+          <p><strong>Core is the recommended planning case.</strong> Economy and Enhanced show lower- and higher-investment variants around it. The specified 2.2.2 workforce and service model is protected across the three scenarios; the purpose, skills and recognition component of the King’s Architecture for Employability continues to flex with the wider option.</p>
+          <p className="ds-subtle investment-boundary">The headline table uses in-year planning budgets across the fixed 2026/27 to 2028/29 investment window. For 2.2.2, the international G6 is modelled from October 2026, the East Asia G5 and Global Mobility G6 from January 2027, later September starts at ten months and January 2029 starts at six months. The full 2.2.2 operating model is live by June 2029 with a £714.058k annualised exit run-rate. Exact payroll and fully loaded role costs remain subject to Finance/HR validation. The Digital Student Experience Hub remains a separate investment ask.</p>
         </div>
       </section>
 
       <section id="core" className="investment-section">
         <div className="ds-stack investment-section-heading">
           <p className="eyebrow">Investment case</p>
-          <h2 className="ds-section-heading">What implementation brings to the institution</h2>
-          <p><strong>Investing in King’s Edge moves purpose and graduate futures to the organising core of the student experience.</strong> It connects curriculum, skills, opportunity, employer and external relationships, global experience and wider student life around the individual student, while building the institutional capability to generate experience and support transition at scale. Together, the five current investment areas give King’s a more coherent student experience, a stronger developmental relationship with students, a visible employability and experiential infrastructure, more deliberate use of investment and a clearer account of graduate value.</p>
+          <h2 className="ds-section-heading">Four connected investments in graduate value</h2>
+          <p><strong>Investing in King’s Edge connects educational philosophy, experience, relationships, evidence and transition around the individual student.</strong> The four investment areas distinguish the architecture and infrastructure for employability, educational transformation within and near the curriculum, the portfolio of opportunities around the course, and the intelligence loop that shows whether King’s is creating and communicating graduate value.</p>
+          <p className="ds-subtle"><strong>Employability at King’s is broader than preparation for employment.</strong> It is the capacity to understand what matters, develop and apply disciplinary and wider capabilities, build relationships and experience, evidence learning credibly and make purposeful transitions beyond the degree. Positive employment and further-study outcomes are important consequences of that architecture, but they are not its only educational purpose.</p>
         </div>
 
         <div className="ds-table-wrap">
@@ -300,7 +278,7 @@ function InvestmentCase() {
         <div className="ds-stack investment-section-heading">
           <p className="eyebrow">Alternative options</p>
           <h2 className="ds-section-heading">Levers to reduce spend or increase pace and impact</h2>
-          <p className="ds-subtle">The employability and experiential infrastructure area is held constant across the three current scenarios. Any Economy or Enhanced variant for that area should be a deliberately designed alternative service model rather than an arbitrary percentage cut or uplift.</p>
+          <p className="ds-subtle">The specified 2.2.2 infrastructure is currently treated as a protected service model. Economy and Enhanced flex the scale of purpose, skills and recognition work, curriculum implementation, Beyond-Course commissioning, participation activity and Graduate Futures. Any future Economy or Enhanced version of 2.2.2 should be designed as a coherent alternative workforce model rather than an arbitrary percentage cut or uplift.</p>
         </div>
 
         <div className="ds-editorial-grid option-narratives">
@@ -312,11 +290,11 @@ function InvestmentCase() {
               <div className="ds-metric-card"><span>Difference from Core</span><strong>£348k less</strong></div>
             </div>
             <div className="option-card-copy">
-              <p>Economy keeps the architecture and protects the specified employability and experiential infrastructure, but accepts a more uneven and breadth-first implementation elsewhere with greater dependence on existing institutional capacity.</p>
+              <p>Economy keeps the core employability architecture and protected 2.2.2 infrastructure, but accepts a narrower implementation footprint elsewhere and greater dependence on existing institutional capacity.</p>
               <ul className="option-detail-list">
-                <li><strong>Beyond Course:</strong> Year 1 commissioning reduces to £100k rather than £150k. Indicative Year 1 reach falls to around 1,600–1,900 students.</li>
-                <li><strong>Curriculum, purpose and skills:</strong> King’s still gets the common experiential-learning model and core discovery, but across fewer contexts.</li>
-                <li><strong>Employability and experiential infrastructure:</strong> urgent international continuity, early Global Mobility development, the UK opportunity-development team and Graduate Transitions capability remain protected at the Core planning level.</li>
+                <li><strong>King’s Architecture for Employability:</strong> the 2.2.2 workforce remains protected, while purpose, skills and recognition trailblazing is narrower.</li>
+                <li><strong>Beyond Course:</strong> Year 1 commissioning reduces to £100k rather than £150k, with lower indicative reach.</li>
+                <li><strong>Curriculum:</strong> King’s still establishes the experiential-learning model but supports fewer implementation contexts.</li>
                 <li><strong>Participation:</strong> fewer Student Life prototypes and lower direct activation investment mean more reliance on local teams.</li>
                 <li><strong>Graduate Futures:</strong> the evidence engine remains, but activity concentrates on intelligence and targeted interventions.</li>
               </ul>
@@ -331,11 +309,11 @@ function InvestmentCase() {
               <div className="ds-metric-card"><span>Difference from Core</span><strong>£813k more</strong></div>
             </div>
             <div className="option-card-copy">
-              <p>Enhanced buys a materially larger King’s Edge around the protected employability and experiential infrastructure, with more direct opportunity, more implementation support and faster institutional adoption.</p>
+              <p>Enhanced buys a materially larger King’s Edge around the same protected 2.2.2 infrastructure, with more direct opportunity, broader trailblazing, more implementation support and faster institutional adoption.</p>
               <ul className="option-detail-list">
+                <li><strong>King’s Architecture for Employability:</strong> purpose, skills and recognition move through a wider trailblazer footprint; the current 2.2.2 workforce remains unchanged pending an explicit enhanced service design.</li>
                 <li><strong>Beyond Course:</strong> commissioning rises to £200k, £350k and £500k across the three years.</li>
-                <li><strong>Curriculum, purpose and skills:</strong> a wider implementation cohort and broader trailblazer footprint allow faster adoption.</li>
-                <li><strong>Employability and experiential infrastructure:</strong> the current rebaseline holds the specified 2.2.2 workforce model constant. A genuinely enhanced variant would require a separate decision about accelerating posts, increasing market coverage or adding operational capacity.</li>
+                <li><strong>Curriculum:</strong> a wider implementation cohort accelerates adoption.</li>
                 <li><strong>Participation:</strong> stronger Student Life capacity supports more deliberate responses to participation gaps.</li>
                 <li><strong>Graduate Futures:</strong> enough sustained capacity exists to run course improvement, student adoption, outcomes optimisation and external reputation work in parallel.</li>
               </ul>
@@ -348,7 +326,7 @@ function InvestmentCase() {
         <div className="ds-stack investment-section-heading">
           <p className="eyebrow">Early investment</p>
           <h2 className="ds-section-heading">Pre-Business Case Investment Need</h2>
-          <p className="ds-subtle"><strong>£184.153k remains the immediate pre-Business Case investment need.</strong> It combines the existing £100k acceleration bridge with £84.153k of urgent 2026/27 international employability continuity. The additional £28.689k for the Global Mobility G6 is planned from January 2027 within the 2026/27 Core case, rather than being added to the immediate pre-January bridge.</p>
+          <p className="ds-subtle"><strong>£184.153k remains the immediate pre-Business Case investment need.</strong> It combines the existing £100k acceleration bridge with £84.153k of urgent 2026/27 international employability continuity. The additional £28.689k for the Global Mobility G6 is planned from January 2027 within the 2026/27 Core case rather than being added to the immediate pre-January bridge.</p>
         </div>
 
         <div className="ds-table-wrap">
