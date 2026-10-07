@@ -65,7 +65,7 @@ const corePackages = [
     ],
     yearOne: [
       { label: 'Established', text: 'A tested institutional proposition for purpose and self-direction, alongside clearer requirements for trusted educational recognition and the student-facing relationship King’s is seeking to create.' },
-      { label: 'Tested', text: 'A candidate skills architecture examined across contrasting disciplinary contexts against the emerging national Future Jobs and UKSSC agenda, producing an adopt / adapt / reconsider decision and early evidence about how a national skills language can work credibly in higher education without flattening disciplinary difference.' },
+      { label: 'Tested', text: 'A candidate skills architecture examined across contrasting disciplinary contexts against the emerging national Future Jobs and UKSSC agenda, producing an adopt / adapt / reconsider decision.' },
       { label: 'Ready for 2027/28', text: 'A bounded set of deep trailblazers with agreed contexts, evidence needs and implementation questions, ready to move from proposition design into live institutional practice.' }
     ],
     yearOneCost: '£53k',
@@ -99,7 +99,7 @@ const corePackages = [
     title: 'Future-Proofed Employability & Experiential Infrastructure',
     refs: ['2.2.2'],
     northStar: 'King’s has the people, partnerships and operating infrastructure to turn external relationships into high-quality experiential opportunity, connect students and graduates with employers in the UK and internationally, widen purposeful global experience, and support successful transition into graduate futures.',
-    proposition: 'This becomes a distinct institutional capability rather than a hidden support cost inside Beyond Course. A four-post UK Experiential Partnerships & Opportunity Development team translates employer, alumni, civic, cultural and community relationships into student-ready opportunities; international employer engagement is built in stages across priority markets; Global Mobility gains dedicated opportunity-development capacity; and a small Graduate Transitions function moves post-completion support from principally reactive access towards targeted intervention. The common experiential operating model still governs sourcing, design, approval, promotion, delivery, support and evaluation, so new capacity strengthens distributed delivery rather than centralising every relationship or opportunity.',
+    proposition: 'This becomes a distinct institutional capability rather than a hidden support cost inside Beyond Course. International employer engagement is protected immediately in 2026/27, a four-post UK Experiential Partnerships & Opportunity Development team then translates employer, alumni, civic, cultural and community relationships into student-ready opportunities from 2027/28, Global Mobility gains dedicated opportunity-development capacity, and a small Graduate Transitions function moves post-completion support from principally reactive access towards targeted intervention. The common experiential operating model governs sourcing, design, approval, promotion, delivery, support and evaluation, so new capacity strengthens distributed delivery rather than centralising every relationship or opportunity.',
     stories: [
       { label: 'Student', text: 'I can benefit from meaningful external opportunities without needing to know which part of King’s holds the relationship or how the administration works behind it.' },
       { label: 'International student / graduate', text: 'I can access employer relationships and labour-market insight relevant to the countries and markets in which I may want to work.' },
@@ -110,13 +110,13 @@ const corePackages = [
       { label: 'The University', text: 'We have visible capacity behind graduate success, rather than relying on dispersed relationships and discretionary staff effort to generate opportunity and support transition.' }
     ],
     yearOne: [
+      { label: 'Protected', text: 'Existing international employability activity is put onto dedicated footing through a G6 International Employer Relations & Insights Manager from October 2026, a G5 East Asia Adviser from January 2027 and £15k of employer-facing / in-country activity funding.' },
       { label: 'Designed', text: 'A common experiential operating model and institutional partnership baseline, preserving distributed delivery while clarifying standards, processes, partner routes and data.' },
-      { label: 'Specified', text: 'A costed UK opportunity-development workforce, phased international employer-engagement model, Global Mobility growth roles and Graduate Transitions design with explicit benefit ownership.' },
-      { label: 'Ready for 2027/28', text: 'Role profiles, operating requirements and mobilisation sequence ready for the first cost year, subject to investment and HR/Finance validation.' }
+      { label: 'Ready for 2027/28', text: 'The UK opportunity-development workforce, Global Mobility growth roles and Graduate Transitions operating model are specified for staged mobilisation.' }
     ],
-    yearOneCost: 'Existing capacity',
-    threeYearCost: '£999.640k',
-    profileNote: 'In-year planning budget: £0 new direct investment in 2026/27, £367.569k in 2027/28 and £632.071k in 2028/29. September starts are modelled at ten months and January 2029 starts at six months. The fully mobilised annualised exit run-rate is £714.058k by June 2029.',
+    yearOneCost: '£84k',
+    threeYearCost: '£1.154m',
+    profileNote: 'In-year planning budget: £84.153k in 2026/27, £429.369k in 2027/28 and £640.777k in 2028/29. The first year includes the international G6 from October, East Asia G5 from January and £15k non-pay. The fully mobilised annualised exit run-rate is £714.058k by June 2029.',
     ongoing: '£714k p.a. fully mobilised; BAU TBC'
   },
   {
@@ -168,11 +168,18 @@ const corePackages = [
 
 const earlyAsk = [
   {
+    amount: '£84.153k',
+    buying: 'International employability continuity and first-stage growth',
+    outputs: [
+      { text: 'A dedicated G6 Employer Relations & Insights Manager (International) from October 2026, a G5 East Asia Adviser from January 2027, and £15k of employer-facing and in-country activity funding. This protects existing employer relationships and market presence while moving the proven East Asia portfolio off discretionary staffing.', refs: ['2.2.2'] }
+    ]
+  },
+  {
     amount: '£60k',
     buying: 'Seed funding for a broader £150k Year 1 investment in new student opportunity',
     outputs: [
-      { text: 'A targeted package of substantive new opportunities for final-year students, bringing together Careers, Entrepreneurship and colleagues in IES working on community-engaged experience. The focus is on helping students translate their talents into experience and gain the final adjunct skills, relationships and evidence they need for the transition beyond King’s. This creates immediate delivery in the same broad direction as the Future Jobs emphasis on stronger experience before graduation, while the King’s definition of qualifying experiential learning is still being settled through 2.1.2.', refs: ['2.2.4'] },
-      { text: 'An ambition to engage around 700 final-year undergraduates, approximately 10% of the graduating undergraduate population, generating c.10,000–12,000 student-hours and around 150 sustained places providing internship-like experience, alongside shorter and more scalable opportunities. Delivery can include projects, placements, mentoring, enterprise activity and community-engaged experience. The sustained layer provides an immediate test bed for deeper forms of provision; the full 700-student package should not be counted automatically as work-based learning.', refs: ['2.2.4'] },
+      { text: 'A targeted package of substantive new opportunities for final-year students, bringing together Careers, Entrepreneurship and colleagues in IES working on community-engaged experience. The focus is on helping students translate their talents into experience and gain the final adjunct skills, relationships and evidence they need for the transition beyond King’s.', refs: ['2.2.4'] },
+      { text: 'An ambition to engage around 700 final-year undergraduates, approximately 10% of the graduating undergraduate population, generating c.10,000–12,000 student-hours and around 150 sustained places providing internship-like experience, alongside shorter and more scalable opportunities.', refs: ['2.2.4'] },
       { text: 'The £60k seeds activity across the new-opportunity portfolio throughout the academic year. The broader £150k Year 1 investment, subject to the main business case, grows this into a portfolio reaching at least 2,500 distinct students, 26,500–33,500 student-hours and around 350 sustained high-depth places.', refs: ['2.2.4'] }
     ]
   },
@@ -180,7 +187,7 @@ const earlyAsk = [
     amount: '£15k',
     buying: 'Graduate Premium video production and Graduate Outcomes Survey campaign funding',
     outputs: [
-      { text: 'Six proof-of-concept video exemplars showing, at disciplinary level, how the distinctive features of a King’s education translate into employability advantage. They establish a repeatable approach to bringing together graduate outcomes, disciplinary strengths, student and alumni stories, employer insight and distinctive King’s experiences to evidence the Graduate Premium.', refs: ['2.4.1'] },
+      { text: 'Six proof-of-concept video exemplars showing, at disciplinary level, how the distinctive features of a King’s education translate into employability advantage.', refs: ['2.4.1'] },
       { text: 'Funding for Graduate Outcomes Survey promotion, including production of ten campaign video assets and paid investment in targeted LinkedIn campaigns focused on priority graduate cohorts.', refs: ['2.4.4'] }
     ]
   },
@@ -188,10 +195,10 @@ const earlyAsk = [
     amount: '£25k',
     buying: 'Paid student data, AI and prototyping capacity through King’s Talent',
     outputs: [
-      { text: 'A live, wide-ranging Graduate Futures data pack giving King’s a clearer institutional view of where graduate strengths are concentrated, where outcomes are uneven and where there is potential for development, while allowing course teams to interrogate the graduate premium of their own provision. It brings together graduate outcomes, destinations, comparator evidence, student aspirations and relevant course context.', refs: ['2.1.1', '2.4.4'] },
-      { text: 'A working AI-supported curriculum skills audit, using LLMs to interrogate curriculum materials such as module descriptions, assessment briefs and teaching materials and identify capabilities aligned to the UK Standard Skills Classification, while testing where academic interpretation remains necessary. The national Future Jobs and skills agenda makes this especially timely, but it remains an adopt / adapt / reconsider experiment rather than a commitment to institutional adoption.', refs: ['2.1.3'] },
-      { text: 'A working proof of concept for King’s Canvas, testing an LLM-supported way for students to map their aspirations, interests and needs and connect them to relevant opportunities across King’s. The prototype gives us something tangible to test with students while generating evidence and requirements for later development through the Digital Student Experience Hub.', refs: ['2.2.1', '4.1.2'] },
-      { text: 'A usable first set of Student Life personas and tested design outputs, giving King’s a stronger evidence base about different patterns of student life, participation and need, and informing both King’s Edge design and the separate Digital Student Experience Hub proposition.', refs: ['2.3.2', '4.1.2'] }
+      { text: 'A live, wide-ranging Graduate Futures data pack giving King’s a clearer institutional view of where graduate strengths are concentrated, where outcomes are uneven and where there is potential for development.', refs: ['2.1.1', '2.4.4'] },
+      { text: 'A working AI-supported curriculum skills audit aligned to the UK Standard Skills Classification, tested as an adopt / adapt / reconsider experiment.', refs: ['2.1.3'] },
+      { text: 'A working proof of concept for King’s Canvas, testing an LLM-supported way for students to map aspirations, interests and needs and connect them to relevant opportunities.', refs: ['2.2.1', '4.1.2'] },
+      { text: 'A usable first set of Student Life personas and tested design outputs, informing King’s Edge design and the separate Digital Student Experience Hub proposition.', refs: ['2.3.2', '4.1.2'] }
     ]
   }
 ];
@@ -230,26 +237,26 @@ function InvestmentCase() {
             <tbody>
               <tr>
                 <th scope="row">Economy</th>
-                <td>£460k</td>
-                <td>£1.124m</td>
-                <td>£1.458m</td>
-                <td><strong>£3.042m</strong></td>
+                <td>£544k</td>
+                <td>£1.185m</td>
+                <td>£1.467m</td>
+                <td><strong>£3.196m</strong></td>
                 <td>c.£1.087m p.a. + TBC at full 2.2.2 run-rate</td>
               </tr>
               <tr className="recommended-option-row">
                 <th scope="row"><span className="ds-section-heading recommended-option-name">Core</span><span className="ds-eyebrow">Recommended</span></th>
-                <td><strong>£560k</strong></td>
-                <td><strong>£1.235m</strong></td>
-                <td><strong>£1.595m</strong></td>
-                <td><strong>£3.390m</strong></td>
+                <td><strong>£644k</strong></td>
+                <td><strong>£1.297m</strong></td>
+                <td><strong>£1.603m</strong></td>
+                <td><strong>£3.544m</strong></td>
                 <td><strong>c.£1.149m p.a. + TBC at full 2.2.2 run-rate</strong></td>
               </tr>
               <tr>
                 <th scope="row">Enhanced</th>
-                <td>£610k</td>
-                <td>£1.532m</td>
-                <td>£2.061m</td>
-                <td><strong>£4.203m</strong></td>
+                <td>£694k</td>
+                <td>£1.593m</td>
+                <td>£2.070m</td>
+                <td><strong>£4.357m</strong></td>
                 <td>at least c.£1.190m p.a. + TBC at full 2.2.2 run-rate</td>
               </tr>
             </tbody>
@@ -257,7 +264,7 @@ function InvestmentCase() {
         </div>
         <div className="ds-stack investment-ask-context">
           <p><strong>Core is the recommended planning case.</strong> Economy and Enhanced show lower- and higher-investment variants around it. The Future-Proofed Employability & Experiential Infrastructure area is currently protected across all three options rather than arbitrarily flexed before an explicit alternative workforce model has been designed. <a href="#options">See the alternative options below</a> for the practical effect of flexing the remaining levers.</p>
-          <p className="ds-subtle investment-boundary">The headline table now uses in-year planning budgets across the fixed 2026/27 to 2028/29 investment window. For 2.2.2, September starts are modelled at ten months and January 2029 starts at six months; the full operating model is live by June 2029 with a £714.058k annualised exit run-rate. Exact payroll and on-costs remain subject to Finance/HR validation. The Digital Student Experience Hub / Digital Front Door remains a separate investment ask.</p>
+          <p className="ds-subtle investment-boundary">The headline table uses in-year planning budgets across the fixed 2026/27 to 2028/29 investment window. For 2.2.2, the international G6 is modelled from October 2026, East Asia G5 from January 2027, later September starts at ten months and January 2029 starts at six months. The full operating model is live by June 2029 with a £714.058k annualised exit run-rate. Exact payroll and on-costs remain subject to Finance/HR validation. The Digital Student Experience Hub / Digital Front Door remains a separate investment ask.</p>
         </div>
       </section>
 
@@ -265,17 +272,13 @@ function InvestmentCase() {
         <div className="ds-stack investment-section-heading">
           <p className="eyebrow">Investment case</p>
           <h2 className="ds-section-heading">What implementation brings to the institution</h2>
-          <p><strong>Investing in King’s Edge moves purpose and graduate futures to the organising core of the student experience.</strong> It connects curriculum, skills, opportunity, employer and external relationships, global experience and wider student life around the individual student, while building the institutional capability to generate experience and support transition at scale. Together, the five investment areas give King’s a more coherent student experience, a stronger developmental relationship with students, a visible employability and experiential infrastructure, more deliberate use of investment and a clearer account of graduate value.</p>
+          <p><strong>Investing in King’s Edge moves purpose and graduate futures to the organising core of the student experience.</strong> It connects curriculum, skills, opportunity, employer and external relationships, global experience and wider student life around the individual student, while building the institutional capability to generate experience and support transition at scale. Together, the five current investment areas give King’s a more coherent student experience, a stronger developmental relationship with students, a visible employability and experiential infrastructure, more deliberate use of investment and a clearer account of graduate value.</p>
         </div>
 
         <div className="ds-table-wrap">
           <table className="ds-table investment-table">
             <thead>
-              <tr>
-                <th>Investment area and North Star</th>
-                <th>What changes for people</th>
-                <th>Investment profile</th>
-              </tr>
+              <tr><th>Investment area and North Star</th><th>What changes for people</th><th>Investment profile</th></tr>
             </thead>
             <tbody>
               {corePackages.map((item) => <tr key={item.title}>
@@ -302,45 +305,39 @@ function InvestmentCase() {
 
         <div className="ds-editorial-grid option-narratives">
           <article className="ds-editorial-card option-card">
-            <div>
-              <p className="ds-sequence-kicker">Economy</p>
-              <h3>Lower cost, narrower implementation.</h3>
-            </div>
+            <div><p className="ds-sequence-kicker">Economy</p><h3>Lower cost, narrower implementation.</h3></div>
             <div className="ds-metric-grid option-metrics" aria-label="Economy option figures">
-              <div className="ds-metric-card"><span>2026/27</span><strong>£460k</strong></div>
-              <div className="ds-metric-card"><span>Three-year in-year budget</span><strong>£3.042m</strong></div>
+              <div className="ds-metric-card"><span>2026/27</span><strong>£544k</strong></div>
+              <div className="ds-metric-card"><span>Three-year in-year budget</span><strong>£3.196m</strong></div>
               <div className="ds-metric-card"><span>Difference from Core</span><strong>£348k less</strong></div>
             </div>
             <div className="option-card-copy">
               <p>Economy keeps the architecture and protects the specified employability and experiential infrastructure, but accepts a more uneven and breadth-first implementation elsewhere with greater dependence on existing institutional capacity.</p>
               <ul className="option-detail-list">
-                <li><strong>Beyond Course:</strong> Year 1 commissioning reduces to £100k rather than £150k. Indicative Year 1 reach falls to around 1,600–1,900 students, with 16–22k student-hours and around 200–250 sustained places. By Year 3 headline reach can recover towards Core, but depth remains lower.</li>
-                <li><strong>Curriculum, purpose and skills:</strong> King’s still gets the common experiential-learning model, curriculum baseline, sandwich-year route and shared capstone, while purpose and skills work is tested across fewer contexts. More implementation has to travel through existing faculty capacity and strong local adopters.</li>
-                <li><strong>Employability and experiential infrastructure:</strong> the UK opportunity-development team, staged international employer engagement, Global Mobility growth posts and Graduate Transitions capability remain protected at the Core planning level.</li>
-                <li><strong>Participation:</strong> fewer Student Life prototypes and lower direct activation investment mean more reliance on local teams to respond to participation gaps and different patterns of student life.</li>
-                <li><strong>Graduate Futures:</strong> the evidence engine remains, but activity has to concentrate on intelligence and targeted interventions rather than sustaining course improvement, student activation, outcomes optimisation, external engagement and reputation work in parallel.</li>
+                <li><strong>Beyond Course:</strong> Year 1 commissioning reduces to £100k rather than £150k. Indicative Year 1 reach falls to around 1,600–1,900 students.</li>
+                <li><strong>Curriculum, purpose and skills:</strong> King’s still gets the common experiential-learning model and core discovery, but across fewer contexts.</li>
+                <li><strong>Employability and experiential infrastructure:</strong> urgent international continuity, the UK opportunity-development team, Global Mobility growth posts and Graduate Transitions capability remain protected at the Core planning level.</li>
+                <li><strong>Participation:</strong> fewer Student Life prototypes and lower direct activation investment mean more reliance on local teams.</li>
+                <li><strong>Graduate Futures:</strong> the evidence engine remains, but activity concentrates on intelligence and targeted interventions.</li>
               </ul>
             </div>
           </article>
 
           <article className="ds-editorial-card option-card">
-            <div>
-              <p className="ds-sequence-kicker">Enhanced</p>
-              <h3>Higher cost, wider and faster implementation.</h3>
-            </div>
+            <div><p className="ds-sequence-kicker">Enhanced</p><h3>Higher cost, wider and faster implementation.</h3></div>
             <div className="ds-metric-grid option-metrics" aria-label="Enhanced option figures">
-              <div className="ds-metric-card"><span>2026/27</span><strong>£610k</strong></div>
-              <div className="ds-metric-card"><span>Three-year in-year budget</span><strong>£4.203m</strong></div>
+              <div className="ds-metric-card"><span>2026/27</span><strong>£694k</strong></div>
+              <div className="ds-metric-card"><span>Three-year in-year budget</span><strong>£4.357m</strong></div>
               <div className="ds-metric-card"><span>Difference from Core</span><strong>£813k more</strong></div>
             </div>
             <div className="option-card-copy">
               <p>Enhanced buys a materially larger King’s Edge around the protected employability and experiential infrastructure, with more direct opportunity, more implementation support and faster institutional adoption.</p>
               <ul className="option-detail-list">
-                <li><strong>Beyond Course:</strong> commissioning rises to £200k, £350k and £500k across the three years. By Year 3 the portfolio is modelled to reach around 9,000–10,000 students, generate 170–200k student-hours and support around 1,000–1,200 sustained high-intensity places.</li>
-                <li><strong>Curriculum, purpose and skills:</strong> a wider implementation cohort and broader trailblazer footprint allow King’s to support more programmes and disciplines directly, producing more exemplars and a faster route into mainstream practice.</li>
-                <li><strong>Employability and experiential infrastructure:</strong> the current rebaseline holds the specified 2.2.2 workforce model constant. A genuinely enhanced variant would require a separate decision about accelerating posts, increasing market coverage or adding operational capacity rather than simply inflating the current figure.</li>
-                <li><strong>Participation:</strong> stronger Student Life capacity supports more deliberate responses to participation gaps across campuses and student moments.</li>
-                <li><strong>Graduate Futures:</strong> enough sustained capacity exists to run course improvement, student adoption, Graduate Outcomes optimisation, employer and alumni engagement, and external reputation work in parallel at greater scale.</li>
+                <li><strong>Beyond Course:</strong> commissioning rises to £200k, £350k and £500k across the three years.</li>
+                <li><strong>Curriculum, purpose and skills:</strong> a wider implementation cohort and broader trailblazer footprint allow faster adoption.</li>
+                <li><strong>Employability and experiential infrastructure:</strong> the current rebaseline holds the specified 2.2.2 workforce model constant. A genuinely enhanced variant would require a separate decision about accelerating posts, increasing market coverage or adding operational capacity.</li>
+                <li><strong>Participation:</strong> stronger Student Life capacity supports more deliberate responses to participation gaps.</li>
+                <li><strong>Graduate Futures:</strong> enough sustained capacity exists to run course improvement, student adoption, outcomes optimisation and external reputation work in parallel.</li>
               </ul>
             </div>
           </article>
@@ -351,14 +348,12 @@ function InvestmentCase() {
         <div className="ds-stack investment-section-heading">
           <p className="eyebrow">Early investment</p>
           <h2 className="ds-section-heading">Pre-Business Case Investment Need</h2>
-          <p className="ds-subtle"><strong>£100k is the total early investment need.</strong> If funding can be released before the full mobilisation decision, it can be committed immediately to new opportunity, video production, data and prototyping work that would otherwise wait for the main business case.</p>
+          <p className="ds-subtle"><strong>£184.153k is the current early investment need.</strong> It combines the existing £100k acceleration bridge with £84.153k of urgent 2026/27 international employability continuity. All of it is already included within the 2026/27 Core planning profile rather than being additional to it.</p>
         </div>
 
         <div className="ds-table-wrap">
           <table className="ds-table early-table">
-            <thead>
-              <tr><th>Amount</th><th>What we are buying</th><th>What King’s will have from the immediate investment</th><th>Project refs</th></tr>
-            </thead>
+            <thead><tr><th>Amount</th><th>What we are buying</th><th>What King’s will have from the immediate investment</th><th>Project refs</th></tr></thead>
             <tbody>
               {earlyAsk.flatMap((item) => item.outputs.map((output, outputIndex) => <tr key={`${item.amount}-${outputIndex}`} className={outputIndex === 0 ? 'early-group-start' : undefined}>
                 {outputIndex === 0 && <td className="early-amount" rowSpan={item.outputs.length}><strong>{item.amount}</strong></td>}
@@ -369,8 +364,8 @@ function InvestmentCase() {
             </tbody>
           </table>
         </div>
-        <p className="ds-subtle early-note">The £100k is an early release against the relevant 2026/27 planning assumptions, rather than an additional layer of programme cost. The £60k opportunity seed funds activity that can run across the academic year; the wider £150k 2026/27 opportunity envelope remains subject to the main business case. Digital Student Experience Hub development remains a separate Digital investment, with the King’s Canvas and Student Life work here limited to evidence, co-design and proof-of-concept activity.</p>
-        <p className="ds-subtle early-note">This bridge accelerates specific areas where King’s Edge is already strongly aligned with the Future Jobs direction, particularly opportunity growth and the skills-classification experiment. It should not be read as the full institutional response: discipline-specific AI capability sits elsewhere in the Education Delivery Framework, while lifetime careers support and regional SME pathways remain wider institutional questions.</p>
+        <p className="ds-subtle early-note">The early release is a timing proposal against the relevant 2026/27 planning assumptions, not an additional layer of programme cost. The £84.153k international line protects already-established activity; the £100k bridge accelerates opportunity, evidence and prototyping work. Digital Student Experience Hub development remains a separate Digital investment.</p>
+        <p className="ds-subtle early-note">This bridge accelerates areas where King’s Edge is already strategically aligned, particularly opportunity growth, international employer engagement and the skills-classification experiment. It should not be read as the full institutional response to Future Jobs.</p>
       </section>
 
       <section className="ds-cluster investment-source-panel">
