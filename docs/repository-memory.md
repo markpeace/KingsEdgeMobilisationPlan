@@ -185,44 +185,53 @@ The four September package profiles were:
 
 The September baseline is now historical because the generic £400k p.a. partnership-infrastructure assumption has been replaced by the explicit `2.2.2` workforce model and in-year cash profile below.
 
-### October 2026 investment-window and cash-profile baseline
+### October 2026 investment-window, cash-profile and investment-architecture baseline
 
 **Settled 7 October 2026:** the King’s Edge mobilisation investment case has a hard three-year window of **2026/27 to 2028/29**. All mobilisation investment must fit inside that window. Activity from July 2029 onward may remain in the plan only when it is explicitly BAU/recurrent exposure, benefits realisation, ongoing evaluation/service improvement, or a separate institutional investment.
 
 For `2.2.2 Future-Proofed Employability & Experiential Infrastructure`, the full operating model must be live by June 2029. The current workforce phasing is:
 
 - **October 2026:** G6 Employer Relations & Insights Manager (International);
-- **January 2027:** G5 Employer Relations & Insights Adviser (East Asia), with £15k total international non-pay in 2026/27;
-- **September 2027:** UK Experiential Partnerships & Opportunity Development team and Global Mobility G6 + G5; international non-pay moves to £50k;
+- **January 2027:** G5 Employer Relations & Insights Adviser (East Asia) and G6 Global Mobility Opportunity Development Manager, with £15k total international non-pay in 2026/27;
+- **September 2027:** UK Experiential Partnerships & Opportunity Development team and G5 Global Mobility Opportunity Development Officer; international non-pay moves to £50k;
 - **September 2028:** Graduate Transitions G7 + G6;
 - **January 2029:** final two international G5 posts covering South/South East Asia and Europe/North America.
 
-The investment arithmetic uses **in-year planning budgets**, not annualised run-rates. The October 2026 G6 is modelled at nine months, the January 2027 East Asia G5 at six months, later September starts at ten months, and the January 2029 starts at six months. On this basis `2.2.2` is:
+The investment arithmetic uses **in-year planning budgets**, not annualised run-rates. The October 2026 G6 is modelled at nine months, the January 2027 East Asia G5 and Global Mobility G6 at six months, later September starts at ten months, and the January 2029 starts at six months. On this basis `2.2.2` is:
 
-- **2026/27: £84,153**
-- **2027/28: £429,369**
+- **2026/27: £112,842**
+- **2027/28: £438,932**
 - **2028/29: £640,777**
-- **three-year direct profile: £1,154,299**
+- **three-year direct profile: £1,192,551**
 - **fully mobilised annualised exit run-rate by June 2029: £714,058**
 
 The £714,058 figure is not a fourth-year budget and must not be inserted into 2029/30 mobilisation arithmetic.
 
-The current five-area Core in-year budget is therefore:
+**Settled 7 October 2026:** the portfolio investment presentation uses four connected investment areas, led by **King’s Architecture for Employability**. This first area combines the existing Purpose / Skills / Recognition package with `2.2.2` for investment-case narrative and financial presentation only. It does not merge the underlying deliverables or alter the 4 x 4 delivery architecture.
 
-- **2026/27: £644.353k**
-- **2027/28: £1.296869m**
+The four current Core investment areas are:
+
+- **King’s Architecture for Employability:** £165.842k / £558.432k / £720.277k = **£1.444551m**.
+- **Experiential Learning in the Curriculum:** £58.8k / £131.1k / £151.1k = **£341k**.
+- **Beyond-Course Opportunity and Participation:** £278.5k / £351.95k / £401.95k = **£1.0324m**.
+- **Graduate Futures Intelligence and Value:** £169.9k / £264.95k / £329.95k = **£764.8k**.
+
+The current Core in-year budget is therefore:
+
+- **2026/27: £673.042k**
+- **2027/28: £1.306432m**
 - **2028/29: £1.603277m**
-- **three-year Core: £3.544499m**
+- **three-year Core: £3.582751m**
 
 Current option totals are:
 
-- **Economy:** £544.353k / £1.185369m / £1.466777m = **£3.196499m**
-- **Core:** £644.353k / £1.296869m / £1.603277m = **£3.544499m**
-- **Enhanced:** £694.353k / £1.593369m / £2.069777m = **£4.357499m**
+- **Economy:** £573.042k / £1.194932m / £1.466777m = **£3.234751m**
+- **Core:** £673.042k / £1.306432m / £1.603277m = **£3.582751m**
+- **Enhanced:** £723.042k / £1.602932m / £2.069777m = **£4.395751m**
 
-The current early-investment requirement is **£184.153k**, comprising the existing £100k acceleration bridge plus **£84.153k** for the 2026/27 international continuity wave. This is already included within the 2026/27 Core profile and must not be added on top.
+The specified `2.2.2` service model is held constant across Economy, Core and Enhanced pending any deliberate alternative workforce/service design. The Purpose / Skills / Recognition component of King’s Architecture for Employability and the other established portfolio levers continue to flex.
 
-The current five-area display is interim. The next investment-case narrative rewrite should test **King’s Architecture for Employability** as an expanded first investment area combining the developmental/philosophical architecture with the `2.2.2` staffing and partnership infrastructure. This is an investment-grouping change only; do not alter the 4 x 4 delivery-plan IDs to make the investment story fit.
+The current early-investment requirement remains **£184.153k**, comprising the existing £100k acceleration bridge plus **£84.153k** for the 2026/27 international continuity wave. This is already included within the 2026/27 Core profile and must not be added on top. The **£28.689k January 2027 Global Mobility G6** is part of the substantive 2026/27 Core mobilisation profile rather than the immediate pre-January bridge.
 
 `2.2.4 Flexible Adjunct Experiential & Thematic Opportunities` has explicit Core mobilisation budgets of **£150k / £200k / £250k = £600k** across the three investment years. Its **£175k p.a. requirement from July 2029 is BAU**, not a fourth mobilisation year.
 
@@ -245,7 +254,7 @@ The current **Digital Student Experience Hub high-water profile** is:
 
 The Hub retains a **£3m working three-year strategic envelope**, leaving **£604.048k headroom** at the current high-water itemisation. This is a ceiling and planning guardrail, not a spending target.
 
-For dependency and whole-system planning only, King’s Edge Core plus the current Digital Hub high-water case is **£1.237713m / £2.173165m / £2.529573m = £5.940451m across three years**. Do **not** describe this combined figure as the King’s Edge ask.
+For dependency and whole-system planning only, King’s Edge Core plus the current Digital Hub high-water case is **£1.266402m / £2.182728m / £2.529573m = £5.978703m across three years**. Do **not** describe this combined figure as the King’s Edge ask.
 
 The current recurrent exposure views remain planning estimates rather than approved BAU budgets. The Digital Hub’s detailed workforce and service assumptions remain governed by its own source data and investment boundary.
 
@@ -268,3 +277,4 @@ The Core rebaseline does not alter the coherent shared-resource envelopes or the
 - Do not count the Student Opportunities Fund award pot inside King’s Edge unless a separate approved funding route is explicitly brought into scope.
 - Do not roll Digital Student Experience Hub costs into the King’s Edge headline ask.
 - For `2.2.2`, distinguish annualised role cost, first-year in-year cash budget and fully mobilised exit run-rate.
+- Treat **King’s Architecture for Employability** as an investment grouping, not as a change to the underlying delivery-plan IDs, ownership or deliverable boundaries.
