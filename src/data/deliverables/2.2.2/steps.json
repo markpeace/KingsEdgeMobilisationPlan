@@ -2,51 +2,132 @@
   "steps": [
     {
       "id": "2.2.2-step-1",
-      "title": "Review institutional partnership infrastructure and future demand",
+      "title": "Establish the common experiential operating model and partnership baseline",
       "period": {
         "start": "jul-dec-2026:c",
         "end": "jan-jun-2027:ab"
       },
-      "summary": "Undertake a broad institutional review of how King’s currently creates, holds, manages and activates external relationships that can generate student opportunity. Cover faculties, SASD, IES, Advancement and Alumni, and other relevant areas, including employer, industry, public-sector, policy, civic, cultural, community, third-sector and international relationships. Examine the relationship landscape, staffing and capability, systems and data, contracting, payments, partner experience, brokerage routes, duplication and gaps. Explicitly test how easy King’s is to understand and work with from the partner side, including where multiple entry points, handoffs or administrative routes create avoidable friction. Use the emerging ambitions in curriculum-embedded and wider opportunity growth to frame plausible future demand without assuming the eventual scale in advance.",
+      "summary": "Undertake the institutional review already planned for 2.2.2 and use it to establish the common operating model for experiential opportunity. Map how King’s currently creates, holds, manages and activates external relationships across faculties, Careers & Employability, SASD, IES, Advancement and Alumni and other relevant areas. Examine staffing, systems and data, partner ownership, contracting, payments, safeguarding, risk, recruitment, accessibility, student support, promotion, evaluation and partner experience. Define the shared process through which experiential opportunities are sourced, designed, approved, promoted, delivered, supported and evaluated, with common templates, agreements and standards where these reduce duplication. Delivery remains distributed; the operating model should make local activity easier, safer and more consistent rather than centralising it.",
       "dependsOn": [],
       "outputs": [
         {
-          "title": "Institutional partnership landscape and capability review",
-          "summary": "A current-state map of significant relationship-holding activity, staffing, systems, operational routes and partner-facing processes across King’s, identifying strengths, duplication, gaps, friction and underused capacity, including evidence about how easy or difficult external partners currently find it to engage with the institution."
+          "title": "Institutional partnership and capability baseline",
+          "summary": "A current-state map of significant relationship-holding activity, staffing, systems, operational routes and partner-facing processes across King’s, identifying strengths, duplication, gaps, friction and underused capacity."
         },
         {
-          "title": "Future-demand scenarios for partnership-engaged learning",
-          "summary": "An initial set of volume and complexity scenarios showing how partnership-management demand could change as 2.1.4 and 2.2.4 mature, so that future capacity can be sized against programme ambition rather than current activity alone."
+          "title": "Common experiential opportunity operating model",
+          "summary": "A proportionate institutional framework covering source, design, approval, promotion, delivery, support and evaluation, with clear roles, standards, templates, partner routes, data expectations and escalation points."
+        },
+        {
+          "title": "Future-demand scenarios",
+          "summary": "Volume and complexity scenarios showing how partnership and operational demand could change as 2.1.4, 2.2.3 and 2.2.4 mature, so any further capacity requirement can be evidenced rather than assumed."
         }
       ],
       "resources": {
         "existingCapacity": [
           {
-            "role": "Head of Work-Based Experience and existing partnership teams",
-            "contribution": "Provide operational knowledge, workforce context, relationship intelligence and access to current processes across the areas in scope for the review.",
-            "owner": "SASD, faculties and other relevant relationship-holding teams",
+            "role": "Existing Careers & Employability, Work-Based Experience and partnership teams",
+            "contribution": "Provide operational knowledge, relationship intelligence and access to current processes, including domestic and international employer engagement, experiential delivery and existing faculty-facing support.",
+            "owner": "Careers & Employability, SASD, faculties and other relevant relationship-holding teams",
             "confidence": "developing",
-            "riskIfMissing": "The review will not establish a sufficiently complete picture of the current partnership landscape or the capacity that could be repurposed before new investment is designed."
+            "riskIfMissing": "The operating model will not establish a sufficiently complete picture of current capability or the capacity that can be aligned before further investment is considered."
+          },
+          {
+            "role": "Legal, procurement, finance, risk, data and student-support specialists",
+            "contribution": "Help define proportionate shared routes for agreements, payments, risk, safeguarding, data, accessibility and support without duplicating specialist institutional functions.",
+            "owner": "Relevant King’s professional services",
+            "confidence": "developing",
+            "riskIfMissing": "The model may shift administrative burden rather than remove it and will struggle to scale safely."
           }
         ],
         "enablingConditions": [
           {
-            "condition": "Participation from all significant relationship-holding areas across King's",
-            "whatItUnlocks": "A genuinely institution-wide review rather than a partial map of centrally visible activity.",
+            "condition": "Participation from all significant relationship-holding areas across King’s",
+            "whatItUnlocks": "A genuinely institution-wide baseline and operating model rather than a partial map of centrally visible activity.",
             "confidence": "developing",
-            "riskIfMissing": "The recommended model may duplicate existing capability, miss important partner networks or underestimate the complexity of the current operating environment."
+            "riskIfMissing": "The model may duplicate existing capability, miss important partner networks or underestimate operational complexity."
           }
         ]
       }
     },
     {
       "id": "2.2.2-step-2",
+      "title": "Mobilise the first phase of international employer engagement",
+      "period": "jul-dec-2026:c",
+      "summary": "Recruit and bring on stream the first two dedicated international employer-engagement roles: a G6 Employer Relations & Insights Manager (International) and a G5 Employer Relations & Insights Adviser focused on East Asia. Protect the existing East Asia portfolio, preserve hard-won employer relationships and consortium participation, maintain in-country activity and market intelligence, and build the management and operating foundations for later regional expansion. Introduce the £50,000 annual international non-pay envelope in step with the activity plan, with use tied to employer-facing and in-country activity rather than treated as a general travel budget.",
+      "dependsOn": [],
+      "outputs": [
+        {
+          "title": "Protected East Asia employer-engagement capability",
+          "summary": "Dedicated staff own and sustain the existing East Asia employer portfolio, market intelligence, employer activity and international-student employment support."
+        },
+        {
+          "title": "International employer-engagement plan and pipeline",
+          "summary": "A regional employer pipeline, relationship plan, activity calendar and evidence framework ready to support later expansion into South and South East Asia, Europe and North America."
+        }
+      ],
+      "resources": {
+        "newInvestment": [
+          {
+            "item": "G6 Employer Relations & Insights Manager (International)",
+            "category": "international employer engagement staffing",
+            "amount": 57378,
+            "currency": "GBP",
+            "fte": 1,
+            "periodNeeded": "Immediate mobilisation from October 2026; annualised cost shown",
+            "decisionNeededBy": "October 2026",
+            "fundingRoute": "King’s Edge / Education and Student Success mobilisation investment, with wider recruitment and reputation benefits recognised outside the portfolio",
+            "fundingStatus": "new ask; initial fixed-term mobilisation",
+            "confidence": "costed",
+            "rationale": "Provides dedicated leadership, coordination, market insight and relationship ownership for international employer engagement, protecting existing East Asia activity and preparing regional expansion.",
+            "riskIfMissing": "Existing international employer relationships and market presence remain fragile, current activity continues to displace domestic capacity, and King’s risks losing momentum in strategically important markets."
+          },
+          {
+            "item": "G5 Employer Relations & Insights Adviser (East Asia)",
+            "category": "international employer engagement staffing",
+            "amount": 52237,
+            "currency": "GBP",
+            "fte": 1,
+            "periodNeeded": "Immediate mobilisation from October 2026; annualised cost shown",
+            "decisionNeededBy": "October 2026",
+            "fundingRoute": "King’s Edge / Education and Student Success mobilisation investment, with wider recruitment and reputation benefits recognised outside the portfolio",
+            "fundingStatus": "new ask; initial fixed-term mobilisation",
+            "confidence": "costed",
+            "rationale": "Provides dedicated regional capacity to sustain and deepen the proven East Asia portfolio and support students and graduates seeking employment outcomes in that market.",
+            "riskIfMissing": "East Asia activity remains dependent on discretionary capacity and hard-won employer relationships and market credibility may be lost."
+          },
+          {
+            "item": "International employer-engagement non-pay envelope",
+            "category": "international employer engagement activity",
+            "amount": 50000,
+            "currency": "GBP",
+            "periodNeeded": "2026/27 onward, phased with international activity",
+            "decisionNeededBy": "October 2026",
+            "fundingRoute": "King’s Edge / Education and Student Success mobilisation investment, with activity coordinated with Global Student Recruitment and Admissions",
+            "fundingStatus": "new ask",
+            "confidence": "minimum",
+            "rationale": "Funds the employer-facing and in-country activity required to make the international staffing capability productive across priority markets.",
+            "riskIfMissing": "Dedicated staff will have limited ability to convert relationships and market intelligence into visible employer activity, opportunities and recruitment-facing value."
+          }
+        ],
+        "enablingConditions": [
+          {
+            "condition": "Ongoing alignment with Global Student Recruitment and Admissions on priority markets and recruitment-facing employability needs",
+            "whatItUnlocks": "A shared market strategy and explicit tracking of benefits that flow into attraction, conversion and reputation as well as graduate outcomes.",
+            "confidence": "developing",
+            "riskIfMissing": "International employability activity may become disconnected from wider institutional market priorities and shared benefits will be harder to evidence."
+          }
+        ]
+      }
+    },
+    {
+      "id": "2.2.2-step-3",
       "title": "Review student opportunity funding and philanthropic growth routes",
       "period": {
         "start": "jul-dec-2026:c",
         "end": "jan-jun-2027:ab"
       },
-      "summary": "Map and review the financial support currently available for students undertaking employment-enhancing and developmental activity, including centrally and locally held funds and externally supported schemes. Develop options for a coherent Student Opportunities Fund focused on low-friction £150-£250 microbursaries and more substantial awards of around £4,000 for genuine out-of-pocket participation costs. In parallel, work with alumni and philanthropy colleagues to develop propositions that increase opportunity supply as well as access, including service-learning and social-good models in which paid PhD project leads mobilise flexible opportunities for wider student participation. The design work sits within King's Edge, but any new Student Opportunities Fund award pot is outside the King's Edge mobilisation ask and requires a separate funding, consolidation or philanthropic route.",
+      "summary": "Preserve the existing 2.2.2 access-and-opportunity-growth work. Map and review the financial support currently available for students undertaking employment-enhancing and developmental activity, including centrally and locally held funds and externally supported schemes. Develop options for a coherent Student Opportunities Fund focused on low-friction £150-£250 microbursaries and more substantial awards of around £4,000 for genuine out-of-pocket participation costs. In parallel, work with alumni and philanthropy colleagues to develop propositions that increase opportunity supply as well as access, including service-learning and social-good models in which paid PhD project leads mobilise flexible opportunities for wider student participation. The design work sits within King’s Edge, but any new Student Opportunities Fund award pot is outside the King’s Edge mobilisation ask and requires a separate funding, consolidation or philanthropic route.",
       "dependsOn": [],
       "outputs": [
         {
@@ -55,17 +136,17 @@
         },
         {
           "title": "Student Opportunities Fund design options",
-          "summary": "Options for a fund combining low-friction microbursaries of around £150-£250 with larger awards of around £4,000 for genuine participation costs, including proposed eligibility, administration, potential consolidation or external-funding routes and boundaries between financial access support and educational provision. No new award pot is assumed inside the King's Edge mobilisation ask."
+          "summary": "Options for low-friction microbursaries of around £150-£250 and larger awards of around £4,000 for genuine participation costs, including eligibility, administration, potential consolidation or external-funding routes and boundaries between financial access support and educational provision."
         },
         {
           "title": "Alumni and philanthropic opportunity-growth propositions",
-          "summary": "A set of investable propositions through which alumni relationships and philanthropic capital can increase both access to opportunity and the supply of new opportunity, including a developed service-learning and social-good model using paid PhD project-mobilisation roles."
+          "summary": "Investable propositions through which alumni relationships and philanthropic capital can increase both access to opportunity and the supply of new opportunity, including a developed service-learning and social-good model using paid PhD project-mobilisation roles."
         }
       ],
       "resources": {
         "existingCapacity": [
           {
-            "role": "Existing student-funding, alumni, Advancement and philanthropy capacity",
+            "role": "Existing student-funding, Alumni, Advancement and Philanthropy capacity",
             "contribution": "Provide the current funding landscape, donor and alumni context, administrative insight and specialist input needed to develop consolidation and growth options.",
             "owner": "Relevant student-support, Advancement, Alumni and Philanthropy teams",
             "confidence": "developing",
@@ -80,227 +161,210 @@
             "riskIfMissing": "The proposed Student Opportunities Fund may be financially or legally unrealistic."
           }
         ]
-      }
-    },
-    {
-      "id": "2.2.2-step-3",
-      "title": "Agree the target operating and investment model",
-      "period": "jan-jun-2027:c",
-      "summary": "Synthesize the two discovery reviews with the experiential-learning North Star and the emerging growth ambitions from 2.1.4 and 2.2.4. Produce costed operating-model options for partnership-engaged learning, including the mix of repurposed existing capacity and additional faculty-facing and shared operational capability, and recommend the model to mobilise for 2027/28. Confirm the preferred Student Opportunities Fund design and the initial alumni and philanthropic growth propositions, with any new award pot handled through a separate funding route. Test the current core planning assumption of approximately £400,000 recurrent annual partnership-infrastructure investment rather than treating it as a pre-agreed answer.",
-      "dependsOn": [
-        "2.2.2-step-1",
-        "2.2.2-step-2"
-      ],
-      "outputs": [
-        {
-          "title": "Recommended partnership operating model and costed options",
-          "summary": "A recommended institutional model, supported by lean, core and more ambitious options, that sets out faculty-facing partnership capacity, shared operational support, systems and intelligence requirements, use of existing roles and the recurrent investment needed to support expected demand."
-        },
-        {
-          "title": "2027/28 mobilisation package",
-          "summary": "An agreed package covering the selected operating model, workforce and service changes, Student Opportunities Fund design and separate funding route, philanthropic propositions, implementation sequence, governance route and decisions required before mobilisation."
-        }
-      ],
-      "decisions": [
-        {
-          "title": "Select the operating and investment model for 2027/28",
-          "summary": "Agree the level and shape of partnership-infrastructure investment to mobilise, using the discovery evidence and emerging demand rather than the £400,000 core planning assumption alone."
-        },
-        {
-          "title": "Agree the Student Opportunities Fund model",
-          "summary": "Confirm the scope, award structure, consolidation approach, administrative ownership and separate funding route of the Student Opportunities Fund before any launch."
-        }
-      ],
-      "resources": {
-        "existingCapacity": [
-          {
-            "role": "Finance, HR, legal, procurement and operating-model expertise",
-            "contribution": "Test the feasibility, grade mix, organisational implications, contracting model and cost assumptions in the recommended options before an investment decision is taken.",
-            "owner": "Relevant King's professional services",
-            "confidence": "developing",
-            "riskIfMissing": "The preferred option may be strategically attractive but insufficiently tested for implementation or recurrent cost."
-          }
-        ],
-        "enablingConditions": [
-          {
-            "condition": "The experiential-learning North Star and operational principles from 2.1.2 are sufficiently developed to inform the recommended model",
-            "whatItUnlocks": "Alignment of partnership and access infrastructure with the shared educational and assurance expectations for experiential learning.",
-            "confidence": "developing",
-            "riskIfMissing": "The operating model can still be recommended, but some learning-design and assurance requirements may need to be incorporated during mobilisation rather than at selection."
-          },
-          {
-            "condition": "Sufficiently developed demand scenarios from 2.1.4 and 2.2.4",
-            "whatItUnlocks": "Testing the operating model against future opportunity growth rather than sizing it only around the current institutional baseline.",
-            "confidence": "developing",
-            "riskIfMissing": "The first investment decision will have to rely on wider ranges and be recalibrated earlier in delivery."
-          }
-        ]
-      }
-    },
-    {
-      "id": "2.2.2-step-4",
-      "title": "Mobilise the partnership and access infrastructure",
-      "period": {
-        "start": "jan-jun-2027:c",
-        "end": "jul-dec-2027:c"
-      },
-      "summary": "Implement the selected operating model for the 2027/28 academic year. Repurpose existing capacity where appropriate, recruit or assign additional faculty-facing and shared operational capability, establish common relationship and partner-management routes, improve contracting and payment processes, and put the required systems and intelligence in place. Implement the agreed Student Opportunities Fund route only where existing, consolidated, philanthropic or separately approved funding is available, and begin the agreed alumni and philanthropic opportunity-growth activity, including early service-learning or social-good commissioning where ready.",
-      "dependsOn": [
-        "2.2.2-step-3"
-      ],
-      "outputs": [
-        {
-          "title": "Mobilised partnership-engaged learning infrastructure",
-          "summary": "The selected staffing, operating, systems and service arrangements are in place and able to support substantially greater volumes of partnership-engaged learning across faculties and professional services."
-        },
-        {
-          "title": "Student Opportunities Fund route established",
-          "summary": "The agreed fund design has a clear operating and funding route. Where separate funding is secured, microbursary and larger-award mechanisms are open through clear and proportionate application routes; otherwise the design is ready for mobilisation without being charged to the King's Edge ask."
-        },
-        {
-          "title": "First alumni and philanthropic opportunity-growth activity",
-          "summary": "Initial alumni-enabled and philanthropically supported opportunities are commissioned or mobilised, including service-learning or social-good activity where the model is sufficiently developed."
-        }
-      ],
-      "resources": {
-        "existingCapacity": [
-          {
-            "role": "Head of Work-Based Experience and other repurposable partnership capacity",
-            "contribution": "Provide existing leadership and capability within the new operating model so that the investment builds on rather than duplicates current provision.",
-            "owner": "SASD and relevant existing teams",
-            "confidence": "developing",
-            "riskIfMissing": "A larger proportion of the operating model would need to be created through new investment, reducing the reach achievable within the holding envelope."
-          },
-          {
-            "role": "Advancement, Alumni and Philanthropy capacity",
-            "contribution": "Develop donor propositions, mobilise alumni relationships and connect philanthropic activity to both student access and opportunity creation.",
-            "owner": "Advancement, Alumni and Philanthropy",
-            "confidence": "developing",
-            "riskIfMissing": "The model would rely disproportionately on core funding and would underuse alumni and philanthropic capacity as sources of opportunity growth."
-          },
-          {
-            "role": "Legal, procurement, finance and institutional risk services",
-            "contribution": "Provide defined and proportionate service routes for contracting, payments, partner onboarding and risk management rather than duplicating specialist functions within the partnership team.",
-            "owner": "Relevant King's professional services",
-            "confidence": "developing",
-            "riskIfMissing": "Partnership managers may absorb administrative workload and the model will struggle to scale efficiently."
-          }
-        ],
-        "newInvestment": [
-          {
-            "item": "Annual partnership-engaged learning infrastructure envelope",
-            "category": "partnership and operational capacity",
-            "amount": 400000,
-            "currency": "GBP",
-            "periodNeeded": "2027/28 onward; mobilisation-funded in 2027/28 and 2028/29, with intended transfer into business as usual thereafter",
-            "decisionNeededBy": "Summer 2027",
-            "fundingRoute": "King's Edge mobilisation investment for Years 2 and 3, with intended recurrent BAU settlement thereafter",
-            "fundingStatus": "core planning assumption, subject to review and approval",
-            "bauLiability": true,
-            "confidence": "indicative",
-            "rationale": "Provides the recommended core holding envelope for materially stronger faculty-facing partnership management and shared operational capacity while expecting significant use of repurposed existing leadership, roles and specialist institutional services. The final role mix and scale must be recommended by the October 2026 to April 2027 review and tested against demand from 2.1.4 and 2.2.4. Economy and enhanced options should be presented explicitly rather than treating the core figure as a fixed answer.",
-            "riskIfMissing": "King's may grow curriculum-embedded and wider experiential opportunity faster than the institution can source, broker, contract, pay for and sustain external partnerships, making partnership infrastructure a constraint on the wider King's Edge ambition."
-          }
-        ],
-        "enablingConditions": [
-          {
-            "condition": "Authority to repurpose existing roles and align specialist service capacity around the selected operating model",
-            "whatItUnlocks": "A stronger overall model within the £400,000 core envelope by combining new investment with existing institutional capability.",
-            "confidence": "developing",
-            "riskIfMissing": "The same investment will buy less partnership-facing capacity and the recommended model may require a higher recurrent envelope."
-          }
-        ]
       },
       "assumptions": [
         {
-          "title": "The £400,000 core envelope covers infrastructure rather than opportunity funds",
-          "summary": "Student Opportunities Fund awards and philanthropically funded service-learning or social-good project pots are separate financial instruments and are not included within the £400,000 annual partnership-infrastructure assumption or the headline King's Edge mobilisation ask."
+          "title": "Student Opportunities Fund awards are outside the King’s Edge mobilisation ask",
+          "summary": "The design and consolidation work sits within 2.2.2, but any new award pot requires a separate institutional, consolidated-fund, philanthropic or other approved funding route."
         }
       ]
     },
     {
-      "id": "2.2.2-step-5",
-      "title": "Scale and recalibrate against opportunity growth",
+      "id": "2.2.2-step-4",
+      "title": "Design the proactive Graduate Transitions operating model",
       "period": {
-        "start": "jan-jun-2028:a",
-        "end": "jul-dec-2029:b"
+        "start": "jan-jun-2027:ab",
+        "end": "jan-jun-2027:ab"
       },
-      "summary": "Operate and strengthen the model through the principal growth years of King's Edge. Track the volume, diversity and complexity of partnership-engaged learning generated through curriculum-embedded, near-curriculum and wider co-curricular or extracurricular growth, and use that evidence to adjust faculty-facing capacity, shared operations, systems and funding processes. Grow alumni and philanthropic contribution, expand any separately funded Student Opportunities Fund where evidence supports it, and develop repeatable service-learning and social-good commissioning routes. Treat resourcing as demand-led rather than assuming the initial 2027/28 model is the steady state.",
+      "summary": "Design the operating model for a small Graduate Transitions function ahead of a May 2027 launch. Define priority graduate cohorts and targeting logic, agree how Careers Readiness and other relevant evidence will identify graduates who may benefit from intervention, establish handover and referral routes from student-facing careers support, define coaching and case-management approaches, connect employer-referral and international-graduate routes, and agree a proportionate benefits and evaluation framework.",
+      "dependsOn": [
+        "2.2.2-step-1"
+      ],
+      "outputs": [
+        {
+          "title": "Graduate Transitions service design",
+          "summary": "A bounded operating model covering targeting, outreach, coaching, job-search support, employer referral, international-graduate support, escalation and handover from student-facing careers provision."
+        },
+        {
+          "title": "Graduate Transitions evidence and benefits baseline",
+          "summary": "Baseline measures and an evaluation design covering reach, engagement, progression, positive destinations, highly skilled and meaningful outcomes, priority groups and international graduates."
+        }
+      ],
+      "resources": {
+        "existingCapacity": [
+          {
+            "role": "Careers & Employability leadership, Careers Readiness data and existing graduate-access provision",
+            "contribution": "Provide service-design expertise, data access, referral routes and the current two-year graduate-access baseline from which the proactive model will be built.",
+            "owner": "Careers & Employability",
+            "confidence": "developing",
+            "riskIfMissing": "The new team may become an additional reactive service rather than a targeted graduate-success function."
+          }
+        ],
+        "enablingConditions": [
+          {
+            "condition": "Appropriate access to Careers Readiness and graduate-contact data, with agreed privacy, targeting and outreach rules",
+            "whatItUnlocks": "Proactive identification and contact of graduates who may be at greater risk of poorer outcomes.",
+            "confidence": "developing",
+            "riskIfMissing": "The service will be unable to move materially beyond self-referral."
+          }
+        ]
+      }
+    },
+    {
+      "id": "2.2.2-step-5",
+      "title": "Launch the Graduate Transitions / Early Careers team",
+      "period": {
+        "start": "jan-jun-2027:c",
+        "end": "jul-dec-2027:ab"
+      },
+      "summary": "Bring the Graduate Transitions capability on stream from May 2027 with a deliberately bounded initial team of one G7 Head of Graduate Transitions and one G6 Graduate Transitions Coach. Use proactive outreach to priority graduates, personalised career planning and coaching, job-search and recruitment support, employer referrals and targeted interventions for graduates facing additional barriers. Use evidence from delivery to determine the scale and shape of any longer-term model rather than assuming the larger four-post structure originally proposed.",
       "dependsOn": [
         "2.2.2-step-4"
       ],
       "outputs": [
         {
-          "title": "Evidence-led capacity and investment reviews",
-          "summary": "Regular reviews compare actual and forecast demand with partnership and operational capacity, identifying where the model should be expanded, repurposed or simplified and what recurrent investment is justified."
+          "title": "Operational Graduate Transitions service",
+          "summary": "A two-person team is live from May 2027 and actively supports priority graduates through the post-completion transition."
         },
         {
-          "title": "Scaled opportunity-access and philanthropic mechanisms",
-          "summary": "Any separately funded Student Opportunities Fund, alumni contribution and philanthropic opportunity-creation mechanisms have grown in response to demand and evidence, with repeatable models established where they demonstrate value."
+          "title": "Graduate transition insight loop",
+          "summary": "Recurring evidence about where graduates struggle is fed back into purpose, experiential, employer-engagement and student-facing careers provision."
         }
       ],
       "resources": {
-        "existingCapacity": [
+        "newInvestment": [
           {
-            "role": "Partnership and operational capacity mobilised through 2.2.2-step-4",
-            "contribution": "Continue delivery using the funded and repurposed capacity already mobilised, with the mix adjusted as evidence on demand, productivity and partner complexity develops.",
-            "confidence": "indicative",
-            "riskIfMissing": "The institution will be unable to sustain the growing partnership-engaged learning portfolio or learn enough about the right steady-state model."
+            "item": "G7 Head of Graduate Transitions",
+            "category": "graduate transitions staffing",
+            "amount": 68887,
+            "currency": "GBP",
+            "fte": 1,
+            "periodNeeded": "From May 2027; annualised cost shown",
+            "decisionNeededBy": "January 2027",
+            "fundingRoute": "King’s Edge / Education and Student Success mobilisation investment",
+            "fundingStatus": "new ask; initial fixed-term mobilisation",
+            "confidence": "costed",
+            "rationale": "Creates accountable leadership for the proactive graduate-success model, targeting, case-management approach, employer referral and evidence of impact.",
+            "riskIfMissing": "Graduate support remains largely reactive and King’s lacks dedicated ownership for targeted intervention through the Graduate Outcomes period."
+          },
+          {
+            "item": "G6 Graduate Transitions Coach",
+            "category": "graduate transitions staffing",
+            "amount": 57378,
+            "currency": "GBP",
+            "fte": 1,
+            "periodNeeded": "From May 2027; annualised cost shown",
+            "decisionNeededBy": "January 2027",
+            "fundingRoute": "King’s Edge / Education and Student Success mobilisation investment",
+            "fundingStatus": "new ask; initial fixed-term mobilisation",
+            "confidence": "costed",
+            "rationale": "Provides direct coaching, job-search, recruitment and employer-referral capacity for graduates identified through the proactive model.",
+            "riskIfMissing": "The service will have leadership but insufficient direct delivery capacity to support priority graduates at useful scale."
           }
-        ],
-        "enablingConditions": [
+        ]
+      }
+    },
+    {
+      "id": "2.2.2-step-6",
+      "title": "Complete the international employer-engagement team",
+      "period": "jul-dec-2027:c",
+      "summary": "From September 2027, add two further G5 Employer Relations & Insights Advisers to extend the international employer-engagement model into South and South East Asia and Europe and North America. Use the Phase 1 pipeline, market insight and operating model to sequence activity, protect domestic employer-engagement capacity and connect the international portfolio explicitly to both graduate-success and institutional recruitment priorities.",
+      "dependsOn": [
+        "2.2.2-step-2"
+      ],
+      "outputs": [
+        {
+          "title": "Full international employer-engagement capability",
+          "summary": "The international team reaches its planned structure of one G6 and three G5 roles, with defined regional portfolios and a common approach to employer relations, market insight and student/graduate opportunity."
+        },
+        {
+          "title": "Cross-institutional international employability benefits framework",
+          "summary": "Graduate-outcome, employer-engagement, recruitment, conversion and reputation benefits are tracked explicitly, including benefits realised outside Education and Student Success."
+        }
+      ],
+      "resources": {
+        "newInvestment": [
           {
-            "condition": "Regular access to opportunity-volume and pipeline evidence across 2.1.4, 2.2.3 and 2.2.4",
-            "whatItUnlocks": "Recalibration of partnership and administrative capacity against actual demand rather than relying on static workforce assumptions.",
-            "confidence": "developing",
-            "riskIfMissing": "Capacity may remain under- or over-sized while demand changes elsewhere in King's Edge."
+            "item": "G5 Employer Relations & Insights Adviser (South & South East Asia)",
+            "category": "international employer engagement staffing",
+            "amount": 52237,
+            "currency": "GBP",
+            "fte": 1,
+            "periodNeeded": "From September 2027; annualised cost shown",
+            "decisionNeededBy": "Spring 2027",
+            "fundingRoute": "King’s Edge / Education and Student Success mobilisation investment, with wider recruitment and reputation benefits recognised outside the portfolio",
+            "fundingStatus": "new ask; second-phase fixed-term mobilisation",
+            "confidence": "costed",
+            "rationale": "Extends dedicated employer-engagement and market-intelligence capacity into a priority set of international markets, including India and wider South and South East Asia.",
+            "riskIfMissing": "The international proposition remains concentrated in East Asia and King’s underuses employability as part of its recruitment and graduate-success strategy in other priority markets."
+          },
+          {
+            "item": "G5 Employer Relations & Insights Adviser (Europe & North America)",
+            "category": "international employer engagement staffing",
+            "amount": 52237,
+            "currency": "GBP",
+            "fte": 1,
+            "periodNeeded": "From September 2027; annualised cost shown",
+            "decisionNeededBy": "Spring 2027",
+            "fundingRoute": "King’s Edge / Education and Student Success mobilisation investment, with wider recruitment and reputation benefits recognised outside the portfolio",
+            "fundingStatus": "new ask; second-phase fixed-term mobilisation",
+            "confidence": "costed",
+            "rationale": "Extends employer relationship, opportunity development and market intelligence across Europe and North America.",
+            "riskIfMissing": "King’s lacks dedicated capacity to develop and sustain employer relationships in these markets and cannot realise the full strategic benefit of the international employability model."
           }
         ]
       },
       "assumptions": [
         {
-          "title": "Opportunity growth will create additional partnership demand",
-          "summary": "The scale and pattern of demand will be materially influenced by 2.1.4 and 2.2.4 and should therefore be reviewed as those deliverables mature and move into delivery."
+          "title": "Steady-state annualised new-resource ask is £390,354",
+          "summary": "When all six new posts are on stream, annualised staffing is £340,354. Together with the £50,000 international non-pay envelope, the specified new-resource package totals £390,354. This supersedes the previous generic £400,000 partnership-infrastructure holding assumption. It does not include any Student Opportunities Fund award pot or any additional experiential-infrastructure staffing that may later be evidenced."
         }
       ]
     },
     {
-      "id": "2.2.2-step-6",
-      "title": "Establish the enduring business-as-usual model",
+      "id": "2.2.2-step-7",
+      "title": "Mature, evaluate and recalibrate the employability and experiential infrastructure",
       "period": {
-        "start": "jul-dec-2029:c",
-        "end": "jul-dec-2030:b"
+        "start": "jul-dec-2027:c",
+        "end": "jul-dec-2029:b"
       },
-      "summary": "Confirm and transfer the enduring institutional model for student-opportunity partnerships and access. Set the long-term organisational home, faculty and central capacity, service expectations, systems ownership, Student Opportunities Fund governance and alumni or philanthropy interfaces using evidence from the mobilisation period. Confirm the recurrent business-as-usual requirement at the level justified by actual demand and the opportunity-growth model King's chooses to sustain. Any Student Opportunities Fund award pot remains a separate institutional or external funding decision.",
+      "summary": "Operate the combined infrastructure through the principal growth years of King’s Edge. Track the volume, diversity and complexity of partnership-engaged learning; partner experience; international employer relationships and opportunity; Graduate Transitions reach and progression; financial-access demand; and benefits that flow into recruitment and reputation. Use evidence to adjust common processes, repurpose existing capacity and determine whether any further experiential-infrastructure staffing is justified. Grow alumni and philanthropic contribution, expand any separately funded Student Opportunities Fund where evidence supports it, and maintain clear boundaries between the specified £390,354 new-resource package and any future investment decision.",
       "dependsOn": [
-        "2.2.2-step-5"
+        "2.2.2-step-1",
+        "2.2.2-step-3",
+        "2.2.2-step-5",
+        "2.2.2-step-6"
       ],
       "outputs": [
         {
-          "title": "Enduring partnership and access operating model",
-          "summary": "A business-as-usual model with clear organisational ownership, recurrent capacity, service routes, systems and funding responsibilities, sized against sustained institutional demand for partnership-engaged learning."
+          "title": "Integrated employability and experiential infrastructure review",
+          "summary": "Regular evidence reviews compare actual demand, partner and graduate outcomes, operational friction and cross-institutional benefits against the capacity in place."
         },
         {
-          "title": "Business-as-usual funding and ownership settlement",
-          "summary": "The recurrent institutional commitment, including any continuing partnership-infrastructure investment and the governance of separately funded student-opportunity and philanthropic funds, is agreed and transferred from mobilisation into normal institutional planning."
+          "title": "Evidence-led recurrent operating model",
+          "summary": "King’s confirms what should transfer into business as usual, what can be repurposed, and whether any additional experiential-infrastructure investment is justified by demonstrated demand and benefit."
+        },
+        {
+          "title": "Scaled access and philanthropic mechanisms",
+          "summary": "Any separately funded Student Opportunities Fund, alumni contribution and philanthropic opportunity-creation mechanisms grow in response to evidence, with repeatable models retained where they demonstrate value."
         }
       ],
       "resources": {
         "existingCapacity": [
           {
-            "role": "Mature partnership and access infrastructure",
-            "contribution": "Transfer the capacity, operating routes and institutional relationships proven during mobilisation into the agreed long-term organisational home.",
-            "confidence": "indicative",
-            "riskIfMissing": "The capability built through mobilisation may fragment or contract when time-limited programme funding ends."
+            "role": "Mobilised international employer-engagement and Graduate Transitions teams, plus existing partnership and specialist-service capacity",
+            "contribution": "Operate the model, generate performance and demand evidence, and identify where process change or targeted additional capacity would produce the greatest value.",
+            "owner": "Careers & Employability and relevant institutional partners",
+            "confidence": "developing",
+            "riskIfMissing": "The initial investment may become a fixed organisational structure without sufficient evidence about whether it is producing the intended outcomes or where further infrastructure is genuinely needed."
           }
         ],
         "enablingConditions": [
           {
-            "condition": "Business-as-usual funding and organisational ownership agreed at a demand-calibrated level",
-            "whatItUnlocks": "Sustained partnership-engaged learning infrastructure after King's Edge mobilisation funding ends.",
-            "decisionNeededBy": "Before the end of 2028/29 mobilisation funding",
-            "confidence": "indicative",
-            "riskIfMissing": "The £400,000 core recurrent assumption, or its evidence-led replacement, will not have an authorised institutional funding route beyond mobilisation."
+            "condition": "Benefits data can distinguish Education and Student Success outcomes from wider recruitment, conversion and reputation effects",
+            "whatItUnlocks": "A more credible institutional value case and clearer shared ownership of benefits that sit outside the funding portfolio.",
+            "confidence": "developing",
+            "riskIfMissing": "The full institutional return may be under-recognised and the investment may be judged only against a subset of the benefits it creates."
           }
         ]
       }
