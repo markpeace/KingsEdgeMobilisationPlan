@@ -20,7 +20,7 @@
         },
         {
           "title": "Future-demand scenarios",
-          "summary": "Volume and complexity scenarios showing how partnership and operational demand could change as 2.1.4, 2.2.3 and 2.2.4 mature, so any further capacity requirement can be evidenced rather than assumed."
+          "summary": "Volume and complexity scenarios showing how partnership and operational demand could change as 2.1.4, 2.2.3 and 2.2.4 mature, so the £300,000 domestic experiential-infrastructure envelope can be translated into an appropriate workforce and operating model."
         }
       ],
       "resources": {
@@ -30,7 +30,7 @@
             "contribution": "Provide operational knowledge, relationship intelligence and access to current processes, including domestic and international employer engagement, experiential delivery and existing faculty-facing support.",
             "owner": "Careers & Employability, SASD, faculties and other relevant relationship-holding teams",
             "confidence": "developing",
-            "riskIfMissing": "The operating model will not establish a sufficiently complete picture of current capability or the capacity that can be aligned before further investment is considered."
+            "riskIfMissing": "The operating model will not establish a sufficiently complete picture of current capability or the capacity that can be aligned before further investment is mobilised."
           },
           {
             "role": "Legal, procurement, finance, risk, data and student-support specialists",
@@ -316,19 +316,19 @@
       },
       "assumptions": [
         {
-          "title": "Steady-state annualised new-resource ask is £390,354",
-          "summary": "When all six new posts are on stream, annualised staffing is £340,354. Together with the £50,000 international non-pay envelope, the specified new-resource package totals £390,354. This supersedes the previous generic £400,000 partnership-infrastructure holding assumption. It does not include any Student Opportunities Fund award pot or any additional experiential-infrastructure staffing that may later be evidenced."
+          "title": "The specified careers and employability package is £390,354 annualised",
+          "summary": "When all six new posts are on stream, annualised staffing is £340,354. Together with the £50,000 international non-pay envelope, the specified international employer-engagement and Graduate Transitions package totals £390,354. This sits alongside, rather than replacing, the £300,000 p.a. domestic experiential opportunity translation and partnership-infrastructure envelope."
         }
       ]
     },
     {
       "id": "2.2.2-step-7",
-      "title": "Mature, evaluate and recalibrate the employability and experiential infrastructure",
+      "title": "Mobilise and mature domestic experiential opportunity translation infrastructure",
       "period": {
         "start": "jul-dec-2027:c",
         "end": "jul-dec-2029:b"
       },
-      "summary": "Operate the combined infrastructure through the principal growth years of King’s Edge. Track the volume, diversity and complexity of partnership-engaged learning; partner experience; international employer relationships and opportunity; Graduate Transitions reach and progression; financial-access demand; and benefits that flow into recruitment and reputation. Use evidence to adjust common processes, repurpose existing capacity and determine whether any further experiential-infrastructure staffing is justified. Grow alumni and philanthropic contribution, expand any separately funded Student Opportunities Fund where evidence supports it, and maintain clear boundaries between the specified £390,354 new-resource package and any future investment decision.",
+      "summary": "From 2027/28, mobilise a reduced £300,000 p.a. Core envelope for general domestic experiential opportunity translation and partnership infrastructure. Use the Year 1 operating-model and demand work to determine the most effective mix of faculty-facing brokerage and shared operational capacity. The purpose is to turn UK employer, alumni, civic, cultural, community and other external relationships into student-ready experiential opportunities by supporting scoping, brokerage, learning-design translation, contracting, partner onboarding, payments, administration and handover into 2.1.4, 2.2.3 and 2.2.4. Alongside mobilisation, operate and evaluate the combined infrastructure through the principal growth years of King’s Edge, tracking partner experience, opportunity throughput, international employer relationships, Graduate Transitions progression, financial-access demand and wider recruitment and reputation benefits. Grow alumni and philanthropic contribution and expand any separately funded Student Opportunities Fund where evidence supports it.",
       "dependsOn": [
         "2.2.2-step-1",
         "2.2.2-step-3",
@@ -337,12 +337,16 @@
       ],
       "outputs": [
         {
+          "title": "Domestic experiential opportunity translation capacity mobilised",
+          "summary": "A demand-informed mix of faculty-facing and shared operational capability is in place to convert domestic external relationships and propositions into well-formed student opportunities."
+        },
+        {
           "title": "Integrated employability and experiential infrastructure review",
-          "summary": "Regular evidence reviews compare actual demand, partner and graduate outcomes, operational friction and cross-institutional benefits against the capacity in place."
+          "summary": "Regular evidence reviews compare opportunity throughput, partner and graduate outcomes, operational friction and cross-institutional benefits against the capacity in place."
         },
         {
           "title": "Evidence-led recurrent operating model",
-          "summary": "King’s confirms what should transfer into business as usual, what can be repurposed, and whether any additional experiential-infrastructure investment is justified by demonstrated demand and benefit."
+          "summary": "King’s confirms the enduring workforce and service model, including what should transfer into business as usual, what can be repurposed and whether the £300,000 domestic envelope remains the right level as demand matures."
         },
         {
           "title": "Scaled access and philanthropic mechanisms",
@@ -352,14 +356,36 @@
       "resources": {
         "existingCapacity": [
           {
-            "role": "Mobilised international employer-engagement and Graduate Transitions teams, plus existing partnership and specialist-service capacity",
-            "contribution": "Operate the model, generate performance and demand evidence, and identify where process change or targeted additional capacity would produce the greatest value.",
-            "owner": "Careers & Employability and relevant institutional partners",
+            "role": "Existing partnership, Work-Based Experience and specialist-service capacity",
+            "contribution": "Operate alongside the new domestic translation envelope, ensuring the investment builds on and aligns existing capability rather than duplicating it.",
+            "owner": "Careers & Employability, SASD, faculties and relevant institutional partners",
             "confidence": "developing",
-            "riskIfMissing": "The initial investment may become a fixed organisational structure without sufficient evidence about whether it is producing the intended outcomes or where further infrastructure is genuinely needed."
+            "riskIfMissing": "The £300,000 envelope will buy less incremental capability if it has to recreate functions and expertise that already exist elsewhere in King’s."
+          }
+        ],
+        "newInvestment": [
+          {
+            "item": "Domestic experiential opportunity translation and partnership-infrastructure envelope",
+            "category": "domestic experiential partnership and operational capacity",
+            "amount": 300000,
+            "currency": "GBP",
+            "periodNeeded": "2027/28 onward; mobilisation-funded in 2027/28 and 2028/29, with intended transfer into business as usual thereafter",
+            "decisionNeededBy": "Summer 2027",
+            "fundingRoute": "King’s Edge mobilisation investment for Years 2 and 3, with intended recurrent BAU settlement thereafter",
+            "fundingStatus": "Core planning assumption, subject to review and approval",
+            "bauLiability": true,
+            "confidence": "indicative",
+            "rationale": "Provides general domestic faculty-facing brokerage and shared operational capacity to translate UK employer and other external relationships into student-ready experiential opportunities. The exact grade and role mix should be recommended from the Year 1 capability review and tested against demand from 2.1.4, 2.2.3 and 2.2.4.",
+            "riskIfMissing": "King’s may grow curricular, near-curriculum and flexible experiential ambition without sufficient domestic capacity to source, scope, broker, contract, administer and sustain the external opportunities required to deliver it."
           }
         ],
         "enablingConditions": [
+          {
+            "condition": "Authority to align or repurpose existing partnership and specialist-service capacity around the common operating model",
+            "whatItUnlocks": "A stronger domestic opportunity-translation model within the £300,000 envelope by combining new investment with existing institutional capability.",
+            "confidence": "developing",
+            "riskIfMissing": "The same investment will buy less partnership-facing and opportunity-translation capacity."
+          },
           {
             "condition": "Benefits data can distinguish Education and Student Success outcomes from wider recruitment, conversion and reputation effects",
             "whatItUnlocks": "A more credible institutional value case and clearer shared ownership of benefits that sit outside the funding portfolio.",
@@ -367,7 +393,13 @@
             "riskIfMissing": "The full institutional return may be under-recognised and the investment may be judged only against a subset of the benefits it creates."
           }
         ]
-      }
+      },
+      "assumptions": [
+        {
+          "title": "Fully mobilised annualised 2.2.2 Core ask is £690,354",
+          "summary": "The £300,000 p.a. domestic experiential opportunity translation and partnership-infrastructure envelope sits alongside the £390,354 annualised international employer-engagement and Graduate Transitions package, giving a fully mobilised annualised Core ask of £690,354. Any Student Opportunities Fund award pot remains separate and is not included."
+        }
+      ]
     }
   ]
 }
