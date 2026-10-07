@@ -115,8 +115,8 @@ const corePackages = [
       { label: 'Ready for 2027/28', text: 'Role profiles, operating requirements and mobilisation sequence ready for the first cost year, subject to investment and HR/Finance validation.' }
     ],
     yearOneCost: 'Existing capacity',
-    threeYearCost: '£1.041m',
-    profileNote: 'Current investment-window profile: £0 new direct staffing in 2026/27, £431.082k annualised run-rate in 2027/28 and £609.584k in 2028/29. A final two-post international wave in 2029/30 takes the fully mobilised area to £714.058k p.a. annualised.',
+    threeYearCost: '£999.640k',
+    profileNote: 'In-year planning budget: £0 new direct investment in 2026/27, £367.569k in 2027/28 and £632.071k in 2028/29. September starts are modelled at ten months and January 2029 starts at six months. The fully mobilised annualised exit run-rate is £714.058k by June 2029.',
     ongoing: '£714k p.a. fully mobilised; BAU TBC'
   },
   {
@@ -223,7 +223,7 @@ function InvestmentCase() {
                 <th>2026/27</th>
                 <th>2027/28</th>
                 <th>2028/29</th>
-                <th>Current three-year profile</th>
+                <th>Three-year in-year budget</th>
                 <th>Indicative ongoing annual cost</th>
               </tr>
             </thead>
@@ -231,33 +231,33 @@ function InvestmentCase() {
               <tr>
                 <th scope="row">Economy</th>
                 <td>£460k</td>
-                <td>£1.187m</td>
-                <td>£1.436m</td>
-                <td><strong>£3.083m</strong></td>
+                <td>£1.124m</td>
+                <td>£1.458m</td>
+                <td><strong>£3.042m</strong></td>
                 <td>c.£1.087m p.a. + TBC at full 2.2.2 run-rate</td>
               </tr>
               <tr className="recommended-option-row">
                 <th scope="row"><span className="ds-section-heading recommended-option-name">Core</span><span className="ds-eyebrow">Recommended</span></th>
                 <td><strong>£560k</strong></td>
-                <td><strong>£1.299m</strong></td>
-                <td><strong>£1.572m</strong></td>
-                <td><strong>£3.431m</strong></td>
+                <td><strong>£1.235m</strong></td>
+                <td><strong>£1.595m</strong></td>
+                <td><strong>£3.390m</strong></td>
                 <td><strong>c.£1.149m p.a. + TBC at full 2.2.2 run-rate</strong></td>
               </tr>
               <tr>
                 <th scope="row">Enhanced</th>
                 <td>£610k</td>
-                <td>£1.595m</td>
-                <td>£2.039m</td>
-                <td><strong>£4.244m</strong></td>
+                <td>£1.532m</td>
+                <td>£2.061m</td>
+                <td><strong>£4.203m</strong></td>
                 <td>at least c.£1.190m p.a. + TBC at full 2.2.2 run-rate</td>
               </tr>
             </tbody>
           </table>
         </div>
         <div className="ds-stack investment-ask-context">
-          <p><strong>Core is the recommended planning case.</strong> Economy and Enhanced show lower- and higher-investment variants around it. The new Future-Proofed Employability & Experiential Infrastructure area is currently protected across all three options rather than arbitrarily flexed before an explicit alternative workforce model has been designed. <a href="#options">See the alternative options below</a> for the practical effect of flexing the remaining levers.</p>
-          <p className="ds-subtle investment-boundary">The headline table retains the current 2026/27 to 2028/29 investment window. The final two international employer-engagement posts are intentionally phased into 2029/30, when the 2.2.2 area reaches a £714.058k annualised run-rate. Exact payroll cashflows and recurrent settlement require Finance/HR validation. The Digital Student Experience Hub / Digital Front Door remains a separate investment ask.</p>
+          <p><strong>Core is the recommended planning case.</strong> Economy and Enhanced show lower- and higher-investment variants around it. The Future-Proofed Employability & Experiential Infrastructure area is currently protected across all three options rather than arbitrarily flexed before an explicit alternative workforce model has been designed. <a href="#options">See the alternative options below</a> for the practical effect of flexing the remaining levers.</p>
+          <p className="ds-subtle investment-boundary">The headline table now uses in-year planning budgets across the fixed 2026/27 to 2028/29 investment window. For 2.2.2, September starts are modelled at ten months and January 2029 starts at six months; the full operating model is live by June 2029 with a £714.058k annualised exit run-rate. Exact payroll and on-costs remain subject to Finance/HR validation. The Digital Student Experience Hub / Digital Front Door remains a separate investment ask.</p>
         </div>
       </section>
 
@@ -308,7 +308,7 @@ function InvestmentCase() {
             </div>
             <div className="ds-metric-grid option-metrics" aria-label="Economy option figures">
               <div className="ds-metric-card"><span>2026/27</span><strong>£460k</strong></div>
-              <div className="ds-metric-card"><span>Current three-year profile</span><strong>£3.083m</strong></div>
+              <div className="ds-metric-card"><span>Three-year in-year budget</span><strong>£3.042m</strong></div>
               <div className="ds-metric-card"><span>Difference from Core</span><strong>£348k less</strong></div>
             </div>
             <div className="option-card-copy">
@@ -316,7 +316,7 @@ function InvestmentCase() {
               <ul className="option-detail-list">
                 <li><strong>Beyond Course:</strong> Year 1 commissioning reduces to £100k rather than £150k. Indicative Year 1 reach falls to around 1,600–1,900 students, with 16–22k student-hours and around 200–250 sustained places. By Year 3 headline reach can recover towards Core, but depth remains lower.</li>
                 <li><strong>Curriculum, purpose and skills:</strong> King’s still gets the common experiential-learning model, curriculum baseline, sandwich-year route and shared capstone, while purpose and skills work is tested across fewer contexts. More implementation has to travel through existing faculty capacity and strong local adopters.</li>
-                <li><strong>Employability and experiential infrastructure:</strong> the UK opportunity-development team, staged international employer engagement, Global Mobility growth posts and Graduate Transitions capability remain protected at the Core planning level. The economy case therefore does not create savings by weakening the institutional machinery needed to generate and translate opportunity.</li>
+                <li><strong>Employability and experiential infrastructure:</strong> the UK opportunity-development team, staged international employer engagement, Global Mobility growth posts and Graduate Transitions capability remain protected at the Core planning level.</li>
                 <li><strong>Participation:</strong> fewer Student Life prototypes and lower direct activation investment mean more reliance on local teams to respond to participation gaps and different patterns of student life.</li>
                 <li><strong>Graduate Futures:</strong> the evidence engine remains, but activity has to concentrate on intelligence and targeted interventions rather than sustaining course improvement, student activation, outcomes optimisation, external engagement and reputation work in parallel.</li>
               </ul>
@@ -330,7 +330,7 @@ function InvestmentCase() {
             </div>
             <div className="ds-metric-grid option-metrics" aria-label="Enhanced option figures">
               <div className="ds-metric-card"><span>2026/27</span><strong>£610k</strong></div>
-              <div className="ds-metric-card"><span>Current three-year profile</span><strong>£4.244m</strong></div>
+              <div className="ds-metric-card"><span>Three-year in-year budget</span><strong>£4.203m</strong></div>
               <div className="ds-metric-card"><span>Difference from Core</span><strong>£813k more</strong></div>
             </div>
             <div className="option-card-copy">
