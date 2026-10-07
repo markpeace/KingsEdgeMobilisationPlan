@@ -1,7 +1,8 @@
 {
   "id": "2.2.2",
-  "title": "Student Opportunity Partnerships and Access Infrastructure",
+  "title": "Future-Proofed Employability & Experiential Infrastructure",
   "lead": "Andrew Wright",
+  "coLead": "Eleanor Hannan",
   "planningStatus": "proposition-review",
   "decisionLog": [
     {
@@ -15,6 +16,48 @@
       "type": "decision",
       "forum": "King's Edge core investment rebaseline",
       "outcome": "Rebased the recommended Core planning assumption for partnership infrastructure from £600,000 to £400,000 p.a. from 2027/28, while preserving Year 1 discovery and the requirement to produce lean, Core and more ambitious operating-model options from evidence. Student Opportunities Fund design remains within 2.2.2, but any new award pot is explicitly outside the King's Edge mobilisation ask and requires a separate institutional, consolidated-fund, philanthropic or other funding route."
+    },
+    {
+      "date": "2026-10-07",
+      "type": "decision",
+      "forum": "King's Edge Delivery Plan working update",
+      "outcome": "Broaden 2.2.2 into Future-Proofed Employability & Experiential Infrastructure. Preserve the existing experiential partnership, access-funding, alumni and philanthropy work; add dedicated international employer-engagement, proactive graduate-transition and incremental global-mobility opportunity-development capability; and model the UK Experiential Partnerships & Opportunity Development investment from 2027/28 as four specified posts: 1 x G6 Experiential Partnerships & Opportunity Development Manager, 2 x G5 Experiential Opportunity Development Advisers and 1 x G5 Experiential Partnerships Operations & Intelligence Adviser. On the current fully loaded role-cost basis this remains £214,089 annualised, matching the fully developed international employer-engagement team. Andrew Wright leads the deliverable with Eleanor Hannan as co-lead. Graduate Transitions is deferred to September 2028, bringing the G7 Head and G6 Coach into the final investment year. Global Mobility opportunity-development capacity is modelled as 1 x G6 plus 1 x G5. All grade-based staffing figures are treated as fully loaded planning costs including employer National Insurance and pension/superannuation, subject to Finance/HR validation before approval."
+    },
+    {
+      "date": "2026-10-07",
+      "type": "decision",
+      "forum": "King's Edge investment-window alignment",
+      "outcome": "Apply a hard mobilisation boundary of 2026/27 to 2028/29. Bring the final two international Employer Relations & Insights G5 posts forward into the final investment year, with a January 2029 planning start. The full 2.2.2 operating model must therefore be live by June 2029, with £714,058 as the fully mobilised annualised exit run-rate. Activity after June 2029 is benefits realisation, evaluation and business-as-usual settlement rather than new mobilisation investment."
+    },
+    {
+      "date": "2026-10-07",
+      "type": "decision",
+      "forum": "King's Edge investment-case cash profiling",
+      "outcome": "Use explicit in-year planning budgets rather than annualised run-rates in the three-year investment arithmetic. September starts are funded for ten months of the relevant academic year and January starts for six months. Exact payroll and on-costs remain subject to Finance/HR validation."
+    },
+    {
+      "date": "2026-10-07",
+      "type": "decision",
+      "forum": "King's Edge international employability continuity update",
+      "outcome": "Bring the first international employer-engagement investment into 2026/27 to protect existing activity rather than waiting until 2027/28. Model the G6 Employer Relations & Insights Manager (International) from October 2026 at £43,034 in-year, bring the G5 East Asia Adviser in for half of 2026/27 from January 2027 at £26,119, and provide £15,000 of international employer-engagement non-pay in 2026/27 before the full £50,000 annual envelope applies in 2027/28 and 2028/29. The final two international G5 advisers remain planned from January 2029. This supersedes the earlier £0 direct 2.2.2 assumption for 2026/27."
+    },
+    {
+      "date": "2026-10-07",
+      "type": "decision",
+      "forum": "King's Edge Global Mobility phasing update",
+      "outcome": "Bring the G6 Global Mobility Opportunity Development Manager forward from September 2027 to January 2027 so that purposeful outward-mobility opportunity development begins during 2026/27. Retain the G5 Global Mobility Opportunity Development Officer from September 2027. The G6 contributes £28,689 to the 2026/27 in-year budget and is budgeted at the full £57,378 annual planning cost from 2027/28 onward. This changes the direct 2.2.2 in-year profile to £112,842 in 2026/27, £438,932 in 2027/28 and £640,777 in 2028/29, or £1,192,551 across mobilisation, without changing the £714,058 fully mobilised annualised exit run-rate."
+    },
+    {
+      "date": "2026-10-07",
+      "type": "decision",
+      "forum": "King's Edge investment-case architecture rewrite",
+      "outcome": "For portfolio investment presentation, group 2.2.2 with 2.2.1 Purpose, 2.1.3 Skills Architecture and 2.4.3 Recognition under the investment area King's Architecture for Employability. This framing connects the developmental philosophy of employability to the people, partnerships, global opportunity and transition infrastructure required to make it work at scale. It is an investment-grouping decision only: 2.2.2 remains a distinct deliverable with its own ownership, scope, dependencies and delivery plan, and the canonical 4 x 4 King’s Edge architecture is unchanged."
+    },
+    {
+      "date": "2026-10-07",
+      "type": "decision",
+      "forum": "King's Edge investment option design",
+      "outcome": "Retain the current Core workforce as the canonical source-plan baseline, but design Economy and Enhanced as coherent decision-support service variants rather than applying arbitrary percentage changes. Economy protects the 2026/27 international continuity wave and January 2027 Global Mobility G6, then uses a three-post UK team, International G6 plus East Asia G5 only, one Global Mobility G6, £35k p.a. international non-pay and one G6 Graduate Transitions Coach from September 2028. Enhanced starts both Global Mobility posts from January 2027, uses a five-post UK team from September 2027, brings the final two international regional G5s and the full G7 plus G6 Graduate Transitions team forward to September 2027, and uses £75k p.a. international non-pay from 2027/28. These are investment-case variants only until a portfolio decision changes the canonical Core plan."
     }
   ],
   "ownership": {
