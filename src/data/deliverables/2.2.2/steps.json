@@ -2,12 +2,12 @@
   "steps": [
     {
       "id": "2.2.2-step-1",
-      "title": "Establish the common experiential operating model and protect international employability continuity",
+      "title": "Establish the common experiential operating model and protect early international and global opportunity capability",
       "period": {
         "start": "jul-dec-2026:c",
         "end": "jan-jun-2027:ab"
       },
-      "summary": "Undertake the institutional review already planned for 2.2.2 and use it to establish the common operating model for experiential opportunity. In parallel, protect international employer-engagement activity that is already live but unsupported by dedicated resource: appoint one G6 Employer Relations & Insights Manager (International) from October 2026, add one G5 Employer Relations & Insights Adviser focused on East Asia from January 2027 for the second half of the academic year, and provide £15,000 of international employer-facing and in-country activity funding in 2026/27. Map how King’s currently creates, holds, manages and activates external relationships across faculties, Careers & Employability, SASD, IES, Advancement and Alumni and other relevant areas. Define the shared process through which experiential opportunities are sourced, designed, approved, promoted, delivered, supported and evaluated, with common templates, agreements and standards where these reduce duplication. Delivery remains distributed; the operating model should make local activity easier, safer and more consistent rather than centralising it.",
+      "summary": "Undertake the institutional review already planned for 2.2.2 and use it to establish the common operating model for experiential opportunity. In parallel, protect international employer-engagement activity that is already live but unsupported by dedicated resource: appoint one G6 Employer Relations & Insights Manager (International) from October 2026, add one G5 Employer Relations & Insights Adviser focused on East Asia from January 2027 for the second half of the academic year, and provide £15,000 of international employer-facing and in-country activity funding in 2026/27. Also bring the G6 Global Mobility Opportunity Development Manager forward to January 2027 so that purposeful outward-mobility opportunity development begins during the first investment year. Map how King’s currently creates, holds, manages and activates external relationships across faculties, Careers & Employability, SASD, IES, Advancement and Alumni and other relevant areas. Define the shared process through which experiential opportunities are sourced, designed, approved, promoted, delivered, supported and evaluated, with common templates, agreements and standards where these reduce duplication. Delivery remains distributed; the operating model should make local activity easier, safer and more consistent rather than centralising it.",
       "dependsOn": [],
       "outputs": [
         {
@@ -23,6 +23,10 @@
           "summary": "A G6 International Employer Relations & Insights Manager is in place from October 2026, a G5 East Asia Adviser is added from January 2027, and £15,000 of activity funding protects employer relationships, market intelligence and in-country activity while the broader model is built."
         },
         {
+          "title": "Global Mobility opportunity development begins",
+          "summary": "A G6 Global Mobility Opportunity Development Manager is in place from January 2027 to begin building, brokering and translating a broader mix of purposeful outward-mobility opportunities before the second Global Mobility post joins in 2027/28."
+        },
+        {
           "title": "Future-demand scenarios",
           "summary": "Volume and complexity scenarios showing how partnership and operational demand could change as 2.1.4, 2.2.3 and 2.2.4 mature, so the proposed UK Experiential Partnerships & Opportunity Development team can be deployed against the strongest faculty and opportunity-development demand while retaining the agreed four-post model."
         }
@@ -30,9 +34,9 @@
       "resources": {
         "existingCapacity": [
           {
-            "role": "Existing Careers & Employability, Work-Based Experience and partnership teams",
-            "contribution": "Provide operational knowledge, workforce context, relationship intelligence and access to current processes, including domestic and international employer engagement, experiential delivery and existing faculty-facing support. The new UK team should build on this leadership and capability rather than duplicate it.",
-            "owner": "Careers & Employability, SASD, faculties and other relevant relationship-holding teams",
+            "role": "Existing Careers & Employability, Work-Based Experience, Global Mobility and partnership teams",
+            "contribution": "Provide operational knowledge, workforce context, relationship intelligence and access to current processes, including domestic and international employer engagement, experiential delivery, outward mobility and existing faculty-facing support. New investment should build on this leadership and capability rather than duplicate it.",
+            "owner": "Careers & Employability, Global Mobility, SASD, faculties and other relevant relationship-holding teams",
             "confidence": "developing",
             "riskIfMissing": "The operating model will not establish a sufficiently complete picture of current capability or the capacity that can be aligned before further investment is mobilised."
           },
@@ -116,6 +120,41 @@
             "riskIfMissing": "East Asia activity remains over-dependent on broad manager capacity and hard-won employer relationships and market credibility may weaken."
           },
           {
+            "item": "G6 Global Mobility Opportunity Development Manager",
+            "category": "global mobility opportunity development staffing",
+            "amount": 57378,
+            "currency": "GBP",
+            "fte": 1,
+            "periodNeeded": "From January 2027; annualised cost shown",
+            "yearlyProfile": [
+              {
+                "academicYear": "2026/27",
+                "fte": 1,
+                "amount": 28689,
+                "note": "Six-month planning budget from January to June 2027."
+              },
+              {
+                "academicYear": "2027/28",
+                "fte": 1,
+                "amount": 57378,
+                "note": "Full-year mobilisation budget."
+              },
+              {
+                "academicYear": "2028/29",
+                "fte": 1,
+                "amount": 57378,
+                "note": "Full-year mobilisation budget."
+              }
+            ],
+            "decisionNeededBy": "Autumn 2026",
+            "fundingRoute": "King’s Edge / Education and Student Success mobilisation investment, aligned with the existing Global Mobility service",
+            "fundingStatus": "new ask; first-year global opportunity-development mobilisation",
+            "confidence": "costed planning assumption",
+            "costBasis": "Fully loaded annual planning cost including employer National Insurance and pension/superannuation; 2026/27 cash is profiled for a January 2027 start. Finance/HR validation required before approval.",
+            "rationale": "Provides early development leadership to grow and translate purposeful outward mobility, connect global opportunities to King’s Edge and graduate futures, and build the opportunity pipeline before the G5 delivery post joins in September 2027.",
+            "riskIfMissing": "Global opportunity development would not begin until 2027/28 and King’s would lose six months in which to build shorter-form, experiential and more accessible international opportunity."
+          },
+          {
             "item": "International employer-engagement non-pay envelope",
             "category": "international employer engagement activity",
             "amount": 50000,
@@ -163,19 +202,19 @@
       },
       "assumptions": [
         {
-          "title": "2026/27 direct international continuity budget is £84,153",
-          "summary": "The G6 International Manager is budgeted at £43,034 from October 2026, the East Asia G5 at £26,119 from January 2027, and international non-pay at £15,000. These are in-year planning amounts; annual role costs remain £57,378 and £52,237 respectively."
+          "title": "2026/27 direct 2.2.2 budget is £112,842",
+          "summary": "The G6 International Manager is budgeted at £43,034 from October 2026, the East Asia G5 at £26,119 from January 2027, international non-pay at £15,000, and the G6 Global Mobility Opportunity Development Manager at £28,689 from January 2027. These are in-year planning amounts; annual role costs remain £57,378, £52,237 and £57,378 respectively."
         }
       ]
     },
     {
       "id": "2.2.2-step-2",
-      "title": "Mobilise UK experiential and Global Mobility infrastructure",
+      "title": "Mobilise UK experiential infrastructure and complete the Global Mobility opportunity-development team",
       "period": {
         "start": "jul-dec-2027:c",
         "end": "jan-jun-2028:b"
       },
-      "summary": "Use 2027/28 to establish the four-post UK Experiential Partnerships & Opportunity Development team and the two incremental Global Mobility opportunity-development posts while retaining the G6 International Manager and East Asia G5 for a full year and moving the international activity envelope to £50,000. The UK team comprises one G6 Experiential Partnerships & Opportunity Development Manager, two G5 Experiential Opportunity Development Advisers and one G5 Experiential Partnerships Operations & Intelligence Adviser. Global Mobility gains one G6 and one G5 from September 2027. With the UK and Global Mobility September starts modelled at ten months and the international continuity roles budgeted for the full year, the 2027/28 direct in-year budget is £429,369; the annualised exit run-rate at the end of the year is £483,319.",
+      "summary": "Use 2027/28 to establish the four-post UK Experiential Partnerships & Opportunity Development team and add the G5 Global Mobility Opportunity Development Officer from September 2027, completing the two-post Global Mobility opportunity-development capability begun with the G6 in January 2027. Retain the G6 International Manager, East Asia G5 and Global Mobility G6 for the full year and move the international activity envelope to £50,000. The UK team comprises one G6 Experiential Partnerships & Opportunity Development Manager, two G5 Experiential Opportunity Development Advisers and one G5 Experiential Partnerships Operations & Intelligence Adviser. With the UK team and Global Mobility G5 September starts modelled at ten months and the already established roles budgeted for the full year, the 2027/28 direct in-year budget is £438,932; the annualised exit run-rate at the end of the year is £483,319.",
       "dependsOn": [
         "2.2.2-step-1"
       ],
@@ -189,8 +228,8 @@
           "summary": "The International G6 and East Asia G5 operate for the full 2027/28 year with a £50,000 activity envelope, protecting existing relationships while the wider regional model is prepared."
         },
         {
-          "title": "Expanded Global Mobility opportunity-development capability",
-          "summary": "A G6 and G5 provide additional capacity to develop, broker and translate purposeful outward mobility into student-ready opportunities, with an explicit focus on growth, accessibility, shorter-form and experiential formats, and connection to skills and graduate futures."
+          "title": "Global Mobility opportunity-development capability completed",
+          "summary": "The G6 development manager brought in during January 2027 is joined by a G5 Opportunity Development Officer from September 2027, creating a two-post capability to develop, broker and translate purposeful outward mobility into student-ready opportunities."
         }
       ],
       "resources": {
@@ -247,35 +286,6 @@
             "riskIfMissing": "Opportunity developers may spend substantial time on operational administration, reducing opportunity throughput."
           },
           {
-            "item": "G6 Global Mobility Opportunity Development Manager",
-            "category": "global mobility opportunity development staffing",
-            "amount": 57378,
-            "currency": "GBP",
-            "fte": 1,
-            "periodNeeded": "From September 2027; annualised cost shown",
-            "yearlyProfile": [
-              {
-                "academicYear": "2027/28",
-                "fte": 1,
-                "amount": 47815,
-                "note": "Ten-month planning budget from September 2027 to June 2028."
-              },
-              {
-                "academicYear": "2028/29",
-                "fte": 1,
-                "amount": 57378,
-                "note": "Full-year mobilisation budget."
-              }
-            ],
-            "decisionNeededBy": "Summer 2027",
-            "fundingRoute": "King’s Edge / Education and Student Success mobilisation investment, aligned with the existing Global Mobility service",
-            "fundingStatus": "new ask; fixed-term mobilisation",
-            "confidence": "costed planning assumption",
-            "costBasis": "Fully loaded annual planning cost including employer National Insurance and pension/superannuation; first-year cash is profiled for a September 2027 start. Finance/HR validation required before approval.",
-            "rationale": "Provides dedicated development leadership to grow and translate purposeful outward mobility, connect global opportunities to King’s Edge and graduate futures, and ensure growth complements rather than displaces existing Global Mobility responsibilities.",
-            "riskIfMissing": "Global opportunity remains primarily dependent on existing exchange capacity."
-          },
-          {
             "item": "G5 Global Mobility Opportunity Development Officer",
             "category": "global mobility opportunity development staffing",
             "amount": 52237,
@@ -301,7 +311,7 @@
             "fundingStatus": "new ask; fixed-term mobilisation",
             "confidence": "costed planning assumption",
             "costBasis": "Fully loaded annual planning cost including employer National Insurance and pension/superannuation; first-year cash is profiled for a September 2027 start. Finance/HR validation required before approval.",
-            "rationale": "Provides delivery and brokerage capacity to develop partner and faculty propositions into student-ready global opportunities and coordinate shorter-form and experiential outward mobility.",
+            "rationale": "Provides delivery and brokerage capacity to develop partner and faculty propositions into student-ready global opportunities and coordinate shorter-form and experiential outward mobility alongside the G6 manager already in post.",
             "riskIfMissing": "The G6 role would have insufficient delivery capacity to convert development work into a meaningful increase in student-facing global opportunities."
           }
         ],
@@ -316,8 +326,8 @@
       },
       "assumptions": [
         {
-          "title": "2027/28 direct in-year budget is £429,369",
-          "summary": "The UK four-post team contributes £178,408 for ten months and the Global Mobility G6 + G5 contributes £91,346 for ten months. The International G6 and East Asia G5 are budgeted for the full year at £109,615 and the international non-pay envelope at £50,000. The annualised exit run-rate at the end of 2027/28 is £483,319."
+          "title": "2027/28 direct in-year budget is £438,932",
+          "summary": "The UK four-post team contributes £178,408 for ten months. The Global Mobility G6 is budgeted for the full year at £57,378 and the G5 contributes £43,531 for ten months. The International G6 and East Asia G5 are budgeted for the full year at £109,615 and the international non-pay envelope at £50,000. The annualised exit run-rate at the end of 2027/28 is £483,319."
         },
         {
           "title": "UK experiential role model is specified for planning but remains subject to HR validation",
@@ -604,7 +614,7 @@
         },
         {
           "title": "Validated investment-window cash profile",
-          "summary": "The current planning profile is £84,153 in 2026/27, £429,369 in 2027/28 and £640,777 in 2028/29, £1,154,299 across the investment window. Finance/HR validates exact payroll dates and fully loaded role costs before approval, with no mobilisation staffing cost deferred into 2029/30."
+          "summary": "The current planning profile is £112,842 in 2026/27, £438,932 in 2027/28 and £640,777 in 2028/29, £1,192,551 across the investment window. Finance/HR validates exact payroll dates and fully loaded role costs before approval, with no mobilisation staffing cost deferred into 2029/30."
         }
       ],
       "resources": {
@@ -634,8 +644,8 @@
       },
       "assumptions": [
         {
-          "title": "Three-year direct in-year profile is £1,154,299",
-          "summary": "The current planning budget is £84,153 in 2026/27, £429,369 in 2027/28 and £640,777 in 2028/29. The 2026/27 international wave models the G6 from October, East Asia G5 from January and £15,000 non-pay; later September starts are modelled at ten months, January 2029 starts at six months, and the £50,000 international non-pay envelope is budgeted in full in 2027/28 and 2028/29. The £714,058 figure is the fully mobilised annualised exit run-rate by June 2029."
+          "title": "Three-year direct in-year profile is £1,192,551",
+          "summary": "The current planning budget is £112,842 in 2026/27, £438,932 in 2027/28 and £640,777 in 2028/29. The 2026/27 wave models the international G6 from October, East Asia G5 and Global Mobility G6 from January, plus £15,000 international non-pay; later September starts are modelled at ten months, January 2029 starts at six months, and the £50,000 international non-pay envelope is budgeted in full in 2027/28 and 2028/29. The £714,058 figure is the fully mobilised annualised exit run-rate by June 2029."
         },
         {
           "title": "Finance validation is required before portfolio approval",
