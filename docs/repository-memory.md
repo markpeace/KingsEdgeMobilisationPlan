@@ -167,38 +167,64 @@ Avoid creating a generic UUK-alignment layer across the repository. Reference Fu
 
 ### King’s Edge Core investment rebaseline
 
-**Settled 7 September 2026:** the actual King’s Edge plan has been rebased to the recommended **Core** investment case. Economy and Enhanced are option overlays for portfolio decision-making; they are not alternative source-plan baselines.
+**Settled 7 September 2026:** the actual King’s Edge plan was rebased to the recommended **Core** investment case. Economy and Enhanced remain option overlays for portfolio decision-making; they are not alternative source-plan baselines.
 
-The Core rebaseline protects Year 1 discovery, evidence, live testing and the first Beyond-Course opportunity portfolio. It reduces large later-year commitments that should only be released when evidence exists.
-
-The current King’s Edge Core profile is:
+The September Core profile was:
 
 - **2026/27: £560.2k**
 - **2027/28: £1.2675m**
 - **2028/29: £1.3625m**
 - **Three-year mobilisation: £3.1902m**
 
-This is **£738k below** the previous £3.9282m source-plan baseline.
-
-The four Core package profiles are:
+The four September package profiles were:
 
 - **Student Purpose, Skills and Educational Recognition:** £53k / £119.5k / £79.5k = **£252k**.
 - **Experiential Learning in the Curriculum:** £58.8k / £131.1k / £151.1k = **£341k**.
 - **Beyond-Course Opportunity and Participation:** £278.5k / £751.95k / £801.95k = **£1.8324m**.
 - **Graduate Futures Intelligence and Value:** £169.9k / £264.95k / £329.95k = **£764.8k**.
 
-The main rebaseline decisions are:
+The September baseline is now historical because the generic £400k p.a. partnership-infrastructure assumption has been replaced by the explicit `2.2.2` workforce model and in-year cash profile below.
 
-- partnership infrastructure: **£400k p.a. Core assumption** in Years 2 and 3, replacing the previous £600k holding assumption;
-- curriculum experiential implementation: **£40k Year 2 / £60k Year 3**, with separate £10k annual co-design/evaluation retained;
-- Purpose / Skills / Recognition direct scale envelopes: **£100k Year 2 / £60k Year 3**;
-- Student Life activation: **£30k Year 2 / £30k Year 3**;
-- Graduate Futures activation/reputation delivery: **0.5 FTE Year 1 and 0.75 FTE Years 2 and 3**, with activation/research envelopes of **£25k / £35k / £50k**;
-- Beyond-Course opportunity commissioning remains deliberately protected at **£150k / £200k / £250k**;
-- the Strategic Partnerships, Profile & External Engagement Fund remains **£25k / £35k / £45k**, with **£45k p.a. BAU**;
-- any new **Student Opportunities Fund award pot is outside the King’s Edge ask**. Design and consolidation work remains in `2.2.2`, but awards require a separate institutional, consolidated-fund, philanthropic or other funding route.
+### October 2026 investment-window and cash-profile baseline
 
-The current identifiable King’s Edge Core recurrent exposure is approximately **£834.5k p.a. plus TBC**. It includes a £400k partnership-infrastructure Core assumption, £175k enduring opportunity commissioning, the relevant Deputy Director shares and the current Graduate Futures planning proxy. It is not an approved recurrent budget.
+**Settled 7 October 2026:** the King’s Edge mobilisation investment case has a hard three-year window of **2026/27 to 2028/29**. All mobilisation investment must fit inside that window. Activity from July 2029 onward may remain in the plan only when it is explicitly BAU/recurrent exposure, benefits realisation, ongoing evaluation/service improvement, or a separate institutional investment.
+
+For `2.2.2 Future-Proofed Employability & Experiential Infrastructure`, the full operating model must be live by June 2029. The agreed workforce phasing is:
+
+- September 2027: UK Experiential Partnerships & Opportunity Development team, international G6, Global Mobility G6 + G5, and £50k international non-pay envelope;
+- September 2028: East Asia G5 plus Graduate Transitions G7 + G6;
+- January 2029: final two international G5 posts covering South/South East Asia and Europe/North America.
+
+The investment arithmetic now uses **in-year planning budgets**, not annualised run-rates. September starts are modelled at ten months in the first academic year, January 2029 starts at six months, and the international non-pay envelope is budgeted in full in each active year. On this basis `2.2.2` is:
+
+- **2026/27: £0 new direct investment**
+- **2027/28: £367,569**
+- **2028/29: £632,071**
+- **three-year direct profile: £999,640**
+- **fully mobilised annualised exit run-rate by June 2029: £714,058**
+
+The £714,058 figure is not a fourth-year budget and must not be inserted into 2029/30 mobilisation arithmetic.
+
+The current five-area Core in-year budget is therefore:
+
+- **2026/27: £560.2k**
+- **2027/28: £1.235069m**
+- **2028/29: £1.594571m**
+- **three-year Core: £3.389840m**
+
+Current option totals are:
+
+- **Economy:** £460.2k / £1.123569m / £1.458071m = **£3.041840m**
+- **Core:** £560.2k / £1.235069m / £1.594571m = **£3.389840m**
+- **Enhanced:** £610.2k / £1.531569m / £2.061071m = **£4.202840m**
+
+The current five-area display is interim. The next investment-case narrative rewrite should test **King’s Architecture for Employability** as an expanded first investment area combining the developmental/philosophical architecture with the `2.2.2` staffing and partnership infrastructure. This is an investment-grouping change only; do not alter the 4 x 4 delivery-plan IDs to make the investment story fit.
+
+`2.2.4 Flexible Adjunct Experiential & Thematic Opportunities` now has explicit Core mobilisation budgets of **£150k / £200k / £250k = £600k** across the three investment years. Its **£175k p.a. requirement from July 2029 is BAU**, not a fourth mobilisation year.
+
+`2.3.1` must complete its mobilisation-to-BAU stewardship transition by June 2029. Its **£15k p.a. analytical requirement from July 2029** remains a separate BAU planning liability.
+
+Current grade-based `2.2.2` costs are treated as fully loaded including employer NI and pension/superannuation, subject to Finance/HR validation. Do not add an arbitrary additional on-cost percentage on top without confirming that the planning figures are salary-only.
 
 ### King’s Edge and Digital investment boundary
 
@@ -215,15 +241,13 @@ The current **Digital Student Experience Hub high-water profile** is:
 
 The Hub retains a **£3m working three-year strategic envelope**, leaving **£604.048k headroom** at the current high-water itemisation. This is a ceiling and planning guardrail, not a spending target.
 
-For dependency and whole-system planning only, King’s Edge Core plus the current Digital Hub high-water case is **£1.15356m / £2.143796m / £2.288796m = £5.586152m across three years**. Do **not** describe this combined figure as the King’s Edge ask.
+For dependency and whole-system planning only, King’s Edge Core plus the current Digital Hub high-water case is **£1.153560m / £2.111365m / £2.520867m = £5.785792m across three years**. Do **not** describe this combined figure as the King’s Edge ask.
 
-The current recurrent exposure views are approximately **£834.5k p.a. plus TBC for King’s Edge Core** and **c.£893.296k p.a. plus TBC knowledge/content operating cost for the Digital Hub**. The Digital figure is a high-water risk ceiling rather than a settled BAU budget.
-
-The Digital Hub’s current evidence-backed reductions and qualifications include a 50/50 Student/Staff Hub Product Manager allocation, 0.75 FTE average Solution Architecture in Year 1, and explicit treatment of the former Dynamics Developer line as a D365 / Power Platform contingency. Digital remains under active validation and was deliberately not changed by the King’s Edge Core rebaseline.
+The current recurrent exposure views remain planning estimates rather than approved BAU budgets. The Digital Hub’s detailed workforce and service assumptions remain governed by its own source data and investment boundary.
 
 ### Graduate Futures and external engagement
 
-The Graduate Futures package uses a Year 1 programme/project-management share of **0.20 FTE / £13.2k** and now has a Core profile of **£169.9k / £264.95k / £329.95k = £764.8k across mobilisation**.
+The Graduate Futures package uses a Year 1 programme/project-management share of **0.20 FTE / £13.2k** and has a Core profile of **£169.9k / £264.95k / £329.95k = £764.8k across mobilisation**.
 
 `2.4.4 Graduate Premium Engagement, Reputation and Survey Performance` remains the accounting home for the **Strategic Partnerships, Profile & External Engagement Fund**: **£25k in 2026/27, £35k in 2027/28 and £45k in 2028/29**, with a **£45k p.a. recurrent BAU planning liability from 2029/30**. Budget control sits with King’s Edge programme leadership and the fund may be deployed across the King’s Edge portfolio where activity advances strategic partnership development, external profile, purposeful UK/international mobility, partner hosting or reciprocal visits, networks, convening or related external engagement. It must not be double counted elsewhere.
 
@@ -231,116 +255,12 @@ The Graduate Futures package uses a Year 1 programme/project-management share of
 
 Deliverable **2.3.3 is deferred**. Its former 0.10 FTE Deputy Director allocation and 0.05 / 0.10 / 0.10 FTE Project Officer allocations have been redeployed to **2.3.4** so funded shared capacity is not parked against inactive work.
 
-The Core rebaseline does not alter the coherent shared-resource envelopes or their allocation. The Year 1 shared-resource registry remains **£181.5k**, attributed exactly once across active King’s Edge packages.
+The Core rebaseline does not alter the coherent shared-resource envelopes or their allocation. The Year 1 shared-resource registry remains **£181.5k**, attributed exactly once across active King’s Edge work.
 
-### Planning status is different from planning maturity
+### Accounting discipline
 
-`planningStatus` is the staff-facing settledness of the plan.
-
-`planningMaturity` is optional internal nuance about the kind of planning work underway.
-
-If a future agent is unsure which field matters, use `planningStatus`.
-
-### Generic tags are thematic only
-
-The `tags` field is optional thematic metadata. It is not a status field and should not be used for any proposition, planning, approval or delivery stage.
-
-If tags create confusion during hydration, ignore them or remove them from display. Do not create a second tagging workflow.
-
-### `src/data/status.json` is not the planning workflow
-
-`src/data/status.json` is hidden delivery-control metadata. It is not the planning-stage source of truth.
-
-Operational status is authored against steps only after the parent deliverable is approved to mobilise. Do not display a competing operational status on deliverable cards.
-
-### Decisions and consultation log
-
-Each deliverable carries a simple `decisionLog` array containing material consultations and decisions, or an empty array until there is something to record. Entries use `date`, `type`, `forum` and `outcome`, with optional `seenBy` and `notes`. The log does not automatically drive `planningStatus` and does not replace decisions attached to the step they gate.
-
-### Reveal detailed plan is progressive disclosure, not security
-
-The “Reveal detailed plan” pattern is for context and progressive disclosure. It is not a security control.
-
-Restricted material should not be shipped in broad client-side JSON unless real access control or separate builds exist.
-
-### Resourcing must distinguish existing capacity, new investment and enabling conditions
-
-Resource modelling should separate:
-
-- existing capacity to align;
-- new cash investment;
-- enabling conditions.
-
-This distinction matters for strategic investment fund asks.
-
-### Measures and Timeline views must respect planning status
-
-Measures and Timeline should not present pre-approval assumptions as approved KPIs or firm delivery commitments.
-
-Measures and timeline sequencing appear from Delivery design. Timeline steps remain visually indicative and do not show operational status until Approved to mobilise.
-
-### Visibility classification is handling guidance, not access control
-
-`visibility` may use `staff-visible`, `internal-planning` and `restricted`, but these are handling labels, not security.
-
-## Current working assumptions
-
-- **Core is now the source-plan costing baseline.** Economy and Enhanced should be expressed as explicit option overlays rather than silently changing the plan when they are presented.
-- Package 4 remains at `resource-planning` pending scrutiny and plan validation. Its later-year cash envelopes remain conditional on evidence.
-- The £400k partnership-infrastructure figure is a Core planning assumption to test in Year 1, not a settled workforce model or BAU commitment.
-- The Student Opportunities Fund award pot is outside the King’s Edge ask.
-- Digital Student Experience Hub remains a separate investment and is under active Digital and IT validation.
-- Deliverable development follows the stages in `docs/deliverable-gates.md`, keeping delivery design separate from resource planning and both separate from later approval.
-- The plan should remain senior-leadership ready: clear, concise, defensible and not over-bureaucratic.
-- Benefits should be written as realised value, not disguised outputs.
-- Measures should test whether benefits are happening, not merely count activity.
-- Uncertainty should be visible through planning status, maturity, assumptions, decisions and TBC fields.
-- Resource asks should distinguish existing capacity, new investment and enabling conditions.
-- Future PM input may later formalise RACI, controls, budgets and benefits realisation.
-
-## Recommended project manager rhythm
-
-First pass: sharpen propositions and move them through the appropriate development gate.
-
-For each project or package, test:
-
-- project and deliverable titles;
-- card-facing `summary`;
-- richer `detailSummary`, where useful;
-- institutional transformation claim;
-- whether the deliverables still form the right grouping;
-- whether a common mobilisation pattern adds coherence without flattening meaningful differences.
-
-Second pass: design the unconstrained delivery route before cost constrains it.
-
-For each deliverable, test:
-
-- whether the title is doing the right work;
-- whether the summary captures the essence clearly;
-- whether a fuller detail summary is needed;
-- whether the problem is sharp enough;
-- whether the intended change is genuinely transformational;
-- whether benefits, outputs and measures are distinct;
-- whether dependencies and ownership are plausible;
-- whether the sequence includes a credible route from experimentation to institutional adoption;
-- what needs to be true to pass its current gate.
-
-Third pass: resource the agreed delivery route and reconcile shared investment at package level without inventing false precision in later years.
-
-Fourth pass: validate the plan as a whole, including benefits, measures, ownership, dependencies, assumptions, resource sufficiency and whether the Year 1 return is genuinely decision-ready.
-
-## Known cautions for future agents
-
-- Do not confuse documentation in `docs/` with programme content.
-- Do not render this file in the app.
-- Do not hard-code plan text into React or CSS.
-- Do not edit JSON in developer mode unless explicitly asked.
-- Do not edit React or CSS in project manager mode unless explicitly asked.
-- Do not rename IDs without checking routing, dependencies, step references, feeds and related deliverables.
-- Do not assume every TBC is a weakness. Some TBCs are honest planning maturity markers.
-- Do not treat reveal controls, filters or CSS as security.
-- Do not put genuinely restricted content into broad client-side JSON.
-- Do not present pre-approval measures as approved KPIs.
-- Do not present pre-approval timeline items as firm delivery commitments or operational progress.
-- Do not add another tagging workflow.
-- Do not add display-remapping workarounds for project order or numbering.
+- Do not double count shared-resource allocations across packages.
+- Do not count BAU liabilities inside mobilisation totals.
+- Do not count the Student Opportunities Fund award pot inside King’s Edge unless a separate approved funding route is explicitly brought into scope.
+- Do not roll Digital Student Experience Hub costs into the King’s Edge headline ask.
+- For `2.2.2`, distinguish annualised role cost, first-year in-year cash budget and fully mobilised exit run-rate.
