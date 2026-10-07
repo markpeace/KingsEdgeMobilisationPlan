@@ -51,10 +51,18 @@
     {
       "id": "2.2.2-B7",
       "title": "The same infrastructure creates value beyond Education and Student Success",
-      "statement": "Stronger employer relationships, international employability activity and clearer graduate-success evidence contribute to King’s recruitment, conversion and reputation goals as well as to student experience and graduate outcomes.",
+      "statement": "Stronger employer relationships, international employability activity, global opportunity and clearer graduate-success evidence contribute to King’s recruitment, conversion and reputation goals as well as to student experience and graduate outcomes.",
       "beneficiary": "King’s, prospective students, Global Student Recruitment and Admissions and reputation-facing functions",
       "benefitType": "cross-institutional recruitment and reputation",
-      "successLooksLike": "International employability is used credibly in recruitment and conversion activity, employer relationships strengthen King’s external visibility, and benefits are tracked as shared institutional outcomes rather than attributed solely to Education and Student Success."
+      "successLooksLike": "International employability and global opportunity are used credibly in recruitment and conversion activity, employer and partner relationships strengthen King’s external visibility, and benefits are tracked as shared institutional outcomes rather than attributed solely to Education and Student Success."
+    },
+    {
+      "id": "2.2.2-B8",
+      "title": "More students can access purposeful global experience",
+      "statement": "Incremental Global Mobility opportunity-development capacity expands the supply and range of outward international experiences beyond the existing core exchange model, with particular attention to shorter-form, experiential, work-related and more accessible routes that connect clearly to skills and graduate futures.",
+      "beneficiary": "Students, faculties, Global Mobility, international partners and King’s",
+      "benefitType": "global opportunity, access and graduate development",
+      "successLooksLike": "More students participate in purposeful outward mobility; the portfolio includes a broader mix of formats and durations; partner and faculty propositions convert more readily into student-ready opportunities; participation gaps are visible; and global experiences connect more clearly to skills, employability and the wider King’s Edge offer."
     }
   ]
 }
