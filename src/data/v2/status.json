@@ -1,0 +1,10 @@
+{
+  "defaults": {
+    "status": "not-started",
+    "confidence": "needs-validation",
+    "decisionNeeded": false,
+    "asOf": null,
+    "note": "Step delivery status has not yet been updated. Operational tracking begins after the parent deliverable is approved to mobilise."
+  },
+  "items": {}
+}

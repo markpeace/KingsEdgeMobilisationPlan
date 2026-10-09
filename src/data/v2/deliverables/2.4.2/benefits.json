@@ -1,0 +1,34 @@
+{
+  "benefits": [
+    {
+      "id": "2.4.2-B1",
+      "title": "King’s student offer is tested against external relevance rather than internal assumption",
+      "statement": "Interventions, opportunities, skills priorities and relevant curriculum or near-curriculum developments are exposed to structured employer, alumni, professional and sector challenge, giving King’s stronger evidence about what should be sustained, strengthened, changed or investigated further.",
+      "beneficiary": "Students, faculties, departments and King’s Edge delivery teams",
+      "benefitType": "student offer relevance and quality",
+      "owner": "Andrew Wright with relevant King’s Edge and faculty leads",
+      "realisationPeriod": "From Year 1 pilots, becoming systematic across 2027/28 and 2028/29",
+      "successLooksLike": "Priority student interventions and opportunities can show how appropriate external insight has informed their design, validation or subsequent development, with material recommendations tracked to a response."
+    },
+    {
+      "id": "2.4.2-B2",
+      "title": "Graduate premium and reputational claims have stronger external credibility",
+      "statement": "King’s can distinguish between claims that are internally evidenced and claims that are also recognised and substantiated by employers, alumni, professions, sectors and other relevant external communities.",
+      "beneficiary": "King’s, faculties, departments, prospective and current students, and teams using graduate premium assets",
+      "benefitType": "reputational credibility and proposition validation",
+      "owner": "Rachel Kershaw and Andrew Wright with 2.4.1 and 2.4.4 leads",
+      "realisationPeriod": "From the first validation cycle, deepening as the 2.4.1 asset estate grows",
+      "successLooksLike": "Priority graduate premium propositions and reputational outputs record the external evidence or validation that supports them, and claims that do not withstand challenge are refined, qualified or withdrawn."
+    },
+    {
+      "id": "2.4.2-B3",
+      "title": "External insight becomes a coherent institutional intelligence system",
+      "statement": "University, faculty and departmental employer and alumni insight structures operate to a shared minimum standard, making local intelligence more useful while reducing duplication, identifying gaps and allowing important themes to aggregate into an institutional view.",
+      "beneficiary": "University, faculty and departmental leaders and external-engagement communities",
+      "benefitType": "institutional coherence and decision intelligence",
+      "owner": "Andrew Wright with Careers, alumni and faculty or departmental panel leads",
+      "realisationPeriod": "Model established in 2026/27, broader adoption in 2027/28, embedded by 2028/29",
+      "successLooksLike": "King’s can map its external insight coverage, show consistent expectations across levels, produce an annual synthesis of material external intelligence and trace significant recommendations through to named institutional responses."
+    }
+  ]
+}

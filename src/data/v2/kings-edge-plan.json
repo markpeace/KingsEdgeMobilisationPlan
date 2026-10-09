@@ -1,0 +1,324 @@
+{
+  "programme": {
+    "id": "2",
+    "title": "King's Edge",
+    "purpose": "Makes the King's graduate premium real, visible, navigable and evidenced for every student.",
+    "version": "v2",
+    "planningStatus": "proposed remap"
+  },
+  "timelinePeriods": [
+    {
+      "id": "now-xmas-2026",
+      "label": "Now to Christmas 2026",
+      "shortLabel": "Now-Xmas 26",
+      "order": 1
+    },
+    {
+      "id": "jan-summer-2027",
+      "label": "January to summer 2027",
+      "shortLabel": "Jan-summer 27",
+      "order": 2
+    },
+    {
+      "id": "ay-2027-28-to-2028-29",
+      "label": "2027/28 to 2028/29",
+      "shortLabel": "2027/28-2028/29",
+      "order": 3
+    },
+    {
+      "id": "ay-2029-30",
+      "label": "2029/30",
+      "shortLabel": "2029/30",
+      "order": 4
+    }
+  ],
+  "projects": [
+    {
+      "id": "v2-purpose-recognition",
+      "displayId": "2.1",
+      "title": "Purpose, Capability and Recognition",
+      "owner": "TBC",
+      "deliveryContext": "edge",
+      "summary": "Connects a conversation about purpose with a living skills language and a trusted account of each student’s learning.",
+      "detailSummary": "Students can make sense of their ambitions, see the capabilities they develop through their course and wider experience, and hold a credible account of that learning. This project brings together the human conversation, the common language and the trusted record. The records and skills architecture depend on real practice, consent and institutional trust, not an assumed technology solution.",
+      "transformationClaim": "Every student is supported to shape a purposeful journey, recognise their developing capabilities and articulate a fuller account of their King’s education.",
+      "legacyProjectIds": [
+        "2.1",
+        "2.2",
+        "2.4"
+      ],
+      "deliverables": [
+        {
+          "id": "v2-purpose-conversation",
+          "displayId": "2.1.1",
+          "title": "A Conversation about Purpose with Every Student",
+          "lead": "Vanessa Freeman",
+          "summary": "Makes purpose and self-direction an intentional, supported part of every student’s journey, helping students explore what matters to them, make intentional choices and connect their course with wider opportunities, relationships and experiences while King’s learns how to sustain that development at scale."
+        },
+        {
+          "id": "v2-living-skills",
+          "displayId": "2.1.2",
+          "title": "A Living Skills Language for Student Futures",
+          "lead": "Vanessa Freeman",
+          "summary": "Develops and tests a richer shared language for the capabilities students build through their course and wider King’s experience, using the UK Standard Skills Classification as the leading candidate and moving from discovery through deep trailblazer adoption before any institution-wide skills architecture is settled."
+        },
+        {
+          "id": "v2-fuller-learning-record",
+          "displayId": "2.1.3",
+          "title": "A Fuller Account of Every Student’s Learning",
+          "lead": "Vanessa Freeman",
+          "summary": "Defines and tests a fuller, trusted account of every student’s learning, bringing the authoritative academic record into a clear relationship with capabilities, recognised experiences, microcredentials and student evidence so students can credibly articulate what they know, can do and contribute."
+        }
+      ]
+    },
+    {
+      "id": "v2-experiential-education",
+      "displayId": "2.2",
+      "title": "Experiential Education and Formal Pathways",
+      "owner": "TBC",
+      "deliveryContext": "edge",
+      "summary": "Defines what good experiential learning requires and carries it into curriculum growth and recognised near-curriculum routes.",
+      "detailSummary": "The North Star establishes shared educational principles across curriculum and beyond-course activity. Curriculum review then shows where opportunity exists and where growth or assurance is needed. Formal pathways, including sandwich years and a Level 6 experiential capstone, turn selected experiences into recognised educational routes. Curriculum Framework and Review and Education Cultures remain separate enabling projects.",
+      "transformationClaim": "Students encounter more high-quality, inclusive experiential learning through their programmes and through credible formal pathways around the curriculum.",
+      "legacyProjectIds": [
+        "2.1",
+        "2.2"
+      ],
+      "deliverables": [
+        {
+          "id": "v2-experiential-north-star",
+          "displayId": "2.2.1",
+          "title": "Experiential Learning North Star and Future Student Entitlement",
+          "lead": "TBC, Convener of the Experiential Learning Strategic Community of Practice",
+          "summary": "Creates a shared framework for designing and scaling inclusive, impactful experiential learning across curriculum and co-curriculum, and sets a future student entitlement ambition."
+        },
+        {
+          "id": "v2-curriculum-opportunity",
+          "displayId": "2.2.2",
+          "title": "Curriculum-Embedded Opportunity Growth and Assurance",
+          "lead": "Jo Marchant",
+          "summary": "Uses Curriculum Framework review evidence and the experiential-learning North Star to identify where curriculum-embedded experiential learning is strong, hidden, uneven or absent, then targets growth and assurance where it will make the greatest difference."
+        },
+        {
+          "id": "v2-near-curriculum-pathways",
+          "displayId": "2.2.3",
+          "title": "Formal Near-Curriculum Learning Pathways",
+          "lead": "Richard Wingate",
+          "summary": "Enables more students to undertake recognised experiential and interdisciplinary learning beyond the boundaries of their course through shared institutional pathways, with Year 1 focused on sandwich-year reform and validation of a shared 15-credit Level 6 experiential-learning capstone."
+        }
+      ]
+    },
+    {
+      "id": "v2-opportunity-transitions",
+      "displayId": "2.3",
+      "title": "Opportunity, Partnerships and Transitions",
+      "owner": "TBC",
+      "deliveryContext": "edge",
+      "summary": "Builds the supply, access, commissioning and graduate-transition services that turn external relationships into meaningful opportunity.",
+      "detailSummary": "This project holds four distinct jobs together: UK and international partnership and opportunity development, practical access and opportunity funding design, commissioning beyond-course activity, and proactive support after completion. The common operating model makes distributed delivery easier and safer. New Student Opportunities Fund awards require a separate funding route and are not included in the King’s Edge mobilisation ask. Graduate Transitions is a service and investment decision, informed by evidence from the insight project.",
+      "transformationClaim": "More students and graduates can reach relevant UK, international and civic opportunities, with fewer financial and operational barriers and more targeted help into graduate futures.",
+      "legacyProjectIds": [
+        "2.2"
+      ],
+      "deliverables": [
+        {
+          "id": "v2-partnership-infrastructure",
+          "displayId": "2.3.1",
+          "title": "Partnership and Experiential Opportunity Infrastructure",
+          "lead": "Andrew Wright",
+          "summary": "Establishes the common operating model and UK, international and Global Mobility capacity for a stronger pipeline of student-ready experiential opportunity."
+        },
+        {
+          "id": "v2-opportunity-funding",
+          "displayId": "2.3.2",
+          "title": "Opportunity Funding and Access",
+          "lead": "Andrew Wright",
+          "summary": "Designs simpler support for participation costs and investable alumni and philanthropic routes to grow opportunities."
+        },
+        {
+          "id": "v2-beyond-course-commissioning",
+          "displayId": "2.3.3",
+          "title": "Beyond-Course Opportunity Commissioning and Growth",
+          "lead": "TBC, Experiential Learning Community of Practice",
+          "summary": "Grows King’s portfolio of substantive learning opportunities beyond the course, commissioning new provision in response to strategic priorities, student need and future-facing evidence from across King’s Edge."
+        },
+        {
+          "id": "v2-graduate-transitions",
+          "displayId": "2.3.4",
+          "title": "Graduate Transitions",
+          "lead": "Andrew Wright",
+          "summary": "Designs and launches a proactive graduate support service for priority cohorts through the post-completion transition."
+        }
+      ]
+    },
+    {
+      "id": "v2-student-life",
+      "displayId": "2.4",
+      "title": "Student Life and Participation",
+      "owner": "TBC",
+      "deliveryContext": "edge",
+      "summary": "Makes the wider experience visible, accessible and meaningful across student journeys and campus life.",
+      "detailSummary": "Beyond Course provides visibility, reach and impact evidence for the existing and emerging offer. Student Life by Design uses student personas and participation principles to shape physical and digital participation. A coordinated annual rhythm helps students encounter opportunities at useful moments. Subject societies remain a deferred student-led proposition with no new mobilisation investment assumed. Opportunity commissioning itself sits with the opportunity project.",
+      "transformationClaim": "Students can find and join a richer wider King’s experience, with institutional decisions informed by who participates and what difference it makes.",
+      "legacyProjectIds": [
+        "2.3"
+      ],
+      "deliverables": [
+        {
+          "id": "v2-beyond-course-visibility",
+          "displayId": "2.4.1",
+          "title": "Beyond the Course: Visibility, Reach and Impact",
+          "lead": "Steph White",
+          "summary": "Makes King’s Beyond Course offer more visible, navigable and evidence-led by establishing King’s Edge as its common shopfront and creating a live institutional view of participation, reach and impact."
+        },
+        {
+          "id": "v2-student-life-design",
+          "displayId": "2.4.2",
+          "title": "Student Life by Design",
+          "lead": "Steph White",
+          "summary": "Designs a richer physical and digital student life around the different ways students actually live, study and participate, using evidence-led student personas to shape the experience, drive commissioning priorities and hold King’s Edge to account for who can access and benefit from it."
+        },
+        {
+          "id": "v2-wider-experience-rhythm",
+          "displayId": "2.4.3",
+          "title": "Rhythms of the Wider King’s Experience",
+          "lead": "SEM, TBC",
+          "summary": "Creates a shared rhythm for the wider King’s experience, bringing together the major agendas that shape student life so activity, opportunity and support are better coordinated around student need, capacity and key moments in the journey."
+        },
+        {
+          "id": "v2-subject-societies",
+          "displayId": "2.4.4",
+          "title": "Subject Societies and Student-Led Discipline Communities",
+          "lead": "KCLSU Delegate",
+          "summary": "Strengthens subject societies as student-led conveners of disciplinary identity, belonging, opportunity, alumni connection and peer community. This proposition is deferred pending a student-led support and funding decision."
+        }
+      ]
+    },
+    {
+      "id": "v2-insight-improvement",
+      "displayId": "2.5",
+      "title": "Graduate Futures Insight and Improvement",
+      "owner": "TBC",
+      "deliveryContext": "edge",
+      "summary": "Turns course evidence, external challenge and strategic outcome measures into practical decisions for improvement.",
+      "detailSummary": "Course-level packs and self-run sense-making give academic communities usable evidence about graduate futures. Employer, alumni and other external voices test the relevance and credibility of developing propositions. Graduate Outcomes response work and priority survey strategy then help King’s understand representation, performance and where action is needed. This project produces intelligence and improvement cycles; it does not own the Graduate Transitions service or marketing activation.",
+      "transformationClaim": "Academic and service teams can act on credible evidence of graduate value and outcomes, and can test whether targeted interventions improve them.",
+      "legacyProjectIds": [
+        "2.1",
+        "2.4"
+      ],
+      "deliverables": [
+        {
+          "id": "v2-graduate-futures-packs",
+          "displayId": "2.5.1",
+          "title": "Course-Level Graduate Futures Insight and Action Packs",
+          "lead": "Daniel Robson",
+          "summary": "Helps course teams understand, evidence and strengthen their students' graduate futures story through clear course-level evidence packs, a self-run sense-making workshop, shared review and a business-as-usual process that supports ongoing enhancement."
+        },
+        {
+          "id": "v2-external-validation",
+          "displayId": "2.5.2",
+          "title": "External Insight and Validation",
+          "lead": "Andrew Wright",
+          "summary": "Creates a coherent university-wide system for employer, alumni and other external insight, using common standards at university, faculty and departmental level to test King’s student offer and graduate premium claims and feed what is learned back into portfolio and reputational decisions."
+        },
+        {
+          "id": "v2-survey-improvement",
+          "displayId": "2.5.3",
+          "title": "Outcomes and Survey Improvement",
+          "lead": "Tania Rhodes-Taylor delegate",
+          "summary": "Improves Graduate Outcomes response and establishes a focused annual strategy for priority outcomes, employability and reputation surveys."
+        }
+      ]
+    },
+    {
+      "id": "v2-premium-reputation",
+      "displayId": "2.6",
+      "title": "Graduate Premium and Reputation",
+      "owner": "TBC",
+      "deliveryContext": "edge",
+      "summary": "Creates evidence-backed claims and puts them to work with students and priority external audiences.",
+      "detailSummary": "The evidence and content estate translates course, opportunity and graduate outcomes into defensible assets. Student and external activation brings those assets into advising, recruitment, employer, alumni, international and sector-facing channels. The Strategic Partnerships, Profile and External Engagement Fund remains a single programme-controlled accounting home here, while supporting relevant work across King’s Edge. Survey performance is a distinct insight deliverable, with its shared funding envelope hosted here until the spend can be apportioned.",
+      "transformationClaim": "Students and external audiences encounter a clearer and more credible account of the lasting value of a King’s education, grounded in real evidence.",
+      "legacyProjectIds": [
+        "2.4"
+      ],
+      "deliverables": [
+        {
+          "id": "v2-premium-assets",
+          "displayId": "2.6.1",
+          "title": "Graduate Premium Evidence and Content Assets",
+          "lead": "Daniel Robson",
+          "summary": "Creates evidence-backed graduate premium fact packs, narratives, messaging frameworks and rich media assets that capture the distinctive value of a King’s education across faculties, departments and disciplines."
+        },
+        {
+          "id": "v2-premium-activation",
+          "displayId": "2.6.2",
+          "title": "Student and External Activation",
+          "lead": "Tania Rhodes-Taylor delegate",
+          "summary": "Activates the evidence-backed graduate premium with students and priority external audiences, with a single accounting home for flexible programme-wide external engagement."
+        }
+      ]
+    }
+  ],
+  "crossProgrammeDependencies": [
+    {
+      "id": "1.4",
+      "title": "Education Cultures",
+      "summary": "Creates the infrastructure through which educational development, innovation, impact, recognition and influence can grow more consistently across King's.",
+      "edgeNeedsServiced": [
+        "Experiential learning typology across curriculum and co-curriculum",
+        "Learning design principles for high-quality experiential provision",
+        "Operational and assurance principles for different models",
+        "Future entitlement ambition for students",
+        "Inputs into curriculum growth, co-curricular growth and opportunity commissioning"
+      ],
+      "whatChanges": "Experiential learning moves from a set of strong but uneven practices to a shared institutional model that can support growth, quality, assurance and access.",
+      "relatedDeliverables": [
+        "v2-experiential-north-star",
+        "v2-curriculum-opportunity",
+        "v2-partnership-infrastructure",
+        "v2-beyond-course-commissioning"
+      ]
+    },
+    {
+      "id": "curriculum-framework-review",
+      "title": "Curriculum Framework and Review",
+      "summary": "Provides the main route through which King's Edge requirements are embedded in the academic curriculum.",
+      "edgeNeedsServiced": [
+        "Audit of curriculum-embedded skills development",
+        "Audit of curriculum-embedded experiential learning",
+        "Identification of programme-level graduate premium contribution",
+        "Baseline for curriculum opportunity growth and assurance",
+        "Evidence to support programme graduate premium profiles and evidence packs"
+      ],
+      "whatChanges": "Edge requirements become part of mainstream curriculum review, avoiding duplication and embedding skills, experiential learning and graduate value in the core academic framework.",
+      "relatedDeliverables": [
+        "v2-graduate-futures-packs",
+        "v2-living-skills",
+        "v2-curriculum-opportunity",
+        "v2-premium-assets"
+      ]
+    },
+    {
+      "id": "single-student-app",
+      "title": "Single Student App / Digital Portal",
+      "summary": "Provides the digital environment through which the King's Edge offer becomes navigable, personal and usable for students.",
+      "edgeNeedsServiced": [
+        "King's Canvas functionality for purpose, aspiration and planning",
+        "Digital opportunity catalogue and navigation",
+        "Search, filtering and recommendation of opportunities",
+        "Links between opportunities, skills profiles and student aspirations",
+        "Technical support for microcredentials and digital badges",
+        "Future enhanced transcript / HEAR-alternative functionality",
+        "Evidence capture and articulation support"
+      ],
+      "whatChanges": "Students move from a fragmented opportunity landscape to a coherent digital route through which they can plan, find, access, evidence and articulate the value of their King's experience.",
+      "relatedDeliverables": [
+        "v2-purpose-conversation",
+        "v2-beyond-course-visibility",
+        "v2-fuller-learning-record"
+      ]
+    }
+  ]
+}

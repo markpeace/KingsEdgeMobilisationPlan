@@ -1,0 +1,231 @@
+{
+  "deliverables": [
+    {
+      "id": "1.4.2",
+      "projectId": "1.4",
+      "parts": [
+        "./1.4.2/core.json",
+        "./1.4.2/overview.json",
+        "./1.4.2/steps.json",
+        "./1.4.2/benefits.json",
+        "./1.4.2/measures.json",
+        "./1.4.2/governance.json"
+      ]
+    },
+    {
+      "id": "4.1.1",
+      "projectId": "4.1",
+      "parts": [
+        "./4.1.1/core.json",
+        "./4.1.1/plan.json",
+        "./4.1.1/governance.json"
+      ]
+    },
+    {
+      "id": "4.1.2",
+      "projectId": "4.1",
+      "parts": [
+        "./4.1.2/core.json",
+        "./4.1.2/plan.json",
+        "./4.1.2/timeline-reflow.json",
+        "./4.1.2/governance.json",
+        "./4.1.2/operating-costs.json"
+      ]
+    },
+    {
+      "id": "4.1.3",
+      "projectId": "4.1",
+      "parts": [
+        "./4.1.3/core.json",
+        "./4.1.3/plan.json",
+        "./4.1.3/timeline-reflow.json",
+        "./4.1.3/workforce.json",
+        "./4.1.3/governance.json",
+        "./4.1.3/it-resource-baseline.json",
+        "./4.1.3/it-resource-workforce.json",
+        "./4.1.3/it-resource-recurrence.json"
+      ]
+    },
+    {
+      "id": "4.1.4",
+      "projectId": "4.1",
+      "parts": [
+        "./4.1.4/core.json",
+        "./4.1.4/plan.json",
+        "./4.1.4/timeline-reflow.json",
+        "./4.1.4/governance.json"
+      ]
+    },
+    {
+      "id": "v2-purpose-conversation",
+      "projectId": "v2-purpose-recognition",
+      "parts": [
+        "./v2-purpose-conversation/core.json",
+        "./v2-purpose-conversation/steps.json",
+        "./v2-purpose-conversation/benefits.json"
+      ]
+    },
+    {
+      "id": "v2-living-skills",
+      "projectId": "v2-purpose-recognition",
+      "parts": [
+        "./v2-living-skills/core.json",
+        "./v2-living-skills/steps.json",
+        "./v2-living-skills/benefits.json"
+      ]
+    },
+    {
+      "id": "v2-fuller-learning-record",
+      "projectId": "v2-purpose-recognition",
+      "parts": [
+        "./v2-fuller-learning-record/core.json",
+        "./v2-fuller-learning-record/steps.json",
+        "./v2-fuller-learning-record/benefits.json"
+      ]
+    },
+    {
+      "id": "v2-experiential-north-star",
+      "projectId": "v2-experiential-education",
+      "parts": [
+        "./v2-experiential-north-star/core.json",
+        "./v2-experiential-north-star/steps.json",
+        "./v2-experiential-north-star/benefits.json"
+      ]
+    },
+    {
+      "id": "v2-curriculum-opportunity",
+      "projectId": "v2-experiential-education",
+      "parts": [
+        "./v2-curriculum-opportunity/core.json",
+        "./v2-curriculum-opportunity/steps.json",
+        "./v2-curriculum-opportunity/benefits.json"
+      ]
+    },
+    {
+      "id": "v2-near-curriculum-pathways",
+      "projectId": "v2-experiential-education",
+      "parts": [
+        "./v2-near-curriculum-pathways/core.json",
+        "./v2-near-curriculum-pathways/steps.json",
+        "./v2-near-curriculum-pathways/benefits.json"
+      ]
+    },
+    {
+      "id": "v2-partnership-infrastructure",
+      "projectId": "v2-opportunity-transitions",
+      "parts": [
+        "./v2-partnership-infrastructure/core.json",
+        "./v2-partnership-infrastructure/steps.json",
+        "./v2-partnership-infrastructure/benefits.json"
+      ]
+    },
+    {
+      "id": "v2-opportunity-funding",
+      "projectId": "v2-opportunity-transitions",
+      "parts": [
+        "./v2-opportunity-funding/core.json",
+        "./v2-opportunity-funding/steps.json",
+        "./v2-opportunity-funding/benefits.json"
+      ]
+    },
+    {
+      "id": "v2-beyond-course-commissioning",
+      "projectId": "v2-opportunity-transitions",
+      "parts": [
+        "./v2-beyond-course-commissioning/core.json",
+        "./v2-beyond-course-commissioning/steps.json",
+        "./v2-beyond-course-commissioning/benefits.json"
+      ]
+    },
+    {
+      "id": "v2-graduate-transitions",
+      "projectId": "v2-opportunity-transitions",
+      "parts": [
+        "./v2-graduate-transitions/core.json",
+        "./v2-graduate-transitions/steps.json",
+        "./v2-graduate-transitions/benefits.json"
+      ]
+    },
+    {
+      "id": "v2-beyond-course-visibility",
+      "projectId": "v2-student-life",
+      "parts": [
+        "./v2-beyond-course-visibility/core.json",
+        "./v2-beyond-course-visibility/steps.json",
+        "./v2-beyond-course-visibility/benefits.json"
+      ]
+    },
+    {
+      "id": "v2-student-life-design",
+      "projectId": "v2-student-life",
+      "parts": [
+        "./v2-student-life-design/core.json",
+        "./v2-student-life-design/steps.json",
+        "./v2-student-life-design/benefits.json"
+      ]
+    },
+    {
+      "id": "v2-wider-experience-rhythm",
+      "projectId": "v2-student-life",
+      "parts": [
+        "./v2-wider-experience-rhythm/core.json",
+        "./v2-wider-experience-rhythm/steps.json",
+        "./v2-wider-experience-rhythm/benefits.json"
+      ]
+    },
+    {
+      "id": "v2-subject-societies",
+      "projectId": "v2-student-life",
+      "parts": [
+        "./v2-subject-societies/core.json",
+        "./v2-subject-societies/steps.json"
+      ]
+    },
+    {
+      "id": "v2-graduate-futures-packs",
+      "projectId": "v2-insight-improvement",
+      "parts": [
+        "./v2-graduate-futures-packs/core.json",
+        "./v2-graduate-futures-packs/steps.json",
+        "./v2-graduate-futures-packs/benefits.json",
+        "./v2-graduate-futures-packs/evidence.json"
+      ]
+    },
+    {
+      "id": "v2-external-validation",
+      "projectId": "v2-insight-improvement",
+      "parts": [
+        "./v2-external-validation/core.json",
+        "./v2-external-validation/steps.json",
+        "./v2-external-validation/benefits.json"
+      ]
+    },
+    {
+      "id": "v2-survey-improvement",
+      "projectId": "v2-insight-improvement",
+      "parts": [
+        "./v2-survey-improvement/core.json",
+        "./v2-survey-improvement/steps.json",
+        "./v2-survey-improvement/benefits.json"
+      ]
+    },
+    {
+      "id": "v2-premium-assets",
+      "projectId": "v2-premium-reputation",
+      "parts": [
+        "./v2-premium-assets/core.json",
+        "./v2-premium-assets/steps.json",
+        "./v2-premium-assets/benefits.json"
+      ]
+    },
+    {
+      "id": "v2-premium-activation",
+      "projectId": "v2-premium-reputation",
+      "parts": [
+        "./v2-premium-activation/core.json",
+        "./v2-premium-activation/steps.json",
+        "./v2-premium-activation/benefits.json"
+      ]
+    }
+  ]
+}

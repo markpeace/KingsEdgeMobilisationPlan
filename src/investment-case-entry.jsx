@@ -4,11 +4,18 @@ import './design-system.css';
 import './styles/global-chrome.css';
 import './styles/detail-primitives.css';
 import './styles/investment-case.css';
+import { planVersion } from './plan-version.js';
+import v2Crosswalk from './data/v2/crosswalk.json';
+import v2Plan from './data/v2/kings-edge-plan.json';
 
-const deliverableHref = (id) => `./index.html#/deliverables/${id}`;
+const v2Labels = new Map(v2Plan.projects.flatMap((project) =>
+  project.deliverables.map((deliverable) => [deliverable.id, deliverable.displayId])));
+const mappedRefs = (ids) => [...new Set(ids.flatMap((id) =>
+  planVersion === 'v2' ? (v2Crosswalk.deliverables[id]?.v2DeliverableIds || [id]) : [id]))];
+const deliverableHref = (id) => `./index.html${planVersion === 'v2' ? '?plan=v2' : ''}#/deliverables/${id}`;
 
 function RefLinks({ ids }) {
-  return <span className="ds-cluster ask-refs" aria-label="Related deliverables">{ids.map((id) => <a className="ds-tag" key={id} href={deliverableHref(id)}>{id}</a>)}</span>;
+  return <span className="ds-cluster ask-refs" aria-label="Related deliverables">{mappedRefs(ids).map((id) => <a className="ds-tag" key={id} href={deliverableHref(id)}>{v2Labels.get(id) || id}</a>)}</span>;
 }
 
 function UserStories({ stories }) {
@@ -196,7 +203,7 @@ const serviceOptions = [
 
 function Header() {
   return <header className="site-header investment-header">
-    <a href="./index.html#/" className="brand">King's Edge Investment Ask</a>
+    <a href={`./index.html${planVersion === 'v2' ? '?plan=v2' : ''}#/`} className="brand">King's Edge Investment Ask</a>
     <nav aria-label="Investment ask navigation">
       <a href="#case">Investment ask</a>
       <a href="#core">Investment case</a>
@@ -213,6 +220,7 @@ function InvestmentCase() {
       <section id="case" className="hero investment-hero" aria-labelledby="investment-title">
         <p className="eyebrow">King’s Edge</p>
         <h1 id="investment-title">Investment ask</h1>
+        {planVersion === 'v2' && <p className="ds-subtle">The established four-package investment case is retained as an accounting baseline while its narrative is reviewed against the six-project V2 plan. Deliverable links below follow the V2 crosswalk; the figures have not been reallocated or added twice.</p>}
         <div className="ds-table-wrap option-summary-wrap">
           <table className="ds-table option-summary-table" aria-label="King's Edge investment options">
             <thead>

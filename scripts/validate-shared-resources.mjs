@@ -3,12 +3,13 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
-const registryPath = path.join(root, 'src/data/shared-resources.json');
-const reconciliationsPath = path.join(root, 'src/data/shared-resource-reconciliations.json');
-const deliverablesRoot = path.join(root, 'src/data/deliverables');
-const planPath = path.join(root, 'src/data/kings-edge-plan.json');
-const enablingPath = path.join(root, 'src/data/enabling-projects.json');
-const manifestPath = path.join(root, 'src/data/deliverables/manifest.json');
+const dataRoot = path.join(root, 'src/data', process.argv.includes('--v2') ? 'v2' : '');
+const registryPath = path.join(dataRoot, 'shared-resources.json');
+const reconciliationsPath = path.join(dataRoot, 'shared-resource-reconciliations.json');
+const deliverablesRoot = path.join(dataRoot, 'deliverables');
+const planPath = path.join(dataRoot, 'kings-edge-plan.json');
+const enablingPath = path.join(dataRoot, 'enabling-projects.json');
+const manifestPath = path.join(dataRoot, 'deliverables/manifest.json');
 const topLevelFiles = [planPath, enablingPath];
 const tolerance = 0.001;
 

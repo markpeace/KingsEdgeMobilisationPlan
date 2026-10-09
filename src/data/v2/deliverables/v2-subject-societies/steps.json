@@ -1,0 +1,38 @@
+{
+  "steps": [
+    {
+      "id": "2.3.3-step-1",
+      "title": "Map strengths and needs",
+      "period": "now-xmas-2026",
+      "summary": "Understand society activity, department links, alumni engagement, employer connection and support needs.",
+      "dependsOn": []
+    },
+    {
+      "id": "2.3.3-step-2",
+      "title": "Define the support model",
+      "period": "jan-summer-2027",
+      "summary": "Create a light-touch model for funding, events, leadership, department links and Careers / Alumni connection.",
+      "dependsOn": [
+        "2.3.3-step-1"
+      ]
+    },
+    {
+      "id": "2.3.3-step-3",
+      "title": "Pilot discipline community partnerships",
+      "period": "ay-2027-28-to-2028-29",
+      "summary": "Test discipline-level community and opportunity convening with selected societies and departments.",
+      "dependsOn": [
+        "2.3.3-step-2"
+      ]
+    },
+    {
+      "id": "2.3.3-step-4",
+      "title": "Embed as part of the Edge ecology",
+      "period": "ay-2029-30",
+      "summary": "Make societies a recognised route into disciplinary belonging, peer connection, alumni insight and opportunity.",
+      "dependsOn": [
+        "2.3.3-step-3"
+      ]
+    }
+  ]
+}

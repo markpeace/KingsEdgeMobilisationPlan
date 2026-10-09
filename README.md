@@ -2,6 +2,8 @@
 
 This repository holds the interactive mobilisation site for the King's Edge programme.
 
+The site now offers two parallel plans through the header selector: Version 1 is the original four-project structure; Version 2 is a proposed six-project remap with nineteen deliverables. Open `index.html?plan=v2` to view V2. The [V2 crosswalk](docs/v2-remap-crosswalk.md) records where each original item and investment ask went. The original plan remains available at the default URL.
+
 The site helps users browse, understand and test the delivery plan for King's Edge. It makes the structure of the programme clear, shows how individual deliverables fit together, and makes step-level dependencies across the wider Education and Student Success portfolio visible.
 
 ## North star
@@ -18,8 +20,8 @@ The plan is structured as a browsable hierarchy:
 
 The site allows users to:
 
-1. Browse the four King's Edge projects.
-2. See the sixteen deliverables under those projects.
+1. Browse the four V1 projects or the six proposed V2 projects.
+2. See sixteen V1 deliverables or nineteen V2 deliverables.
 3. Click into any deliverable for a detailed page.
 4. View delivery steps across a timeline / Gantt-style view.
 5. See step-to-step dependencies across King's Edge and related projects.
@@ -28,7 +30,7 @@ The site allows users to:
 
 ## Terminology
 
-- **King's Edge projects** are the four core projects: 2.1, 2.2, 2.3 and 2.4.
+- **King's Edge projects** are the four V1 projects or six V2 projects, according to the selected version.
 - **Related projects** are wider portfolio projects that carry Edge requirements, currently Education Cultures and Innovation, Curriculum Framework and Review, and the Single Student App / Digital Portal.
 - **Dependencies** are step-to-step relationships, not whole projects.
 

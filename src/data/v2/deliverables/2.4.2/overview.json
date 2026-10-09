@@ -1,0 +1,55 @@
+{
+  "summary": "Creates a coherent university-wide system for employer, alumni and other external insight, using common standards at university, faculty and departmental level to test King’s student offer and graduate premium claims and feed what is learned back into portfolio and reputational decisions.",
+  "detailSummary": "2.4.2 provides the external challenge and intelligence layer for King’s Edge. It connects the employer, alumni, professional, industry and other external voices already engaged across King’s into a more coherent system for testing whether the interventions and opportunities created for students remain relevant, distinctive and future-facing, and whether the graduate premium and reputational claims King’s makes about its value are credible and externally recognisable.\n\nThe deliverable works across three levels. At university level, external insight tests strategic trends, institutional propositions and future-facing priorities. At faculty level, it brings sector, professional and disciplinary clusters into a more consistent conversation about graduate futures and the student offer. At department or programme level, it supports specific scrutiny of curriculum relevance, local opportunity design, graduate destinations and the credibility of disciplinary graduate premium claims.\n\nThe intention is consistency without centralisation. Existing relationships, panels and disciplinary communities remain locally owned. 2.4.2 establishes the common architecture around them: a clear purpose, minimum expectations for membership and cadence, the evidence or propositions panels are asked to consider, a small set of common validation questions, a consistent way to record insight, and a route for turning that intelligence into action. Local groups retain the freedom to ask the additional questions that matter in their disciplines and sectors.\n\nEach validation cycle should end with an evidenced judgement and a visible response. Insight may validate an intervention or claim, identify something that should change, or show that further evidence is required. Annual synthesis then feeds that intelligence back into curriculum and opportunity development, skills priorities, graduate premium evidence and content, and wider reputation and market activation. 2.4.2 does not own every employer or alumni relationship, nor does it replace existing local engagement structures; it makes those structures more coherent, useful and connected to institutional decision-making.",
+  "caseForChange": {
+    "problem": "Employer, alumni, professional and industry insight already exists across King’s, but the structures that gather it vary widely in purpose, coverage, cadence and influence. Some faculties and departments have mature advisory mechanisms while others have little systematic external challenge. Even where strong conversations exist, insight is not consistently connected to decisions about curriculum, student interventions, experiential opportunities, skills priorities or the claims King’s makes about the value of its education. This makes it difficult to know whether external engagement is changing anything, whether gaps in coverage matter, or whether graduate premium claims have been tested beyond internal evidence.",
+    "opportunity": "King’s can build on its existing panels, alumni relationships, employer engagement and sector partnerships rather than creating a new engagement bureaucracy. A common university-wide architecture can make those relationships work harder: providing comparable evidence and propositions for external challenge, creating consistency in the questions asked and how insight is captured, preserving disciplinary specificity, and allowing local intelligence to aggregate into faculty and institutional understanding. The same system can test both the substance of the student offer and the credibility of the reputational proposition built from it.",
+    "whyNow": "King’s Edge is beginning to create and strengthen a larger portfolio of interventions, opportunities and graduate premium evidence. 2.4.1 will produce a richer estate of evidence-backed claims and content, while opportunity and curriculum work elsewhere in the programme will increasingly shape what students experience. Building an external validation loop alongside that growth reduces the risk of scaling activity that has not been sufficiently tested, allows emerging employer and alumni intelligence to shape priorities earlier, and gives King’s stronger external grounds for the claims it chooses to activate in markets and reputation work.",
+    "intendedChange": "King’s moves from a collection of valuable but disconnected external conversations to a coherent external insight and validation system. University, faculty and departmental structures work to a shared minimum standard while retaining local ownership and disciplinary relevance. The student offer and graduate premium claims are tested through repeatable cycles, external intelligence is synthesised annually, gaps in coverage are addressed, and there is a traceable route from what external voices tell King’s to what King’s validates, changes, investigates further or stops."
+  },
+  "components": [
+    {
+      "title": "University, faculty and departmental insight architecture",
+      "summary": "Define how employer, alumni and other external insight structures relate across the institution, including their purpose, expected coverage, escalation and synthesis routes."
+    },
+    {
+      "title": "Common validation framework",
+      "summary": "Set a minimum standard for evidence presented, core questions, panel cadence, recording insight and tracing action, while allowing faculty and disciplinary questions to remain specific."
+    },
+    {
+      "title": "Student offer validation",
+      "summary": "Use external voices to test whether interventions, curriculum-adjacent activity, experiential opportunities and skills development are relevant, distinctive and responsive to changing graduate futures."
+    },
+    {
+      "title": "Graduate premium and reputational validation",
+      "summary": "Test whether evidence-backed graduate premium claims and reputational outputs are credible, recognisable and meaningful to employers, alumni, sectors and other external audiences."
+    },
+    {
+      "title": "Annual intelligence and action loop",
+      "summary": "Aggregate external insight into a university-level view of what is validated, what should change and where further evidence or action is required, then feed that back into the King’s Edge portfolio and relevant institutional teams."
+    }
+  ],
+  "dependencies": [
+    {
+      "targetId": "2.4.1",
+      "type": "evidence-feed",
+      "label": "Graduate premium evidence and content assets provide claims and propositions for external testing as they mature."
+    }
+  ],
+  "feedsInto": [
+    "2.1.3",
+    "2.1.4",
+    "2.2.2",
+    "2.2.4",
+    "2.4.1",
+    "2.4.4"
+  ],
+  "relatedDeliverables": [
+    "2.1.3",
+    "2.1.4",
+    "2.2.2",
+    "2.2.4",
+    "2.4.1",
+    "2.4.4"
+  ]
+}

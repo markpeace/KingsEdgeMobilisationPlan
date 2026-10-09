@@ -1,0 +1,138 @@
+{
+  "steps": [
+    {
+      "id": "v2-survey-improvement-step-1",
+      "title": "Pilot Graduate Outcomes optimisation and survey mapping",
+      "period": {
+        "start": "jul-dec-2026:a",
+        "end": "jan-jun-2027:c"
+      },
+      "summary": "Target Graduate Outcomes response-rate optimisation where positive destinations appear strong but response is weak. Map the priority outcomes, employability and reputation surveys, their audiences, mechanics and plausible interventions.",
+      "dependsOn": [],
+      "outputs": [
+        {
+          "title": "Graduate Outcomes optimisation pilot and strategic survey map",
+          "summary": "A targeted GO response-rate intervention model focused on high-value opportunities for improvement, together with a prioritised map of other outcomes, employability and reputation surveys, their mechanics, audiences and plausible intervention levers."
+        }
+      ],
+      "resources": {
+        "existingCapacity": [
+          {
+            "role": "Graduate Outcomes and strategic survey expertise",
+            "owner": "Careers, Planning / Analytics and relevant institutional survey owners",
+            "contribution": "Support understanding of survey mechanics, target populations, response patterns, existing contact strategies, data governance and intervention feasibility.",
+            "periodNeeded": "2026/27",
+            "confidence": "planning assumption",
+            "riskIfMissing": "WP3 risks becoming generic communications activity rather than targeted performance optimisation."
+          },
+          {
+            "role": "Shared King’s Edge analytics and data capability",
+            "owner": "King’s Edge shared resource",
+            "fte": 0.05,
+            "sharedResourceId": "edge-analytics-data-capability",
+            "sharedResourceAllocation": {
+              "fte": 0.05
+            },
+            "contribution": "Provide targeted analytical support for Graduate Outcomes segmentation, intervention design and early reputation intelligence within the currently allocated programme envelope.",
+            "periodNeeded": "2026/27",
+            "confidence": "confirmed programme allocation"
+          }
+        ]
+      },
+      "sourceStepIds": [
+        "2.4.4-step-1"
+      ],
+      "fundingAccountingHome": "v2-premium-activation"
+    },
+    {
+      "id": "v2-survey-improvement-step-2",
+      "title": "Scale response interventions and priority survey strategies",
+      "period": {
+        "start": "jul-dec-2027:a",
+        "end": "jan-jun-2028:c"
+      },
+      "summary": "Scale and evaluate Graduate Outcomes response interventions across priority departments and cohorts. Develop targeted strategies for the small number of external surveys with material value.",
+      "dependsOn": [
+        "v2-survey-improvement-step-1"
+      ],
+      "outputs": [
+        {
+          "title": "Scaled Graduate Outcomes response-optimisation cycle",
+          "summary": "A repeatable model for identifying high-value response opportunities, targeting interventions, monitoring response and learning what works across priority areas."
+        }
+      ],
+      "resources": {
+        "existingCapacity": [
+          {
+            "role": "Graduate Outcomes and strategic survey expertise",
+            "owner": "Careers, Planning / Analytics and relevant institutional survey owners",
+            "contribution": "Support scaled response optimisation and development of strategies for priority external employability and reputation surveys.",
+            "periodNeeded": "2027/28",
+            "confidence": "planning assumption"
+          },
+          {
+            "role": "Shared King’s Edge analytics and data capability",
+            "owner": "King’s Edge shared resource",
+            "fte": 0.15,
+            "sharedResourceId": "edge-analytics-data-capability",
+            "sharedResourceAllocation": {
+              "fte": 0.15
+            },
+            "contribution": "Support segmentation, intervention evaluation, audience insight and survey-performance analysis within the currently allocated programme envelope.",
+            "periodNeeded": "2027/28",
+            "confidence": "confirmed programme allocation"
+          }
+        ]
+      },
+      "sourceStepIds": [
+        "2.4.4-step-2"
+      ],
+      "fundingAccountingHome": "v2-premium-activation"
+    },
+    {
+      "id": "v2-survey-improvement-step-3",
+      "title": "Embed the annual strategic survey cycle",
+      "period": {
+        "start": "jul-dec-2028:a",
+        "end": "jan-jun-2029:c"
+      },
+      "summary": "Establish a repeatable annual Graduate Outcomes and strategic-survey cycle with named owners, interventions, evaluation and continuous refinement.",
+      "dependsOn": [
+        "v2-survey-improvement-step-2"
+      ],
+      "outputs": [
+        {
+          "title": "Scaled reputation and market activation model",
+          "summary": "The external approaches that have demonstrated value are integrated into ongoing recruitment, communications, employer, alumni, partnership and sector activity with clear audience priorities and stewardship."
+        }
+      ],
+      "resources": {
+        "existingCapacity": [
+          {
+            "role": "Graduate Outcomes and strategic survey expertise",
+            "owner": "Careers, Planning / Analytics and relevant institutional survey owners",
+            "contribution": "Operate and refine the annual survey-performance cycle and connect survey intelligence back into proposition and reputation priorities.",
+            "periodNeeded": "2028/29",
+            "confidence": "planning assumption"
+          },
+          {
+            "role": "Shared King’s Edge analytics and data capability",
+            "owner": "King’s Edge shared resource",
+            "fte": 0.15,
+            "sharedResourceId": "edge-analytics-data-capability",
+            "sharedResourceAllocation": {
+              "fte": 0.15
+            },
+            "contribution": "Support annual targeting, performance evaluation and reputation intelligence within the currently allocated programme envelope.",
+            "periodNeeded": "2028/29",
+            "confidence": "confirmed programme allocation"
+          }
+        ]
+      },
+      "sourceStepIds": [
+        "2.4.4-step-3"
+      ],
+      "fundingAccountingHome": "v2-premium-activation"
+    }
+  ]
+}

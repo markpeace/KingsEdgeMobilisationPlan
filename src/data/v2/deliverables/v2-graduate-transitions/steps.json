@@ -1,0 +1,128 @@
+{
+  "steps": [
+    {
+      "id": "2.2.2-step-4",
+      "title": "Design the proactive Graduate Transitions operating model",
+      "period": {
+        "start": "jul-dec-2027:ab",
+        "end": "jan-jun-2028:ab"
+      },
+      "summary": "Use 2027/28 to design and prepare the Graduate Transitions operating model without incurring the new team cost in that year. Define priority graduate cohorts and targeting logic, agree how Careers Readiness and other relevant evidence will identify graduates who may benefit from intervention, establish handover and referral routes from student-facing careers support, define coaching and case-management approaches, connect employer-referral and international-graduate routes, and agree a proportionate benefits and evaluation framework ahead of a September 2028 launch.",
+      "dependsOn": [
+        "2.2.2-step-1"
+      ],
+      "outputs": [
+        {
+          "title": "Graduate Transitions service design",
+          "summary": "A bounded operating model covering targeting, outreach, coaching, job-search support, employer referral, international-graduate support, escalation and handover from student-facing careers provision."
+        },
+        {
+          "title": "Graduate Transitions evidence and benefits baseline",
+          "summary": "Baseline measures and an evaluation design covering reach, engagement, progression, positive destinations, highly skilled and meaningful outcomes, priority groups and international graduates."
+        }
+      ],
+      "resources": {
+        "existingCapacity": [
+          {
+            "role": "Careers & Employability leadership, Careers Readiness data and existing graduate-access provision",
+            "contribution": "Provide service-design expertise, data access, referral routes and the current two-year graduate-access baseline from which the proactive model will be built.",
+            "owner": "Careers & Employability",
+            "confidence": "developing",
+            "riskIfMissing": "The new team may become an additional reactive service rather than a targeted graduate-success function."
+          }
+        ],
+        "enablingConditions": [
+          {
+            "condition": "Appropriate access to Careers Readiness and graduate-contact data, with agreed privacy, targeting and outreach rules",
+            "whatItUnlocks": "Proactive identification and contact of graduates who may be at greater risk of poorer outcomes.",
+            "confidence": "developing",
+            "riskIfMissing": "The service will be unable to move materially beyond self-referral."
+          }
+        ]
+      }
+    },
+    {
+      "id": "2.2.2-step-5",
+      "title": "Final investment year: launch Graduate Transitions and prepare final international expansion",
+      "period": {
+        "start": "jul-dec-2028:c",
+        "end": "jan-jun-2029:b"
+      },
+      "summary": "In 2028/29, retain the established International G6 and East Asia G5 for the full year and bring the Graduate Transitions capability on stream from September 2028 with one G7 Head of Graduate Transitions and one G6 Graduate Transitions Coach. September starts are budgeted for ten months of 2028/29. The resulting interim annualised run-rate is £609,584 before the final two international G5 posts are added in January 2029.",
+      "dependsOn": [
+        "2.2.2-step-2",
+        "2.2.2-step-4"
+      ],
+      "outputs": [
+        {
+          "title": "Operational Graduate Transitions service",
+          "summary": "A two-person team is live from September 2028 and actively supports priority graduates through the post-completion transition."
+        },
+        {
+          "title": "Graduate transition insight loop",
+          "summary": "Recurring evidence about where graduates struggle is fed back into purpose, experiential, employer-engagement and student-facing careers provision."
+        },
+        {
+          "title": "International base ready for final regional expansion",
+          "summary": "The G6 and East Asia G5 provide an established two-post base from which the final two regional advisers can be added in January 2029."
+        }
+      ],
+      "resources": {
+        "newInvestment": [
+          {
+            "item": "G7 Head of Graduate Transitions",
+            "category": "graduate transitions staffing",
+            "amount": 68887,
+            "currency": "GBP",
+            "fte": 1,
+            "periodNeeded": "From September 2028; annualised cost shown",
+            "yearlyProfile": [
+              {
+                "academicYear": "2028/29",
+                "fte": 1,
+                "amount": 57406,
+                "note": "Ten-month planning budget from September 2028 to June 2029."
+              }
+            ],
+            "decisionNeededBy": "Spring 2028",
+            "fundingRoute": "King’s Edge / Education and Student Success mobilisation investment",
+            "fundingStatus": "new ask; final-year mobilisation",
+            "confidence": "costed",
+            "costBasis": "Fully loaded annual planning cost including employer National Insurance and pension/superannuation; 2028/29 cash is profiled for a September 2028 start. Finance/HR validation required before approval.",
+            "rationale": "Creates accountable leadership for the proactive graduate-success model, targeting, case-management approach, employer referral and evidence of impact.",
+            "riskIfMissing": "Graduate support remains largely reactive and King’s lacks dedicated ownership for targeted intervention through the Graduate Outcomes period."
+          },
+          {
+            "item": "G6 Graduate Transitions Coach",
+            "category": "graduate transitions staffing",
+            "amount": 57378,
+            "currency": "GBP",
+            "fte": 1,
+            "periodNeeded": "From September 2028; annualised cost shown",
+            "yearlyProfile": [
+              {
+                "academicYear": "2028/29",
+                "fte": 1,
+                "amount": 47815,
+                "note": "Ten-month planning budget from September 2028 to June 2029."
+              }
+            ],
+            "decisionNeededBy": "Spring 2028",
+            "fundingRoute": "King’s Edge / Education and Student Success mobilisation investment",
+            "fundingStatus": "new ask; final-year mobilisation",
+            "confidence": "costed",
+            "costBasis": "Fully loaded annual planning cost including employer National Insurance and pension/superannuation; 2028/29 cash is profiled for a September 2028 start. Finance/HR validation required before approval.",
+            "rationale": "Provides direct coaching, job-search, recruitment and employer-referral capacity for graduates identified through the proactive model.",
+            "riskIfMissing": "The service will have leadership but insufficient direct delivery capacity to support priority graduates at useful scale."
+          }
+        ]
+      },
+      "assumptions": [
+        {
+          "title": "September 2028 Graduate Transitions additions contribute £105,221 to the 2028/29 cash budget",
+          "summary": "The Graduate Transitions G7 + G6 are budgeted for ten months. The International G6 and East Asia G5 are already established and budgeted at their full annual costs in 2028/29."
+        }
+      ]
+    }
+  ]
+}
