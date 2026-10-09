@@ -1,0 +1,94 @@
+{
+  "id": "4.1.1",
+  "title": "Student Knowledge and Information Foundation",
+  "lead": "TBC – cross-institution knowledge and content lead",
+  "planningStatus": "proposition-development",
+  "problemSolved": "Students and staff rely on a fragmented estate of student-facing information with duplicated, inconsistent, stale or poorly owned content, so King’s Answers, the Digital Student Experience Hub and future AI-supported services do not yet have a sufficiently authoritative knowledge foundation to depend on.",
+  "whatChanges": "King’s establishes one governed student knowledge foundation for priority information, with clear inclusion rules, authoritative ownership, content standards, lifecycle controls and a managed route for rationalising and improving existing material. King’s Answers provides the immediate proving environment, while the knowledge foundation is designed for reuse through the Digital Student Experience Hub, self-service and future AI-supported interactions.",
+  "decisionLog": [
+    {
+      "date": "2026-08-26",
+      "type": "decision",
+      "forum": "Student Experience Hub strategic alignment review",
+      "outcome": "Retained 4.1.1 within the Digital Student Experience Hub initiative while recognising that the CRM and student-enquiry capability was already in flight through its own delivery workstream, leadership and governance. The Hub would align to and consume that capability rather than remobilise it."
+    },
+    {
+      "date": "2026-08-26",
+      "type": "decision",
+      "forum": "Student Experience Hub strategic alignment review",
+      "outcome": "Confirmed that CRM and student-enquiry maturity affects the depth of the Hub’s enquiry journey but does not gate the focused September 2027 first release."
+    },
+    {
+      "date": "2026-09-03",
+      "type": "decision",
+      "forum": "Student information, channels and knowledge-base alignment following 2 September cross-university meeting",
+      "outcome": "Repurposed 4.1.1 from delivery of CRM and enquiry-management capability to the Student Knowledge and Information Foundation. CRM, King’s Answers ticketing/workflow and wider enquiry management are now treated as inherited enabling capabilities delivered through their existing routes; 4.1.1 owns the authoritative student knowledge layer on which King’s Answers, the Hub and future AI-supported interactions depend."
+    },
+    {
+      "date": "2026-09-03",
+      "type": "decision",
+      "forum": "Student information, channels and knowledge-base alignment following 2 September cross-university meeting",
+      "outcome": "Confirmed King’s Answers as the immediate proving environment for the knowledge foundation rather than the enduring product boundary. The deliverable must separate durable student information from transient opportunity content and staff-facing operational guidance, establish controlled authoring and lifecycle governance, and use enquiry/search evidence to identify gaps and drive continuous improvement."
+    },
+    {
+      "date": "2026-09-04",
+      "type": "decision",
+      "forum": "Digital Student Experience Hub business-case resource planning",
+      "outcome": "Set the initial 4.1.1 resource envelope on the basis that senior knowledge/content architecture and governance leadership and authoritative subject ownership are protected existing institutional capacity. Added a minimum funded 0.5 FTE communications, content-design and editorial delivery provision in each mobilisation year, costed at £33,000 per year using a £66,000 fully-loaded full-time planning benchmark, or £99,000 across three years. The provision should be designed organisationally alongside the existing 2.4.4 King’s Edge activation/reputation capacity as a broader communications and content role or small capability, while the Hub and King’s Edge accounting remain separate. Discovery and the first SASD implementation will test whether wider rollout requires additional capacity; the 0.5 FTE Hub provision is a planning floor rather than a fixed ceiling or an assumed permanent BAU commitment."
+    }
+  ],
+  "summary": "Creates the authoritative, governed student knowledge foundation needed for King’s Answers, the Digital Student Experience Hub, self-service and future AI-supported student interactions.",
+  "detailSummary": "The Student Knowledge and Information Foundation will create a coherent institutional source of trusted student-facing information. It will identify and rationalise priority content across the current estate, distinguish durable student information from transient opportunities and staff-facing operational guidance, and establish clear rules for what belongs in the authoritative student knowledge base.\n\nThe deliverable will define the content and information model, taxonomy, ownership, authoring, editorial, approval, review, expiry and quality-assurance arrangements required to keep that knowledge reliable. Existing content will not simply be migrated wholesale. Priority material will be assessed, improved, consolidated or retired, with gaps identified and assigned to authoritative owners. A deliberately controlled editorial model will balance subject ownership with consistency, quality and maintainability.\n\nKing’s Answers is the immediate proving environment because enquiry management creates a practical feedback loop between what students ask and what the institution knows. Where reliable knowledge resolves a need, it can support self-service; where it does not, search and enquiry evidence should reveal missing, unclear or outdated content. The same governed knowledge foundation should then be reusable through the Digital Student Experience Hub and future AI-supported interactions, rather than being rebuilt separately for each channel.\n\nThe deliverable does not own CRM, ticketing, case management, service workflows or the wider enquiry-management programme. Those capabilities are inherited through their existing delivery routes. It also does not own all student communications or every web channel. Its boundary is the authoritative student knowledge layer and the operating model required to sustain it.",
+  "caseForChange": {
+    "problem": "Student-facing information is distributed across websites, intranet pages, service channels, local guidance and other destinations, often reflecting organisational ownership rather than student need. Similar information can exist in several places, short-lived opportunities can sit alongside durable guidance because no better channel exists, and content ownership or review arrangements are inconsistent.\n\nThis fragmentation creates a direct constraint on King’s Answers and the Digital Student Experience Hub. Search, self-service, enquiry triage and future AI-supported interactions can only be as reliable as the information they retrieve. Simply ingesting the existing estate would reproduce contradictions, stale material and unclear authority in a new interface.",
+    "opportunity": "The mobilisation of King’s Answers and the Digital Student Experience Hub creates a practical moment to establish student information as institutional infrastructure rather than a collection of pages. A governed knowledge foundation can give students clearer, more trustworthy answers while allowing different digital channels to reuse the same authoritative content.\n\nEnquiry and search data can also create a continuous improvement loop. Questions that are not resolved by existing knowledge can identify gaps, unclear language or weak ownership; repeated duplicate content can be rationalised; and services can improve information before demand becomes a ticket. Separating durable knowledge from opportunity content and staff operational guidance also allows each type of content to be managed in the environment best suited to it.",
+    "whyNow": "King’s Answers is moving ahead as a tactical first step within wider enquiry-management work, while the Digital Student Experience Hub is entering mobilisation. Both will depend on authoritative student information, and future AI-enabled answer and navigation capabilities will amplify the consequences of poor content as readily as good content.\n\nThe 2 September 2026 cross-university discussion identified that the technical platform is not the principal constraint: significant work is needed to review content, decide what belongs, establish ownership and create a sustainable authoring and quality model. Starting this work during Year One allows the knowledge foundation to mature alongside King’s Answers and the Hub rather than becoming a late migration problem.",
+    "intendedChange": "King’s has a governed student knowledge foundation that provides an authoritative source for priority student information regardless of the channel through which it is consumed. Students are more likely to find a reliable answer without needing to know which department owns it, while staff and digital services can distinguish clearly between authoritative student guidance, operational staff instructions and transient opportunity content.\n\nPriority knowledge has named ownership, agreed standards and visible review and expiry arrangements. Duplicated or conflicting content is progressively consolidated, gaps are identified through research and live enquiry evidence, and King’s Answers, the Digital Student Experience Hub and future AI-supported services can retrieve information from a maintained institutional foundation rather than an unmanaged content estate."
+  },
+  "ownership": {
+    "accountableOwner": "Mark Peace",
+    "deliveryLead": "TBC – cross-institution knowledge and content lead"
+  },
+  "benefits": [
+    {
+      "id": "4.1.1-B1",
+      "title": "Students can find a trustworthy answer without knowing how King’s is organised",
+      "statement": "Priority student information is structured around student needs and made available from an authoritative source, reducing reliance on departmental knowledge, repeated searching and local workarounds.",
+      "beneficiary": "Students",
+      "benefitType": "student experience and accessibility",
+      "owner": "Mark Peace",
+      "realisationPeriod": "Progressive from the first governed priority knowledge domains",
+      "successLooksLike": "Students can resolve more priority information needs successfully through trusted self-service and report less uncertainty about where to look."
+    },
+    {
+      "id": "4.1.1-B2",
+      "title": "King’s reduces conflicting, duplicated and stale student information",
+      "statement": "Clear inclusion rules, authoritative ownership and lifecycle controls allow duplicated or weak content to be consolidated, improved or retired rather than reproduced across channels.",
+      "beneficiary": "Students, service owners and content teams",
+      "benefitType": "institutional coherence and content quality",
+      "owner": "TBC – enduring student knowledge owner",
+      "realisationPeriod": "From the first content audit and migration waves, strengthening as more domains adopt the model",
+      "successLooksLike": "Priority topics have a clear authoritative source, fewer competing copies and demonstrable review ownership."
+    },
+    {
+      "id": "4.1.1-B3",
+      "title": "King’s Answers, the Hub and future AI can rely on better institutional knowledge",
+      "statement": "Digital channels and answer tools can retrieve maintained, appropriately scoped student information from a governed foundation rather than treating the existing content estate as equally reliable.",
+      "beneficiary": "Students, student-facing staff and digital product teams",
+      "benefitType": "digital service quality and risk reduction",
+      "owner": "TBC – enduring student knowledge owner",
+      "realisationPeriod": "As governed knowledge is connected to King’s Answers and then reused through the Hub",
+      "successLooksLike": "Answer and navigation services can identify authoritative content consistently, and known content defects are traceable to an owner and improvement route."
+    },
+    {
+      "id": "4.1.1-B4",
+      "title": "Student questions create a continuous improvement loop for information",
+      "statement": "Search, unresolved enquiry and service-demand evidence is used to identify missing, unclear or outdated knowledge and prioritise improvement.",
+      "beneficiary": "Students, service owners and King’s",
+      "benefitType": "continuous improvement and operational effectiveness",
+      "owner": "TBC – knowledge operations owner",
+      "realisationPeriod": "From operation of the first King’s Answers knowledge domains",
+      "successLooksLike": "Recurring unanswered or poorly resolved questions lead to visible knowledge improvements and fewer avoidable enquiries over time."
+    }
+  ]
+}

@@ -1,4 +1,4 @@
-import theory from './data/theory-of-change.json';
+import { theoryOfChange as theory } from './plan-data.js';
 
 const SECTION_ID = 'theory-of-change';
 

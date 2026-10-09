@@ -1,0 +1,8 @@
+{
+  "governance": {
+    "decisionForum": "King’s Edge Portfolio Board, with technical decisions coordinated through Student Experience Hub and Digital and IT governance.",
+    "decisionScope": "Material decisions about the King’s Edge digital product scope, migration priorities, project and experience capabilities, digital-badging approach, King’s Canvas boundaries, supplier exit, integration into the shared Hub and enduring ownership.",
+    "businessAsUsualOwner": "TBC – King’s Edge digital product owner within the Student Experience Hub",
+    "businessAsUsualOwnershipNote": "The enduring model is expected to retain King’s Edge ownership of its proposition, content, curation and developmental journeys, alongside shared Hub product and IT service ownership of the underlying platform. The precise accountability split should be agreed before the core migration is completed."
+  }
+}

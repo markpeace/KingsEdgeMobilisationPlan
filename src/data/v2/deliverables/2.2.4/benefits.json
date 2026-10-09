@@ -1,0 +1,20 @@
+{
+  "benefits": [
+    {
+      "id": "2.2.4-B1",
+      "title": "Students gain more equitable access to substantive skills and experience",
+      "statement": "More students can access meaningful opportunities beyond the course that help them develop skills, gain experience and strengthen their future prospects. A deliberately balanced portfolio of scalable, active and intensive provision reduces reliance on confidence, networks or chance in accessing developmental experiences.",
+      "beneficiary": "Students, particularly those with less assured access to opportunity or graduate pathways",
+      "benefitType": "student development, equity and graduate futures",
+      "successLooksLike": "Students from a broad range of backgrounds participate in substantive opportunities that give them meaningful skills, experience or evidence they can carry forward."
+    },
+    {
+      "id": "2.2.4-B2",
+      "title": "King’s can turn emerging need into responsive opportunity supply",
+      "statement": "King’s gains a repeatable commissioning mechanism through which student need, strategic priorities and evidence about future relevance can be converted into funded provision. Investment can be balanced across reach and depth, adapted as new intelligence emerges, and directed towards gaps where additional opportunity is most likely to add value.",
+      "beneficiary": "Students, opportunity providers and King’s",
+      "benefitType": "institutional capability and effective use of resource",
+      "successLooksLike": "Commissioning decisions can be clearly traced to identified needs or priorities, the portfolio evolves as evidence matures, and King’s is able to grow, reshape or stop provision in response to what it learns."
+    }
+  ]
+}

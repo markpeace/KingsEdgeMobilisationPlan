@@ -25,6 +25,29 @@ html {
   backdrop-filter: blur(12px);
 }
 
+.plan-version-control {
+  display: flex;
+  flex: none;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.plan-version-control select {
+  max-width: 13rem;
+  padding: 0.4rem;
+  border: 1px solid var(--color-ink);
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font: inherit;
+}
+
+@media (max-width: 1050px) {
+  .site-header { flex-wrap: wrap; padding-bottom: 0.5rem; }
+  .plan-version-control { margin-left: auto; }
+}
+
 /* Preserve the established split King's Edge identity while keeping the anchor's
    accessible name in the markup. */
 .brand {
@@ -269,6 +292,12 @@ html {
     display: grid;
     gap: 0;
     padding: 0;
+  }
+
+  .plan-version-control {
+    justify-content: center;
+    margin: 0;
+    padding: 0 var(--space-2) var(--space-2);
   }
 
   .brand {

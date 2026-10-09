@@ -1,0 +1,61 @@
+{
+  "ownership": {
+    "accountableOwner": "Aranee Manoharan",
+    "deliveryLead": "Daniel Robson"
+  },
+  "governance": {
+    "decisionForum": "Education Executive, with escalation through the King's Edge Programme Board and Portfolio Board",
+    "decisionScope": "Education Executive approves the institutional pack and workshop framework and decides the focal areas and departmental bundles for the first rollout, involving Vice-Deans Education. Delivery exceptions are managed through the project and escalated through the King's Edge Programme Board and Portfolio Board where required.",
+    "businessAsUsualOwner": "Careers and Employability Service",
+    "businessAsUsualOwnershipNote": "Rachel Kershaw provides senior accountable Careers ownership. The Data Manager, Careers and Student Success role is the operational owner for pack production, data refresh, analytical quality and documentation. Course and department teams own their reviews and resulting conclusions. Actions, questions and support needs enter Curriculum Education Review by default, or an agreed alternative where CER does not apply. Faculty education committees monitor local follow-through and the Academic Standards and Quality Enhancement Subcommittee receives an aggregate view through existing quality-enhancement reporting.",
+    "deliveryPartners": [
+      {
+        "group": "Evidence, pack production and technical delivery",
+        "partners": [
+          "Careers and Employability Service",
+          "Data Services",
+          "Student Success Directorate enrolment data owner"
+        ],
+        "contribution": "Provide, interpret, produce and maintain the course-level evidence packs; manage data access, definitions, caveats and refresh; and establish a supportable Microsoft Fabric and analytical route."
+      },
+      {
+        "group": "Workshop, mobilisation and local support",
+        "partners": [
+          "King's Academy",
+          "Careers Workshop, Pilot and Mobilisation Lead",
+          "Faculty-linked Careers Consultants",
+          "Course and department teams"
+        ],
+        "contribution": "Design and test the self-run workshop, mobilise departmental bundles, support interpretation through the existing Careers business-partner model and enable programmes to organise their own reviews."
+      },
+      {
+        "group": "Institutional validation and approval",
+        "partners": [
+          "Institution-wide Reference Group",
+          "Education Executive",
+          "Vice-Deans Education"
+        ],
+        "contribution": "Validate usefulness, credibility and responsible representation; approve the framework; and decide the focal areas for the first rollout."
+      },
+      {
+        "group": "Quality enhancement integration",
+        "partners": [
+          "Director of Academic Quality or delegate",
+          "Operational CER contact",
+          "Faculty education committees",
+          "Academic Standards and Quality Enhancement Subcommittee of Education Committee"
+        ],
+        "contribution": "Connect resulting actions, questions and support needs to CER or an agreed alternative, assure the monitoring handoff and provide local and institutional oversight through existing quality-enhancement processes."
+      },
+      {
+        "group": "Project coordination and reporting",
+        "partners": [
+          "Transformation Office project manager",
+          "King's Edge Programme Board",
+          "Portfolio Board"
+        ],
+        "contribution": "Coordinate the plan, risks, decisions, dependencies, approvals, rollout, exceptions, reporting, handover and closure. Routine reporting is aggregated through the project, with Daniel Robson attending higher forums for specific decisions or exceptions."
+      }
+    ]
+  }
+}

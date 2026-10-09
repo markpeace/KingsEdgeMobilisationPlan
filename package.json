@@ -6,7 +6,7 @@
   "scripts": {
     "prepare:styles": "node scripts/prepare-legacy-styles.mjs",
     "dev": "npm run prepare:styles && vite",
-    "validate:data": "node scripts/validate-plan.mjs && node scripts/validate-resource-model.mjs && node scripts/validate-shared-resources.mjs && node scripts/validate-governance-model.mjs",
+    "validate:data": "node scripts/validate-plan-versions.mjs && node scripts/validate-plan.mjs && node scripts/validate-resource-model.mjs && node scripts/validate-shared-resources.mjs && node scripts/validate-governance-model.mjs && node scripts/validate-plan.mjs --v2 && node scripts/validate-resource-model.mjs --v2 && node scripts/validate-shared-resources.mjs --v2 && node scripts/validate-governance-model.mjs --v2",
     "validate:styles": "npm run prepare:styles --silent && node scripts/validate-styles.mjs",
     "validate:reader": "node --check public/deliverable-reader-modes.js && node --check public/project-reader-modes.js",
     "build": "npm run validate:data && npm run validate:styles && npm run validate:reader && npm run test:timeline && npm run test:planning-status && npm run test:resources && vite build",

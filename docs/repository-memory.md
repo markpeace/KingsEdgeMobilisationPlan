@@ -16,6 +16,8 @@ Use it to understand durable decisions. Decisions marked provisional can be revi
 
 ## Current state
 
+**9 October 2026, parallel plan baseline:** Version 1 remains frozen in `src/data/` and Version 2 begins as an exact independent copy in `src/data/v2/`. The main site's Plan version selector switches the complete content bundle using `?plan=v2`; the default URL is Version 1. The new project and deliverable architecture has not yet been decided. See `docs/plan-versioning.md` and `docs/plan-v1-baseline.json` before restructuring Version 2. Preserve a migration trail for every original item.
+
 The source-of-truth migration has been applied. `src/data/kings-edge-plan.json` carries canonical project order and IDs. Detailed modular deliverables registered through `src/data/deliverables/manifest.json` override inline fallback content. Fully modularised deliverables should normally appear in `kings-edge-plan.json` as an ID reference only, avoiding duplicate detailed representations.
 
 The canonical King’s Edge project architecture remains:

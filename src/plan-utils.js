@@ -1,8 +1,4 @@
-import plan from './data/kings-edge-plan.json';
-import outOfProgrammeProjects from './data/enabling-projects.json';
-import stepDependencyOverrides from './data/step-dependencies.json';
-import resourceReconciliations from './data/shared-resource-reconciliations.json';
-import { registeredDeliverableMap } from './data/deliverables/index.js';
+import { plan, enablingProjects as outOfProgrammeProjects, stepDependencies as stepDependencyOverrides, resourceReconciliations, registeredDeliverableMap } from './plan-data.js';
 import { DEFAULT_PLANNING_STATUS } from './planning-status.js';
 
 const thirdSegments = [
