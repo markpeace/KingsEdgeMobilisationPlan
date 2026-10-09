@@ -52,10 +52,10 @@
       }
     ],
     "servesDeliverables": [
-      "2.1.2",
-      "2.1.4",
-      "2.2.2",
-      "2.2.4"
+      "v2-experiential-north-star",
+      "v2-curriculum-opportunity",
+      "v2-partnership-infrastructure",
+      "v2-beyond-course-commissioning"
     ]
   },
   {
@@ -68,10 +68,10 @@
     "edgeRole": "Carries the curriculum audit and review mechanism that surfaces skills, experiential learning, graduate premium contribution and growth priorities. It also provides the principal curriculum route for wider discipline-contextualised AI capability, with King's Edge supporting connection to skills, opportunity, evidence and recognition rather than owning the AI entitlement itself.",
     "deliverables": [],
     "servesDeliverables": [
-      "2.1.1",
-      "2.1.3",
-      "2.1.4",
-      "2.4.1"
+      "v2-graduate-futures-packs",
+      "v2-living-skills",
+      "v2-curriculum-opportunity",
+      "v2-premium-assets"
     ]
   },
   {
@@ -122,9 +122,9 @@
       }
     ],
     "servesDeliverables": [
-      "2.2.1",
-      "2.3.1",
-      "2.4.3"
+      "v2-purpose-conversation",
+      "v2-beyond-course-visibility",
+      "v2-fuller-learning-record"
     ],
     "displayId": "4.1"
   }

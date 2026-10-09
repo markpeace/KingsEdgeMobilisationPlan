@@ -17,13 +17,13 @@
       ],
       "bauLiability": { "from": "July 2029", "fte": 1.0, "annualAmount": 90000, "currency": "GBP", "owner": "Enrichment & Enhancement", "confidence": "planning assumption" },
       "allocationPlan": [
-        { "deliverableId": "2.2.1", "yearlyProfile": [{ "academicYear": "2026/27", "fte": 0.10 }, { "academicYear": "2027/28", "fte": 0.10 }, { "academicYear": "2028/29", "fte": 0.10 }] },
-        { "deliverableId": "2.2.2", "yearlyProfile": [{ "academicYear": "2026/27", "fte": 0.15 }, { "academicYear": "2027/28", "fte": 0.15 }, { "academicYear": "2028/29", "fte": 0.15 }] },
-        { "deliverableId": "2.2.3", "yearlyProfile": [{ "academicYear": "2026/27", "fte": 0.10 }, { "academicYear": "2027/28", "fte": 0.10 }, { "academicYear": "2028/29", "fte": 0.10 }] },
-        { "deliverableId": "2.2.4", "yearlyProfile": [{ "academicYear": "2026/27", "fte": 0.15 }, { "academicYear": "2027/28", "fte": 0.15 }, { "academicYear": "2028/29", "fte": 0.15 }] },
-        { "deliverableId": "2.3.1", "yearlyProfile": [{ "academicYear": "2026/27", "fte": 0.15 }, { "academicYear": "2027/28", "fte": 0.15 }, { "academicYear": "2028/29", "fte": 0.15 }] },
-        { "deliverableId": "2.3.2", "yearlyProfile": [{ "academicYear": "2026/27", "fte": 0.10 }, { "academicYear": "2027/28", "fte": 0.10 }, { "academicYear": "2028/29", "fte": 0.10 }] },
-        { "deliverableId": "2.3.4", "yearlyProfile": [{ "academicYear": "2026/27", "fte": 0.25 }, { "academicYear": "2027/28", "fte": 0.25 }, { "academicYear": "2028/29", "fte": 0.25 }] }
+        { "deliverableId": "v2-purpose-conversation", "yearlyProfile": [{ "academicYear": "2026/27", "fte": 0.10 }, { "academicYear": "2027/28", "fte": 0.10 }, { "academicYear": "2028/29", "fte": 0.10 }] },
+        { "deliverableId": "v2-partnership-infrastructure", "yearlyProfile": [{ "academicYear": "2026/27", "fte": 0.15 }, { "academicYear": "2027/28", "fte": 0.15 }, { "academicYear": "2028/29", "fte": 0.15 }] },
+        { "deliverableId": "v2-near-curriculum-pathways", "yearlyProfile": [{ "academicYear": "2026/27", "fte": 0.10 }, { "academicYear": "2027/28", "fte": 0.10 }, { "academicYear": "2028/29", "fte": 0.10 }] },
+        { "deliverableId": "v2-beyond-course-commissioning", "yearlyProfile": [{ "academicYear": "2026/27", "fte": 0.15 }, { "academicYear": "2027/28", "fte": 0.15 }, { "academicYear": "2028/29", "fte": 0.15 }] },
+        { "deliverableId": "v2-beyond-course-visibility", "yearlyProfile": [{ "academicYear": "2026/27", "fte": 0.15 }, { "academicYear": "2027/28", "fte": 0.15 }, { "academicYear": "2028/29", "fte": 0.15 }] },
+        { "deliverableId": "v2-student-life-design", "yearlyProfile": [{ "academicYear": "2026/27", "fte": 0.10 }, { "academicYear": "2027/28", "fte": 0.10 }, { "academicYear": "2028/29", "fte": 0.10 }] },
+        { "deliverableId": "v2-wider-experience-rhythm", "yearlyProfile": [{ "academicYear": "2026/27", "fte": 0.25 }, { "academicYear": "2027/28", "fte": 0.25 }, { "academicYear": "2028/29", "fte": 0.25 }] }
       ]
     },
     {
@@ -42,10 +42,10 @@
         { "academicYear": "2028/29", "fte": 1.0, "amount": 35000, "currency": "GBP", "note": "One full-time sandwich-year analytics/data placement." }
       ],
       "allocationPlan": [
-        { "deliverableId": "2.1.1", "yearlyProfile": [{ "academicYear": "2026/27", "fte": 0.25 }, { "academicYear": "2027/28", "fte": 0.25 }, { "academicYear": "2028/29", "fte": 0.25 }] },
-        { "deliverableId": "2.3.1", "yearlyProfile": [{ "academicYear": "2026/27", "fte": 0.10 }, { "academicYear": "2027/28", "fte": 0.25 }, { "academicYear": "2028/29", "fte": 0.25 }] },
-        { "deliverableId": "2.4.1", "yearlyProfile": [{ "academicYear": "2026/27", "fte": 0.20 }, { "academicYear": "2027/28", "fte": 0.35 }, { "academicYear": "2028/29", "fte": 0.35 }] },
-        { "deliverableId": "2.4.4", "yearlyProfile": [{ "academicYear": "2026/27", "fte": 0.05 }, { "academicYear": "2027/28", "fte": 0.15 }, { "academicYear": "2028/29", "fte": 0.15 }] }
+        { "deliverableId": "v2-graduate-futures-packs", "yearlyProfile": [{ "academicYear": "2026/27", "fte": 0.25 }, { "academicYear": "2027/28", "fte": 0.25 }, { "academicYear": "2028/29", "fte": 0.25 }] },
+        { "deliverableId": "v2-beyond-course-visibility", "yearlyProfile": [{ "academicYear": "2026/27", "fte": 0.10 }, { "academicYear": "2027/28", "fte": 0.25 }, { "academicYear": "2028/29", "fte": 0.25 }] },
+        { "deliverableId": "v2-premium-assets", "yearlyProfile": [{ "academicYear": "2026/27", "fte": 0.20 }, { "academicYear": "2027/28", "fte": 0.35 }, { "academicYear": "2028/29", "fte": 0.35 }] },
+        { "deliverableId": "v2-survey-improvement", "yearlyProfile": [{ "academicYear": "2026/27", "fte": 0.05 }, { "academicYear": "2027/28", "fte": 0.15 }, { "academicYear": "2028/29", "fte": 0.15 }] }
       ]
     },
     {
@@ -64,21 +64,21 @@
         { "academicYear": "2028/29", "fte": 2.0, "amount": 70000, "currency": "GBP", "note": "Two new full-time sandwich-year King's Edge Project Officers." }
       ],
       "allocationPlan": [
-        { "deliverableId": "2.1.1", "yearlyProfile": [{ "academicYear": "2026/27", "fte": 0.10 }, { "academicYear": "2027/28", "fte": 0.20 }, { "academicYear": "2028/29", "fte": 0.20 }] },
-        { "deliverableId": "2.1.2", "yearlyProfile": [{ "academicYear": "2026/27", "fte": 0.05 }, { "academicYear": "2027/28", "fte": 0.10 }, { "academicYear": "2028/29", "fte": 0.10 }] },
-        { "deliverableId": "2.1.3", "yearlyProfile": [{ "academicYear": "2026/27", "fte": 0.05 }, { "academicYear": "2027/28", "fte": 0.10 }, { "academicYear": "2028/29", "fte": 0.10 }] },
-        { "deliverableId": "2.1.4", "yearlyProfile": [{ "academicYear": "2026/27", "fte": 0.05 }, { "academicYear": "2027/28", "fte": 0.10 }, { "academicYear": "2028/29", "fte": 0.10 }] },
-        { "deliverableId": "2.2.1", "yearlyProfile": [{ "academicYear": "2026/27", "fte": 0.05 }, { "academicYear": "2027/28", "fte": 0.10 }, { "academicYear": "2028/29", "fte": 0.10 }] },
-        { "deliverableId": "2.2.2", "yearlyProfile": [{ "academicYear": "2026/27", "fte": 0.05 }, { "academicYear": "2027/28", "fte": 0.10 }, { "academicYear": "2028/29", "fte": 0.10 }] },
-        { "deliverableId": "2.2.3", "yearlyProfile": [{ "academicYear": "2026/27", "fte": 0.05 }, { "academicYear": "2027/28", "fte": 0.10 }, { "academicYear": "2028/29", "fte": 0.10 }] },
-        { "deliverableId": "2.2.4", "yearlyProfile": [{ "academicYear": "2026/27", "fte": 0.10 }, { "academicYear": "2027/28", "fte": 0.20 }, { "academicYear": "2028/29", "fte": 0.20 }] },
-        { "deliverableId": "2.3.1", "yearlyProfile": [{ "academicYear": "2026/27", "fte": 0.10 }, { "academicYear": "2027/28", "fte": 0.20 }, { "academicYear": "2028/29", "fte": 0.20 }] },
-        { "deliverableId": "2.3.2", "yearlyProfile": [{ "academicYear": "2026/27", "fte": 0.05 }, { "academicYear": "2027/28", "fte": 0.10 }, { "academicYear": "2028/29", "fte": 0.10 }] },
-        { "deliverableId": "2.3.4", "yearlyProfile": [{ "academicYear": "2026/27", "fte": 0.10 }, { "academicYear": "2027/28", "fte": 0.20 }, { "academicYear": "2028/29", "fte": 0.20 }] },
-        { "deliverableId": "2.4.1", "yearlyProfile": [{ "academicYear": "2026/27", "fte": 0.05 }, { "academicYear": "2027/28", "fte": 0.10 }, { "academicYear": "2028/29", "fte": 0.10 }] },
-        { "deliverableId": "2.4.2", "yearlyProfile": [{ "academicYear": "2026/27", "fte": 0.05 }, { "academicYear": "2027/28", "fte": 0.10 }, { "academicYear": "2028/29", "fte": 0.10 }] },
-        { "deliverableId": "2.4.3", "yearlyProfile": [{ "academicYear": "2026/27", "fte": 0.05 }, { "academicYear": "2027/28", "fte": 0.10 }, { "academicYear": "2028/29", "fte": 0.10 }] },
-        { "deliverableId": "2.4.4", "yearlyProfile": [{ "academicYear": "2026/27", "fte": 0.10 }, { "academicYear": "2027/28", "fte": 0.20 }, { "academicYear": "2028/29", "fte": 0.20 }] }
+        { "deliverableId": "v2-graduate-futures-packs", "yearlyProfile": [{ "academicYear": "2026/27", "fte": 0.10 }, { "academicYear": "2027/28", "fte": 0.20 }, { "academicYear": "2028/29", "fte": 0.20 }] },
+        { "deliverableId": "v2-experiential-north-star", "yearlyProfile": [{ "academicYear": "2026/27", "fte": 0.05 }, { "academicYear": "2027/28", "fte": 0.10 }, { "academicYear": "2028/29", "fte": 0.10 }] },
+        { "deliverableId": "v2-living-skills", "yearlyProfile": [{ "academicYear": "2026/27", "fte": 0.05 }, { "academicYear": "2027/28", "fte": 0.10 }, { "academicYear": "2028/29", "fte": 0.10 }] },
+        { "deliverableId": "v2-curriculum-opportunity", "yearlyProfile": [{ "academicYear": "2026/27", "fte": 0.05 }, { "academicYear": "2027/28", "fte": 0.10 }, { "academicYear": "2028/29", "fte": 0.10 }] },
+        { "deliverableId": "v2-purpose-conversation", "yearlyProfile": [{ "academicYear": "2026/27", "fte": 0.05 }, { "academicYear": "2027/28", "fte": 0.10 }, { "academicYear": "2028/29", "fte": 0.10 }] },
+        { "deliverableId": "v2-partnership-infrastructure", "yearlyProfile": [{ "academicYear": "2026/27", "fte": 0.05 }, { "academicYear": "2027/28", "fte": 0.10 }, { "academicYear": "2028/29", "fte": 0.10 }] },
+        { "deliverableId": "v2-near-curriculum-pathways", "yearlyProfile": [{ "academicYear": "2026/27", "fte": 0.05 }, { "academicYear": "2027/28", "fte": 0.10 }, { "academicYear": "2028/29", "fte": 0.10 }] },
+        { "deliverableId": "v2-beyond-course-commissioning", "yearlyProfile": [{ "academicYear": "2026/27", "fte": 0.10 }, { "academicYear": "2027/28", "fte": 0.20 }, { "academicYear": "2028/29", "fte": 0.20 }] },
+        { "deliverableId": "v2-beyond-course-visibility", "yearlyProfile": [{ "academicYear": "2026/27", "fte": 0.10 }, { "academicYear": "2027/28", "fte": 0.20 }, { "academicYear": "2028/29", "fte": 0.20 }] },
+        { "deliverableId": "v2-student-life-design", "yearlyProfile": [{ "academicYear": "2026/27", "fte": 0.05 }, { "academicYear": "2027/28", "fte": 0.10 }, { "academicYear": "2028/29", "fte": 0.10 }] },
+        { "deliverableId": "v2-wider-experience-rhythm", "yearlyProfile": [{ "academicYear": "2026/27", "fte": 0.10 }, { "academicYear": "2027/28", "fte": 0.20 }, { "academicYear": "2028/29", "fte": 0.20 }] },
+        { "deliverableId": "v2-premium-assets", "yearlyProfile": [{ "academicYear": "2026/27", "fte": 0.05 }, { "academicYear": "2027/28", "fte": 0.10 }, { "academicYear": "2028/29", "fte": 0.10 }] },
+        { "deliverableId": "v2-external-validation", "yearlyProfile": [{ "academicYear": "2026/27", "fte": 0.05 }, { "academicYear": "2027/28", "fte": 0.10 }, { "academicYear": "2028/29", "fte": 0.10 }] },
+        { "deliverableId": "v2-fuller-learning-record", "yearlyProfile": [{ "academicYear": "2026/27", "fte": 0.05 }, { "academicYear": "2027/28", "fte": 0.10 }, { "academicYear": "2028/29", "fte": 0.10 }] },
+        { "deliverableId": "v2-premium-activation", "yearlyProfile": [{ "academicYear": "2026/27", "fte": 0.10 }, { "academicYear": "2027/28", "fte": 0.20 }, { "academicYear": "2028/29", "fte": 0.20 }] }
       ]
     },
     {
@@ -97,16 +97,16 @@
         { "academicYear": "2028/29", "fte": 0.5, "amount": 33000, "currency": "GBP" }
       ],
       "allocationPlan": [
-        { "deliverableId": "2.1.1", "yearlyProfile": [{ "academicYear": "2026/27", "fte": 0.10 }, { "academicYear": "2027/28", "fte": 0.05 }, { "academicYear": "2028/29", "fte": 0.05 }] },
-        { "deliverableId": "2.1.4", "yearlyProfile": [{ "academicYear": "2026/27", "fte": 0.05 }, { "academicYear": "2027/28", "fte": 0.05 }, { "academicYear": "2028/29", "fte": 0.05 }] },
-        { "deliverableId": "2.2.2", "yearlyProfile": [{ "academicYear": "2026/27", "fte": 0.05 }, { "academicYear": "2027/28", "fte": 0.05 }, { "academicYear": "2028/29", "fte": 0.05 }] },
-        { "deliverableId": "2.2.3", "yearlyProfile": [{ "academicYear": "2026/27", "fte": 0.00 }, { "academicYear": "2027/28", "fte": 0.05 }, { "academicYear": "2028/29", "fte": 0.05 }] },
-        { "deliverableId": "2.2.4", "yearlyProfile": [{ "academicYear": "2026/27", "fte": 0.05 }, { "academicYear": "2027/28", "fte": 0.05 }, { "academicYear": "2028/29", "fte": 0.05 }] },
-        { "deliverableId": "2.3.1", "yearlyProfile": [{ "academicYear": "2026/27", "fte": 0.10 }, { "academicYear": "2027/28", "fte": 0.05 }, { "academicYear": "2028/29", "fte": 0.05 }] },
-        { "deliverableId": "2.3.4", "yearlyProfile": [{ "academicYear": "2026/27", "fte": 0.05 }, { "academicYear": "2027/28", "fte": 0.05 }, { "academicYear": "2028/29", "fte": 0.05 }] },
-        { "deliverableId": "2.4.1", "yearlyProfile": [{ "academicYear": "2026/27", "fte": 0.05 }, { "academicYear": "2027/28", "fte": 0.05 }, { "academicYear": "2028/29", "fte": 0.05 }] },
-        { "deliverableId": "2.4.2", "yearlyProfile": [{ "academicYear": "2026/27", "fte": 0.00 }, { "academicYear": "2027/28", "fte": 0.05 }, { "academicYear": "2028/29", "fte": 0.05 }] },
-        { "deliverableId": "2.4.4", "yearlyProfile": [{ "academicYear": "2026/27", "fte": 0.05 }, { "academicYear": "2027/28", "fte": 0.05 }, { "academicYear": "2028/29", "fte": 0.05 }] }
+        { "deliverableId": "v2-graduate-futures-packs", "yearlyProfile": [{ "academicYear": "2026/27", "fte": 0.10 }, { "academicYear": "2027/28", "fte": 0.05 }, { "academicYear": "2028/29", "fte": 0.05 }] },
+        { "deliverableId": "v2-curriculum-opportunity", "yearlyProfile": [{ "academicYear": "2026/27", "fte": 0.05 }, { "academicYear": "2027/28", "fte": 0.05 }, { "academicYear": "2028/29", "fte": 0.05 }] },
+        { "deliverableId": "v2-partnership-infrastructure", "yearlyProfile": [{ "academicYear": "2026/27", "fte": 0.05 }, { "academicYear": "2027/28", "fte": 0.05 }, { "academicYear": "2028/29", "fte": 0.05 }] },
+        { "deliverableId": "v2-near-curriculum-pathways", "yearlyProfile": [{ "academicYear": "2026/27", "fte": 0.00 }, { "academicYear": "2027/28", "fte": 0.05 }, { "academicYear": "2028/29", "fte": 0.05 }] },
+        { "deliverableId": "v2-beyond-course-commissioning", "yearlyProfile": [{ "academicYear": "2026/27", "fte": 0.05 }, { "academicYear": "2027/28", "fte": 0.05 }, { "academicYear": "2028/29", "fte": 0.05 }] },
+        { "deliverableId": "v2-beyond-course-visibility", "yearlyProfile": [{ "academicYear": "2026/27", "fte": 0.10 }, { "academicYear": "2027/28", "fte": 0.05 }, { "academicYear": "2028/29", "fte": 0.05 }] },
+        { "deliverableId": "v2-wider-experience-rhythm", "yearlyProfile": [{ "academicYear": "2026/27", "fte": 0.05 }, { "academicYear": "2027/28", "fte": 0.05 }, { "academicYear": "2028/29", "fte": 0.05 }] },
+        { "deliverableId": "v2-premium-assets", "yearlyProfile": [{ "academicYear": "2026/27", "fte": 0.05 }, { "academicYear": "2027/28", "fte": 0.05 }, { "academicYear": "2028/29", "fte": 0.05 }] },
+        { "deliverableId": "v2-external-validation", "yearlyProfile": [{ "academicYear": "2026/27", "fte": 0.00 }, { "academicYear": "2027/28", "fte": 0.05 }, { "academicYear": "2028/29", "fte": 0.05 }] },
+        { "deliverableId": "v2-premium-activation", "yearlyProfile": [{ "academicYear": "2026/27", "fte": 0.05 }, { "academicYear": "2027/28", "fte": 0.05 }, { "academicYear": "2028/29", "fte": 0.05 }] }
       ]
     },
     {
@@ -125,9 +125,9 @@
         { "academicYear": "2028/29", "fte": 0.8, "amount": 55000, "currency": "GBP" }
       ],
       "allocationPlan": [
-        { "deliverableId": "2.1.2", "yearlyProfile": [{ "academicYear": "2026/27", "fte": 0.20 }, { "academicYear": "2027/28", "fte": 0.15 }, { "academicYear": "2028/29", "fte": 0.10 }] },
-        { "deliverableId": "2.1.4", "yearlyProfile": [{ "academicYear": "2026/27", "fte": 0.15 }, { "academicYear": "2027/28", "fte": 0.45 }, { "academicYear": "2028/29", "fte": 0.50 }] },
-        { "deliverableId": "2.2.3", "yearlyProfile": [{ "academicYear": "2026/27", "fte": 0.25 }, { "academicYear": "2027/28", "fte": 0.20 }, { "academicYear": "2028/29", "fte": 0.20 }] }
+        { "deliverableId": "v2-experiential-north-star", "yearlyProfile": [{ "academicYear": "2026/27", "fte": 0.20 }, { "academicYear": "2027/28", "fte": 0.15 }, { "academicYear": "2028/29", "fte": 0.10 }] },
+        { "deliverableId": "v2-curriculum-opportunity", "yearlyProfile": [{ "academicYear": "2026/27", "fte": 0.15 }, { "academicYear": "2027/28", "fte": 0.45 }, { "academicYear": "2028/29", "fte": 0.50 }] },
+        { "deliverableId": "v2-near-curriculum-pathways", "yearlyProfile": [{ "academicYear": "2026/27", "fte": 0.25 }, { "academicYear": "2027/28", "fte": 0.20 }, { "academicYear": "2028/29", "fte": 0.20 }] }
       ]
     }
   ]

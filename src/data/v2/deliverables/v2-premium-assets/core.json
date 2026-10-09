@@ -1,0 +1,45 @@
+{
+  "id": "v2-premium-assets",
+  "title": "Graduate Premium Evidence and Content Assets",
+  "lead": "Daniel Robson",
+  "ownership": {
+    "accountableOwner": "Rachel Kershaw",
+    "deliveryLead": "Daniel Robson"
+  },
+  "planningStatus": "proposition-review",
+  "problemSolved": "The value of a King's education is too easy to assert in general terms and too hard to evidence in specific, audience-relevant ways.",
+  "whatChanges": "King's develops evidence packs that combine outcomes, destinations, stories, employer insight and distinctive King's experiences.",
+  "decisionLog": [
+    {
+      "date": "2026-09-01",
+      "type": "decision",
+      "forum": "King's Edge mobilisation planning",
+      "outcome": "Reconstructed 2.4.1 around a tighter boundary: the deliverable creates evidence-backed graduate premium fact packs, narratives, messaging frameworks and rich media assets for faculties, departments and disciplinary areas. It does not own mobilisation, channel strategy, campaigns or audience activation, which sit in 2.4.4 and other consuming activity. The working mobilisation model is three annual stages: prove the model and creative standard in Year 1, broaden the asset base in Year 2, and build critical mass and a renewable evidence estate in Year 3. Indicative incremental investment is £30,000 in 2026/27, £60,000 in 2027/28 and £100,000 in 2028/29, with editorial direction provided through faculty and central marketing expertise and analytical/project capacity drawn from shared King's Edge resources."
+    },
+    {
+      "date": "2026-09-09",
+      "type": "decision",
+      "forum": "Pre-business-case investment reconciliation",
+      "outcome": "Clarified the early Year 1 rich-media commitment as six proof-of-concept video exemplars at faculty, department or disciplinary level. The exemplars should show how the distinctive features of a King's education translate into employability advantage, using graduate outcomes and destinations, disciplinary strengths, student and alumni stories, employer insight and distinctive King's experiences to build substantiated Graduate Premium claims and establish a reusable creative and evidence standard.",
+      "notes": "Any pre-business-case media funding is an early release against the existing Year 1 rich-media and production envelopes, not additional programme cost. 2.4.1 owns production of evidence-backed media assets; campaign strategy, targeting and paid activation remain with 2.4.4."
+    }
+  ],
+  "caseForChange": {
+    "problem": "King’s creates substantial graduate value across its courses and wider student experience, but the evidence for that value remains distributed across data, programme knowledge, student and alumni experience, skills, experiential learning and wider institutional activity. Course-level work through 2.1.1 will create a stronger base of academically owned graduate futures claims, but those claims alone do not create the richer institutional and disciplinary evidence estate needed to represent the King’s graduate premium convincingly. Existing external narratives can therefore rely too heavily on isolated statistics, generic institutional language or individual stories that are not systematically connected to a wider evidence base.",
+    "opportunity": "King’s can bring course-owned graduate futures claims together with wider institutional evidence and translate them into a coherent family of reusable evidence and content assets. Fact packs, proof points and messaging frameworks can provide the evidential spine, while interviews, case studies, photography, video vignettes and micro-documentaries can make that evidence vivid and human. Working at faculty, department and disciplinary level allows the graduate premium to retain the specificity that makes it credible rather than collapsing into a single generic institutional claim.",
+    "whyNow": "The value and future relevance of higher education are under increasing scrutiny, while competition for students is intensifying and graduate work is changing rapidly. At the same time, 2.1.1 is beginning to create a repeatable course-level evidence base and wider King’s Edge work is making more of the skills, experiences and opportunities that contribute to graduate value visible. This creates a timely opportunity to build the content and evidence estate that can draw those strands together as they mature, rather than allowing them to remain fragmented or be translated into external claims on an ad hoc basis.",
+    "intendedChange": "King’s moves from fragmented graduate premium evidence and one-off stories to a growing, coherent library of evidence-backed graduate premium assets. Faculties, departments and disciplinary areas can be represented through robust fact packs, clear narratives and messaging frameworks supported by rich human and visual evidence. Across the three mobilisation years, King’s proves the model and creative standard, extends it across priority areas, then builds sufficient depth and coverage for the asset estate to be refreshed and reused over time. Activation of those assets remains outside 2.4.1."
+  },
+  "summary": "Creates evidence-backed graduate premium fact packs, narratives, messaging frameworks and rich media assets that capture the distinctive value of a King’s education across faculties, departments and disciplines.",
+  "detailSummary": "2.4.1 turns the growing body of graduate futures evidence across King’s into a coherent library of publication-ready evidence and content assets. It draws on course-owned claims and evidence from 2.1.1 alongside graduate outcomes, skills, experiential learning, wider student opportunity, alumni and employer insight and other relevant institutional evidence.\n\nThe deliverable produces modular graduate premium asset packages that can work at King’s, faculty, department and disciplinary level. These can include fact packs and proof points, evidence-backed narratives, messaging frameworks, case studies, interviews, photography, video vignettes, micro-documentaries and other rich media. The intention is to combine robust evidence with human stories and high-quality creative treatment so that the distinctive value of a King’s education can be represented with both credibility and depth.\n\n2.4.1 stops at the point where an asset is evidence-backed, quality-assured and ready for use. It does not own campaigns, channel strategy, audience targeting or mobilisation. Those activities sit in 2.4.4 and with the faculty, recruitment, marketing, communications and engagement teams that use the assets.",
+  "displayId": "2.6.1",
+  "projectId": "v2-premium-reputation",
+  "legacyIds": [
+    "2.4.1"
+  ],
+  "legacyProjectId": "2.4",
+  "relatedDeliverables": [
+    "v2-premium-activation",
+    "v2-graduate-futures-packs"
+  ]
+}

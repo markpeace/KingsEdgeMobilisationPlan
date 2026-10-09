@@ -290,7 +290,7 @@ function normaliseDeliverable(deliverable, project) {
 
   return {
     ...canonicalDeliverable,
-    displayId: canonicalDeliverable.id,
+    displayId: canonicalDeliverable.displayId || canonicalDeliverable.id,
     summary: summaryOf(canonicalDeliverable),
     detailSummary: detailSummaryOf(canonicalDeliverable),
     planningStatus: canonicalDeliverable.planningStatus || DEFAULT_PLANNING_STATUS,
@@ -313,7 +313,7 @@ function normaliseDeliverable(deliverable, project) {
 function enrichProject(project, displayOrder) {
   return {
     ...project,
-    displayId: project.id,
+    displayId: project.displayId || project.id,
     displayOrder,
     summary: summaryOf(project),
     detailSummary: detailSummaryOf(project),
@@ -375,9 +375,9 @@ export function getStepPeriodSpan(periodId) {
 export function resolveLabel(id, idMap) {
   const result = idMap.get(id);
   if (!result) return id;
-  if (result.type === 'project') return `${result.item.id} ${result.item.title}`;
-  if (result.type === 'deliverable') return `${result.item.id} ${result.item.title}`;
-  if (result.type === 'step') return `${result.parent.id}: ${result.item.title}`;
+  if (result.type === 'project') return `${result.item.displayId || result.item.id} ${result.item.title}`;
+  if (result.type === 'deliverable') return `${result.item.displayId || result.item.id} ${result.item.title}`;
+  if (result.type === 'step') return `${result.parent.displayId || result.parent.id}: ${result.item.title}`;
   return id;
 }
 

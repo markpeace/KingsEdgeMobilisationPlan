@@ -1,0 +1,45 @@
+{
+  "steps": [
+    {
+      "id": "2.2.2-step-3",
+      "title": "Review student opportunity funding and philanthropic growth routes",
+      "period": {
+        "start": "jul-dec-2026:c",
+        "end": "jan-jun-2027:ab"
+      },
+      "summary": "Map and review the financial support currently available for students undertaking employment-enhancing and developmental activity, including centrally and locally held funds and externally supported schemes. Develop options for a coherent Student Opportunities Fund focused on low-friction £150-£250 microbursaries and more substantial awards of around £4,000 for genuine out-of-pocket participation costs. In parallel, work with alumni and philanthropy colleagues to develop propositions that increase opportunity supply as well as access, including service-learning and social-good models in which paid PhD project leads mobilise flexible opportunities for wider student participation. The design work sits within King’s Edge, but any new Student Opportunities Fund award pot is outside the King’s Edge mobilisation ask and requires a separate funding, consolidation or philanthropic route.",
+      "dependsOn": [],
+      "outputs": [
+        {
+          "title": "Student opportunity funding landscape and consolidation options",
+          "summary": "A review of current funding pots, eligibility, administration, restrictions, student use and access friction, with options for consolidation into a simpler and more coherent Student Opportunities Fund."
+        },
+        {
+          "title": "Student Opportunities Fund design options",
+          "summary": "Options for low-friction microbursaries and larger awards for genuine participation costs, including eligibility, administration and funding routes."
+        },
+        {
+          "title": "Alumni and philanthropic opportunity-growth propositions",
+          "summary": "Investable propositions through which alumni relationships and philanthropic capital can increase both access to opportunity and the supply of new opportunity."
+        }
+      ],
+      "resources": {
+        "existingCapacity": [
+          {
+            "role": "Existing student-funding, Alumni, Advancement and Philanthropy capacity",
+            "contribution": "Provide the current funding landscape, donor and alumni context, administrative insight and specialist input needed to develop consolidation and growth options.",
+            "owner": "Relevant student-support, Advancement, Alumni and Philanthropy teams",
+            "confidence": "developing",
+            "riskIfMissing": "The review may design new mechanisms without understanding current restrictions, administration or realistic philanthropic routes."
+          }
+        ]
+      },
+      "assumptions": [
+        {
+          "title": "Student Opportunities Fund awards are outside the King’s Edge mobilisation ask",
+          "summary": "The design and consolidation work sits within 2.2.2, but any new award pot requires a separate institutional, consolidated-fund, philanthropic or other approved funding route."
+        }
+      ]
+    }
+  ]
+}

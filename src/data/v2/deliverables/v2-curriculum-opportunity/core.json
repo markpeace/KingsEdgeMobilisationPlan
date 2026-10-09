@@ -1,0 +1,46 @@
+{
+  "id": "v2-curriculum-opportunity",
+  "title": "Curriculum-Embedded Opportunity Growth and Assurance",
+  "lead": "Jo Marchant",
+  "planningStatus": "resource-planning",
+  "decisionLog": [
+    {
+      "date": "2026-09-02",
+      "type": "decision",
+      "forum": "King's Edge mobilisation planning",
+      "outcome": "Confirmed 2.1.4 as the evidence-to-implementation bridge for curriculum-embedded experiential learning. Year 1 will use the Curriculum Framework review to build an initial picture of strengths, gaps, uneven access and growth priorities, then leave 2026/27 with a targeted implementation and assurance plan. Years 2 and 3 will use planning envelopes of £75,000 and £150,000 respectively for evidence-led curriculum implementation and innovation, with the exact deployment recalibrated from the Year 1 baseline."
+    },
+    {
+      "date": "2026-09-07",
+      "type": "decision",
+      "forum": "King's Edge core investment rebaseline",
+      "outcome": "Rebased the recommended core case to a more selective central curriculum-investment model. The Year 2 curriculum implementation and innovation envelope is now £40,000 and the Year 3 envelope £60,000, with the separate £10,000 annual co-design/evaluation envelopes retained. The core case assumes normal curriculum and faculty mechanisms carry most implementation; any materially broader central rollout should be an explicit enhanced investment decision rather than an automatic mobilisation commitment."
+    }
+  ],
+  "caseForChange": {
+    "problem": "Strong curriculum-embedded experiential learning already exists across King's, but it is distributed, inconsistently visible and not always supported through common design or assurance expectations. Students therefore encounter materially different access depending on course and local practice. The University also lacks a sufficiently reliable baseline from which to decide where new investment, programme enhancement or support would have the greatest value.",
+    "opportunity": "The Curriculum Framework review creates a live institutional route to make experiential learning visible as part of normal curriculum review and enhancement. Combined with the 2.1.2 North Star, this allows King's to move from broad ambition to targeted action: identify where provision is already strong, where it can be adapted or made more visible, where meaningful gaps remain, and where investment should support new or redesigned curriculum activity.",
+    "whyNow": "Curriculum review, the experiential-learning North Star and near-curriculum reform are developing at the same time. Universities UK’s Future Jobs Roadmap now adds an external scale benchmark, with an ambition for 50% of undergraduates to have access to meaningful work-based learning by 2030 and universal access by 2035. Using this window allows King’s to build the evidence and assurance model before large-scale growth occurs, so later investment can be targeted rather than distributed without a clear account of need, quality or likely student benefit. The curriculum baseline should therefore be capable of showing both the overall experiential-learning landscape and, once 2.1.2 has settled the definition, a defensible estimate of student access to provision that qualifies towards the future entitlement.",
+    "intendedChange": "By the end of Year 1, King's has an initial curriculum-embedded experiential-learning baseline, agreed growth priorities and a forward implementation plan. During Years 2 and 3, selected programmes and faculties receive targeted development support and implementation funding to close priority gaps, strengthen quality and test scalable models. Evidence from those interventions is then used to refine assurance expectations, target subsequent investment and establish the enduring curriculum-enhancement route."
+  },
+  "ownership": {
+    "accountableOwner": "Aranee Manoharan",
+    "deliveryLead": "Jo Marchant"
+  },
+  "summary": "Uses Curriculum Framework review evidence and the experiential-learning North Star to identify where curriculum-embedded experiential learning is strong, hidden, uneven or absent, then targets growth and assurance where it will make the greatest difference.",
+  "detailSummary": "King's needs a practical route from institutional aspiration to real curriculum change. The Curriculum Framework review provides the opportunity to establish a meaningful baseline of where experiential learning is already embedded, where strong practice is hidden, where access or quality is uneven, and where students have little meaningful opportunity to learn through experience within their course.\n\n2.1.4 will define the experiential-learning evidence requirements that need to be visible through curriculum review and enhancement, then translate the emerging baseline into priorities for growth. It will use the North Star from 2.1.2 as the educational and assurance reference point, rather than treating any increase in activity as success in itself. The curriculum-review mechanism may also surface skills and graduate-premium evidence for other King's Edge deliverables, but this deliverable owns the experiential-learning growth and assurance response.\n\nYear 1 is deliberately diagnostic and preparatory. By the end of 2026/27 King's should have an initial institution-wide picture of curriculum-embedded experiential learning, a clear view of priority gaps and opportunities, and a sequenced implementation plan. In Years 2 and 3, targeted curriculum-development and innovation funding will support selected programmes or faculties to strengthen provision, test reusable approaches and build evidence about what should scale.\n\nThe aim is not to impose one experiential-learning format on every course. It is to make purposeful growth possible, direct support where it is most needed, and assure that new provision is educationally meaningful, inclusive, supported and evidenceable.",
+  "problemSolved": "King's currently lacks a consistent institution-wide view of where experiential learning is embedded in the curriculum, where access and quality are uneven, and where targeted change would have the greatest educational value. Without that baseline, growth risks being opportunistic, duplicative or driven by visible activity rather than student need and educational purpose.",
+  "whatChanges": "King's gains an evidence-led curriculum growth and assurance cycle: curriculum review identifies strengths and gaps, the experiential-learning North Star defines what good looks like, targeted implementation support helps programmes act, and evidence from delivery informs subsequent scaling and assurance.",
+  "governance": {
+    "decisionForum": "Education Executive and relevant curriculum quality governance, with escalation through the King's Edge Programme Board and Portfolio Board",
+    "decisionScope": "Approve the experiential-learning curriculum evidence requirements, priority growth portfolio, assurance model and material mobilisation investment choices; oversee evidence-led recalibration between implementation cycles; and agree how the enduring curriculum review and enhancement route should carry experiential-learning growth and assurance after mobilisation.",
+    "businessAsUsualOwner": "TBC",
+    "businessAsUsualOwnershipNote": "The enduring owner should be settled through mobilisation once the interaction between Curriculum Framework review, programme enhancement, King's Academy support and academic quality governance is clearer. The Year 2 and Year 3 implementation envelopes do not create an automatic recurrent fund."
+  },
+  "displayId": "2.2.2",
+  "projectId": "v2-experiential-education",
+  "legacyIds": [
+    "2.1.4"
+  ],
+  "legacyProjectId": "2.1"
+}

@@ -1,6 +1,10 @@
 import manifest from './manifest.json';
 
-const deliverableParts = import.meta.glob('./**/*.json', { eager: true, import: 'default' });
+const deliverableParts = import.meta.glob([
+  './v2-*/*.json',
+  './1.4.2/*.json',
+  './4.1.*/*.json'
+], { eager: true, import: 'default' });
 
 export function mergeDeliverableParts(...parts) {
   return parts.reduce((merged, part) => {

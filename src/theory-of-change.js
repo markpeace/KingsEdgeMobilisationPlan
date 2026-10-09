@@ -169,7 +169,7 @@ function createTheoryHeader() {
 
   const meta = document.createElement('p');
   meta.className = 'theory-meta';
-  meta.textContent = `Theory of change · ${theory.status} · ${theory.approvedDate}`;
+  meta.textContent = `Theory of change · ${theory.status} · ${theory.reviewDate || theory.approvedDate}`;
 
   const title = document.createElement('h2');
   title.id = `${SECTION_ID}-title`;

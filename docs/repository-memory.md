@@ -163,3 +163,15 @@ Deliverable `2.3.3` remains deferred. Shared funded resource should not be parke
 - Do not roll Digital Student Experience Hub costs into the King’s Edge headline ask.
 - Distinguish annualised role cost, first-year in-year cash budget and fully mobilised exit run-rate.
 - Economy and Enhanced are decision-support overlays until a portfolio decision changes the canonical Core plan.
+
+## Parallel Version 2 structural proposal
+
+Version 1 is preserved as the original four-project plan. Version 2 is a separate six-project working proposal selected by `?plan=v2`. Its stable internal IDs use `v2-` slugs and its authored display numbers run from 2.1 to 2.6. Do not interpret a V2 display number as the same object as that number in V1.
+
+The six V2 projects are Purpose, Capability and Recognition; Experiential Education and Formal Pathways; Opportunity, Partnerships and Transitions; Student Life and Participation; Graduate Futures Insight and Improvement; and Graduate Premium and Reputation. The 16 V1 programme deliverables become 19 V2 deliverables because former 2.2.2 is split into partnership infrastructure, opportunity funding and Graduate Transitions, and former 2.4.4 is split into survey improvement and student/external activation. Graduate Transitions belongs with the opportunity service, while outcomes and survey intelligence sits in the insight project.
+
+`docs/v2-remap-crosswalk.md` explains each boundary and accounting decision. `src/data/v2/crosswalk.json` maps every V1 project, deliverable, step, benefit and measure into V2. The V1 source files, an exact top-level snapshot and the unregistered V2 source parts remain available for provenance. `scripts/validate-v2-crosswalk.mjs` checks preservation of source fields, step outputs, resource asks and shared FTE allocations. Keep this check passing when revising the V2 structure.
+
+The original 2.2.2 Core profile remains £112.842k / £438.932k / £640.777k, and the whole Core mobilisation case remains £3.582751m. In the 2.4.4 split, the combined flexible activation/research/survey envelope and Strategic Partnerships, Profile and External Engagement Fund are each accounted for once by V2 student/external activation. The shared analytics allocation belongs to V2 survey improvement. Do not invent a division of the flexible cash envelope without a funding decision. New Student Opportunities Fund awards remain outside the Edge ask; subject societies remain deferred.
+
+The V2 theory of change is a personal working proposition, not an institutionally approved theory. New cross-functional V2 project owners remain TBC. The existing four-package investment case is retained as an accounting baseline until its narrative is reviewed against the V2 hierarchy.

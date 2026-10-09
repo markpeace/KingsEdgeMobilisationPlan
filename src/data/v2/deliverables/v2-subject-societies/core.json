@@ -1,0 +1,42 @@
+{
+  "id": "v2-subject-societies",
+  "title": "Subject Societies and Student-Led Discipline Communities",
+  "lead": "KCLSU Delegate",
+  "planningStatus": "proposition-development",
+  "decisionLog": [],
+  "summary": "Strengthens subject societies as student-led conveners of disciplinary identity, belonging, opportunity, alumni connection and peer community. This proposition is deferred pending a student-led support and funding decision.",
+  "problemSolved": "King's has strong subject societies, but they are not yet systematically supported as part of the graduate premium ecology.",
+  "whatChanges": "Subject societies become better supported as discipline-level conveners while preserving student-led independence.",
+  "components": [
+    {
+      "title": "Discipline-level community",
+      "summary": "Strengthen belonging and intellectual identity within disciplines."
+    },
+    {
+      "title": "Alumni and employer connection",
+      "summary": "Create routes to speakers, employer contacts, mentoring and sector insight."
+    },
+    {
+      "title": "Department and Careers links",
+      "summary": "Connect societies more consistently with departments, Careers, Alumni and opportunity growth."
+    },
+    {
+      "title": "Student leadership support",
+      "summary": "Support society leaders as conveners, hosts, connectors and peer leaders."
+    }
+  ],
+  "feedsInto": [
+    "v2-fuller-learning-record"
+  ],
+  "relatedDeliverables": [
+    "v2-beyond-course-commissioning",
+    "v2-fuller-learning-record"
+  ],
+  "displayId": "2.4.4",
+  "projectId": "v2-student-life",
+  "legacyIds": [
+    "2.3.3"
+  ],
+  "legacyProjectId": "2.3",
+  "deliveryDisposition": "deferred; no new mobilisation funding assumed"
+}
