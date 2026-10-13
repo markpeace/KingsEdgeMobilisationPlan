@@ -1,0 +1,560 @@
+{
+  "version": "v2",
+  "basis": "V1 source JSON and 106-file baseline; source snapshot and original V1 remain intact.",
+  "accountingRules": [
+    "V1 2.2.2 direct cost asks are each carried once by their original step in one of three V2 deliverables. Its shared leadership, officer and management allocations are held by partnership infrastructure for the project.",
+    "V1 2.4.4 direct investment and the combined activation/research/survey envelope are held once by student and external activation. Its analytics allocation moves to outcomes and survey improvement; project officer and programme management stay with activation. No invented split of flexible cash.",
+    "A new Student Opportunities Fund award pot remains outside the King’s Edge mobilisation ask. Subject societies are deferred with no new funding assumed."
+  ],
+  "projects": {
+    "2.2": {
+      "v2ProjectIds": [
+        "v2-experiential-education",
+        "v2-opportunity-transitions",
+        "v2-purpose-recognition"
+      ],
+      "source": "src/data/kings-edge-plan.json#projects/2.2"
+    },
+    "2.1": {
+      "v2ProjectIds": [
+        "v2-experiential-education",
+        "v2-insight-improvement",
+        "v2-purpose-recognition"
+      ],
+      "source": "src/data/kings-edge-plan.json#projects/2.1"
+    },
+    "2.4": {
+      "v2ProjectIds": [
+        "v2-insight-improvement",
+        "v2-premium-reputation",
+        "v2-purpose-recognition"
+      ],
+      "source": "src/data/kings-edge-plan.json#projects/2.4"
+    },
+    "2.3": {
+      "v2ProjectIds": [
+        "v2-student-life"
+      ],
+      "source": "src/data/kings-edge-plan.json#projects/2.3"
+    }
+  },
+  "deliverables": {
+    "2.1.1": {
+      "v2DeliverableIds": [
+        "v2-graduate-futures-packs"
+      ],
+      "source": "src/data/deliverables/2.1.1/"
+    },
+    "2.1.2": {
+      "v2DeliverableIds": [
+        "v2-experiential-north-star"
+      ],
+      "source": "src/data/deliverables/2.1.2/"
+    },
+    "2.1.3": {
+      "v2DeliverableIds": [
+        "v2-living-skills"
+      ],
+      "source": "src/data/deliverables/2.1.3/"
+    },
+    "2.1.4": {
+      "v2DeliverableIds": [
+        "v2-curriculum-opportunity"
+      ],
+      "source": "src/data/deliverables/2.1.4/"
+    },
+    "2.2.1": {
+      "v2DeliverableIds": [
+        "v2-purpose-conversation"
+      ],
+      "source": "src/data/deliverables/2.2.1/"
+    },
+    "2.2.2": {
+      "v2DeliverableIds": [
+        "v2-partnership-infrastructure",
+        "v2-opportunity-funding",
+        "v2-graduate-transitions"
+      ],
+      "source": "src/data/deliverables/2.2.2/"
+    },
+    "2.2.3": {
+      "v2DeliverableIds": [
+        "v2-near-curriculum-pathways"
+      ],
+      "source": "src/data/deliverables/2.2.3/"
+    },
+    "2.2.4": {
+      "v2DeliverableIds": [
+        "v2-beyond-course-commissioning"
+      ],
+      "source": "src/data/deliverables/2.2.4/"
+    },
+    "2.3.1": {
+      "v2DeliverableIds": [
+        "v2-beyond-course-visibility"
+      ],
+      "source": "src/data/deliverables/2.3.1/"
+    },
+    "2.3.2": {
+      "v2DeliverableIds": [
+        "v2-student-life-design"
+      ],
+      "source": "src/data/deliverables/2.3.2/"
+    },
+    "2.3.3": {
+      "v2DeliverableIds": [
+        "v2-subject-societies"
+      ],
+      "source": "src/data/kings-edge-plan.json#2.3.3"
+    },
+    "2.3.4": {
+      "v2DeliverableIds": [
+        "v2-wider-experience-rhythm"
+      ],
+      "source": "src/data/deliverables/2.3.4/"
+    },
+    "2.4.1": {
+      "v2DeliverableIds": [
+        "v2-premium-assets"
+      ],
+      "source": "src/data/deliverables/2.4.1/"
+    },
+    "2.4.2": {
+      "v2DeliverableIds": [
+        "v2-external-validation"
+      ],
+      "source": "src/data/deliverables/2.4.2/"
+    },
+    "2.4.3": {
+      "v2DeliverableIds": [
+        "v2-fuller-learning-record"
+      ],
+      "source": "src/data/deliverables/2.4.3/"
+    },
+    "2.4.4": {
+      "v2DeliverableIds": [
+        "v2-survey-improvement",
+        "v2-premium-activation"
+      ],
+      "source": "src/data/deliverables/2.4.4/"
+    }
+  },
+  "stepDestinations": {
+    "2.1.1-step-1": [
+      "v2-graduate-futures-packs"
+    ],
+    "2.1.1-step-2": [
+      "v2-graduate-futures-packs"
+    ],
+    "2.1.1-step-3": [
+      "v2-graduate-futures-packs"
+    ],
+    "2.1.1-step-4": [
+      "v2-graduate-futures-packs"
+    ],
+    "2.1.1-step-5": [
+      "v2-graduate-futures-packs"
+    ],
+    "2.1.1-step-6": [
+      "v2-graduate-futures-packs"
+    ],
+    "2.1.1-step-7": [
+      "v2-graduate-futures-packs"
+    ],
+    "2.1.2-step-1": [
+      "v2-experiential-north-star"
+    ],
+    "2.1.2-step-2": [
+      "v2-experiential-north-star"
+    ],
+    "2.1.2-step-3": [
+      "v2-experiential-north-star"
+    ],
+    "2.1.2-step-4": [
+      "v2-experiential-north-star"
+    ],
+    "2.1.2-step-5": [
+      "v2-experiential-north-star"
+    ],
+    "2.1.3-step-1": [
+      "v2-living-skills"
+    ],
+    "2.1.3-step-2": [
+      "v2-living-skills"
+    ],
+    "2.1.3-step-3": [
+      "v2-living-skills"
+    ],
+    "2.1.3-step-4": [
+      "v2-living-skills"
+    ],
+    "2.1.3-step-5": [
+      "v2-living-skills"
+    ],
+    "2.1.3-step-6": [
+      "v2-living-skills"
+    ],
+    "2.1.4-step-1": [
+      "v2-curriculum-opportunity"
+    ],
+    "2.1.4-step-2": [
+      "v2-curriculum-opportunity"
+    ],
+    "2.1.4-step-3": [
+      "v2-curriculum-opportunity"
+    ],
+    "2.1.4-step-4": [
+      "v2-curriculum-opportunity"
+    ],
+    "2.1.4-step-5": [
+      "v2-curriculum-opportunity"
+    ],
+    "2.2.1-step-1": [
+      "v2-purpose-conversation"
+    ],
+    "2.2.1-step-2": [
+      "v2-purpose-conversation"
+    ],
+    "2.2.1-step-3": [
+      "v2-purpose-conversation"
+    ],
+    "2.2.1-step-4": [
+      "v2-purpose-conversation"
+    ],
+    "2.2.1-step-5": [
+      "v2-purpose-conversation"
+    ],
+    "2.2.2-step-1": [
+      "v2-partnership-infrastructure"
+    ],
+    "2.2.2-step-2": [
+      "v2-partnership-infrastructure"
+    ],
+    "2.2.2-step-3": [
+      "v2-opportunity-funding"
+    ],
+    "2.2.2-step-4": [
+      "v2-graduate-transitions"
+    ],
+    "2.2.2-step-5": [
+      "v2-graduate-transitions"
+    ],
+    "2.2.2-step-6": [
+      "v2-partnership-infrastructure"
+    ],
+    "2.2.2-step-7": [
+      "v2-partnership-infrastructure"
+    ],
+    "2.2.3-step-1": [
+      "v2-near-curriculum-pathways"
+    ],
+    "2.2.3-step-2": [
+      "v2-near-curriculum-pathways"
+    ],
+    "2.2.3-step-3": [
+      "v2-near-curriculum-pathways"
+    ],
+    "2.2.3-step-4": [
+      "v2-near-curriculum-pathways"
+    ],
+    "2.2.3-step-5": [
+      "v2-near-curriculum-pathways"
+    ],
+    "2.2.4-step-1": [
+      "v2-beyond-course-commissioning"
+    ],
+    "2.2.4-step-2": [
+      "v2-beyond-course-commissioning"
+    ],
+    "2.2.4-step-3": [
+      "v2-beyond-course-commissioning"
+    ],
+    "2.2.4-step-4": [
+      "v2-beyond-course-commissioning"
+    ],
+    "2.2.4-step-5": [
+      "v2-beyond-course-commissioning"
+    ],
+    "2.3.1-step-1": [
+      "v2-beyond-course-visibility"
+    ],
+    "2.3.1-step-2": [
+      "v2-beyond-course-visibility"
+    ],
+    "2.3.1-step-3": [
+      "v2-beyond-course-visibility"
+    ],
+    "2.3.1-step-4": [
+      "v2-beyond-course-visibility"
+    ],
+    "2.3.1-step-5": [
+      "v2-beyond-course-visibility"
+    ],
+    "2.3.1-step-6": [
+      "v2-beyond-course-visibility"
+    ],
+    "2.3.2-step-1": [
+      "v2-student-life-design"
+    ],
+    "2.3.2-step-2": [
+      "v2-student-life-design"
+    ],
+    "2.3.2-step-3": [
+      "v2-student-life-design"
+    ],
+    "2.3.2-step-4": [
+      "v2-student-life-design"
+    ],
+    "2.3.2-step-5": [
+      "v2-student-life-design"
+    ],
+    "2.3.2-step-6": [
+      "v2-student-life-design"
+    ],
+    "2.3.2-step-7": [
+      "v2-student-life-design"
+    ],
+    "2.3.3-step-1": [
+      "v2-subject-societies"
+    ],
+    "2.3.3-step-2": [
+      "v2-subject-societies"
+    ],
+    "2.3.3-step-3": [
+      "v2-subject-societies"
+    ],
+    "2.3.3-step-4": [
+      "v2-subject-societies"
+    ],
+    "2.3.4-step-1": [
+      "v2-wider-experience-rhythm"
+    ],
+    "2.3.4-step-2": [
+      "v2-wider-experience-rhythm"
+    ],
+    "2.3.4-step-3": [
+      "v2-wider-experience-rhythm"
+    ],
+    "2.3.4-step-4": [
+      "v2-wider-experience-rhythm"
+    ],
+    "2.3.4-step-5": [
+      "v2-wider-experience-rhythm"
+    ],
+    "2.3.4-step-6": [
+      "v2-wider-experience-rhythm"
+    ],
+    "2.4.1-step-1": [
+      "v2-premium-assets"
+    ],
+    "2.4.1-step-2": [
+      "v2-premium-assets"
+    ],
+    "2.4.1-step-3": [
+      "v2-premium-assets"
+    ],
+    "2.4.2-step-1": [
+      "v2-external-validation"
+    ],
+    "2.4.2-step-2": [
+      "v2-external-validation"
+    ],
+    "2.4.2-step-3": [
+      "v2-external-validation"
+    ],
+    "2.4.3-step-1": [
+      "v2-fuller-learning-record"
+    ],
+    "2.4.3-step-2": [
+      "v2-fuller-learning-record"
+    ],
+    "2.4.3-step-3": [
+      "v2-fuller-learning-record"
+    ],
+    "2.4.3-step-4": [
+      "v2-fuller-learning-record"
+    ],
+    "2.4.3-step-5": [
+      "v2-fuller-learning-record"
+    ],
+    "2.4.3-step-6": [
+      "v2-fuller-learning-record"
+    ],
+    "2.4.4-step-1": [
+      "v2-survey-improvement",
+      "v2-premium-activation"
+    ],
+    "2.4.4-step-2": [
+      "v2-survey-improvement",
+      "v2-premium-activation"
+    ],
+    "2.4.4-step-3": [
+      "v2-survey-improvement",
+      "v2-premium-activation"
+    ]
+  },
+  "benefitDestinations": {
+    "2.1.1-B1": [
+      "v2-graduate-futures-packs"
+    ],
+    "2.1.1-B2": [
+      "v2-graduate-futures-packs"
+    ],
+    "2.1.2-B1": [
+      "v2-experiential-north-star"
+    ],
+    "2.1.2-B2": [
+      "v2-experiential-north-star"
+    ],
+    "2.1.2-B3": [
+      "v2-experiential-north-star"
+    ],
+    "2.1.3-B1": [
+      "v2-living-skills"
+    ],
+    "2.1.3-B2": [
+      "v2-living-skills"
+    ],
+    "2.1.3-B3": [
+      "v2-living-skills"
+    ],
+    "2.1.3-B4": [
+      "v2-living-skills"
+    ],
+    "2.1.4-B1": [
+      "v2-curriculum-opportunity"
+    ],
+    "2.1.4-B2": [
+      "v2-curriculum-opportunity"
+    ],
+    "2.1.4-B3": [
+      "v2-curriculum-opportunity"
+    ],
+    "2.2.1-B1": [
+      "v2-purpose-conversation"
+    ],
+    "2.2.1-B2": [
+      "v2-purpose-conversation"
+    ],
+    "2.2.1-B3": [
+      "v2-purpose-conversation"
+    ],
+    "2.2.2-B1": [
+      "v2-partnership-infrastructure"
+    ],
+    "2.2.2-B2": [
+      "v2-partnership-infrastructure"
+    ],
+    "2.2.2-B3": [
+      "v2-opportunity-funding"
+    ],
+    "2.2.2-B4": [
+      "v2-partnership-infrastructure"
+    ],
+    "2.2.2-B5": [
+      "v2-graduate-transitions"
+    ],
+    "2.2.2-B6": [
+      "v2-opportunity-funding"
+    ],
+    "2.2.2-B7": [
+      "v2-partnership-infrastructure"
+    ],
+    "2.2.2-B8": [
+      "v2-partnership-infrastructure"
+    ],
+    "2.2.3-B1": [
+      "v2-near-curriculum-pathways"
+    ],
+    "2.2.3-B2": [
+      "v2-near-curriculum-pathways"
+    ],
+    "2.2.3-B3": [
+      "v2-near-curriculum-pathways"
+    ],
+    "2.2.4-B1": [
+      "v2-beyond-course-commissioning"
+    ],
+    "2.2.4-B2": [
+      "v2-beyond-course-commissioning"
+    ],
+    "2.3.1-B1": [
+      "v2-beyond-course-visibility"
+    ],
+    "2.3.1-B2": [
+      "v2-beyond-course-visibility"
+    ],
+    "2.3.1-B3": [
+      "v2-beyond-course-visibility"
+    ],
+    "2.3.2-B1": [
+      "v2-student-life-design"
+    ],
+    "2.3.2-B2": [
+      "v2-student-life-design"
+    ],
+    "2.3.2-B3": [
+      "v2-student-life-design"
+    ],
+    "2.3.4-B1": [
+      "v2-wider-experience-rhythm"
+    ],
+    "2.3.4-B2": [
+      "v2-wider-experience-rhythm"
+    ],
+    "2.4.1-B1": [
+      "v2-premium-assets"
+    ],
+    "2.4.1-B2": [
+      "v2-premium-assets"
+    ],
+    "2.4.2-B1": [
+      "v2-external-validation"
+    ],
+    "2.4.2-B2": [
+      "v2-external-validation"
+    ],
+    "2.4.2-B3": [
+      "v2-external-validation"
+    ],
+    "2.4.3-B1": [
+      "v2-fuller-learning-record"
+    ],
+    "2.4.3-B2": [
+      "v2-fuller-learning-record"
+    ],
+    "2.4.3-B3": [
+      "v2-fuller-learning-record"
+    ],
+    "2.4.4-B1": [
+      "v2-premium-activation"
+    ],
+    "2.4.4-B2": [
+      "v2-premium-activation"
+    ],
+    "2.4.4-B3": [
+      "v2-survey-improvement"
+    ]
+  },
+  "measureDestinations": {
+    "2.1.1-M1": [
+      "v2-graduate-futures-packs"
+    ],
+    "2.1.1-M2": [
+      "v2-graduate-futures-packs"
+    ],
+    "2.1.1-M3": [
+      "v2-graduate-futures-packs"
+    ],
+    "2.1.1-M4": [
+      "v2-graduate-futures-packs"
+    ],
+    "2.1.1-M5": [
+      "v2-graduate-futures-packs"
+    ],
+    "2.1.1-M6": [
+      "v2-graduate-futures-packs"
+    ]
+  },
+  "outputDestinations": {}
+}

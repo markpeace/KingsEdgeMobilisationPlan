@@ -1,0 +1,229 @@
+{
+  "id": "v2-graduate-futures-packs",
+  "title": "Course-Level Graduate Futures Insight and Action Packs",
+  "lead": "Daniel Robson",
+  "planningStatus": "plan-validation",
+  "decisionLog": [
+    {
+      "date": "2026-09-07",
+      "type": "decision",
+      "forum": "King's Edge mobilisation planning",
+      "outcome": "Front-load Power BI and Microsoft Fabric engineering in Year 1 using a two-stage student-engineering model: the already-funded £4,000 six-week summer internship creates the first working prototype, followed by part-time Power BI / Microsoft Fabric engineering through December to harden the reusable data model, measures, report build, refresh process and handover.",
+      "notes": "The continuation is funded from 2.1.1's existing 0.25 FTE share of the £21,000 King's Edge Analytics & Data Capability Year 1 envelope and does not increase the Core Year 1 total."
+    },
+    {
+      "date": "2026-09-09",
+      "type": "decision",
+      "forum": "Pre-business-case investment reconciliation",
+      "outcome": "Clarified that the Year 1 Graduate Futures product should be a live, wide-ranging data pack that supports both course-level interrogation of graduate value and a clearer institutional view of where graduate strengths are concentrated, where outcomes are uneven and where there may be potential for development or targeted action. The product should bring together graduate outcomes and destinations, comparator evidence, student aspiration evidence and relevant course context, with responsible drill-down and aggregation from institutional and faculty patterns to course-level evidence where the data supports it.",
+      "notes": "The institutional view is for developmental insight and prioritisation, not course ranking. It extends the existing faculty conversations and institutional synthesis already in the plan. Any pre-business-case paid student engineering is a timing acceleration within the existing Year 1 Analytics & Data Capability and related approved/residual envelopes, not additional Core cost."
+    }
+  ],
+  "caseForChange": {
+    "problem": "King's holds employability outcomes, destination, benchmarking and student insight data, but course teams do not yet have a consistent way to bring this evidence together, interpret it responsibly and relate it to the support their students receive. Evidence can therefore remain fragmented, headline-led or difficult to use, limiting both confident articulation of course value and informed decisions about where course-level practice could better support graduate outcomes.",
+    "opportunity": "Course-level graduate futures data packs, supported by a self-run sense-making workshop, can turn existing evidence into a practical asset for academic teams. Packs can be bundled for departments while retaining course-level insight, helping colleagues identify distinctive strengths, ask better questions, agree proportionate enhancements and develop credible accounts of what their courses enable for students.",
+    "whyNow": "Graduate outcomes, highly skilled employment and evidence of student value increasingly shape institutional accountability, student choice, TEF narratives, course review and recruitment. At a time of pressure on the graduate premium, declining student numbers and intensifying competition, King's needs a timely, consistent and responsible way for course and department teams to understand their evidence, improve support and communicate value with confidence.",
+    "intendedChange": "King's moves from fragmented employability reporting to a repeatable course-level model combining trusted evidence with structured local sense-making. Course teams use the packs to articulate the value they already create, identify where students could be better supported to achieve strong graduate outcomes, and agree enhancements through normal course, department and faculty processes. Departments and King's gain a clearer view of recurring strengths, questions and support needs."
+  },
+  "ownership": {
+    "accountableOwner": "Aranee Manoharan",
+    "deliveryLead": "Daniel Robson"
+  },
+  "summary": "Helps course teams understand, evidence and strengthen their students' graduate futures story through clear course-level evidence packs, a self-run sense-making workshop, shared review and a business-as-usual process that supports ongoing enhancement.",
+  "detailSummary": "This deliverable gives King's a clearer and more useful account of graduate futures at course level. It brings together employability outcomes, graduate destinations, benchmarking, student aspiration and readiness data, comparator evidence and course context into evidence packs that academic colleagues can use to understand what their courses make possible for students. Packs are configured at course level and may be distributed together as departmental bundles.\n\nThe purpose is to help course teams develop a stronger evidence-informed narrative about their students' graduate futures and identify proportionate actions where the evidence suggests that support could be strengthened. The model combines trusted evidence with a self-run sense-making workshop and a two-sided Graduate Futures Claim and Action on a Page. The approach uses caveats, academic judgement and responsible comparison throughout, avoiding course ranking or central judgement. Course-owned claims can feed wider graduate premium evidence work, while agreed actions enter normal course, department, faculty and quality enhancement processes.",
+  "problemSolved": "King's holds employability outcomes, destination, benchmarking and student insight data, but course teams do not yet have a consistent way to bring this evidence together, interpret it responsibly and relate it to the support their students receive.",
+  "whatChanges": "Course teams receive trusted course-level evidence and a self-run workshop that help them claim their graduate futures value with confidence and identify proportionate action. Departments can work with bundles of course packs, while King's gains a coherent view of course-level claims, actions, strengths and support needs.",
+  "risks": [
+    {
+      "id": "2.1.1-R1",
+      "title": "The work becomes too centrally resource-intensive",
+      "description": "Central teams cannot directly support a review for every course or manually sustain all pack production.",
+      "likelihood": "high",
+      "impact": "high",
+      "mitigation": "Use a common self-run workshop and clear guidance, with central effort focused on evidence and method, focal-area support delivered through faculty-linked Careers Consultants, and broader-rollout support available through normal business-partner relationships.",
+      "owner": "Daniel Robson and Rachel Kershaw"
+    },
+    {
+      "id": "2.1.1-R2",
+      "title": "Data is over-interpreted or used punitively",
+      "description": "Small numbers, suppression, volatility, coding issues or comparator misuse could lead to unfair or unhelpful interpretations.",
+      "likelihood": "medium",
+      "impact": "high",
+      "mitigation": "Use clear caveats, responsible-use principles, workshop guidance and plain language throughout the pack and review.",
+      "owner": "Careers and Employability Service"
+    },
+    {
+      "id": "2.1.1-R3",
+      "title": "Course claim becomes unsupported marketing language",
+      "description": "Student-facing or applicant-facing language could drift beyond the evidence or lose academic ownership.",
+      "likelihood": "medium",
+      "impact": "high",
+      "mitigation": "Require evidence-linked proof points and course confirmation before claim material is used more visibly.",
+      "owner": "Course teams"
+    },
+    {
+      "id": "2.1.1-R4",
+      "title": "Faculty engagement is inconsistent",
+      "description": "Local facilitation, supported review and self-review may vary in quality, tone and completion across faculties.",
+      "likelihood": "medium",
+      "impact": "high",
+      "mitigation": "Use a common pack and self-run workshop, faculty-linked Careers Consultant support, responsible-use guidance, transparent coverage reporting and an agreed exception route.",
+      "owner": "Vice Deans Education or delegates"
+    },
+    {
+      "id": "2.1.1-R5",
+      "title": "Prioritisation is perceived as punitive",
+      "description": "Courses selected for the first rollout may feel labelled as weak or problematic.",
+      "likelihood": "medium",
+      "impact": "high",
+      "mitigation": "Use a transparent selection process that considers evidence, faculty judgement, course context, strengths, learning value and support needs.",
+      "owner": "Vice Deans Education or delegates"
+    },
+    {
+      "id": "2.1.1-R6",
+      "title": "The evidence resource is not sustained",
+      "description": "The pack, visualisation, refresh rhythm and guidance could remain dependent on project goodwill after initial delivery.",
+      "likelihood": "medium",
+      "impact": "high",
+      "mitigation": "Confirm the refresh timetable, owner, access route, interpretation guidance and quality enhancement monitoring handoff before the second rollout is complete.",
+      "owner": "Careers and Employability Service"
+    },
+    {
+      "id": "2.1.1-R7",
+      "title": "Self-run review lacks enough support",
+      "description": "Courses may receive the pack and workshop materials without enough guidance or support to use them well.",
+      "likelihood": "medium",
+      "impact": "high",
+      "mitigation": "Provide clear guidance, responsible-use materials and a route for help where evidence is unclear or sensitive.",
+      "owner": "Rachel Kershaw and the King's Academy Academic Development Lead"
+    }
+  ],
+  "issues": [
+    {
+      "id": "2.1.1-I1",
+      "title": "Project management capacity is not yet secured",
+      "description": "Step 1 will proceed through minimal interim coordination by Mark Peace, Rachel Kershaw and Daniel Robson. Borrowed Transformation Office project management capacity is required from October 2026 at 0.2 FTE, reducing to 0.1 FTE from July 2027.",
+      "owner": "Mark Peace",
+      "neededBy": "October 2026"
+    },
+    {
+      "id": "2.1.1-I2",
+      "title": "Named specialist contributors need confirmation",
+      "description": "Rachel Kershaw needs to confirm the Data Manager contribution and nominate the Careers Workshop, Pilot and Mobilisation Lead. Daniel Robson needs to secure a named King's Academy Academic Development Lead and Academic Quality needs to nominate an operational CER contact.",
+      "owner": "Rachel Kershaw and Daniel Robson",
+      "neededBy": "Before substantive design and pilot activity"
+    },
+    {
+      "id": "2.1.1-I3",
+      "title": "Actual focal areas remain to be selected",
+      "description": "The selection process and decision route are agreed, but the feasible Careers capacity envelope, evidence-informed proposal and Education Executive decision are still required.",
+      "owner": "Daniel Robson and Rachel Kershaw",
+      "neededBy": "Before first-rollout invitations"
+    },
+    {
+      "id": "2.1.1-I4",
+      "title": "Operational data access and handover need confirmation",
+      "description": "The intended Careers BAU ownership is agreed, but the named enrolment-data owner, Fabric permissions, data access, CER workflow and documented technical and assurance handover still need to be completed.",
+      "owner": "Rachel Kershaw with Mark Peace during Step 1",
+      "neededBy": "Access before the internship; handover before BAU transfer"
+    }
+  ],
+  "assumptions": [
+    {
+      "id": "2.1.1-A1",
+      "title": "Evidence can support both claims and enhancement",
+      "summary": "The same evidence can help courses articulate a stronger graduate futures claim and identify where student support could be strengthened."
+    },
+    {
+      "id": "2.1.1-A2",
+      "title": "Existing Careers and local arrangements can support scale",
+      "summary": "The project assumes that the existing Careers Consultant business-partner model can provide higher-touch focal-area support and remain available on request during broader rollout, while programmes arrange their own local participation."
+    },
+    {
+      "id": "2.1.1-A3",
+      "title": "Early course partners will improve the approach",
+      "summary": "Early course partners will help test whether the pack and self-run workshop are useful, fair, proportionate and academically credible."
+    },
+    {
+      "id": "2.1.1-A4",
+      "title": "Shared prioritisation can be agreed constructively",
+      "summary": "Focal courses for the first rollout can be agreed through evidence, faculty knowledge, course context and local judgement."
+    },
+    {
+      "id": "2.1.1-A5",
+      "title": "Programmes can run the review using the provided materials",
+      "summary": "Programmes can use the pack, self-run workshop and guidance with proportionate support from their linked Careers Consultant where needed."
+    },
+    {
+      "id": "2.1.1-A6",
+      "title": "Course confirmation supports wider use of a claim",
+      "summary": "Course teams can confirm that student-facing or applicant-facing claim language is accurate, fair and evidence-informed before local use."
+    },
+    {
+      "id": "2.1.1-A7",
+      "title": "The evidence resource can become a maintained service",
+      "summary": "The deliverable assumes that visualisation maintenance, data refresh, interpretation guidance and access routes can move from project delivery into a sustainable institutional route."
+    }
+  ],
+  "governance": {
+    "decisionForum": "Education Executive, with escalation through the King's Edge Programme Board and Portfolio Board",
+    "decisionScope": "Education Executive approves the institutional pack and workshop framework and decides the focal areas and departmental bundles for the first rollout, involving Vice-Deans Education. Delivery exceptions are managed through the project and escalated through the King's Edge Programme Board and Portfolio Board where required.",
+    "businessAsUsualOwner": "Careers and Employability Service",
+    "businessAsUsualOwnershipNote": "Rachel Kershaw provides senior accountable Careers ownership. The Data Manager, Careers and Student Success role is the operational owner for pack production, data refresh, analytical quality and documentation. Course and department teams own their reviews and resulting conclusions. Actions, questions and support needs enter Curriculum Education Review by default, or an agreed alternative where CER does not apply. Faculty education committees monitor local follow-through and the Academic Standards and Quality Enhancement Subcommittee receives an aggregate view through existing quality-enhancement reporting.",
+    "deliveryPartners": [
+      {
+        "group": "Evidence, pack production and technical delivery",
+        "partners": [
+          "Careers and Employability Service",
+          "Data Services",
+          "Student Success Directorate enrolment data owner"
+        ],
+        "contribution": "Provide, interpret, produce and maintain the course-level evidence packs; manage data access, definitions, caveats and refresh; and establish a supportable Microsoft Fabric and analytical route."
+      },
+      {
+        "group": "Workshop, mobilisation and local support",
+        "partners": [
+          "King's Academy",
+          "Careers Workshop, Pilot and Mobilisation Lead",
+          "Faculty-linked Careers Consultants",
+          "Course and department teams"
+        ],
+        "contribution": "Design and test the self-run workshop, mobilise departmental bundles, support interpretation through the existing Careers business-partner model and enable programmes to organise their own reviews."
+      },
+      {
+        "group": "Institutional validation and approval",
+        "partners": [
+          "Institution-wide Reference Group",
+          "Education Executive",
+          "Vice-Deans Education"
+        ],
+        "contribution": "Validate usefulness, credibility and responsible representation; approve the framework; and decide the focal areas for the first rollout."
+      },
+      {
+        "group": "Quality enhancement integration",
+        "partners": [
+          "Director of Academic Quality or delegate",
+          "Operational CER contact",
+          "Faculty education committees",
+          "Academic Standards and Quality Enhancement Subcommittee of Education Committee"
+        ],
+        "contribution": "Connect resulting actions, questions and support needs to CER or an agreed alternative, assure the monitoring handoff and provide local and institutional oversight through existing quality-enhancement processes."
+      },
+      {
+        "group": "Project coordination and reporting",
+        "partners": [
+          "Transformation Office project manager",
+          "King's Edge Programme Board",
+          "Portfolio Board"
+        ],
+        "contribution": "Coordinate the plan, risks, decisions, dependencies, approvals, rollout, exceptions, reporting, handover and closure. Routine reporting is aggregated through the project, with Daniel Robson attending higher forums for specific decisions or exceptions."
+      }
+    ]
+  },
+  "displayId": "2.5.1",
+  "projectId": "v2-insight-improvement",
+  "legacyIds": [
+    "2.1.1"
+  ],
+  "legacyProjectId": "2.1"
+}

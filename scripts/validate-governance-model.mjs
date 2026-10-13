@@ -9,9 +9,10 @@ function readJsonFromUrl(url) {
   return JSON.parse(fs.readFileSync(url, 'utf8'));
 }
 
-const plan = readJson('../src/data/kings-edge-plan.json');
-const outOfProgrammeProjects = readJson('../src/data/enabling-projects.json');
-const manifest = readJson('../src/data/deliverables/manifest.json');
+const dataRoot = process.argv.includes('--v2') ? '../src/data/v2/' : '../src/data/';
+const plan = readJson(`${dataRoot}kings-edge-plan.json`);
+const outOfProgrammeProjects = readJson(`${dataRoot}enabling-projects.json`);
+const manifest = readJson(`${dataRoot}deliverables/manifest.json`);
 const errors = [];
 
 function mergeDeliverableParts(...parts) {
@@ -33,7 +34,7 @@ function mergeDeliverableParts(...parts) {
   }), {});
 }
 
-const deliverablePartsBaseUrl = new URL('../src/data/deliverables/', import.meta.url);
+const deliverablePartsBaseUrl = new URL(`${dataRoot}deliverables/`, import.meta.url);
 const registeredDeliverables = (manifest.deliverables || []).map((entry) => {
   const parts = (entry.parts || []).map((partPath) => readJsonFromUrl(new URL(partPath, deliverablePartsBaseUrl)));
   const deliverable = mergeDeliverableParts(...parts);

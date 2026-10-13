@@ -25,6 +25,7 @@ import {
 } from './planning-status.js';
 import { allocateStepLanes, buildBucketGroups, calculateVisibleHorizon, clipSpanToHorizon, findTodayPosition, formatSegmentLabel } from './timeline-utils.js';
 import ResourceInvestmentProfile from './resource-investment-panel.jsx';
+import { planVersion, planVersionUrl } from './plan-version.js';
 import './design-system.css';
 import './styles.css';
 import './styles/legacy-public.css';
@@ -73,7 +74,7 @@ function ProjectTransformationClaim({ project }) {
 }
 
 function Nav() {
-  return <header className="site-header"><a href="#/" className="brand">King's Edge Mobilisation Plan</a><nav><a href="#/">Home</a><a href="#/projects">Projects</a><a href="#/deliverables">Deliverables</a><a href="#/measures">Measures</a><a href="#/timeline">Timeline</a></nav></header>;
+  return <header className="site-header"><a href="#/" className="brand">King's Edge Mobilisation Plan</a><nav><a href="#/">Home</a><a href="#/projects">Projects</a><a href="#/deliverables">Deliverables</a><a href="#/measures">Measures</a><a href="#/timeline">Timeline</a></nav><label className="plan-version-control"><span>Plan version</span><select aria-label="Plan version" value={planVersion} onChange={(event) => { window.location.assign(planVersionUrl(event.target.value)); }}><option value="v1">Version 1</option><option value="v2">Version 2 · working copy</option></select></label></header>;
 }
 
 function PlanningStatusTag({ item }) {

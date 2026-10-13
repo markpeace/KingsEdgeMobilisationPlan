@@ -1,4 +1,4 @@
-import statusData from './data/status.json';
+import { status as statusData } from './plan-data.js';
 
 const statusLabels = {
   'not-started': 'Not started',

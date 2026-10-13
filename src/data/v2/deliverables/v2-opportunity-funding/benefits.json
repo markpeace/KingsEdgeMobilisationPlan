@@ -1,0 +1,20 @@
+{
+  "benefits": [
+    {
+      "id": "2.2.2-B3",
+      "title": "Financial circumstances are less likely to prevent participation",
+      "statement": "A coherent Student Opportunities Fund gives students straightforward access to proportionate financial support for genuine participation costs, reducing the extent to which travel, accommodation, subsistence or other out-of-pocket costs determine who can take up valuable opportunities.",
+      "beneficiary": "Students, particularly those with limited discretionary financial resource",
+      "benefitType": "equitable access",
+      "successLooksLike": "Students can access low-friction microbursaries and larger opportunity awards where separately funded, and fewer worthwhile opportunities are declined or constrained because of unavoidable participation costs."
+    },
+    {
+      "id": "2.2.2-B6",
+      "title": "Alumni and philanthropy generate additional opportunity as well as financial access",
+      "statement": "Alumni relationships and philanthropic capital are deliberately mobilised to create new opportunities for students, not only to fund individual participation. This includes socially purposeful and service-learning activity that can be generated through funded project-mobilisation models and opened to wider student participation.",
+      "beneficiary": "Students, alumni, donors and community or social-purpose partners",
+      "benefitType": "philanthropic leverage and opportunity creation",
+      "successLooksLike": "Philanthropic propositions support both access funds and the creation of additional student opportunities, including repeatable service-learning or social-good projects with clear student and community value."
+    }
+  ]
+}

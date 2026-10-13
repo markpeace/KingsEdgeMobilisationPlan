@@ -1,0 +1,193 @@
+{
+  "steps": [
+    {
+      "id": "2.2.4-step-1",
+      "title": "Translate strategic priorities into the Year 1 opportunity portfolio",
+      "period": "jul-dec-2026:b",
+      "summary": "Bring together the strongest requirements for additional beyond-course learning emerging from across King’s Edge and wider strategic priorities, translate them into a coherent Year 1 opportunity portfolio, and devolve delivery through four thematic workpackages. Set the £150,000 2026/27 investment envelope and the overall reach, student-hours and depth ambition, while giving each workpackage clear responsibility for its contribution. Confirm named ownership where still TBC and use the common planning frame of scalable evergreen, short active and sustained intensive provision.",
+      "dependsOn": [],
+      "outputs": [
+        {
+          "title": "Year 1 opportunity portfolio and annual commissioning model",
+          "summary": "A £150,000 2026/27 portfolio that converts identified strategic priorities and gaps into substantive beyond-course learning opportunities. 2.2.4 holds the overall investment envelope, deduplicated student reach, student-hours and portfolio balance, while four thematic workpackages receive devolved responsibility for defined contributions. The same annual model can support a different thematic mix in later years as priorities and evidence evolve."
+        },
+        {
+          "title": "Final-Year Career Enhancement workpackage",
+          "owner": "Careers and Employability Service, named owner TBC",
+          "summary": "£50,000 Year 1 envelope; approximately 700 distinct final-year students, around 10% of the graduating undergraduate population; approximately 10,000 to 12,000 student-hours; around 150 sustained high-intensity places. The workpackage combines scalable and short active provision with projects, placements, mentoring and other deeper career-enhancing experiences."
+        },
+        {
+          "title": "Entrepreneurship and Enterprise Experience workpackage",
+          "owner": "TBC",
+          "summary": "£40,000 Year 1 envelope; approximately 800 distinct students; approximately 7,000 to 9,000 student-hours; around 100 sustained high-intensity places. The workpackage combines scalable enterprise capability, short active challenge and prototyping activity, and a deeper pathway into venture-building, social enterprise, live briefs and longer enterprise projects."
+        },
+        {
+          "title": "Belonging and Connection workpackage",
+          "owner": "Steph White",
+          "summary": "£30,000 Year 1 envelope; approximately 1,500 distinct students and around 1,800 participation instances; approximately 3,500 to 4,500 student-hours. The workpackage is predominantly short and active, with a smaller deeper participatory or sandpit-style layer and repeat participation encouraged where it strengthens connection and belonging."
+        },
+        {
+          "title": "Service and Community-Engaged Experience workpackage",
+          "owner": "Naureen Abubacker",
+          "summary": "£30,000 Year 1 envelope; approximately 600 distinct students; approximately 6,000 to 8,000 student-hours; around 100 sustained high-intensity places. The workpackage combines accessible community-engaged entry points and short active projects with deeper projects, placements and partner-based experiences."
+        }
+      ],
+      "decisions": [
+        {
+          "title": "Confirm named Careers owner for the Final-Year Career Enhancement workpackage",
+          "summary": "Confirm the accountable workpackage owner within Careers and Employability before substantive commissioning begins."
+        },
+        {
+          "title": "Confirm owner for the Entrepreneurship and Enterprise Experience workpackage",
+          "summary": "Confirm the accountable workpackage owner for the entrepreneurship and enterprise commissioning envelope before substantive commissioning begins."
+        }
+      ],
+      "resources": {
+        "newInvestment": [
+          {
+            "item": "Year 1 beyond-course opportunity commissioning portfolio",
+            "amount": 150000,
+            "currency": "GBP",
+            "periodNeeded": "2026/27",
+            "fundingRoute": "King's Edge mobilisation funding request",
+            "fundingStatus": "requested",
+            "confidence": "indicative",
+            "rationale": "Funds the first annual portfolio, devolved across four thematic workpackages: £50,000 Final-Year Career Enhancement, £40,000 Entrepreneurship and Enterprise Experience, £30,000 Belonging and Connection, and £30,000 Service and Community-Engaged Experience. The portfolio is designed to create substantive annual learning opportunities and the first reusable evergreen assets needed for later growth.",
+            "riskIfMissing": "King's Edge cannot establish the first annual opportunity portfolio or create the reusable opportunity base required for the planned three-year growth trajectory."
+          }
+        ]
+      }
+    },
+    {
+      "id": "2.2.4-step-2",
+      "title": "Deliver and learn from the Year 1 opportunity portfolio",
+      "period": {
+        "start": "jul-dec-2026:c",
+        "end": "jan-jun-2027:c"
+      },
+      "summary": "Deliver the four 2026/27 thematic workpackages against a single portfolio-level ambition, creating new learning opportunities for students while building the first reusable evergreen asset base. Workpackage owners hold devolved responsibility for their agreed contribution, while 2.2.4 tracks deduplicated reach, student-hours, repeat participation, delivery quality, access and the balance of scalable evergreen, short active and sustained intensive provision. Use what is learned about participation, demand and strategic need to shape the 2027/28 portfolio. In parallel, prepare the reporting model needed to distinguish overall opportunity participation from the subset that will qualify towards the 2.1.2 experiential-learning entitlement once that definition is ratified.",
+      "dependsOn": [
+        "2.2.4-step-1"
+      ],
+      "outputs": [
+        {
+          "title": "Year 1 portfolio reach and engagement",
+          "summary": "At least 2,500 distinct students, around 6% of the current King's student population, engage in substantive beyond-course learning opportunities across the Year 1 portfolio. Workpackage-level planning anticipates approximately 26,500 to 33,500 student-hours overall and around 350 sustained high-intensity places, with workpackage-level reach intentionally summing above the deduplicated portfolio target because students may participate in more than one workpackage.",
+          "acceptanceCriteria": [
+            "At least 2,500 distinct students are recorded across the Year 1 portfolio after deduplication between workpackages."
+          ]
+        },
+        {
+          "title": "Year 1 portfolio review and Year 2 opportunity plan",
+          "summary": "A concise evidence-led review of reach, repeat participation, student-hours, delivery mix, access, evergreen asset creation, strategic demand and unmet need, followed by a 2027/28 portfolio that directs the £200,000 envelope towards the thematic workpackages best suited to the next year’s priorities. The review also establishes how later reporting will distinguish total portfolio reach from provision that meets the agreed experiential-learning entitlement threshold."
+        }
+      ]
+    },
+    {
+      "id": "2.2.4-step-3",
+      "title": "Refresh and grow the opportunity portfolio in 2027/28",
+      "period": {
+        "start": "jul-dec-2027:a",
+        "end": "jan-jun-2028:c"
+      },
+      "summary": "Use Year 1 evidence and new strategic drivers from across King’s Edge to refresh the thematic portfolio and grow the supply of beyond-course learning across the 2027/28 investment year. Reuse and improve the evergreen courses, projects and other scalable assets already created, commission new provision where priorities or gaps require it, and devolve responsibility for contributions to the overall £200,000 investment, reach, student-hours and depth ambition. Increase low-friction entry points and short active participation while expanding sustained intensive capacity where evidence and partner capacity support it. Once the 2.1.2 entitlement definition is settled, track qualifying experiential provision separately from overall portfolio reach so that growth in headline participation is not mistaken for growth in meaningful work-based or experiential access.",
+      "dependsOn": [
+        "2.2.4-step-2"
+      ],
+      "outputs": [
+        {
+          "title": "2027/28 opportunity portfolio",
+          "summary": "A responsive set of thematic workpackages with defined envelopes and devolved contributions to a portfolio ambition of at least 4,000 distinct students, around 9% of the current King's student population, approximately 55,000 to 65,000 student-hours and around 500 sustained high-intensity places. The portfolio is shaped by Year 1 learning and emerging strategic demand rather than assumed to repeat the Year 1 thematic mix."
+        }
+      ],
+      "resources": {
+        "newInvestment": [
+          {
+            "item": "Year 2 beyond-course opportunity commissioning portfolio",
+            "amount": 200000,
+            "currency": "GBP",
+            "periodNeeded": "2027/28",
+            "fundingRoute": "King's Edge Year 2 mobilisation investment request",
+            "fundingStatus": "requested",
+            "confidence": "indicative",
+            "rationale": "Builds on the Year 1 portfolio by commissioning additional provision, increasing enrolment into reusable evergreen opportunities and expanding active and sustained capacity. The model expects reach and student-hours to grow faster than annual expenditure as the reusable asset base matures.",
+            "riskIfMissing": "The portfolio will be unable to convert its Year 1 foundations into the planned step-change in reach, depth and reusable opportunity supply."
+          }
+        ]
+      }
+    },
+    {
+      "id": "2.2.4-step-4",
+      "title": "Scale the opportunity portfolio in 2028/29",
+      "period": {
+        "start": "jul-dec-2028:a",
+        "end": "jan-jun-2029:c"
+      },
+      "summary": "Scale the supply of beyond-course learning across the final 2028/29 mobilisation year on top of two years of accumulated evergreen provision and delivery learning. Refresh the thematic workpackage mix against evolving student need, strategic priorities and future-facing evidence, while driving substantially greater enrolment into reusable skills courses, self-directed programmes and repeatable projects. Commission new provision where gaps remain, grow short active participation where it creates effective progression into deeper activity, and bring sustained intensive capacity to its planned plateau. The full £250,000 Year 3 mobilisation envelope is a 2028/29 budget and is not carried into a fourth mobilisation year.",
+      "dependsOn": [
+        "2.2.4-step-3"
+      ],
+      "outputs": [
+        {
+          "title": "2028/29 opportunity portfolio at institutional scale",
+          "summary": "A £250,000 annual portfolio, devolved through the thematic workpackages most relevant to Year 3 need, reaches at least 6,500 distinct students, around 15% of the current King's student population, generates approximately 100,000 to 115,000 student-hours and supports around 600 sustained high-intensity places. Growth is increasingly generated by the accumulated evergreen opportunity base as well as new annual commissioning."
+        }
+      ],
+      "resources": {
+        "newInvestment": [
+          {
+            "item": "Year 3 beyond-course opportunity commissioning portfolio",
+            "amount": 250000,
+            "currency": "GBP",
+            "periodNeeded": "2028/29",
+            "fundingRoute": "King's Edge Year 3 mobilisation investment request",
+            "fundingStatus": "requested",
+            "confidence": "indicative",
+            "rationale": "Funds the final mobilisation-year expansion of the opportunity portfolio, combining new opportunity creation with large-scale reuse of evergreen assets and a mature sustained high-intensity layer. The envelope is fully attributable to 2028/29 and does not assume a fourth mobilisation budget.",
+            "riskIfMissing": "The portfolio will not reach the intended institutional scale or build the mature reusable asset base required for a lower-cost business-as-usual model."
+          }
+        ]
+      },
+      "assumptions": [
+        {
+          "title": "Three explicit mobilisation budgets, then BAU",
+          "summary": "Beyond-Course opportunity commissioning is budgeted at £150,000 in 2026/27, £200,000 in 2027/28 and £250,000 in 2028/29, a total mobilisation envelope of £600,000. There is no ghost fourth mobilisation year. From July 2029 the separate business-as-usual planning requirement is £175,000 p.a."
+        }
+      ]
+    },
+    {
+      "id": "2.2.4-step-5",
+      "title": "Establish the enduring opportunity portfolio",
+      "period": {
+        "start": "jul-dec-2029:a",
+        "end": "jul-dec-2030:c"
+      },
+      "summary": "From July 2029, move from mobilisation investment to an enduring portfolio of beyond-course learning opportunities that can continue responding to strategic priorities and student need. Sustain and refresh the accumulated evergreen opportunity base, continue to commission new provision where evidence identifies gaps, use a responsive annual mix of thematic workpackages, and protect the high-touch sustained intensive layer at around 600 places. Recurring investment focuses on refresh, facilitation, responsive growth and the people-intensive provision that cannot be scaled through reuse alone.",
+      "dependsOn": [
+        "2.2.4-step-4"
+      ],
+      "outputs": [
+        {
+          "title": "Enduring beyond-course opportunity portfolio",
+          "summary": "An enduring portfolio supported by an indicative £175,000 annual business-as-usual investment, reaching around 9,000 distinct students, approximately 20% of the current King's student population, generating approximately 145,000 to 165,000 student-hours and maintaining around 600 sustained high-intensity places. The thematic mix remains responsive to strategic demand, while the model relies on the reusable opportunity assets built during the three mobilisation years."
+        }
+      ],
+      "resources": {
+        "newInvestment": [
+          {
+            "item": "Annual business-as-usual beyond-course opportunity commissioning requirement",
+            "amount": 175000,
+            "currency": "GBP",
+            "bauLiability": true,
+            "periodNeeded": "July 2029 onward",
+            "fundingRoute": "King's Edge business-as-usual funding requirement",
+            "fundingStatus": "requested",
+            "confidence": "indicative",
+            "rationale": "Provides the recurring annual funding needed to sustain and refresh the mature opportunity portfolio, protect around 600 sustained high-intensity places, facilitate active provision and selectively commission new opportunities while continuing to exploit the reusable evergreen asset base created during mobilisation.",
+            "riskIfMissing": "The accumulated evergreen portfolio will lose currency and delivery support, while the people-intensive layer will contract, undermining the intended steady-state reach and depth."
+          }
+        ]
+      }
+    }
+  ]
+}

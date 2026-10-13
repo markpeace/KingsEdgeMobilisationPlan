@@ -1,0 +1,256 @@
+{
+  "steps": [
+    {
+      "id": "2.4.1-step-1",
+      "title": "Prove the graduate premium evidence and content model",
+      "period": {
+        "start": "jul-dec-2026:a",
+        "end": "jan-jun-2027:c"
+      },
+      "summary": "Establish what a high-quality King’s graduate premium asset package looks like and prove the approach through a deliberately small number of faculty, department or disciplinary exemplars. Bring together the strongest available course-owned graduate futures evidence from 2.1.1 with wider institutional evidence, then develop the common fact-pack, narrative and messaging approach and commission an initial suite of rich media that establishes the creative standard for later years.",
+      "dependsOn": [],
+      "outputs": [
+        {
+          "title": "Graduate premium evidence and content model",
+          "summary": "A reusable model for assembling evidence, developing substantiated claims, structuring fact packs and messaging frameworks, and combining quantitative evidence with case studies, interviews and rich media."
+        },
+        {
+          "title": "Year 1 exemplar asset packages",
+          "summary": "A small number of complete, publication-ready graduate premium exemplars across selected faculty, department or disciplinary contexts, including evidence and fact material, narrative and messaging assets and a first commissioned set of high-quality rich media."
+        }
+      ],
+      "resources": {
+        "existingCapacity": [
+          {
+            "role": "Editorial and narrative expertise",
+            "owner": "Faculty marketing teams and central Marketing / Brand / Communications expertise",
+            "contribution": "Shape messaging frameworks, editorial quality, commissioning briefs and consistency with King’s brand while retaining disciplinary specificity.",
+            "periodNeeded": "2026/27",
+            "confidence": "planning assumption",
+            "riskIfMissing": "The asset model may be evidence-rich but lack the editorial coherence and creative standard needed for wider reuse."
+          },
+          {
+            "role": "Academic and disciplinary contributors",
+            "owner": "Participating faculties, departments and course teams",
+            "contribution": "Validate disciplinary claims, interpret evidence responsibly and identify credible student, alumni and academic stories.",
+            "periodNeeded": "2026/27",
+            "confidence": "planning assumption"
+          },
+          {
+            "role": "Shared King’s Edge analytics and data capability",
+            "owner": "King’s Edge shared resource",
+            "fte": 0.2,
+            "contribution": "Support evidence assembly, analysis, reusable data products and the connection to course-level evidence emerging through 2.1.1.",
+            "periodNeeded": "2026/27",
+            "confidence": "indicative"
+          },
+          {
+            "role": "Shared King’s Edge project support",
+            "owner": "Transformation Office shared resource",
+            "fte": 0.05,
+            "contribution": "Provide proportionate coordination across contributors, commissions, permissions and delivery tracking.",
+            "periodNeeded": "2026/27",
+            "confidence": "indicative"
+          }
+        ],
+        "newInvestment": [
+          {
+            "item": "Year 1 rich media and creative commissioning",
+            "amount": 20000,
+            "currency": "GBP",
+            "fundingRoute": "King’s Edge mobilisation funding request",
+            "fundingStatus": "requested",
+            "confidence": "indicative",
+            "rationale": "Commission freelance creative production for the first interviews, video vignettes, micro-documentary or equivalent rich media needed to establish the quality bar and test the asset model.",
+            "riskIfMissing": "Year 1 will be limited largely to written and data assets and will not prove the intended rich-media dimension of the proposition."
+          },
+          {
+            "item": "Year 1 production expenses",
+            "amount": 10000,
+            "currency": "GBP",
+            "fundingRoute": "King’s Edge mobilisation funding request",
+            "fundingStatus": "requested",
+            "confidence": "indicative",
+            "rationale": "Covers practical production costs such as travel, locations, transcription, accessibility, contributor requirements, permissions and other direct costs associated with creating the exemplar assets.",
+            "riskIfMissing": "The commissioning envelope will be consumed by practical production costs or the range and quality of contributors and locations will be constrained."
+          }
+        ],
+        "enablingConditions": [
+          {
+            "condition": "Faculty and central marketing expertise is available to provide editorial direction and quality assurance as an in-kind institutional contribution.",
+            "owner": "Project 2.4 owner with participating marketing teams",
+            "confidence": "planning assumption",
+            "riskIfMissing": "Additional funded editorial capacity or a smaller scope would be required."
+          },
+          {
+            "condition": "2.1.1 and other King’s Edge evidence streams make usable course-level claims, evidence and stories available as they mature.",
+            "owner": "Daniel Robson and relevant King’s Edge leads",
+            "confidence": "developing",
+            "riskIfMissing": "Early packages may rely too heavily on institutional evidence and lack the intended course and disciplinary depth."
+          }
+        ]
+      }
+    },
+    {
+      "id": "2.4.1-step-2",
+      "title": "Broaden the graduate premium asset base",
+      "period": {
+        "start": "jul-dec-2027:a",
+        "end": "jan-jun-2028:c"
+      },
+      "summary": "Use the proven Year 1 model across a broader set of priority faculties, departments and disciplinary areas. Reuse the common evidence, editorial and commissioning approach rather than redesigning it for each area, while allowing the resulting claims and stories to remain genuinely discipline-specific. Grow the library of fact packs, narratives, proof points, case material and commissioned rich media in step with the expanding evidence base from 2.1.1 and the wider King’s Edge programme.",
+      "dependsOn": [
+        "2.4.1-step-1"
+      ],
+      "outputs": [
+        {
+          "title": "Expanded graduate premium asset library",
+          "summary": "A meaningful body of publication-ready evidence and content packages across priority faculty, department and disciplinary contexts, using a consistent model but retaining distinctive local claims, proof points and stories."
+        }
+      ],
+      "resources": {
+        "existingCapacity": [
+          {
+            "role": "Editorial and narrative expertise",
+            "owner": "Faculty marketing teams and central Marketing / Brand / Communications expertise",
+            "contribution": "Provide editorial stewardship, local adaptation and quality assurance across the growing asset library.",
+            "periodNeeded": "2027/28",
+            "confidence": "planning assumption"
+          },
+          {
+            "role": "Academic and disciplinary contributors",
+            "owner": "Participating faculties, departments and course teams",
+            "contribution": "Validate claims, identify stories and ensure disciplinary specificity and credibility.",
+            "periodNeeded": "2027/28",
+            "confidence": "planning assumption"
+          },
+          {
+            "role": "Shared King’s Edge analytics and data capability",
+            "owner": "King’s Edge shared resource",
+            "fte": 0.35,
+            "contribution": "Support scaled evidence assembly, refresh and synthesis across the priority asset portfolio.",
+            "periodNeeded": "2027/28",
+            "confidence": "indicative"
+          },
+          {
+            "role": "Shared King’s Edge project support",
+            "owner": "Transformation Office shared resource",
+            "fte": 0.1,
+            "contribution": "Coordinate the larger annual production portfolio, contributors, permissions and commissions.",
+            "periodNeeded": "2027/28",
+            "confidence": "indicative"
+          }
+        ],
+        "newInvestment": [
+          {
+            "item": "Year 2 rich media and creative commissioning",
+            "amount": 45000,
+            "currency": "GBP",
+            "fundingRoute": "King’s Edge mobilisation funding request",
+            "fundingStatus": "requested",
+            "confidence": "indicative",
+            "rationale": "Extends freelance creative production across a broader set of priority areas while reusing the production model and standards established in Year 1.",
+            "riskIfMissing": "The evidence library can expand, but the rich-media estate will remain too thin to represent priority disciplines with consistent depth."
+          },
+          {
+            "item": "Year 2 production expenses",
+            "amount": 15000,
+            "currency": "GBP",
+            "fundingRoute": "King’s Edge mobilisation funding request",
+            "fundingStatus": "requested",
+            "confidence": "indicative",
+            "rationale": "Supports the larger volume of shoots, interviews, contributors, transcription, accessibility, permissions and direct production requirements associated with broader coverage.",
+            "riskIfMissing": "Practical production costs will reduce the amount of commissioned creative work or constrain participation and quality."
+          }
+        ]
+      }
+    },
+    {
+      "id": "2.4.1-step-3",
+      "title": "Build critical mass and a renewable graduate premium evidence estate",
+      "period": {
+        "start": "jul-dec-2028:a",
+        "end": "jan-jun-2029:c"
+      },
+      "summary": "Use the final mobilisation year to achieve substantially broader coverage, fill strategically important gaps and deepen the strongest evidence and storytelling where this adds value. Refresh earlier fact packs and claims where the underlying evidence has changed, commission a richer final-year media portfolio, and leave a coherent asset estate with an understood route for evidence refresh and future selective commissioning. The deliverable continues to end at publication-ready assets; mobilisation and audience use remain the responsibility of 2.4.4 and other consuming teams.",
+      "dependsOn": [
+        "2.4.1-step-2"
+      ],
+      "outputs": [
+        {
+          "title": "Graduate premium evidence and content estate at critical mass",
+          "summary": "A broad, coherent and reusable library of King’s, faculty, department and disciplinary graduate premium assets, with strategically important gaps addressed and a richer body of interviews, case material and high-quality video and visual storytelling."
+        },
+        {
+          "title": "Refresh and stewardship approach",
+          "summary": "A proportionate route for refreshing fact packs, claims and selected media assets as evidence and stories change, identifying the institutional teams that will provide continuing evidence, editorial stewardship and selective future commissioning."
+        }
+      ],
+      "resources": {
+        "existingCapacity": [
+          {
+            "role": "Editorial and narrative expertise",
+            "owner": "Faculty marketing teams and central Marketing / Brand / Communications expertise",
+            "contribution": "Maintain coherence across the mature asset estate, support refresh decisions and quality-assure new and updated material.",
+            "periodNeeded": "2028/29",
+            "confidence": "planning assumption"
+          },
+          {
+            "role": "Academic and disciplinary contributors",
+            "owner": "Participating faculties, departments and course teams",
+            "contribution": "Validate refreshed evidence and claims and support deeper storytelling in priority areas.",
+            "periodNeeded": "2028/29",
+            "confidence": "planning assumption"
+          },
+          {
+            "role": "Shared King’s Edge analytics and data capability",
+            "owner": "King’s Edge shared resource",
+            "fte": 0.35,
+            "contribution": "Support refresh, gap analysis and evidence synthesis across the mature asset estate.",
+            "periodNeeded": "2028/29",
+            "confidence": "indicative"
+          },
+          {
+            "role": "Shared King’s Edge project support",
+            "owner": "Transformation Office shared resource",
+            "fte": 0.1,
+            "contribution": "Coordinate the final mobilisation-year production portfolio and support the handoff into an enduring refresh model.",
+            "periodNeeded": "2028/29",
+            "confidence": "indicative"
+          }
+        ],
+        "newInvestment": [
+          {
+            "item": "Year 3 rich media and creative commissioning",
+            "amount": 80000,
+            "currency": "GBP",
+            "fundingRoute": "King’s Edge mobilisation funding request",
+            "fundingStatus": "requested",
+            "confidence": "indicative",
+            "rationale": "Provides the largest commissioning envelope once the evidence and editorial model is mature, enabling broader coverage, strategically important gap-filling and a smaller number of more ambitious rich-media pieces where the stories warrant them.",
+            "riskIfMissing": "The mobilisation period will end with uneven disciplinary coverage and insufficient depth in the rich-media estate."
+          },
+          {
+            "item": "Year 3 production expenses",
+            "amount": 20000,
+            "currency": "GBP",
+            "fundingRoute": "King’s Edge mobilisation funding request",
+            "fundingStatus": "requested",
+            "confidence": "indicative",
+            "rationale": "Supports the final and largest year of production activity, including contributors, locations, accessibility, transcription, permissions and other direct costs.",
+            "riskIfMissing": "Practical costs will erode the commissioning budget and reduce the breadth or quality of the final-year asset programme."
+          }
+        ],
+        "enablingConditions": [
+          {
+            "condition": "An enduring institutional route is identified for evidence refresh, editorial stewardship and selective future commissioning after mobilisation.",
+            "owner": "Project 2.4 owner with relevant Marketing, Careers and faculty partners",
+            "decisionNeededBy": "Before the end of 2028/29",
+            "confidence": "developing",
+            "riskIfMissing": "The asset estate will progressively lose currency after the mobilisation period."
+          }
+        ]
+      }
+    }
+  ]
+}

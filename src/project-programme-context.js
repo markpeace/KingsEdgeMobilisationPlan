@@ -1,4 +1,4 @@
-import programmeContexts from './data/project-programme-contexts.json';
+import { programmeContexts } from './plan-data.js';
 
 function currentProjectId() {
   const match = String(window.location.hash || '').match(/#\/projects\/([^/?#]+)/);

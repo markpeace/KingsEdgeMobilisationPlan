@@ -1,0 +1,134 @@
+{
+  "risks": [
+    {
+      "id": "2.1.1-R1",
+      "title": "The work becomes too centrally resource-intensive",
+      "description": "Central teams cannot directly support a review for every course or manually sustain all pack production.",
+      "likelihood": "high",
+      "impact": "high",
+      "mitigation": "Use a common self-run workshop and clear guidance, with central effort focused on evidence and method, focal-area support delivered through faculty-linked Careers Consultants, and broader-rollout support available through normal business-partner relationships.",
+      "owner": "Daniel Robson and Rachel Kershaw"
+    },
+    {
+      "id": "2.1.1-R2",
+      "title": "Data is over-interpreted or used punitively",
+      "description": "Small numbers, suppression, volatility, coding issues or comparator misuse could lead to unfair or unhelpful interpretations.",
+      "likelihood": "medium",
+      "impact": "high",
+      "mitigation": "Use clear caveats, responsible-use principles, workshop guidance and plain language throughout the pack and review.",
+      "owner": "Careers and Employability Service"
+    },
+    {
+      "id": "2.1.1-R3",
+      "title": "Course claim becomes unsupported marketing language",
+      "description": "Student-facing or applicant-facing language could drift beyond the evidence or lose academic ownership.",
+      "likelihood": "medium",
+      "impact": "high",
+      "mitigation": "Require evidence-linked proof points and course confirmation before claim material is used more visibly.",
+      "owner": "Course teams"
+    },
+    {
+      "id": "2.1.1-R4",
+      "title": "Faculty engagement is inconsistent",
+      "description": "Local facilitation, supported review and self-review may vary in quality, tone and completion across faculties.",
+      "likelihood": "medium",
+      "impact": "high",
+      "mitigation": "Use a common pack and self-run workshop, faculty-linked Careers Consultant support, responsible-use guidance, transparent coverage reporting and an agreed exception route.",
+      "owner": "Vice Deans Education or delegates"
+    },
+    {
+      "id": "2.1.1-R5",
+      "title": "Prioritisation is perceived as punitive",
+      "description": "Courses selected for the first rollout may feel labelled as weak or problematic.",
+      "likelihood": "medium",
+      "impact": "high",
+      "mitigation": "Use a transparent selection process that considers evidence, faculty judgement, course context, strengths, learning value and support needs.",
+      "owner": "Vice Deans Education or delegates"
+    },
+    {
+      "id": "2.1.1-R6",
+      "title": "The evidence resource is not sustained",
+      "description": "The pack, visualisation, refresh rhythm and guidance could remain dependent on project goodwill after initial delivery.",
+      "likelihood": "medium",
+      "impact": "high",
+      "mitigation": "Confirm the refresh timetable, owner, access route, interpretation guidance and quality enhancement monitoring handoff before the second rollout is complete.",
+      "owner": "Careers and Employability Service"
+    },
+    {
+      "id": "2.1.1-R7",
+      "title": "Self-run review lacks enough support",
+      "description": "Courses may receive the pack and workshop materials without enough guidance or support to use them well.",
+      "likelihood": "medium",
+      "impact": "high",
+      "mitigation": "Provide clear guidance, responsible-use materials and a route for help where evidence is unclear or sensitive.",
+      "owner": "Rachel Kershaw and the King's Academy Academic Development Lead"
+    }
+  ],
+  "issues": [
+    {
+      "id": "2.1.1-I1",
+      "title": "Project management capacity is not yet secured",
+      "description": "Step 1 will proceed through minimal interim coordination by Mark Peace, Rachel Kershaw and Daniel Robson. Borrowed Transformation Office project management capacity is required from October 2026 at 0.2 FTE, reducing to 0.1 FTE from July 2027.",
+      "owner": "Mark Peace",
+      "neededBy": "October 2026"
+    },
+    {
+      "id": "2.1.1-I2",
+      "title": "Named specialist contributors need confirmation",
+      "description": "Rachel Kershaw needs to confirm the Data Manager contribution and nominate the Careers Workshop, Pilot and Mobilisation Lead. Daniel Robson needs to secure a named King's Academy Academic Development Lead and Academic Quality needs to nominate an operational CER contact.",
+      "owner": "Rachel Kershaw and Daniel Robson",
+      "neededBy": "Before substantive design and pilot activity"
+    },
+    {
+      "id": "2.1.1-I3",
+      "title": "Actual focal areas remain to be selected",
+      "description": "The selection process and decision route are agreed, but the feasible Careers capacity envelope, evidence-informed proposal and Education Executive decision are still required.",
+      "owner": "Daniel Robson and Rachel Kershaw",
+      "neededBy": "Before first-rollout invitations"
+    },
+    {
+      "id": "2.1.1-I4",
+      "title": "Operational data access and handover need confirmation",
+      "description": "The intended Careers BAU ownership is agreed, but the named enrolment-data owner, Fabric permissions, data access, CER workflow and documented technical and assurance handover still need to be completed.",
+      "owner": "Rachel Kershaw with Mark Peace during Step 1",
+      "neededBy": "Access before the internship; handover before BAU transfer"
+    }
+  ],
+  "assumptions": [
+    {
+      "id": "2.1.1-A1",
+      "title": "Evidence can support both claims and enhancement",
+      "summary": "The same evidence can help courses articulate a stronger graduate futures claim and identify where student support could be strengthened."
+    },
+    {
+      "id": "2.1.1-A2",
+      "title": "Existing Careers and local arrangements can support scale",
+      "summary": "The project assumes that the existing Careers Consultant business-partner model can provide higher-touch focal-area support and remain available on request during broader rollout, while programmes arrange their own local participation."
+    },
+    {
+      "id": "2.1.1-A3",
+      "title": "Early course partners will improve the approach",
+      "summary": "Early course partners will help test whether the pack and self-run workshop are useful, fair, proportionate and academically credible."
+    },
+    {
+      "id": "2.1.1-A4",
+      "title": "Shared prioritisation can be agreed constructively",
+      "summary": "Focal courses for the first rollout can be agreed through evidence, faculty knowledge, course context and local judgement."
+    },
+    {
+      "id": "2.1.1-A5",
+      "title": "Programmes can run the review using the provided materials",
+      "summary": "Programmes can use the pack, self-run workshop and guidance with proportionate support from their linked Careers Consultant where needed."
+    },
+    {
+      "id": "2.1.1-A6",
+      "title": "Course confirmation supports wider use of a claim",
+      "summary": "Course teams can confirm that student-facing or applicant-facing claim language is accurate, fair and evidence-informed before local use."
+    },
+    {
+      "id": "2.1.1-A7",
+      "title": "The evidence resource can become a maintained service",
+      "summary": "The deliverable assumes that visualisation maintenance, data refresh, interpretation guidance and access routes can move from project delivery into a sustainable institutional route."
+    }
+  ]
+}

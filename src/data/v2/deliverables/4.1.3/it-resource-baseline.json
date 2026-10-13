@@ -1,0 +1,746 @@
+{
+  "summary": "Uses Digital and IT’s 4 September mature-team estimate as the current high-water funding baseline for the Digital Student Experience Hub, while keeping known existing capacity and unresolved sharing or scope questions explicit so the envelope can be reduced through validation rather than expanded later.",
+  "detailSummary": "Digital and IT’s 4 September 2026 working model materially broadens the previous four-post product-pod assumption. The mature delivery model now includes Product Manager, Product Owner, Solution Architect / Technical Lead, Backend Engineer, Full-Stack Developer, UX/UI Designer, QA engineering through Infuse, fractional Azure DevOps, a Dynamics Developer, fractional Cloud Infrastructure and fractional Cloud IAM capacity. Digital and IT’s sheet reports a gross mature-team resource cost of £56,842 per month and £682,108 over twelve months, before other costs.\n\nFor the Student Hub funding case, Mark Peace remains Product Owner from existing workload and therefore does not create an incremental cash ask. Jon Ward has also identified an IT Delivery Manager as required but expects that role to be provided from existing Digital and IT capacity; it is therefore shown as an existing dependency rather than costed new investment until Digital and IT advises otherwise. The current high-water cash baseline carries every other costed IT role at the full amount shown by Digital and IT, even where the role may ultimately be shared, supplied from existing capacity or attributable to another programme. This deliberately means carrying 100% of the Product Manager until a Staff Digital Hub allocation is agreed; a full Solution Architect / Technical Lead until the architecture model is confirmed; the listed DevOps, infrastructure and IAM fractions until Digital and IT confirms existing capacity; and the full Dynamics Developer until its actual relationship to the Student Hub, King’s Answers and wider enquiry-management work is resolved.\n\nUsing the displayed monthly role costs, the current worst-case incremental staffing envelope is £50,090 per month after removing the known existing Product Owner. For the existing November 2026 to June 2027 Year One planning period this gives £400,720; the full-year high-water run-rate is £601,080 in each subsequent year before the separate sandwich-year placement. One paid sandwich-year Junior Full-Stack Engineer remains provisioned at £35,000 in each of Years Two and Three as additional supervised developmental capacity and a talent-pipeline test, not as a substitute for experienced delivery roles.\n\nRing-fenced agentic software-development tooling remains a separate £90,000 annual planning allowance. James Costerton has confirmed that the Infuse line is QA/testing capacity and is not the agentic-development cost; the agentic allowance is for a dedicated Devin instance purchased from Cognition. Azure, environments and platform costs remain £50,000 in Year One. Digital and IT considers the working estimate of costs rising to around £90,000 by Year Three reasonably accurate; for the high-water envelope, £90,000 is held in both Years Two and Three until a more precise consumption profile is agreed. Year One also retains the £15,000 paid student visioning/co-design envelope under 4.1.2, while the separate 4.1.1 knowledge/content provision remains £33,000 in each mobilisation year.\n\nOn that deliberately conservative basis, the current Digital Student Experience Hub funding profile is approximately £588,720 in 2026/27, £849,080 in 2027/28 and £849,080 in 2028/29: £2,286,880 across the three-year mobilisation. This sits within the existing £3.0m strategic envelope and leaves £713,120 unallocated headroom. The purpose of the next Digital and IT conversations is to bring this high-water position down by confirming Year One phasing, existing-resource deployment, Student-versus-Staff Hub cost attribution, Dynamics scope and the sourcing model for specialist technical capacity.\n\nThe current worst-case recurrent run-rate, if every currently costed role other than Product Owner remained directly attributable to the Student Hub, is £601,080 per year for staffing and specialist capacity, plus £90,000 agentic tooling and a £90,000 Azure/platform high-water allowance: approximately £781,080 per year before any enduring knowledge/content operating model. This is a risk envelope rather than a settled BAU design and is expected to reduce as shared, existing and out-of-scope capacity is confirmed.",
+  "whatChanges": "The working funding baseline moves from a four-post product pod plus light shared support to the broader Digital and IT mature-team model. The Student Hub business case now carries a high-water cash envelope for all currently costed IT roles except the known existing Product Owner, while the IT Delivery Manager and Business Analysis remain existing-capacity assumptions. The plan explicitly expects this envelope to reduce through phasing, shared-cost attribution and scope validation rather than relying on optimistic assumptions before Digital and IT confirms them.",
+  "caseForChange": {
+    "opportunity": "Using the current Digital and IT mature-team model as the high-water case gives the business case a defensible ceiling while preserving room to reduce the cash ask through evidence. It also makes the actual capability requirements visible: product management, architecture, engineering, design, testing, platform, identity and integration capacity can be discussed explicitly rather than being assumed to appear from shared services. The approach protects delivery confidence without prejudging which costs should ultimately sit with the Student Hub, the Staff Hub, Digital and IT business as usual or separately governed enquiry-management work.",
+    "intendedChange": "The Hub is mobilised against a transparent mature capability model with a deliberately conservative funding envelope. Known existing roles are not rebilled; uncertain roles are funded until a credible alternative is agreed; shared institutional capacity is allocated between benefiting propositions; and roles such as the Dynamics Developer remain visible while their scope attribution is tested. Year One is then phased with Digital and IT so actual deployment can be lower than the envelope without weakening the ability to recruit or mobilise when capacity becomes necessary."
+  },
+  "fundingEnvelope": {
+    "status": "Current high-water working baseline pending Digital and IT phasing and attribution validation",
+    "source": "Digital and IT working mature-team estimate shared by Jon Ward on 3-4 September 2026, with clarification from Jon Ward and James Costerton on 4 September 2026",
+    "itReportedGrossMatureTeam": {
+      "monthlyCost": 56842,
+      "twelveMonthCost": 682108,
+      "eighteenMonthCost": 1023162,
+      "twentyFourMonthCost": 1364216,
+      "thirtySixMonthCost": 2046324,
+      "note": "These are the totals shown in the Digital and IT working sheet and include the Product Owner resource. Individual displayed monthly lines are rounded and do not reproduce every longer-period total exactly."
+    },
+    "knownExistingOrNonCash": [
+      "Mark Peace provides Product Owner leadership from existing workload; no incremental Student Hub cash ask is carried for the Product Owner line.",
+      "An IT Delivery Manager is required but Digital and IT currently expects to provide this from existing capacity; no new cash is included until advised otherwise.",
+      "Approximately 0.2 FTE Business Analysis remains an existing or seconded protected-capacity assumption during the main discovery period."
+    ],
+    "currentWorstCaseIncrementalStaffing": {
+      "monthlyCost": 50090,
+      "yearOneEightMonthCost": 400720,
+      "fullYearRunRate": 601080,
+      "basis": "All costed Digital and IT roles except Product Owner are held as Student Hub cash until sharing, existing-capacity or alternative-programme funding is confirmed."
+    },
+    "sandwichYearPlacement": {
+      "yearTwo": 35000,
+      "yearThree": 35000,
+      "purpose": "One supervised Junior Full-Stack Engineer placement per year as additional developmental capacity and a student-to-digital-talent pipeline test."
+    },
+    "otherCosts": {
+      "agenticDevelopment": {
+        "yearOne": 90000,
+        "yearTwo": 90000,
+        "yearThree": 90000,
+        "note": "Dedicated Devin/Cognition planning allowance; separate from Infuse QA/testing."
+      },
+      "azurePlatform": {
+        "yearOne": 50000,
+        "yearTwoHighWater": 90000,
+        "yearThreeHighWater": 90000,
+        "note": "Digital and IT considers £50k Year One rising to c.£90k by Year Three reasonable. The high-water case holds £90k from Year Two until the consumption profile is validated."
+      },
+      "studentVisioningAndCodesign": {
+        "yearOne": 15000,
+        "note": "Already held under 4.1.2."
+      },
+      "knowledgeAndContentDelivery": {
+        "yearOne": 33000,
+        "yearTwo": 33000,
+        "yearThree": 33000,
+        "note": "Already held under 4.1.1 and not moved into the product-team budget."
+      }
+    },
+    "hubTotal": {
+      "yearOne": 588720,
+      "yearTwo": 849080,
+      "yearThree": 849080,
+      "threeYearTotal": 2286880,
+      "strategicEnvelope": 3000000,
+      "remainingHeadroom": 713120
+    },
+    "worstCaseBauRunRate": {
+      "staffingAndSpecialistCapacity": 601080,
+      "agenticDevelopment": 90000,
+      "azurePlatform": 90000,
+      "knownTotalBeforeKnowledgeContent": 781080,
+      "note": "Risk envelope only. Expected to reduce when Staff Hub sharing, existing Digital and IT capacity, Dynamics attribution and mature sourcing are confirmed."
+    }
+  },
+  "resourceQuestions": [
+    {
+      "question": "What is the minimum credible Year One phasing of the mature team, and which roles can be covered temporarily by existing Digital and IT capacity while recruitment and architecture mature?",
+      "owner": "Jon Ward / James Costerton with Mark Peace",
+      "effect": "May reduce 2026/27 cash drawdown while preserving the mature-team envelope."
+    },
+    {
+      "question": "Which roles and non-pay costs genuinely serve both the Student and Staff Digital Hubs, and what allocation should be charged to each business case?",
+      "owner": "Digital and IT with Student and Staff Hub sponsors",
+      "effect": "Prevents Student Success investment from inadvertently funding the Staff Hub and avoids double counting across business cases."
+    },
+    {
+      "question": "What specific work is the 1.0 FTE Dynamics Developer expected to deliver, and what proportion is truly attributable to the Student Experience Hub rather than King’s Answers, CRM/enquiry management or another programme?",
+      "owner": "James Costerton / Digital and IT",
+      "effect": "Could remove or fractionally allocate the Dynamics line from the Student Hub funding case."
+    },
+    {
+      "question": "For each costed role, is the enduring sourcing expectation new dedicated investment, protected existing capacity, shared new capacity or conditional specialist input?",
+      "owner": "Digital and IT with Finance and Mark Peace",
+      "effect": "Converts the high-water model into a confirmed incremental cash requirement."
+    },
+    {
+      "question": "Does the mature model require a dedicated 1.0 FTE Solution Architect / Technical Lead throughout mobilisation, or can the role be phased or partly supplied from existing architecture capacity?",
+      "owner": "James Costerton / Digital and IT",
+      "effect": "May reduce the architecture cash line, particularly in Year One, while retaining clear technical authority."
+    },
+    {
+      "question": "Is Infuse the intended QA sourcing model across mobilisation and BAU, or should QA transition to an in-house or mixed model as the product matures?",
+      "owner": "James Costerton / Digital and IT",
+      "effect": "Determines whether QA remains service expenditure or becomes an enduring workforce liability."
+    },
+    {
+      "question": "Can the Devin/Cognition instance or other agentic-development capability be shared with the Staff Hub or wider Digital and IT delivery, and if so how should the £90k annual cost be allocated?",
+      "owner": "Digital and IT",
+      "effect": "May reduce the Student Hub share of the agentic-development allowance without reducing access to the capability."
+    },
+    {
+      "question": "What is the best Year Two route for the paid sandwich-year placement, including discipline, supervision, learning objectives and whether one placement should be repeated in Year Three?",
+      "owner": "Digital and IT with Mark Peace",
+      "effect": "Protects the placement as a deliberate student-development and talent-pipeline intervention rather than treating it as cheap delivery capacity."
+    }
+  ],
+  "workforceModel": {
+    "status": "Digital and IT mature-team high-water model, not yet final workforce design",
+    "summary": "Carry the current Digital and IT mature-team model as the funding ceiling, remove only the known existing Product Owner from incremental cash, and deliberately hold unresolved shared or specialist lines in the Student Hub envelope until Digital and IT confirms a lower-cost route.",
+    "appointments": [
+      {
+        "resourceId": "4.1.3-y1-role-product-manager",
+        "role": "Product Manager",
+        "grade": "G8",
+        "fte": 1.0,
+        "monthlyCost": 7964,
+        "workingFundingBasis": "Full Student Hub cash provision in the high-water case; expected to be shared with the Staff Digital Hub if the joint-product hypothesis is confirmed."
+      },
+      {
+        "role": "Product Owner",
+        "grade": "G7 cost comparator in IT model",
+        "fte": 1.0,
+        "monthlyCost": 6752,
+        "workingFundingBasis": "Mark Peace from existing workload; no incremental Student Hub cash ask."
+      },
+      {
+        "resourceId": "4.1.3-y1-role-solution-architect",
+        "role": "Solution Architect / Technical Lead",
+        "grade": "G7",
+        "fte": 1.0,
+        "monthlyCost": 6752,
+        "workingFundingBasis": "Full cash provision until Digital and IT confirms whether dedicated, phased or existing architecture capacity is sufficient."
+      },
+      {
+        "resourceId": "4.1.3-y1-role-backend",
+        "role": "Backend Engineer",
+        "grade": "G7",
+        "fte": 1.0,
+        "monthlyCost": 6752,
+        "workingFundingBasis": "New dedicated investment in the current high-water case."
+      },
+      {
+        "resourceId": "4.1.3-y1-role-fullstack",
+        "role": "Full-Stack Developer",
+        "grade": "G7",
+        "fte": 1.0,
+        "monthlyCost": 6752,
+        "workingFundingBasis": "New dedicated investment in the current high-water case."
+      },
+      {
+        "resourceId": "4.1.3-y1-role-ux-ui",
+        "role": "UX/UI Designer",
+        "grade": "G6",
+        "fte": 1.0,
+        "monthlyCost": 5520,
+        "workingFundingBasis": "New dedicated investment in the current high-water case; confirm how service/journey design and user-research coverage are supplied alongside the UX/UI discipline."
+      },
+      {
+        "resourceId": "4.1.3-y1-role-qa-infuse",
+        "role": "QA Engineer",
+        "grade": "Infuse",
+        "fte": 1.0,
+        "monthlyCost": 6000,
+        "workingFundingBasis": "External testing/QA capacity in the current Digital and IT estimate; sourcing model across mobilisation and BAU remains to confirm."
+      },
+      {
+        "resourceId": "4.1.3-y1-role-devops",
+        "role": "Azure DevOps Engineer",
+        "grade": "G6",
+        "fte": 0.5,
+        "monthlyCost": 2760,
+        "workingFundingBasis": "Cash provision in the high-water case until existing/shared Digital and IT capacity is confirmed."
+      },
+      {
+        "resourceId": "4.1.3-y1-role-dynamics",
+        "role": "Dynamics Developer",
+        "grade": "G6",
+        "fte": 1.0,
+        "monthlyCost": 5520,
+        "workingFundingBasis": "Full cash provision pending a scope test of what work is genuinely attributable to the Student Hub rather than King’s Answers or wider enquiry-management/CRM delivery."
+      },
+      {
+        "resourceId": "4.1.3-y1-role-cloud-infrastructure",
+        "role": "Infrastructure Engineer (Cloud)",
+        "grade": "G6",
+        "fte": 0.25,
+        "monthlyCost": 1380,
+        "workingFundingBasis": "Cash provision in the high-water case until existing/shared Digital and IT capacity is confirmed."
+      },
+      {
+        "resourceId": "4.1.3-y1-role-cloud-iam",
+        "role": "IAM Engineer (Cloud)",
+        "grade": "G6",
+        "fte": 0.125,
+        "monthlyCost": 690,
+        "workingFundingBasis": "Cash provision in the high-water case until existing/shared Digital and IT capacity is confirmed."
+      },
+      {
+        "role": "Delivery Manager",
+        "workingFundingBasis": "Required by Digital and IT but not included in the 4 September cost table. Current assumption is existing Digital and IT capacity; cost remains TBC if that assumption cannot be met."
+      },
+      {
+        "resourceId": "4.1.3-y2-y3-junior-fullstack-placement",
+        "role": "Junior Full-Stack Engineer (sandwich-year placement)",
+        "fte": 1.0,
+        "workingFundingBasis": "£35k time-limited mobilisation envelope in each of Years Two and Three; supervised additional developmental capacity, not part of the minimum mature-team establishment."
+      }
+    ]
+  },
+  "steps": [
+    {
+      "id": "4.1.3-step-1",
+      "title": "Mobilise the IT-informed multidisciplinary Hub team",
+      "period": {"start": "jul-dec-2026:b", "end": "jul-dec-2026:c"},
+      "summary": "From September to November 2026, secure the current high-water funding envelope and mobilise the Digital and IT mature-team capability needed for King’s Edge and the Digital Student Experience Hub. Hold full cash cover for all currently costed IT roles except the known existing Product Owner, while treating the IT Delivery Manager and Business Analysis as existing-capacity assumptions. Use subsequent Digital and IT validation to phase or reduce the envelope, not to discover missing capability after funding is fixed.",
+      "dependsOn": [],
+      "outputs": [
+        {"title": "High-water workforce envelope approved", "summary": "Secure enough investment to cover the current Digital and IT mature-team estimate while unresolved sharing, sourcing and scope questions are worked through."},
+        {"title": "Known existing roles protected", "summary": "Confirm Mark Peace as Product Owner, an IT Delivery Manager from existing Digital and IT capacity and protected Business Analysis during discovery."},
+        {"title": "IT phasing and attribution review", "summary": "Agree the first reduction pass across Year One phasing, Student-versus-Staff Hub allocation, Dynamics scope and specialist shared capacity."},
+        {"title": "Agentic-development capability established", "summary": "Confirm the commercial route for a dedicated Devin/Cognition capability, currently held at £90,000 per mobilisation year."}
+      ],
+      "resources": {
+        "existingCapacity": [
+          {
+            "role": "Product Owner",
+            "owner": "Mark Peace",
+            "contribution": "Provide accountable student-domain product ownership and prioritisation from existing workload. Digital and IT’s mature-team model contains a Product Owner role but this does not create an incremental Student Hub cash ask.",
+            "periodNeeded": "Throughout mobilisation",
+            "confidence": "confirmed existing leadership capacity",
+            "riskIfMissing": "Product decisions become detached from the Student Success proposition and institutional accountability."
+          },
+          {
+            "role": "Delivery Manager",
+            "owner": "Digital and IT",
+            "contribution": "Provide day-to-day delivery management within the agile team. Jon Ward identifies this as required but currently expects it to be resourced from existing Digital and IT capacity.",
+            "periodNeeded": "From team mobilisation onward",
+            "confidence": "current Digital and IT existing-capacity assumption",
+            "riskIfMissing": "The multidisciplinary team may have technical and product leadership but insufficient delivery coordination."
+          },
+          {
+            "role": "Business Analyst",
+            "owner": "Existing or seconded institutional capability",
+            "contribution": "Map systems, information flows, ownership, dependencies and operational implications during broad discovery.",
+            "fte": 0.2,
+            "periodNeeded": "November 2026 to June 2027",
+            "confidence": "working protected-capacity assumption",
+            "riskIfMissing": "Critical estate, dependency and ownership evidence may remain incomplete."
+          },
+          {
+            "role": "Specialist institutional assurance",
+            "owner": "Digital and IT and relevant institutional specialists",
+            "contribution": "Provide time-bound security, privacy, accessibility, data, architecture-assurance and service-management input beyond the standing team where required.",
+            "periodNeeded": "At relevant design, assurance and release points",
+            "confidence": "existing specialist capacity to schedule",
+            "riskIfMissing": "The product may reach release points without required institutional assurance."
+          }
+        ],
+        "newInvestment": [
+          {
+            "id": "4.1.3-y1-role-product-manager",
+            "item": "Product Manager",
+            "category": "digital product staffing capacity",
+            "fte": 1.0,
+            "amount": 63712,
+            "currency": "GBP",
+            "monthlyCost": 7964,
+            "grade": "G8",
+            "yearlyProfile": [
+              {"academicYear": "2026/27", "fte": 1.0, "amount": 63712, "note": "Eight-month high-water provision, November 2026 to June 2027"},
+              {"academicYear": "2027/28", "fte": 1.0, "amount": 95568, "note": "Full-year high-water provision"},
+              {"academicYear": "2028/29", "fte": 1.0, "amount": 95568, "note": "Full-year high-water provision"}
+            ],
+            "estimatedCost": "Based on Digital and IT’s £7,964 monthly G8 cost. Full Student Hub cost is held until the proposed sharing with the Staff Digital Hub is translated into an agreed allocation.",
+            "owner": "Digital and IT / product operating model TBC",
+            "periodNeeded": "November 2026 to June 2029",
+            "decisionNeededBy": "Before final business-case cost allocation",
+            "fundingRoute": "Digital Student Experience Hub mobilisation business case pending shared allocation",
+            "fundingStatus": "High-water provision; sharing and organisational home to confirm",
+            "confidence": "Digital and IT working estimate",
+            "rationale": "Provides professional product-management leadership across the agile delivery team. Jon Ward considers the role potentially shareable with the Staff Digital Hub, but the Student Hub currently carries full cash cover so the business case is not underfunded.",
+            "riskIfMissing": "Product backlog, stakeholder alignment and cross-Hub prioritisation may depend unsustainably on the Product Owner or technical team."
+          },
+          {
+            "id": "4.1.3-y1-role-solution-architect",
+            "item": "Solution Architect / Technical Lead",
+            "category": "digital product staffing capacity",
+            "fte": 1.0,
+            "amount": 54016,
+            "currency": "GBP",
+            "monthlyCost": 6752,
+            "grade": "G7",
+            "yearlyProfile": [
+              {"academicYear": "2026/27", "fte": 1.0, "amount": 54016, "note": "Eight-month high-water provision"},
+              {"academicYear": "2027/28", "fte": 1.0, "amount": 81024, "note": "Full-year high-water provision"},
+              {"academicYear": "2028/29", "fte": 1.0, "amount": 81024, "note": "Full-year high-water provision"}
+            ],
+            "estimatedCost": "Based on Digital and IT’s £6,752 monthly G7 cost. Carried at 1.0 FTE until Digital and IT confirms whether the role can be phased or partly supplied from existing architecture capacity.",
+            "owner": "Digital and IT",
+            "periodNeeded": "November 2026 to June 2029",
+            "decisionNeededBy": "Before architecture and recruitment model is fixed",
+            "fundingRoute": "Digital Student Experience Hub mobilisation business case",
+            "fundingStatus": "High-water provision; dedicated-versus-existing architecture model to confirm",
+            "confidence": "Digital and IT working estimate",
+            "rationale": "Provides clear technical authority over architecture, integration boundaries and engineering direction in the mature delivery model.",
+            "riskIfMissing": "The Hub may make unsupported architectural decisions or leave senior engineering without sufficient technical authority."
+          },
+          {
+            "id": "4.1.3-y1-role-backend",
+            "item": "Backend Engineer",
+            "category": "digital product staffing capacity",
+            "fte": 1.0,
+            "amount": 54016,
+            "currency": "GBP",
+            "monthlyCost": 6752,
+            "grade": "G7",
+            "yearlyProfile": [
+              {"academicYear": "2026/27", "fte": 1.0, "amount": 54016, "note": "Eight-month high-water provision"},
+              {"academicYear": "2027/28", "fte": 1.0, "amount": 81024, "note": "Full-year provision"},
+              {"academicYear": "2028/29", "fte": 1.0, "amount": 81024, "note": "Full-year provision"}
+            ],
+            "estimatedCost": "Based on Digital and IT’s £6,752 monthly G7 cost.",
+            "owner": "Digital and IT",
+            "periodNeeded": "November 2026 to June 2029",
+            "decisionNeededBy": "Before recruitment begins",
+            "fundingRoute": "Digital Student Experience Hub mobilisation business case",
+            "fundingStatus": "Unfunded; business-case approval required",
+            "confidence": "Digital and IT working estimate",
+            "rationale": "Provides dedicated backend and integration-oriented engineering capacity across the Hub and King’s Edge roadmap.",
+            "riskIfMissing": "The team lacks sufficient server-side and integration throughput for the planned product roadmap."
+          },
+          {
+            "id": "4.1.3-y1-role-fullstack",
+            "item": "Full-Stack Developer",
+            "category": "digital product staffing capacity",
+            "fte": 1.0,
+            "amount": 54016,
+            "currency": "GBP",
+            "monthlyCost": 6752,
+            "grade": "G7",
+            "yearlyProfile": [
+              {"academicYear": "2026/27", "fte": 1.0, "amount": 54016, "note": "Eight-month high-water provision"},
+              {"academicYear": "2027/28", "fte": 1.0, "amount": 81024, "note": "Full-year provision"},
+              {"academicYear": "2028/29", "fte": 1.0, "amount": 81024, "note": "Full-year provision"}
+            ],
+            "estimatedCost": "Based on Digital and IT’s £6,752 monthly G7 cost.",
+            "owner": "Digital and IT",
+            "periodNeeded": "November 2026 to June 2029",
+            "decisionNeededBy": "Before recruitment begins",
+            "fundingRoute": "Digital Student Experience Hub mobilisation business case",
+            "fundingStatus": "Unfunded; business-case approval required",
+            "confidence": "Digital and IT working estimate",
+            "rationale": "Provides sustained hands-on feature delivery across the student-facing application and supporting services.",
+            "riskIfMissing": "The product roadmap becomes dependent on a single substantive engineering stream and loses throughput and resilience."
+          },
+          {
+            "id": "4.1.3-y1-role-ux-ui",
+            "item": "UX/UI Designer",
+            "category": "digital product staffing capacity",
+            "fte": 1.0,
+            "amount": 44160,
+            "currency": "GBP",
+            "monthlyCost": 5520,
+            "grade": "G6",
+            "yearlyProfile": [
+              {"academicYear": "2026/27", "fte": 1.0, "amount": 44160, "note": "Eight-month high-water provision"},
+              {"academicYear": "2027/28", "fte": 1.0, "amount": 66240, "note": "Full-year provision"},
+              {"academicYear": "2028/29", "fte": 1.0, "amount": 66240, "note": "Full-year provision"}
+            ],
+            "estimatedCost": "Based on Digital and IT’s £5,520 monthly G6 cost. The broader service-design and user-research coverage needed by 4.1.2 remains a capability requirement and must be confirmed alongside this role definition.",
+            "owner": "Digital and IT",
+            "periodNeeded": "November 2026 to June 2029",
+            "decisionNeededBy": "Before role definition and recruitment begins",
+            "fundingRoute": "Digital Student Experience Hub mobilisation business case",
+            "fundingStatus": "Unfunded; business-case approval and role-scope validation required",
+            "confidence": "Digital and IT working estimate",
+            "rationale": "Provides dedicated UX and interface design within the mature team while preserving an explicit question about service/journey design and wider user research.",
+            "riskIfMissing": "The Hub risks becoming technically functional but weakly designed and insufficiently shaped by student evidence."
+          },
+          {
+            "id": "4.1.3-y1-role-qa-infuse",
+            "item": "QA Engineer through Infuse",
+            "category": "digital product testing capacity",
+            "fte": 1.0,
+            "amount": 48000,
+            "currency": "GBP",
+            "monthlyCost": 6000,
+            "grade": "Infuse",
+            "yearlyProfile": [
+              {"academicYear": "2026/27", "fte": 1.0, "amount": 48000, "note": "Eight-month high-water provision; actual phasing may start later as code production ramps"},
+              {"academicYear": "2027/28", "fte": 1.0, "amount": 72000, "note": "Full-year high-water provision"},
+              {"academicYear": "2028/29", "fte": 1.0, "amount": 72000, "note": "Full-year high-water provision"}
+            ],
+            "estimatedCost": "Digital and IT’s current estimate is £6,000 per month through Infuse. James Costerton has confirmed this is testing/QA capacity and is separate from the Devin/Cognition agentic-development cost.",
+            "owner": "Digital and IT",
+            "periodNeeded": "November 2026 to June 2029 planning envelope; deployment may phase with code production",
+            "decisionNeededBy": "Before testing capacity is commissioned",
+            "fundingRoute": "Digital Student Experience Hub mobilisation business case",
+            "fundingStatus": "High-water provision; mobilisation and BAU sourcing model to confirm",
+            "confidence": "Digital and IT working estimate",
+            "rationale": "Provides dedicated product testing, regression and release-quality capacity without assuming the final enduring sourcing model.",
+            "riskIfMissing": "Testing is absorbed inconsistently by developers, increasing regression, rework and release risk."
+          },
+          {
+            "id": "4.1.3-y1-role-devops",
+            "item": "Azure DevOps Engineer",
+            "category": "digital platform staffing capacity",
+            "fte": 0.5,
+            "amount": 22080,
+            "currency": "GBP",
+            "monthlyCost": 2760,
+            "grade": "G6",
+            "yearlyProfile": [
+              {"academicYear": "2026/27", "fte": 0.5, "amount": 22080, "note": "Eight-month high-water provision"},
+              {"academicYear": "2027/28", "fte": 0.5, "amount": 33120, "note": "Full-year high-water provision"},
+              {"academicYear": "2028/29", "fte": 0.5, "amount": 33120, "note": "Full-year high-water provision"}
+            ],
+            "estimatedCost": "Based on Digital and IT’s £2,760 monthly cost for 0.5 FTE G6 capacity. Held in cash until Digital and IT confirms a protected existing/shared route.",
+            "owner": "Digital and IT",
+            "periodNeeded": "November 2026 to June 2029",
+            "decisionNeededBy": "Before final business-case submission",
+            "fundingRoute": "Digital Student Experience Hub mobilisation business case pending existing/shared-capacity validation",
+            "fundingStatus": "High-water provision; expected existing/shared-capacity candidate",
+            "confidence": "Digital and IT working estimate",
+            "rationale": "Provides deployment pipelines, environments, observability and platform engineering support in the mature model.",
+            "riskIfMissing": "Engineering delivery and releases may be blocked or create unsupported operational arrangements."
+          },
+          {
+            "id": "4.1.3-y1-role-dynamics",
+            "item": "Dynamics Developer",
+            "category": "digital integration staffing capacity",
+            "fte": 1.0,
+            "amount": 44160,
+            "currency": "GBP",
+            "monthlyCost": 5520,
+            "grade": "G6",
+            "yearlyProfile": [
+              {"academicYear": "2026/27", "fte": 1.0, "amount": 44160, "note": "Eight-month high-water provision pending scope attribution"},
+              {"academicYear": "2027/28", "fte": 1.0, "amount": 66240, "note": "Full-year high-water provision pending scope attribution"},
+              {"academicYear": "2028/29", "fte": 1.0, "amount": 66240, "note": "Full-year high-water provision pending scope attribution"}
+            ],
+            "estimatedCost": "Based on Digital and IT’s £5,520 monthly G6 cost. This is deliberately held in the funding ceiling while its actual Student Hub responsibilities are clarified.",
+            "owner": "Digital and IT",
+            "periodNeeded": "November 2026 to June 2029 high-water assumption",
+            "decisionNeededBy": "Before final business-case scope and cost allocation",
+            "fundingRoute": "Digital Student Experience Hub mobilisation business case pending scope attribution",
+            "fundingStatus": "High-water provision; scope attribution unresolved",
+            "confidence": "Digital and IT working estimate",
+            "rationale": "Protects the funding case from an unplanned integration need while testing whether the role actually serves the Student Hub or separately delivered King’s Answers / enquiry-management capability.",
+            "riskIfMissing": "If genuinely required for Hub integration, an omitted Dynamics capability could become an unfunded delivery dependency; if not attributable, retaining it would overstate the Student Hub ask."
+          },
+          {
+            "id": "4.1.3-y1-role-cloud-infrastructure",
+            "item": "Infrastructure Engineer (Cloud)",
+            "category": "digital platform staffing capacity",
+            "fte": 0.25,
+            "amount": 11040,
+            "currency": "GBP",
+            "monthlyCost": 1380,
+            "grade": "G6",
+            "yearlyProfile": [
+              {"academicYear": "2026/27", "fte": 0.25, "amount": 11040, "note": "Eight-month high-water provision"},
+              {"academicYear": "2027/28", "fte": 0.25, "amount": 16560, "note": "Full-year high-water provision"},
+              {"academicYear": "2028/29", "fte": 0.25, "amount": 16560, "note": "Full-year high-water provision"}
+            ],
+            "estimatedCost": "Based on Digital and IT’s £1,380 monthly cost for 0.25 FTE G6 cloud-infrastructure capacity. Held in cash until existing/shared capacity is confirmed.",
+            "owner": "Digital and IT",
+            "periodNeeded": "November 2026 to June 2029",
+            "decisionNeededBy": "Before final business-case submission",
+            "fundingRoute": "Digital Student Experience Hub mobilisation business case pending existing/shared-capacity validation",
+            "fundingStatus": "High-water provision; expected existing/shared-capacity candidate",
+            "confidence": "Digital and IT working estimate",
+            "rationale": "Provides cloud-infrastructure expertise needed by the mature operating model.",
+            "riskIfMissing": "Cloud foundations may lack sufficient operational engineering support."
+          },
+          {
+            "id": "4.1.3-y1-role-cloud-iam",
+            "item": "IAM Engineer (Cloud)",
+            "category": "digital platform staffing capacity",
+            "fte": 0.125,
+            "amount": 5520,
+            "currency": "GBP",
+            "monthlyCost": 690,
+            "grade": "G6",
+            "yearlyProfile": [
+              {"academicYear": "2026/27", "fte": 0.125, "amount": 5520, "note": "Eight-month high-water provision"},
+              {"academicYear": "2027/28", "fte": 0.125, "amount": 8280, "note": "Full-year high-water provision"},
+              {"academicYear": "2028/29", "fte": 0.125, "amount": 8280, "note": "Full-year high-water provision"}
+            ],
+            "estimatedCost": "Based on Digital and IT’s £690 monthly cost for 0.125 FTE G6 IAM capacity. Held in cash until existing/shared capacity is confirmed.",
+            "owner": "Digital and IT",
+            "periodNeeded": "November 2026 to June 2029",
+            "decisionNeededBy": "Before final business-case submission",
+            "fundingRoute": "Digital Student Experience Hub mobilisation business case pending existing/shared-capacity validation",
+            "fundingStatus": "High-water provision; expected existing/shared-capacity candidate",
+            "confidence": "Digital and IT working estimate",
+            "rationale": "Provides identity and access-management expertise within the mature cloud delivery model.",
+            "riskIfMissing": "Identity design or implementation may become a late release blocker or rely on unprotected specialist time."
+          },
+          {
+            "id": "4.1.3-y1-agentic-development",
+            "item": "Ring-fenced agentic software-development tooling (Devin/Cognition)",
+            "category": "engineering productivity tooling",
+            "amount": 90000,
+            "currency": "GBP",
+            "yearlyProfile": [
+              {"academicYear": "2026/27", "amount": 90000, "note": "Year One high-water planning allowance"},
+              {"academicYear": "2027/28", "amount": 90000, "note": "Year Two high-water planning allowance"},
+              {"academicYear": "2028/29", "amount": 90000, "note": "Year Three high-water planning allowance"}
+            ],
+            "estimatedCost": "£90,000 per year, £270,000 across mobilisation. James Costerton confirms this is a dedicated Devin instance purchased from Cognition and is separate from the Infuse QA/testing cost. Shared-use opportunities may reduce the final Student Hub allocation.",
+            "owner": "Digital and IT",
+            "periodNeeded": "November 2026 onward",
+            "decisionNeededBy": "Before initial commercial commitment and at annual renewal points",
+            "fundingRoute": "Digital Student Experience Hub mobilisation business case pending any shared allocation",
+            "fundingStatus": "Included in high-water envelope; commercial and sharing model to validate",
+            "confidence": "Digital and IT planning allowance",
+            "rationale": "Provides sustained agentic-development capability as an engineering accelerator while retaining human specification, review and accountability.",
+            "riskIfMissing": "The delivery model loses a material productivity capability assumed by Digital and IT."
+          },
+          {
+            "id": "4.1.3-y2-y3-platform-high-water-hold",
+            "item": "Cross-deliverable Azure/platform continuation high-water provision",
+            "category": "digital app and platform costs",
+            "amount": 90000,
+            "currency": "GBP",
+            "yearlyProfile": [
+              {"academicYear": "2027/28", "amount": 90000, "note": "High-water Year Two hold pending a refined Azure consumption profile"},
+              {"academicYear": "2028/29", "amount": 90000, "note": "Year Three high-water provision consistent with the current Digital and IT estimate"}
+            ],
+            "estimatedCost": "Temporary consolidated holding provision for the overall Hub funding profile. 4.1.2 already carries the £50,000 Year One Azure/environments/platform envelope. Digital and IT considers a profile rising to around £90,000 by Year Three reasonably accurate; the high-water case holds £90,000 in Year Two as well until phasing is confirmed.",
+            "owner": "Digital and IT",
+            "periodNeeded": "2027/28 to 2028/29",
+            "decisionNeededBy": "Before Year Two platform budgets are fixed",
+            "fundingRoute": "Digital Student Experience Hub mobilisation business case",
+            "fundingStatus": "High-water holding provision pending detailed 4.1.2 platform profile",
+            "confidence": "prudent high-water estimate",
+            "rationale": "Keeps the whole-Hub working funding envelope complete without pretending the later-year Azure consumption curve is already known. Operational ownership remains with the Hub platform work in 4.1.2 and this holding line should be reconciled there once the detailed profile is agreed.",
+            "riskIfMissing": "The three-year business case could understate platform run costs while architecture and consumption remain uncertain."
+          }
+        ],
+        "enablingConditions": [
+          {
+            "condition": "Agree a phased 2026/27 mobilisation with Digital and IT that identifies where existing capacity can keep work moving before every dedicated role is recruited. The business-case envelope remains the high-water case until that phasing is confirmed.",
+            "owner": "Jon Ward / James Costerton with Mark Peace",
+            "decisionNeededBy": "Before final business-case submission",
+            "confidence": "open validation question",
+            "riskIfMissing": "Either the first-year ask is unnecessarily front-loaded or critical capacity is assumed away without a credible deployment plan."
+          },
+          {
+            "condition": "Agree explicit Student-versus-Staff Hub cost attribution for shared roles and tooling. Administrative employment by one programme must not imply that the Student Success business case carries the full economic cost of the Staff Hub.",
+            "owner": "Digital and IT with Student and Staff Hub sponsors and Finance",
+            "decisionNeededBy": "Before final business-case cost allocation",
+            "confidence": "open validation question",
+            "riskIfMissing": "Student Success funding may inadvertently subsidise the Staff Hub or the same shared capability may be double counted."
+          },
+          {
+            "condition": "Clarify the Dynamics Developer scope before treating it as an enduring Student Hub role. Identify the concrete Hub deliverables or integrations it serves and separate any King’s Answers, CRM or enquiry-management work that belongs to another delivery route.",
+            "owner": "James Costerton / Digital and IT",
+            "decisionNeededBy": "Before final business-case scope and workforce allocation",
+            "confidence": "open scope-attribution question",
+            "riskIfMissing": "The Student Hub either funds work outside its boundary or omits a genuine integration dependency."
+          },
+          {
+            "condition": "Classify each mature-team line as new dedicated investment, existing protected capacity, shared new capacity or conditional specialist input, and update the funding profile downward only when the alternative route is named and credible.",
+            "owner": "Digital and IT with Finance and Mark Peace",
+            "decisionNeededBy": "Through September 2026 business-case development",
+            "confidence": "working high-water method",
+            "riskIfMissing": "The funding request may oscillate between optimistic and pessimistic assumptions without an auditable basis for changes."
+          }
+        ]
+      }
+    },
+    {
+      "id": "4.1.3-step-2",
+      "title": "Establish the product operating model and delivery practices",
+      "period": {"start": "jul-dec-2026:c", "end": "jan-jun-2027:a"},
+      "summary": "From November 2026 to February 2027, establish one transparent product pipeline, clear Product Owner / Product Manager / Delivery Manager / technical-lead decision rights, proportionate discovery and user involvement, engineering and quality expectations, agentic-development practices, embedded assurance and release practices across King’s Edge and the Digital Student Experience Hub.",
+      "dependsOn": ["4.1.3-step-1"],
+      "outputs": [
+        {"title": "Product and delivery decision rights", "summary": "Clarify the distinct roles of Mark Peace as Product Owner, the professional Product Manager, the IT Delivery Manager and the Solution Architect / Technical Lead."},
+        {"title": "Shared-team allocation model", "summary": "Document where Staff Hub and Student Hub share product or technical capacity and how that affects priorities and cost attribution."},
+        {"title": "Service-design coverage confirmed", "summary": "Confirm how service/journey design and user research are supplied alongside the IT-modelled UX/UI role so broad discovery remains credible."}
+      ]
+    },
+    {
+      "id": "4.1.3-step-3",
+      "title": "Prove the capability through King’s Edge, broad discovery and the focused Hub release",
+      "period": {"start": "jan-jun-2027:a", "end": "jul-dec-2027:b"},
+      "summary": "From January to October 2027, prove the multidisciplinary capability through substantive King’s Edge delivery, broad student-experience discovery and the focused Digital Student Experience Hub release. Measure actual utilisation by role so the high-water envelope can be converted into a better-evidenced ongoing workforce and sourcing model.",
+      "dependsOn": ["4.1.3-step-2", "4.1.2-step-1", "4.1.2-step-1c", "4.1.4-step-2"],
+      "outputs": [
+        {"title": "Substantive King’s Edge delivery", "summary": "Move the Edge replatform and agreed richer capabilities predictably through build, test and controlled release."},
+        {"title": "Focused Digital Student Experience Hub delivery", "summary": "Deliver the shared home and agreed first-release journeys without turning the first year into several parallel deep integration programmes."},
+        {"title": "Resource-utilisation evidence", "summary": "Capture where dedicated, shared and specialist capacity is actually consumed so later-year and BAU decisions are evidence-led."}
+      ],
+      "resources": {
+        "enablingConditions": [
+          {
+            "condition": "Before Year Two, define the supervision, backlog boundaries, learning objectives and recruitment route for a sandwich-year student so the placement adds developmental and productive value without carrying critical delivery responsibility.",
+            "owner": "Digital and IT with Mark Peace and the relevant engineering lead",
+            "decisionNeededBy": "Before 2027/28 placement recruitment",
+            "confidence": "planned capability and student-opportunity test",
+            "riskIfMissing": "The placement may be treated as cheap labour, fail to provide a strong student experience or place inappropriate responsibility on a student."
+          }
+        ]
+      }
+    },
+    {
+      "id": "4.1.3-step-4",
+      "title": "Make product operations routine and host the first sandwich-year placement",
+      "period": {"start": "jul-dec-2027:c", "end": "jan-jun-2028:a"},
+      "summary": "During 2027/28, make product and live-service practices routine across the Digital Student Experience Hub and King’s Edge and add one supervised sandwich-year Junior Full-Stack Engineer as additional developmental capacity alongside the mature team.",
+      "dependsOn": ["4.1.3-step-3"],
+      "outputs": [
+        {"title": "Routine pipeline and capacity cadence", "summary": "Balance discovery, build, quality, releases, live service and technical improvement through one transparent prioritisation model."},
+        {"title": "Junior engineering placement test", "summary": "Host one full-time sandwich-year student on a supervised, bounded backlog and evaluate productive contribution, learning quality, supervision cost and talent-pipeline value."}
+      ],
+      "resources": {
+        "newInvestment": [
+          {
+            "id": "4.1.3-y2-y3-junior-fullstack-placement",
+            "item": "Junior Full-Stack Engineer (sandwich-year placement)",
+            "category": "student placement and digital product staffing capacity",
+            "fte": 1.0,
+            "amount": 35000,
+            "currency": "GBP",
+            "yearlyProfile": [
+              {"academicYear": "2027/28", "fte": 1.0, "amount": 35000, "note": "First supervised sandwich-year placement"},
+              {"academicYear": "2028/29", "fte": 1.0, "amount": 35000, "note": "Second placement cycle retained in the current high-water envelope, subject to learning from Year Two"}
+            ],
+            "estimatedCost": "£35,000 employment envelope in each of Years Two and Three, £70,000 across the current three-year high-water plan.",
+            "owner": "Digital and IT with Mark Peace",
+            "periodNeeded": "2027/28 and 2028/29",
+            "decisionNeededBy": "Before each placement recruitment cycle",
+            "fundingRoute": "Digital Student Experience Hub mobilisation business case",
+            "fundingStatus": "Included in high-water mobilisation envelope; exact placement route to confirm",
+            "confidence": "planning envelope",
+            "rationale": "Creates a meaningful paid student development opportunity, tests a student-to-digital-talent pipeline and gives the mature team experience of supervising junior contribution without substituting the student for experienced capacity.",
+            "riskIfMissing": "King’s loses a low-risk opportunity to connect the Hub’s own delivery capability to student development and internal digital talent formation."
+          }
+        ]
+      }
+    },
+    {
+      "id": "4.1.3-step-5",
+      "title": "Refine the mature capability model from live evidence",
+      "period": {"start": "jan-jun-2028:b", "end": "jul-dec-2028:b"},
+      "summary": "From March to October 2028, use live-service demand, delivery throughput, the first placement and actual use of specialist capacity to revise the mature workforce model. The high-water envelope remains the ceiling, but shared, existing or unnecessary capacity should be removed from the Student Hub allocation once evidence and ownership are clear.",
+      "dependsOn": ["4.1.3-step-4", "4.1.2-step-3"],
+      "outputs": [
+        {"title": "Evidence-led workforce model", "summary": "Set the enduring role mix against actual product demand, support obligations, architecture and integration complexity and proven shared-service contribution."},
+        {"title": "Placement-model evidence", "summary": "Evaluate learning quality, productive contribution, supervision cost and whether the placement should remain a recurring element of the capability."},
+        {"title": "Confirmed cross-Hub allocation", "summary": "Replace provisional Student-Hub-only funding assumptions with agreed cost sharing wherever the Staff Hub or wider Digital and IT capability benefits."
+        }
+      ]
+    },
+    {
+      "id": "4.1.3-step-6",
+      "title": "Settle the enduring product capability and BAU funding model",
+      "period": {"start": "jul-dec-2028:c", "end": "jan-jun-2029:c"},
+      "summary": "By the end of mobilisation, settle the enduring Digital and IT workforce, sourcing, platform and tooling model from evidence. The current risk envelope assumes up to £601,080 per year of directly attributable mature-team staffing and specialist capacity excluding the Product Owner, plus £90,000 agentic-development tooling and a £90,000 Azure/platform run-cost allowance. This c.£781,080 recurrent high-water position is not a commitment to fund every line permanently and should reduce where roles are shared, existing, differently sourced or outside the Student Hub boundary.",
+      "dependsOn": ["4.1.3-step-5"],
+      "outputs": [
+        {"title": "Enduring workforce and sourcing model", "summary": "Confirm which mature-team roles are permanent, externally sourced, shared, fractional or supplied through standing Digital and IT functions."},
+        {"title": "Recurrent cost attribution", "summary": "Agree the Student Hub share of cross-Hub roles, agentic tooling, platform capacity and any CRM/Dynamics integration work."},
+        {"title": "Sustainable student placement route", "summary": "Decide whether the sandwich-year placement remains a recurring development and talent-pipeline feature beyond mobilisation."}
+      ],
+      "resources": {
+        "newInvestment": [
+          {
+            "id": "4.1.3-bau-worst-case-staffing",
+            "item": "BAU high-water mature-team staffing and specialist capacity",
+            "category": "digital product staffing capacity",
+            "amount": 601080,
+            "currency": "GBP",
+            "bauLiability": true,
+            "estimatedCost": "£601,080 annual high-water run-rate from the currently costed Digital and IT mature-team roles after removing Product Owner. This deliberately includes the full Product Manager, Solution Architect / Technical Lead, Backend, Full-Stack, UX/UI, Infuse QA, Azure DevOps, Dynamics, Cloud Infrastructure and IAM lines until shared, existing or out-of-scope capacity is confirmed.",
+            "owner": "Digital and IT with Student Hub sponsor and Finance",
+            "periodNeeded": "July 2029 onward",
+            "decisionNeededBy": "Before 2029/30 recurrent budgets and workforce plans are fixed",
+            "fundingRoute": "TBC from evidence across Digital and IT BAU, Student Hub sponsorship and any shared Staff Hub allocation",
+            "fundingStatus": "Worst-case BAU risk envelope only; final recurrent attribution unresolved",
+            "confidence": "high-water risk estimate",
+            "rationale": "Makes the maximum currently visible recurrent workforce exposure explicit while preserving the expectation that validation will reduce the directly attributable Student Hub share.",
+            "riskIfMissing": "The programme could enter BAU planning with no visible allowance for the mature capability model and discover recurrent obligations too late."
+          },
+          {
+            "id": "4.1.3-bau-agentic",
+            "item": "BAU agentic software-development tooling",
+            "category": "engineering productivity tooling",
+            "amount": 90000,
+            "currency": "GBP",
+            "bauLiability": true,
+            "estimatedCost": "£90,000 annual high-water allowance for Devin/Cognition or equivalent agentic-development capability. Final Student Hub allocation should reduce if the capability is shared more widely.",
+            "owner": "Digital and IT",
+            "periodNeeded": "July 2029 onward",
+            "decisionNeededBy": "Before 2029/30 operating budgets are fixed",
+            "fundingRoute": "Digital and IT recurrent operating budget with cross-Hub allocation TBC",
+            "fundingStatus": "High-water recurrent allowance; commercial and sharing model to confirm",
+            "confidence": "planning allowance",
+            "rationale": "Carries forward the engineering-productivity capability assumed throughout mobilisation without prejudging the final cost-sharing model.",
+            "riskIfMissing": "The mature engineering capability may lose an operating tool assumed in its delivery model or face unplanned in-year spend."
+          },
+          {
+            "id": "4.1.3-bau-platform-high-water",
+            "item": "BAU Azure/platform high-water run-cost allowance",
+            "category": "digital app and platform costs",
+            "amount": 90000,
+            "currency": "GBP",
+            "bauLiability": true,
+            "estimatedCost": "£90,000 annual high-water platform allowance, consistent with the current estimate of Azure/platform costs rising from £50,000 in Year One to around £90,000 by Year Three and BAU. Final run cost must be based on actual architecture and consumption.",
+            "owner": "Digital and IT",
+            "periodNeeded": "July 2029 onward",
+            "decisionNeededBy": "Before 2029/30 recurrent platform budgets are fixed",
+            "fundingRoute": "Digital and IT / Student Hub recurrent platform budget TBC",
+            "fundingStatus": "High-water recurrent allowance; actual consumption and attribution to confirm",
+            "confidence": "planning estimate",
+            "rationale": "Keeps likely recurrent platform consumption visible while architecture and demand mature.",
+            "riskIfMissing": "The Hub could transition to BAU without a realistic allowance for its cloud and platform run costs."
+          }
+        ],
+        "enablingConditions": [
+          {
+            "condition": "Do not convert the high-water funding model into a permanent establishment by default. BAU decisions must be based on live utilisation, sourcing evidence, cross-Hub allocation and the confirmed boundary with King’s Answers and wider enquiry-management capability.",
+            "owner": "Digital and IT with Mark Peace, Finance and institutional governance",
+            "decisionNeededBy": "Before recurrent budgets and workforce plans are fixed",
+            "confidence": "explicit planning principle",
+            "riskIfMissing": "A prudent mobilisation ceiling could accidentally harden into an unnecessarily expensive permanent operating model."
+          }
+        ]
+      }
+    }
+  ]
+}

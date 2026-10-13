@@ -20,6 +20,8 @@ Before editing anything, read these files in this order:
 10. `src/plan-utils.js`
 11. Relevant JSON files under `src/data/`
 
+For Version 2 work, also read `docs/v2-remap-crosswalk.md`, `src/data/v2/crosswalk.json` and the relevant files under `src/data/v2/`. The unqualified `src/data/` paths and four-project descriptions below describe Version 1.
+
 If the task is about app rendering or UI, also inspect:
 
 - `src/site.jsx`
@@ -46,7 +48,7 @@ Deliverables default to `proposition-development` unless the JSON explicitly say
 
 Do not treat `tags`, `planningMaturity`, `visibility`, or `src/data/status.json` as the planning-stage workflow.
 
-The source-of-truth migration has been applied. `src/data/kings-edge-plan.json` now carries the canonical project order and IDs directly:
+The source-of-truth migration has been applied. Version 1 in `src/data/kings-edge-plan.json` carries its canonical project order and IDs directly:
 
 1. `2.1` Curriculum Embedded Graduate Advantage
 2. `2.2` A Co-Curricular Scaffold for Purpose
@@ -54,6 +56,8 @@ The source-of-truth migration has been applied. `src/data/kings-edge-plan.json` 
 4. `2.4` Defining, Evidencing and Activating the King’s Graduate Premium
 
 `src/plan-utils.js` should not contain hidden project renumbering, title substitution or display-order remapping. If project order, title or numbering is wrong, fix the JSON source of truth.
+
+Version 2 is a parallel proposed six-project structure in `src/data/v2/kings-edge-plan.json`. Its stable IDs begin with `v2-` and its authored `displayId` fields provide new numeric labels. This is an explicit versioned data model, not a hidden V1 renumbering. Edit V2 data only when working on V2; maintain its crosswalk and run `npm run validate:data` so the item-level preservation gate passes.
 
 ## Confirm the working mode
 

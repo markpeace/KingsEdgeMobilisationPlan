@@ -1,4 +1,4 @@
-import theory from './data/theory-of-change.json';
+import { theoryOfChange as theory } from './plan-data.js';
 
 const SECTION_ID = 'theory-of-change';
 
@@ -169,7 +169,7 @@ function createTheoryHeader() {
 
   const meta = document.createElement('p');
   meta.className = 'theory-meta';
-  meta.textContent = `Theory of change · ${theory.status} · ${theory.approvedDate}`;
+  meta.textContent = `Theory of change · ${theory.status} · ${theory.reviewDate || theory.approvedDate}`;
 
   const title = document.createElement('h2');
   title.id = `${SECTION_ID}-title`;

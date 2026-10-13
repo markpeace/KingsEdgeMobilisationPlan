@@ -1,0 +1,24 @@
+{
+  "id": "2.3.1",
+  "title": "Beyond the Course: Visibility, Reach and Impact",
+  "lead": "Steph White",
+  "planningStatus": "proposition-review",
+  "decisionLog": [
+    {
+      "date": "2026-09-01",
+      "type": "decision",
+      "forum": "King's Edge mobilisation planning",
+      "outcome": "Fundamentally reframed 2.3.1 from a digital portal build into the institutional proposition for making the Beyond Course offer visible, navigable and evidence-led. Steph White becomes accountable owner and delivery lead. King’s Edge remains the common student-facing shopfront, while the Digital Student Experience Hub and 4.1.4 carry the substantive digital product and replatform delivery."
+    },
+    {
+      "date": "2026-09-01",
+      "type": "decision",
+      "forum": "King's Edge mobilisation planning",
+      "outcome": "Confirmed the working proposition, benefits and indicative delivery route for informal stakeholder review. The immediate Year 1 priorities are a live Beyond Course Power BI dashboard by Christmas 2026, institutional adoption of King’s Edge as the common shopfront, and the first deeper evaluation of participation and impact. Indicative resource assumptions are recorded for planning but remain to be validated in the round."
+    }
+  ],
+  "ownership": {
+    "accountableOwner": "Steph White",
+    "deliveryLead": "Steph White"
+  }
+}
