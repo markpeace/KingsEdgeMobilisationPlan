@@ -25,6 +25,8 @@ import {
 } from './planning-status.js';
 import { allocateStepLanes, buildBucketGroups, calculateVisibleHorizon, clipSpanToHorizon, findTodayPosition, formatSegmentLabel } from './timeline-utils.js';
 import ResourceInvestmentProfile from './resource-investment-panel.jsx';
+import InvestmentCaseV1 from './investment-case-entry.jsx';
+import InvestmentCaseV2 from './investment-case-v2.jsx';
 import { planVersion, planVersionUrl } from './plan-version.js';
 import './design-system.css';
 import './styles.css';
@@ -74,7 +76,7 @@ function ProjectTransformationClaim({ project }) {
 }
 
 function Nav() {
-  return <header className="site-header"><a href="#/" className="brand">King's Edge Mobilisation Plan</a><nav><a href="#/">Home</a><a href="#/projects">Projects</a><a href="#/deliverables">Deliverables</a><a href="#/measures">Measures</a><a href="#/timeline">Timeline</a></nav><label className="plan-version-control"><span>Plan version</span><select aria-label="Plan version" value={planVersion} onChange={(event) => { window.location.assign(planVersionUrl(event.target.value)); }}><option value="v1">Version 1</option><option value="v2">Version 2 · working copy</option></select></label></header>;
+  return <header className="site-header"><a href="#/" className="brand">King's Edge Mobilisation Plan</a><nav><a href="#/">Home</a><a href="#/projects">Projects</a><a href="#/deliverables">Deliverables</a><a href="#/measures">Measures</a><a href="#/timeline">Timeline</a><a href="#/investment">Investment ask</a></nav><label className="plan-version-control"><span>Plan version</span><select aria-label="Plan version" value={planVersion} onChange={(event) => { window.location.assign(planVersionUrl(event.target.value)); }}><option value="v1">Version 1</option><option value="v2">Version 2 · working copy</option></select></label></header>;
 }
 
 function PlanningStatusTag({ item }) {
@@ -100,7 +102,11 @@ function SmartLink({ id, idMap }) {
 }
 
 function Landing() {
-  return <main className="landing-main"><section className="hero landing-hero"><p className="eyebrow">Interactive delivery map</p><h1>{plan.programme.title}</h1><p>{plan.programme.purpose}</p><div className="landing-links"><a href="#/projects"><span>01</span><strong>Projects view</strong><em>Browse the core projects and the related out of programme work.</em></a><a href="#/deliverables"><span>02</span><strong>Deliverables index</strong><em>Review propositions from stakeholder review through mobilisation approval.</em></a><a href="#/measures"><span>03</span><strong>Measures</strong><em>Review benefit measures once delivery design begins.</em></a><a href="#/timeline"><span>04</span><strong>Timeline</strong><em>View planned sequencing, dependencies and approved step progress.</em></a></div></section></main>;
+  return <main className="landing-main"><section className="hero landing-hero"><p className="eyebrow">Interactive delivery map</p><h1>{plan.programme.title}</h1><p>{plan.programme.purpose}</p><div className="landing-links"><a href="#/projects"><span>01</span><strong>Projects view</strong><em>Browse the core projects and the related out of programme work.</em></a><a href="#/deliverables"><span>02</span><strong>Deliverables index</strong><em>Review propositions from stakeholder review through mobilisation approval.</em></a><a href="#/measures"><span>03</span><strong>Measures</strong><em>Review benefit measures once delivery design begins.</em></a><a href="#/timeline"><span>04</span><strong>Timeline</strong><em>View planned sequencing, dependencies and approved step progress.</em></a><a href="#/investment"><span>05</span><strong>Investment ask</strong><em>Compare the financial options and the investment proposition for this plan version.</em></a></div></section></main>;
+}
+
+function InvestmentRoute() {
+  return <><div className="investment-version-bar"><label htmlFor="investment-version">Investment ask version</label><select id="investment-version" value={planVersion} onChange={(event) => window.location.assign(planVersionUrl(event.target.value))}><option value="v1">Version 1 · original four-area case</option><option value="v2">Version 2 · six-project proposal</option></select><span>Linked to the plan version above.</span></div>{planVersion === 'v2' ? <InvestmentCaseV2 /> : <InvestmentCaseV1 />}</>;
 }
 
 function ProjectsPage() {
@@ -506,6 +512,7 @@ function Site() {
   else if (path === '/deliverables') page = <DeliverablesIndex deliverables={deliverables} />;
   else if (path === '/measures') page = <MeasuresView deliverables={deliverables} />;
   else if (path === '/timeline') page = <TimelineView timelineItems={timelineItems} idMap={idMap} dependencyIndex={dependencyIndex} />;
+  else if (path === '/investment') page = <InvestmentRoute />;
   else page = <Landing />;
   return <><Nav />{page}<footer className="site-footer"><p>King's Edge Mobilisation Plan. Rendered from JSON data.</p></footer></>;
 }

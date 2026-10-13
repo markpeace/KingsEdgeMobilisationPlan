@@ -4,6 +4,8 @@ This repository holds the interactive mobilisation site for the King's Edge prog
 
 The site now offers two parallel plans through the header selector: Version 1 is the original four-project structure; Version 2 is a proposed six-project remap with nineteen deliverables. Open `index.html?plan=v2` to view V2. The [V2 crosswalk](docs/v2-remap-crosswalk.md) records where each original item and investment ask went. The original plan remains available at the default URL.
 
+The [investment ask](docs/plan-versioning.md) is integrated at `index.html#/investment`, with a linked V1/V2 dropdown. V1 preserves the four-area case. V2 presents six project propositions and a reconciled financial bridge to the same Economy, Core and Enhanced baseline. The old `investment-case.html` URL redirects to the integrated page.
+
 The site helps users browse, understand and test the delivery plan for King's Edge. It makes the structure of the programme clear, shows how individual deliverables fit together, and makes step-level dependencies across the wider Education and Student Success portfolio visible.
 
 ## North star

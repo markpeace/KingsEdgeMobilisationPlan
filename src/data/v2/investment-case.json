@@ -1,0 +1,124 @@
+{
+  "version": "v2",
+  "status": "proposed investment grouping; Core is the working recommendation",
+  "sourceBaseline": "../investment-case.json",
+  "headline": "Invest in six connected changes to the King’s experience",
+  "standfirst": "The proposed V2 case follows the six-project mobilisation plan. It gives each project a clear investment purpose while retaining the established Economy, Core and Enhanced financial options. The Graduate Futures pool is attributed jointly to Insight and Reputation until its mixed costs can be apportioned.",
+  "accountingPools": [
+    {
+      "id": "purpose-recognition",
+      "title": "Purpose, Capability and Recognition",
+      "v2Projects": ["v2-purpose-recognition"],
+      "source": "V1 Architecture less the 2.2.2 infrastructure service",
+      "optionTotals": { "economy": 182000, "core": 252000, "enhanced": 367000 },
+      "coreInYear": [53000, 119500, 79500]
+    },
+    {
+      "id": "experiential-education",
+      "title": "Experiential Education and Formal Pathways",
+      "v2Projects": ["v2-experiential-education"],
+      "source": "V1 Experiential Learning in the Curriculum",
+      "optionTotals": { "economy": 276000, "core": 341000, "enhanced": 401000 },
+      "coreInYear": [58800, 131100, 151100]
+    },
+    {
+      "id": "opportunity-transitions",
+      "title": "Opportunity, Partnerships and Transitions",
+      "v2Projects": ["v2-opportunity-transitions"],
+      "source": "V1 2.2.2 infrastructure service plus V1 2.2.4 mobilisation commissioning",
+      "optionTotals": { "economy": 1411372, "core": 1792551, "enhanced": 2698707 },
+      "coreInYear": [262842, 638932, 890777]
+    },
+    {
+      "id": "student-life",
+      "title": "Student Life and Participation",
+      "v2Projects": ["v2-student-life"],
+      "source": "V1 Beyond-Course Opportunity and Participation less 2.2.4 mobilisation commissioning",
+      "optionTotals": { "economy": 392400, "core": 432400, "enhanced": 547400 },
+      "coreInYear": [128500, 151950, 151950]
+    },
+    {
+      "id": "insight-reputation",
+      "title": "Graduate Futures Insight and Improvement / Graduate Premium and Reputation",
+      "v2Projects": ["v2-insight-improvement", "v2-premium-reputation"],
+      "source": "V1 Graduate Futures Intelligence and Value, held as one pool pending a defensible split",
+      "optionTotals": { "economy": 641800, "core": 764800, "enhanced": 837800 },
+      "coreInYear": [169900, 264950, 329950],
+      "unapportioned": true
+    }
+  ],
+  "projects": [
+    {
+      "id": "v2-purpose-recognition",
+      "investmentPurpose": "Give every student a supported conversation about purpose, a living language for their capabilities and a trustworthy fuller account of learning.",
+      "whyThisInvestment": "Funds practitioner discovery and student co-design, deep trailblazers in purpose and skills, record prototyping and the capabilities needed to carry proven models into normal practice.",
+      "yearOne": "Test the purpose proposition, build the first skills proof of concept and prototype approaches to trusted recognition.",
+      "deliverables": ["v2-purpose-conversation", "v2-living-skills", "v2-fuller-learning-record"]
+    },
+    {
+      "id": "v2-experiential-education",
+      "investmentPurpose": "Make good experiential learning a clearer educational expectation within and near the curriculum.",
+      "whyThisInvestment": "Combines North Star design and co-creation with targeted curriculum implementation and reusable formal routes, including sandwich years and the Level 6 capstone.",
+      "yearOne": "Agree the North Star and future entitlement direction, identify curriculum growth priorities and validate the first shared formal pathways.",
+      "deliverables": ["v2-experiential-north-star", "v2-curriculum-opportunity", "v2-near-curriculum-pathways"]
+    },
+    {
+      "id": "v2-opportunity-transitions",
+      "investmentPurpose": "Turn UK, international and civic relationships into accessible opportunity, and support graduates proactively through transition.",
+      "whyThisInvestment": "Funds a staged UK and international opportunity-development capability, Global Mobility growth, beyond-course commissioning and the Graduate Transitions service. Student Opportunities Fund awards need a separate funding decision.",
+      "yearOne": "Protect live international employer relationships, start Global Mobility development, design access funding and commission the first £150k opportunity portfolio.",
+      "deliverables": ["v2-partnership-infrastructure", "v2-opportunity-funding", "v2-beyond-course-commissioning", "v2-graduate-transitions"]
+    },
+    {
+      "id": "v2-student-life",
+      "investmentPurpose": "Make the wider King’s experience visible, inclusive and well timed for different patterns of student life.",
+      "whyThisInvestment": "Builds the Beyond Course shopfront and participation evidence, tests Student Life designs and establishes a coherent annual student-journey rhythm. Subject societies remain deferred without a funded mobilisation ask.",
+      "yearOne": "Launch a live Beyond Course evidence base and shopfront, test participation personas and prototypes, and map the institutional rhythm.",
+      "deliverables": ["v2-beyond-course-visibility", "v2-student-life-design", "v2-wider-experience-rhythm", "v2-subject-societies"]
+    },
+    {
+      "id": "v2-insight-improvement",
+      "investmentPurpose": "Give course and service teams usable graduate-futures evidence, external challenge and a targeted outcomes improvement cycle.",
+      "whyThisInvestment": "Supports course-level data packs and sense-making, employer and alumni validation, Graduate Outcomes response optimisation and priority survey strategy. The shared analytics allocation sits here.",
+      "yearOne": "Test the first course packs, establish external validation and run a focused Graduate Outcomes response pilot.",
+      "deliverables": ["v2-graduate-futures-packs", "v2-external-validation", "v2-survey-improvement"]
+    },
+    {
+      "id": "v2-premium-reputation",
+      "investmentPurpose": "Turn credible graduate-premium evidence into claims that students and external audiences recognise and use.",
+      "whyThisInvestment": "Creates evidence-backed content assets and tests student adoption and external activation. The combined activation, research and survey-intervention envelope is accounted for once here, alongside the programme-controlled Strategic Partnerships, Profile and External Engagement Fund.",
+      "yearOne": "Produce the first proof points and exemplars, test the student proposition and run limited external message tests.",
+      "deliverables": ["v2-premium-assets", "v2-premium-activation"]
+    }
+  ],
+  "investmentChoices": [
+    {
+      "id": "economy",
+      "title": "Economy",
+      "description": "Establish the architecture with narrower UK brokerage, two-post international coverage, one Global Mobility development post and a single graduate-transition coach. Opportunity and implementation reach are constrained.",
+      "commissioning": "£100k / £200k / £250k",
+      "infrastructure": "£861.372k across mobilisation; £421.223k annualised exit run-rate"
+    },
+    {
+      "id": "core",
+      "title": "Core",
+      "description": "Fund the staged four-post UK team, full international regional team by January 2029, two Global Mobility posts and a G7/G6 Graduate Transitions team from September 2028, matched to the £150k / £200k / £250k opportunity portfolio.",
+      "commissioning": "£150k / £200k / £250k",
+      "infrastructure": "£1.192551m across mobilisation; £714.058k annualised exit run-rate"
+    },
+    {
+      "id": "enhanced",
+      "title": "Enhanced",
+      "description": "Accelerate employer, Global Mobility and Graduate Transitions capacity and support a substantially larger opportunity and implementation portfolio.",
+      "commissioning": "£200k / £350k / £500k",
+      "infrastructure": "£1.648707m across mobilisation; £791.295k annualised exit run-rate"
+    }
+  ],
+  "accountingNotes": [
+    "The five accounting pools cover six V2 projects because the V1 Graduate Futures package mixes insight, evidence assets, surveys and activation. Its £764.8k Core total is held once until a defensible allocation between projects 2.5 and 2.6 is agreed.",
+    "The combined activation, research and survey-intervention cash envelope of £25k / £35k / £50k is held once under V2 student and external activation. Shared analytics FTE is assigned to outcomes and survey improvement.",
+    "The £25k / £35k / £45k Strategic Partnerships, Profile and External Engagement Fund is programme controlled and held once under activation, even when it supports work elsewhere.",
+    "A new Student Opportunities Fund award pot is outside this mobilisation ask. The Digital Student Experience Hub has a separate institutional investment case.",
+    "The July 2029 onwards Core commissioning requirement of £175k a year and other recurrent exposure are BAU planning liabilities, not a fourth mobilisation year."
+  ]
+}

@@ -7,7 +7,12 @@
     <title>King's Edge Investment Case</title>
   </head>
   <body>
-    <div id="investment-root"></div>
-    <script type="module" src="/src/investment-case-entry.jsx"></script>
+    <p>Opening the <a href="./index.html#/investment">investment ask in the King's Edge site</a>…</p>
+    <script>
+      const destination = new URL('./index.html', window.location.href);
+      destination.search = window.location.search;
+      destination.hash = '#/investment';
+      window.location.replace(destination.toString());
+    </script>
   </body>
 </html>
