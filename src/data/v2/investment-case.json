@@ -59,9 +59,9 @@
       "whyThisInvestment": "Funds practitioner discovery and student co-design, deep trailblazers in purpose and skills, record prototyping and the capabilities needed to carry proven models into normal practice.",
       "yearOne": "Test the purpose proposition, build the first skills proof of concept and prototype approaches to trusted recognition.",
       "stories": [
-        { "label": "Student", "text": "I can explore what matters to me and recognise the capabilities I am building through my course and wider experiences." },
-        { "label": "Educator", "text": "I have a credible language and practical tools for connecting disciplinary learning, purpose and skills." },
-        { "label": "The University", "text": "We can test a fuller account of student development before committing to an enduring recognition model." }
+        { "label": "Student", "text": "I can understand what matters to me, recognise what my discipline and wider experiences are helping me develop, and evidence that learning credibly as I consider my next move.", "legacyStoryRefs": ["architecture.student", "graduate.student"] },
+        { "label": "Academic / programme team", "text": "I can connect the distinctive capabilities of my discipline to the wider developmental journey without turning my course into generic employability training.", "legacyStoryRefs": ["architecture.academic"] },
+        { "label": "The University", "text": "We have a tested language for purpose, capabilities and trusted recognition that connects educational philosophy to experience and transition across King’s Edge.", "legacyStoryRefs": ["architecture.university"] }
       ],
       "deliverables": ["v2-purpose-conversation", "v2-living-skills", "v2-fuller-learning-record"]
     },
@@ -71,9 +71,11 @@
       "whyThisInvestment": "Combines North Star design and co-creation with targeted curriculum implementation and reusable formal routes, including sandwich years and the Level 6 capstone.",
       "yearOne": "Agree the North Star and future entitlement direction, identify curriculum growth priorities and validate the first shared formal pathways.",
       "stories": [
-        { "label": "Student", "text": "Meaningful experiential learning is increasingly a dependable part of my education rather than a matter of course-level luck." },
-        { "label": "Course team", "text": "I can see where provision needs strengthening and use practical, assured routes to improve it." },
-        { "label": "The University", "text": "We can direct curriculum investment to gaps that matter and learn which models merit wider use." }
+        { "label": "Student", "text": "I can expect to apply, test and extend my learning through meaningful experience in or alongside my course, not only if my course already happens to offer it.", "legacyStoryRefs": ["curriculum.student"] },
+        { "label": "Course team", "text": "I can act on evidence that experiential learning is weak or uneven in my programme and get practical support to strengthen it.", "legacyStoryRefs": ["curriculum.course-team"] },
+        { "label": "Academic / educator", "text": "I can build purposeful experiential learning into my teaching using tested models and shared support, without inventing the delivery route from scratch.", "legacyStoryRefs": ["curriculum.educator"] },
+        { "label": "Faculty / professional staff", "text": "We can move good ideas into delivery more quickly because policy, validation and administrative routes have already been worked through.", "legacyStoryRefs": ["curriculum.faculty-staff"] },
+        { "label": "The University", "text": "We can make meaningful experiential learning a more dependable part of a King’s education and target investment where students currently have the least access.", "legacyStoryRefs": ["curriculum.university"] }
       ],
       "deliverables": ["v2-experiential-north-star", "v2-curriculum-opportunity", "v2-near-curriculum-pathways"]
     },
@@ -83,9 +85,12 @@
       "whyThisInvestment": "Funds a staged UK and international opportunity-development capability, Global Mobility growth, beyond-course commissioning and the Graduate Transitions service. Student Opportunities Fund awards need a separate funding decision.",
       "yearOne": "Protect live international employer relationships, start Global Mobility development, design access funding and commission the first £150k opportunity portfolio.",
       "stories": [
-        { "label": "Student", "text": "I can find substantive opportunities and relationships that help me grow and make a purposeful transition." },
-        { "label": "Partner / alumnus", "text": "There is a clear route for turning our relationship with King’s into meaningful student opportunity." },
-        { "label": "Graduate", "text": "I can receive proactive support if the move beyond my degree is difficult." }
+        { "label": "Student", "text": "I can build a sequence of experiences over time, from trying something new through to sustained projects, mentoring, placements and deeper opportunities that help me make a purposeful transition.", "legacyStoryRefs": ["architecture.student", "beyond.student-journey"] },
+        { "label": "External partner / alumnus", "text": "I have a clear route into King’s and can turn an idea into a meaningful student opportunity without navigating multiple disconnected teams.", "legacyStoryRefs": ["architecture.partner"] },
+        { "label": "International student / graduate", "text": "I can access employer relationships, labour-market insight and purposeful global experience relevant to the markets in which I may want to live and work.", "legacyStoryRefs": ["architecture.international"] },
+        { "label": "Graduate", "text": "King’s does not disappear at graduation if I am struggling to make the transition. I can be identified and supported through that next step.", "legacyStoryRefs": ["architecture.graduate"] },
+        { "label": "The University", "text": "We can actively shape the opportunity environment, commissioning more supply and deeper experiences where evidence shows that students need them most.", "legacyStoryRefs": ["beyond.university"] },
+        { "label": "The University", "text": "We have one coherent route connecting employer and civic relationships, opportunity infrastructure, access funding, commissioning and graduate transition to the wider developmental architecture.", "legacyStoryRefs": ["architecture.university"] }
       ],
       "deliverables": ["v2-partnership-infrastructure", "v2-opportunity-funding", "v2-beyond-course-commissioning", "v2-graduate-transitions"]
     },
@@ -95,9 +100,9 @@
       "whyThisInvestment": "Builds the Beyond Course shopfront and participation evidence, tests Student Life designs and establishes a coherent annual student-journey rhythm. Subject societies remain deferred without a funded mobilisation ask.",
       "yearOne": "Launch a live Beyond Course evidence base and shopfront, test participation personas and prototypes, and map the institutional rhythm.",
       "stories": [
-        { "label": "Student", "text": "I can see and take part in the wider King’s offer in ways that fit my life and study pattern." },
-        { "label": "Opportunity provider", "text": "I can use participation evidence to improve who we reach and what students gain." },
-        { "label": "The University", "text": "We can steward the student-year rhythm and understand where inclusion or visibility is weak." }
+        { "label": "Student", "text": "I can see and take part in worthwhile opportunities that fit around the realities of my life and study, including commuting, caring, paid work or limited time on campus.", "legacyStoryRefs": ["beyond.inclusive-access"] },
+        { "label": "Opportunity provider", "text": "I can change my provision when the evidence shows who is missing, where participation drops away or where an experience is not producing the value we intended.", "legacyStoryRefs": ["beyond.provider"] },
+        { "label": "The University", "text": "We can see gaps in participation and the wider student-year rhythm, then work with commissioners and providers to make the opportunity environment more inclusive.", "legacyStoryRefs": ["beyond.university"] }
       ],
       "deliverables": ["v2-beyond-course-visibility", "v2-student-life-design", "v2-wider-experience-rhythm", "v2-subject-societies"]
     },
@@ -107,9 +112,10 @@
       "whyThisInvestment": "Supports course-level data packs and sense-making, employer and alumni validation, Graduate Outcomes response optimisation and priority survey strategy. The shared analytics allocation sits here.",
       "yearOne": "Test the first course packs, establish external validation and run a focused Graduate Outcomes response pilot.",
       "stories": [
-        { "label": "Course team", "text": "I can use graduate-futures evidence to decide what to improve and see whether it worked." },
-        { "label": "Faculty leader", "text": "I can identify where student and graduate value is uneven and direct support accordingly." },
-        { "label": "The University", "text": "We can make better decisions from course evidence, external challenge and graduate outcomes together." }
+        { "label": "Student", "text": "I can use a clearer account of what my course and wider experience are helping me develop to make decisions, describe my strengths and prepare for what comes next.", "legacyStoryRefs": ["graduate.student"] },
+        { "label": "Course team", "text": "I can act earlier when evidence shows that students are not getting the graduate value we expect, and test whether the changes we make are improving the experience.", "legacyStoryRefs": ["graduate.course-team"] },
+        { "label": "Faculty leader", "text": "I can direct attention and resource towards the programmes or cohorts where the evidence shows the greatest need or opportunity.", "legacyStoryRefs": ["graduate.faculty-leader"] },
+        { "label": "The University", "text": "We can close the loop between student experience, graduate outcomes and educational improvement, using external challenge and course evidence to act rather than merely report.", "legacyStoryRefs": ["graduate.university"] }
       ],
       "deliverables": ["v2-graduate-futures-packs", "v2-external-validation", "v2-survey-improvement"]
     },
@@ -119,9 +125,9 @@
       "whyThisInvestment": "Creates evidence-backed content assets and tests student adoption and external activation. The combined activation, research and survey-intervention envelope is accounted for once here, alongside the programme-controlled Strategic Partnerships, Profile and External Engagement Fund.",
       "yearOne": "Produce the first proof points and exemplars, test the student proposition and run limited external message tests.",
       "stories": [
-        { "label": "Student", "text": "I can recognise and explain the value of my King’s education through credible examples." },
-        { "label": "Recruitment / reputation colleague", "text": "I can make claims grounded in evidence rather than relying on assertion." },
-        { "label": "The University", "text": "We can test what resonates before scaling the graduate-premium message." }
+        { "label": "Student", "text": "I can recognise and explain the value of my King’s education through credible examples of my course and wider development.", "legacyStoryRefs": ["graduate.student"] },
+        { "label": "Recruitment / reputation colleague", "text": "I can make stronger claims about the value of a King’s education using credible evidence and examples that stand up to scrutiny, beyond rankings or a conventional careers-service claim.", "legacyStoryRefs": ["architecture.reputation", "graduate.reputation"] },
+        { "label": "The University", "text": "We can test whether evidence-backed graduate-premium messages resonate with students and external audiences before extending them.", "legacyStoryRefs": ["graduate.university"] }
       ],
       "deliverables": ["v2-premium-assets", "v2-premium-activation"]
     }

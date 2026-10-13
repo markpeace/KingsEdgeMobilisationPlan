@@ -12,6 +12,12 @@ const optionIds = ['economy', 'core', 'enhanced'];
 const option = (id) => baseline.options.find((entry) => entry.id === id);
 const area = (id) => baseline.areas.find((entry) => entry.id === id);
 const pool = (id) => v2.accountingPools.find((entry) => entry.id === id);
+const legacyStoryIds = [
+  'architecture.student', 'architecture.academic', 'architecture.partner', 'architecture.international', 'architecture.graduate', 'architecture.reputation', 'architecture.university',
+  'curriculum.student', 'curriculum.course-team', 'curriculum.educator', 'curriculum.faculty-staff', 'curriculum.university',
+  'beyond.student-journey', 'beyond.inclusive-access', 'beyond.provider', 'beyond.university',
+  'graduate.student', 'graduate.course-team', 'graduate.faculty-leader', 'graduate.reputation', 'graduate.university'
+];
 
 assert.equal(baseline.version, 'v1');
 assert.equal(v2.version, 'v2');
@@ -58,13 +64,18 @@ for (const project of v2.projects) {
   assert.ok(projectIds.has(project.id));
   assert.ok(project.deliverables.length);
   assert.ok(project.stories.length >= 3, `${project.id} people propositions`);
+  for (const story of project.stories) {
+    assert.ok(story.label && story.text && story.legacyStoryRefs?.length, `${project.id} person story and source`);
+  }
   for (const id of project.deliverables) assert.ok(deliverableIds.has(id), `Missing ${id}`);
 }
 assert.equal(new Set(v2.projects.flatMap(({ deliverables }) => deliverables)).size, 19);
+const mappedStories = v2.projects.flatMap(({ stories }) => stories.flatMap(({ legacyStoryRefs }) => legacyStoryRefs));
+assert.deepEqual(new Set(mappedStories), new Set(legacyStoryIds), 'All 21 V1 people stories have V2 destinations, with no unknown refs');
 for (const item of baseline.earlyAsk.items) for (const id of item.v1Deliverables) {
   const mapped = crosswalk.deliverables[id]?.v2DeliverableIds || [id];
   for (const target of mapped) assert.ok(deliverableIds.has(target), `Early ask ${id} → ${target} missing`);
 }
 assert.deepEqual(v2.investmentChoices.map(({ id }) => id), optionIds);
 
-console.log('Investment V1/V2 reconciliation passed: Economy, Core, Enhanced, three Core years, six projects, nineteen deliverables and early ask references.');
+console.log('Investment V1/V2 reconciliation passed: Economy, Core, Enhanced, three Core years, six projects, nineteen deliverables, 21 people stories and early ask references.');

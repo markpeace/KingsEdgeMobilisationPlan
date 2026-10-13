@@ -6,6 +6,8 @@ The Investment ask is part of the main site at `#/investment`, linked from the h
 
 Both versions use the same page structure and presentation components: option summary, investment-area table with people stories and profiles, service-model comparison, early-investment table and assumptions handover. V2 adds a precise accounting bridge after its six project rows.
 
+The 21 V1 “what changes for people” statements are mapped explicitly into the V2 project stories in the [people crosswalk](v2-investment-people-crosswalk.md). Combined V1 promises can map to several V2 projects; the V2 JSON records the source-story keys and the validator checks complete coverage.
+
 The financial baseline lives in `src/data/investment-case.json`, transcribed from the 7 October 2026 [portfolio investment handover](portfolio-investment-packages.md). The V2 JSON reattributes that baseline to five non-overlapping accounting pools for six projects. Insight and Reputation have separate propositions but share one unapportioned Graduate Futures pool. The early £184,153 release is included in the substantive 2026/27 case. No project-specific total is invented for the two projects sharing the pool.
 
 | V2 accounting pool | V1 source | Core, 2026/27 | Core, 2027/28 | Core, 2028/29 | Core total |
