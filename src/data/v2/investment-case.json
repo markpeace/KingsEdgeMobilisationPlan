@@ -10,6 +10,7 @@
       "title": "Purpose, Capability and Recognition",
       "v2Projects": ["v2-purpose-recognition"],
       "source": "V1 Architecture less the 2.2.2 infrastructure service",
+      "ongoing": "c.£9k p.a. identifiable; other enduring costs TBC",
       "optionTotals": { "economy": 182000, "core": 252000, "enhanced": 367000 },
       "coreInYear": [53000, 119500, 79500]
     },
@@ -18,6 +19,7 @@
       "title": "Experiential Education and Formal Pathways",
       "v2Projects": ["v2-experiential-education"],
       "source": "V1 Experiential Learning in the Curriculum",
+      "ongoing": "c.£9k p.a. + costs to confirm",
       "optionTotals": { "economy": 276000, "core": 341000, "enhanced": 401000 },
       "coreInYear": [58800, 131100, 151100]
     },
@@ -26,6 +28,7 @@
       "title": "Opportunity, Partnerships and Transitions",
       "v2Projects": ["v2-opportunity-transitions"],
       "source": "V1 2.2.2 infrastructure service plus V1 2.2.4 mobilisation commissioning",
+      "ongoing": "£714.058k 2.2.2 exit run-rate and £175k p.a. commissioning BAU; other costs TBC",
       "optionTotals": { "economy": 1411372, "core": 1792551, "enhanced": 2698707 },
       "coreInYear": [262842, 638932, 890777]
     },
@@ -34,6 +37,7 @@
       "title": "Student Life and Participation",
       "v2Projects": ["v2-student-life"],
       "source": "V1 Beyond-Course Opportunity and Participation less 2.2.4 mobilisation commissioning",
+      "ongoing": "Project-level recurrent requirement to confirm",
       "optionTotals": { "economy": 392400, "core": 432400, "enhanced": 547400 },
       "coreInYear": [128500, 151950, 151950]
     },
@@ -42,6 +46,7 @@
       "title": "Graduate Futures Insight and Improvement / Graduate Premium and Reputation",
       "v2Projects": ["v2-insight-improvement", "v2-premium-reputation"],
       "source": "V1 Graduate Futures Intelligence and Value, held as one pool pending a defensible split",
+      "ongoing": "c.£170k p.a. + costs to confirm, shared across projects 2.5 and 2.6",
       "optionTotals": { "economy": 641800, "core": 764800, "enhanced": 837800 },
       "coreInYear": [169900, 264950, 329950],
       "unapportioned": true
@@ -53,6 +58,11 @@
       "investmentPurpose": "Give every student a supported conversation about purpose, a living language for their capabilities and a trustworthy fuller account of learning.",
       "whyThisInvestment": "Funds practitioner discovery and student co-design, deep trailblazers in purpose and skills, record prototyping and the capabilities needed to carry proven models into normal practice.",
       "yearOne": "Test the purpose proposition, build the first skills proof of concept and prototype approaches to trusted recognition.",
+      "stories": [
+        { "label": "Student", "text": "I can explore what matters to me and recognise the capabilities I am building through my course and wider experiences." },
+        { "label": "Educator", "text": "I have a credible language and practical tools for connecting disciplinary learning, purpose and skills." },
+        { "label": "The University", "text": "We can test a fuller account of student development before committing to an enduring recognition model." }
+      ],
       "deliverables": ["v2-purpose-conversation", "v2-living-skills", "v2-fuller-learning-record"]
     },
     {
@@ -60,6 +70,11 @@
       "investmentPurpose": "Make good experiential learning a clearer educational expectation within and near the curriculum.",
       "whyThisInvestment": "Combines North Star design and co-creation with targeted curriculum implementation and reusable formal routes, including sandwich years and the Level 6 capstone.",
       "yearOne": "Agree the North Star and future entitlement direction, identify curriculum growth priorities and validate the first shared formal pathways.",
+      "stories": [
+        { "label": "Student", "text": "Meaningful experiential learning is increasingly a dependable part of my education rather than a matter of course-level luck." },
+        { "label": "Course team", "text": "I can see where provision needs strengthening and use practical, assured routes to improve it." },
+        { "label": "The University", "text": "We can direct curriculum investment to gaps that matter and learn which models merit wider use." }
+      ],
       "deliverables": ["v2-experiential-north-star", "v2-curriculum-opportunity", "v2-near-curriculum-pathways"]
     },
     {
@@ -67,6 +82,11 @@
       "investmentPurpose": "Turn UK, international and civic relationships into accessible opportunity, and support graduates proactively through transition.",
       "whyThisInvestment": "Funds a staged UK and international opportunity-development capability, Global Mobility growth, beyond-course commissioning and the Graduate Transitions service. Student Opportunities Fund awards need a separate funding decision.",
       "yearOne": "Protect live international employer relationships, start Global Mobility development, design access funding and commission the first £150k opportunity portfolio.",
+      "stories": [
+        { "label": "Student", "text": "I can find substantive opportunities and relationships that help me grow and make a purposeful transition." },
+        { "label": "Partner / alumnus", "text": "There is a clear route for turning our relationship with King’s into meaningful student opportunity." },
+        { "label": "Graduate", "text": "I can receive proactive support if the move beyond my degree is difficult." }
+      ],
       "deliverables": ["v2-partnership-infrastructure", "v2-opportunity-funding", "v2-beyond-course-commissioning", "v2-graduate-transitions"]
     },
     {
@@ -74,6 +94,11 @@
       "investmentPurpose": "Make the wider King’s experience visible, inclusive and well timed for different patterns of student life.",
       "whyThisInvestment": "Builds the Beyond Course shopfront and participation evidence, tests Student Life designs and establishes a coherent annual student-journey rhythm. Subject societies remain deferred without a funded mobilisation ask.",
       "yearOne": "Launch a live Beyond Course evidence base and shopfront, test participation personas and prototypes, and map the institutional rhythm.",
+      "stories": [
+        { "label": "Student", "text": "I can see and take part in the wider King’s offer in ways that fit my life and study pattern." },
+        { "label": "Opportunity provider", "text": "I can use participation evidence to improve who we reach and what students gain." },
+        { "label": "The University", "text": "We can steward the student-year rhythm and understand where inclusion or visibility is weak." }
+      ],
       "deliverables": ["v2-beyond-course-visibility", "v2-student-life-design", "v2-wider-experience-rhythm", "v2-subject-societies"]
     },
     {
@@ -81,6 +106,11 @@
       "investmentPurpose": "Give course and service teams usable graduate-futures evidence, external challenge and a targeted outcomes improvement cycle.",
       "whyThisInvestment": "Supports course-level data packs and sense-making, employer and alumni validation, Graduate Outcomes response optimisation and priority survey strategy. The shared analytics allocation sits here.",
       "yearOne": "Test the first course packs, establish external validation and run a focused Graduate Outcomes response pilot.",
+      "stories": [
+        { "label": "Course team", "text": "I can use graduate-futures evidence to decide what to improve and see whether it worked." },
+        { "label": "Faculty leader", "text": "I can identify where student and graduate value is uneven and direct support accordingly." },
+        { "label": "The University", "text": "We can make better decisions from course evidence, external challenge and graduate outcomes together." }
+      ],
       "deliverables": ["v2-graduate-futures-packs", "v2-external-validation", "v2-survey-improvement"]
     },
     {
@@ -88,6 +118,11 @@
       "investmentPurpose": "Turn credible graduate-premium evidence into claims that students and external audiences recognise and use.",
       "whyThisInvestment": "Creates evidence-backed content assets and tests student adoption and external activation. The combined activation, research and survey-intervention envelope is accounted for once here, alongside the programme-controlled Strategic Partnerships, Profile and External Engagement Fund.",
       "yearOne": "Produce the first proof points and exemplars, test the student proposition and run limited external message tests.",
+      "stories": [
+        { "label": "Student", "text": "I can recognise and explain the value of my King’s education through credible examples." },
+        { "label": "Recruitment / reputation colleague", "text": "I can make claims grounded in evidence rather than relying on assertion." },
+        { "label": "The University", "text": "We can test what resonates before scaling the graduate-premium message." }
+      ],
       "deliverables": ["v2-premium-assets", "v2-premium-activation"]
     }
   ],

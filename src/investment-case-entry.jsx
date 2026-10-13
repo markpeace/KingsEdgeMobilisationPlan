@@ -5,7 +5,7 @@ function RefLinks({ ids }) {
   return <span className="ds-cluster ask-refs" aria-label="Related deliverables">{ids.map((id) => <a className="ds-tag" key={id} href={`#/deliverables/${id}`}>{id}</a>)}</span>;
 }
 
-function UserStories({ stories }) {
+export function UserStories({ stories }) {
   return <ul className="ds-stack investment-user-stories">{stories.map((story) => <li key={`${story.label}-${story.text}`}><strong>{story.label}:</strong> “{story.text}”</li>)}</ul>;
 }
 
@@ -18,7 +18,7 @@ function YearOneProgress({ steps }) {
   </div>;
 }
 
-function InvestmentProfile({ item }) {
+export function InvestmentProfile({ item }) {
   return <div className="investment-profile">
     <div className="investment-profile-primary">
       <span className="investment-profile-label">{item.profileLabel || '2026/27–2028/29 mobilisation profile'}</span>
@@ -131,7 +131,7 @@ const corePackages = [
   }
 ];
 
-const earlyAsk = [
+export const earlyAsk = [
   {
     amount: '£84.153k',
     buying: 'International employability continuity and first-stage growth',
@@ -164,7 +164,7 @@ const earlyAsk = [
   }
 ];
 
-const serviceOptions = [
+export const serviceOptions = [
   {
     name: 'Economy',
     profile: '£112.842k / £336.870k / £411.660k',

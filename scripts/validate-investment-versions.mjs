@@ -42,7 +42,10 @@ for (const [index, amount] of option('core').inYear.entries()) {
   assert.equal(pool('opportunity-transitions').coreInYear[index], baseline.infrastructureService.options.core.inYear[index] + baseline.commissioning.options.core[index]);
   assert.equal(pool('student-life').coreInYear[index], area('beyond-course').coreInYear[index] - baseline.commissioning.options.core[index]);
 }
-for (const entry of v2.accountingPools) assert.equal(sum(entry.coreInYear), entry.optionTotals.core, `${entry.id} annual bridge`);
+for (const entry of v2.accountingPools) {
+  assert.equal(sum(entry.coreInYear), entry.optionTotals.core, `${entry.id} annual bridge`);
+  assert.ok(entry.ongoing, `${entry.id} ongoing cost boundary`);
+}
 
 const projectIds = new Set(plan.projects.map(({ id }) => id));
 const deliverableIds = new Set([...plan.projects, ...related].flatMap(({ deliverables }) => deliverables.map(({ id }) => id)));
@@ -54,6 +57,7 @@ assert.deepEqual(new Set(v2.accountingPools.flatMap(({ v2Projects }) => v2Projec
 for (const project of v2.projects) {
   assert.ok(projectIds.has(project.id));
   assert.ok(project.deliverables.length);
+  assert.ok(project.stories.length >= 3, `${project.id} people propositions`);
   for (const id of project.deliverables) assert.ok(deliverableIds.has(id), `Missing ${id}`);
 }
 assert.equal(new Set(v2.projects.flatMap(({ deliverables }) => deliverables)).size, 19);
