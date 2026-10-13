@@ -16,6 +16,10 @@ Use it to understand durable decisions. Decisions marked provisional can be revi
 
 ## Current state
 
+**13 October 2026, investment ask V2:** The integrated `#/investment` route has an investment-version dropdown tied to the plan version. V1's four-area narrative is retained in its original component, with a new machine-readable financial baseline in `src/data/investment-case.json`. V2's six project propositions and five accounting pools live in `src/data/v2/investment-case.json`; the unsplit Graduate Futures pool is counted once across projects 2.5 and 2.6. See `docs/plan-versioning.md`. The old standalone URL redirects to the integrated route. These are working decision-support options, not approved allocations.
+
+**13 October 2026, plan remap:** The V2 plan now has six core projects and nineteen deliverables, with every original item accounted for by `src/data/v2/crosswalk.json` and `docs/v2-remap-crosswalk.md`. V1 remains frozen. The personal theory-of-change draft must not be represented as institutionally approved.
+
 **9 October 2026, parallel plan baseline:** Version 1 remains frozen in `src/data/` and Version 2 begins as an exact independent copy in `src/data/v2/`. The main site's Plan version selector switches the complete content bundle using `?plan=v2`; the default URL is Version 1. The new project and deliverable architecture has not yet been decided. See `docs/plan-versioning.md` and `docs/plan-v1-baseline.json` before restructuring Version 2. Preserve a migration trail for every original item.
 
 The source-of-truth migration has been applied. `src/data/kings-edge-plan.json` carries canonical project order and IDs. Detailed modular deliverables registered through `src/data/deliverables/manifest.json` override inline fallback content. Fully modularised deliverables should normally appear in `kings-edge-plan.json` as an ID reference only, avoiding duplicate detailed representations.

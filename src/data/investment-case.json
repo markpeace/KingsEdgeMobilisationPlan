@@ -1,0 +1,87 @@
+{
+  "version": "v1",
+  "status": "working decision-support case",
+  "source": "docs/portfolio-investment-packages.md, 7 October 2026",
+  "academicYears": ["2026/27", "2027/28", "2028/29"],
+  "options": [
+    {
+      "id": "economy",
+      "title": "Economy",
+      "inYear": [573042, 1092870, 1237660],
+      "total": 2903572,
+      "operatingExposure": "c.£794k p.a. + TBC"
+    },
+    {
+      "id": "core",
+      "title": "Core",
+      "recommended": true,
+      "inYear": [673042, 1306432, 1603277],
+      "total": 3582751,
+      "operatingExposure": "c.£1.149m p.a. + TBC"
+    },
+    {
+      "id": "enhanced",
+      "title": "Enhanced",
+      "inYear": [759161, 1872451, 2220295],
+      "total": 4851907,
+      "operatingExposure": "at least c.£1.267m p.a. + TBC"
+    }
+  ],
+  "areas": [
+    {
+      "id": "architecture",
+      "title": "King’s Architecture for Employability",
+      "v1Deliverables": ["2.2.1", "2.1.3", "2.4.3", "2.2.2"],
+      "optionTotals": { "economy": 1043372, "core": 1444551, "enhanced": 2015707 },
+      "coreInYear": [165842, 558432, 720277]
+    },
+    {
+      "id": "experiential",
+      "title": "Experiential Learning in the Curriculum",
+      "v1Deliverables": ["2.1.2", "2.1.4", "2.2.3"],
+      "optionTotals": { "economy": 276000, "core": 341000, "enhanced": 401000 },
+      "coreInYear": [58800, 131100, 151100]
+    },
+    {
+      "id": "beyond-course",
+      "title": "Beyond-Course Opportunity and Participation",
+      "v1Deliverables": ["2.2.4", "2.3.1", "2.3.2", "2.3.4"],
+      "optionTotals": { "economy": 942400, "core": 1032400, "enhanced": 1597400 },
+      "coreInYear": [278500, 351950, 401950]
+    },
+    {
+      "id": "graduate-futures",
+      "title": "Graduate Futures Intelligence and Value",
+      "v1Deliverables": ["2.1.1", "2.4.1", "2.4.2", "2.4.4"],
+      "optionTotals": { "economy": 641800, "core": 764800, "enhanced": 837800 },
+      "coreInYear": [169900, 264950, 329950]
+    }
+  ],
+  "infrastructureService": {
+    "v1Deliverable": "2.2.2",
+    "options": {
+      "economy": { "inYear": [112842, 336870, 411660], "total": 861372, "exitRunRate": 421223 },
+      "core": { "inYear": [112842, 438932, 640777], "total": 1192551, "exitRunRate": 714058 },
+      "enhanced": { "inYear": [148961, 708451, 791295], "total": 1648707, "exitRunRate": 791295 }
+    }
+  },
+  "commissioning": {
+    "v1Deliverable": "2.2.4",
+    "options": {
+      "economy": [100000, 200000, 250000],
+      "core": [150000, 200000, 250000],
+      "enhanced": [200000, 350000, 500000]
+    },
+    "coreBauAnnualFromJuly2029": 175000
+  },
+  "earlyAsk": {
+    "amount": 184153,
+    "includedInSubstantive2026_27Case": true,
+    "items": [
+      { "amount": 84153, "title": "International employability continuity", "v1Deliverables": ["2.2.2"] },
+      { "amount": 60000, "title": "Year 1 opportunity-commissioning seed", "v1Deliverables": ["2.2.4"] },
+      { "amount": 15000, "title": "Graduate premium video and Graduate Outcomes campaign", "v1Deliverables": ["2.4.1", "2.4.4"] },
+      { "amount": 25000, "title": "Paid student data, AI and prototyping", "v1Deliverables": ["2.1.1", "2.1.3", "2.2.1", "2.3.2", "4.1.2"] }
+    ]
+  }
+}
