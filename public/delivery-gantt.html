@@ -1,0 +1,595 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Quarterly delivery windows and milestones for the five King’s Edge business case initiatives, January 2027 to June 2029.">
+  <title>Delivery schedule | King’s Edge Mobilisation Plan</title>
+  <style>
+    @font-face {
+      font-family: "KingsBureauGrot";
+      src: url("./KingsBureauGrot-ThreeSeven-Regular.woff2") format("woff2");
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+    }
+
+    :root {
+      color-scheme: light;
+      --ink: #090909;
+      --muted: #555;
+      --rule: #d7d7d7;
+      --paper: #fff;
+      --red: #b51218;
+      --brand: #ed1c24;
+      --bar: #f0c9ca;
+      --shade: #f7f7f7;
+      --label-width: clamp(20rem, 36%, 29rem);
+      font: 100%/1.45 Arial, Helvetica, sans-serif;
+      color: var(--ink);
+      background: var(--paper);
+    }
+
+    * { box-sizing: border-box; }
+    body { margin: 0; }
+    a { color: var(--red); text-underline-offset: .18em; }
+    a:hover { text-decoration-thickness: 2px; }
+    :focus-visible { outline: 3px solid var(--red); outline-offset: 2px; }
+    .wrap { width: min(100% - 2 * clamp(1rem, 4vw, 4rem), 84rem); margin-inline: auto; }
+    .skip { position: absolute; left: 1rem; top: -5rem; padding: .7rem; background: white; }
+    .skip:focus { top: .5rem; z-index: 2; }
+    .masthead { background: var(--ink); color: white; }
+    .masthead .wrap { min-height: 3.6rem; display: flex; align-items: center; }
+    .masthead a { color: white; text-decoration: none; font-weight: 700; }
+    .masthead a:hover { text-decoration: underline; }
+    .masthead a:focus-visible { outline-color: white; }
+    .masthead .brand { padding-right: .9rem; margin-right: .9rem; border-right: 3px solid var(--brand); }
+    .intro { margin: clamp(2rem, 4vw, 4rem) 0 2rem; }
+    h1, h2 { font-family: "KingsBureauGrot", Arial, sans-serif; font-weight: 400; }
+    h1 { margin: 0; font-size: clamp(2.7rem, 6vw, 5rem); line-height: 1; letter-spacing: -.035em; }
+    .intro p { max-width: 55rem; margin: .85rem 0 0; font-size: 1.1rem; }
+    .legend { display: flex; align-items: center; flex-wrap: wrap; gap: .5rem 1.5rem; padding: 0 0 .85rem; margin: 0; list-style: none; }
+    .legend li { display: flex; align-items: center; gap: .45rem; font-size: .875rem; }
+    .legend .instruction { margin-left: auto; color: var(--muted); }
+    .swatch { display: inline-block; }
+    .swatch.window { width: 1.5rem; height: .5rem; background: var(--bar); }
+    .dot, .diamond { display: inline-block; width: .4rem; height: .4rem; border-radius: 50%; background: #67484a; }
+    .diamond { width: .72rem; height: .72rem; border-radius: 0; background: var(--red); transform: rotate(45deg); }
+    .initiative { margin-bottom: 1.75rem; border-top: 2px solid var(--ink); }
+    .axis, summary { display: grid; grid-template-columns: var(--label-width) minmax(0, 1fr); align-items: center; }
+    .axis { background: var(--shade); border-bottom: 1px solid var(--rule); }
+    .axis h2 { font-size: clamp(1.25rem, 2vw, 1.65rem); line-height: 1.15; padding: .75rem 1rem .75rem 0; margin: 0; }
+    .group-ref { font: 700 .8rem/1 Arial, sans-serif; color: var(--red); padding-right: .45rem; white-space: nowrap; }
+    .calendar, .milestones dt, .ref, .period { font-variant-numeric: tabular-nums; }
+    .years, .quarters { display: grid; text-align: center; }
+    .years { grid-template-columns: 4fr 4fr 2fr; font-weight: 700; font-size: .9rem; padding-top: .3rem; }
+    .quarters { grid-template-columns: repeat(10, minmax(0, 1fr)); color: var(--muted); font-size: .75rem; padding-bottom: .3rem; }
+    .years span, .quarters span:nth-child(4n+1) { border-left: 1px solid var(--rule); }
+    details { border-bottom: 1px solid var(--rule); }
+    summary { cursor: pointer; list-style: none; padding: .32rem 0; min-height: 3.6rem; }
+    summary::-webkit-details-marker { display: none; }
+    summary:hover, summary:focus-visible { background: #faf7f7; }
+    .label { display: grid; grid-template-columns: .7rem minmax(0, 1fr); gap: .4rem; padding-right: .8rem; }
+    .label::before { content: ""; width: .38rem; height: .38rem; border: solid var(--muted); border-width: 0 1.5px 1.5px 0; margin: .48em 0 0 .05rem; transform: rotate(-45deg); }
+    details[open] .label::before { transform: rotate(45deg); }
+    .name { display: block; font-weight: 700; line-height: 1.25; }
+    .ref { font-size: .78rem; color: var(--muted); white-space: nowrap; padding-right: .3rem; }
+    .highlight { display: block; margin-top: .15rem; color: var(--muted); font-size: .82rem; }
+    .track { display: grid; position: relative; grid-template-columns: repeat(10, minmax(0, 1fr)); grid-template-rows: 1fr; align-items: center; min-height: 2.5rem;
+      background: repeating-linear-gradient(to right, var(--rule) 0 1px, transparent 1px 10%), linear-gradient(to right, transparent 40%, #f8f8f8 40% 80%, transparent 80%); }
+    .bar { grid-row: 1; grid-column: var(--start) / var(--end); background: var(--bar); height: .55rem; }
+    .track .dot, .track .diamond { grid-row: 1; grid-column: var(--quarter); justify-self: center; }
+    .milestone-detail { padding: .7rem clamp(.8rem, 3vw, 2.4rem) 1rem; background: var(--shade); }
+    .period { font-weight: 700; margin: 0 0 .65rem; }
+    .milestones { display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: .45rem 1rem; margin: 0; max-width: 65rem; font-size: .95rem; }
+    .milestones dt { color: var(--muted); }
+    .milestones dd { margin: 0; }
+    .dependencies { margin: 2.75rem 0 3rem; border-top: 2px solid var(--ink); }
+    .dependencies h2 { font-size: 2rem; margin: .85rem 0; }
+    .dependencies p { max-width: 60rem; }
+    .scope { padding-top: .9rem; border-top: 1px solid var(--rule); color: var(--muted); }
+    @media (max-width: 750px) {
+      :root { --label-width: 42%; }
+      .legend .instruction { margin-left: 0; }
+    }
+    @media (max-width: 600px) {
+      .axis, summary { display: block; }
+      .axis h2 { padding: .65rem .2rem .45rem; }
+      .label { padding: .2rem 0 .35rem; }
+      .track { min-height: 1.4rem; }
+      .legend { gap: .4rem .9rem; }
+      .legend .instruction { flex-basis: 100%; }
+      .milestones { gap: .45rem .55rem; }
+    }
+    @media print {
+      @page { size: landscape; margin: 12mm; }
+      :root { --label-width: 37%; font-size: 10pt; }
+      .wrap { width: 100%; }
+      .masthead, .skip, .legend .instruction, .label::before { display: none; }
+      .label { display: block; }
+      .intro { margin: 0 0 1rem; }
+      h1 { font-size: 2.6rem; }
+      .axis, summary { display: grid; }
+      .initiative, .milestone-detail, .dependencies p { break-inside: avoid; }
+      .track, .swatch, .axis { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+      .initiative { margin-bottom: 1rem; }
+      summary { min-height: 2.6rem; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#schedule">Skip to delivery schedule</a>
+  <header class="masthead">
+    <div class="wrap"><a href="./index.html"><span class="brand">King’s Edge</span>Mobilisation plan</a></div>
+  </header>
+  <main class="wrap" id="schedule">
+    <header class="intro">
+      <h1>Delivery schedule</h1>
+      <p>January 2027 to June 2029. The five Appendix B initiatives cover 14 strands. Each bar runs from the first to the last calendar quarter with a planned milestone.</p>
+    </header>
+    <div aria-label="Quarterly Gantt chart" role="region">
+      <ul class="legend" aria-label="Chart key">
+        <li><span aria-hidden="true" class="swatch window"></span>Delivery window</li>
+        <li><span aria-hidden="true" class="swatch dot"></span>Scheduled milestone</li>
+        <li><span aria-hidden="true" class="swatch diamond"></span>Highlighted milestone</li>
+        <li class="instruction">Open a strand for its quarterly milestones.</li>
+      </ul>
+
+      <section class="initiative" aria-labelledby="initiative-1">
+        <header class="axis">
+          <h2 id="initiative-1"><span class="group-ref">2.1</span> Evidencing the Graduate Premium</h2>
+          <div class="calendar" aria-hidden="true">
+            <div class="years"><span>2027</span><span>2028</span><span>2029</span></div>
+            <div class="quarters"><span>Q1</span><span>Q2</span><span>Q3</span><span>Q4</span><span>Q1</span><span>Q2</span><span>Q3</span><span>Q4</span><span>Q1</span><span>Q2</span></div>
+          </div>
+        </header>
+        <details id="strand-2-1-1">
+          <summary>
+            <span class="label"><span>
+              <span class="name"><span class="ref">2.1.1</span> Dashboard and programme use</span>
+              <span class="highlight">Q2 2027 · Trailblazers complete their first action plans</span>
+            </span></span>
+            <span class="track" aria-hidden="true">
+              <span class="bar" style="--start: 1; --end: 11"></span>
+              <span class="dot" style="--quarter: 1"></span>
+              <span class="diamond" style="--quarter: 2"></span>
+              <span class="dot" style="--quarter: 3"></span>
+              <span class="dot" style="--quarter: 4"></span>
+              <span class="dot" style="--quarter: 6"></span>
+              <span class="dot" style="--quarter: 8"></span>
+              <span class="dot" style="--quarter: 10"></span>
+            </span>
+          </summary>
+          <div class="milestone-detail">
+            <p class="period">Delivery window · Jan 2027 to Jun 2029</p>
+            <dl class="milestones">
+              <dt>Q1 2027</dt><dd>Release the first Graduate Futures dashboard and agree the Trailblazers and three rollout cohorts.</dd>
+              <dt>Q2 2027</dt><dd>Trailblazers complete their first Graduate Outcomes action plans with Careers and King’s Academy.</dd>
+              <dt>Q3 2027</dt><dd>Release the updated dashboard with 2024/25 Graduate Outcomes data.</dd>
+              <dt>Q4 2027</dt><dd>Issue support packs and complete Cohort 1’s first action plans.</dd>
+              <dt>Q2 2028</dt><dd>Complete Cohort 2’s first plans and open self-service support to Cohort 3.</dd>
+              <dt>Q4 2028</dt><dd>Bring action planning into routine programme quality assurance.</dd>
+              <dt>Q2 2029</dt><dd>Target for all programmes to have a first action plan, including Cohort 3.</dd>
+            </dl>
+          </div>
+        </details>
+        <details id="strand-2-1-2">
+          <summary>
+            <span class="label"><span>
+              <span class="name"><span class="ref">2.1.2</span> International recruitment proposition and asset packs</span>
+              <span class="highlight">Q3 2027 · First 10 departmental evidence packs</span>
+            </span></span>
+            <span class="track" aria-hidden="true">
+              <span class="bar" style="--start: 1; --end: 11"></span>
+              <span class="dot" style="--quarter: 1"></span>
+              <span class="dot" style="--quarter: 2"></span>
+              <span class="diamond" style="--quarter: 3"></span>
+              <span class="dot" style="--quarter: 5"></span>
+              <span class="dot" style="--quarter: 7"></span>
+              <span class="dot" style="--quarter: 9"></span>
+              <span class="dot" style="--quarter: 10"></span>
+            </span>
+          </summary>
+          <div class="milestone-detail">
+            <p class="period">Delivery window · Jan 2027 to Jun 2029</p>
+            <dl class="milestones">
+              <dt>Q1 2027</dt><dd>Test the proposition with prospective international students and draft the first proposition pack.</dd>
+              <dt>Q2 2027</dt><dd>Prepare the King’s-wide proposition for the next recruitment campaign.</dd>
+              <dt>Q3 2027</dt><dd>Deliver 10 departmental packs for Trailblazers and refresh the King’s-wide proposition.</dd>
+              <dt>Q1 2028</dt><dd>Deliver 16 departmental packs for Cohort 1.</dd>
+              <dt>Q3 2028</dt><dd>Deliver 22 departmental packs for Cohort 2.</dd>
+              <dt>Q1 2029</dt><dd>Deliver 28 departmental packs for Cohort 3.</dd>
+              <dt>Q2 2029</dt><dd>Refresh existing packs and hand campaign management over to the ongoing team.</dd>
+            </dl>
+          </div>
+        </details>
+        <details id="strand-2-1-3">
+          <summary>
+            <span class="label"><span>
+              <span class="name"><span class="ref">2.1.3</span> Reputation</span>
+              <span class="highlight">Q4 2027 · First annual QS employer contact submission</span>
+            </span></span>
+            <span class="track" aria-hidden="true">
+              <span class="bar" style="--start: 1; --end: 11"></span>
+              <span class="dot" style="--quarter: 1"></span>
+              <span class="dot" style="--quarter: 2"></span>
+              <span class="dot" style="--quarter: 3"></span>
+              <span class="diamond" style="--quarter: 4"></span>
+              <span class="dot" style="--quarter: 5"></span>
+              <span class="dot" style="--quarter: 6"></span>
+              <span class="dot" style="--quarter: 7"></span>
+              <span class="dot" style="--quarter: 8"></span>
+              <span class="dot" style="--quarter: 9"></span>
+              <span class="dot" style="--quarter: 10"></span>
+            </span>
+          </summary>
+          <div class="milestone-detail">
+            <p class="period">Delivery window · Jan 2027 to Jun 2029</p>
+            <dl class="milestones">
+              <dt>Q1 2027</dt><dd>Launch the Graduate Outcomes promotion campaign in March.</dd>
+              <dt>Q2 2027</dt><dd>Review campaign reach, response rates and participation gaps.</dd>
+              <dt>Q3 2027</dt><dd>Prepare eligible employer contacts for the QS Employer Reputation Survey.</dd>
+              <dt>Q4 2027</dt><dd>Submit contacts to QS and prepare for the December Graduate Outcomes survey.</dd>
+              <dt>Q1 2028</dt><dd>Introduce the employer-facing Graduate Premium brief.</dd>
+              <dt>Q2 2028</dt><dd>Review the December and March Graduate Outcomes campaigns.</dd>
+              <dt>Q3 2028</dt><dd>Refresh the employer contact list for QS.</dd>
+              <dt>Q4 2028</dt><dd>Submit contacts to QS and prepare the next Graduate Outcomes campaign.</dd>
+              <dt>Q1 2029</dt><dd>Refresh the employer-facing brief.</dd>
+              <dt>Q2 2029</dt><dd>Agree ongoing owners, resources and an annual reporting calendar.</dd>
+            </dl>
+          </div>
+        </details>
+      </section>
+
+      <section class="initiative" aria-labelledby="initiative-2">
+        <header class="axis">
+          <h2 id="initiative-2"><span class="group-ref">2.2</span> Credit-Bearing Experiential Learning</h2>
+          <div class="calendar" aria-hidden="true">
+            <div class="years"><span>2027</span><span>2028</span><span>2029</span></div>
+            <div class="quarters"><span>Q1</span><span>Q2</span><span>Q3</span><span>Q4</span><span>Q1</span><span>Q2</span><span>Q3</span><span>Q4</span><span>Q1</span><span>Q2</span></div>
+          </div>
+        </header>
+        <details id="strand-2-2-1">
+          <summary>
+            <span class="label"><span>
+              <span class="name"><span class="ref">2.2.1</span> Experiential learning in the course</span>
+              <span class="highlight">Q4 2027 · First pilots in existing modules</span>
+            </span></span>
+            <span class="track" aria-hidden="true">
+              <span class="bar" style="--start: 1; --end: 11"></span>
+              <span class="dot" style="--quarter: 1"></span>
+              <span class="dot" style="--quarter: 2"></span>
+              <span class="dot" style="--quarter: 3"></span>
+              <span class="diamond" style="--quarter: 4"></span>
+              <span class="dot" style="--quarter: 6"></span>
+              <span class="dot" style="--quarter: 7"></span>
+              <span class="dot" style="--quarter: 8"></span>
+              <span class="dot" style="--quarter: 10"></span>
+            </span>
+          </summary>
+          <div class="milestone-detail">
+            <p class="period">Delivery window · Jan 2027 to Jun 2029</p>
+            <dl class="milestones">
+              <dt>Q1 2027</dt><dd>Establish the community of practice and resource bank. Draft the minimum entitlement and audit criteria.</dd>
+              <dt>Q2 2027</dt><dd>Agree the entitlement and audit criteria, map access and identify gaps.</dd>
+              <dt>Q3 2027</dt><dd>Forecast student coverage, confirm pilot models and run the first summer micro-conference.</dd>
+              <dt>Q4 2027</dt><dd>Pilot experiential learning in existing modules.</dd>
+              <dt>Q2 2028</dt><dd>Review access and the pilots, then select models for the resource bank.</dd>
+              <dt>Q3 2028</dt><dd>Share tested models at the second summer micro-conference.</dd>
+              <dt>Q4 2028</dt><dd>Use routine curriculum planning to address gaps.</dd>
+              <dt>Q2 2029</dt><dd>Review coverage and agree dates and owners for remaining curriculum changes.</dd>
+            </dl>
+          </div>
+        </details>
+        <details id="strand-2-2-2">
+          <summary>
+            <span class="label"><span>
+              <span class="name"><span class="ref">2.2.2</span> Sandwich-year reform</span>
+              <span class="highlight">Q3 2028 · September 2028 student launch</span>
+            </span></span>
+            <span class="track" aria-hidden="true">
+              <span class="bar" style="--start: 1; --end: 10"></span>
+              <span class="dot" style="--quarter: 1"></span>
+              <span class="dot" style="--quarter: 2"></span>
+              <span class="dot" style="--quarter: 3"></span>
+              <span class="dot" style="--quarter: 4"></span>
+              <span class="dot" style="--quarter: 5"></span>
+              <span class="diamond" style="--quarter: 7"></span>
+              <span class="dot" style="--quarter: 9"></span>
+            </span>
+          </summary>
+          <div class="milestone-detail">
+            <p class="period">Delivery window · Jan 2027 to Mar 2029</p>
+            <dl class="milestones">
+              <dt>Q1 2027</dt><dd>Audit existing sandwich-year rules and barriers.</dd>
+              <dt>Q2 2027</dt><dd>Recommend a standard route and a process for programme variations.</dd>
+              <dt>Q3 2027</dt><dd>Approve common regulations for September 2028.</dd>
+              <dt>Q4 2027</dt><dd>Map programme variations, exclusions and growth targets.</dd>
+              <dt>Q1 2028</dt><dd>Agree the expansion plan and how central teams will support it.</dd>
+              <dt>Q3 2028</dt><dd>Launch the new arrangements to students with support to find a placement.</dd>
+              <dt>Q1 2029</dt><dd>Promote centrally sourced and Trailblazer-targeted sandwich years.</dd>
+            </dl>
+          </div>
+        </details>
+        <details id="strand-2-2-3">
+          <summary>
+            <span class="label"><span>
+              <span class="name"><span class="ref">2.2.3</span> Auxiliary modules for experiential learning</span>
+              <span class="highlight">Q3 2028 · First teaching in September 2028</span>
+            </span></span>
+            <span class="track" aria-hidden="true">
+              <span class="bar" style="--start: 1; --end: 11"></span>
+              <span class="dot" style="--quarter: 1"></span>
+              <span class="dot" style="--quarter: 2"></span>
+              <span class="dot" style="--quarter: 3"></span>
+              <span class="dot" style="--quarter: 4"></span>
+              <span class="dot" style="--quarter: 5"></span>
+              <span class="dot" style="--quarter: 6"></span>
+              <span class="diamond" style="--quarter: 7"></span>
+              <span class="dot" style="--quarter: 8"></span>
+              <span class="dot" style="--quarter: 9"></span>
+              <span class="dot" style="--quarter: 10"></span>
+            </span>
+          </summary>
+          <div class="milestone-detail">
+            <p class="period">Delivery window · Jan 2027 to Jun 2029</p>
+            <dl class="milestones">
+              <dt>Q1 2027</dt><dd>Specify the first suite of Trailblazer modules.</dd>
+              <dt>Q2 2027</dt><dd>Validate the project modules and capstones.</dd>
+              <dt>Q3 2027</dt><dd>Confirm how the modules count towards degrees and agree teaching and timetable requirements.</dd>
+              <dt>Q4 2027</dt><dd>Configure and test the options pool.</dd>
+              <dt>Q1 2028</dt><dd>Open module choices to eligible Trailblazers in January.</dd>
+              <dt>Q2 2028</dt><dd>Confirm places, teaching capacity and timetables.</dd>
+              <dt>Q3 2028</dt><dd>Begin teaching the first Trailblazer cohorts in September.</dd>
+              <dt>Q4 2028</dt><dd>Review take-up and confirm the 2029/30 offer.</dd>
+              <dt>Q1 2029</dt><dd>Open the second options round in January.</dd>
+              <dt>Q2 2029</dt><dd>Review participation and outcomes, and agree ongoing ownership.</dd>
+            </dl>
+          </div>
+        </details>
+      </section>
+
+      <section class="initiative" aria-labelledby="initiative-3">
+        <header class="axis">
+          <h2 id="initiative-3"><span class="group-ref">2.3</span> An Architecture for Student Purpose</h2>
+          <div class="calendar" aria-hidden="true">
+            <div class="years"><span>2027</span><span>2028</span><span>2029</span></div>
+            <div class="quarters"><span>Q1</span><span>Q2</span><span>Q3</span><span>Q4</span><span>Q1</span><span>Q2</span><span>Q3</span><span>Q4</span><span>Q1</span><span>Q2</span></div>
+          </div>
+        </header>
+        <details id="strand-2-3-1">
+          <summary>
+            <span class="label"><span>
+              <span class="name"><span class="ref">2.3.1</span> Student purpose</span>
+              <span class="highlight">Q3 2027 · King’s Canvas pilot opens to Trailblazers</span>
+            </span></span>
+            <span class="track" aria-hidden="true">
+              <span class="bar" style="--start: 1; --end: 10"></span>
+              <span class="dot" style="--quarter: 1"></span>
+              <span class="dot" style="--quarter: 2"></span>
+              <span class="diamond" style="--quarter: 3"></span>
+              <span class="dot" style="--quarter: 4"></span>
+              <span class="dot" style="--quarter: 5"></span>
+              <span class="dot" style="--quarter: 6"></span>
+              <span class="dot" style="--quarter: 9"></span>
+            </span>
+          </summary>
+          <div class="milestone-detail">
+            <p class="period">Delivery window · Jan 2027 to Mar 2029</p>
+            <dl class="milestones">
+              <dt>Q1 2027</dt><dd>Specify how staff will support conversations about student purpose.</dd>
+              <dt>Q2 2027</dt><dd>Agree Trailblazer action plans for purpose conversations.</dd>
+              <dt>Q3 2027</dt><dd>Launch the King’s Canvas prototype with Trailblazers.</dd>
+              <dt>Q4 2027</dt><dd>Set out how Careers consultations will incorporate purpose and life design.</dd>
+              <dt>Q1 2028</dt><dd>Bring King’s Canvas into general use through the Student Digital Experience Hub.</dd>
+              <dt>Q2 2028</dt><dd>Evaluate the pilot and agree minimum expectations for engagement.</dd>
+              <dt>Q1 2029</dt><dd>Put arrangements in place for a purpose conversation during student onboarding.</dd>
+            </dl>
+          </div>
+        </details>
+        <details id="strand-2-3-2">
+          <summary>
+            <span class="label"><span>
+              <span class="name"><span class="ref">2.3.2</span> Skills framework and profiles</span>
+              <span class="highlight">Q4 2027 · Skills aspiration profiles added to Canvas</span>
+            </span></span>
+            <span class="track" aria-hidden="true">
+              <span class="bar" style="--start: 1; --end: 10"></span>
+              <span class="dot" style="--quarter: 1"></span>
+              <span class="dot" style="--quarter: 2"></span>
+              <span class="diamond" style="--quarter: 4"></span>
+              <span class="dot" style="--quarter: 6"></span>
+              <span class="dot" style="--quarter: 7"></span>
+              <span class="dot" style="--quarter: 9"></span>
+            </span>
+          </summary>
+          <div class="milestone-detail">
+            <p class="period">Delivery window · Jan 2027 to Mar 2029</p>
+            <dl class="milestones">
+              <dt>Q1 2027</dt><dd>Prototype a tool to map programme materials against a common skills language.</dd>
+              <dt>Q2 2027</dt><dd>Audit Trailblazer programmes and use the findings to inform skills action plans.</dd>
+              <dt>Q4 2027</dt><dd>Add skills aspiration profiles to King’s Canvas.</dd>
+              <dt>Q2 2028</dt><dd>Recommend whether to adopt, adapt or replace the UK Standard Skills Classification.</dd>
+              <dt>Q3 2028</dt><dd>Complete the Cohort 1 skills audit.</dd>
+              <dt>Q1 2029</dt><dd>Complete the Cohort 2 skills audit.</dd>
+            </dl>
+          </div>
+        </details>
+        <details id="strand-2-3-3">
+          <summary>
+            <span class="label"><span>
+              <span class="name"><span class="ref">2.3.3</span> Recognition and enhanced transcript</span>
+              <span class="highlight">Q2 2028 · Enhanced transcript prototype</span>
+            </span></span>
+            <span class="track" aria-hidden="true">
+              <span class="bar" style="--start: 2; --end: 11"></span>
+              <span class="dot" style="--quarter: 2"></span>
+              <span class="dot" style="--quarter: 3"></span>
+              <span class="diamond" style="--quarter: 6"></span>
+              <span class="dot" style="--quarter: 8"></span>
+              <span class="dot" style="--quarter: 10"></span>
+            </span>
+          </summary>
+          <div class="milestone-detail">
+            <p class="period">Delivery window · Apr 2027 to Jun 2029</p>
+            <dl class="milestones">
+              <dt>Q2 2027</dt><dd>Approve microcredential and badging regulations and agree how awards will appear on the HEAR.</dd>
+              <dt>Q3 2027</dt><dd>Launch the in-house Open Badges service.</dd>
+              <dt>Q2 2028</dt><dd>Deliver a student-built enhanced transcript prototype in King’s Canvas.</dd>
+              <dt>Q4 2028</dt><dd>Evaluate the pilot and refine the transcript.</dd>
+              <dt>Q2 2029</dt><dd>Move the transcript into enterprise support and recommend how to integrate it more widely.</dd>
+            </dl>
+          </div>
+        </details>
+      </section>
+
+      <section class="initiative" aria-labelledby="initiative-4">
+        <header class="axis">
+          <h2 id="initiative-4"><span class="group-ref">2.4</span> The Beyond-Course Offer</h2>
+          <div class="calendar" aria-hidden="true">
+            <div class="years"><span>2027</span><span>2028</span><span>2029</span></div>
+            <div class="quarters"><span>Q1</span><span>Q2</span><span>Q3</span><span>Q4</span><span>Q1</span><span>Q2</span><span>Q3</span><span>Q4</span><span>Q1</span><span>Q2</span></div>
+          </div>
+        </header>
+        <details id="strand-2-4-1">
+          <summary>
+            <span class="label"><span>
+              <span class="name"><span class="ref">2.4.1</span> Convening the Beyond-Course Offer</span>
+              <span class="highlight">Q2 2028 · Agree how student societies will shape provision</span>
+            </span></span>
+            <span class="track" aria-hidden="true">
+              <span class="bar" style="--start: 1; --end: 11"></span>
+              <span class="dot" style="--quarter: 1"></span>
+              <span class="dot" style="--quarter: 2"></span>
+              <span class="diamond" style="--quarter: 6"></span>
+              <span class="dot" style="--quarter: 10"></span>
+            </span>
+          </summary>
+          <div class="milestone-detail">
+            <p class="period">Delivery window · Jan 2027 to Jun 2029</p>
+            <dl class="milestones">
+              <dt>Q1 2027</dt><dd>Agree how commissioning decisions will be made and establish participation baselines.</dd>
+              <dt>Q2 2027</dt><dd>Complete the 2027/28 commissioning plan.</dd>
+              <dt>Q2 2028</dt><dd>Complete the 2028/29 plan and agree with KCLSU how societies will shape priorities and lead delivery.</dd>
+              <dt>Q2 2029</dt><dd>Complete the 2029/30 commissioning plan.</dd>
+            </dl>
+          </div>
+        </details>
+        <details id="strand-2-4-2">
+          <summary>
+            <span class="label"><span>
+              <span class="name"><span class="ref">2.4.2</span> Commissioning additional provision</span>
+              <span class="highlight">Q2 2027 · Launchpad’s second wave delivered</span>
+            </span></span>
+            <span class="track" aria-hidden="true">
+              <span class="bar" style="--start: 2; --end: 11"></span>
+              <span class="diamond" style="--quarter: 2"></span>
+              <span class="dot" style="--quarter: 6"></span>
+              <span class="dot" style="--quarter: 10"></span>
+            </span>
+          </summary>
+          <div class="milestone-detail">
+            <p class="period">Delivery window · Apr 2027 to Jun 2029</p>
+            <dl class="milestones">
+              <dt>Q2 2027</dt><dd>Deliver Launchpad’s second wave for finalists and recent graduates. Begin work on belonging and connection. The annual participation target is 35%.</dd>
+              <dt>Q2 2028</dt><dd>Complete the 2027/28 offer and review reach, depth and representation. The annual participation target is 50%.</dd>
+              <dt>Q2 2029</dt><dd>Complete the 2028/29 offer and review reach, depth and representation. The annual participation target is 70%.</dd>
+            </dl>
+          </div>
+        </details>
+        <details id="strand-2-4-3">
+          <summary>
+            <span class="label"><span>
+              <span class="name"><span class="ref">2.4.3</span> Responding to Trailblazer students</span>
+              <span class="highlight">Q3 2027 · Targeted opportunities begin</span>
+            </span></span>
+            <span class="track" aria-hidden="true">
+              <span class="bar" style="--start: 2; --end: 11"></span>
+              <span class="dot" style="--quarter: 2"></span>
+              <span class="diamond" style="--quarter: 3"></span>
+              <span class="dot" style="--quarter: 6"></span>
+              <span class="dot" style="--quarter: 10"></span>
+            </span>
+          </summary>
+          <div class="milestone-detail">
+            <p class="period">Delivery window · Apr 2027 to Jun 2029</p>
+            <dl class="milestones">
+              <dt>Q2 2027</dt><dd>Set up the process for using King’s Canvas insights in commissioning.</dd>
+              <dt>Q3 2027</dt><dd>Use Canvas pilot insights to target opportunities for Trailblazers.</dd>
+              <dt>Q2 2028</dt><dd>Review take-up against the target for Trailblazers to take up half of commissioned opportunities in 2027/28.</dd>
+              <dt>Q2 2029</dt><dd>Review take-up against the same target for 2028/29.</dd>
+            </dl>
+          </div>
+        </details>
+      </section>
+
+      <section class="initiative" aria-labelledby="initiative-5">
+        <header class="axis">
+          <h2 id="initiative-5"><span class="group-ref">2.5</span> An Operating Model for Future-Focused Employability</h2>
+          <div class="calendar" aria-hidden="true">
+            <div class="years"><span>2027</span><span>2028</span><span>2029</span></div>
+            <div class="quarters"><span>Q1</span><span>Q2</span><span>Q3</span><span>Q4</span><span>Q1</span><span>Q2</span><span>Q3</span><span>Q4</span><span>Q1</span><span>Q2</span></div>
+          </div>
+        </header>
+        <details id="strand-2-5-1">
+          <summary>
+            <span class="label"><span>
+              <span class="name"><span class="ref">2.5.1</span> Infrastructure for partnership management</span>
+              <span class="highlight">Q2 2028 · Confirm support for sandwich-year expansion</span>
+            </span></span>
+            <span class="track" aria-hidden="true">
+              <span class="bar" style="--start: 2; --end: 11"></span>
+              <span class="dot" style="--quarter: 2"></span>
+              <span class="dot" style="--quarter: 3"></span>
+              <span class="diamond" style="--quarter: 6"></span>
+              <span class="dot" style="--quarter: 7"></span>
+              <span class="dot" style="--quarter: 10"></span>
+            </span>
+          </summary>
+          <div class="milestone-detail">
+            <p class="period">Delivery window · Apr 2027 to Jun 2029</p>
+            <dl class="milestones">
+              <dt>Q2 2027</dt><dd>Review partnership processes for experiential learning, including global activity, and identify gaps.</dd>
+              <dt>Q3 2027</dt><dd>Introduce the shared partnership workflow and service-level agreement.</dd>
+              <dt>Q2 2028</dt><dd>Confirm administrative support for programmes expanding sandwich-year access in September.</dd>
+              <dt>Q3 2028</dt><dd>Put support in place for the first programmes and expand partnership capacity.</dd>
+              <dt>Q2 2029</dt><dd>Agree the ongoing service and its funding from July 2029.</dd>
+            </dl>
+          </div>
+        </details>
+        <details id="strand-2-5-2">
+          <summary>
+            <span class="label"><span>
+              <span class="name"><span class="ref">2.5.2</span> Bursaries and subsidies for beyond-course learning</span>
+              <span class="highlight">Q3 2027 · Central bursary scheme opens</span>
+            </span></span>
+            <span class="track" aria-hidden="true">
+              <span class="bar" style="--start: 2; --end: 11"></span>
+              <span class="dot" style="--quarter: 2"></span>
+              <span class="diamond" style="--quarter: 3"></span>
+              <span class="dot" style="--quarter: 7"></span>
+              <span class="dot" style="--quarter: 10"></span>
+            </span>
+          </summary>
+          <div class="milestone-detail">
+            <p class="period">Delivery window · Apr 2027 to Jun 2029</p>
+            <dl class="milestones">
+              <dt>Q2 2027</dt><dd>Review existing funds, student eligibility, take-up and unmet demand.</dd>
+              <dt>Q3 2027</dt><dd>Launch the central bursary scheme for beyond-course learning.</dd>
+              <dt>Q3 2028</dt><dd>Open the second award round, informed by feedback and take-up.</dd>
+              <dt>Q2 2029</dt><dd>Review access and impact, and agree ongoing ownership and funding.</dd>
+            </dl>
+          </div>
+        </details>
+      </section>
+    </div>
+    <section class="dependencies" aria-labelledby="dependencies-title">
+      <h2 id="dependencies-title">Delivery dependencies</h2>
+      <p><strong>King’s Canvas and targeted opportunities.</strong> Set up the commissioning process in Q2 2027. Targeted opportunities for Trailblazers begin in Q3 2027, when the Canvas pilot starts providing insight into their ambitions.</p>
+      <p><strong>Sandwich-year reform and partnership support.</strong> Approve the common regulations in Q3 2027 and confirm administrative support by Q2 2028, ahead of the September 2028 student launch.</p>
+      <p><strong>Skills audits and action planning.</strong> Cohort 1’s first Graduate Outcomes action plans are due in Q4 2027 and its skills audit in Q3 2028. For Cohort 2 the dates are Q2 2028 and Q1 2029 respectively. Agree whether to bring the audits forward or use their findings for the next planning cycle.</p>
+      <p class="scope"><strong>2.6.1 Entrepreneurship Institute funding transition</strong> sits outside the five Appendix B plans. Its delivery window needs separate confirmation.</p>
+    </section>
+  </main>
+</body>
+</html>
